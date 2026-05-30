@@ -1,19 +1,41 @@
 #!/usr/bin/env python3.12
 """
-BoltNews — Summarizer + Deduplicator.
-- Clusters similar articles by content overlap
-- Drops duplicates with same directional view
-- Keeps contrasting views
-- Generates categorized one-liner summaries
-- Outputs markdown briefing
+BoltNews — Summarizer + Deduplicator with RECENCY ENFORCEMENT.
+Filters articles >48 hours old BEFORE deduplication/categorization.
+Articles 24-48h: accepted with age flag. Articles >48h: REJECTED.
+Context/historical references: moved to a separate section, not mixed with news.
 """
 import argparse
 import json
 import re
 import sys
 from collections import defaultdict
-from datetime import date
+from datetime import datetime, timedelta, date
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+# === RECENCY GATES ===
+MAX_NEWS_HOURS = 48  # Hard cutoff: articles older than this are REJECTED
+STALE_WARN_HOURS = 24  # Articles older than this get a [24h+] age flag
+
+# Stale indicators — comprehensive patterns that signal >48h content
+STALE_PATTERNS = [
+    r"\blast\s+(?:week|month|quarter|year)\b",
+    r"\b(?:january|february|march|april)\s+2026\b",
+    r"\b(?:may\s+(?:1[0-9]|2[0-7])\b)",  # Early May dates (adjust for run date)
+    r"\b2025\b",
+    r"\b2024\b",
+    r"\bQ[12]\s*2026\b",
+    r"\bH1\s*2026\b",
+    r"\b(?:months|weeks)\s+ago\b",
+    r"\b(?:january|february)\s*(?:20)?25\b",
+    r"\bDecember\s*2025\b",
+    r"\b(?:last|earlier\s+this)\s+(?:year|quarter)\b",
+    r"\bmid-2025\b",
+    r"\blate\s+2025\b",
+    r"\bfirst\s+half\b",
+]
 
 CATEGORIES = {
     "Rates": ["fed", "fomc", "interest rate", "treasury", "yield", "bond", "sofr", "libor",
@@ -41,132 +63,132 @@ BLOCKED_CATEGORIES = {
 def load_articles(path: Path) -> list[dict]:
     with open(path) as f:
         data = json.load(f)
+    if isinstance(data, list):
+        return data
     return data.get("articles", [])
 
 
-def categorize_article(article: dict) -> str:
-    """Assign category based on title + description content."""
-    text = (article.get("title", "") + " " + article.get("description", "")).lower()
+def is_article_stale(article: dict, max_hours: int, run_date_str: str) -> tuple[bool, float | None]:
+    """
+    Check if an article is stale. Returns (is_stale: bool, age_hours: float | None).
     
-    # First check blocked
+    Checks in order:
+    1. Explicit fetched_at or published timestamp
+    2. Stale text patterns in title/description
+    """
+    run_date = datetime.fromisoformat(run_date_str)
+    
+    # Method 1: Explicit timestamp
+    for ts_field in ["fetched_at", "published_at", "date", "timestamp"]:
+        ts_str = article.get(ts_field, "")
+        if ts_str:
+            try:
+                ts = datetime.fromisoformat(str(ts_str).replace("Z", "+00:00")[:19])
+                age_hours = (run_date - ts.replace(tzinfo=None)).total_seconds() / 3600
+                return age_hours > max_hours, age_hours
+            except (ValueError, TypeError):
+                continue
+    
+    # Method 2: Text pattern matching
+    text = (article.get("title", "") + " " + article.get("description", "")).lower()
+    for pattern in STALE_PATTERNS:
+        if re.search(pattern, text):
+            return True, None  # Pattern match = stale, unknown exact age
+    
+    # Method 3: No evidence of staleness → accept with unknown age
+    return False, None
+
+
+def categorize_article(article: dict) -> str:
+    text = (article.get("title", "") + " " + article.get("description", "")).lower()
     for cat, keywords in BLOCKED_CATEGORIES.items():
         if any(kw in text for kw in keywords):
-            return None  # Blocked
-    
-    # Score categories
+            return None
     scores = defaultdict(int)
     for cat, keywords in CATEGORIES.items():
         scores[cat] = sum(1 for kw in keywords if kw in text)
-    
     if max(scores.values()) == 0:
-        return "Equities"  # Default for ticker news
-    
+        return "Equities"
     return max(scores, key=scores.get)
 
 
 def compute_similarity(a: dict, b: dict) -> float:
-    """Simple Jaccard-like similarity on title + description word overlap."""
     def tokens(article):
         text = (article.get("title", "") + " " + article.get("description", "")).lower()
         return set(re.findall(r'\b[a-z]{4,}\b', text))
-    
-    ta = tokens(a)
-    tb = tokens(b)
+    ta, tb = tokens(a), tokens(b)
     if not ta or not tb:
         return 0.0
-    
     intersection = ta & tb
     union = ta | tb
     return len(intersection) / len(union) if union else 0.0
 
 
 def deduplicate(articles: list[dict], threshold: float = 0.35) -> list[dict]:
-    """
-    Cluster similar articles. Within each cluster:
-    - If same directional view → keep only the most detailed one
-    - If contrasting views → keep both
-    """
     if not articles:
         return []
-    
     kept = []
-    clusters = []  # list of lists
-    
+    clusters = []
     for article in articles:
         matched = False
         for cluster in clusters:
-            # Check similarity with cluster representative
             if compute_similarity(article, cluster[0]) >= threshold:
                 cluster.append(article)
                 matched = True
                 break
         if not matched:
             clusters.append([article])
-    
-    # Within each cluster, decide what to keep
     for cluster in clusters:
         if len(cluster) == 1:
             kept.append(cluster[0])
         else:
-            # Check for contrasting views (simple heuristic: different sentiment implied)
-            # Keep at most 2: the most detailed + one contrasting if found
             cluster.sort(key=lambda a: len(a.get("description", "")), reverse=True)
-            kept.append(cluster[0])  # Most detailed
-            
-            # Check for contrasting view
+            kept.append(cluster[0])
             for other in cluster[1:]:
-                desc_similarity = compute_similarity(cluster[0], other)
-                if desc_similarity < 0.6 and desc_similarity >= threshold:
+                if compute_similarity(cluster[0], other) < 0.6 and compute_similarity(cluster[0], other) >= threshold:
                     kept.append(other)
                     break
-    
     return kept
 
 
 def generate_one_liner(article: dict) -> str:
-    """Generate a one-line summary from title + description."""
     title = article.get("title", "").strip()
     desc = article.get("description", "").strip()
-    
-    # Clean up title
-    title = re.sub(r'\s+[-|]\s+.*$', '', title)  # Remove source suffix
-    title = title.rstrip('.')
-    
+    title = re.sub(r'\s+[-|]\s+.*$', '', title).rstrip('.')
     if not desc:
         return title
-    
-    # Extract first sentence of description
     first_sent = re.split(r'[.!?]\s+', desc)[0].strip()
     if len(first_sent) < 30:
         first_sent = desc[:200].strip()
-    
-    # Combine
-    if len(title) > 120:
-        return title
-    
     combined = f"{title} — {first_sent}"
     if len(combined) > 250:
         combined = combined[:247] + "..."
-    
     return combined
 
 
-def build_summary_markdown(articles: list[dict], mode: str, run_date: str) -> str:
-    """Build the markdown briefing."""
+def build_summary_markdown(articles: list[dict], context_articles: list[dict],
+                           stale_stats: dict, mode: str, run_date: str) -> str:
+    """Build the markdown briefing with recency flags."""
     if mode == "weekend":
         mode_label = "Weekend Briefing — Analysis & Outlook"
     elif mode == "pre-market":
         mode_label = "Pre-Market Briefing"
     else:
         mode_label = "Post-Market Recap"
-    
+
+    news_count = len(articles)
+    context_count = len(context_articles)
+    total_rejected = stale_stats.get("rejected", 0)
+
     lines = [
         f"# BoltNews — {mode_label}",
-        f"**{run_date}** | {len(articles)} articles",
+        f"**{run_date}** | {news_count} articles (≤{MAX_NEWS_HOURS}h) "
+        + (f"| {context_count} context refs" if context_count else "")
+        + (f" | {total_rejected} rejected (>48h)" if total_rejected else ""),
         "",
     ]
-    
-    # Categorize
+
+    # News articles
     by_category = defaultdict(list)
     for article in articles:
         cat = article.get("category", categorize_article(article))
@@ -174,10 +196,9 @@ def build_summary_markdown(articles: list[dict], mode: str, run_date: str) -> st
             continue
         article["category"] = cat
         by_category[cat].append(article)
-    
-    # Sort categories by article count
+
     sorted_cats = sorted(by_category.items(), key=lambda x: len(x[1]), reverse=True)
-    
+
     for cat, cat_articles in sorted_cats:
         lines.append(f"## {cat}")
         lines.append("")
@@ -185,18 +206,42 @@ def build_summary_markdown(articles: list[dict], mode: str, run_date: str) -> st
             ticker_tag = f"`{a['ticker']}` " if a.get("ticker") else ""
             one_liner = a.get("summary", generate_one_liner(a))
             url = a.get("url", "")
-            source = a.get("source", "")
-            
+            age_hours = a.get("age_hours")
+            age_flag = ""
+            if age_hours is not None and age_hours > STALE_WARN_HOURS:
+                age_flag = f" ⏱ [{age_hours:.0f}h ago]"
             if url:
-                lines.append(f"- {ticker_tag}[{one_liner}]({url})")
+                lines.append(f"- {ticker_tag}[{one_liner}]({url}){age_flag}")
             else:
-                lines.append(f"- {ticker_tag}{one_liner}")
+                lines.append(f"- {ticker_tag}{one_liner}{age_flag}")
         lines.append("")
-    
-    # Stats
+
+    # Context section (articles rejected for staleness but kept for reference)
+    if context_articles:
+        lines.append("---")
+        lines.append("## 📚 Historical Context (reference only — NOT current news)")
+        lines.append("")
+        lines.append(f"*The following {context_count} sources are >{MAX_NEWS_HOURS}h old and included ONLY as background context.*")
+        lines.append("*They are NOT part of today's news digest. Use the daily summary dumps for historical tracking.*")
+        lines.append("")
+        for a in context_articles:
+            ticker_tag = f"`{a['ticker']}` " if a.get("ticker") else ""
+            title = a.get("title", "Untitled")
+            url = a.get("url", "")
+            age_hours = a.get("age_hours", "?")
+            if url:
+                lines.append(f"- {ticker_tag}[{title}]({url}) — ~{age_hours}h old")
+            else:
+                lines.append(f"- {ticker_tag}{title} — ~{age_hours}h old")
+        lines.append("")
+
+    # Stats footer
     lines.append("---")
-    lines.append(f"*Generated by BoltNews • {len(articles)} articles • {len(sorted_cats)} categories*")
-    
+    lines.append(f"*Generated by BoltNews • {news_count} articles (≤{MAX_NEWS_HOURS}h) "
+                 + f"• {len(sorted_cats)} categories • "
+                 + f"{total_rejected} stale articles rejected • "
+                 + f"{context_count} kept as context*")
+
     return "\n".join(lines)
 
 
@@ -206,38 +251,83 @@ def main():
     parser.add_argument("--output", type=Path, required=True, help="summary.md output")
     parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], required=True)
     parser.add_argument("--date", type=str, required=True)
+    parser.add_argument("--max-hours", type=int, default=MAX_NEWS_HOURS,
+                        help=f"Max article age in hours (default: {MAX_NEWS_HOURS})")
     args = parser.parse_args()
-    
+
     articles = load_articles(args.input)
-    
+
     if not articles:
         print("WARNING: No articles to summarize. Writing empty summary.", file=sys.stderr)
-        summary = f"# BoltNews — {'Pre-Market Briefing' if args.mode == 'pre-market' else 'Post-Market Recap'}\n\n**{args.date}** | 0 articles\n\n*No market-moving news found for this session.*\n"
-    else:
-        # Deduplicate
-        original_count = len(articles)
-        articles = deduplicate(articles)
-        print(f"Deduplication: {original_count} → {len(articles)} articles")
-        
-        # Categorize and generate one-liners
-        for a in articles:
-            a["category"] = categorize_article(a)
-            a["summary"] = generate_one_liner(a)
-        
-        # Filter out blocked categories
-        articles = [a for a in articles if a["category"] is not None]
-        print(f"After category filtering: {len(articles)} articles")
-        
-        summary = build_summary_markdown(articles, args.mode, args.date)
-    
+        summary = (
+            f"# BoltNews — {'Weekend Briefing' if args.mode == 'weekend' else args.mode.title()}\n\n"
+            f"**{args.date}** | 0 articles\n\n"
+            f"*No market-moving news found in the past {args.max_hours} hours.*\n"
+        )
+        with open(args.output, "w") as f:
+            f.write(summary)
+        return
+
+    # ═══════════════════════════════════════════
+    # RECENCY GATE — THE PROGRAMMATIC ENFORCEMENT
+    # ═══════════════════════════════════════════
+    fresh_articles = []
+    context_articles = []  # >48h but kept as reference
+    rejected_count = 0
+
+    for a in articles:
+        is_stale, age_hours = is_article_stale(a, args.max_hours, args.date)
+        if is_stale:
+            if a.get("title") or a.get("description"):
+                a["rejected_reason"] = "stale"
+                a["age_hours"] = age_hours
+                context_articles.append(a)
+            rejected_count += 1
+        else:
+            a["age_hours"] = age_hours  # May be None if no explicit timestamp
+            fresh_articles.append(a)
+
+    print(f"Recency filter ({args.max_hours}h): "
+          f"{len(articles)} → {len(fresh_articles)} fresh, "
+          f"{len(context_articles)} context, {rejected_count} rejected")
+
+    stale_stats = {
+        "total_input": len(articles),
+        "fresh": len(fresh_articles),
+        "context": len(context_articles),
+        "rejected": rejected_count,
+    }
+
+    # ═══════════════════════════════════════════
+    # Deduplicate + Categorize + Summarize
+    # ═══════════════════════════════════════════
+    original_count = len(fresh_articles)
+    fresh_articles = deduplicate(fresh_articles)
+    print(f"Deduplication: {original_count} → {len(fresh_articles)} articles")
+
+    for a in fresh_articles:
+        a["category"] = categorize_article(a)
+        a["summary"] = generate_one_liner(a)
+
+    fresh_articles = [a for a in fresh_articles if a["category"] is not None]
+    print(f"After category filtering: {len(fresh_articles)} articles")
+
+    # Build markdown
+    summary = build_summary_markdown(fresh_articles, context_articles, stale_stats,
+                                     args.mode, args.date)
+
     with open(args.output, "w") as f:
         f.write(summary)
-    
-    # Also save enriched articles back
+
+    # Save enriched articles
     enriched_path = args.input.parent / "articles_enriched.json"
+    enriched_data = fresh_articles + context_articles
+    for a in enriched_data:
+        a.setdefault("age_hours", None)
+        a.setdefault("rejected_reason", None)
     with open(enriched_path, "w") as f:
-        json.dump(articles, f, indent=2, default=str)
-    
+        json.dump(enriched_data, f, indent=2, default=str)
+
     print(f"Summary: {args.output}")
     print(f"Enriched articles: {enriched_path}")
 

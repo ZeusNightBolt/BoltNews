@@ -71,6 +71,31 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
         print(f"ERROR: dashboard.html not found at {dashboard_src}. Cannot deploy.", file=sys.stderr)
         return False
 
+    # ═══════════════════════════════════════════
+    # RECENCY GATE: Verify articles are fresh before deploying
+    # ═══════════════════════════════════════════
+    max_hours = 48
+    stale_warning = False
+    try:
+        with open(articles_src) as f:
+            import json as _json
+            data = _json.load(f)
+        articles_list = data if isinstance(data, list) else data.get("articles", [])
+        article_count = len(articles_list)
+        if article_count == 0:
+            print(f"WARNING: articles.json has 0 articles. Dashboard may be empty.", file=sys.stderr)
+            stale_warning = True
+        # Check for explicit age_hours on articles
+        stale_count = sum(1 for a in articles_list 
+                         if isinstance(a, dict) and a.get("age_hours", 0) 
+                         and (isinstance(a["age_hours"], (int, float)) and a["age_hours"] > max_hours))
+        if stale_count > 0:
+            print(f"WARNING: {stale_count}/{article_count} articles are >{max_hours}h old. Deploying anyway.", file=sys.stderr)
+            stale_warning = True
+    except Exception:
+        pass  # Can't read articles.json — proceed anyway
+    # Note: stale_warning doesn't block deploy, but the flag is logged
+
     deploy_dir = Path("/tmp/boltnews-deploy")
     gh_pages_dir = Path("/tmp/boltnews-gh-pages")
 
