@@ -1,0 +1,44 @@
+{
+  "generated": "2026-05-30",
+  "seed_sources": {
+    "financial_newswires": [
+      {"name": "Reuters Markets", "url": "https://www.reuters.com/markets/", "rss": "https://www.reuters.com/arc/outboundfeeds/v3/all/?outputType=xml", "category": "newswire"},
+      {"name": "Bloomberg Markets", "url": "https://www.bloomberg.com/markets", "rss": null, "category": "newswire"},
+      {"name": "Financial Times Markets", "url": "https://www.ft.com/markets", "rss": null, "category": "newswire"},
+      {"name": "WSJ Markets", "url": "https://www.wsj.com/markets", "rss": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml", "category": "newswire"},
+      {"name": "CNBC Markets", "url": "https://www.cnbc.com/markets/", "rss": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147", "category": "newswire"},
+      {"name": "MarketWatch", "url": "https://www.marketwatch.com/", "rss": "https://feeds.marketwatch.com/marketwatch/topstories", "category": "newswire"},
+      {"name": "Yahoo Finance", "url": "https://finance.yahoo.com/", "rss": "https://finance.yahoo.com/news/rssindex", "category": "aggregator"},
+      {"name": "Investing.com", "url": "https://www.investing.com/news/stock-market-news", "rss": "https://www.investing.com/rss/news.rss", "category": "aggregator"},
+      {"name": "Seeking Alpha", "url": "https://seekingalpha.com/market-news", "rss": "https://seekingalpha.com/market_currents.xml", "category": "analysis"},
+      {"name": "ZeroHedge", "url": "https://www.zerohedge.com/", "rss": "https://www.zerohedge.com/fullrss2.xml", "category": "alternative"}
+    ],
+    "central_banks": [
+      {"name": "Federal Reserve Press Releases", "url": "https://www.federalreserve.gov/newsevents/pressreleases.htm", "rss": "https://www.federalreserve.gov/feeds/press_all.xml", "category": "central_bank"},
+      {"name": "ECB Press Releases", "url": "https://www.ecb.europa.eu/press/pr/html/index.en.html", "rss": "https://www.ecb.europa.eu/rss/pr.xml", "category": "central_bank"},
+      {"name": "Bank of Japan", "url": "https://www.boj.or.jp/en/", "rss": null, "category": "central_bank"}
+    ],
+    "rates_fx_credit": [
+      {"name": "Bond Buyer", "url": "https://www.bondbuyer.com/", "rss": "https://www.bondbuyer.com/feed", "category": "rates"},
+      {"name": "ForexLive", "url": "https://www.forexlive.com/", "rss": "https://www.forexlive.com/feed/", "category": "fx"},
+      {"name": "DailyFX", "url": "https://www.dailyfx.com/", "rss": "https://www.dailyfx.com/feeds/all", "category": "fx"},
+      {"name": "Calculated Risk", "url": "https://www.calculatedriskblog.com/", "rss": "https://www.calculatedriskblog.com/feeds/posts/default", "category": "macro"}
+    ],
+    "commodities": [
+      {"name": "OilPrice.com", "url": "https://oilprice.com/", "rss": "https://oilprice.com/rss/main", "category": "commodities"}
+    ]
+  },
+  "discovery_queries": [
+    "financial markets news sources RSS feeds",
+    "best free financial news feeds 2026",
+    "stock market news aggregator free",
+    "credit markets news RSS",
+    "FX rates news feed",
+    "central bank policy news source",
+    "SEC filings financial news tracker"
+  ],
+  "discovery_cadence": "weekly",
+  "blocked_domains": [],
+  "priority_domains": [],
+  "notes": "Prioritize RSS feeds for speed. Use web_search fallback for ticker-specific news. Deep-scrape only when lead paragraph signals market-moving information."
+}
