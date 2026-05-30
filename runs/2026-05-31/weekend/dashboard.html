@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Weekend Briefing | 2026-05-31</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100dvh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 16px; }
+  
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0 16px 0;
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 1.5rem; font-weight: 600; color: var(--text); }
+  .header .subtitle { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Search */
+  .search-bar {
+    width: 100%;
+    padding: 10px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-bar:focus { border-color: var(--accent); }
+  .search-bar::placeholder { color: var(--text-muted); }
+  
+  /* Category tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab {
+    padding: 6px 14px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    white-space: nowrap;
+    touch-action: manipulation;
+    min-height: 36px;
+    font-family: inherit;
+    transition: color 0.15s, background 0.15s;
+  }
+  .tab:hover { color: var(--text); background: var(--bg-tertiary); }
+  .tab.active { color: var(--text); border-bottom: 2px solid var(--accent); margin-bottom: -10px; font-weight: 600; }
+  .tab .count { font-size: 0.7rem; color: var(--text-muted); margin-left: 4px; }
+  
+  /* Article cards */
+  .article-list { display: flex; flex-direction: column; gap: 8px; }
+  .article-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .article-card:hover { border-color: var(--accent); background: var(--bg-tertiary); }
+  .article-card .ticker-tag {
+    display: inline-block;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-family: "SF Mono", Consolas, monospace;
+    vertical-align: middle;
+  }
+  .article-card .title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: inline;
+  }
+  .article-card .meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+  .article-card .description {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+  }
+  .empty-state h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  
+  /* Category colors */
+  .cat-Rates { border-left: 3px solid var(--amber); }
+  .cat-FX { border-left: 3px solid var(--purple); }
+  .cat-Credit { border-left: 3px solid var(--red); }
+  .cat-Equities { border-left: 3px solid var(--green); }
+  .cat-Derivatives { border-left: 3px solid #79c0ff; }
+  .cat-Macro { border-left: 3px solid var(--accent); }
+  .cat-Regulatory { border-left: 3px solid #f0883e; }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px; }
+    .header h1 { font-size: 1.2rem; }
+    .article-card { padding: 12px; }
+    .tabs { gap: 0; }
+    .tab { padding: 6px 10px; font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Weekend Briefing</span></h1>
+    <div class="subtitle">2026-05-31 &middot; 46 articles &middot; 6 categories</div>
+  </div>
+  
+  <input type="text" class="search-bar" id="search" placeholder="Search articles..." oninput="filterArticles()">
+  
+  <div class="tabs" id="tabs">
+    <button class="tab active" onclick="filterCategory('all')">All <span class="count">(46)</span></button>
+    <button class="tab" onclick="filterCategory('Equities')">Equities <span class="count">(23)</span></button>
+    <button class="tab" onclick="filterCategory('Rates')">Rates <span class="count">(8)</span></button>
+    <button class="tab" onclick="filterCategory('Macro')">Macro <span class="count">(6)</span></button>
+    <button class="tab" onclick="filterCategory('FX')">FX <span class="count">(5)</span></button>
+    <button class="tab" onclick="filterCategory('Credit')">Credit <span class="count">(3)</span></button>
+    <button class="tab" onclick="filterCategory('Derivatives')">Derivatives <span class="count">(1)</span></button>
+  </div>
+  
+  <div class="article-list" id="article-list">
+    <a class="article-card cat-Equities" href="https://www.finsyn.com/weekly-market-recap-may-22-2026/" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none weekly market recap — s&p 500 eases as tech rally cools, oil surge weighs the s&p 500 finished with a modest loss, ending its multi-week winning streak, and the nasdaq traded lower as the technology rally cooled amid continued oil price pressures.">
+      <span class="title">Weekly Market Recap — S&P 500 Eases as Tech Rally Cools, Oil Surge Weighs</span>
+      <div class="description">Weekly Market Recap — S&P 500 Eases as Tech Rally Cools, Oil Surge Weighs — The S&P 500 finished with a modest loss, ending its multi-week winning streak, and the Nasdaq traded lower as the technology rally cooled amid continued oil price pressures.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.barrons.com/livecoverage/stock-market-news-today-052026" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none s&p 500 jumps over 1% on may 20 — dow adds 600 points in broad rally the dow surged 600 points (1.2%) as 22 of 30 components marked gains. broad-based buying across sectors.">
+      <span class="title">S&P 500 Jumps Over 1% on May 20 — Dow Adds 600 Points in Broad Rally</span>
+      <div class="description">S&P 500 Jumps Over 1% on May 20 — Dow Adds 600 Points in Broad Rally — The Dow surged 600 points (1.2%) as 22 of 30 components marked gains</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://madisoninvestments.com/monthly-market-update-may-2026/" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none monthly market update may 2026 — equities surge amid geopolitical uncertainty despite geopolitical uncertainty, equities surged with the s&p 500 rebounding 10.5% in april and recovering prior declines to restore positive ytd territory.">
+      <span class="title">Monthly Market Update May 2026 — Equities Surge Amid Geopolitical Uncertainty</span>
+      <div class="description">Monthly Market Update May 2026 — Equities Surge Amid Geopolitical Uncertainty — Despite geopolitical uncertainty, equities surged with the S&P 500 rebounding 10.5% in April and recovering prior declines to restore positive YTD territory.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.forbes.com/sites/investor-hub/article/best-stocks-to-buy-now-june-2026/" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none s&p 500 targets: yardeni 8,250, morgan stanley 8,000, goldman 7,600 for 2026 ed yardeni predicts s&p 500 reaching 8,250 in 2026 — the most optimistic wall street forecast. morgan stanley targets 8,000, goldman sachs 7,600.">
+      <span class="title">S&P 500 Targets: Yardeni 8,250, Morgan Stanley 8,000, Goldman 7,600 for 2026</span>
+      <div class="description">S&P 500 Targets: Yardeni 8,250, Morgan Stanley 8,000, Goldman 7,600 for 2026 — Ed Yardeni predicts S&P 500 reaching 8,250 in 2026 — the most optimistic Wall Street forecast</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.fidelity.com/learning-center/trading-investing/stock-market-outlook" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none fidelity midyear outlook: stock market bull run remains largely intact despite mideast conflict despite middle east conflict creating headwinds, the stock market bull run remains largely intact heading into h2 2026.">
+      <span class="title">Fidelity Midyear Outlook: Stock Market Bull Run Remains Largely Intact Despite Mideast Conflict</span>
+      <div class="description">Fidelity Midyear Outlook: Stock Market Bull Run Remains Largely Intact Despite Mideast Conflict — Despite Middle East conflict creating headwinds, the stock market bull run remains largely intact heading into H2 2026.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.schwab.com/learn/story/weekly-traders-outlook" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none charles schwab: ai-backed rally fueled by bullish sentiment — entering historically flat june ai-backed stock market rally continues on bullish sentiment and momentum. june historically flat for stocks but strong momentum may override seasonality.">
+      <span class="title">Charles Schwab: AI-Backed Rally Fueled by Bullish Sentiment — Entering Historically Flat June</span>
+      <div class="description">Charles Schwab: AI-Backed Rally Fueled by Bullish Sentiment — Entering Historically Flat June — AI-backed stock market rally continues on bullish sentiment and momentum</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/insights/market-insights/wmr/weekly_market_recap.pdf" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none markets now pricing full rate hike by march 2027 — a sharp reversal from rate cut base case rate cuts were the base case for 2026 ahead of the middle east conflict. today markets are pricing in a full rate hike by march 2027.">
+      <span class="title">Markets Now Pricing Full Rate Hike by March 2027 — A Sharp Reversal from Rate Cut Base Case</span>
+      <div class="description">Markets Now Pricing Full Rate Hike by March 2027 — A Sharp Reversal from Rate Cut Base Case — Rate cuts were the base case for 2026 ahead of the Middle East conflict</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/05/global-economic-outlook-may-2026" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none s&p global economic outlook may 2026: oil prices 100% higher than pre-conflict forecast elevation of crude prices now expected to persist into 2027. annual average brent prices ~100% higher than pre-conflict february forecast — moving the macro needle significantly.">
+      <span class="title">S&P Global Economic Outlook May 2026: Oil Prices 100% Higher Than Pre-Conflict Forecast</span>
+      <div class="description">S&P Global Economic Outlook May 2026: Oil Prices 100% Higher Than Pre-Conflict Forecast — Elevation of crude prices now expected to persist into 2027</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none deloitte: composite pmi falls to 47.5 in may — lowest in 31 months s&p global composite pmi fell from 48.8 in april to 47.5 in may — the lowest level in 31 months. manufacturing and services both contracting.">
+      <span class="title">Deloitte: Composite PMI Falls to 47.5 in May — Lowest in 31 Months</span>
+      <div class="description">Deloitte: Composite PMI Falls to 47.5 in May — Lowest in 31 Months — S&P Global composite PMI fell from 48.8 in April to 47.5 in May — the lowest level in 31 months</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.spglobal.com/ratings/en/research/global-credit-outlook" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none s&p global credit outlook 2026: trade tensions symptomatic of long-term multipolar shift trade tensions may have peaked but are symptomatic of a long-term shift toward a more transactional and multipolar world order with longer-term credit implications.">
+      <span class="title">S&P Global Credit Outlook 2026: Trade Tensions Symptomatic of Long-Term Multipolar Shift</span>
+      <div class="description">S&P Global Credit Outlook 2026: Trade Tensions Symptomatic of Long-Term Multipolar Shift — Trade tensions may have peaked but are symptomatic of a long-term shift toward a more transactional and multipolar world order with longer-term credit impli...</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.barrons.com/articles/stock-market-indicator-flashing-warning-sign-357f7420" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none barron's: stock analysts most bullish in a decade — 58.2% buy ratings — potential warning sign analysts have buy rankings on 58.2% of companies in the s&p 500 — the highest level in a decade. historically, extreme bullish consensus has been a contrarian signal.">
+      <span class="title">Barron's: Stock Analysts Most Bullish in a Decade — 58.2% Buy Ratings — Potential Warning Sign</span>
+      <div class="description">Barron's: Stock Analysts Most Bullish in a Decade — 58.2% Buy Ratings — Potential Warning Sign — Analysts have Buy rankings on 58.2% of companies in the S&P 500 — the highest level in a decade</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="none earnings calendar june 1-5: key reports for the coming week weekly earnings calendar of the most important upcoming quarterly reports scheduled for release by publicly traded companies june 1-5.">
+      <span class="title">Earnings Calendar June 1-5: Key Reports for the Coming Week</span>
+      <div class="description">Earnings Calendar June 1-5: Key Reports for the Coming Week — Weekly earnings calendar of the most important upcoming quarterly reports scheduled for release by publicly traded companies June 1-5.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.fool.com/investing/2026/05/27/prediction-this-will-be-nvidias-stock-price-at-the/" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="nvda prediction: nvidia stock price at end of 2026 — '2027 will be another year of major growth' nvidia believes 2027 will be another year of major growth. the stock trades at a cheap valuation relative to its growth rate, according to motley fool analysis.">
+      <span class="ticker-tag">NVDA</span><span class="title">Prediction: Nvidia Stock Price at End of 2026 — '2027 Will Be Another Year of Major Growth'</span>
+      <div class="description">Prediction: Nvidia Stock Price at End of 2026 — '2027 Will Be Another Year of Major Growth' — Nvidia believes 2027 will be another year of major growth</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://intellectia.ai/blog/nvda-stock-forecast-2026" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="nvda nvidia stock forecast 2026: analyst price targets show 50%+ upside, ai growth drivers nvidia stock forecast for 2026: analyst price targets, ai growth drivers, and investment risks. expert predictions show 50%+ upside. 37 analysts consensus buy, target $298.">
+      <span class="ticker-tag">NVDA</span><span class="title">Nvidia Stock Forecast 2026: Analyst Price Targets Show 50%+ Upside, AI Growth Drivers</span>
+      <div class="description">Nvidia Stock Forecast 2026: Analyst Price Targets Show 50%+ Upside, AI Growth Drivers — NVIDIA stock forecast for 2026: Analyst price targets, AI growth drivers, and investment risks</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://finance.yahoo.com/markets/stocks/articles/expect-nvidia-stock-price-may-133634071.html" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="nvda nvidia stock holds 20-day ema after 8% pullback — bull flag forming with institutional inflows nvda holds the 20-day ema after an 8% pullback from april highs as a bull flag forms with institutional inflows backing the may setup.">
+      <span class="ticker-tag">NVDA</span><span class="title">Nvidia Stock Holds 20-Day EMA After 8% Pullback — Bull Flag Forming with Institutional Inflows</span>
+      <div class="description">Nvidia Stock Holds 20-Day EMA After 8% Pullback — Bull Flag Forming with Institutional Inflows — NVDA holds the 20-day EMA after an 8% pullback from April highs as a bull flag forms with institutional inflows backing the May setup.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.morningstar.com/stocks/why-microsoft-stock-is-worth-600" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="msft morningstar: why microsoft stock is worth $600 — ai investments, revenue growth, key risks morningstar analyst unpacks microsoft's ai investments, revenue growth potential, and biggest risks while making the case for a $600 fair value estimate.">
+      <span class="ticker-tag">MSFT</span><span class="title">Morningstar: Why Microsoft Stock Is Worth $600 — AI Investments, Revenue Growth, Key Risks</span>
+      <div class="description">Morningstar: Why Microsoft Stock Is Worth $600 — AI Investments, Revenue Growth, Key Risks — Morningstar analyst unpacks Microsoft's AI investments, revenue growth potential, and biggest risks while making the case for a $600 fair value estimate.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://finance.yahoo.com/markets/stocks/articles/microsoft-good-long-term-investment-001919832.html" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="msft microsoft stock surges 5.45% to $450.24 — 55 of 58 analysts rate buy or strong buy msft surged 5.45% on friday may 29. 55 of 58 analysts rate buy/strong buy with 3 holds and zero sell ratings. consensus target $565.">
+      <span class="ticker-tag">MSFT</span><span class="title">Microsoft Stock Surges 5.45% to $450.24 — 55 of 58 Analysts Rate Buy or Strong Buy</span>
+      <div class="description">Microsoft Stock Surges 5.45% to $450.24 — 55 of 58 Analysts Rate Buy or Strong Buy — MSFT surged 5.45% on Friday May 29</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.fool.com/investing/2026/05/04/microsoft-buy-avoid-growth-stock-may/" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="msft microsoft is a mess — is the magnificent seven stock a buy in 2026? msft has rallied from 2026 lows alongside magnificent seven peers nvda, googl. growth story intact but execution concerns persist.">
+      <span class="ticker-tag">MSFT</span><span class="title">Microsoft Is a Mess — Is the Magnificent Seven Stock a Buy in 2026?</span>
+      <div class="description">Microsoft Is a Mess — Is the Magnificent Seven Stock a Buy in 2026? — MSFT has rallied from 2026 lows alongside Magnificent Seven peers NVDA, GOOGL</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://bingx.com/en/learn/article/apple-aapl-stock-outlook-and-price-prediction-is-aapl-a-good-investment" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="aapl apple 2026 outlook: macbook neo growth or ai valuation trap? apple's 2026 trajectory represents a fundamental shift from luxury hardware vendor to diversified ai and mass-market infrastructure provider with the macbook neo launch.">
+      <span class="ticker-tag">AAPL</span><span class="title">Apple 2026 Outlook: MacBook Neo Growth or AI Valuation Trap?</span>
+      <div class="description">Apple 2026 Outlook: MacBook Neo Growth or AI Valuation Trap? — Apple's 2026 trajectory represents a fundamental shift from luxury hardware vendor to diversified AI and mass-market infrastructure provider with the MacBook Neo launch.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://capital.com/en-int/market-updates/apple-stock-forecast-04-05-2026" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="aapl apple q2 2026 earnings in focus — recovering sharply from april 2025 tariff-driven low near $168 aapl trading at $269.05, recovering sharply from april 2025 tariff-driven low near $168. q2 2026 earnings are the key catalyst.">
+      <span class="ticker-tag">AAPL</span><span class="title">Apple Q2 2026 Earnings in Focus — Recovering Sharply from April 2025 Tariff-Driven Low Near $168</span>
+      <div class="description">Apple Q2 2026 Earnings in Focus — Recovering Sharply from April 2025 Tariff-Driven Low Near $168 — AAPL trading at $269.05, recovering sharply from April 2025 tariff-driven low near $168</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://finance.yahoo.com/news/why-amazon-stock-could-have-nearly-50-upside-in-2026-131405626.html" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="amzn amazon could have nearly 50% upside in 2026 — 96% of analysts rate strong buy/buy 67 sell-side analysts cover amazon — 96% rate strong buy or buy. average price target $295, implying nearly 50% upside.">
+      <span class="ticker-tag">AMZN</span><span class="title">Amazon Could Have Nearly 50% Upside in 2026 — 96% of Analysts Rate Strong Buy/Buy</span>
+      <div class="description">Amazon Could Have Nearly 50% Upside in 2026 — 96% of Analysts Rate Strong Buy/Buy — 67 sell-side analysts cover Amazon — 96% rate Strong Buy or Buy</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.reddit.com/r/ValueInvesting/comments/1szejvv/meta_q1_2026_earnings_massive_beat_but_market/" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="meta meta q1 2026 earnings: massive beat but market punishes ai capex — capex raised to $125-145b meta beat q1 earnings massively but stock fell -5% to -6% after-hours as 2026 capex guidance was raised to $125-145 billion — significantly above expectations.">
+      <span class="ticker-tag">META</span><span class="title">META Q1 2026 Earnings: Massive Beat but Market Punishes AI Capex — CapEx Raised to $125-145B</span>
+      <div class="description">META Q1 2026 Earnings: Massive Beat but Market Punishes AI Capex — CapEx Raised to $125-145B — META beat Q1 earnings massively but stock fell -5% to -6% after-hours as 2026 CapEx guidance was raised to $125-145 billion — significantly above expect...</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Equities" href="https://www.tradingkey.com/analysis/stocks/us-stocks/261861860-us-stock-meta-platforms-price-forecast-ai-facebook-instagram-whatsapp-tradingkey" target="_blank" rel="noopener" 
+                 data-category="Equities" data-search="meta meta stock forecast: 38 analysts consensus buy, price target $839 — ai-driven efficiency 38 analysts consensus buy. price targets $825-$880 citing ai-driven efficiency. long-term prospects include custom silicon and ai monetization.">
+      <span class="ticker-tag">META</span><span class="title">Meta Stock Forecast: 38 Analysts Consensus Buy, Price Target $839 — AI-Driven Efficiency</span>
+      <div class="description">Meta Stock Forecast: 38 Analysts Consensus Buy, Price Target $839 — AI-Driven Efficiency — 38 analysts consensus Buy. Price targets $825-$880 citing AI-driven efficiency. Long-term prospects include custom silicon and AI monetization.</div>
+      <div class="meta">web_search &middot; Equities</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://www.cnbc.com/2026/05/22/kevin-warshs-real-fed-regime-change-may-happen-deep-inside-wall-streets-plumbing.html" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="none kevin warsh's real fed 'regime change' may happen deep inside wall street's plumbing new fed chair kevin warsh's regime change may fundamentally alter how the fed manages its balance sheet and interacts with wall street's funding markets.">
+      <span class="title">Kevin Warsh's Real Fed 'Regime Change' May Happen Deep Inside Wall Street's Plumbing</span>
+      <div class="description">Kevin Warsh's Real Fed 'Regime Change' May Happen Deep Inside Wall Street's Plumbing — New Fed Chair Kevin Warsh's regime change may fundamentally alter how the Fed manages its balance sheet and interacts with Wall Street's funding markets.</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="none fed holds interest rates steady amid energy shock, disagreements on messaging federal reserve holds interest rates steady amid energy shock with internal disagreements on forward guidance messaging. may 1, 2026 decision.">
+      <span class="title">Fed Holds Interest Rates Steady Amid Energy Shock, Disagreements on Messaging</span>
+      <div class="description">Fed Holds Interest Rates Steady Amid Energy Shock, Disagreements on Messaging — Federal Reserve holds interest rates steady amid energy shock with internal disagreements on forward guidance messaging</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://www.investopedia.com/what-to-expect-from-the-fed-in-2026-11875776" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="none investopedia: fed heads into 2026 divided — new trump-appointed chair tests policy consensus the fed heads into 2026 divided over rate cuts as mixed economic signals and a new trump-appointed chair (kevin warsh) test policy consensus.">
+      <span class="title">Investopedia: Fed Heads into 2026 Divided — New Trump-Appointed Chair Tests Policy Consensus</span>
+      <div class="description">Investopedia: Fed Heads into 2026 Divided — New Trump-Appointed Chair Tests Policy Consensus — The Fed heads into 2026 divided over rate cuts as mixed economic signals and a new Trump-appointed chair (Kevin Warsh) test policy consensus.</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://www.ishares.com/us/insights/fed-outlook-2026-interest-rate-forecast" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="none blackrock fed outlook: rate forecasts and fixed income strategies for 2026 fomc dot plot projections as of december 2025. jerome powell's term expires may 15, 2026 — new leadership brings policy uncertainty.">
+      <span class="title">BlackRock Fed Outlook: Rate Forecasts and Fixed Income Strategies for 2026</span>
+      <div class="description">BlackRock Fed Outlook: Rate Forecasts and Fixed Income Strategies for 2026 — FOMC dot plot projections as of December 2025</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://www.goldmansachs.com/insights/outlooks/2026-outlooks" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="none goldman sachs 2026 outlook: sturdy global growth with non-recessionary fed cuts gs research remains constructive on equities for 2026 as earnings growth continues, but tensions with 'hot valuations' may increase volatility.">
+      <span class="title">Goldman Sachs 2026 Outlook: Sturdy Global Growth with Non-Recessionary Fed Cuts</span>
+      <div class="description">Goldman Sachs 2026 Outlook: Sturdy Global Growth with Non-Recessionary Fed Cuts — GS Research remains constructive on equities for 2026 as earnings growth continues, but tensions with 'hot valuations' may increase volatility.</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://www.cnbc.com/2026/05/02/kevin-warsh-federal-reserve-interest-rates-bonds-fixed-income.html" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="none cnbc: bonds have more pressing issue than jamie dimon credit crisis warning risk in credit markets has received significant attention in 2026 — from private credit stress fears to jamie dimon warning about systemic risks.">
+      <span class="title">CNBC: Bonds Have More Pressing Issue Than Jamie Dimon Credit Crisis Warning</span>
+      <div class="description">CNBC: Bonds Have More Pressing Issue Than Jamie Dimon Credit Crisis Warning — Risk in credit markets has received significant attention in 2026 — from private credit stress fears to Jamie Dimon warning about systemic risks.</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://boomers-daily.com/2026/05/23/barrons-magazine-may-25-2026-preview/" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="none barron's may 25 edition preview: largest us ipos tend to underperform; bond yields in focus the largest u.s. ipos tend to underperform the market with a non-insignificant share delivering negative returns. bond yields remain a key theme.">
+      <span class="title">Barron's May 25 Edition Preview: Largest US IPOs Tend to Underperform; Bond Yields in Focus</span>
+      <div class="description">Barron's May 25 Edition Preview: Largest US IPOs Tend to Underperform; Bond Yields in Focus — The largest U.S. IPOs tend to underperform the market with a non-insignificant share delivering negative returns. Bond yields remain a key theme.</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Rates" href="https://www.chase.com/personal/investments/mid-year-outlook" target="_blank" rel="noopener" 
+                 data-category="Rates" data-search="jpm j.p. morgan 2026 mid-year outlook: promise and pressure — ai, fragmentation, inflation j.p. morgan wealth management's mid-year 2026 outlook highlights pressure points and bright spots for investors in a fast-moving world shaped by ai, fragmentation and inflation.">
+      <span class="ticker-tag">JPM</span><span class="title">J.P. Morgan 2026 Mid-Year Outlook: Promise and Pressure — AI, Fragmentation, Inflation</span>
+      <div class="description">J.P. Morgan 2026 Mid-Year Outlook: Promise and Pressure — AI, Fragmentation, Inflation — J.P. Morgan Wealth Management's Mid-Year 2026 Outlook highlights pressure points and bright spots for investors in a fast-moving world shaped by AI, fragmenta...</div>
+      <div class="meta">web_search &middot; Rates</div>
+    </a>
+    <a class="article-card cat-Macro" href="https://www.morganstanley.com/Themes/outlooks" target="_blank" rel="noopener" 
+                 data-category="Macro" data-search="none morgan stanley 2026 outlook: real gdp growth at 2.25%, rising to 2.5% in 2027 momentum expected to continue and broaden out. u.s. real gdp growth forecast at ~2.25% in 2026, rising to ~2.5% in 2027 — up from 2.1% in 2025.">
+      <span class="title">Morgan Stanley 2026 Outlook: Real GDP Growth at 2.25%, Rising to 2.5% in 2027</span>
+      <div class="description">Morgan Stanley 2026 Outlook: Real GDP Growth at 2.25%, Rising to 2.5% in 2027 — Momentum expected to continue and broaden out</div>
+      <div class="meta">web_search &middot; Macro</div>
+    </a>
+    <a class="article-card cat-Macro" href="https://seekingalpha.com/article/4906058-global-economic-outlook-may-2026" target="_blank" rel="noopener" 
+                 data-category="Macro" data-search="none seeking alpha global economic outlook: gdp growth forecast cut to 2.2% from 2.9% global real gdp growth for 2026 now forecast at 2.2%, down from 2.9% in february, with further downside risk if oil supply disruptions persist.">
+      <span class="title">Seeking Alpha Global Economic Outlook: GDP Growth Forecast Cut to 2.2% from 2.9%</span>
+      <div class="description">Seeking Alpha Global Economic Outlook: GDP Growth Forecast Cut to 2.2% from 2.9% — Global real GDP growth for 2026 now forecast at 2.2%, down from 2.9% in February, with further downside risk if oil supply disruptions persist.</div>
+      <div class="meta">web_search &middot; Macro</div>
+    </a>
+    <a class="article-card cat-Macro" href="https://www.reuters.com/world/india/gold-slips-oil-strength-interest-rate-worries-dampen-appeal-2026-05-22/" target="_blank" rel="noopener" 
+                 data-category="Macro" data-search="none gold on track for second weekly loss as rising oil prices drive rate hike fears gold falls 1%. markets pricing 58% chance of at least one us rate hike by end-2026. us consumer sentiment plunges to record low.">
+      <span class="title">Gold on Track for Second Weekly Loss as Rising Oil Prices Drive Rate Hike Fears</span>
+      <div class="description">Gold on Track for Second Weekly Loss as Rising Oil Prices Drive Rate Hike Fears — Gold falls 1%. Markets pricing 58% chance of at least one US rate hike by end-2026. US consumer sentiment plunges to record low.</div>
+      <div class="meta">web_search &middot; Macro</div>
+    </a>
+    <a class="article-card cat-Macro" href="https://market.news/global-commodities-outlook-may-2026-6-markets-key-price-calls" target="_blank" rel="noopener" 
+                 data-category="Macro" data-search="none global commodities outlook may 2026: 6 markets, key price calls — crude oil, gold, copper six commodity price forecasts for mid-2026 including crude oil, gold, and copper with expert analysis and investment implications.">
+      <span class="title">Global Commodities Outlook May 2026: 6 Markets, Key Price Calls — Crude Oil, Gold, Copper</span>
+      <div class="description">Global Commodities Outlook May 2026: 6 Markets, Key Price Calls — Crude Oil, Gold, Copper — Six commodity price forecasts for mid-2026 including crude oil, gold, and copper with expert analysis and investment implications.</div>
+      <div class="meta">web_search &middot; Macro</div>
+    </a>
+    <a class="article-card cat-Macro" href="https://www.goldmansachs.com/pdfs/insights/goldman-sachs-research/2026-outlooks/CommoditiesOutlook2026.pdf" target="_blank" rel="noopener" 
+                 data-category="Macro" data-search="none goldman sachs 2026 commodities outlook: ride the power race and supply waves commodity indices delivered strong total returns in 2025 (bcom 15%). industrial and energy commodities lead on electrification and supply constraints.">
+      <span class="title">Goldman Sachs 2026 Commodities Outlook: Ride the Power Race and Supply Waves</span>
+      <div class="description">Goldman Sachs 2026 Commodities Outlook: Ride the Power Race and Supply Waves — Commodity indices delivered strong total returns in 2025 (BCOM 15%)</div>
+      <div class="meta">web_search &middot; Macro</div>
+    </a>
+    <a class="article-card cat-Macro" href="https://seekingalpha.com/article/4909871-aaii-sentiment-survey-optimism-reappears" target="_blank" rel="noopener" 
+                 data-category="Macro" data-search="none aaii sentiment survey may 28: bullish rises to 35.6%, bearish still elevated at 41.9% bullish sentiment increased 3.8pp to 35.6%. neutral fell 2.1pp to 22.6%. bearish decreased 1.8pp to 41.9% — still elevated but optimism reappearing.">
+      <span class="title">AAII Sentiment Survey May 28: Bullish Rises to 35.6%, Bearish Still Elevated at 41.9%</span>
+      <div class="description">AAII Sentiment Survey May 28: Bullish Rises to 35.6%, Bearish Still Elevated at 41.9% — Bullish sentiment increased 3.8pp to 35.6%</div>
+      <div class="meta">web_search &middot; Macro</div>
+    </a>
+    <a class="article-card cat-FX" href="https://www.blackrock.com/institutions/en-us/insights/2026-macro-outlook" target="_blank" rel="noopener" 
+                 data-category="FX" data-search="none blackrock 2026 macro outlook: 'patience' — goldilocks mindset meets macro risk divergence global risk assets embrace a goldilocks mindset toward obbba tax cuts, european rearmament, usd weakness, and ai capex. but below-surface macro risk offers rich opportunity set.">
+      <span class="title">BlackRock 2026 Macro Outlook: 'Patience' — Goldilocks Mindset Meets Macro Risk Divergence</span>
+      <div class="description">BlackRock 2026 Macro Outlook: 'Patience' — Goldilocks Mindset Meets Macro Risk Divergence — Global risk assets embrace a Goldilocks mindset toward OBBBA tax cuts, European rearmament, USD weakness, and AI capex</div>
+      <div class="meta">web_search &middot; FX</div>
+    </a>
+    <a class="article-card cat-FX" href="https://www.forex.com/en/news-and-analysis/forex-seasonality-may-2026-will-the-dollar-bounce-back-after-a-rough-april/" target="_blank" rel="noopener" 
+                 data-category="FX" data-search="none forex seasonality may 2026: will the dollar bounce back after rough april? historically may is the second-weakest month for eur/usd with -0.6% average return over 50+ years. dollar positioning under scrutiny.">
+      <span class="title">Forex Seasonality May 2026: Will the Dollar Bounce Back After Rough April?</span>
+      <div class="description">Forex Seasonality May 2026: Will the Dollar Bounce Back After Rough April? — Historically May is the second-weakest month for EUR/USD with -0.6% average return over 50+ years</div>
+      <div class="meta">web_search &middot; FX</div>
+    </a>
+    <a class="article-card cat-FX" href="https://finseta.com/weekly-market-report-26th-may-2026/" target="_blank" rel="noopener" 
+                 data-category="FX" data-search="none sterling gains as stagflation concerns linger — gbp/usd tests 1.35 gbp/usd rose ~0.5% on monday, briefly testing 1.35 despite uk bank holiday. gbp/eur pushed towards 1.16 despite weaker uk data.">
+      <span class="title">Sterling Gains as Stagflation Concerns Linger — GBP/USD Tests 1.35</span>
+      <div class="description">Sterling Gains as Stagflation Concerns Linger — GBP/USD Tests 1.35 — GBP/USD rose ~0.5% on Monday, briefly testing 1.35 despite UK bank holiday</div>
+      <div class="meta">web_search &middot; FX</div>
+    </a>
+    <a class="article-card cat-FX" href="https://www.dailyforex.com/forex-technical-analysis/2026/05/weekly-forex-forecast-24th-to-29th-may-2026/245580" target="_blank" rel="noopener" 
+                 data-category="FX" data-search="none dailyforex: risk assets likely to surge as memorandum nears signing — aud/usd, aud/jpy rises expected peace memorandum expected to send stock markets and risk assets higher, yields and crude oil lower. aud/usd and aud/jpy likely to see firm rises.">
+      <span class="title">DailyForex: Risk Assets Likely to Surge as Memorandum Nears Signing — AUD/USD, AUD/JPY Rises Expected</span>
+      <div class="description">DailyForex: Risk Assets Likely to Surge as Memorandum Nears Signing — AUD/USD, AUD/JPY Rises Expected — Peace memorandum expected to send stock markets and risk assets higher, yields and crude oil lower</div>
+      <div class="meta">web_search &middot; FX</div>
+    </a>
+    <a class="article-card cat-FX" href="https://seekingalpha.com/article/4899308-amazons-trillion-dollar-blueprint-for-planetary-lead" target="_blank" rel="noopener" 
+                 data-category="FX" data-search="amzn amazon's trillion-dollar blueprint for planetary lead — agentic economy thesis seeking alpha strong buy rating targeting $350 by late 2026 based on amazon's business evolution into an agentic economy.">
+      <span class="ticker-tag">AMZN</span><span class="title">Amazon's Trillion-Dollar Blueprint for Planetary Lead — Agentic Economy Thesis</span>
+      <div class="description">Amazon's Trillion-Dollar Blueprint for Planetary Lead — Agentic Economy Thesis — Seeking Alpha Strong Buy rating targeting $350 by late 2026 based on Amazon's business evolution into an Agentic Economy.</div>
+      <div class="meta">web_search &middot; FX</div>
+    </a>
+    <a class="article-card cat-Credit" href="https://www.carlyle.com/sites/default/files/2026-04/Carlyle_2026_WP_CreditMarketOutlook_V7.pdf" target="_blank" rel="noopener" 
+                 data-category="Credit" data-search="none carlyle 2026 credit market outlook: funding liquidity shock could mark a turn in the credit cycle q1-2026 funding liquidity shock could mark a turn in the credit cycle. reversal in fund flows could reduce competition and meaningfully improve the investment opportunity set.">
+      <span class="title">Carlyle 2026 Credit Market Outlook: Funding Liquidity Shock Could Mark a Turn in the Credit Cycle</span>
+      <div class="description">Carlyle 2026 Credit Market Outlook: Funding Liquidity Shock Could Mark a Turn in the Credit Cycle — Q1-2026 funding liquidity shock could mark a turn in the credit cycle</div>
+      <div class="meta">web_search &middot; Credit</div>
+    </a>
+    <a class="article-card cat-Credit" href="https://www.apolloacademy.com/2026-credit-outlook/" target="_blank" rel="noopener" 
+                 data-category="Credit" data-search="none apollo academy: 2026 credit outlook — from scarcity to selection, return of a buyer's market credit markets entering a meaningful regime shift. after years of scarcity, markets moving into higher-supply environment driven by ai investment and m&a revival.">
+      <span class="title">Apollo Academy: 2026 Credit Outlook — From Scarcity to Selection, Return of a Buyer's Market</span>
+      <div class="description">Apollo Academy: 2026 Credit Outlook — From Scarcity to Selection, Return of a Buyer's Market — Credit markets entering a meaningful regime shift</div>
+      <div class="meta">web_search &middot; Credit</div>
+    </a>
+    <a class="article-card cat-Credit" href="https://finance.yahoo.com/news/3-predictions-alphabet-2026-042000804.html" target="_blank" rel="noopener" 
+                 data-category="Credit" data-search="googl 3 predictions for alphabet in 2026: search moat strengthens, cloud growth key google search building strong competitive moat. google cloud growth will be determined by pace of ai adoption. 41 analysts consensus buy, target $389.">
+      <span class="ticker-tag">GOOGL</span><span class="title">3 Predictions for Alphabet in 2026: Search Moat Strengthens, Cloud Growth Key</span>
+      <div class="description">3 Predictions for Alphabet in 2026: Search Moat Strengthens, Cloud Growth Key — Google Search building strong competitive moat</div>
+      <div class="meta">web_search &middot; Credit</div>
+    </a>
+    <a class="article-card cat-Derivatives" href="https://www.wealthmanagement.com/etfs/16-investment-must-reads-for-this-week-may-26-2026-" target="_blank" rel="noopener" 
+                 data-category="Derivatives" data-search="none 16 investment must reads for this week (may 26, 2026) — polymarket, etfs, strategy polymarket launching prediction markets tied to private company milestones. key etf and strategy reads for the week.">
+      <span class="title">16 Investment Must Reads for This Week (May 26, 2026) — Polymarket, ETFs, Strategy</span>
+      <div class="description">16 Investment Must Reads for This Week (May 26, 2026) — Polymarket, ETFs, Strategy — Polymarket launching prediction markets tied to private company milestones</div>
+      <div class="meta">web_search &middot; Derivatives</div>
+    </a>
+  </div>
+  
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Auto-generated 2026-05-31 &middot; <a href="https://github.com/ZeusNightBolt/BoltNews" style="color: var(--accent)">GitHub</a>
+  </div>
+</div>
+
+<script>
+  function filterCategory(cat) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.article-card').forEach(card => {
+      if (cat === 'all' || card.dataset.category === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+  
+  function filterArticles() {
+    const query = document.getElementById('search').value.toLowerCase();
+    document.querySelectorAll('.article-card').forEach(card => {
+      const text = (card.dataset.search || '').toLowerCase();
+      card.style.display = text.includes(query) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>
