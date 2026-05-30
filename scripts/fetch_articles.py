@@ -2,7 +2,10 @@
 """
 BoltNews — Article Fetcher.
 Uses web_search + web_extract to find recent news for tickers and market topics.
-Outputs structured articles.json with headline, lead paragraph, source, timestamp.
+CRITICAL: ALL searches are constrained to the past 24 hours. Historical context 
+comes from markdown dumps, not from re-searching stale data.
+
+Outputs structured articles.json with headline, lead paragraph, source, fetched_at timestamp.
 """
 import argparse
 import json
@@ -11,23 +14,19 @@ import sys
 import time
 from datetime import datetime, timedelta, date
 from pathlib import Path
-from urllib.request import Request, urlopen
-from urllib.error import URLError, HTTPError
-from html.parser import HTMLParser
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 
-# Ticker batch size — search in groups to stay within rate limits
-TICKER_BATCH_SIZE = 5
-# Generic topic batch size
-TOPIC_BATCH_SIZE = 2
-# Delay between batches (seconds)
-BATCH_DELAY = 2
-# Max articles per ticker
+# === RECENCY — THE CRITICAL CONSTRAINT ===
+RECENCY_HOURS = 24  # NEVER pull articles older than this
+# Date suffix appended to every query to force search engine recency
+# Format: "May 31, 2026" — search engines respect date terms in queries
+
+# === Search config ===
 MAX_PER_TICKER = 3
-# Max articles per topic
 MAX_PER_TOPIC = 5
+BATCH_DELAY = 2
 
 # Non-market keywords to filter OUT
 BLOCKED_KEYWORDS = [
@@ -53,134 +52,85 @@ SIGNAL_KEYWORDS = [
     "short squeeze", "gamma squeeze", "options flow",
 ]
 
+# Stale-indicator keywords — if found in description, article is likely >24h old
+STALE_INDICATORS = [
+    "last week", "last month", "earlier this month", "earlier this year",
+    "Q1 2026", "Q4 2025", "January 2026", "February 2026", "March 2026",
+    "April 2026", "2025", "year-to-date", "YTD", 
+]
+
 
 def load_json(path: Path) -> dict:
     with open(path) as f:
         return json.load(f)
 
 
+def format_date_suffix(target_date: str) -> str:
+    """Convert '2026-05-31' → 'May 31, 2026' for search query suffix."""
+    d = datetime.fromisoformat(target_date)
+    return d.strftime("%B %d, %Y")  # "May 31, 2026"
+
+
 def is_market_relevant(text: str) -> bool:
     """Check if text is market-relevant (not blocked, has signal)."""
     text_lower = text.lower()
-    # Block list
     for kw in BLOCKED_KEYWORDS:
         if kw in text_lower:
             return False
-    # Signal check
     for kw in SIGNAL_KEYWORDS:
         if kw.lower() in text_lower:
             return True
-    # If it mentions ticker, money, markets — keep it
     if any(w in text_lower for w in ["$", "stock", "share", "bond", "yield", "rate", "market"]):
         return True
     return False
 
 
-def search_ticker_news(ticker: str, search_date: str) -> list[dict]:
-    """Search for recent news about a ticker using web_search tool."""
-    # This is called from the agent context — uses web_search tool
-    # When run standalone, uses subprocess to call hermes web search
-    # For cron execution, the agent itself performs these searches
-    queries = [
-        f"{ticker} stock news {search_date}",
-        f"{ticker} earnings report news",
-        f"{ticker} analyst upgrade downgrade",
-    ]
-    articles = []
-    for query in queries[:2]:  # Limit to 2 queries per ticker
-        try:
-            results = _do_web_search(query, limit=3)
-            for r in results:
-                if is_market_relevant(r.get("title", "") + " " + r.get("description", "")):
-                    articles.append({
-                        "ticker": ticker,
-                        "title": r.get("title", ""),
-                        "url": r.get("url", ""),
-                        "description": r.get("description", ""),
-                        "source": "web_search",
-                        "query": query,
-                    })
-        except Exception as e:
-            print(f"  WARN: search failed for {ticker}: {e}", file=sys.stderr)
-        time.sleep(1)
-    return articles[:MAX_PER_TICKER]
+def is_stale(text: str) -> bool:
+    """Check if text references stale/old time periods."""
+    text_lower = text.lower()
+    for indicator in STALE_INDICATORS:
+        if indicator.lower() in text_lower:
+            return True
+    return False
 
 
-def search_topic_news(topic: str, search_date: str) -> list[dict]:
-    """Search for market-wide news on a topic."""
-    queries = [
-        f"{topic} news {search_date}",
-        f"{topic} market impact {search_date}",
-    ]
-    articles = []
-    for query in queries[:1]:
-        try:
-            results = _do_web_search(query, limit=5)
-            for r in results:
-                if is_market_relevant(r.get("title", "") + " " + r.get("description", "")):
-                    articles.append({
-                        "ticker": None,
-                        "title": r.get("title", ""),
-                        "url": r.get("url", ""),
-                        "description": r.get("description", ""),
-                        "source": "web_search",
-                        "query": query,
-                        "topic": topic,
-                    })
-        except Exception as e:
-            print(f"  WARN: search failed for topic '{topic}': {e}", file=sys.stderr)
-        time.sleep(1)
-    return articles[:MAX_PER_TOPIC]
-
-
-def _do_web_search(query: str, limit: int = 5) -> list[dict]:
+def generate_search_plan(universe: dict, mode: str, target_date: str) -> dict:
     """
-    Perform web search. When running as a cron job agent, the agent
-    itself calls web_search tool. This module provides the query builder.
+    Generate search plan with 24-hour recency enforced.
     
-    When run standalone for testing, it generates the query plan.
+    Every query includes the target date to force search engine recency filtering.
+    The plan includes explicit instructions that results older than 24 hours
+    MUST be discarded.
     """
-    # In agent context: web_search(query, limit) returns results
-    # In standalone: return empty (queries are consumed by the agent)
-    return []  # Stub — agent fills this in during execution
-
-
-def generate_search_plan(universe: dict, mode: str) -> dict:
-    """Generate the search plan for the agent to execute."""
+    date_suffix = format_date_suffix(target_date)
     tickers = [t["ticker"] for t in universe["tickers"]]
     topics = universe.get("market_topics", [])
     is_weekend = mode == "weekend"
 
     if is_weekend:
-        # WEEKEND MODE: narrative, analysis, opinion focus
-        # Fewer tickers — focus on big names with major stories
         prioritized = sorted(
             universe["tickers"],
-            key=lambda t: (
-                t.get("market_cap", 0) or 0,  # Biggest companies get narrative coverage
-            ),
+            key=lambda t: (t.get("market_cap", 0) or 0),
             reverse=True,
-        )[:25]  # Top 25 by market cap
-
+        )[:25]
         weekend_topics = [
-            "stock market weekly recap analysis",
-            "markets outlook next week forecast",
-            "federal reserve policy analysis",
-            "global macro outlook weekly",
+            "stock market recap analysis",
+            "markets outlook forecast",
+            "federal reserve policy",
+            "global macro outlook",
             "credit markets outlook",
-            "currency markets weekly analysis",
-            "commodities weekly outlook",
-            "investing strategy weekend reading",
-            "hedge fund manager interview",
-            "Barron's weekend edition",
-            "FT Weekend markets analysis",
-            "Wall Street Week ahead preview",
-            "earnings week ahead calendar",
-            "economic data next week calendar",
+            "currency markets analysis",
+            "commodities outlook",
+            "investing strategy",
+            "hedge fund manager",
+            "Barron's markets",
+            "Wall Street week ahead",
+            "earnings week ahead",
+            "economic data next week",
             "investor sentiment survey",
+            "markets weekend reading",
         ]
     else:
-        # WEEKDAY MODE: breaking news, intraday data, earnings
         prioritized = sorted(
             universe["tickers"],
             key=lambda t: (
@@ -189,13 +139,22 @@ def generate_search_plan(universe: dict, mode: str) -> dict:
                 t.get("annualized_vol", 0) or 0,
             ),
             reverse=True,
-        )[:50]  # Focus on top 50 highest-signal tickers
-
+        )[:50]
         weekend_topics = topics[:15]
 
     plan = {
         "mode": mode,
         "is_weekend": is_weekend,
+        "target_date": target_date,
+        "date_suffix": date_suffix,
+        "recency_hours": RECENCY_HOURS,
+        "recency_warning": (
+            f"AGENT INSTRUCTION: Only accept articles published within the past "
+            f"{RECENCY_HOURS} hours (since ~{target_date}). "
+            f"All search queries include '{date_suffix}' to enforce recency. "
+            f"DO NOT include articles from earlier dates. Historical context "
+            f"is stored in markdown dumps — this pipeline is for NEW content only."
+        ),
         "generated": datetime.now().isoformat(),
         "total_tickers": len(tickers),
         "prioritized_tickers": [t["ticker"] for t in prioritized],
@@ -203,35 +162,38 @@ def generate_search_plan(universe: dict, mode: str) -> dict:
         "search_queries": [],
     }
 
-    # Build ticker queries
+    # Build ticker queries — ALL suffixed with the target date
     for t in prioritized:
+        ticker = t["ticker"]
+        industry = t.get("industry", "")
+        
         if is_weekend:
             plan["search_queries"].append({
                 "type": "ticker",
-                "ticker": t["ticker"],
+                "ticker": ticker,
                 "name": t["name"],
                 "queries": [
-                    f"{t['ticker']} long term outlook analysis",
-                    f"{t['ticker']} {t.get('industry', '')} industry trends",
+                    f"{ticker} stock news {date_suffix}",
+                    f"{ticker} {industry} analysis {date_suffix}" if industry else f"{ticker} analysis {date_suffix}",
                 ],
             })
         else:
             plan["search_queries"].append({
                 "type": "ticker",
-                "ticker": t["ticker"],
+                "ticker": ticker,
                 "name": t["name"],
                 "queries": [
-                    f"{t['ticker']} stock news",
-                    f"{t['ticker']} {t.get('industry', '')} news",
+                    f"{ticker} stock news today {date_suffix}",
+                    f"{ticker} {industry} news {date_suffix}" if industry else f"{ticker} news {date_suffix}",
                 ],
             })
 
-    # Build topic queries
+    # Build topic queries — ALL suffixed with the target date
     for topic in weekend_topics:
         plan["search_queries"].append({
             "type": "topic",
             "topic": topic,
-            "queries": [topic],
+            "queries": [f"{topic} {date_suffix}"],
         })
 
     return plan
@@ -243,45 +205,50 @@ def main():
     parser.add_argument("--universe", type=Path, required=True)
     parser.add_argument("--sources", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--date", type=str, required=True)
-    parser.add_argument("--plan-only", action="store_true", help="Generate search plan, don't search")
+    parser.add_argument("--date", type=str, required=True,
+                        help="Target date (YYYY-MM-DD). ALL queries constrained to this date's 24h window.")
+    parser.add_argument("--plan-only", action="store_true",
+                        help="Generate search plan, don't search")
     args = parser.parse_args()
-    
+
     universe = load_json(args.universe)
-    
+
     if args.plan_only:
-        plan = generate_search_plan(universe, args.mode)
+        plan = generate_search_plan(universe, args.mode, args.date)
         with open(args.output, "w") as f:
             json.dump(plan, f, indent=2, default=str)
         print(f"Search plan saved to {args.output}")
+        print(f"  Date constraint: {plan['date_suffix']} ({plan['recency_hours']}h window)")
         print(f"  Prioritized tickers: {len(plan['prioritized_tickers'])}")
         print(f"  Topics: {len(plan['topics'])}")
         print(f"  Total queries: {len(plan['search_queries'])}")
         return
-    
-    # Generate plan and save as article placeholders
-    plan = generate_search_plan(universe, args.mode)
-    
-    # In cron/agent mode, the articles are populated by the agent.
-    # Save the plan as the output — agent enriches it with actual results.
+
+    # Generate plan
+    plan = generate_search_plan(universe, args.mode, args.date)
+
     output = {
         "mode": args.mode,
         "date": args.date,
+        "date_suffix": plan["date_suffix"],
+        "recency_hours": RECENCY_HOURS,
         "generated": datetime.now().isoformat(),
         "plan": plan,
-        "articles": [],  # Populated by agent during cron execution
+        "articles": [],
         "stats": {
             "tickers_searched": 0,
             "topics_searched": 0,
             "articles_found": 0,
             "articles_filtered": 0,
+            "articles_stale_rejected": 0,
         },
     }
-    
+
     with open(args.output, "w") as f:
         json.dump(output, f, indent=2, default=str)
-    
+
     print(f"Article fetch plan saved to {args.output}")
+    print(f"  Date constraint: {plan['date_suffix']}")
     print(f"  Ready for agent execution: {len(plan['search_queries'])} searches queued")
 
 

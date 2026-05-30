@@ -1,0 +1,386 @@
+{
+  "mode": "weekend",
+  "is_weekend": true,
+  "target_date": "2026-05-31",
+  "date_suffix": "May 31, 2026",
+  "recency_hours": 24,
+  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 24 hours (since ~2026-05-31). All search queries include 'May 31, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
+  "generated": "2026-05-30T14:18:12.179408",
+  "total_tickers": 148,
+  "prioritized_tickers": [
+    "NVDA",
+    "GOOGL",
+    "GOOG",
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "AVGO",
+    "META",
+    "TSLA",
+    "MU",
+    "WMT",
+    "LLY",
+    "AMD",
+    "JPM",
+    "XOM",
+    "V",
+    "INTC",
+    "JNJ",
+    "ORCL",
+    "CSCO",
+    "COST",
+    "MA",
+    "CAT",
+    "LRCX",
+    "ABBV"
+  ],
+  "topics": [
+    "stock market recap analysis",
+    "markets outlook forecast",
+    "federal reserve policy",
+    "global macro outlook",
+    "credit markets outlook",
+    "currency markets analysis",
+    "commodities outlook",
+    "investing strategy",
+    "hedge fund manager",
+    "Barron's markets",
+    "Wall Street week ahead",
+    "earnings week ahead",
+    "economic data next week",
+    "investor sentiment survey",
+    "markets weekend reading"
+  ],
+  "search_queries": [
+    {
+      "type": "ticker",
+      "ticker": "NVDA",
+      "name": "NVIDIA CORP",
+      "queries": [
+        "NVDA stock news May 31, 2026",
+        "NVDA Semiconductors analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "GOOGL",
+      "name": "ALPHABET INC-A",
+      "queries": [
+        "GOOGL stock news May 31, 2026",
+        "GOOGL Internet Content & Information analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "GOOG",
+      "name": "ALPHABET INC-C",
+      "queries": [
+        "GOOG stock news May 31, 2026",
+        "GOOG Internet Content & Information analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AAPL",
+      "name": "APPLE INC",
+      "queries": [
+        "AAPL stock news May 31, 2026",
+        "AAPL Consumer Electronics analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MSFT",
+      "name": "MICROSOFT CORP",
+      "queries": [
+        "MSFT stock news May 31, 2026",
+        "MSFT Software - Infrastructure analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AMZN",
+      "name": "AMAZON.COM INC",
+      "queries": [
+        "AMZN stock news May 31, 2026",
+        "AMZN Internet Retail analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AVGO",
+      "name": "BROADCOM INC",
+      "queries": [
+        "AVGO stock news May 31, 2026",
+        "AVGO Semiconductors analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "META",
+      "name": "META PLATFORMS-A",
+      "queries": [
+        "META stock news May 31, 2026",
+        "META Internet Content & Information analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "TSLA",
+      "name": "TESLA INC",
+      "queries": [
+        "TSLA stock news May 31, 2026",
+        "TSLA Auto Manufacturers analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MU",
+      "name": "MICRON TECH",
+      "queries": [
+        "MU stock news May 31, 2026",
+        "MU Semiconductors analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "WMT",
+      "name": "WALMART INC",
+      "queries": [
+        "WMT stock news May 31, 2026",
+        "WMT Discount Stores analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "LLY",
+      "name": "ELI LILLY & CO",
+      "queries": [
+        "LLY stock news May 31, 2026",
+        "LLY Drug Manufacturers - General analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AMD",
+      "name": "ADV MICRO DEVICE",
+      "queries": [
+        "AMD stock news May 31, 2026",
+        "AMD Semiconductors analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "JPM",
+      "name": "JPMORGAN CHASE",
+      "queries": [
+        "JPM stock news May 31, 2026",
+        "JPM Banks - Diversified analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "XOM",
+      "name": "EXXON MOBIL CORP",
+      "queries": [
+        "XOM stock news May 31, 2026",
+        "XOM Oil & Gas Integrated analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "V",
+      "name": "VISA INC-CLASS A",
+      "queries": [
+        "V stock news May 31, 2026",
+        "V Credit Services analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "INTC",
+      "name": "INTEL CORP",
+      "queries": [
+        "INTC stock news May 31, 2026",
+        "INTC Semiconductors analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "JNJ",
+      "name": "JOHNSON&JOHNSON",
+      "queries": [
+        "JNJ stock news May 31, 2026",
+        "JNJ Drug Manufacturers - General analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ORCL",
+      "name": "ORACLE CORP",
+      "queries": [
+        "ORCL stock news May 31, 2026",
+        "ORCL Software - Infrastructure analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CSCO",
+      "name": "CISCO SYSTEMS",
+      "queries": [
+        "CSCO stock news May 31, 2026",
+        "CSCO Communication Equipment analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "COST",
+      "name": "COSTCO WHOLESALE",
+      "queries": [
+        "COST stock news May 31, 2026",
+        "COST Discount Stores analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MA",
+      "name": "MASTERCARD INC-A",
+      "queries": [
+        "MA stock news May 31, 2026",
+        "MA Credit Services analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CAT",
+      "name": "CATERPILLAR INC",
+      "queries": [
+        "CAT stock news May 31, 2026",
+        "CAT Farm & Heavy Construction Machinery analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "LRCX",
+      "name": "LAM RESEARCH",
+      "queries": [
+        "LRCX stock news May 31, 2026",
+        "LRCX Semiconductor Equipment & Materials analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ABBV",
+      "name": "ABBVIE INC",
+      "queries": [
+        "ABBV stock news May 31, 2026",
+        "ABBV Drug Manufacturers - General analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "stock market recap analysis",
+      "queries": [
+        "stock market recap analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "markets outlook forecast",
+      "queries": [
+        "markets outlook forecast May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "federal reserve policy",
+      "queries": [
+        "federal reserve policy May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "global macro outlook",
+      "queries": [
+        "global macro outlook May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "credit markets outlook",
+      "queries": [
+        "credit markets outlook May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "currency markets analysis",
+      "queries": [
+        "currency markets analysis May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "commodities outlook",
+      "queries": [
+        "commodities outlook May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "investing strategy",
+      "queries": [
+        "investing strategy May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "hedge fund manager",
+      "queries": [
+        "hedge fund manager May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Barron's markets",
+      "queries": [
+        "Barron's markets May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Wall Street week ahead",
+      "queries": [
+        "Wall Street week ahead May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "earnings week ahead",
+      "queries": [
+        "earnings week ahead May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "economic data next week",
+      "queries": [
+        "economic data next week May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "investor sentiment survey",
+      "queries": [
+        "investor sentiment survey May 31, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "markets weekend reading",
+      "queries": [
+        "markets weekend reading May 31, 2026"
+      ]
+    }
+  ]
+}
