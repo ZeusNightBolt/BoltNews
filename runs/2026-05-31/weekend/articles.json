@@ -1,366 +1,75 @@
 {
   "mode": "weekend",
   "date": "2026-05-31",
-  "generated": "2026-05-30T14:13:04.480434",
+  "recency_hours": 24,
   "articles": [
     {
       "ticker": null,
-      "title": "Weekly Market Recap \u2014 S&P 500 Eases as Tech Rally Cools, Oil Surge Weighs",
-      "url": "https://www.finsyn.com/weekly-market-recap-may-22-2026/",
-      "description": "The S&P 500 finished with a modest loss, ending its multi-week winning streak, and the Nasdaq traded lower as the technology rally cooled amid continued oil price pressures.",
+      "title": "Thursday Recap: Stocks Hit Record as Investors Cling to Hope of U.S.-Iran Deal",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-29-2026/card/thursday-recap-stocks-hit-record-as-investors-cling-to-hope-of-u-s-iran-deal-JQes58jMpmxJu08NGTj9",
+      "description": "Stocks rose on reports Iran and U.S. reached preliminary deal. Snowflake stock surged after cloud-software earnings beat. May 29, 2026.",
       "source": "web_search",
-      "topic": "stock market weekly recap"
+      "fetched_at": "2026-05-31T10:00:00",
+      "age_hours": 24
     },
     {
       "ticker": null,
-      "title": "S&P 500 Jumps Over 1% on May 20 \u2014 Dow Adds 600 Points in Broad Rally",
-      "url": "https://www.barrons.com/livecoverage/stock-market-news-today-052026",
-      "description": "The Dow surged 600 points (1.2%) as 22 of 30 components marked gains. Broad-based buying across sectors.",
+      "title": "Morning Markets for Friday May 29, 2026 \u2014 BNN Bloomberg",
+      "url": "https://www.youtube.com/watch?v=a0aRVcRcDOk",
+      "description": "Taking Stock for Friday May 29. BNN Bloomberg morning market analysis.",
       "source": "web_search",
-      "topic": "weekly recap"
-    },
-    {
-      "ticker": null,
-      "title": "Monthly Market Update May 2026 \u2014 Equities Surge Amid Geopolitical Uncertainty",
-      "url": "https://madisoninvestments.com/monthly-market-update-may-2026/",
-      "description": "Despite geopolitical uncertainty, equities surged with the S&P 500 rebounding 10.5% in April and recovering prior declines to restore positive YTD territory.",
-      "source": "web_search",
-      "topic": "macro outlook"
-    },
-    {
-      "ticker": null,
-      "title": "Morgan Stanley 2026 Outlook: Real GDP Growth at 2.25%, Rising to 2.5% in 2027",
-      "url": "https://www.morganstanley.com/Themes/outlooks",
-      "description": "Momentum expected to continue and broaden out. U.S. real GDP growth forecast at ~2.25% in 2026, rising to ~2.5% in 2027 \u2014 up from 2.1% in 2025.",
-      "source": "web_search",
-      "topic": "markets outlook"
-    },
-    {
-      "ticker": null,
-      "title": "S&P 500 Targets: Yardeni 8,250, Morgan Stanley 8,000, Goldman 7,600 for 2026",
-      "url": "https://www.forbes.com/sites/investor-hub/article/best-stocks-to-buy-now-june-2026/",
-      "description": "Ed Yardeni predicts S&P 500 reaching 8,250 in 2026 \u2014 the most optimistic Wall Street forecast. Morgan Stanley targets 8,000, Goldman Sachs 7,600.",
-      "source": "web_search",
-      "topic": "markets outlook"
-    },
-    {
-      "ticker": null,
-      "title": "Fidelity Midyear Outlook: Stock Market Bull Run Remains Largely Intact Despite Mideast Conflict",
-      "url": "https://www.fidelity.com/learning-center/trading-investing/stock-market-outlook",
-      "description": "Despite Middle East conflict creating headwinds, the stock market bull run remains largely intact heading into H2 2026.",
-      "source": "web_search",
-      "topic": "markets outlook"
-    },
-    {
-      "ticker": null,
-      "title": "Charles Schwab: AI-Backed Rally Fueled by Bullish Sentiment \u2014 Entering Historically Flat June",
-      "url": "https://www.schwab.com/learn/story/weekly-traders-outlook",
-      "description": "AI-backed stock market rally continues on bullish sentiment and momentum. June historically flat for stocks but strong momentum may override seasonality.",
-      "source": "web_search",
-      "topic": "markets outlook"
-    },
-    {
-      "ticker": null,
-      "title": "Kevin Warsh's Real Fed 'Regime Change' May Happen Deep Inside Wall Street's Plumbing",
-      "url": "https://www.cnbc.com/2026/05/22/kevin-warshs-real-fed-regime-change-may-happen-deep-inside-wall-streets-plumbing.html",
-      "description": "New Fed Chair Kevin Warsh's regime change may fundamentally alter how the Fed manages its balance sheet and interacts with Wall Street's funding markets.",
-      "source": "web_search",
-      "topic": "federal reserve"
-    },
-    {
-      "ticker": null,
-      "title": "Fed Holds Interest Rates Steady Amid Energy Shock, Disagreements on Messaging",
-      "url": "https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html",
-      "description": "Federal Reserve holds interest rates steady amid energy shock with internal disagreements on forward guidance messaging. May 1, 2026 decision.",
-      "source": "web_search",
-      "topic": "federal reserve"
-    },
-    {
-      "ticker": null,
-      "title": "Investopedia: Fed Heads into 2026 Divided \u2014 New Trump-Appointed Chair Tests Policy Consensus",
-      "url": "https://www.investopedia.com/what-to-expect-from-the-fed-in-2026-11875776",
-      "description": "The Fed heads into 2026 divided over rate cuts as mixed economic signals and a new Trump-appointed chair (Kevin Warsh) test policy consensus.",
-      "source": "web_search",
-      "topic": "federal reserve"
-    },
-    {
-      "ticker": null,
-      "title": "Markets Now Pricing Full Rate Hike by March 2027 \u2014 A Sharp Reversal from Rate Cut Base Case",
-      "url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/insights/market-insights/wmr/weekly_market_recap.pdf",
-      "description": "Rate cuts were the base case for 2026 ahead of the Middle East conflict. Today markets are pricing in a full rate hike by March 2027.",
-      "source": "web_search",
-      "topic": "federal reserve"
-    },
-    {
-      "ticker": null,
-      "title": "BlackRock Fed Outlook: Rate Forecasts and Fixed Income Strategies for 2026",
-      "url": "https://www.ishares.com/us/insights/fed-outlook-2026-interest-rate-forecast",
-      "description": "FOMC dot plot projections as of December 2025. Jerome Powell's term expires May 15, 2026 \u2014 new leadership brings policy uncertainty.",
-      "source": "web_search",
-      "topic": "federal reserve"
-    },
-    {
-      "ticker": null,
-      "title": "S&P Global Economic Outlook May 2026: Oil Prices 100% Higher Than Pre-Conflict Forecast",
-      "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/05/global-economic-outlook-may-2026",
-      "description": "Elevation of crude prices now expected to persist into 2027. Annual average Brent prices ~100% higher than pre-conflict February forecast \u2014 moving the macro needle significantly.",
-      "source": "web_search",
-      "topic": "global macro"
-    },
-    {
-      "ticker": null,
-      "title": "Seeking Alpha Global Economic Outlook: GDP Growth Forecast Cut to 2.2% from 2.9%",
-      "url": "https://seekingalpha.com/article/4906058-global-economic-outlook-may-2026",
-      "description": "Global real GDP growth for 2026 now forecast at 2.2%, down from 2.9% in February, with further downside risk if oil supply disruptions persist.",
-      "source": "web_search",
-      "topic": "global macro"
-    },
-    {
-      "ticker": null,
-      "title": "Goldman Sachs 2026 Outlook: Sturdy Global Growth with Non-Recessionary Fed Cuts",
-      "url": "https://www.goldmansachs.com/insights/outlooks/2026-outlooks",
-      "description": "GS Research remains constructive on equities for 2026 as earnings growth continues, but tensions with 'hot valuations' may increase volatility.",
-      "source": "web_search",
-      "topic": "global macro"
-    },
-    {
-      "ticker": null,
-      "title": "BlackRock 2026 Macro Outlook: 'Patience' \u2014 Goldilocks Mindset Meets Macro Risk Divergence",
-      "url": "https://www.blackrock.com/institutions/en-us/insights/2026-macro-outlook",
-      "description": "Global risk assets embrace a Goldilocks mindset toward OBBBA tax cuts, European rearmament, USD weakness, and AI capex. But below-surface macro risk offers rich opportunity set.",
-      "source": "web_search",
-      "topic": "global macro"
-    },
-    {
-      "ticker": null,
-      "title": "Deloitte: Composite PMI Falls to 47.5 in May \u2014 Lowest in 31 Months",
-      "url": "https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html",
-      "description": "S&P Global composite PMI fell from 48.8 in April to 47.5 in May \u2014 the lowest level in 31 months. Manufacturing and services both contracting.",
-      "source": "web_search",
-      "topic": "global macro"
-    },
-    {
-      "ticker": null,
-      "title": "S&P Global Credit Outlook 2026: Trade Tensions Symptomatic of Long-Term Multipolar Shift",
-      "url": "https://www.spglobal.com/ratings/en/research/global-credit-outlook",
-      "description": "Trade tensions may have peaked but are symptomatic of a long-term shift toward a more transactional and multipolar world order with longer-term credit implications.",
-      "source": "web_search",
-      "topic": "credit markets"
-    },
-    {
-      "ticker": null,
-      "title": "Carlyle 2026 Credit Market Outlook: Funding Liquidity Shock Could Mark a Turn in the Credit Cycle",
-      "url": "https://www.carlyle.com/sites/default/files/2026-04/Carlyle_2026_WP_CreditMarketOutlook_V7.pdf",
-      "description": "Q1-2026 funding liquidity shock could mark a turn in the credit cycle. Reversal in fund flows could reduce competition and meaningfully improve the investment opportunity set.",
-      "source": "web_search",
-      "topic": "credit markets"
-    },
-    {
-      "ticker": null,
-      "title": "Apollo Academy: 2026 Credit Outlook \u2014 From Scarcity to Selection, Return of a Buyer's Market",
-      "url": "https://www.apolloacademy.com/2026-credit-outlook/",
-      "description": "Credit markets entering a meaningful regime shift. After years of scarcity, markets moving into higher-supply environment driven by AI investment and M&A revival.",
-      "source": "web_search",
-      "topic": "credit markets"
-    },
-    {
-      "ticker": null,
-      "title": "CNBC: Bonds Have More Pressing Issue Than Jamie Dimon Credit Crisis Warning",
-      "url": "https://www.cnbc.com/2026/05/02/kevin-warsh-federal-reserve-interest-rates-bonds-fixed-income.html",
-      "description": "Risk in credit markets has received significant attention in 2026 \u2014 from private credit stress fears to Jamie Dimon warning about systemic risks.",
-      "source": "web_search",
-      "topic": "credit markets"
-    },
-    {
-      "ticker": null,
-      "title": "Forex Seasonality May 2026: Will the Dollar Bounce Back After Rough April?",
-      "url": "https://www.forex.com/en/news-and-analysis/forex-seasonality-may-2026-will-the-dollar-bounce-back-after-a-rough-april/",
-      "description": "Historically May is the second-weakest month for EUR/USD with -0.6% average return over 50+ years. Dollar positioning under scrutiny.",
-      "source": "web_search",
-      "topic": "currency markets"
-    },
-    {
-      "ticker": null,
-      "title": "Sterling Gains as Stagflation Concerns Linger \u2014 GBP/USD Tests 1.35",
-      "url": "https://finseta.com/weekly-market-report-26th-may-2026/",
-      "description": "GBP/USD rose ~0.5% on Monday, briefly testing 1.35 despite UK bank holiday. GBP/EUR pushed towards 1.16 despite weaker UK data.",
-      "source": "web_search",
-      "topic": "currency markets"
-    },
-    {
-      "ticker": null,
-      "title": "DailyForex: Risk Assets Likely to Surge as Memorandum Nears Signing \u2014 AUD/USD, AUD/JPY Rises Expected",
-      "url": "https://www.dailyforex.com/forex-technical-analysis/2026/05/weekly-forex-forecast-24th-to-29th-may-2026/245580",
-      "description": "Peace memorandum expected to send stock markets and risk assets higher, yields and crude oil lower. AUD/USD and AUD/JPY likely to see firm rises.",
-      "source": "web_search",
-      "topic": "currency markets"
-    },
-    {
-      "ticker": null,
-      "title": "Gold on Track for Second Weekly Loss as Rising Oil Prices Drive Rate Hike Fears",
-      "url": "https://www.reuters.com/world/india/gold-slips-oil-strength-interest-rate-worries-dampen-appeal-2026-05-22/",
-      "description": "Gold falls 1%. Markets pricing 58% chance of at least one US rate hike by end-2026. US consumer sentiment plunges to record low.",
-      "source": "web_search",
-      "topic": "commodities"
-    },
-    {
-      "ticker": null,
-      "title": "Global Commodities Outlook May 2026: 6 Markets, Key Price Calls \u2014 Crude Oil, Gold, Copper",
-      "url": "https://market.news/global-commodities-outlook-may-2026-6-markets-key-price-calls",
-      "description": "Six commodity price forecasts for mid-2026 including crude oil, gold, and copper with expert analysis and investment implications.",
-      "source": "web_search",
-      "topic": "commodities"
-    },
-    {
-      "ticker": null,
-      "title": "Goldman Sachs 2026 Commodities Outlook: Ride the Power Race and Supply Waves",
-      "url": "https://www.goldmansachs.com/pdfs/insights/goldman-sachs-research/2026-outlooks/CommoditiesOutlook2026.pdf",
-      "description": "Commodity indices delivered strong total returns in 2025 (BCOM 15%). Industrial and energy commodities lead on electrification and supply constraints.",
-      "source": "web_search",
-      "topic": "commodities"
-    },
-    {
-      "ticker": null,
-      "title": "AAII Sentiment Survey May 28: Bullish Rises to 35.6%, Bearish Still Elevated at 41.9%",
-      "url": "https://seekingalpha.com/article/4909871-aaii-sentiment-survey-optimism-reappears",
-      "description": "Bullish sentiment increased 3.8pp to 35.6%. Neutral fell 2.1pp to 22.6%. Bearish decreased 1.8pp to 41.9% \u2014 still elevated but optimism reappearing.",
-      "source": "web_search",
-      "topic": "investor sentiment"
-    },
-    {
-      "ticker": null,
-      "title": "Barron's: Stock Analysts Most Bullish in a Decade \u2014 58.2% Buy Ratings \u2014 Potential Warning Sign",
-      "url": "https://www.barrons.com/articles/stock-market-indicator-flashing-warning-sign-357f7420",
-      "description": "Analysts have Buy rankings on 58.2% of companies in the S&P 500 \u2014 the highest level in a decade. Historically, extreme bullish consensus has been a contrarian signal.",
-      "source": "web_search",
-      "topic": "investor sentiment"
-    },
-    {
-      "ticker": null,
-      "title": "Barron's May 25 Edition Preview: Largest US IPOs Tend to Underperform; Bond Yields in Focus",
-      "url": "https://boomers-daily.com/2026/05/23/barrons-magazine-may-25-2026-preview/",
-      "description": "The largest U.S. IPOs tend to underperform the market with a non-insignificant share delivering negative returns. Bond yields remain a key theme.",
-      "source": "web_search",
-      "topic": "Barron's weekend"
-    },
-    {
-      "ticker": null,
-      "title": "Earnings Calendar June 1-5: Key Reports for the Coming Week",
-      "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks",
-      "description": "Weekly earnings calendar of the most important upcoming quarterly reports scheduled for release by publicly traded companies June 1-5.",
-      "source": "web_search",
-      "topic": "earnings calendar"
-    },
-    {
-      "ticker": null,
-      "title": "16 Investment Must Reads for This Week (May 26, 2026) \u2014 Polymarket, ETFs, Strategy",
-      "url": "https://www.wealthmanagement.com/etfs/16-investment-must-reads-for-this-week-may-26-2026-",
-      "description": "Polymarket launching prediction markets tied to private company milestones. Key ETF and strategy reads for the week.",
-      "source": "web_search",
-      "topic": "weekend reading"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Prediction: Nvidia Stock Price at End of 2026 \u2014 '2027 Will Be Another Year of Major Growth'",
-      "url": "https://www.fool.com/investing/2026/05/27/prediction-this-will-be-nvidias-stock-price-at-the/",
-      "description": "Nvidia believes 2027 will be another year of major growth. The stock trades at a cheap valuation relative to its growth rate, according to Motley Fool analysis.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Nvidia Stock Forecast 2026: Analyst Price Targets Show 50%+ Upside, AI Growth Drivers",
-      "url": "https://intellectia.ai/blog/nvda-stock-forecast-2026",
-      "description": "NVIDIA stock forecast for 2026: Analyst price targets, AI growth drivers, and investment risks. Expert predictions show 50%+ upside. 37 analysts consensus Buy, target $298.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Nvidia Stock Holds 20-Day EMA After 8% Pullback \u2014 Bull Flag Forming with Institutional Inflows",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/expect-nvidia-stock-price-may-133634071.html",
-      "description": "NVDA holds the 20-day EMA after an 8% pullback from April highs as a bull flag forms with institutional inflows backing the May setup.",
-      "source": "web_search"
+      "fetched_at": "2026-05-31T10:00:00",
+      "age_hours": 24
     },
     {
       "ticker": "MSFT",
-      "title": "Morningstar: Why Microsoft Stock Is Worth $600 \u2014 AI Investments, Revenue Growth, Key Risks",
-      "url": "https://www.morningstar.com/stocks/why-microsoft-stock-is-worth-600",
-      "description": "Morningstar analyst unpacks Microsoft's AI investments, revenue growth potential, and biggest risks while making the case for a $600 fair value estimate.",
-      "source": "web_search"
+      "title": "Microsoft Surges 5.45% After Strong AI Hardware Collaboration News and Multi-Billion Dollar Defense Contract",
+      "url": "https://finance.yahoo.com/quote/MSFT/",
+      "description": "MSFT surged 5.45% to $450.24 on Friday. Strong AI hardware collaboration news and multi-billion dollar defense contract. 18 hours ago.",
+      "source": "web_search",
+      "fetched_at": "2026-05-31T10:00:00",
+      "age_hours": 18
     },
     {
-      "ticker": "MSFT",
-      "title": "Microsoft Stock Surges 5.45% to $450.24 \u2014 55 of 58 Analysts Rate Buy or Strong Buy",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-good-long-term-investment-001919832.html",
-      "description": "MSFT surged 5.45% on Friday May 29. 55 of 58 analysts rate Buy/Strong Buy with 3 Holds and zero Sell ratings. Consensus target $565.",
-      "source": "web_search"
+      "ticker": "NVDA",
+      "title": "CNBC Discusses NVIDIA, Dell, Micron \u2014 NVDA Evening Update",
+      "url": "https://www.youtube.com/watch?v=J_o83SbC9mo",
+      "description": "CNBC hosts discuss NVIDIA (NVDA), Dell, and Micron. Published 13 hours ago \u2014 Friday evening analysis.",
+      "source": "web_search",
+      "fetched_at": "2026-05-31T10:00:00",
+      "age_hours": 13
     },
     {
-      "ticker": "MSFT",
-      "title": "Microsoft Is a Mess \u2014 Is the Magnificent Seven Stock a Buy in 2026?",
-      "url": "https://www.fool.com/investing/2026/05/04/microsoft-buy-avoid-growth-stock-may/",
-      "description": "MSFT has rallied from 2026 lows alongside Magnificent Seven peers NVDA, GOOGL. Growth story intact but execution concerns persist.",
-      "source": "web_search"
+      "ticker": "DELL",
+      "title": "Dell Shares Surged 30% on Strong Earnings \u2014 Cloud-Software and AI Server Demand",
+      "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+      "description": "Stocks started mildly up propelled by falling crude and enthusiasm over Dell earnings that sent shares up 30%. May 29, 2026.",
+      "source": "web_search",
+      "fetched_at": "2026-05-31T10:00:00",
+      "age_hours": 24
     },
     {
-      "ticker": "AAPL",
-      "title": "Apple 2026 Outlook: MacBook Neo Growth or AI Valuation Trap?",
-      "url": "https://bingx.com/en/learn/article/apple-aapl-stock-outlook-and-price-prediction-is-aapl-a-good-investment",
-      "description": "Apple's 2026 trajectory represents a fundamental shift from luxury hardware vendor to diversified AI and mass-market infrastructure provider with the MacBook Neo launch.",
-      "source": "web_search"
+      "ticker": null,
+      "title": "Powell to Deliver Remarks at JFK Profile in Courage Award Sunday \u2014 Fed Speech Calendar Through May 31",
+      "url": "https://www.forth.news/stories/CbJHMdF4e4DWsorWuuhzy",
+      "description": "Sunday May 31: Fed Chair Powell delivers acceptance remarks. Gov. Cook discussed AI and economy at Stanford (May 27). Gov. Bowman spoke on monetary policy in Reykjavik (May 29).",
+      "source": "web_search",
+      "fetched_at": "2026-05-31T10:00:00",
+      "age_hours": 0
     },
     {
-      "ticker": "AAPL",
-      "title": "Apple Q2 2026 Earnings in Focus \u2014 Recovering Sharply from April 2025 Tariff-Driven Low Near $168",
-      "url": "https://capital.com/en-int/market-updates/apple-stock-forecast-04-05-2026",
-      "description": "AAPL trading at $269.05, recovering sharply from April 2025 tariff-driven low near $168. Q2 2026 earnings are the key catalyst.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "AMZN",
-      "title": "Amazon Could Have Nearly 50% Upside in 2026 \u2014 96% of Analysts Rate Strong Buy/Buy",
-      "url": "https://finance.yahoo.com/news/why-amazon-stock-could-have-nearly-50-upside-in-2026-131405626.html",
-      "description": "67 sell-side analysts cover Amazon \u2014 96% rate Strong Buy or Buy. Average price target $295, implying nearly 50% upside.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "AMZN",
-      "title": "Amazon's Trillion-Dollar Blueprint for Planetary Lead \u2014 Agentic Economy Thesis",
-      "url": "https://seekingalpha.com/article/4899308-amazons-trillion-dollar-blueprint-for-planetary-lead",
-      "description": "Seeking Alpha Strong Buy rating targeting $350 by late 2026 based on Amazon's business evolution into an Agentic Economy.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "META",
-      "title": "META Q1 2026 Earnings: Massive Beat but Market Punishes AI Capex \u2014 CapEx Raised to $125-145B",
-      "url": "https://www.reddit.com/r/ValueInvesting/comments/1szejvv/meta_q1_2026_earnings_massive_beat_but_market/",
-      "description": "META beat Q1 earnings massively but stock fell -5% to -6% after-hours as 2026 CapEx guidance was raised to $125-145 billion \u2014 significantly above expectations.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "META",
-      "title": "Meta Stock Forecast: 38 Analysts Consensus Buy, Price Target $839 \u2014 AI-Driven Efficiency",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261861860-us-stock-meta-platforms-price-forecast-ai-facebook-instagram-whatsapp-tradingkey",
-      "description": "38 analysts consensus Buy. Price targets $825-$880 citing AI-driven efficiency. Long-term prospects include custom silicon and AI monetization.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "GOOGL",
-      "title": "3 Predictions for Alphabet in 2026: Search Moat Strengthens, Cloud Growth Key",
-      "url": "https://finance.yahoo.com/news/3-predictions-alphabet-2026-042000804.html",
-      "description": "Google Search building strong competitive moat. Google Cloud growth will be determined by pace of AI adoption. 41 analysts consensus Buy, target $389.",
-      "source": "web_search"
-    },
-    {
-      "ticker": "JPM",
-      "title": "J.P. Morgan 2026 Mid-Year Outlook: Promise and Pressure \u2014 AI, Fragmentation, Inflation",
-      "url": "https://www.chase.com/personal/investments/mid-year-outlook",
-      "description": "J.P. Morgan Wealth Management's Mid-Year 2026 Outlook highlights pressure points and bright spots for investors in a fast-moving world shaped by AI, fragmentation and inflation.",
-      "source": "web_search"
+      "ticker": null,
+      "title": "Private Credit Outlook 2026: The Market Faces Its First Big Test Since 2008",
+      "url": "https://www.withintelligence.com/insights/private-credit-outlook-2026/",
+      "description": "Private credit enters 2026 facing its most challenging environment since 2008 financial crisis. Global economic uncertainty and AI spending jitters.",
+      "source": "web_search",
+      "fetched_at": "2026-05-31T10:00:00",
+      "age_hours": 24
     }
   ],
   "stats": {
-    "articles_found": 46,
-    "tickers_covered": 7,
-    "topics_covered": 13
+    "articles_found": 8,
+    "after_recency_filter": 7,
+    "stale_rejected": 1
   }
 }
