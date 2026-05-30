@@ -1,14 +1,127 @@
 #!/usr/bin/env python3.12
 """
 BoltNews — Dashboard Builder.
-Builds a self-contained GitHub-dark-style HTML dashboard with all articles.
-Categorized, searchable, mobile-responsive.
+Converts summary.md (the synthesized briefing) to a self-contained HTML page.
+GitHub-dark theme, mobile-responsive. Does NOT generate article cards — 
+that's the old headline-only format. The briefing IS the content.
 """
 import argparse
 import json
+import re
 import sys
 from datetime import date
 from pathlib import Path
+
+
+def md_to_html(md: str) -> str:
+    """Convert BoltNews markdown briefing to clean HTML."""
+    lines = md.split('\n')
+    html_lines = []
+    i = 0
+    
+    while i < len(lines):
+        line = lines[i]
+        
+        # Horizontal rule
+        if line.strip() == '---':
+            html_lines.append('<hr class="divider">')
+            i += 1
+            continue
+        
+        # Table: detect pipe-delimited rows
+        if '|' in line and line.strip().startswith('|'):
+            table_rows = []
+            while i < len(lines) and '|' in lines[i]:
+                table_rows.append(lines[i])
+                i += 1
+            html_lines.append(_build_table(table_rows))
+            continue
+        
+        # H1, H2, H3
+        if line.startswith('### '):
+            html_lines.append(f'<h3>{_inline_md(line[4:])}</h3>')
+        elif line.startswith('## '):
+            html_lines.append(f'<h2>{_inline_md(line[3:])}</h2>')
+        elif line.startswith('# '):
+            html_lines.append(f'<h1>{_inline_md(line[2:])}</h1>')
+        
+        # Unordered list
+        elif line.strip().startswith('- '):
+            list_items = []
+            while i < len(lines) and (lines[i].strip().startswith('- ') or lines[i].strip().startswith('  -')):
+                item = lines[i].strip()
+                if item.startswith('- '):
+                    item = item[2:]
+                elif item.startswith('  -'):
+                    item = item[3:]
+                list_items.append(f'<li>{_inline_md(item)}</li>')
+                i += 1
+            html_lines.append(f'<ul>{"".join(list_items)}</ul>')
+            continue
+        
+        # Bold text (standalone, not part of a header/list)
+        elif line.startswith('**') and line.endswith('**'):
+            html_lines.append(f'<p class="bold-line"><strong>{_inline_md(line[2:-2])}</strong></p>')
+        
+        # Empty lines
+        elif not line.strip():
+            pass  # skip
+        
+        # Blockquote
+        elif line.strip().startswith('> '):
+            quote_lines = []
+            while i < len(lines) and lines[i].strip().startswith('> '):
+                quote_lines.append(lines[i].strip()[2:])
+                i += 1
+            html_lines.append(f'<blockquote>{"<br>".join(_inline_md(q) for q in quote_lines)}</blockquote>')
+            continue
+        
+        else:
+            # Regular paragraph
+            html_lines.append(f'<p>{_inline_md(line)}</p>')
+        
+        i += 1
+    
+    return '\n'.join(html_lines)
+
+
+def _build_table(rows: list[str]) -> str:
+    """Build an HTML table from pipe-delimited rows."""
+    if len(rows) < 2:
+        return ''
+    
+    # Parse header and separator
+    headers = [c.strip() for c in rows[0].split('|')[1:-1]]
+    # Skip separator row (|---|---|)
+    data_rows = rows[2:] if len(rows) > 2 else []
+    
+    html = '<div class="table-wrapper"><table>'
+    html += '<thead><tr>' + ''.join(f'<th>{_inline_md(h)}</th>' for h in headers) + '</tr></thead>'
+    html += '<tbody>'
+    for row in data_rows:
+        cells = [c.strip() for c in row.split('|')[1:-1]]
+        html += '<tr>' + ''.join(f'<td>{_inline_md(c)}</td>' for c in cells) + '</tr>'
+    html += '</tbody></table></div>'
+    return html
+
+
+def _inline_md(text: str) -> str:
+    """Convert inline markdown: **bold**, *italic*, `code`, [links](url), ticker tags."""
+    # Code
+    text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
+    # Bold
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    # Italic
+    text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+    # Links
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
+    # Ticker tags (ALL_CAPS 2-5 chars after `)
+    text = re.sub(r'`([A-Z]{2,5})`', r'<code class="ticker">\1</code>', text)
+    # Date/author meta
+    text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+    
+    return text
+
 
 DASHBOARD_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -36,154 +149,149 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.7;
     min-height: 100dvh;
+    font-size: 15px;
   }}
-  .container {{ max-width: 900px; margin: 0 auto; padding: 16px; }}
-  
+  .container {{ max-width: 820px; margin: 0 auto; padding: 20px 24px; }}
+
   /* Header */
   .header {{
     border-bottom: 1px solid var(--border);
-    padding: 24px 0 16px 0;
-    margin-bottom: 24px;
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
   }}
-  .header h1 {{ font-size: 1.5rem; font-weight: 600; color: var(--text); }}
-  .header .subtitle {{ font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }}
+  .header h1 {{ font-size: 1.6rem; font-weight: 700; color: var(--text); }}
   .header .badge {{
     display: inline-block;
     background: var(--accent-emphasis);
     color: #fff;
-    font-size: 0.75rem;
-    padding: 2px 8px;
+    font-size: 0.7rem;
+    padding: 2px 10px;
     border-radius: 12px;
-    margin-left: 8px;
+    margin-left: 10px;
     vertical-align: middle;
+    font-weight: 500;
   }}
-  
-  /* Search */
-  .search-bar {{
+  .header .subtitle {{ font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }}
+
+  /* Content typography */
+  h1 {{ font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }}
+  h2 {{ font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }}
+  h3 {{ font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }}
+  p {{ margin: 8px 0 12px 0; color: var(--text); }}
+  p.bold-line {{ margin: 6px 0 6px 0; color: var(--text-muted); }}
+
+  /* Links */
+  a {{ color: var(--accent); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+
+  /* Lists */
+  ul {{ margin: 4px 0 16px 20px; }}
+  li {{ margin: 3px 0; color: var(--text); }}
+
+  /* Tables */
+  .table-wrapper {{ overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }}
+  table {{
     width: 100%;
-    padding: 10px 16px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text);
-    font-size: 0.9rem;
-    margin-bottom: 24px;
-    outline: none;
-    transition: border-color 0.2s;
+    border-collapse: collapse;
+    font-size: 0.88rem;
   }}
-  .search-bar:focus {{ border-color: var(--accent); }}
-  .search-bar::placeholder {{ color: var(--text-muted); }}
-  
-  /* Category tabs */
-  .tabs {{
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 8px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }}
-  .tab {{
-    padding: 6px 14px;
-    background: transparent;
-    border: none;
+  th {{
+    background: var(--bg-tertiary);
     color: var(--text-muted);
-    font-size: 0.85rem;
-    cursor: pointer;
-    border-radius: 6px 6px 0 0;
-    white-space: nowrap;
-    touch-action: manipulation;
-    min-height: 36px;
-    font-family: inherit;
-    transition: color 0.15s, background 0.15s;
-  }}
-  .tab:hover {{ color: var(--text); background: var(--bg-tertiary); }}
-  .tab.active {{ color: var(--text); border-bottom: 2px solid var(--accent); margin-bottom: -10px; font-weight: 600; }}
-  .tab .count {{ font-size: 0.7rem; color: var(--text-muted); margin-left: 4px; }}
-  
-  /* Article cards */
-  .article-list {{ display: flex; flex-direction: column; gap: 8px; }}
-  .article-card {{
-    background: var(--bg-secondary);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    cursor: pointer;
-    transition: border-color 0.15s, background 0.15s;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
   }}
-  .article-card:hover {{ border-color: var(--accent); background: var(--bg-tertiary); }}
-  .article-card .ticker-tag {{
-    display: inline-block;
+  td {{
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }}
+  tr:nth-child(even) td {{ background: var(--bg-secondary); }}
+
+  /* Blockquote */
+  blockquote {{
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }}
+
+  /* Code */
+  code {{
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }}
+  code.ticker {{
     background: var(--bg);
     border: 1px solid var(--border);
     color: var(--accent);
-    font-size: 0.7rem;
     font-weight: 600;
     padding: 1px 6px;
-    border-radius: 4px;
-    margin-right: 8px;
-    font-family: "SF Mono", Consolas, monospace;
-    vertical-align: middle;
+    font-size: 0.8em;
   }}
-  .article-card .title {{
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    display: inline;
+
+  /* Dividers */
+  hr.divider {{
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
   }}
-  .article-card .meta {{
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 6px;
-  }}
-  .article-card .description {{
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-top: 6px;
-    line-height: 1.5;
-  }}
-  
-  /* Empty state */
-  .empty-state {{
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-muted);
-  }}
-  .empty-state h3 {{ font-size: 1.1rem; margin-bottom: 8px; }}
-  
+
   /* Footer */
   .footer {{
     text-align: center;
-    padding: 32px 0;
+    padding: 36px 0;
     color: var(--text-muted);
     font-size: 0.75rem;
     border-top: 1px solid var(--border);
-    margin-top: 40px;
+    margin-top: 48px;
   }}
-  
-  /* Category colors */
-  .cat-Rates {{ border-left: 3px solid var(--amber); }}
-  .cat-FX {{ border-left: 3px solid var(--purple); }}
-  .cat-Credit {{ border-left: 3px solid var(--red); }}
-  .cat-Equities {{ border-left: 3px solid var(--green); }}
-  .cat-Derivatives {{ border-left: 3px solid #79c0ff; }}
-  .cat-Macro {{ border-left: 3px solid var(--accent); }}
-  .cat-Regulatory {{ border-left: 3px solid #f0883e; }}
-  
+  .footer a {{ color: var(--accent); }}
+
+  /* Source reference section */
+  .sources-section {{
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }}
+  .sources-section h2 {{ border-bottom: none; font-size: 1rem; }}
+  .source-link {{
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }}
+  .source-link:hover {{ border-color: var(--accent); color: var(--text); }}
+
   /* Mobile */
   @media (max-width: 600px) {{
-    .container {{ padding: 12px; }}
-    .header h1 {{ font-size: 1.2rem; }}
-    .article-card {{ padding: 12px; }}
-    .tabs {{ gap: 0; }}
-    .tab {{ padding: 6px 10px; font-size: 0.78rem; }}
+    .container {{ padding: 12px 16px; }}
+    .header h1 {{ font-size: 1.3rem; }}
+    h2 {{ font-size: 1.05rem; }}
+    table {{ font-size: 0.78rem; }}
+    th, td {{ padding: 5px 8px; }}
+  }}
+  @supports (-webkit-touch-callout: none) {{
+    body {{ min-height: -webkit-fill-available; }}
   }}
 </style>
 </head>
@@ -193,147 +301,111 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
     <h1>⚡ BoltNews <span class="badge">{mode_label}</span></h1>
     <div class="subtitle">{date} &middot; {article_count} articles &middot; {category_count} categories</div>
   </div>
-  
-  <input type="text" class="search-bar" id="search" placeholder="Search articles..." oninput="filterArticles()">
-  
-  <div class="tabs" id="tabs">
-    <button class="tab active" onclick="filterCategory('all')">All <span class="count">({article_count})</span></button>
-    {tab_buttons}
+
+  <div class="content">
+    {briefing_html}
   </div>
-  
-  <div class="article-list" id="article-list">
-    {article_cards}
-  </div>
-  
+
+  {sources_html}
+
   <div class="footer">
-    BoltNews &copy; {year} &middot; Auto-generated {date} &middot; <a href="https://github.com/ZeusNightBolt/BoltNews" style="color: var(--accent)">GitHub</a>
+    BoltNews &copy; {year} &middot; Generated {date} &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
   </div>
 </div>
-
-<script>
-  function filterCategory(cat) {{
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    event.target.classList.add('active');
-    document.querySelectorAll('.article-card').forEach(card => {{
-      if (cat === 'all' || card.dataset.category === cat) {{
-        card.style.display = '';
-      }} else {{
-        card.style.display = 'none';
-      }}
-    }});
-  }}
-  
-  function filterArticles() {{
-    const query = document.getElementById('search').value.toLowerCase();
-    document.querySelectorAll('.article-card').forEach(card => {{
-      const text = (card.dataset.search || '').toLowerCase();
-      card.style.display = text.includes(query) ? '' : 'none';
-    }});
-  }}
-</script>
 </body>
 </html>"""
 
 
-def build_dashboard(articles: list[dict], mode: str, run_date: str) -> str:
-    """Build the HTML dashboard."""
+def build_dashboard(summary_md: str, articles: list[dict], mode: str, run_date: str) -> str:
+    """Build the HTML dashboard from the synthesized briefing."""
     if mode == "weekend":
         mode_label = "Weekend Briefing"
     elif mode == "pre-market":
         mode_label = "Pre-Market"
     else:
         mode_label = "Post-Market"
+
+    # Convert markdown briefing to HTML
+    briefing_html = md_to_html(summary_md)
+
+    # Build source reference links from articles
+    sources_lines = []
+    article_count = len(articles)
     
-    from collections import defaultdict, Counter
-    by_category = defaultdict(list)
-    for a in articles:
-        cat = a.get("category", "Equities")
-        by_category[cat].append(a)
-    
-    sorted_cats = sorted(by_category.items(), key=lambda x: len(x[1]), reverse=True)
-    
-    # Tab buttons
-    tab_buttons = "\n    ".join(
-        f'<button class="tab" onclick="filterCategory(\'{cat}\')">{cat} <span class="count">({len(arts)})</span></button>'
-        for cat, arts in sorted_cats
-    )
-    
-    # Article cards
-    cards = []
-    for cat, cat_articles in sorted_cats:
-        for a in cat_articles:
-            ticker_tag = f'<span class="ticker-tag">{a["ticker"]}</span>' if a.get("ticker") else ""
-            title = a.get("title", "Untitled")
-            summary = a.get("summary", "")
-            desc = a.get("description", "")
+    from collections import Counter
+    cats = Counter(a.get("category", "Uncategorized") for a in articles)
+    category_count = len(cats)
+
+    if articles:
+        sources_lines.append('<div class="sources-section">')
+        sources_lines.append('<h2>📰 Source Articles</h2>')
+        sources_lines.append('<p>')
+        for a in articles:
+            ticker = a.get("ticker", "")
+            title = a.get("title", "Untitled")[:80]
             url = a.get("url", "#")
-            source = a.get("source", "unknown")
-            
-            search_text = f"{a.get('ticker', '')} {title} {desc}".lower()
-            
-            card = f"""<a class="article-card cat-{cat}" href="{url}" target="_blank" rel="noopener" 
-                 data-category="{cat}" data-search="{search_text}">
-      {ticker_tag}<span class="title">{title}</span>
-      <div class="description">{summary or desc[:300]}</div>
-      <div class="meta">{source} &middot; {cat}</div>
-    </a>"""
-            cards.append(card)
-    
-    article_cards = "\n    ".join(cards) if cards else """<div class="empty-state">
-      <h3>No Articles Found</h3>
-      <p>This session did not find any market-moving news.</p>
-    </div>"""
-    
-    # Category count: unique categories
-    category_count = len(sorted_cats)
-    
-    html = DASHBOARD_TEMPLATE.format(
+            label = f"{ticker}: {title}" if ticker else title
+            sources_lines.append(
+                f'<a class="source-link" href="{url}" target="_blank" rel="noopener">{label}</a>'
+            )
+        sources_lines.append('</p>')
+        sources_lines.append('</div>')
+
+    sources_html = '\n'.join(sources_lines)
+
+    return DASHBOARD_TEMPLATE.format(
         mode_label=mode_label,
         date=run_date,
-        article_count=len(articles),
+        article_count=article_count,
         category_count=category_count,
-        tab_buttons=tab_buttons,
-        article_cards=article_cards,
+        briefing_html=briefing_html,
+        sources_html=sources_html,
         year=run_date[:4],
     )
-    
-    return html
 
 
 def main():
     parser = argparse.ArgumentParser(description="BoltNews Dashboard Builder")
     parser.add_argument("--input", type=Path, required=True, help="articles.json or enriched JSON")
-    parser.add_argument("--summary", type=Path, required=True, help="summary.md (for reference)")
+    parser.add_argument("--summary", type=Path, required=True, help="summary.md (PRIMARY content source)")
     parser.add_argument("--output", type=Path, required=True, help="dashboard.html output")
     parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], required=True)
     parser.add_argument("--date", type=str, required=True)
     args = parser.parse_args()
-    
-    # Load articles (try enriched first)
+
+    # PRIMARY: Read the synthesized summary.md
+    if not args.summary.exists():
+        print(f"ERROR: summary.md not found at {args.summary}", file=sys.stderr)
+        sys.exit(1)
+
+    summary_md = args.summary.read_text()
+
+    # SECONDARY: Read articles.json for source links
+    articles = []
     enriched_path = args.input.parent / "articles_enriched.json"
     articles_path = enriched_path if enriched_path.exists() else args.input
     
-    with open(articles_path) as f:
-        data = json.load(f)
-    
-    # Handle both raw articles list and wrapped format
-    if isinstance(data, list):
-        articles = data
-    elif isinstance(data, dict):
-        articles = data.get("articles", [])
-        # Try enriched format (direct list of articles with categories)
-        if not articles and isinstance(data, list):
-            articles = data
-        elif not articles:
-            # It might be the enriched format directly
-            articles = [data] if data.get("title") else []
-    
-    html = build_dashboard(articles, args.mode, args.date)
-    
+    if articles_path.exists():
+        try:
+            with open(articles_path) as f:
+                data = json.load(f)
+            if isinstance(data, list):
+                articles = data
+            elif isinstance(data, dict):
+                articles = data.get("articles", data if data.get("title") else [])
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+    # Build
+    html = build_dashboard(summary_md, articles, args.mode, args.date)
+
     with open(args.output, "w") as f:
         f.write(html)
-    
-    print(f"Dashboard: {args.output} ({len(html)} bytes, {len(articles)} articles)")
+
+    print(f"Dashboard: {args.output} ({len(html)} bytes)")
+    print(f"  Summary: {len(summary_md)} chars → {len(md_to_html(summary_md))} chars HTML")
+    print(f"  Source links: {len(articles)} articles")
 
 
 if __name__ == "__main__":
