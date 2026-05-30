@@ -1,44 +1,73 @@
 {
-  "generated": "2026-05-30",
+  "generated": "2026-05-31",
   "seed_sources": {
     "financial_newswires": [
-      {"name": "Reuters Markets", "url": "https://www.reuters.com/markets/", "rss": "https://www.reuters.com/arc/outboundfeeds/v3/all/?outputType=xml", "category": "newswire"},
-      {"name": "Bloomberg Markets", "url": "https://www.bloomberg.com/markets", "rss": null, "category": "newswire"},
-      {"name": "Financial Times Markets", "url": "https://www.ft.com/markets", "rss": null, "category": "newswire"},
-      {"name": "WSJ Markets", "url": "https://www.wsj.com/markets", "rss": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml", "category": "newswire"},
-      {"name": "CNBC Markets", "url": "https://www.cnbc.com/markets/", "rss": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147", "category": "newswire"},
-      {"name": "MarketWatch", "url": "https://www.marketwatch.com/", "rss": "https://feeds.marketwatch.com/marketwatch/topstories", "category": "newswire"},
-      {"name": "Yahoo Finance", "url": "https://finance.yahoo.com/", "rss": "https://finance.yahoo.com/news/rssindex", "category": "aggregator"},
-      {"name": "Investing.com", "url": "https://www.investing.com/news/stock-market-news", "rss": "https://www.investing.com/rss/news.rss", "category": "aggregator"},
-      {"name": "Seeking Alpha", "url": "https://seekingalpha.com/market-news", "rss": "https://seekingalpha.com/market_currents.xml", "category": "analysis"},
-      {"name": "ZeroHedge", "url": "https://www.zerohedge.com/", "rss": "https://www.zerohedge.com/fullrss2.xml", "category": "alternative"}
+      {"name": "Reuters Markets", "url": "https://www.reuters.com/markets/", "rss": "https://www.reuters.com/arc/outboundfeeds/v3/all/?outputType=xml", "category": "newswire", "extraction": "web_extract"},
+      {"name": "Bloomberg Markets", "url": "https://www.bloomberg.com/markets", "rss": null, "category": "newswire", "extraction": "browser"},
+      {"name": "WSJ Markets", "url": "https://www.wsj.com/markets", "rss": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml", "category": "newswire", "extraction": "web_extract"},
+      {"name": "CNBC Markets", "url": "https://www.cnbc.com/markets/", "rss": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147", "category": "newswire", "extraction": "web_extract"},
+      {"name": "MarketWatch", "url": "https://www.marketwatch.com/", "rss": "https://feeds.marketwatch.com/marketwatch/topstories", "category": "newswire", "extraction": "web_extract"},
+      {"name": "Financial Times Markets", "url": "https://www.ft.com/markets", "rss": null, "category": "newswire", "extraction": "browser"},
+      {"name": "Yahoo Finance", "url": "https://finance.yahoo.com/", "rss": "https://finance.yahoo.com/news/rssindex", "category": "aggregator", "extraction": "web_extract"},
+      {"name": "Investing.com", "url": "https://www.investing.com/news/stock-market-news", "rss": "https://www.investing.com/rss/news.rss", "category": "aggregator", "extraction": "web_extract"},
+      {"name": "Seeking Alpha", "url": "https://seekingalpha.com/market-news", "rss": "https://seekingalpha.com/market_currents.xml", "category": "analysis", "extraction": "web_extract"},
+      {"name": "ZeroHedge", "url": "https://www.zerohedge.com/", "rss": "https://www.zerohedge.com/fullrss2.xml", "category": "alternative", "extraction": "browser"},
+      {"name": "Barron's", "url": "https://www.barrons.com/", "rss": null, "category": "analysis", "extraction": "browser"},
+      {"name": "Morningstar", "url": "https://www.morningstar.com/", "rss": null, "category": "analysis", "extraction": "web_extract"}
     ],
     "central_banks": [
-      {"name": "Federal Reserve Press Releases", "url": "https://www.federalreserve.gov/newsevents/pressreleases.htm", "rss": "https://www.federalreserve.gov/feeds/press_all.xml", "category": "central_bank"},
-      {"name": "ECB Press Releases", "url": "https://www.ecb.europa.eu/press/pr/html/index.en.html", "rss": "https://www.ecb.europa.eu/rss/pr.xml", "category": "central_bank"},
-      {"name": "Bank of Japan", "url": "https://www.boj.or.jp/en/", "rss": null, "category": "central_bank"}
+      {"name": "Federal Reserve Press Releases", "url": "https://www.federalreserve.gov/newsevents/pressreleases.htm", "rss": "https://www.federalreserve.gov/feeds/press_all.xml", "category": "central_bank", "extraction": "web_extract"},
+      {"name": "ECB Press Releases", "url": "https://www.ecb.europa.eu/press/pr/html/index.en.html", "rss": "https://www.ecb.europa.eu/rss/pr.xml", "category": "central_bank", "extraction": "web_extract"},
+      {"name": "Bank of Japan", "url": "https://www.boj.or.jp/en/", "rss": null, "category": "central_bank", "extraction": "web_extract"},
+      {"name": "Forth News (Fed)", "url": "https://www.forth.news/", "rss": null, "category": "central_bank", "extraction": "web_extract"}
     ],
     "rates_fx_credit": [
-      {"name": "Bond Buyer", "url": "https://www.bondbuyer.com/", "rss": "https://www.bondbuyer.com/feed", "category": "rates"},
-      {"name": "ForexLive", "url": "https://www.forexlive.com/", "rss": "https://www.forexlive.com/feed/", "category": "fx"},
-      {"name": "DailyFX", "url": "https://www.dailyfx.com/", "rss": "https://www.dailyfx.com/feeds/all", "category": "fx"},
-      {"name": "Calculated Risk", "url": "https://www.calculatedriskblog.com/", "rss": "https://www.calculatedriskblog.com/feeds/posts/default", "category": "macro"}
+      {"name": "Bond Buyer", "url": "https://www.bondbuyer.com/", "rss": "https://www.bondbuyer.com/feed", "category": "rates", "extraction": "web_extract"},
+      {"name": "ForexLive", "url": "https://www.forexlive.com/", "rss": "https://www.forexlive.com/feed/", "category": "fx", "extraction": "web_extract"},
+      {"name": "DailyFX", "url": "https://www.dailyfx.com/", "rss": "https://www.dailyfx.com/feeds/all", "category": "fx", "extraction": "web_extract"},
+      {"name": "Calculated Risk", "url": "https://www.calculatedriskblog.com/", "rss": "https://www.calculatedriskblog.com/feeds/posts/default", "category": "macro", "extraction": "web_extract"},
+      {"name": "With Intelligence (Private Credit)", "url": "https://www.withintelligence.com/insights/", "rss": null, "category": "credit", "extraction": "web_extract"},
+      {"name": "Apollo Academy", "url": "https://www.apolloacademy.com/", "rss": null, "category": "credit", "extraction": "web_extract"},
+      {"name": "Carlyle Research", "url": "https://www.carlyle.com/insights", "rss": null, "category": "credit", "extraction": "web_extract"},
+      {"name": "Finseta FX Weekly", "url": "https://finseta.com/", "rss": null, "category": "fx", "extraction": "web_extract"}
     ],
     "commodities": [
-      {"name": "OilPrice.com", "url": "https://oilprice.com/", "rss": "https://oilprice.com/rss/main", "category": "commodities"}
+      {"name": "OilPrice.com", "url": "https://oilprice.com/", "rss": "https://oilprice.com/rss/main", "category": "commodities", "extraction": "web_extract"},
+      {"name": "Reuters Commodities", "url": "https://www.reuters.com/markets/commodities/", "rss": null, "category": "commodities", "extraction": "web_extract"}
+    ],
+    "brokerage_research": [
+      {"name": "Charles Schwab Market Update", "url": "https://www.schwab.com/learn/story/stock-market-update-open", "rss": null, "category": "research", "extraction": "web_extract"},
+      {"name": "Fidelity Midyear Outlook", "url": "https://www.fidelity.com/learning-center/trading-investing/stock-market-outlook", "rss": null, "category": "research", "extraction": "web_extract"},
+      {"name": "J.P. Morgan Market Insights", "url": "https://www.jpmorgan.com/insights/markets-and-economy", "rss": null, "category": "research", "extraction": "web_extract"},
+      {"name": "Goldman Sachs Outlooks", "url": "https://www.goldmansachs.com/insights/outlooks/", "rss": null, "category": "research", "extraction": "web_extract"},
+      {"name": "Morgan Stanley Thoughts on the Market", "url": "https://www.morganstanley.com/Themes/outlooks", "rss": null, "category": "research", "extraction": "web_extract"},
+      {"name": "BlackRock Investment Institute", "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute", "rss": null, "category": "research", "extraction": "web_extract"},
+      {"name": "T. Rowe Price Global Markets Weekly", "url": "https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html", "rss": null, "category": "research", "extraction": "web_extract"}
+    ],
+    "forums_social": [
+      {"name": "r/WallStreetBets Daily Thread", "url": "https://www.reddit.com/r/wallstreetbets/", "rss": "https://www.reddit.com/r/wallstreetbets/.rss", "category": "forum", "extraction": "browser"},
+      {"name": "r/Investing Daily Thread", "url": "https://www.reddit.com/r/investing/", "rss": "https://www.reddit.com/r/investing/.rss", "category": "forum", "extraction": "browser"},
+      {"name": "r/Stocks", "url": "https://www.reddit.com/r/stocks/", "rss": "https://www.reddit.com/r/stocks/.rss", "category": "forum", "extraction": "browser"},
+      {"name": "r/StockMarket", "url": "https://www.reddit.com/r/StockMarket/", "rss": "https://www.reddit.com/r/StockMarket/.rss", "category": "forum", "extraction": "browser"},
+      {"name": "r/Forex", "url": "https://www.reddit.com/r/Forex/", "rss": "https://www.reddit.com/r/Forex/.rss", "category": "forum", "extraction": "browser"},
+      {"name": "r/SecurityAnalysis", "url": "https://www.reddit.com/r/SecurityAnalysis/", "rss": "https://www.reddit.com/r/SecurityAnalysis/.rss", "category": "forum", "extraction": "browser"},
+      {"name": "r/Credit", "url": "https://www.reddit.com/r/creditswaps/", "rss": null, "category": "forum", "extraction": "browser"}
     ]
   },
   "discovery_queries": [
-    "financial markets news sources RSS feeds",
-    "best free financial news feeds 2026",
-    "stock market news aggregator free",
-    "credit markets news RSS",
-    "FX rates news feed",
-    "central bank policy news source",
-    "SEC filings financial news tracker"
+    "hedge fund letter quarterly outlook 2026 Q2",
+    "institutional research free markets analysis weekly",
+    "macro strategy note rates FX credit 2026",
+    "bank research note markets outlook May 2026",
+    "proprietary trading desk morning note",
+    "Wall Street week ahead calendar June 2026"
   ],
   "discovery_cadence": "weekly",
-  "blocked_domains": [],
-  "priority_domains": [],
-  "notes": "Prioritize RSS feeds for speed. Use web_search fallback for ticker-specific news. Deep-scrape only when lead paragraph signals market-moving information."
+  "extraction_defaults": {
+    "preferred_method": "web_extract",
+    "fallback_method": "browser",
+    "deep_extract": true,
+    "max_article_depth": 5000,
+    "note": "web_extract for most sites. browser (Firefox BiDi) for paywalled/JS-heavy sites (Bloomberg, FT, Barron's, Reddit). Headline-only is NOT acceptable — always extract the full article text."
+  }
 }
