@@ -54,29 +54,7 @@ Trump's Truth Social post Friday morning — "meeting with my team to make a fin
 **What's priced in vs. what's not:**
 - Priced in: Deal optimism, reduced supply disruption risk, reopening of Hormuz
 - NOT priced in: Deal collapse, renewed escalation, or sanctions snapback
-- The asymmetry: oil has further to fall on a deal than to rise on failure, because the 19% drop already reflects 80% probability
-
-For equities, falling oil is unambiguously disinflationary — it eases the Fed's energy-shock dilemma, reduces input costs, and supports consumer spending. This is the single biggest macro tailwind of the week.
-
----
-
-## Credit: The Cracks Beneath the Surface
-
-Private credit — the $1.7T market that financed the leveraged buyout boom — is entering its first real stress test since 2008.
-
-From the With Intelligence deep-dive:
-- **"True" default rate near 5%** (headline rate <2% masks selective defaults and liability management)
-- **PIK income now 8%** of BDC investment income — borrowers paying interest with more debt
-- **40% of private-credit borrowers have negative free cash flow** (IMF), up from 25% in 2021
-- **$100B+ of opportunistic/distressed funds** are being raised to buy the coming distressed debt
-
-But there's a structural shift happening too:
-- **European private credit fundraising hit record $65B** (first 9 months 2025), up 14% from 2024's full year
-- US allocators diversifying away from commoditized US direct lending
-- **Evergreen fund AuM: $644B** — perpetual capital vehicles now dominate the industry
-- Liquidity concerns brewing: Blue Owl's abandoned OBDC II → OBDC merger attempt signals structural issues in non-traded BDC space
-
-**The tension:** Credit stress is building slowly (not a crisis), but the firepower to buy distressed assets ($100B+) is enormous. This sets up a 2026-2027 credit opportunity cycle — the question is timing, not direction.
+- The asymmetry: oil has further to fall on a deal than to rise on failure, because the 19% drop already reflects ~80% probability
 
 ---
 
@@ -86,7 +64,6 @@ But there's a structural shift happening too:
 |--------|-------|--------|
 | AAII Bullish | 35.6% (+3.8pp) | Recovering but below average |
 | AAII Bearish | 41.9% (-1.8pp) | Still the dominant camp |
-| AAII Neutral | 22.6% (-2.1pp) | Shrinking middle |
 | VIX | 15.72 | Extreme complacency |
 | Analyst Buy ratings | 58.2% | Highest in a decade (contrarian) |
 | S&P RSI | >70 | Overbought |
@@ -99,13 +76,13 @@ But there's a structural shift happening too:
 
 | Asset Class | Direction | Thesis |
 |-------------|-----------|--------|
-| **Equities** | Cautious long | AI revenue is real (Dell +757%), but overbought, narrowing breadth, late-cycle consumer stress. Trim, don't exit. |
-| **Rates** | Short duration | Yields "elevated across the curve." Warsh balance sheet reduction = further steepening pressure. 10Y at 4.44% with upside risk. |
-| **Credit** | Underweight IG, watch distressed | 5% true default rate, 40% negative FCF. $100B opportunistic dry powder = coming opportunity. Stay liquid. |
-| **Oil** | Neutral/short | 19% drop in May. Deal optimism priced in. Asymmetric downside if deal closes; limited upside if it fails. |
-| **USD** | Neutral | DXY at 99.05. Warsh repo-rate framework could strengthen dollar via tighter plumbing, but peace deal weakens safe-haven bid. |
-| **Gold** | Underweight | Second weekly loss. Rate hike repricing + falling geopolitical premium = headwinds. |
-| **Vol** | Long | VIX at 15.72 is too cheap for the macro uncertainty. Long vol as portfolio hedge. |
+| **Equities** | Cautious long | AI revenue is real (Dell +757%), but overbought, narrowing breadth, late-cycle consumer stress |
+| **Rates** | Short duration | Yields "elevated across the curve." Warsh balance sheet reduction = further steepening pressure |
+| **Credit** | Underweight IG, watch distressed | 5% true default rate, 40% negative FCF. $100B opportunistic dry powder = coming opportunity |
+| **Oil** | Neutral/short | 19% drop in May. Deal optimism priced in. Asymmetric downside if deal closes |
+| **USD** | Neutral | DXY at 99.05. Warsh repo-rate framework could strengthen via tighter plumbing |
+| **Gold** | Underweight | Rate hike repricing + falling geopolitical premium = headwinds |
+| **Vol** | Long | VIX at 15.72 is too cheap for the macro uncertainty. Long vol as portfolio hedge |
 
 ---
 
