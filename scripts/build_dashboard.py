@@ -237,7 +237,12 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
 
 def build_dashboard(articles: list[dict], mode: str, run_date: str) -> str:
     """Build the HTML dashboard."""
-    mode_label = "Pre-Market" if mode == "pre-market" else "Post-Market"
+    if mode == "weekend":
+        mode_label = "Weekend Briefing"
+    elif mode == "pre-market":
+        mode_label = "Pre-Market"
+    else:
+        mode_label = "Post-Market"
     
     from collections import defaultdict, Counter
     by_category = defaultdict(list)
@@ -300,7 +305,7 @@ def main():
     parser.add_argument("--input", type=Path, required=True, help="articles.json or enriched JSON")
     parser.add_argument("--summary", type=Path, required=True, help="summary.md (for reference)")
     parser.add_argument("--output", type=Path, required=True, help="dashboard.html output")
-    parser.add_argument("--mode", choices=["pre-market", "post-market"], required=True)
+    parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], required=True)
     parser.add_argument("--date", type=str, required=True)
     args = parser.parse_args()
     

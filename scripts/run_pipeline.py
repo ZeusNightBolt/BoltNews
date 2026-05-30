@@ -16,9 +16,13 @@ DATA_DIR = PROJECT_ROOT / "data"
 RUNS_DIR = PROJECT_ROOT / "runs"
 
 # === CLI ===
+def is_weekend(d: date | None = None) -> bool:
+    """Check if date falls on Saturday (5) or Sunday (6)."""
+    return (d or date.today()).weekday() >= 5
+
 parser = argparse.ArgumentParser(description="BoltNews Pipeline")
-parser.add_argument("--mode", choices=["pre-market", "post-market"], default="pre-market",
-                    help="Pre-market (AM) or post-market (PM) run")
+parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], default=None,
+                    help="Pre-market (AM), post-market (PM), or weekend. Auto-detected if not set.")
 parser.add_argument("--date", type=str, default=None,
                     help="Override date (YYYY-MM-DD). Default: today.")
 parser.add_argument("--skip-universe", action="store_true", help="Skip universe rebuild")
@@ -28,11 +32,23 @@ parser.add_argument("--dry-run", action="store_true", help="Print plan, don't ex
 args = parser.parse_args()
 
 run_date = args.date or date.today().isoformat()
+
+# Auto-detect weekend mode
+if args.mode is None:
+    if is_weekend(date.fromisoformat(run_date)):
+        args.mode = "weekend"
+    else:
+        args.mode = "pre-market"  # default for weekdays, cron overrides
+
+# On weekends, only run one session (morning). PM runs skip if weekend.
+if is_weekend(date.fromisoformat(run_date)):
+    args.mode = "weekend"
+
 run_dir = RUNS_DIR / run_date / args.mode
 run_dir.mkdir(parents=True, exist_ok=True)
 
 print(f"=== BoltNews Pipeline ===")
-print(f"Date: {run_date} | Mode: {args.mode}")
+print(f"Date: {run_date} | Mode: {args.mode}" + (" (weekend — narrative/analysis focus)" if is_weekend(date.fromisoformat(run_date)) else ""))
 print(f"Output: {run_dir}")
 print()
 

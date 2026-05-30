@@ -153,7 +153,12 @@ def generate_one_liner(article: dict) -> str:
 
 def build_summary_markdown(articles: list[dict], mode: str, run_date: str) -> str:
     """Build the markdown briefing."""
-    mode_label = "Pre-Market Briefing" if mode == "pre-market" else "Post-Market Recap"
+    if mode == "weekend":
+        mode_label = "Weekend Briefing — Analysis & Outlook"
+    elif mode == "pre-market":
+        mode_label = "Pre-Market Briefing"
+    else:
+        mode_label = "Post-Market Recap"
     
     lines = [
         f"# BoltNews — {mode_label}",
@@ -199,7 +204,7 @@ def main():
     parser = argparse.ArgumentParser(description="BoltNews Summarizer")
     parser.add_argument("--input", type=Path, required=True, help="articles.json input")
     parser.add_argument("--output", type=Path, required=True, help="summary.md output")
-    parser.add_argument("--mode", choices=["pre-market", "post-market"], required=True)
+    parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], required=True)
     parser.add_argument("--date", type=str, required=True)
     args = parser.parse_args()
     

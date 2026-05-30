@@ -147,7 +147,7 @@ def deploy_run(run_dir: Path, mode: str, run_date: str):
 def main():
     parser = argparse.ArgumentParser(description="BoltNews Deployer")
     parser.add_argument("--run-dir", type=Path, required=True)
-    parser.add_argument("--mode", choices=["pre-market", "post-market"], required=True)
+    parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], required=True)
     parser.add_argument("--date", type=str, required=True)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()

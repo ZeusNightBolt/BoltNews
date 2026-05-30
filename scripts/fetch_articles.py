@@ -149,53 +149,97 @@ def generate_search_plan(universe: dict, mode: str) -> dict:
     """Generate the search plan for the agent to execute."""
     tickers = [t["ticker"] for t in universe["tickers"]]
     topics = universe.get("market_topics", [])
-    
-    # Prioritize tickers with upcoming earnings, high short interest, or high vol
-    prioritized = sorted(
-        universe["tickers"],
-        key=lambda t: (
-            t.get("has_upcoming_earnings", False),
-            t.get("short_pct_float", 0) or 0,
-            t.get("annualized_vol", 0) or 0,
-        ),
-        reverse=True,
-    )[:50]  # Focus on top 50 highest-signal tickers
-    
+    is_weekend = mode == "weekend"
+
+    if is_weekend:
+        # WEEKEND MODE: narrative, analysis, opinion focus
+        # Fewer tickers — focus on big names with major stories
+        prioritized = sorted(
+            universe["tickers"],
+            key=lambda t: (
+                t.get("market_cap", 0) or 0,  # Biggest companies get narrative coverage
+            ),
+            reverse=True,
+        )[:25]  # Top 25 by market cap
+
+        weekend_topics = [
+            "stock market weekly recap analysis",
+            "markets outlook next week forecast",
+            "federal reserve policy analysis",
+            "global macro outlook weekly",
+            "credit markets outlook",
+            "currency markets weekly analysis",
+            "commodities weekly outlook",
+            "investing strategy weekend reading",
+            "hedge fund manager interview",
+            "Barron's weekend edition",
+            "FT Weekend markets analysis",
+            "Wall Street Week ahead preview",
+            "earnings week ahead calendar",
+            "economic data next week calendar",
+            "investor sentiment survey",
+        ]
+    else:
+        # WEEKDAY MODE: breaking news, intraday data, earnings
+        prioritized = sorted(
+            universe["tickers"],
+            key=lambda t: (
+                t.get("has_upcoming_earnings", False),
+                t.get("short_pct_float", 0) or 0,
+                t.get("annualized_vol", 0) or 0,
+            ),
+            reverse=True,
+        )[:50]  # Focus on top 50 highest-signal tickers
+
+        weekend_topics = topics[:15]
+
     plan = {
         "mode": mode,
+        "is_weekend": is_weekend,
         "generated": datetime.now().isoformat(),
         "total_tickers": len(tickers),
         "prioritized_tickers": [t["ticker"] for t in prioritized],
-        "topics": topics[:15],  # Top 15 market topics
+        "topics": weekend_topics,
         "search_queries": [],
     }
-    
+
     # Build ticker queries
     for t in prioritized:
-        plan["search_queries"].append({
-            "type": "ticker",
-            "ticker": t["ticker"],
-            "name": t["name"],
-            "queries": [
-                f"{t['ticker']} stock news",
-                f"{t['ticker']} {t.get('industry', '')} news",
-            ],
-        })
-    
+        if is_weekend:
+            plan["search_queries"].append({
+                "type": "ticker",
+                "ticker": t["ticker"],
+                "name": t["name"],
+                "queries": [
+                    f"{t['ticker']} long term outlook analysis",
+                    f"{t['ticker']} {t.get('industry', '')} industry trends",
+                ],
+            })
+        else:
+            plan["search_queries"].append({
+                "type": "ticker",
+                "ticker": t["ticker"],
+                "name": t["name"],
+                "queries": [
+                    f"{t['ticker']} stock news",
+                    f"{t['ticker']} {t.get('industry', '')} news",
+                ],
+            })
+
     # Build topic queries
-    for topic in topics[:15]:
+    for topic in weekend_topics:
         plan["search_queries"].append({
             "type": "topic",
             "topic": topic,
-            "queries": [f"{topic} news today"],
+            "queries": [topic],
         })
-    
+
     return plan
 
 
 def main():
     parser = argparse.ArgumentParser(description="BoltNews Article Fetcher")
-    parser.add_argument("--mode", choices=["pre-market", "post-market"], required=True)
+    parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], required=True)
     parser.add_argument("--universe", type=Path, required=True)
     parser.add_argument("--sources", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
