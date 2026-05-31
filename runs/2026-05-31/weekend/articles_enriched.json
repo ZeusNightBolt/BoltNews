@@ -1,1 +1,338 @@
-[]
+[
+  {
+    "title": "The 1-Minute Market Report: S&P 500 Posts Historic 9-Week Winning Streak",
+    "description": "The S&P 500 posted a historic 9-week winning streak, with all 4 days of last week's holiday trading producing new highs. SPY closed at 756.48. Broadening leadership: high-beta, technology, growth, and Korean equities outperformed. Energy, staples, and defensive sectors lagged. Capital favored renewable energy and technology over fossil fuels and traditional defensives. Despite elevated broad-market valuations, pockets of value exist in Financials, Healthcare, Consumer Staples, and Small-cap stocks. Author holds long positions in NVDA, AVGO, GOOGL.",
+    "url": "https://seekingalpha.com/article/4910311-the-1-minute-market-report-may-31-2026",
+    "source": "Seeking Alpha",
+    "fetched_at": "2026-05-31T09:00:00",
+    "ticker": "SPY",
+    "tickers": [
+      "NVDA",
+      "AVGO",
+      "GOOGL"
+    ],
+    "category_hint": "Equities",
+    "key_data": {
+      "SPY": 756.48,
+      "QQQ": 738.31,
+      "DIA": 510.78,
+      "VTI": 372.54,
+      "streak": "9 weeks"
+    },
+    "age_hours": -9.0,
+    "category": "Equities",
+    "summary": "The 1-Minute Market Report: S&P 500 Posts Historic 9-Week Winning Streak \u2014 The S&P 500 posted a historic 9-week winning streak, with all 4 days of last week's holiday trading producing new highs",
+    "rejected_reason": null
+  },
+  {
+    "title": "CNBC: 4 Big Things to Watch in the Stock Market in the Week Ahead \u2014 Broadcom, Computex, Jobs, Spin-offs",
+    "description": "1) Earnings: Palo Alto Networks (PANW, Tue), CrowdStrike (CRWD, Wed), Broadcom (AVGO, Wed) \u2014 all trading at all-time highs. AVGO consensus: $2.42 EPS on $22.48B revenue. Key question: will CEO Hock Tan announce a 7th custom chip customer? 2) Computex: Nvidia CEO Jensen Huang keynote Sunday 11PM ET \u2014 'surprise new product' teased, possibly a Windows PC with Nvidia GPU+CPU (first ever). Arm CEO Haas keynote Tuesday. Microsoft Build conference Tuesday with Satya Nadella \u2014 potential new coding model. 3) Spin-offs: FedEx Freight (FDXF) begins trading Monday June 1. Honeywell Aerospace investor day Wednesday ahead of June 29 spin-off; quantum computing IPO possible. 4) Labor market data: JOLTS Tuesday, ADP Wednesday, May payrolls Friday \u2014 consensus 90K jobs, unemployment 4.3%.",
+    "url": "https://www.cnbc.com/2026/05/31/here-are-the-4-big-things-were-watching-in-the-stock-market-in-the-week-ahead.html",
+    "source": "CNBC",
+    "fetched_at": "2026-05-31T12:00:00",
+    "ticker": "AVGO",
+    "tickers": [
+      "AVGO",
+      "PANW",
+      "CRWD",
+      "NVDA",
+      "FDX",
+      "HON",
+      "ARM"
+    ],
+    "category_hint": "Equities",
+    "key_data": {
+      "AVGO_eps_est": 2.42,
+      "AVGO_rev_est": "22.48B",
+      "payrolls_consensus": 90000,
+      "unemp_consensus": 4.3
+    },
+    "age_hours": -12.0,
+    "category": "Equities",
+    "summary": "CNBC: 4 Big Things to Watch in the Stock Market in the Week Ahead \u2014 Broadcom, Computex, Jobs, Spin-offs \u2014 1) Earnings: Palo Alto Networks (PANW, Tue), CrowdStrike (CRWD, Wed), Broadcom (AVGO, Wed) \u2014 all trading at all-time highs",
+    "rejected_reason": null
+  },
+  {
+    "title": "Reuters: More Fed Policymakers Eye Possible Rate Hike as Inflation Risks Rise",
+    "description": "Growing number of Fed officials openly consider a rate HIKE rather than cut. Markets now price in rate increase from current 3.50-3.75% by year-end. April PCE: 3.8% YoY (highest since May 2023), up from 3.5% in March. NY Fed underlying inflation gauge jumped to 4.0% in April from 3.5%. Fed's Bowman: could 'consider shifting approach to thinking about balance of risks' (nod to rate hike) if disruptions persist into H2. Kashkari: inflation expectations could become 'unanchored.' Schmid: inflation is 'most pressing' risk, receptive to using balance sheet reduction for tightening. Paulson: policy 'well positioned' but markets should consider extended holds AND further tightening. Daly: no urgency but oil futures drift would 'change my mind.' Standard playbook of 'looking through' energy shocks seen as not viable because inflation has been too high for too long.",
+    "url": "https://www.reuters.com/business/fed-officials-mull-raising-rates-curb-growing-inflation-risk-2026-05-29/",
+    "source": "Reuters",
+    "fetched_at": "2026-05-29T20:00:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Rates",
+    "key_data": {
+      "PCE_yoy": 3.8,
+      "fed_rate": "3.50-3.75%",
+      "underlying_inflation_gauge": 4.0,
+      "hike_probability": "priced in by year-end"
+    },
+    "age_hours": 28.0,
+    "category": "Rates",
+    "summary": "Reuters: More Fed Policymakers Eye Possible Rate Hike as Inflation Risks Rise \u2014 Growing number of Fed officials openly consider a rate HIKE rather than cut",
+    "rejected_reason": null
+  },
+  {
+    "title": "Crestwood Advisors: May 2026 Economic and Market Update \u2014 New Highs and Old Risks",
+    "description": "S&P 500 forward P/E at 20.9x \u2014 above 5Y avg (19.9) and 10Y avg (18.9). Q1 blended EPS growth +28.4%, 84% of companies beat estimates by avg 12.3%. S&P 500 net profit margins hit record 13.4% led by Info Tech at 29.1%. But any deceleration in H2 2026 will be less forgiving at 20.9x than at 18x. Q1 GDP revised down to 1.6% annualized. April PCE 3.8% YoY \u2014 highest since May 2023. Consumer sentiment collapsed to 44.8 all-time record low, 1-year inflation expectations at 4.8%. Oil: Brent ~$91/bbl, down from ~$120 wartime peak. IEA forecasts Q2 2026 global oil demand contraction of ~1.5M bpd \u2014 sharpest since COVID. 30-year Treasury yield at 5.2% \u2014 19-year high. The earnings story helps justify current prices but valuations embed expectation that trajectory continues.",
+    "url": "https://www.crestwoodadvisors.com/may-2026-economic-and-market-update/",
+    "source": "Crestwood Advisors",
+    "fetched_at": "2026-05-31T06:00:00",
+    "ticker": "SPX",
+    "tickers": [],
+    "category_hint": "Equities",
+    "key_data": {
+      "fwd_pe": 20.9,
+      "eps_growth_q1": 28.4,
+      "net_margin": 13.4,
+      "gdp_q1": 1.6,
+      "pce_yoy": 3.8,
+      "brent": 91,
+      "ust30y": 5.2
+    },
+    "age_hours": -6.0,
+    "category": "Rates",
+    "summary": "Crestwood Advisors: May 2026 Economic and Market Update \u2014 New Highs and Old Risks \u2014 S&P 500 forward P/E at 20.9x \u2014 above 5Y avg (19.9) and 10Y avg (18.9)",
+    "rejected_reason": null
+  },
+  {
+    "title": "T. Rowe Price: Global Markets Weekly Update \u2014 U.S.-Iran Deal Hopes Drive Sentiment; AI Momentum Continues",
+    "description": "S&P 500 closed at 7,580.06 (+1.43% on week, +10.73% YTD). DJIA 51,032.46 (+6.18% YTD). Nasdaq Composite 26,972.62 (+16.05% YTD). Russell 2000 2,919.36 (+17.63% YTD). Markets closed Monday for Memorial Day. U.S.-Iran 60-day ceasefire extension and Hormuz reopening drove risk appetite. April PCE: headline +0.4% MoM (vs +0.7% in March), core +0.2% MoM (vs +0.3%). Annual: headline 3.8% (highest since May 2023), core 3.3%. Personal income flat, spending +0.5%. Q1 GDP revised to 1.6% from 2.0%. Durable goods orders +7.9% driven by +21.5% surge in transportation equipment. 10-year Treasury yield dropped to ~4.44% from 4.56%. ECB: April meeting minutes revealed 'some members were open to raising rates' \u2014 likely June hike. Nikkei 225 +4.72%, TOPIX +1.66%. Tokyo core CPI +1.3% YoY.",
+    "url": "https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html",
+    "source": "T. Rowe Price",
+    "fetched_at": "2026-05-31T08:00:00",
+    "ticker": "SPX",
+    "tickers": [],
+    "category_hint": "Macro",
+    "key_data": {
+      "spx": 7580.06,
+      "spx_ytd": 10.73,
+      "djia": 51032.46,
+      "nasdaq": 26972.62,
+      "russell2000": 2919.36,
+      "russell_ytd": 17.63,
+      "ust10y": 4.44,
+      "pce_yoy": 3.8,
+      "gdp_q1": 1.6
+    },
+    "age_hours": -8.0,
+    "category": "Rates",
+    "summary": "T. Rowe Price: Global Markets Weekly Update \u2014 U.S.-Iran Deal Hopes Drive Sentiment; AI Momentum Continues \u2014 S&P 500 closed at 7,580.06 (+1.43% on week, +10.73% YTD)",
+    "rejected_reason": null
+  },
+  {
+    "title": "Schwab Market Update: Dell Blowout Earnings Power Markets; Broadcom Earnings in Focus",
+    "description": "S&P 500 at 7,563.63 (+0.58%), Dow 50,668.97, Nasdaq 26,917.47. VIX at 15.72. 10Y yield 4.44%. DXY 99.05. WTI crude $87.80. Dell (DELL) +33% after massive beat: quarterly revenue +88% YoY, AI orders booked $24.4B, raised FY guidance, FY27 AI server revenue forecast $60B. HPE +13.7%, SMCI +8.6% on sympathy. Okta +8%, Autodesk -7%, AEO -11%, GAP -15%. NVDA continued to underperform. S&P 500 ~7% above 50-day MA, RSI above 70 \u2014 overbought. Support at 7,275, 7,140, 7,000. Broadcom (AVGO) reports Wednesday: 'trillion-dollar club member' with >$100B in AI chip revenue projected next year. Q1 GDP revised to 1.6%. Personal income flat, spending +0.5%. Auto sales declining: 16M annual pace, spending -7.1% YoY, 8th straight monthly decline. Cooper Howard: 'Yields likely to remain elevated across the curve.' Schmid: inflation 'most pressing' risk.",
+    "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+    "source": "Charles Schwab",
+    "fetched_at": "2026-05-29T09:09:00",
+    "ticker": "SPX",
+    "tickers": [
+      "DELL",
+      "AVGO",
+      "HPE",
+      "SMCI",
+      "NVDA",
+      "OKTA",
+      "ADSK"
+    ],
+    "category_hint": "Equities",
+    "key_data": {
+      "spx": 7563.63,
+      "vix": 15.72,
+      "ust10y": 4.44,
+      "dxy": 99.05,
+      "wti": 87.8,
+      "dell_ai_revenue_fy27": "60B",
+      "rsi": ">70",
+      "above_50dma_pct": 7
+    },
+    "age_hours": 38.85,
+    "category": "Equities",
+    "summary": "Schwab Market Update: Dell Blowout Earnings Power Markets; Broadcom Earnings in Focus \u2014 S&P 500 at 7,563.63 (+0.58%), Dow 50,668.97, Nasdaq 26,917.47",
+    "rejected_reason": null
+  },
+  {
+    "title": "MarketWatch: U.S. Economic Calendar Week of June 1-5 \u2014 Payrolls, ISM, Broadcom, CrowdStrike",
+    "description": "Monday June 1: ISM Manufacturing PMI (consensus 53.2% vs prior 52.7%), Construction Spending, Kashkari speech. Tuesday June 2: JOLTS Job Openings (consensus 6.9M), Hammack speech. Wednesday June 3: ADP Employment (consensus 120K vs 109K prior), ISM Services PMI (consensus 53.9% vs 53.6%), Factory Orders (+4.3%), Fed Beige Book, Barr speech. Earnings: Broadcom (AVGO), CrowdStrike (CRWD), Veeva (VEEV), C3.ai (AI). Thursday June 4: Jobless Claims (consensus 215K), Productivity Q1 revised (0.6%), Barkin speech. Friday June 5: May Nonfarm Payrolls \u2014 consensus 90K (vs 115K prior), Unemployment Rate 4.3% (unchanged), Hourly Wages +0.3% MoM / +3.4% YoY (vs +3.6% prior), Consumer Credit. Saturday: Barr speech. June 10: May CPI (prior 3.8% YoY). June 12: Preliminary June Consumer Sentiment (prior 44.8).",
+    "url": "https://www.marketwatch.com/economy-politics/calendar",
+    "source": "MarketWatch",
+    "fetched_at": "2026-05-31T10:00:00",
+    "ticker": null,
+    "tickers": [
+      "AVGO",
+      "CRWD",
+      "PANW",
+      "VEEV",
+      "AI"
+    ],
+    "category_hint": "Macro",
+    "key_data": {
+      "payrolls_consensus": 90000,
+      "unemp_consensus": 4.3,
+      "adp_consensus": 120000,
+      "ism_mfg_consensus": 53.2,
+      "ism_svc_consensus": 53.9,
+      "jolts_consensus": "6.9M",
+      "claims_consensus": 215000
+    },
+    "age_hours": -10.0,
+    "category": "Macro",
+    "summary": "MarketWatch: U.S. Economic Calendar Week of June 1-5 \u2014 Payrolls, ISM, Broadcom, CrowdStrike \u2014 Monday June 1: ISM Manufacturing PMI (consensus 53.2% vs prior 52.7%), Construction Spending, Kashkari speech",
+    "rejected_reason": null
+  },
+  {
+    "title": "BlackRock: 2026 Global Macro Outlook \u2014 Signs of Complacency in Fragile Market Equilibrium",
+    "description": "Fragile market equilibrium after three quarters of low-volatility rally. Signs of complacency in flows and pricing. Goldilocks narrative embraces OBBBA tax cuts, European rearmament, USD weakness, Fed dovishness, and AI capex. Below surface, macro risk remains meaningful driver of regional returns. Balance sheet confusion: Fed paradox \u2014 QT2 ended yet initiated new asset purchases. Q3 collapse in US commercial bank reserves triggered end of QT2. Treasury Secretary Bessent described 'balance sheet function, which I can tell you no one understands.' Exponential margin growth uneven: S&P 500 companies are disproportionate beneficiaries vs broader NIPA universe. Risk of AI overinvestment: history is full of capex overinvestment episodes. Country selection is back: equity return dispersion across 27 MSCI ACWI country markets has normalized \u2014 mirrors early 2000s, not 2010s. Portfolio: minimal directional positions, relatively contrarian. Reduced US equity exposure.",
+    "url": "https://www.blackrock.com/institutions/en-us/insights/2026-macro-outlook",
+    "source": "BlackRock",
+    "fetched_at": "2026-05-31T12:00:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Macro",
+    "key_data": {
+      "complacency": "high",
+      "ai_capex_risk": "overinvestment risk",
+      "country_dispersion": "elevated"
+    },
+    "age_hours": -12.0,
+    "category": "Rates",
+    "summary": "BlackRock: 2026 Global Macro Outlook \u2014 Signs of Complacency in Fragile Market Equilibrium \u2014 Fragile market equilibrium after three quarters of low-volatility rally",
+    "rejected_reason": null
+  },
+  {
+    "title": "Apollo 2026 Credit Outlook: AI Is Dominant Source of Incremental Credit Supply",
+    "description": "Credit markets shifting from scarcity to higher-supply environment driven by AI investment and M&A resurgence. Hyperscaler investment tripled since 2023. Cumulative AI-related spending projected to exceed $2.7 trillion from 2025-2029. Internal cash flows falling short, forcing debt financing across IG bonds, private credit, project finance, CRE, and ABS. AI issuance increases concentration and correlation risk \u2014 apparent diversification increasingly reflects single macro bet on AI. M&A returning at scale on lower financing costs, workable valuations, abundant PE dry powder, and supportive policy. Cycle defined by dispersion, not distress: economic growth narrowing among higher-income consumers and large AI-exposed corporates. Selectivity is paramount. Opportunities in sectors decoupled from AI capex: European private credit, sports financing.",
+    "url": "https://www.apolloacademy.com/2026-credit-outlook/",
+    "source": "Apollo Academy",
+    "fetched_at": "2026-05-31T08:00:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Credit",
+    "key_data": {
+      "ai_cumulative_spending": "2.7T (2025-2029)",
+      "hyperscaler_investment": "tripled since 2023",
+      "m_and_a": "resurgent",
+      "cycle": "dispersion not distress"
+    },
+    "age_hours": -8.0,
+    "category": "Credit",
+    "summary": "Apollo 2026 Credit Outlook: AI Is Dominant Source of Incremental Credit Supply \u2014 Credit markets shifting from scarcity to higher-supply environment driven by AI investment and M&A resurgence",
+    "rejected_reason": null
+  },
+  {
+    "title": "Tentative U.S.-Iran Nuclear Deal Nears Final Stages; Oil Under Pressure",
+    "description": "Treasury Secretary Bessent says U.S. and Iran have 'the makings of a deal' with 60-day ceasefire extension pending Trump's final sign-off. Iran must dispose enriched uranium, renounce nuclear weapons, fully reopen Strait of Hormuz. However, Tasnim News Agency (IRGC-affiliated) says Iran 'has not decided' on latest draft. Key sticking points: release of billions in frozen Iranian funds, whether Congressional approval required. Brent crude trading ~$91, down ~19% from wartime peak. Analysts warn even with immediate deal, full Strait normalization takes ~7 months. S&P Global: oil inventories at 'unheard-of' critical lows per Exxon SVP. Trump meeting with team to make 'final determination.'",
+    "url": "https://www.reuters.com/business/energy/oil-pulls-back-traders-look-progress-us-iran-talks-2026-05-27/",
+    "source": "Reuters / S&P Global / WSJ",
+    "fetched_at": "2026-05-29T18:00:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Macro",
+    "key_data": {
+      "brent": "~91",
+      "brent_drop_from_peak": "~19%",
+      "strait_normalization": "~7 months",
+      "ceasefire": "60-day pending Trump approval"
+    },
+    "age_hours": 30.0,
+    "category": "Equities",
+    "summary": "Tentative U.S.-Iran Nuclear Deal Nears Final Stages; Oil Under Pressure \u2014 Treasury Secretary Bessent says U.S",
+    "rejected_reason": null
+  },
+  {
+    "title": "The Hill: Tentative U.S.-Iran Deal Would Reopen Strait of Hormuz \u2014 5 Key Takeaways",
+    "description": "1) Strait of Hormuz reopens: unrestricted transit, no tolls, Iran must remove all mines within 30 days, U.S. gradually lifts naval blockade. 2) Oil prices falling: Brent ~$94/barrel, gas at $4.43/gallon nationally (down 12 cents on week). Over half of voters blame Trump 'a lot' for gas prices per Quinnipiac poll. 3) Nuclear specifics: Iran pledges not to seek nuclear weapon, but refuses to halt enrichment; new round of talks during 60-day ceasefire. Bessent: no sanctions relief until highly enriched uranium turned over. 4) Both sides say deal not done: final approval pending from Trump and Iranian leadership; Tasnim News Agency says unresolved issues remain. 5) Unclear if Congress will have say: Cruz calls deal potentially wasting 'extraordinary military results,' Graham wants Congressional vote, Rand Paul urges giving Trump 'space to find an American First solution.'",
+    "url": "https://thehill.com/policy/international/5900355-us-iran-ceasefire-extension-deal/",
+    "source": "The Hill",
+    "fetched_at": "2026-05-28T19:09:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Macro",
+    "key_data": {
+      "brent": 94,
+      "gas_national": 4.43,
+      "ceasefire_days": 60,
+      "strait": "reopening with conditions"
+    },
+    "rejected_reason": "stale",
+    "age_hours": 52.85
+  },
+  {
+    "title": "CNBC: Consumer Sentiment Hits Fresh Record Low of 44.8 in May as Iran War Fuels Inflation Worries",
+    "description": "University of Michigan Consumer Sentiment Index fell to 44.8 in May final reading \u2014 new ALL-TIME record low, below June 2022 trough. Down from 48.2 preliminary and 49.8 in April. Third straight monthly decline. Year-ahead inflation expectations surged to 4.8% (from 3.4% pre-war in February). 5-10 year inflation expectations hit 3.9% (from 3.5% in April). Bond yields spiked: 30-year Treasury hit highest since before financial crisis, 10-year at levels not seen in over a year. Fed Governor Waller: 'some expectations from one to five years ahead have moved up since the beginning of 2026, which I find concerning.' Consumers increasingly worried inflation will spread beyond fuel and persist long-term. War began late February 2026; sentiment has eroded each month since.",
+    "url": "https://www.cnbc.com/2026/05/22/consumer-sentiment-hits-fresh-record-low-in-may-as-iran-war-fuels-inflation-worries.html",
+    "source": "CNBC",
+    "fetched_at": "2026-05-22T14:00:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Macro",
+    "key_data": {
+      "consumer_sentiment": 44.8,
+      "inflation_1yr": 4.8,
+      "inflation_5yr": 3.9,
+      "prewar_inflation_1yr": 3.4
+    },
+    "rejected_reason": "stale",
+    "age_hours": 202.0
+  },
+  {
+    "title": "CNBC: Oil Prices Turn Lower as U.S.-Iran Ceasefire Extension Awaits Trump Approval",
+    "description": "Brent crude closed at $93.71/barrel on May 28, down $0.58. WTI at $88.90. Military strikes continued: Iran launched ballistic missiles toward Kuwait (intercepted), U.S. struck military sites in Iran. Negotiators reached 60-day ceasefire MOU just hours after strikes. Oil has tumbled more than 10% since May 18 when Trump called off imminent strike to allow negotiations. Citi: oil markets 'finding firmer footing' as worst-case supply disruption scenarios priced out. Caution: timing uncertainty keeps central banks on edge with potential for 'tighter monetary settings in response to energy-driven inflation risks.' Hochstein (former Biden advisor): 'No matter what happens, Iranians will control Strait of Hormuz for foreseeable future, it doesn't even matter what the deal says. Everybody in the region believes that.' Regional leaders already believe Iran has 'effectively taken control' of the strait.",
+    "url": "https://www.cnbc.com/2026/05/28/oil-prices-us-strikes-in-iran-revive-strait-of-hormuz-turmoil-fears.html",
+    "source": "CNBC",
+    "fetched_at": "2026-05-28T20:00:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Macro",
+    "key_data": {
+      "brent": 93.71,
+      "wti": 88.9,
+      "oil_drop_since_may18": ">10%",
+      "ceasefire_mou": "60 days pending Trump approval"
+    },
+    "rejected_reason": "stale",
+    "age_hours": 52.0
+  },
+  {
+    "title": "AAII Sentiment Survey: Bullish Rises to 35.6% but Bears Still Dominate at 41.9%",
+    "description": "Week ending May 27, 2026: Bullish 35.6% (+3.8pp from prior week), Neutral 22.6% (-2.1pp), Bearish 41.9% (-1.8pp). Bullish remains below historical average of 37.5% for second time in six weeks. Bears have been above 40% for 4 of last 5 weeks despite S&P 500 at all-time highs \u2014 a historically unusual divergence. Prior week: Bullish 31.7%, Neutral 24.7%, Bearish 43.6%. 1-year extremes: Bullish high 49.5% (Jan 14), Bearish high 52.0% (Mar 18). AAII is considered a contrarian indicator \u2014 high bearish sentiment may signal upcoming market uptrend, though the market is already at record highs. Retail investors are not participating in this rally \u2014 bears at 41.9% despite 9-week winning streak.",
+    "url": "https://www.aaii.com/sentimentsurvey",
+    "source": "AAII",
+    "fetched_at": "2026-05-28T08:00:00",
+    "ticker": null,
+    "tickers": [],
+    "category_hint": "Equities",
+    "key_data": {
+      "bullish": 35.6,
+      "neutral": 22.6,
+      "bearish": 41.9,
+      "bullish_change": 3.8,
+      "bearish_change": -1.8
+    },
+    "rejected_reason": "stale",
+    "age_hours": 64.0
+  },
+  {
+    "title": "MU: Micron Crosses $1 Trillion Market Cap; UBS Raises Target to $1,625",
+    "description": "Micron Technology (MU) crossed a milestone: market cap above $1 trillion, becoming America's 10th-most-valuable company. Stock up over 227% YTD and over 867% from lows. UBS analyst Timothy Arcuri maintained Buy, raised price target from $535 to $1,625 after earnings \u2014 implying market cap of roughly $1.8 trillion, enough to pass Tesla and Meta. The AI memory boom continues driving unprecedented demand for HBM (High Bandwidth Memory) chips. MU is a direct beneficiary of the AI infrastructure buildout.",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/micron-just-became-americas-10th-023600213.html",
+    "source": "Yahoo Finance / Motley Fool",
+    "fetched_at": "2026-05-26T12:00:00",
+    "ticker": "MU",
+    "tickers": [
+      "MU",
+      "TSLA",
+      "META"
+    ],
+    "category_hint": "Equities",
+    "key_data": {
+      "mu_market_cap": ">1T",
+      "ubs_target": 1625,
+      "mu_ytd": "227%",
+      "rank": "10th most valuable US company"
+    },
+    "rejected_reason": "stale",
+    "age_hours": 108.0
+  }
+]
