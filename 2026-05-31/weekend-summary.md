@@ -1,22 +1,17 @@
-# BoltNews Weekend Briefing — May 31, 2026
-
-**Generated:** 2026-05-31T06:15 UTC | **Mode:** Weekend | **Articles extracted:** 25+ sources deep-extracted
+# BoltNews — Weekend Briefing: Cross-Asset Synthesis
+**Sunday, May 31, 2026** | 15 deep-extracted sources | ≤48h recency enforced
 
 ---
 
 ## Executive Summary
 
-**Dominant Theme: The Peace Deal Trade — Markets Priced for Perfection, Realities Lagging**
+**The Peace Deal Trade dominates, but the data beneath record highs is deteriorating fast.**
 
-Markets have spent the past week rallying on US-Iran peace speculation, pushing the S&P 500 to its ninth consecutive weekly gain (+10.2% YTD) and the Nasdaq to +16% YTD. The Philadelphia Semiconductor Index is up ~80% since March 30 lows — an indiscriminate rally now pricing a swift resolution to the Strait of Hormuz blockade, a return to pre-war oil prices, and an immaculate soft landing. But the data on the ground contradicts the speed of this repricing:
+The S&P 500 closed its ninth straight winning week at 7,580 (+10.7% YTD), the Dow crossed 51,000 for the first time, the Nasdaq is +16.1% YTD, and the Russell 2000 leads at +17.6%. Two tailwinds converged: (1) Dell's blowout AI server numbers (AI orders booked $24.4B, FY27 AI revenue guidance $60B) confirming the capex supercycle has years to run, and (2) a tentative 60-day U.S.-Iran ceasefire MOU that sent Brent crude tumbling ~19% from wartime peaks to ~$91/bbl.
 
-- **Oil inventories are at "unheard-of" critical lows** (Exxon SVP Neil Chapman, May 29), and even with an immediate deal, full Strait normalization takes ~7 months (S&P Global).
-- **Consumer sentiment collapsed to 44.8** — a fresh all-time record low, below the June 2022 trough, driven by 1-year inflation expectations at 4.8% and 5-year expectations at 3.9% (University of Michigan, May 30).
-- **The 30-year Treasury yield hit 5.2%** — a 19-year high — and markets now price a 40% probability of a Fed rate *hike* by year-end.
-- **Credit spreads remain eerily tight**: IG OAS at 0.73%, HY OAS at 2.72% — pricing zero credit stress despite an ongoing war and energy shock.
-- **VIX closed at 15.32** — extreme vol compression, a contrarian warning signal.
+**But the divergence between markets and Main Street is historically extreme.** The University of Michigan Consumer Sentiment Index hit 44.8 — an all-time record low. 1-year inflation expectations surged to 4.8%. The Fed is now openly discussing rate HIKES, not cuts — a 180-degree pivot from the easing expectations that prevailed pre-war. The 30-year Treasury yield hit 5.2%, a 19-year high. Credit spreads remain dangerously tight: HY OAS at 2.72%, IG at 0.73%. VIX at 15.72 is pricing zero fear.
 
-The gap between equity market optimism (S&P 7,580, record highs) and consumer/main street reality (sentiment at record lows, 4.8% inflation expectations) is now historically wide. The week ahead brings the May payrolls report (Friday), Broadcom earnings (Wednesday), and flash Eurozone CPI — any of which could catalyze a repricing. The dominant risk is not recession but *overheating*: Atlanta Fed GDPNow tracking ~3.8% Q2 growth with PCE at 3.8% YoY and a labor market still adding jobs. The worst-case scenario for risk assets: a hot payrolls print + sticky inflation forcing the Fed to hike under new Chair Kevin Warsh at the June 16-17 meeting.
+**The week ahead is critical.** Broadcom (AVGO) earnings Wednesday, Computex with Nvidia's Jensen Huang keynote Sunday night, and the May nonfarm payrolls report Friday (consensus: 90K jobs, 4.3% unemployment). This convergence of AI earnings, geopolitics, and labor data will either validate the rally or expose the fault lines.
 
 ---
 
@@ -24,133 +19,143 @@ The gap between equity market optimism (S&P 7,580, record highs) and consumer/ma
 
 | Asset Class | Direction | Conviction | Thesis | Key Data Points |
 |---|---|---|---|---|
-| **Equities** | Cautious Long → Short Gamma | Moderate | Rally driven by AI earnings + peace premium; vol compression extreme; consumer sentiment collapse unreflected | S&P +10.2% YTD; VIX 15.32; Consumer Sentiment 44.8; P/E 20.9× |
-| **Rates** | Bearish Duration | High | 30Y at 5.2% (19yr high); 40% hike probability; inflation sticky at 3.8% PCE | 2Y 4.12%, 10Y 4.45%, 30Y 5.2%; Fed 3.50-3.75% |
-| **Credit** | Bearish (tail risk underpriced) | High | HY OAS 2.72% pricing zero stress; IG 0.73%; both near cycle tights despite war | HY 2.72%, IG 0.73% (FRED, May 28) |
-| **FX** | USD Bearish / JPY Weakness | Moderate | DXY 98.97 near YTD lows; USD/JPY 160 — yen weakest since April 7; EUR supported by hawkish ECB | DXY 98.97, USD/JPY 160 |
-| **Commodities** | Bullish Energy / Bullish Industrial Metals | High | Oil inventories critically low; MPI +19.2% Q2 forecast; supply normalization 7+ months; Al smelters hit | Brent ~$91; MPI +19.2% Q2; Al supply tightened |
-| **Volatility** | Long Vol / Tail Hedges | High | VIX 15.32 near cycle lows amid ongoing war, record sentiment lows, and 5.2% long bond yields — vol selling is crowded | VIX 15.32 (May 29 close); VIX monthly avg ~17.5 |
+| **Equities** | Cautious Long | Moderate | AI earnings real (Dell +757% AI rev YoY) but overbought; consumer sentiment divergence extreme | S&P 7,580 (+10.7% YTD); VIX 15.72; Sentiment 44.8; Fwd P/E 20.9×; RSI >70 |
+| **Rates** | Bearish Duration | High | 30Y at 5.2% (19yr high); PCE 3.8% YoY; Fed openly discussing hikes; 40% hike probability priced | 2Y 4.12%, 10Y 4.44%, 30Y 5.2%; Fed 3.50-3.75% |
+| **Credit** | Bearish (tail risk underpriced) | High | HY OAS 2.72% pricing zero stress; IG 0.73%; no historical precedent for spreads this tight with inflation >3.5% | HY 2.72%, IG 0.73% (per Schwab/T. Rowe Price) |
+| **FX** | USD Bearish / JPY Intervention Risk | Moderate | DXY 99.05 near YTD lows; USD/JPY 160; EUR supported by hawkish ECB (likely June hike) | DXY 99.05; EUR/USD ~1.16; USD/JPY 160 |
+| **Commodities** | Bullish Energy / Neutral Gold | High | Oil inventories at "unheard-of" critical lows; Strait normalization takes ~7 months; peace deal not signed | Brent ~$91 (down ~19% from peak); WTI $87.80 |
+| **Volatility** | Long Vol / Tail Hedges | High | VIX 15.72 near cycle lows with ongoing war, record-low sentiment, 5.2% long bond yields, and a potential Fed hike | VIX 15.72; RSI >70; S&P 7% above 50-DMA |
 
 ---
 
-## 1. Equities: AI Euphoria Meets Main Street Despair
+## 1. Equities: AI Infrastructure Supercycle Confirmed — But Rotation Narrows
 
-### The Rally
+### The Rally: Powered by Earnings, Not Speculation
 
-The S&P 500 closed the week at approximately 7,580, extending its winning streak to nine weeks. The rally's engine is unambiguous: **earnings**. Q1 2026 blended EPS growth came in at +28.4% (FactSet), with 84% of companies beating estimates by an average of 12.3%. S&P 500 net profit margins hit a record 13.4%, led by Information Technology at 29.1% (Crestwood Advisors, May 2026). This is not speculative — it's appearing in reported GAAP results.
+Q1 2026 blended EPS growth came in at **+28.4%** (FactSet), with 84% of S&P 500 companies beating estimates by an average of 12.3%. S&P 500 net profit margins hit a record **13.4%**, led by Information Technology at **29.1%** (Crestwood Advisors). This is appearing in reported GAAP results — it is not speculative.
 
-### The AI Chip Frenzy
+**The Dell number that matters:** AI server revenue hit $24.4B in orders booked, and FY27 guidance calls for **$60B in AI server revenue**. That's a paradigm shift — AI infrastructure is now Dell's primary business. The company raised full-year revenue guidance from $138-142B to $165-169B. "The AI opportunity shows no signs of slowing." Shares surged 33%. HPE (+13.7%), SMCI (+8.6%) on sympathy. (Source: Schwab Market Update, May 29)
 
-The Philadelphia Semiconductor Index is up ~80% since the March 30 low — an 18-day winning streak that has drawn comparisons to dot-com. Barron's identifies five "pillar" stocks (NVDA, AMD, AVGO, TSM, MU) all trading at PEG ratios below 0.6 vs. the S&P at 1.0. Key data:
+### The Semiconductor Frenzy
 
-- **NVDA**: $211.14. BofA estimates durable 70% AI chip market share. FY2026 adj EPS $4.77 → $12.37 in two years → P/E 17×. Jensen Huang keynote in Taipei begins May 31 11PM EDT — potential catalyst.
-- **AVGO**: $446.77. Broadcom earnings Wednesday June 3 — the AI trade's most immediate test. Six confirmed custom-chip customers (Google, Meta, OpenAI). FY2027 AI semiconductor revenue target $100B (Wall Street: $132B).
-- **MU**: $971. 196% YoY sales growth, 74% gross margin. EPS expected $100+ in FY2027 → P/E only 9×. PEG 0.04. Debt reduced 33% in three quarters.
-- **AMD**: $516.10. CPU market share 40%; GPU inference opportunity; two $100B GPU deals in place.
+The Philadelphia Semiconductor Index is up ~80% since the March 30 lows. Key names entering the week:
+
+- **NVDA ($211)**: Jensen Huang Computex keynote **Sunday 11PM ET** — teased a "surprise new product," likely a Windows PC with Nvidia GPU+CPU (first ever, would use Arm instruction set). BofA estimates durable 70% AI chip market share.
+- **AVGO ($447)**: Reports Wednesday after close. Consensus $2.42 EPS on $22.48B revenue. Six confirmed custom chip customers (Google, Meta, OpenAI). FY2027 AI semiconductor revenue target $100B (Wall Street: $132B). The AI trade's most immediate test.
+- **MU ($971)**: Crossed $1T market cap — America's 10th most valuable company. Stock +227% YTD. UBS target raised to $1,625 (implies $1.8T market cap). The purest AI memory play (HBM chips).
+- **PANW / CRWD**: Both at all-time highs ahead of earnings Tuesday/Wednesday. "The bar for earnings is elevated." AI is now a tailwind — not headwind — for cybersecurity (CNBC Investing Club, May 31).
 
 ### Contrarian Flags
 
-- **Consumer Sentiment at 44.8** (all-time record low) vs. S&P 500 at all-time highs — the widest divergence in history. The last time sentiment was this low (June 2022, 50.0), the S&P was at 3,666 — roughly half current levels.
-- **Forward P/E at 20.9×** — above 5Y (19.9) and 10Y (18.9) averages. "Any deceleration in H2 2026 will be less forgiving at 20.9 times forward earnings" (Crestwood).
-- **VIX at 15.32**: Extreme vol compression. The last four times VIX dipped below 16 during a geopolitical crisis/energy shock, a 5%+ SPX drawdown followed within 30 days.
-- **AI capex scrutiny**: Meta fell 9% in April despite an earnings beat after raising 2026 capex to $125-145B. Alphabet rallied 34%. Investors are differentiating between spenders and earners in AI.
-
-### Week Ahead Catalyst: Friday Payrolls
-
-Consensus: +85K jobs, unemployment 4.3%. A print above 150K would signal overheating and push rates higher — negative for long-duration equities. A weak print could calm hike fears but would also validate the consumer sentiment collapse.
+- **Consumer Sentiment at 44.8** (all-time record low) vs. S&P 500 at all-time highs — the widest divergence in history. The last time sentiment was this low (June 2022, 50.0), S&P was at 3,666 — roughly half current levels.
+- **Forward P/E at 20.9×** — above 5Y (19.9) and 10Y (18.9) averages. "Any deceleration in H2 2026 will be less forgiving at 20.9× forward earnings than it would have been at 18×" (Crestwood).
+- **VIX at 15.72**: Extreme vol compression. S&P 500 ~7% above 50-day MA. RSI above 70 — overbought. Support at 7,275, 7,140, 7,000 (Schwab technical analysis).
+- **NVDA continued to underperform** despite the AI rally — a potential canary in the coal mine.
+- **Retail isn't buying**: AAII Bears at 41.9% despite all-time highs. Institutional flows driving the rally.
 
 ---
 
-## 2. Rates: The Bond Market Is Not Believing the Peace Narrative
+## 2. Rates & Fed: The Hike That Wasn't Supposed to Happen
 
 The Treasury market is pricing a fundamentally different world than equities:
 
 | Tenor | Yield | Context |
 |---|---|---|
 | 2-Year | 4.12% | Anchored by Fed at 3.50-3.75%, pricing no cuts |
-| 10-Year | ~4.45% | Off recent highs but elevated; 40% hike probability |
+| 10-Year | 4.44% | Down from 4.56% last week on peace hopes |
 | 30-Year | 5.20% | **19-year high** (highest since 2007) |
 
-**Three forces driving yields higher:**
-1. **Stubborn inflation**: April PCE 3.8% YoY — highest since May 2023. Core PCE 0.2% MoM came in below expectations but the trend is up. March CPI 3.3% YoY, gasoline +21.2% MoM (largest monthly increase since 1967).
-2. **Fiscal concerns**: Elevated government debt issuance with no moderation.
-3. **Fed hawkishness**: April FOMC saw 3 hawkish dissents (Hammack, Kashkari, Logan — most since 1992) objecting to language suggesting the next move would be lower. Governor Miran dissented dovish (6th consecutive dissent). New Chair Kevin Warsh takes over for the June 16-17 meeting.
+### Fed Officials Now Openly Discussing Rate HIKES (Reuters, May 29)
 
-**Implication**: A 5.2% risk-free 30-year yield makes a 2% dividend yield deeply unattractive, directly competing with equities for income-seeking capital. The negative stock-bond correlation that defined the 2010s has broken — both are selling off together on inflation fears. The 60/40 portfolio is damaged.
+- **Michelle Bowman** (dovish-leaning): Could "consider shifting my approach to thinking about the balance of risks" if energy disruptions persist into H2 — a direct nod to supporting a rate hike.
+- **Neel Kashkari** (hawkish dissenter): "Inflation expectations could become unanchored." Premature to raise immediately but "further pay attention to the risk."
+- **Jeffrey Schmid**: Inflation is the "most pressing risk." Receptive to using **balance sheet reduction** to tighten further — potentially clashing with incoming Chair Kevin Warsh.
+- **Mary Daly**: "No urgency to make an adjustment" but oil futures drift would "change my mind."
+- **Lisa Cook**: Prepared to raise rates if inflation moves wrong direction.
+- **Philip Jefferson**: Inflation risks "tilted to the upside."
 
-**Key watch**: Fed Governor Christopher Waller speaks today (May 31). His speech on Friday flagged concern about 1-5 year inflation expectations moving up — a potential signal of hawkish bias.
+**Key data driving the shift:**
+- April PCE: **3.8% YoY** (highest since May 2023)
+- NY Fed underlying inflation gauge: **4.0%** in April (from 3.5% in March)
+- Inflation has been above 2% target "for many years" — the standard playbook of "looking through" energy shocks is no longer viable
+- **Markets now price a 40% probability of a Fed rate HIKE by year-end** — a complete reversal from pre-war expectations of cuts
+
+### Kevin Warsh Takes Over June 16-17
+
+The incoming Fed Chair will face a deeply divided FOMC. The April meeting saw the most dissents since October 1992 (three hawkish, one dovish). Warsh has expressed skepticism about using balance sheet reduction to augment rate policy — setting up a potential clash with Schmid and other hawks.
+
+**Implication:** A 5.2% risk-free 30-year yield makes a ~1.3% S&P 500 dividend yield deeply unattractive. The negative stock-bond correlation that defined the 2010s has broken. The 60/40 portfolio is structurally impaired.
 
 ---
 
-## 3. Credit: Spreads Pricing Perfection — A Dangerous Assumption
+## 3. Credit: Spreads Pricing Perfection — No Historical Precedent
 
 | Metric | Level | Signal |
 |---|---|---|
 | IG OAS | 0.73% | Near cycle tights |
-| HY OAS | 2.72% | Tight — pricing <2% default rate |
+| HY OAS | 2.72% | Pricing <2% default rate |
 
-Credit markets are pricing zero stress despite: (a) an active war in the Middle East, (b) energy costs up 50%+ since February, (c) consumer sentiment at record lows, and (d) the Fed potentially hiking. The last time HY spreads were below 3% with inflation above 3.5% was... never — this combination has no historical precedent.
+Credit markets are pricing zero stress despite: (a) an active war in the Middle East, (b) energy costs up 50%+ since February, (c) consumer sentiment at record lows, and (d) the Fed potentially hiking. The last time HY spreads were below 3% with inflation above 3.5% was... never. This combination has no historical precedent.
 
-**Risk**: HY energy issuers face conflicting forces — higher oil prices boost revenue but Strait of Hormuz disruptions create operational chaos. A peace deal failure could create a sharp repricing in energy HY credits. Private credit markets (Apollo, Carlyle, Wellington) report strong underlying fundamentals but acknowledge "pressure building across rate-sensitive sectors" (Apollo 2026 Credit Outlook).
+**Apollo 2026 Credit Outlook** (Jan 2026): The regime is shifting from scarcity to a buyer's market. AI-related cumulative spending projected to exceed **$2.7 trillion from 2025-2029**. AI issuance is creating hidden correlation risk — "apparent diversification across issuers and sectors increasingly reflects a single macro bet on AI, elevating correlation risk." Opportunities exist in sectors decoupled from AI capex: European private credit, sports financing.
 
 ---
 
-## 4. FX: Dollar Weakness, Yen Intervention Risk
+## 4. FX: Dollar Weakness, Yen at Intervention Levels
 
 | Pair | Level | Context |
 |---|---|---|
-| DXY | 98.97 | Near YTD lows; down from 99.33 in late April |
-| USD/JPY | 160.00 | Yen weakest since April 7; intervention risk elevated |
-| EUR/USD | Implied ~1.12 | ECB hawkish — expected to HIKE in June |
+| DXY | 99.05 | Near YTD lows; peace-premium risk-on flows out of USD |
+| USD/JPY | 160.00 | Yen weakest since April; intervention risk elevated |
+| EUR/USD | ~1.16 | ECB expected to HIKE in June |
 
-**Dollar weakness** is driven by: (a) peace-premium risk-on flows out of USD safe havens, (b) narrowing rate differentials as ECB prepares to hike, and (c) fiscal concerns weighing on long-end Treasuries.
+**Dollar weakness driven by:** (a) peace-premium risk-on flows out of USD safe havens, (b) narrowing rate differentials as ECB prepares to hike, (c) fiscal concerns weighing on long-end Treasuries.
 
-**Yen at 160** — a level that triggered intervention speculation in April. With the BOJ maintaining accommodative policy and US rates staying high, the carry trade pressure continues. A hot US payrolls print Friday could push USD/JPY through 162, triggering actual intervention.
+**ECB April minutes** revealed "some members were open to raising rates." The energy price shock was described as "large and highly persistent." A June rate hike is now the baseline expectation. This would narrow the USD-EUR rate differential and support further EUR/USD upside.
 
-**EUR supported** by expectations of an ECB June rate hike driven by war-related inflation pass-through. Flash Eurozone May CPI this week is critical — a hot print would cement the hike and push EUR/USD toward 1.13-1.14.
+**Yen at 160** — past intervention trigger levels. With BOJ maintaining accommodative policy and US rates staying elevated, carry trade pressure continues. A hot payrolls print Friday could push USD/JPY through 162, triggering actual intervention.
 
 ---
 
-## 5. Commodities: Critical Inventories, Long Normalization Timeline
+## 5. Geopolitics & Oil: The Peace Premium Is Priced — But the Deal Isn't Done
 
-### Crude Oil — The Core Risk
+### Ceasefire Status
 
-- **Brent crude ~$91/bbl** — down from the ~$120 wartime peak on peace deal hopes
-- **Exxon SVP Neil Chapman**: "We're approaching unheard-of inventory levels... Once you get to that point, then you'll see price shoot up" (May 29)
-- **15 million barrels/day** trapped behind the Strait of Hormuz
-- Even with an immediate deal, full Strait normalization takes **~7 months** (S&P Global)
-- GasBuddy analyst De Haan: "If no definitive deal by early next week, oil markets could swing the other way rather wildly"
-- IEA: Q2 2026 global oil demand contraction of ~1.5M bpd — sharpest since COVID — concentrated in Asia
+- **Tentative 60-day MOU** reached between U.S. and Iran, pending President Trump's final sign-off
+- Strait of Hormuz: "unrestricted transit" restored, Iran must remove all mines within 30 days, U.S. gradually lifts naval blockade
+- Key sticking points: release of billions in frozen Iranian funds, Iran's refusal to halt uranium enrichment, Congressional approval questions
+- Tasnim News Agency (IRGC-affiliated): Iran "has not decided" on latest draft
+- Trump: "meeting with my team to make a final determination"
 
-**Peace deal status**: Trump posted on social media demanding immediate Strait reopening and lifting the naval blockade on Iranian ports. Iran's Tasnim News Agency responded that Iran "has not decided" on the latest draft. Joint Iran-Oman administration of the Strait was proposed but is a "non-starter" per analysts. Chevron CEO warns vessel prioritization is undefined — restart will be "slow, with stop and start."
+### Oil Market Reality
 
-### Industrial Metals
+- **Brent crude ~$91/bbl** — down ~19% from ~$112 wartime peak (biggest monthly drop since March 2020)
+- **Exxon SVP Neil Chapman**: "We're approaching unheard-of inventory levels... Once you get to that point, then you'll see price shoot up"
+- Even with immediate deal, full Strait normalization takes **~7 months** (S&P Global)
+- IEA: Q2 2026 global oil demand contraction of ~1.5M bpd — sharpest since COVID
 
-- S&P Global MPI forecast: **+19.2% in Q2 2026**, more than 25% above pre-war expectations
-- **Aluminum**: Two of the largest regional smelters hit by missile attacks; 6-12 months to bring a smelter back online. "Supply, not price, will be the prime concern for many aluminum buyers"
-- **Copper**: $12,000/metric ton floor going forward; demand strength + slow mine capacity increases
-- Energy prices expected to stay high through Q3 2026, not returning to pre-war levels even by end-2028
+**The asymmetry:** Oil has further to fall on a deal than to rise on failure — the ~19% drop already reflects high deal probability. But if the deal collapses, the spike could be violent given critically low inventories.
 
 ---
 
 ## 6. Sentiment & Positioning Summary
 
-| Indicator | Level | Interpretation |
+| Indicator | Level | Signal |
 |---|---|---|
-| Michigan Consumer Sentiment | 44.8 | All-time record low; 3rd consecutive monthly decline |
-| 1-Year Inflation Expectations | 4.8% | Up from 3.4% in February (pre-war) |
+| Michigan Consumer Sentiment | 44.8 | **All-time record low** |
+| 1-Year Inflation Expectations | 4.8% | Up from 3.4% pre-war (Feb) |
 | 5-Year Inflation Expectations | 3.9% | Up from 3.5% in April |
-| AAII Bull-Bear Spread | Not available for May 31 | N/A — check weekly |
-| VIX | 15.32 | Extreme vol compression; contrarian risk signal |
-| Put/Call Ratio | Not available | N/A |
-| S&P 500 Forward P/E | 20.9× | Above 5Y and 10Y averages |
-| Atlanta Fed GDPNow Q2 | ~3.8% | Above-trend growth; overheating risk |
-| Fed Hike Probability (by Dec) | 40% | Up from near-zero in March |
-| HY OAS | 2.72% | Pricing near-zero stress |
+| AAII Bullish | 35.6% (+3.8pp) | Below historical avg (37.5%) |
+| AAII Bearish | 41.9% | Still dominant despite ATHs |
+| VIX | 15.72 | Extreme complacency — contrarian warning |
+| S&P 500 Fwd P/E | 20.9× | Above 5Y and 10Y averages |
+| Fed Hike Probability | 40% | Up from near-zero pre-war |
+| S&P RSI | >70 | Overbought |
+| S&P vs 50-DMA | +7% | Stretched |
 
 ### The Sentiment Paradox
 
-Equity markets are pricing an immaculate outcome: peace deal, contained inflation, soft landing, AI productivity boom. Consumers are pricing a catastrophe: 4.8% inflation expectations, record-low sentiment, oil-driven cost of living crisis. One of these is wrong. Historically, when the gap between equity prices and consumer sentiment reaches such extremes, equities correct toward sentiment — not the reverse. The last two comparable divergences: June 2022 (S&P -24% in following 4 months) and March 2000 (S&P -49% over 2.5 years).
+Equity markets are pricing an immaculate outcome: peace deal, contained inflation, soft landing, AI productivity boom. Consumers are pricing a catastrophe: 4.8% inflation expectations, record-low sentiment, oil-driven cost of living crisis. One of these is wrong. Historically, when the gap between equity prices and consumer sentiment reaches such extremes, equities correct toward sentiment — not the reverse.
 
 ---
 
@@ -158,41 +163,45 @@ Equity markets are pricing an immaculate outcome: peace deal, contained inflatio
 
 | Day | Event | Importance |
 |---|---|---|
-| **Sunday May 31** | Fed Governor Waller speech (8:30 AM) | HIGH — inflation expectations commentary |
-| **Monday June 1** | ISM Manufacturing PMI (May) | HIGH — prices component key |
-| **Monday June 1** | NVDA Jensen Huang keynote (Taipei, 11PM EDT) | HIGH — AI demand signal |
-| **Tuesday June 2** | JOLTS Job Openings (April) | MEDIUM |
-| **Wednesday June 3** | **Broadcom (AVGO) Earnings** | CRITICAL — AI trade litmus test |
-| **Wednesday June 3** | ISM Services PMI (May) | HIGH — services inflation |
-| **Wednesday June 3** | Flash Eurozone CPI (May) | HIGH — ECB hike signal |
-| **Thursday June 4** | ADP Employment (May) | MEDIUM |
-| **Friday June 5** | **May Nonfarm Payrolls** | CRITICAL — Fed policy path |
-| **Friday June 5** | Unemployment Rate | CRITICAL — consensus 4.3% |
+| **Sun May 31** | NVDA Jensen Huang Computex keynote (11PM ET) | HIGH — "surprise new product" |
+| **Mon Jun 1** | ISM Manufacturing PMI (consensus 53.2%) | HIGH |
+| **Mon Jun 1** | FedEx Freight (FDXF) begins trading | MEDIUM |
+| **Tue Jun 2** | JOLTS Job Openings (consensus 6.9M) | MEDIUM |
+| **Tue Jun 2** | Palo Alto Networks (PANW) earnings | HIGH |
+| **Tue Jun 2** | Microsoft Build Conference (Nadella keynote) | MEDIUM |
+| **Wed Jun 3** | **Broadcom (AVGO) earnings** | **CRITICAL** — AI trade litmus test |
+| **Wed Jun 3** | ADP Employment (consensus 120K) | MEDIUM |
+| **Wed Jun 3** | ISM Services PMI (consensus 53.9%) | HIGH |
+| **Wed Jun 3** | CrowdStrike (CRWD) earnings | HIGH |
+| **Wed Jun 3** | Fed Beige Book | MEDIUM |
+| **Thu Jun 4** | Jobless Claims (consensus 215K) | MEDIUM |
+| **Fri Jun 5** | **May Nonfarm Payrolls (consensus 90K)** | **CRITICAL** |
+| **Fri Jun 5** | Unemployment Rate (consensus 4.3%) | **CRITICAL** |
+| **Fri Jun 5** | Hourly Wages (consensus +0.3% MoM, +3.4% YoY) | HIGH |
 
-**The Two Trades of the Week:**
-1. **Payrolls print >150K**: Go long rates (short duration), short equities, long USD. Overheating narrative gains traction; June Fed hike probability spikes.
-2. **Payrolls print <50K**: Long equities (relief rally), short USD, long duration. Calms overheating fears; validates those calling for rate cuts.
+### The Two Trades of the Week
 
-**Broadcom as AI bellwether**: AVGO earnings Wednesday will either validate or puncture the semiconductor rally. With the SOX up 80% in 9 weeks, expectations are sky-high. Anything short of a blowout + raised guidance could trigger a sharp unwind in the most crowded trade in markets.
+1. **Payrolls >150K → Overheating trade:** Short duration, short equities, long USD. June Fed hike probability spikes. AI/semiconductor positions unwind.
+2. **Payrolls <50K → Relief rally:** Long equities, short USD, long duration. Calms overheating fears; peace deal narrative extends.
 
----
-
-## 8. Portfolio Implications — Weekend Positioning
-
-**For the fundamental long/short PM running multi-asset:**
-
-1. **Equities**: Take profits on AI/semiconductor positions ahead of Broadcom earnings. The risk/reward is asymmetric to the downside given the 80% rally. Consider tail hedges (VIX calls, put spreads) — vol is cheap at 15.32.
-
-2. **Rates**: Maintain short duration. A 5.2% 30Y yield is not a buying opportunity when inflation is 3.8% and the Fed might hike. The real yield on 30Y is only ~1.4% — still not compensating for inflation uncertainty.
-
-3. **Credit**: Underweight. HY spreads at 2.72% are not compensating for war + potential Fed hike + consumer collapse. The asymmetry is terrible: spreads can tighten maybe 50bp in the best case, but can widen 300bp+ in stress.
-
-4. **FX**: Short USD/JPY (intervention risk limits upside). Long EUR/USD on ECB hawkishness. DXY likely to retest 97 support.
-
-5. **Commodities**: Long crude call spreads (peace deal premium has compressed implied vol). Long aluminum on supply destruction. The MPI +19.2% Q2 forecast is likely conservative if Strait reopening is delayed.
-
-6. **Vol**: Long vol strategies are cheap at VIX 15.32. Consider VIX call spreads, put ratio spreads on SPX, or long gamma via straddles ahead of Friday payrolls.
+**Broadcom (AVGO) as AI bellwether:** With the SOX up ~80% in 9 weeks, expectations are sky-high. Anything short of a blowout + raised guidance + new custom chip customer could trigger a sharp unwind in the most crowded trade in markets.
 
 ---
 
-*BoltNews Weekend Briefing — May 31, 2026. Based on deep extraction of 25+ financial news sources. All data from primary or verified secondary sources as cited. Not investment advice.*
+## 8. Portfolio Implications
+
+1. **Equities**: Take profits on AI/semiconductor positions ahead of Broadcom earnings. Risk/reward is asymmetric to the downside given the 80% rally in 9 weeks. Consider VIX calls or put spreads — vol is cheap at 15.72.
+
+2. **Rates**: Maintain short duration. A 5.2% 30Y yield is not a buying opportunity when inflation is 3.8% and the Fed might hike. Real yield on 30Y is only ~1.4%.
+
+3. **Credit**: Underweight. HY spreads at 2.72% are not compensating for war + potential Fed hike + consumer collapse. Asymmetry is terrible: spreads can tighten maybe 50bp best case, widen 300bp+ in stress.
+
+4. **FX**: Short USD/JPY (intervention risk limits upside). Long EUR/USD on ECB hawkishness.
+
+5. **Commodities**: Long crude call spreads (peace deal premium has compressed implied vol). The inventory situation is genuinely dangerous if the deal collapses.
+
+6. **Vol**: VIX 15.72 is too cheap given the macro calendar. Long vol strategies — VIX call spreads, SPX put ratio spreads, or long gamma via straddles ahead of Friday payrolls.
+
+---
+
+*BoltNews Weekend Briefing — May 31, 2026. Based on deep extraction of 15 financial news sources. Primary data from Reuters, CNBC, T. Rowe Price, Charles Schwab, Seeking Alpha, MarketWatch, AAII, The Hill, Crestwood Advisors, BlackRock, Apollo Academy. Not investment advice.*
