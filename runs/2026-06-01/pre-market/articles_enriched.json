@@ -1,0 +1,583 @@
+[
+  {
+    "id": 1,
+    "title": "AI Trade Locks In Fresh Gains as S&P 500 Futures Aim for Record",
+    "source": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-05-31/oil-climbs-as-us-iran-ceasefire-remains-elusive-markets-wrap",
+    "published": "2026-06-01T03:32:00",
+    "category": "Equities",
+    "tickers": [
+      "SPX",
+      "NDX"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "sp500_futures": "+0.2%",
+      "nasdaq100_futures": "+0.4%",
+      "may_record_closes": 11,
+      "key_driver": "AI trade, chipmaker rally"
+    },
+    "summary": "AI Trade Locks In Fresh Gains as S&P 500 Futures Aim for Record",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 2,
+    "title": "Nasdaq 100 Breaks 30,000 for First Time; US Payrolls Ahead",
+    "source": "IG International",
+    "url": "https://www.ig.com/en/news-and-trade-ideas/weekly-market-navigator-1-jun-2026-260601",
+    "published": "2026-05-31T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "NDX",
+      "SPX",
+      "DELL",
+      "MU",
+      "SMCI"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "nasdaq100_close": "30,000+",
+      "nasdaq_weekly_pct": "+2.9%",
+      "sp500_weekly_pct": "+1.4%",
+      "dow_weekly_pct": "+0.9%",
+      "dow_level": "51,032.46",
+      "nvidia_premarket": "+2%",
+      "wti_fell": "~10% on ceasefire hopes",
+      "dell_ai_server_revenue": "$16.1B (+757% YoY)",
+      "dell_q1_revenue": "$43.8B (+88% YoY)",
+      "dell_fy_guidance": "$167B",
+      "micron_market_cap": "$1T+",
+      "ubs_mu_target": "$1,625 (from $535)"
+    },
+    "summary": "Nasdaq 100 Breaks 30,000 for First Time; US Payrolls Ahead",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 3,
+    "title": "US Stock Market Weekly: Record Highs on AI Infrastructure Boom",
+    "source": "TradingKey",
+    "url": "https://www.tradingkey.com/tools/market-update/us-stock-market-this-week-20260601",
+    "published": "2026-06-01T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "SPX",
+      "DJI",
+      "IXIC",
+      "DELL",
+      "MU",
+      "NOW",
+      "APP"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "sp500_level": "7,580.05",
+      "sp500_weekly_pct": "+1.43%",
+      "dow_level": "51,032.47",
+      "dow_weekly_pct": "+0.90%",
+      "nasdaq_level": "26,972.62",
+      "nasdaq_weekly_pct": "+2.39%",
+      "nikkei_level": "66,329.28",
+      "nikkei_weekly_pct": "+4.72%",
+      "dell_weekly_gain": "+66.50%",
+      "micron_weekly_gain": "+27.41%",
+      "dell_ai_backlog": "$51.3B",
+      "q1_gdp_revised": "1.6% annualized",
+      "april_cpi": "3.8%",
+      "consumer_sentiment": "44.8 (all-time low)",
+      "inflation_expectations_1yr": "4.8%",
+      "fed_chair": "Kevin Warsh (sworn in May 22)",
+      "next_fomc": "June 16-17"
+    },
+    "summary": "US Stock Market Weekly: Record Highs on AI Infrastructure Boom",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 4,
+    "title": "Nvidia Unveils RTX Spark PC Chip \u2014 'Most Efficient PC Chip Ever Built'",
+    "source": "Barron's / WSJ",
+    "url": "https://www.barrons.com/articles/nvidia-stock-price-intel-amd-pc-chip-416d6c97",
+    "published": "2026-06-01T05:04:00",
+    "category": "Equities",
+    "tickers": [
+      "NVDA",
+      "INTC",
+      "AMD",
+      "QCOM",
+      "DELL",
+      "MSFT",
+      "HPQ"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "nvda_premarket": "+1.9%",
+      "intc_premarket": "-1.7%",
+      "amd_premarket": "-1.7%",
+      "qcom_premarket": "-3.5%",
+      "product": "RTX Spark \u2014 Blackwell GPU + Arm CPU",
+      "target": "Consumer PCs for AI agents",
+      "laptop_models": "30 initially",
+      "desktop_models": "~10",
+      "manufacturing_partners": "Microsoft, Dell, HP",
+      "existing_dgx_spark_price": "$4,699"
+    },
+    "summary": "Nvidia Unveils RTX Spark PC Chip \u2014 'Most Efficient PC Chip Ever Built'",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 5,
+    "title": "Jensen Huang COMPUTEX Keynote \u2014 Nvidia GTC Taipei Begins Today",
+    "source": "Motley Fool",
+    "url": "https://www.fool.com/investing/2026/05/31/nvda-stock-jensen-huang-keynote-computex/",
+    "published": "2026-05-31T21:16:00",
+    "category": "Equities",
+    "tickers": [
+      "NVDA",
+      "INTC",
+      "MRVL",
+      "MSFT",
+      "GOOGL",
+      "QCOM",
+      "SMCI",
+      "SNPS",
+      "TXN"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "nvda_price": "$212.11",
+      "nvda_market_cap": "$5.1T",
+      "nvda_52w_range": "$135.40 - $236.54",
+      "computex_2024_nvda_gain": "+10.4%",
+      "huang_keynote": "June 1, 11am Taipei (May 31, 11pm ET)",
+      "conference_focus": "AI & computing, robotics & mobility, next-gen technology",
+      "ceo_keynote_topics": "GPU architecture cadence, Spectrum-X Ethernet, data center + gaming products"
+    },
+    "summary": "Jensen Huang COMPUTEX Keynote \u2014 Nvidia GTC Taipei Begins Today",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 6,
+    "title": "Dell Q1 FY2027: Revenue $43.8B (+88% YoY), AI Server Revenue +757%",
+    "source": "MarketBeat / Fast Company",
+    "url": "https://www.marketbeat.com/instant-alerts/filing-fisher-asset-management-llc-purchases-new-shares-in-dell-technologies-inc-dell-2026-06-01/",
+    "published": "2026-06-01T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "DELL"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "q1_revenue": "$43.84B (consensus: $35.74B)",
+      "q1_eps": "$4.86 (consensus: $2.96)",
+      "ai_server_revenue": "$16.1B (+757% YoY)",
+      "ai_orders": "$24.4B",
+      "fy2027_revenue_guidance": "$165B - $169B",
+      "fy2027_eps_guidance": "$17.90",
+      "q2_eps_guidance": "$4.80",
+      "avg_analyst_target": "$421.00",
+      "citi_target": "$475 (Buy)",
+      "goldman_target": "$230",
+      "td_cowen_target": "$450 (Hold)",
+      "evercore_target": "$450 (Outperform)",
+      "current_price": "$420.96",
+      "market_cap": "$271.83B",
+      "pe_ratio": "33.44",
+      "institutional_ownership": "76.37%",
+      "52w_range": "$106.38 - $429.15"
+    },
+    "summary": "Dell Q1 FY2027: Revenue $43.8B (+88% YoY), AI Server Revenue +757%",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 7,
+    "title": "Micron Hits $1 Trillion Market Cap; UBS Sets $1,625 Target",
+    "source": "The Tech Marketer / IBD",
+    "url": "https://thetechmarketer.com/micron-mu-stock-2026-ubs-1625-target-trillion-hbm/",
+    "published": "2026-05-26T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "MU",
+      "NVDA",
+      "SNDK",
+      "WDC"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "mu_close": "$895.88 (+19.3%)",
+      "mu_intraday_high": "$916.76",
+      "mu_market_cap": "$1T+",
+      "ubs_target": "$1,625 (from $535, +204%)",
+      "mizuho_target": "$800 (Outperform, top pick)",
+      "q2_fy2026_revenue": "$23.9B (+196% YoY)",
+      "q2_eps": "$12.07 (+756% YoY)",
+      "hbm_revenue": "$7.7B (+163% YoY)",
+      "q3_guidance_revenue": "$33.5B (+260% YoY)",
+      "hbm4_sold_out": "2026 full year, only meeting 50-65% of demand",
+      "dram_undersupply_until": "at least Q2 2028",
+      "nand_undersupply_until": "Q4 2027",
+      "dram_price_increase": "58-63%",
+      "nand_price_increase": "70-75%",
+      "hbm_market_2025": "$35B",
+      "hbm_market_2028": "~$100B/year",
+      "ubs_eps_forecast": ">$100 annually through 2029",
+      "analyst_consensus": "39 Buy, 4 Hold, 1 Sell (out of 44)"
+    },
+    "summary": "Micron Hits $1 Trillion Market Cap; UBS Sets $1,625 Target",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 8,
+    "title": "Snowflake Explodes 37% on $6 Billion Amazon Deal \u2014 'AI Inflection Point'",
+    "source": "24/7 Wall St.",
+    "url": "https://247wallst.com/investing/2026/05/28/snowflake-explodes-37-on-6-billion-amazon-deal-as-ceo-calls-q1-an-ai-inflection-point/",
+    "published": "2026-05-28T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "SNOW",
+      "AMZN"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "stock_move": "+37% intraday to ~$240",
+      "q1_product_revenue": "$1.33B (+34% YoY)",
+      "q1_total_revenue": "$1.39B (beat by 5%)",
+      "q1_eps": "$0.39 vs $0.32 consensus",
+      "remaining_performance_obligations": "$9.21B (+38% YoY)",
+      "net_revenue_retention": "126%",
+      "aws_deal": "$6B multi-year (5 years)",
+      "aws_deal_purpose": "Amazon Graviton CPUs for compute",
+      "fy_product_revenue_guidance": "$5.84B (31% growth)",
+      "non_gaap_op_margin_target": "14%",
+      "ai_accounts": "13,600+ using AI capabilities",
+      "cortex_code_accounts": "7,100+",
+      "prior_ytd_loss": "-20%",
+      "snowflake_summit": "June 3-6"
+    },
+    "summary": "Snowflake Explodes 37% on $6 Billion Amazon Deal \u2014 'AI Inflection Point'",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 9,
+    "title": "Salesforce Q1 Earnings Beat, But Guidance Misses \u2014 Stock Drops",
+    "source": "Investor's Business Daily",
+    "url": "https://www.investors.com/news/technology/salesforce-stock-crm-salesforce-earnings-q12026/",
+    "published": "2026-05-31T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "CRM"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "q1_eps": "$3.88 vs $3.13 consensus",
+      "q1_revenue": "$11.1B vs $11.05B consensus",
+      "crpo": "$33.6B vs $33.7B consensus (+14% YoY)",
+      "q2_revenue_guidance": "$11.27B - $11.35B vs $11.36B consensus",
+      "agentforce_arr": "$1.2B (from $800M prior quarter)",
+      "agentforce_apps_revenue": "$6.91B (+9%)",
+      "data360_platform_revenue": "$3.68B (+25%)",
+      "informatica_contribution": "$428M",
+      "stock_reaction": "-1% to $176 after-hours",
+      "ytd_performance": "-30%",
+      "composite_rating": "60 out of 99",
+      "bofa_rating": "Underperform",
+      "informatica_acquisition": "$8B all-cash (2025)"
+    },
+    "summary": "Salesforce Q1 Earnings Beat, But Guidance Misses \u2014 Stock Drops",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 10,
+    "title": "Oil Prices Jump 3%+ After Weekend US-Iran Clashes \u2014 Brent Above $94",
+    "source": "WSJ / OilPrice.com / Prashanti Forex",
+    "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-01-2026",
+    "published": "2026-06-01T05:04:00",
+    "category": "Macro",
+    "tickers": [
+      "CL",
+      "CO"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "brent_price": "$94.08 (+3.25%)",
+      "wti_price": "$90.14 (+3.18%)",
+      "brent_monthly_decline": "-17.79%",
+      "brent_yoy": "+45.57%",
+      "wti_monthly_decline": "-15.30%",
+      "api_crude_draw": "-2.8M barrels (6th consecutive weekly decline)",
+      "wti_dec_2026_futures": "~$79/bbl",
+      "wti_july_contract": "~$88/bbl",
+      "iea_2026_deficit": "1.8 mb/d",
+      "strait_production_shut_in": ">14 mb/d",
+      "japan_crude_imports_april": "-66%",
+      "dxy": "99.00 (flat)",
+      "gold": "$4,518.09/oz (-0.4%)"
+    },
+    "summary": "Oil Prices Jump 3%+ After Weekend US-Iran Clashes \u2014 Brent Above $94",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 11,
+    "title": "Stock Market Outlook June 1-5: All-Time Highs Enter June, Iran Deal + AI Key",
+    "source": "CNBC",
+    "url": "https://www.cnbc.com/2026/05/29/stock-market-next-week-outlook-for-june-1-5-2026.html",
+    "published": "2026-05-29T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "SPX",
+      "NDX",
+      "DJI"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "nasdaq_since_april": "+8%",
+      "sp500_q1_earnings_growth": ">28% (fastest since Q4 2021)",
+      "info_tech_earnings_growth": ">54%",
+      "may_nfp_expected": "+100,000 (+115K prior)",
+      "unemployment_expected": "4.3%",
+      "earnings_week": "HPE (Mon), PANW (Tue), AVGO/CRWD (Wed)",
+      "key_risk": "June historically worst month in midterm years",
+      "trump_nuclear_demand": "Iran must agree never to have nuclear weapon",
+      "analyst_quote": "Most important: get Strait of Hormuz open, kick can down road on nuclear"
+    },
+    "summary": "Stock Market Outlook June 1-5: All-Time Highs Enter June, Iran Deal + AI Key",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 12,
+    "title": "SoftBank Overtakes Toyota as Japan's Most Valuable Company \u2014 AI Frenzy",
+    "source": "BanklessTimes / Financial Times",
+    "url": "https://www.banklesstimes.com/articles/2026/06/01/softbank-overtakes-toyota-as-japans-most-valuable-company-amid-ai-surge/",
+    "published": "2026-06-01T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "SFTBY",
+      "TM"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "softbank_ytd_gain": "+73%",
+      "softbank_market_value": "~47.2 trillion yen",
+      "toyota_market_value": "~45.7 trillion yen",
+      "nikkei_record": ">67,000",
+      "softbank_nikkei_contribution": "600+ points in single session",
+      "openai_investment_gains": "~$25B in Q1 2026",
+      "openai_stake_value": "~$65B",
+      "annual_net_profit": "~5 trillion yen (quadrupled)",
+      "france_datacenter_plan": "75 billion euros (AI data center)",
+      "arm_holdings": "majority stake, soaring on AI demand",
+      "openai_cost_basis": "~$34.6B",
+      "openai_fair_value": "~$79.6B"
+    },
+    "summary": "SoftBank Overtakes Toyota as Japan's Most Valuable Company \u2014 AI Frenzy",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 13,
+    "title": "Dollar Steady at 99.00; Euro at $1.165, Yen at 159.41",
+    "source": "Prashanti Forex",
+    "url": "https://prashantiforex.wordpress.com/2026/06/01/daily-report-01-june-2026/",
+    "published": "2026-06-01T00:00:00",
+    "category": "FX",
+    "tickers": [
+      "DXY"
+    ],
+    "relevance": "high",
+    "extracted_data": {
+      "dxy": "99.00 (flat, after -0.4% weekly)",
+      "eurusd": "1.165 (-0.08%)",
+      "usdjpy": "159.41 (+0.08%)",
+      "gbpusd": "1.3449 (-0.07%)",
+      "gold": "$4,518.09/oz (-0.4%)",
+      "gold_futures_aug": "$4,548.90 (-1.0%)",
+      "yen_weakness_context": "Markets await Iran war signals, central bank moves"
+    },
+    "summary": "Dollar Steady at 99.00; Euro at $1.165, Yen at 159.41",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 14,
+    "title": "Credit Markets: IG OAS at 77 bps \u2014 Cycle Tights, Up-in-Quality Theme Persists",
+    "source": "InvestmentGrade.com / Schwab",
+    "url": "https://investmentgrade.com/investment-grade-bond-statistics-2026/",
+    "published": "2026-06-01T00:00:00",
+    "category": "Credit",
+    "tickers": [],
+    "relevance": "high",
+    "extracted_data": {
+      "ig_oas": "77 bps",
+      "credit_theme": "Up-in-quality, tight spreads",
+      "ig_yields": "Near upper end of 15-year range",
+      "schwab_view": "Maintain up-in-quality bias, moderate exposure to riskier credit",
+      "new_issue_activity": "Expanding",
+      "credit_trend": "Sustained tightening Jan-May 2026"
+    },
+    "summary": "Credit Markets: IG OAS at 77 bps \u2014 Cycle Tights, Up-in-Quality Theme Persists",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 15,
+    "title": "SoFi Surges 12% on SoFiUSD Stablecoin Launch \u2014 First Bank-Issued Stablecoin",
+    "source": "Yahoo Finance",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/sofi-technologies-surges-12-stablecoin-132319962.html",
+    "published": "2026-05-29T00:00:00",
+    "category": "FX",
+    "tickers": [
+      "SOFI",
+      "HOOD",
+      "UPST"
+    ],
+    "relevance": "medium",
+    "extracted_data": {
+      "sofi_price": "~$19 (+12%)",
+      "sofi_q1_revenue": "$1.1B",
+      "sofi_loan_originations": "$12.2B (+68% YoY)",
+      "sofi_ytd": "-35% (before rally)",
+      "hood_price": "~$86 (+1%)",
+      "hood_gold_subscribers": "4.3M",
+      "hood_ytd": "-25% (before rally)",
+      "upst_price": "~$34 (+3%)",
+      "stablecoin": "SoFiUSD \u2014 Mastercard settlement integration",
+      "wsb_hood_sentiment": "76 (peak bullish)"
+    },
+    "summary": "SoFi Surges 12% on SoFiUSD Stablecoin Launch \u2014 First Bank-Issued Stablecoin",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 16,
+    "title": "Strategy (MSTR) Moves $30M Bitcoin to Coinbase \u2014 Sell-Off Fears Spike",
+    "source": "Yahoo Finance / Stocktwits",
+    "url": "https://finance.yahoo.com/markets/crypto/articles/strategy-moved-30-million-bitcoin-150656029.html",
+    "published": "2026-05-29T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "MSTR",
+      "COIN",
+      "BTC"
+    ],
+    "relevance": "medium",
+    "extracted_data": {
+      "btc_moved": "411.48 BTC (~$30.3M)",
+      "total_btc_holdings": "~850,000 BTC ($65B+)",
+      "btc_price": "~$72,500",
+      "polymarket_sell_odds": "84% before year-end",
+      "mstr_ytd": "-22%",
+      "saylor_statement": "Selling Bitcoin may be necessary to maximize BTC-per-share over 7 years",
+      "ceo_le_statement": "Selling near cost basis would avoid meaningful tax consequences",
+      "retail_sentiment": "Extremely bearish"
+    },
+    "summary": "Strategy (MSTR) Moves $30M Bitcoin to Coinbase \u2014 Sell-Off Fears Spike",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 17,
+    "title": "Space Stocks Slip: SpaceX IPO Valuation Reportedly Below $2 Trillion",
+    "source": "Stocktwits",
+    "url": "https://stocktwits.com/news-articles/markets/equity/asts-rklb-rdw-lunr-spacex-ipo-valuation/cZgSiKvRetr",
+    "published": "2026-06-01T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "ASTS",
+      "RKLB",
+      "RDW",
+      "LUNR"
+    ],
+    "relevance": "medium",
+    "extracted_data": {
+      "spacex_ipo_valuation": "Reportedly below $2T target",
+      "asts_move": "Slip overnight",
+      "rklb_move": "Slip overnight",
+      "rdw_move": "Slip overnight",
+      "lunr_move": "Slip overnight"
+    },
+    "summary": "Space Stocks Slip: SpaceX IPO Valuation Reportedly Below $2 Trillion",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 18,
+    "title": "First Solar Surges 17.7% on Analyst Upgrade and CuRe Manufacturing Program",
+    "source": "Motley Fool",
+    "url": "https://www.fool.com/investing/2026/05/29/why-first-solar-stock-is-soaring-this-week/",
+    "published": "2026-05-29T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "FSLR"
+    ],
+    "relevance": "medium",
+    "extracted_data": {
+      "weekly_gain": "+17.7%",
+      "current_price": "$306.11",
+      "analyst_target": "$315 (GLJ Research, from $207.82, +52%)",
+      "catalyst": "Series 6 CuRe Copper Replacement program reduces risk",
+      "market_cap": "$33B",
+      "52w_range": "$135.50 - $313.75",
+      "gross_margin": "41.73%",
+      "ytd_before_rally": "-1.3%"
+    },
+    "summary": "First Solar Surges 17.7% on Analyst Upgrade and CuRe Manufacturing Program",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 19,
+    "title": "Week Ahead: ISM PMIs, May Nonfarm Payrolls, Eurozone CPI Flash \u2014 War's 4th Month",
+    "source": "S&P Global Market Intelligence",
+    "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/05/week-ahead-economic-preview-week-of-1-june-2026",
+    "published": "2026-05-29T00:00:00",
+    "category": "Macro",
+    "tickers": [],
+    "relevance": "high",
+    "extracted_data": {
+      "april_nfp": "+115,000 (beat)",
+      "april_unemployment": "4.3%",
+      "participation_rate": "Lowest in 4+ years",
+      "flash_pmi_jobs": "Cooling in May",
+      "earnings_growth": "3.6% (trending up)",
+      "ecb_expected": "June rate hike to combat war-driven inflation",
+      "global_pmi": "Growth shifted down since war began",
+      "supply_chain_delays": "Worst since 2022",
+      "services_slowdown": "Consumer services, real estate, construction",
+      "stagflation_signals": "Flash PMIs show stagflation in developed economies"
+    },
+    "summary": "Week Ahead: ISM PMIs, May Nonfarm Payrolls, Eurozone CPI Flash \u2014 War's 4th Month",
+    "age_hours": null,
+    "rejected_reason": null
+  },
+  {
+    "id": 20,
+    "title": "HPE Q2 Earnings Due Today \u2014 Analyst Preview",
+    "source": "MarketBeat / Yahoo Finance",
+    "url": "https://www.marketbeat.com/earnings/reports/2026-6-1-hewlett-packard-enterprise-stock/",
+    "published": "2026-06-01T00:00:00",
+    "category": "Equities",
+    "tickers": [
+      "HPE"
+    ],
+    "relevance": "medium",
+    "extracted_data": {
+      "earnings_date": "June 1, 2026 after close",
+      "conference_call_time": "5:00 PM ET",
+      "q1_fy2026_networking": "Strong",
+      "q1_cloud_ai": "Increased profitability",
+      "fy2026_outlook": "Raised after Q1"
+    },
+    "summary": "HPE Q2 Earnings Due Today \u2014 Analyst Preview",
+    "age_hours": null,
+    "rejected_reason": null
+  }
+]
