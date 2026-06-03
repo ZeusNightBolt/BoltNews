@@ -1,0 +1,211 @@
+{
+  "mode": "post-market",
+  "date": "2026-06-03",
+  "date_suffix": "June 03, 2026",
+  "recency_hours": 24,
+  "generated": "2026-06-03T23:00:00.000000",
+  "articles": [
+    {
+      "ticker": null,
+      "title": "Stock market today: Live updates — June 2-3, 2026 (CNBC)",
+      "url": "https://www.cnbc.com/2026/06/02/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "category": "Market Wrap",
+      "key_points": [
+        "Dow fell 424 pts (-0.8%) Tuesday; extended losses Wednesday",
+        "WTI +2% to ~$96/bbl; Brent ~$98/bbl on Iran escalation",
+        "ADP payrolls +122K vs 110K expected",
+        "ISM Services 53.6 vs 53.9 consensus",
+        "10Y yield approached 4.5%, 30Y near 5%",
+        "CME FedWatch: hike priced by year-end 2026",
+        "NVDA -3%, DELL -4%, ORCL -6%, MSFT -3%",
+        "HPE +19.5% on blowout earnings",
+        "SpaceX IPO fixed at $135/sh, $1.75T valuation",
+        "RGTI -10%, QBTS -7%, IONQ -4% (quantum selloff)",
+        "Partners Group caps redemptions"
+      ],
+      "age_hours": 8
+    },
+    {
+      "ticker": null,
+      "title": "Dow, S&P 500, Nasdaq retreat from records as hopes fade for quick US-Iran deal (Yahoo Finance)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-june-3-dow-sp-500-nasdaq-fall-oil-rises-224803128.html",
+      "source": "Yahoo Finance",
+      "category": "Market Wrap",
+      "key_points": [
+        "Dow -1.21% (600+ pts), S&P 500 -0.74%, Nasdaq -0.89%",
+        "WTI above $96/bbl, Brent near $98/bbl — third straight day of gains",
+        "US-Iran ceasefire talks stalled; Israel Lebanon campaign new obstacle",
+        "SPR withdrawn 8M barrels, now 357.1M — lowest since early 1980s",
+        "AVGO earnings: EPS $2.44 beat, revenue $22.187B, guidance $29.4B",
+        "MRVL +12% premarket, up 242% YTD (Nvidia CEO called it 'next trillion-dollar company')",
+        "META +3% on AI agent monetization (charging businesses)",
+        "ADP 122K jobs in May, exceeding expectations",
+        "WMT: CEO says $4.26/gal gas main stress point for lower-income consumers"
+      ],
+      "age_hours": 4
+    },
+    {
+      "ticker": null,
+      "title": "Stock Market Today (June 3, 2026): Earnings liveblog — Broadcom, CrowdStrike, Veeva (TheStreet)",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-03-2026",
+      "source": "TheStreet",
+      "category": "Market Wrap / After-Hours Earnings",
+      "key_points": [
+        "Russell 2000 -1.25% (worst performer)",
+        "WTI +2.51% to $96.11; Brent +1.98% to $97.90",
+        "Iran missiles hit Kuwait/Bahrain; US struck Qeshm Island",
+        "AVGO AH: -6.44%. Revenue $22.187B (miss $22.27B); EPS $2.44 (beat $2.40); Guide $29.4B; AI semi $16B guide (+200% YoY)",
+        "CRWD AH: -7%. Revenue $1.385B (beat $1.363B); EPS $1.10 (beat $1.07); 4-for-1 stock split",
+        "VEEV AH: -1%. Revenue $882.9M +16% YoY (beat $853.6M); raised guidance",
+        "New Trump tariffs: 10-12.5% on 60 economies over forced labor",
+        "Fed Chair Warsh memo: follow 'best of the Fed's traditions'",
+        "Tesla China May sales +40% YoY to 85,982 vehicles"
+      ],
+      "age_hours": 3
+    },
+    {
+      "ticker": "AVGO",
+      "title": "Broadcom Q2 FY2026 Earnings Report (MarketBeat)",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-6-3-broadcom-inc-stock/",
+      "source": "MarketBeat",
+      "category": "Earnings",
+      "key_points": [
+        "Close: $479.23 (-0.49%); AH: $421.86 (-11.97%)",
+        "Revenue $22.2B +48% YoY (record); beat consensus $22.13B",
+        "AI semi revenue $10.8B +143% YoY",
+        "Op margin 67.3% (record) +200 bps YoY",
+        "FCF $10.3B (46% of rev, record)",
+        "Q3 guide: Revenue $29.4B +84% YoY; AI semi $16B +200% YoY",
+        "FY2026 AI rev outlook $56B +180% YoY; FY2027 target >$100B",
+        "Google, Anthropic, OpenAI, Meta + 2 other hyperscalers as core customers",
+        "AI SPV with Apollo: $35B first tranche for >20 GW compute capacity"
+      ],
+      "age_hours": 2
+    },
+    {
+      "ticker": "CRWD",
+      "title": "CrowdStrike Q1 FY2027: Beat-and-Raise + 4-for-1 Stock Split (Benzinga/8-K)",
+      "url": "https://www.benzinga.com/markets/earnings/26/06/52987804/crowdstrike-delivers-beat-and-raise-q1-announces-4-for-1-stock-split",
+      "source": "Benzinga / SEC 8-K",
+      "category": "Earnings",
+      "key_points": [
+        "AH price: $681.20 (-8.68%)",
+        "Revenue $1.39B +26% YoY (beat $1.36B); Adj EPS $1.10 (beat $1.07)",
+        "ARR $5.51B +24% YoY; Net new ARR $255.8M (Q1 record)",
+        "FCF $468.5M (record); FCF margin 34%",
+        "Turned GAAP profitable: $27.8M net income",
+        "Raised FY27 guidance: Rev $5.92-$5.96B; EPS $4.88-$4.96",
+        "4-for-1 stock split: record date June 25, trading July 2",
+        "CEO: 'Mythos moment — AI and cybersecurity collided'"
+      ],
+      "age_hours": 2
+    },
+    {
+      "ticker": null,
+      "title": "Crude Oil Nears $100 as Iran Launches Attack — Expert Analysis (Economic Times)",
+      "url": "https://economictimes.indiatimes.com/markets/commodities/news/oil-price-today-june-3-crude-oil-nears-100-again-as-iran-launches-attack-in-fresh-escalation-what-are-experts-saying/articleshow/131474089.cms",
+      "source": "Economic Times",
+      "category": "Commodities / Geopolitics",
+      "key_points": [
+        "Brent $97.05 +1.09%; WTI $94.77 +1.08%",
+        "Iran launched ballistic missiles at Kuwait and Bahrain",
+        "Saudi Aramco CEO: Hormuz disruption could delay stability until 2027; 100M barrels/week at risk",
+        "Morgan Stanley: 'race against time' if Strait remains shut through June",
+        "Trump gives contradictory signals on negotiations",
+        "Even with ceasefire, shipping through Hormuz could take months to normalize"
+      ],
+      "age_hours": 10
+    },
+    {
+      "ticker": null,
+      "title": "Partners Group Caps Withdrawals — Fresh Concern Over Private Markets (Reuters)",
+      "url": "https://www.reuters.com/world/partners-group-caps-withdrawals-86-billion-fund-shares-plunge-2026-06-03/",
+      "source": "Reuters",
+      "category": "Credit / Private Markets",
+      "key_points": [
+        "Partners Group capped redemptions on $8.6B Global Value SICAV",
+        "Redemption requests hit 9.8% of NAV; cap at 5%",
+        "PGHN fell 16% to 6-year low",
+        "BX -4%, KKR -4%, ARES -4.8%, OWL -4.4%",
+        "Cliffwater: Q2 redemptions 17% on $31.3B fund (up from 14% Q1)",
+        "CEO Layton: 'redemption pressure spreading from private credit to other asset classes'",
+        "Analyst: 'Evergreen funds were sold as liquid PE — gates expose the contradiction'"
+      ],
+      "age_hours": 6
+    },
+    {
+      "ticker": "PANW",
+      "title": "Palo Alto Networks Raises Annual Forecasts on Strong AI Cybersecurity Demand (Reuters)",
+      "url": "https://www.reuters.com/business/palo-alto-raises-annual-forecasts-strong-ai-cybersecurity-demand-shares-surge-2026-06-02/",
+      "source": "Reuters",
+      "category": "Earnings / Technology",
+      "key_points": [
+        "Q3 revenue $3B +31% YoY (beat $2.94B consensus)",
+        "Raised FY26 guidance: Revenue $11.415-11.425B; EPS $3.77-$3.79",
+        "Shares surged 7.4% AH but reversed to -3% during Wednesday session",
+        "AI-driven threats accelerating enterprise cybersecurity spending",
+        "Post-CyberArk acquisition ($25B), building integrated platform"
+      ],
+      "age_hours": 22
+    },
+    {
+      "ticker": null,
+      "title": "Federal Reserve H.15 Selected Interest Rates — June 3, 2026",
+      "url": "https://www.federalreserve.gov/releases/h15/",
+      "source": "Federal Reserve Board (primary)",
+      "category": "Rates / Fed",
+      "key_points": [
+        "Fed funds effective: 3.62%",
+        "Bank prime loan: 6.75%",
+        "Discount window: 3.75%",
+        "1Y Treasury: 3.82%; 2Y: 4.05%; 5Y: 4.17%; 10Y: 4.46%; 30Y: 4.97%",
+        "10Y TIPS: 2.07% → implied breakeven ~2.39%",
+        "Yield curve inverted (2s10s): +41 bps (steepening from inversion earlier this year)",
+        "IG corporate spread: 74 bps; HY spread: 271 bps"
+      ],
+      "age_hours": 5
+    },
+    {
+      "ticker": null,
+      "title": "US Stock Market Today: US stocks edge lower as investors consolidate after records (Economic Times)",
+      "url": "https://m.economictimes.com/markets/us-stocks/news/dow-jones-stock-market-live-updates-nasdaq-sp-500-us-iran-israel-war-hormuz-deal-brent-crude-oil-earnings-forecast-nvidia-macys-gamestop-stock-price-news-3rd-june-2026/liveblog/131484187.cms",
+      "source": "Economic Times",
+      "category": "Market Wrap / Macro",
+      "key_points": [
+        "Kuwait airport hit: 1 killed, 63 injured; airport temporarily shut",
+        "NY Fed President Williams: policy 'in the right place', no immediate need to hike or cut",
+        "ISM Services 54.5 (beat); Prices Paid highest since Aug 2022",
+        "New tariffs: 10-12.5% on 60 economies over forced labor",
+        "Gold fell to 1-week low; palladium -3% to $1,329/oz",
+        "Traders now focused on inflation/CPI over jobs data",
+        "Copper tariff 50% remains on certain products"
+      ],
+      "age_hours": 6
+    },
+    {
+      "ticker": null,
+      "title": "Stock Market News for Jun 3, 2026 (Zacks)",
+      "url": "https://www.zacks.com/stock/news/2931368/stock-market-news-for-jun-3-2026",
+      "source": "Zacks",
+      "category": "Market Wrap",
+      "key_points": [
+        "Tuesday close: DJI +0.5% to 51,307; SPX +0.1% to 7,609; Nasdaq flat at 27,093",
+        "HPE +19.5% on earnings beat ($0.79 vs $0.54 consensus)",
+        "MRVL +32.5% after Jensen Huang called it 'next trillion-dollar company'",
+        "GOOGL -3.9% on $80B stock sale announcement for AI buildout",
+        "VIX -1.74% to 15.77",
+        "NYSE advancers beat decliners 1.52:1; Nasdaq decliners led 1.1:1",
+        "Total volume: 20.51B shares (above 20-session avg 19.93B)"
+      ],
+      "age_hours": 12
+    }
+  ],
+  "stats": {
+    "articles_found": 11,
+    "articles_filtered": 0,
+    "articles_stale_rejected": 0,
+    "deep_extractions": 11,
+    "sources": ["CNBC", "Yahoo Finance", "TheStreet", "Reuters", "Federal Reserve", "Economic Times", "Zacks", "MarketBeat", "Benzinga", "SEC EDGAR", "StreetStats"]
+  }
+}
