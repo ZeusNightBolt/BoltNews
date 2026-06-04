@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-04</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-04 &middot; 20 articles &middot; 5 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews — Post-Market Recap: June 4, 2026</h1>
+<p><strong>Thursday, June 4, 2026</strong> | 20 articles | Deep Synthesis</p>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p class="bold-line"><strong>The Dominant Narrative: The Great AI Rotation Begins</strong></p>
+<p>The market delivered a bifurcated session on Thursday — the Dow surged <strong>+875 points (+1.73%) to a record 51,561.93</strong> while the Nasdaq slipped <strong>-0.09%</strong>. The S&P 500 gained <strong>+0.41% to 7,584.31</strong>. This was not a broad rally; it was a violent sector rotation.</p>
+<p><strong>Broadcom (AVGO) imploded -13% to -15%</strong>, erasing ~$315 billion in market value despite beating on EPS ($2.44 vs $2.40 est) and issuing above-consensus Q3 guidance ($29.4B vs $28.5B est). The sin: <strong>unchanged FY2027 AI revenue guidance of $100 billion</strong>. After a 38% YTD rally pricing in perfection, "unchanged" was a crime. The chip wreck dragged allies: MU -8%, ARM -5%, SMCI/INTC -5-7%. CrowdStrike (CRWD) fell -10% on an earnings beat with in-line guidance — same "priced-for-perfection" dynamic.</p>
+<p>Capital fled tech into <strong>healthcare (UNH +5-6%, HUM +6%), financials (JPM +3%, GS +5%), and small-caps (Russell 2000 +1.4%)</strong>. Dennis Follmer (CIO, Montis Financial) called it "the early innings of a rotation."</p>
+<p><strong>Contrarian signal</strong>: The rotation accelerated on a day the ADP report showed +122K private payrolls — strongest since January 2025 — pointing to a resilient economy that could support broadening beyond tech.</p>
+<p>The day's three post-market earnings tell the rotation story from different angles:</p>
+<ul><li><strong>Lululemon (LULU)</strong>: Q1 EPS $1.69 (-35% YoY), operating margin collapsed to 11.2% (-730bps), FY guidance cut. Down 40% YTD.</li><li><strong>Ciena (CIEN)</strong>: Revenue +40% YoY to $1.57B, adj EPS $1.64 (+290%), raised guidance — yet stock fell 8%. AI infrastructure demand real, but already priced.</li><li><strong>Quantinuum (QNT)</strong>: Quantum computing IPO opened at $68 (+13.3% vs $60 IPO), $1.68B raised, $17.6B market cap.</li></ul>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Signal</th><th>Level/Change</th><th>Key Driver</th><th>Positioning</th></tr></thead><tbody><tr><td><strong>Equities — Large Cap</strong></td><td>Rotation</td><td>Dow +1.73%, S&P +0.41%, Nasdaq -0.09%</td><td>AVGO -13% crushed tech; UNH/JPM/GS led</td><td>Rotate from semis into healthcare/financials</td></tr><tr><td><strong>Equities — Small Cap</strong></td><td>Bullish</td><td>Russell 2000 +1.4%</td><td>Broadening rally, rate stability</td><td>Overweight — rotation beneficiary</td></tr><tr><td><strong>Semiconductors</strong></td><td>Bearish</td><td>SMH -1%, MU -8%, AVGO -13%</td><td>"Priced for perfection" unwind</td><td>Trim / sell rips — AI capex still strong but valuations stretched</td></tr><tr><td><strong>Rates — 10Y UST</strong></td><td>Neutral</td><td>4.48% (-2bps)</td><td>Oil -2.8%, ceasefire hopes</td><td>Range-bound 4.40-4.55% near-term</td></tr><tr><td><strong>Rates — Fed</strong></td><td>Dovish hold</td><td>3.50-3.75%</td><td>June 16-17 FOMC: hold priced at near-certainty</td><td>Fed on hold until inflation clarity from Iran</td></tr><tr><td><strong>Credit — IG</strong></td><td>Stable</td><td>Spreads contained</td><td>No major widening</td><td>Watch Blackstone BCRED as canary</td></tr><tr><td><strong>Credit — Private</strong></td><td>⚠️ Warning</td><td>BCRED 5% cap, 10% redemptions</td><td>Wealthy individuals retreating</td><td>Monitor — not systemic yet but spreading</td></tr><tr><td><strong>FX — DXY</strong></td><td>Bearish</td><td>99.42 (-0.1%)</td><td>Oil retreat, risk-on rotation</td><td>Tactical short DXY; long EUR, JPY</td></tr><tr><td><strong>Commodities — Oil</strong></td><td>Bearish</td><td>WTI $93.30 (-2.8%), Brent $95.35 (-2.5%)</td><td>Israel-Lebanon ceasefire; Trump Iran restraint</td><td>Sell rallies; 170 ships still stuck but ceasefire momentum building</td></tr><tr><td><strong>Commodities — Gold</strong></td><td>Bullish</td><td>$4,508 (+0.9%)</td><td>Inflation fears, Iran uncertainty, central bank buying</td><td>Structural long; $4,920 median 2026 forecast</td></tr><tr><td><strong>Volatility — VIX</strong></td><td>Low</td><td>16.38 (+2%)</td><td>Index calm despite single-stock fireworks</td><td>Options sellers' market; dispersion trades favored</td></tr><tr><td><strong>Crypto — BTC</strong></td><td>Bearish</td><td>$63,479 (-3.2%)</td><td>13 straight days ETF outflows (>$3B), extreme fear</td><td>Support $60K; avoid until ETF flow reversal</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Rates & Macro</h2>
+<p><strong>Labor market holding firm.</strong> ADP reported +122K private payrolls in May (vs. 110K consensus) — the strongest print since January 2025. Gains were broad-based across 8 of 10 sectors. Education/health led (+57K), trade/transport (+36K). Wage growth: job-stayers 4.4% YoY, job-switchers 6.5%.</p>
+<p>Friday's BLS report: consensus +80-85K nonfarm payrolls, unemployment steady at 4.3%. A beat would support the rotation thesis (economy strong enough for broadening). A miss would reignite recession fears and send capital back to tech safety.</p>
+<p><strong>Productivity revised down.</strong> Q1 nonfarm productivity was revised to +0.3% from +0.8% (consensus 0.8%), down from +1.6% in Q4. This is a blow to the AI-productivity narrative — if AI isn't showing up in macro productivity data yet, the capex spending may face more scrutiny.</p>
+<p><strong>Fed Beige Book</strong>: widespread fuel-driven inflation complaints. Higher transportation costs passing through. Fed officials "increasingly concerned" about Iran war's price impact — may need to raise rates again despite market pricing a hold. The June 16-17 FOMC is priced at near-certainty of holding 3.50-3.75%.</p>
+<p><strong>10Y Treasury yield</strong>: 4.48%, down 2bps. Oil's retreat provided a bid for duration. But the Beige Book's inflation warnings and Friday's jobs report keep the range tight.</p>
+<hr class="divider">
+<h2>Credit Markets: The Blackstone Canary</h2>
+<p><strong>Blackstone capped withdrawals at 5%</strong> on its $79 billion flagship BCRED (private credit fund) after Q2 redemption requests hit 10% of shares — up from 7.9% in Q1. The fund shrank from $82B to $79B.</p>
+<p>This matters because: (1) BCRED is the largest vehicle in the $2T+ private credit market; (2) it's the second consecutive quarter of elevated redemptions; (3) Partners Group and Cliffwater ($31.3B) reported similar issues this week; (4) Evercore flagged "slowing gross sales" as a "larger and more prolonged issue" for the industry.</p>
+<p><strong>But context is key</strong>: The 10% redemption rate was "better than feared" (Evercore). BX shares rose 8% on the news. Class I shares have delivered 9.3% annualized returns since inception — a 50% premium to leveraged loans. Blackstone argues the structure is working as designed: limiting redemptions prevents forced asset sales.</p>
+<p>The private credit redemption wave is a slow-burn risk, not an acute crisis. Monitor for: (a) whether Q3 redemption requests accelerate; (b) whether any fund breaks the 5% cap; (c) spread widening in leveraged loans as forced sellers emerge.</p>
+<hr class="divider">
+<h2>Equities: The Rotation's Anatomy</h2>
+<h3>What Sold Off</h3>
+<ul><li><strong>Broadcom (AVGO)</strong>: -13%. Revenue $22.19B missed $22.27B (LSEG). Infrastructure software $7.18B vs $7.32B est. AI forecast unchanged at $100B FY2027. CEO Hock Tan pivoting to "chips only" strategy. Forward P/E 29.9x vs. S&P 27.94x — not expensive, but not cheap enough for a disappointment. Bernstein's Stacy Rasgon: "We suspect the shares may take a pause for the next couple of quarters." 22 analysts raised PTs to median $500.</li><li><strong>CrowdStrike (CRWD)</strong>: -10% — worst day since July 2024. Beat on earnings but Q2 guidance ($1.44B revenue) was only in-line with elevated expectations. 4-for-1 stock split announced. CEO Kurtz: "CrowdStrike is AI security infrastructure." Wells Fargo maintained overweight, $725 PT.</li><li><strong>Micron (MU)</strong>: -8%, dragged by Broadcom despite being up nearly 4x YTD (best S&P 500 performer). Morgan Stanley: AI-driven memory shortage could last 2-3 more years.</li><li><strong>Ciena (CIEN)</strong>: -8% despite Q2 revenue +40% YoY and adj EPS +290%. Raised FY guidance. Same "good isn't good enough" theme.</li></ul>
+<h3>What Rallied</h3>
+<ul><li><strong>UnitedHealth (UNH)</strong>: +5-6% on BofA double-upgrade (Neutral → Buy, PT $450 vs $420). Thesis: improving medical cost trends, soft April/May utilization. "Recent data points make it harder to argue Q1 strength was temporary."</li><li><strong>Humana (HUM)</strong>: +6% on Morgan Stanley PT raise.</li><li><strong>JPMorgan (JPM)</strong>: +3%; <strong>Goldman Sachs (GS)</strong>: +5%. Financials benefit from rate stability and economic resilience.</li><li><strong>Russell 2000</strong>: +1.4%, outperforming S&P 500. The rotation into small-caps reflects a bet on broadening economic strength.</li><li><strong>Blackstone (BX)</strong>: +8% despite (or because of?) the BCRED news — "10% is better than feared."</li></ul>
+<h3>IPOs — The Real Action</h3>
+<ul><li><strong>SpaceX (SPCX)</strong>: Fixed $135/share IPO price. $1.77T valuation. $75B raise (+$11.2B greenshoe). Goldman Sachs lead. Nasdaq listing. Expected debut June 12. Musk retains >82% voting control. Would be largest IPO ever — 3x Alibaba's record.</li><li><strong>Quantinuum (QNT)</strong>: Opened at $68 (+13.3% vs $60 IPO). $1.68B raised. $17.6B market cap. Full-stack quantum computing. Commerce Dept providing up to $100M.</li><li><strong>Anthropic</strong>: Confidential IPO filing June 1. OpenAI preparing to file "in coming weeks." The AI IPO pipeline is loading.</li></ul>
+<h3>Lululemon Post-Market</h3>
+<p>LULU reported Q1 after the close. EPS $1.69 (-35% YoY). Revenue $2.47B (+4%). Operating margin collapsed 730bps to 11.2%. Americas -3% constant dollar, International +16% (China +30%). FY guidance cut: revenue $11.0-11.15B (flat YoY), EPS $10.95-11.15. Already down 40% YTD. Interim co-CEOs: "navigating headwinds... taking additional actions to reposition." The consumer discretionary warning flag is waving.</p>
+<hr class="divider">
+<h2>Commodities & Energy</h2>
+<p><strong>Oil fell sharply</strong>: WTI -2.8% to $93.30, Brent -2.5% to $95.35. Catalysts: (1) Israel-Lebanon ceasefire renewal, (2) Trump reportedly ruling out all-out war with Iran "unless US troops killed." But the structural damage is real: ~15M barrels/day of supply offline, 170 ships locked in the Persian Gulf, WSJ/S&P Global estimates up to 6 months to return to 80% of pre-crisis supply.</p>
+<p><strong>Gold +0.9% to ~$4,508/oz</strong>. Analysts forecast median $4,920 for 2026 (Reuters survey of 31 analysts/traders). Central bank buying and geopolitical uncertainty provide a floor. The contrarian read: if Iran tensions de-escalate, gold could correct sharply — but that's not today's base case.</p>
+<hr class="divider">
+<h2>Crypto: Extreme Fear Territory</h2>
+<p>Bitcoin closed at $63,478, -3.2% for the day and -13% for the week — worst since February. <strong>13 consecutive trading days</strong> of net outflows from spot BTC ETFs (>$3 billion per Glassnode). Crypto Fear & Greed Index in "extreme fear." MSTR (Strategy) -31% in the past month after selling 32 BTC — its first Bitcoin sale in years — to cover preferred dividends. COIN hovering near $179.</p>
+<p>Support expected near $60,000 (efficient miner production cost + 200-week moving average). The counter-narrative: AI stock euphoria may be drawing capital away from crypto. If the AI rotation accelerates, crypto could remain a source of funds. Contrarian long only on confirmed ETF inflow reversal.</p>
+<hr class="divider">
+<h2>Upcoming Catalysts (June 5-12)</h2>
+<div class="table-wrapper"><table><thead><tr><th>Date</th><th>Event</th><th>Impact</th></tr></thead><tbody><tr><td><strong>Fri, Jun 5</strong></td><td>May BLS Employment Report (8:30 AM ET)</td><td>HIGH — consensus +80-85K payrolls, UE 4.3%</td></tr><tr><td><strong>Mon, Jun 8</strong></td><td>Apple WWDC — AI features, enhanced Siri</td><td>HIGH — AAPL +14% YTD; catalyst for consumer AI narrative</td></tr><tr><td><strong>~Jun 12</strong></td><td>SpaceX (SPCX) IPO expected debut</td><td>HIGH — largest IPO ever; liquidity drain or sentiment booster?</td></tr><tr><td><strong>Jun 16-17</strong></td><td>FOMC Meeting</td><td>HIGH — priced as hold; Beige Book inflation warnings to be watched</td></tr><tr><td><strong>TBD</strong></td><td>Anthropic IPO filing updates</td><td>MEDIUM — AI IPO pipeline building</td></tr><tr><td><strong>TBD</strong></td><td>OpenAI confidential IPO filing</td><td>MEDIUM — could come "in coming weeks"</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Contrarian Signals</h2>
+<p>1. <strong>The rotation isn't a bearish signal — it's broadening.</strong> The ADP beat, small-cap outperformance, and financial sector strength all point to an economy strong enough to support multiple sectors. If Friday's jobs report confirms, the rotation could accelerate.</p>
+<p>2. <strong>Broadcom's sell-off is a valuation reset, not a business failure.</strong> Revenue +48% YoY, AI chips +143% YoY, FCF +60% YoY. At 29.9x forward P/E, the stock is now cheaper than Marvell (61.7x). Bernstein: "The story gets interesting again once we enter 2027."</p>
+<p>3. <strong>Oil's decline is fragile.</strong> The ceasefire is between Israel and Lebanon, not Israel and Iran. 170 ships remain stuck. Production capacity is damaged. A single escalation headline could reverse the move.</p>
+<p>4. <strong>Bitcoin at extreme fear.</strong> Historically, extreme fear readings have marked local bottoms. But with 13 straight ETF outflow days, the trend is your friend until it isn't.</p>
+<p>5. <strong>Lululemon's margin collapse</strong> is a rare consumer discretionary warning signal in an otherwise resilient consumer narrative. If LULU is the canary, watch for contagion to other premium consumer brands.</p>
+<hr class="divider">
+<h2>Positioning Summary</h2>
+<ul><li><strong>Overweight</strong>: Healthcare (UNH, HUM), Financials (JPM, GS), Small-caps (IWM), Gold</li><li><strong>Neutral</strong>: Large-cap tech ex-semiconductors (AAPL pre-WWDC), IG Credit, USD</li><li><strong>Underweight</strong>: Semiconductors (trim, don't short — secular demand intact), Crypto (wait for ETF flow reversal), Oil (sell ceasefire rips)</li><li><strong>Watch</strong>: Private credit redemption cycle, Friday jobs report, Apple WWDC, SpaceX IPO liquidity impact</li></ul>
+<hr class="divider">
+<p><em>Generated by BoltNews • 20 articles • Deep synthesis • Sources: Investopedia, Reuters, CNBC, Schwab, Ciena IR, Lululemon IR, Yahoo Finance, 247WallSt, ADP, Federal Reserve</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727" target="_blank" rel="noopener">MARKET: Dow Soars 875 Points to Record Close; S&P 500 Overcomes Broadcom-Led Tech Pullba</a>
+<a class="source-link" href="https://www.reuters.com/business/broadcom-tumbles-revenue-miss-clouds-ai-boom-bets-2026-06-04/" target="_blank" rel="noopener">AVGO: Broadcom Set to Shed $300 Billion in Value as AI Results Fail to Impress</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/03/broadcom-avgo-earnings-report-q2-2026.html" target="_blank" rel="noopener">AVGO: Broadcom (AVGO) Q2 2026 Earnings: Revenue Miss, AI Forecast Unchanged</a>
+<a class="source-link" href="https://247wallst.com/investing/2026/06/04/crowdstrike-sinks-9-as-earnings-beat-falls-short-of-lofty-expectations-weighing-on-palo-alto-networks/" target="_blank" rel="noopener">CRWD: CrowdStrike Sinks 9% as Earnings Beat Falls Short of Lofty Expectations</a>
+<a class="source-link" href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank" rel="noopener">MARKET: Schwab Market Update: Broadcom Plunge Takes Chip Out of Long Rally</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/unitedhealth-stock-climbs-major-bofa-192139049.html" target="_blank" rel="noopener">UNH: UnitedHealth Stock Climbs After Major BofA Upgrade to Buy, PT $450</a>
+<a class="source-link" href="https://www.reuters.com/business/blackstone-caps-withdrawals-flagship-private-credit-fund-2026-06-04/" target="_blank" rel="noopener">BX: Blackstone Private Credit Fund Caps Withdrawals as Redemption Requests Jump to 1</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html" target="_blank" rel="noopener">SPCX: SpaceX Targets $135 IPO Price at $1.77 Trillion Valuation</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/01/alphabet-to-raise-80-billion-from-stock-sales-to-fund-ai-buildout.html" target="_blank" rel="noopener">GOOGL: Alphabet to Raise $80 Billion from Stock Sales to Fund AI Build-out</a>
+<a class="source-link" href="https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Second-Quarter-2026-Financial-Results/default.aspx" target="_blank" rel="noopener">CIEN: Ciena Reports Q2 2026: Revenue +40% YoY to $1.57B, Adj EPS $1.64 (+290%)</a>
+<a class="source-link" href="https://corporate.lululemon.com/media/press-releases/2026/06-04-2026-210523775" target="_blank" rel="noopener">LULU: Lululemon Q1 FY2026: EPS $1.69, Revenue $2.47B (+4%), Operating Margin Collapses</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/04/quantinuum-qnt-stock-first-trade-ipo.html" target="_blank" rel="noopener">QNT: Quantinuum Opens at $68/Share on Nasdaq, +13.3% Above $60 IPO Price</a>
+<a class="source-link" href="https://www.cnbc.com/2026/05/29/dell-stock-earnings-ai-servers.html" target="_blank" rel="noopener">DELL: Dell Skyrockets 32% After Blowout AI Server Earnings — Best Day Ever</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/03/adp-jobs-report-may-2026-payrolls-increase-by-122000.html" target="_blank" rel="noopener">MACRO: ADP: Private Payrolls Surge 122K in May, Beating 110K Estimate</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727" target="_blank" rel="noopener">COMMODITY: Oil Retreats 2.8% on Israel-Lebanon Ceasefire; Gold +0.9% Above $4,500</a>
+<a class="source-link" href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank" rel="noopener">BTC: Bitcoin ~$63,500: 13 Straight Days of ETF Outflows, Fear & Greed in Extreme Fear</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/crypto/articles/buy-sell-hold-mstr-strategy-115514401.html" target="_blank" rel="noopener">MSTR: Strategy (MSTR) Drops 31% in a Month After First Bitcoin Sale in Years</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/03/stock-market-today-live-updates.html" target="_blank" rel="noopener">MARKET: CNBC Market Close: Rotation Away from Tech — 'Early Innings of a Rotation'</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727" target="_blank" rel="noopener">AAPL: Apple WWDC Next Week: New AI Features, Enhanced Siri; BofA PT $380</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727" target="_blank" rel="noopener">MACRO: Beige Book: Widespread Fuel-Driven Inflation Complaints; Fed Concerns on Iran Wa</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-04 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
