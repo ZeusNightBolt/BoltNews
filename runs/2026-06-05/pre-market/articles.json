@@ -1,636 +1,162 @@
 {
   "mode": "pre-market",
-  "is_weekend": false,
-  "target_date": "2026-06-05",
-  "date_suffix": "June 05, 2026",
-  "recency_hours": 24,
-  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 24 hours (since ~2026-06-05). All search queries include 'June 05, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
-  "generated": "2026-06-05T06:01:57.496394",
-  "total_tickers": 148,
-  "prioritized_tickers": [
-    "HPQ",
-    "NTAP",
-    "CRM",
-    "ZS",
-    "SNOW",
-    "HPE",
-    "MDB",
-    "OKTA",
-    "MRVL",
-    "PANW",
-    "DELL",
-    "CIEN",
-    "CRWD",
-    "ADSK",
-    "SNPS",
-    "AZO",
-    "COST",
-    "AVGO",
-    "ONDS",
-    "OKLO",
-    "IONQ",
-    "ASTS",
-    "IT",
-    "RDW",
-    "RGTI",
-    "SMCI",
-    "SOFI",
-    "PINS",
-    "LITE",
-    "AAOI",
-    "MSTR",
-    "WDAY",
-    "HUBS",
-    "BE",
-    "COIN",
-    "CRWV",
-    "ON",
-    "WDC",
-    "FSLR",
-    "TEAM",
-    "CRCL",
-    "ALAB",
-    "RDDT",
-    "SNDK",
-    "XPO",
-    "RKLB",
-    "GDDY",
-    "NOW",
-    "UNP",
-    "QCOM"
-  ],
-  "topics": [
-    "S&P 500",
-    "NASDAQ",
-    "Dow Jones",
-    "Russell 2000",
-    "Federal Reserve",
-    "FOMC",
-    "interest rates",
-    "Treasury yields",
-    "US dollar",
-    "DXY",
-    "forex",
-    "currency markets",
-    "credit markets",
-    "corporate bonds",
-    "investment grade"
-  ],
-  "search_queries": [
-    {
-      "type": "ticker",
-      "ticker": "HPQ",
-      "name": "HP INC",
-      "queries": [
-        "HPQ stock news today June 05, 2026",
-        "HPQ Computer Hardware news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "NTAP",
-      "name": "NETAPP INC",
-      "queries": [
-        "NTAP stock news today June 05, 2026",
-        "NTAP Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CRM",
-      "name": "SALESFORCE INC",
-      "queries": [
-        "CRM stock news today June 05, 2026",
-        "CRM Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ZS",
-      "name": "ZSCALER INC",
-      "queries": [
-        "ZS stock news today June 05, 2026",
-        "ZS Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SNOW",
-      "name": "SNOWFLAKE INC",
-      "queries": [
-        "SNOW stock news today June 05, 2026",
-        "SNOW Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "HPE",
-      "name": "HEWLETT PACKA",
-      "queries": [
-        "HPE stock news today June 05, 2026",
-        "HPE Communication Equipment news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "MDB",
-      "name": "MONGODB INC",
-      "queries": [
-        "MDB stock news today June 05, 2026",
-        "MDB Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "OKTA",
-      "name": "OKTA INC",
-      "queries": [
-        "OKTA stock news today June 05, 2026",
-        "OKTA Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "MRVL",
-      "name": "MARVELL TECHNOLO",
-      "queries": [
-        "MRVL stock news today June 05, 2026",
-        "MRVL Semiconductors news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "PANW",
-      "name": "PALO ALTO NETWOR",
-      "queries": [
-        "PANW stock news today June 05, 2026",
-        "PANW Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "DELL",
-      "name": "DELL TECHN-C",
-      "queries": [
-        "DELL stock news today June 05, 2026",
-        "DELL Computer Hardware news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CIEN",
-      "name": "CIENA CORP",
-      "queries": [
-        "CIEN stock news today June 05, 2026",
-        "CIEN Communication Equipment news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CRWD",
-      "name": "CROWDSTRIKE HO-A",
-      "queries": [
-        "CRWD stock news today June 05, 2026",
-        "CRWD Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ADSK",
-      "name": "AUTODESK INC",
-      "queries": [
-        "ADSK stock news today June 05, 2026",
-        "ADSK Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SNPS",
-      "name": "SYNOPSYS INC",
-      "queries": [
-        "SNPS stock news today June 05, 2026",
-        "SNPS Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "AZO",
-      "name": "AUTOZONE INC",
-      "queries": [
-        "AZO stock news today June 05, 2026",
-        "AZO Auto Parts news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "COST",
-      "name": "COSTCO WHOLESALE",
-      "queries": [
-        "COST stock news today June 05, 2026",
-        "COST Discount Stores news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "AVGO",
-      "name": "BROADCOM INC",
-      "queries": [
-        "AVGO stock news today June 05, 2026",
-        "AVGO Semiconductors news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ONDS",
-      "name": "ONDAS HOLDINGS I",
-      "queries": [
-        "ONDS stock news today June 05, 2026",
-        "ONDS Communication Equipment news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "OKLO",
-      "name": "OKLO INC",
-      "queries": [
-        "OKLO stock news today June 05, 2026",
-        "OKLO Utilities - Independent Power Producers news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "IONQ",
-      "name": "IONQ INC",
-      "queries": [
-        "IONQ stock news today June 05, 2026",
-        "IONQ Computer Hardware news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ASTS",
-      "name": "AST SPACEMOBILE",
-      "queries": [
-        "ASTS stock news today June 05, 2026",
-        "ASTS Communication Equipment news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "IT",
-      "name": "GARTNER INC",
-      "queries": [
-        "IT stock news today June 05, 2026",
-        "IT Information Technology Services news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RDW",
-      "name": "REDWIRE CORP",
-      "queries": [
-        "RDW stock news today June 05, 2026",
-        "RDW Aerospace & Defense news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RGTI",
-      "name": "RIGETTI COMPUTIN",
-      "queries": [
-        "RGTI stock news today June 05, 2026",
-        "RGTI Computer Hardware news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SMCI",
-      "name": "SUPER MICRO COMP",
-      "queries": [
-        "SMCI stock news today June 05, 2026",
-        "SMCI Computer Hardware news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SOFI",
-      "name": "SOFI TECHNOLOGIE",
-      "queries": [
-        "SOFI stock news today June 05, 2026",
-        "SOFI Credit Services news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "PINS",
-      "name": "PINTEREST INC -A",
-      "queries": [
-        "PINS stock news today June 05, 2026",
-        "PINS Internet Content & Information news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "LITE",
-      "name": "LUMENTUM HOL",
-      "queries": [
-        "LITE stock news today June 05, 2026",
-        "LITE Communication Equipment news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "AAOI",
-      "name": "APPLIED OPTOELEC",
-      "queries": [
-        "AAOI stock news today June 05, 2026",
-        "AAOI Communication Equipment news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "MSTR",
-      "name": "STRATEGY INC",
-      "queries": [
-        "MSTR stock news today June 05, 2026",
-        "MSTR Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "WDAY",
-      "name": "WORKDAY INC-A",
-      "queries": [
-        "WDAY stock news today June 05, 2026",
-        "WDAY Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "HUBS",
-      "name": "HUBSPOT INC",
-      "queries": [
-        "HUBS stock news today June 05, 2026",
-        "HUBS Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "BE",
-      "name": "BLOOM ENERGY C-A",
-      "queries": [
-        "BE stock news today June 05, 2026",
-        "BE Electrical Equipment & Parts news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "COIN",
-      "name": "COINBASE GLOBA-A",
-      "queries": [
-        "COIN stock news today June 05, 2026",
-        "COIN Financial Data & Stock Exchanges news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CRWV",
-      "name": "COREWEAVE I-CL A",
-      "queries": [
-        "CRWV stock news today June 05, 2026",
-        "CRWV Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ON",
-      "name": "ON SEMICONDUCTOR",
-      "queries": [
-        "ON stock news today June 05, 2026",
-        "ON Semiconductors news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "WDC",
-      "name": "WESTERN DIGITAL",
-      "queries": [
-        "WDC stock news today June 05, 2026",
-        "WDC Computer Hardware news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "FSLR",
-      "name": "FIRST SOLAR INC",
-      "queries": [
-        "FSLR stock news today June 05, 2026",
-        "FSLR Solar news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "TEAM",
-      "name": "ATLASSIAN CORP-A",
-      "queries": [
-        "TEAM stock news today June 05, 2026",
-        "TEAM Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CRCL",
-      "name": "CIRCLE INTERNET",
-      "queries": [
-        "CRCL stock news today June 05, 2026",
-        "CRCL Capital Markets news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ALAB",
-      "name": "ASTERA LABS INC",
-      "queries": [
-        "ALAB stock news today June 05, 2026",
-        "ALAB Semiconductors news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RDDT",
-      "name": "REDDIT INC-A",
-      "queries": [
-        "RDDT stock news today June 05, 2026",
-        "RDDT Internet Content & Information news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SNDK",
-      "name": "SANDISK CORP",
-      "queries": [
-        "SNDK stock news today June 05, 2026",
-        "SNDK Computer Hardware news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "XPO",
-      "name": "XPO INC",
-      "queries": [
-        "XPO stock news today June 05, 2026",
-        "XPO Trucking news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RKLB",
-      "name": "ROCKET LAB CORP",
-      "queries": [
-        "RKLB stock news today June 05, 2026",
-        "RKLB Aerospace & Defense news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "GDDY",
-      "name": "GODADDY INC-A",
-      "queries": [
-        "GDDY stock news today June 05, 2026",
-        "GDDY Software - Infrastructure news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "NOW",
-      "name": "SERVICENOW INC",
-      "queries": [
-        "NOW stock news today June 05, 2026",
-        "NOW Software - Application news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "UNP",
-      "name": "UNION PAC CORP",
-      "queries": [
-        "UNP stock news today June 05, 2026",
-        "UNP Railroads news June 05, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "QCOM",
-      "name": "QUALCOMM INC",
-      "queries": [
-        "QCOM stock news today June 05, 2026",
-        "QCOM Semiconductors news June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "S&P 500",
-      "queries": [
-        "S&P 500 June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "NASDAQ",
-      "queries": [
-        "NASDAQ June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Dow Jones",
-      "queries": [
-        "Dow Jones June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Russell 2000",
-      "queries": [
-        "Russell 2000 June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Federal Reserve",
-      "queries": [
-        "Federal Reserve June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "FOMC",
-      "queries": [
-        "FOMC June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "interest rates",
-      "queries": [
-        "interest rates June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Treasury yields",
-      "queries": [
-        "Treasury yields June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "US dollar",
-      "queries": [
-        "US dollar June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "DXY",
-      "queries": [
-        "DXY June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "forex",
-      "queries": [
-        "forex June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "currency markets",
-      "queries": [
-        "currency markets June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "credit markets",
-      "queries": [
-        "credit markets June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "corporate bonds",
-      "queries": [
-        "corporate bonds June 05, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "investment grade",
-      "queries": [
-        "investment grade June 05, 2026"
-      ]
+  "date": "2026-06-05",
+  "friday": true,
+  "generated": "2026-06-05T06:20:00",
+  "stats": {
+    "articles_total": 12,
+    "categories": {
+      "Equities": 5,
+      "Macro": 3,
+      "Credit": 2,
+      "FX/Rates": 1,
+      "Crypto": 1
+    }
+  },
+  "articles": [
+    {
+      "id": 1,
+      "title": "Dow Soars 875 Points to Record Close; S&P 500 Overcomes Broadcom-Led Tech Pullback; Oil Retreats",
+      "source": "Investopedia",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727",
+      "date": "2026-06-04",
+      "category": "Equities",
+      "tickers": ["AVGO", "UNH", "GS", "CRWD", "MU", "AAPL", "DELL", "SNDK", "MRK"],
+      "summary": "Dow surged 875 points (+1.7%) to a record close, led by healthcare (UNH +5%, MRK +5%) and financials (GS +5%). S&P 500 gained 0.4% despite Broadcom-led tech selloff. Nasdaq slipped 0.1%. Broadcom (AVGO) plunged 13% post-earnings, dragging chip stocks and CRWD. WTI crude fell ~3% to $93.20 on Israel-Lebanon ceasefire. 10Y yield eased to 4.48%. Bitcoin dropped to $63,300, lowest since February. Gold up 0.9% above $4,500. SpaceX IPO filed at $135/share, ~$75B raise, $1.75T valuation. Beige Book flagged inflation risks from Iran war fuel costs.",
+      "sentiment": "bullish",
+      "confidence": "high"
+    },
+    {
+      "id": 2,
+      "title": "Broadcom Q2 Earnings: Beat on EPS, Miss on Revenue, AI Guidance Unchanged — Stock Plunges 15%",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/03/broadcom-avgo-earnings-report-q2-2026.html",
+      "date": "2026-06-03",
+      "category": "Equities",
+      "tickers": ["AVGO", "MRVL", "AMD", "NVDA", "INTC", "ARM"],
+      "summary": "AVGO Q2 adjusted EPS $2.44 beat by $0.04; revenue $22.19B missed $22.27B consensus. Net income $9.31B (+88% YoY). AI revenue $10.8B (doubled YoY), expected to triple to $16B in Q3. FY2026 AI guidance reiterated at 'in excess of $100B' — no raise, disappointing investors. Software revenue $7.18B missed $7.32B consensus. Q3 revenue guidance $29.4B beat estimates. Hock Tan announced shift to 'chips only' strategy. Stock plunged ~15% but analysts broadly raised PTs (JPM $580, Jefferies $550, BNP $640). Still +20% YTD.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 3,
+      "title": "Strategy (MSTR) Breaks 'Never Sell' Posture: Sold 32 BTC for $2.5M, Stock Craters",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/investing/2026/06/04/buy-sell-or-hold-mstr-after-strategys-first-bitcoin-sale-in-years/",
+      "date": "2026-06-04",
+      "category": "Crypto",
+      "tickers": ["MSTR", "COIN", "ASST"],
+      "summary": "Strategy (MSTR) sold 32 BTC for $2.5M to fund STRK preferred dividends — its first Bitcoin sale since 2022. Sale represents 0.004% of 843,706 BTC holdings but shattered the 'never sell' narrative. Stock down 31% in one month, 67% YoY, trading at ~$126. BTC at $62,350, well below Strategy's $75,699 average cost basis. Q4 2025 net loss: $17.44B unrealized on digital assets. Polymarket: 63% probability of MSCI delisting by year-end. HOLD rating at $126; watch for BTC purchase announcement June 2-8 window.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 4,
+      "title": "Strategy's Bitcoin Dive Will Cost $26M/Year as STRC Preferred Dividend Set to Ratchet to 11.75%",
+      "source": "Investor's Business Daily",
+      "url": "https://www.investors.com/news/mstr-stock-strategy-shoots-own-foot-bitcoin-dive-will-cost-it-26-mil-a-year/",
+      "date": "2026-06-04",
+      "category": "Crypto",
+      "tickers": ["MSTR"],
+      "summary": "Strategy's STRC preferred (currently 11.5% dividend) likely to ratchet to 11.75% as monthly VWAP fell to ~96.90 vs. 99 trigger. Would add $26M/year in interest on $10.5B outstanding. STRC trading at 94, well below $100 par — freezing new issuance and bitcoin buying power. Total annual interest/dividend burden: $1.712B (3.1% of BTC holdings). At 11.75%, STRC-financed BTC purchases unprofitable even at 10% annual BTC appreciation. MSTR down 20.5% week-to-date; BTC tumbled to ~$62,350 (lowest since Nov 2024). Next payment: ~$235M due end of June.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 5,
+      "title": "May Jobs Report Preview: Consensus +80K Payrolls, Risks Skewed to Downside",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/04/the-may-jobs-report-will-be-released-friday-heres-what-to-expect.html",
+      "date": "2026-06-04",
+      "category": "Macro",
+      "tickers": [],
+      "summary": "May nonfarm payrolls consensus: +80K (vs. April's +115K). Unemployment expected at 4.3-4.4%. Downside risks substantial: Goldman +60K, Vanguard +20K, EY-Parthenon +50K. Challenger report: 97,006 planned job cuts (+16% MoM), AI-related layoffs 38,242 (highest on record). Initial jobless claims at highest since February. 'Low-hire, low-fire' stagnation narrative. Fed: zero probability of rate move at June 16-17 FOMC. Rate hike odds increasing for early 2027 if inflation stays elevated. 'More hawkish, two-sided policy statement' expected.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 6,
+      "title": "ADP: Private Payrolls Rose 122,000 in May, Beating 110K Consensus",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/03/adp-jobs-report-may-2026-payrolls-increase-by-122000.html",
+      "date": "2026-06-03",
+      "category": "Macro",
+      "tickers": [],
+      "summary": "Private payrolls grew 122K in May, beating 110K consensus and April's 105K (revised down 4K). Strongest month since January 2025. Hiring broad-based: education/health +57K, trade/transport +36K, professional services +11K. Information services -9K (AI impact?). Small businesses +67K, large businesses +40K. Pay growth: stayers 4.4% (unchanged), switchers 6.5% (edged down). ADP chief economist: 'Hiring was more broad-based than we've seen in the last few years.' Contradicts BLS consensus weakness.",
+      "sentiment": "neutral",
+      "confidence": "moderate"
+    },
+    {
+      "id": 7,
+      "title": "Snowflake Surges 36% on AI Frenzy, Easing 'SaaSpocalypse' Fears",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/05/28/snowflake-snow-software-stock-rally.html",
+      "date": "2026-05-28",
+      "category": "Equities",
+      "tickers": ["SNOW", "NOW", "ORCL", "PLTR", "CRM", "TEAM", "PANW"],
+      "summary": "Snowflake shares surged 36% (best day ever) on $6B Amazon AI compute deal and earnings beat. Q2 product revenue guidance $1.415-1.420B (above $1.37B consensus). CFO: AI tools driving 'step function change' in AI revenue. Added 616 net new customers (+38% YoY); 779 customers >$1M spend. Acquired AI startup Natoma. Rally lifted SaaS peers: NOW +6%, ORCL +6%, PLTR +8%, TEAM +3%. Exception: CRM dipped on lackluster guidance. Eased fears that AI would replace traditional SaaS. SNOW up ~9% YTD after surge.",
+      "sentiment": "bullish",
+      "confidence": "moderate"
+    },
+    {
+      "id": 8,
+      "title": "Broadcom Analyst Roundup: Jefferies Raises PT to $550, Sees Buying Opportunity",
+      "source": "TheStreet",
+      "url": "https://www.thestreet.com/investing/stocks/5-star-analyst-revamps-broadcom-stock-price-target-after-earnings",
+      "date": "2026-06-04",
+      "category": "Equities",
+      "tickers": ["AVGO"],
+      "summary": "5-star Jefferies analyst Blayne Curtis (70% success rate, 41% avg return) raised AVGO PT to $550 (from $500), reiterates Buy. Argues AI growth story intact, margin headwinds temporary. Broad analyst PT raises: BNP $640, JPM $580, KeyBanc $575, Bernstein $550, Goldman $525. AVGO posted 4th consecutive double beat; revenue $68.3B TTM (+25% YoY), gross margin 77%. Stock: +38.47% YTD, +86.58% 1Y, +490% 3Y. Shift to custom AI chips pressures near-term margins but hyperscaler demand (Meta, OpenAI) ramping for 2027.",
+      "sentiment": "bullish",
+      "confidence": "high"
+    },
+    {
+      "id": 9,
+      "title": "Investment Grade Bonds Q2 2026: 5.00-5.50% All-In Yields, 80 bps Spreads Near 25-Year Lows",
+      "source": "InvestmentGrade.com",
+      "url": "https://investmentgrade.com/investment-grade-bond-market-outlook/",
+      "date": "2026-06-05",
+      "category": "Credit",
+      "tickers": [],
+      "summary": "IG bond market at inflection point: all-in yields 5.00-5.50% (highest carry in decade+) but OAS at ~80 bps (near multi-decade tights). IG issuance forecast: $2.46T in 2026 (+11.8% YoY), net $945B (+30.2%). AI/data center IG debt: $300B+, hyperscalers averaging $140B annual issuance. Quality ladder compressed: BBB OAS ~100 bps vs AAA ~40 bps — only 60 bps across rating spectrum, tightest since late 1990s. Recommendation: clip coupon, don't bet on further spread compression. Favor defensives (healthcare, utilities) over cyclicals at current spreads.",
+      "sentiment": "neutral",
+      "confidence": "high"
+    },
+    {
+      "id": 10,
+      "title": "US Credit Markets Defy War Risks as Cash Drives Rally; IG Spreads at 78 bps",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/us-credit-markets-defy-war-risks-cash-drives-rally-2026-05-12/",
+      "date": "2026-05-12",
+      "category": "Credit",
+      "tickers": [],
+      "summary": "IG spreads tightened to 78 bps (near historic 73 bps low), HY at 275 bps. $1T+ corporate issuance through April (+28.2% YoY). M2 money supply up 6% YoY. Drivers: abundant liquidity from expansionary fiscal policy, Fed supporting $3T bank reserves, insurers now ~50% of demand in some segments (from 20% a decade ago). Corporate balance sheets in 'excellent health.' Risk: lower-quality HY and private credit vulnerable if growth slows. Market 'quickly gets over bad news' because of ample cash.",
+      "sentiment": "bullish",
+      "confidence": "moderate"
+    },
+    {
+      "id": 11,
+      "title": "Dollar Climbs for Fifth Straight Day as Treasury Yields Surge on Inflation Fears",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/asia-pacific/dollar-poised-largest-weekly-rise-two-months-fed-hike-bets-increase-2026-05-15/",
+      "date": "2026-05-15",
+      "category": "FX/Rates",
+      "tickers": [],
+      "summary": "DXY rose to 99.30 (fifth consecutive daily gain) as 10Y yield hit 4.595% (highest in a year). WTI crude surged to $105/bbl on Iran Strait of Hormuz blockage fears. Market priced 49.5% probability of a December rate hike (from 14.3% a week prior). EUR/USD dropped to $1.1623, USD/JPY rose to 158.74 (nearing 160 intervention level). Bond market repricing long-term inflation expectations as quick energy resolution looks unlikely.",
+      "sentiment": "bearish",
+      "confidence": "moderate"
+    },
+    {
+      "id": 12,
+      "title": "Bitcoin Stocks Take a Beating as BTC Sells Off Below $67K; MSTR, COIN, ASST All Down",
+      "source": "Bitcoin Magazine",
+      "url": "https://bitcoinmagazine.com/news/bitcoin-stocks-take-a-beating",
+      "date": "2026-06-02",
+      "category": "Crypto",
+      "tickers": ["MSTR", "COIN", "ASST"],
+      "summary": "BTC fell into mid-$67Ks, down 46% from October peak of $126K. MSTR -9.15%, COIN -4.23%, ASST -6.23%. Four catalysts: (1) Strategy sold 32 BTC, (2) Record ETF outflows — $3.45B over 11 consecutive sessions, (3) Mt. Gox moved 10,422 BTC (~$739M), (4) Iran suspended nuclear negotiations. Strive (ASST) bought 2,500 BTC at $74,092 avg but still fell 6.23%. Structural treasury model risk: when BTC drops, equities drop harder. MSTR dangerously near 52-week floor of $104.16.",
+      "sentiment": "bearish",
+      "confidence": "high"
     }
   ]
 }
