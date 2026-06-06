@@ -1,219 +1,214 @@
-# BoltNews Weekend Briefing — Saturday, June 6, 2026
+# BoltNews Weekend Briefing — June 6, 2026
 
-**Payrolls crushed estimates. Markets got crushed by payrolls. The "good news is bad news" regime is back with a vengeance.**
+**Markets closed. Last trade: Friday, June 5, 2026.**
 
 ---
 
 ## Executive Summary
 
-Friday delivered the most violent single-session repricing of 2026: the Nasdaq plunged -4.2% (worst since April 2025), the S&P 500 snapped a 9-week winning streak, and $1.3 trillion was erased from semiconductor stocks alone. The catalyst was a May payrolls print of +172,000 — more than double the ~85K consensus and a number that slammed the door on any near-term rate cut narrative. The 2-year Treasury yield hit its highest level in a year (4.16%), markets now price a ~70% probability of a Fed rate hike by December (up from <50% pre-report), and the VIX surged 34% back above 20.
+**The S&P 500's nine-week winning streak ended in violent fashion Friday as a blowout May jobs report (+172K vs +80K consensus) flipped the Fed narrative from "cuts delayed" to "hikes probable."** The Nasdaq plunged 4.2% — its worst week since April 2025 — in a cross-asset risk-off event that spared nothing: stocks, bonds, bitcoin, and gold all fell together. The proximate trigger was labor market strength that shattered any remaining rate-cut hopes, but structural cracks had been forming all week: Broadcom's disappointing AI chip guidance (-20% post-earnings), Alphabet's historic $85B equity raise, and reports Meta may follow with its own multi-billion AI funding round. The sell-off has the hallmarks of a deleveraging event rather than a fundamental repricing — the question for next week is whether forced liquidation cascades into Monday or Friday's flush cleared excess.
 
-But the payrolls beat was only half the story. The selloff was amplified by a positioning unwind in the most crowded trade of 2026: AI semiconductors. Broadcom's AI networking revenue miss ($4.1B vs. $4.8B expected) from Wednesday became the pin that popped a $1.3 trillion bubble in two sessions. Nvidia shed >$300B in market cap Friday alone. Marvell fell 17%. Micron fell 13%. The SOX index suffered its worst day since the March 2020 COVID crash.
+**The dominant narrative shift: "good news is bad news" returns with a vengeance.** A US economy adding jobs at double the expected pace, with inflation running at 3.8% CPI / 3.3% core PCE, and a new Fed Chair (Kevin Warsh) taking the helm June 17, has markets repricing from "higher for longer" to "how high?" The CME FedWatch now shows ~70% probability of at least one hike by December, up from <50% pre-jobs. The 2-year yield hit 4.16%, a fresh 52-week high.
 
-The structural story hasn't changed — the labor market is genuinely strong, wages are contained (+3.4% YoY), and the "hiring recession" narrative is dead. But the tactical picture shifted violently: rate-hike odds are surging, the crowded AI trade is unwinding, and the largest IPO in history (SpaceX, June 12 at $1.75T) threatens to absorb $75B+ in liquidity just as risk appetite frays. This weekend, markets are digesting a regime change from "bad news is good news" to "good news means higher rates for longer."
-
----
-
-## Asset Class Breakdown
-
-### Equities — The AI Trade Unwinds
-
-- **Dow**: -695 pts (-1.35%) to 50,867. Held up relatively well — rotation into defensives/staples.
-- **S&P 500**: -2.64% to 7,384. First losing week in 10. Tech sector -5.8%, worst performer. Consumer staples led gainers.
-- **Nasdaq**: -1,122 pts (-4.18%) to 25,709. Worst one-day loss since April 2025. Down 4.7% for the week.
-- **Russell 2000**: -3.47%. Small-caps hammered as 20Y/30Y yields surged back above 5%.
-
-**Semiconductor carnage (SOX -10.3%, worst since March 2020):**
-- Nvidia (NVDA): -6.2%, lost >$300B in market cap
-- Marvell (MRVL): -17%, worst single-stock decline
-- Micron (MU): -13%, ~$150B erased
-- AMD: -11%, Broadcom (AVGO): -7.9% (two-day loss ~20%)
-- Intel (INTC): down 7.9-13.3% range
-- **Cumulative:** $1.3 trillion erased from US-traded chipmakers in one session
-
-**Other notable movers:**
-- Lululemon (LULU): -8.6% — cut annual profit forecast, Q2 guidance well below estimates
-- Meta (META): -7% — reportedly exploring multi-billion secondary offering, days after Alphabet's $80B raise
-- Coinbase (COIN): -7.1%, Strategy (MSTR): -6.9% — both dragged by Bitcoin weakness
-- Cooper Companies (COO): +8.6% — beat Q2 estimates on strong contact lens demand
-
-**Key analyst voices:**
-- Dennis Dick (Triple D Trading): "Blindly buying the dip had been winning you money, but that ended today."
-- Ohsung Kwon (Wells Fargo): "The semiconductor sector was way overbought. I don't think it's the end of the semi bull market."
-- Ryan Detrick (Carson Group): "After the record run we've seen the last nine weeks in equities, specifically tech and semiconductors, the dam just broke today."
-
-**Week ahead:** SpaceX IPO on June 12. S&P Global confirmed it will NOT change eligibility requirements — SpaceX won't enter the S&P 500 quickly. Marvell ($270B+ market cap pre-Friday) is a contender for S&P 500 inclusion after the rebalancing.
+**Contrarian signal:** The sell-off was broad but sector dispersion tells a story. The Dow fell only 1.3% while the Nasdaq dropped 4.2%. Value/cyclical outperformance suggests this isn't a recession scare — it's a rate-sensitivity purge concentrated in duration-heavy growth names. The fundamentals (AI capex cycle, strong earnings, low unemployment) remain intact. Pullbacks of 5-10% are normal in bull markets. The S&P 500 had rallied 20.6% from March 30 to Tuesday's all-time high without a meaningful pullback.
 
 ---
 
-### Macro — The "Hiring Recession" Is Dead
+## Cross-Asset Positioning Matrix
 
-**May Nonfarm Payrolls (BLS, primary source):**
-| Metric | May 2026 | April 2026 (revised) | Consensus |
-|--------|----------|---------------------|-----------|
-| Nonfarm payrolls | +172,000 | +179,000 (+64K revision) | ~85,000 |
-| Unemployment rate | 4.3% | 4.3% | 4.3% |
-| Avg hourly earnings (MoM) | +0.3% | — | +0.3% |
-| Avg hourly earnings (YoY) | +3.4% | — | +3.4% |
-| Labor force participation | 61.8% | 61.8% | — |
+| Asset Class | Signal | Direction | Key Level | 1W Change | Driver |
+|---|---|---|---|---|---|
+| **US Equities (S&P 500)** | Bearish | ▼▼ | 7,383.74 | -2.64% | Jobs data → rate hike repricing |
+| **Nasdaq Composite** | Bearish | ▼▼▼ | 25,709.43 | -4.7% | AI/tech duration purge; AVGO guidance |
+| **Dow Jones** | Cautious | ▼ | 50,866.78 | -0.3% | Relative value rotation beneficiary |
+| **Semiconductors (SOX)** | Bearish | ▼▼▼ | ~20-day SMA test | -10%+ | AVGO weakness + yield spike double-hit |
+| **Russell 2000 (RUT)** | Bearish | ▼▼ | ~-111 pts Friday | TBD | Rate sensitivity; regional bank exposure |
+| **UST 10Y Yield** | Hawkish | ▲▲ | 4.55% | +11bps session | Inflation + strong jobs → no cuts, maybe hikes |
+| **UST 2Y Yield** | Hawkish | ▲▲▲ | 4.16% (52wk high) | Sharp spike | Directly repricing Fed path |
+| **USD (DXY)** | Bullish | ▲ | 100.04 | +0.6% session | Rate differential + safe haven |
+| **EUR/USD** | Bearish | ▼ | ~0.8679 | Weakening | ECB hike priced but growth divergence |
+| **IG Credit** | Cautious | ▼ | Spreads tightening pre-selloff | TBD | Higher yields eventually hurt; AI issuance wave |
+| **HY Credit** | Cautious | ▼ | — | TBD | Energy exposure a wildcard |
+| **Gold** | Bearish | ▼▼ | $4,345/oz | -3.6% | Higher real rates = non-yielding pain |
+| **Bitcoin** | Bearish | ▼▼▼ | <$60,000 | -17%+ weekly | Below 200W SMA (~$62K); MSTR sold BTC |
+| **WTI Crude** | Neutral | ▼ | $90.35 | -2.9% | Hormuz disruption vs. de-escalation hopes |
+| **Brent Crude** | Neutral | ▼ | $93.09 | -2% | Energy inflation channel still open |
+| **VIX** | Fear | ▲▲ | +40% to 2-mo high | Spike from 15→21+ | Complacency unwound violently |
 
-**Revisions:** March revised up +29K to +214K; April revised up +64K to +179K. Combined +93K higher than previously reported.
-
-**Industry detail:**
-- Leisure & hospitality: +70,000 (vs. 12-month avg of +14K — likely World Cup hiring)
-- Local government: +55,000
-- Health care: +35,000 (in line with trend)
-- Social assistance: +12,000
-- Financial activities: -22,000 (down 107K from May 2025 peak)
-- Transportation & warehousing: +1,000 (down 92K from Feb 2025 peak — air transportation -9K on business closure)
-
-**Long-term unemployed** (≥27 weeks): 2.0 million — up 524K over the year, now 27.5% of total unemployed. This is the one soft spot.
-
-**Expert commentary:**
-- Ellen Zentner (Morgan Stanley WM): "More solid jobs data leaves the Fed where it's been for a while — watching and waiting. Rate cuts still aren't on the near-term horizon."
-- Gus Faucher (PNC): "This is a labor market that is stronger than it was last year and is looking pretty darn solid."
-- Heather Long (Navy Federal CU): "The hiring recession is over. American firms are hiring again. This is a strong jobs report from every angle."
-- President Trump (via social media): "With a great Jobs Report, like just announced, stocks should go up, not down. Growth does not mean inflation!"
+**Legend:** ▲ = rising / bullish for asset | ▼ = falling / bearish | Arrows count = magnitude
 
 ---
 
-### Rates / Fed — Hike Odds Surge
+## The Week That Was: June 1–5, 2026
 
-- **2-year yield:** 4.16% — highest in a year
-- **10-year yield:** jumped past 4.50%
-- **20Y and 30Y:** back above 5.00%
-- **Fed funds rate:** 3.50-3.75% (unchanged since the 75 bps of cuts in late 2025)
-- **December rate hike probability:** ~70% per CME FedWatch (up from <50% pre-payrolls)
-- **Next FOMC:** June 16-17 (11 days). Zero probability of a move at this meeting.
-- **Key risk:** The "worst of both worlds" scenario — sticky inflation plus strong labor market forces the Fed to hike into an economy that's already showing cracks in transports and financial activities.
+### Monday–Tuesday: Record Highs
+- S&P 500 hit fresh all-time high Tuesday, extending the rally to +20.6% from the March 30 lows.
+- AI optimism, strong Q1 earnings (up ~30% YoY overall), and easing geopolitical fears powered gains.
+- The S&P 500's nine-week winning streak was the longest since 2004.
 
----
+### Wednesday–Thursday: Cracks Appear
+- **Broadcom (AVGO)** reported Q2 earnings with weaker-than-expected Q3 chip revenue guidance. Stock fell 12.6% Thursday, triggering a sector-wide semiconductor reassessment.
+- **Alphabet (GOOG/GOOGL)** launched a historic **$85 billion equity raise** to fund AI infrastructure — the largest tech offering on record.
+- Memory chip ETF sank 15% as the AI rally began to reverse.
+- VIX hit a four-month low (15.18) Thursday — complacency was extreme.
 
-### Credit — Spreads at Historic Tights
-
-**IG OAS:** 74 bps as of June 4 (FRED BAMLC0A0CM — primary source). Flat week-over-week despite equity turmoil.
-
-| Metric | Value | Context |
-|--------|-------|--------|
-| IG OAS | 74 bps | Bottom decile of post-GFC readings; near the 73 bps all-time tight |
-| IG effective yield | ~5.22% | Mid-2000s level; high carry |
-| HY OAS | ~275 bps | Compressed differential vs. IG (~200 bps) |
-| Q1 2026 issuance | $775.2B | Largest quarterly total since Q2 2020; +15.6% YoY |
-
-**The tension:** Credit spreads haven't reacted to the equity selloff yet. IG OAS has been pinned at 73-74 bps all week. This suggests the selloff is an equity positioning unwind, not a systemic credit event — but if rates keep rising, all-in yields could breach levels that trigger a re-rating. The quality ladder is compressed to just ~115 bps from AAA to BBB (tightest since late 1990s).
-
-**Default risk:** Moody's projected U.S. speculative-grade default rate of 3.2% for 2025, rising above 4% by Q1 2026. HY is the canary.
+### Friday: The Dam Breaks
+- **BLS May Jobs Report:** +172,000 payrolls vs +80,000 consensus. Prior months revised up by 93K total. Unemployment steady at 4.3%. Wage growth +3.4% YoY in line.
+- **Everything sold off.** Stocks, bonds, bitcoin, gold — a true cross-asset liquidation.
+- **Nasdaq:** -4.2% (worst day since April 2025). **S&P 500:** -2.6% (worst since October). **Dow:** -1.4%.
+- **Semiconductor bloodbath:** Intel -11.3%, Micron -12.4%, AMD -11.0%, Marvell -15%, ARM -12.8%.
+- **10Y yield** surged to 4.55%; **2Y hit 4.16%** (highest in a year).
+- CME FedWatch: ~70% probability of a rate hike by December (up from ~34% pre-jobs).
+- **Meta (META)** dropped 5.5% on FT report it may launch a multi-billion equity offering for AI.
+- **Bitcoin** fell below $60,000 for first time since October 2024; -17% for the week after Strategy (MSTR) disclosed its first BTC sale since 2022.
+- **Gold** erased all 2026 gains, down 3.6% to $4,345/oz.
+- Trump posted: "With a great Jobs Report, like just announced, stocks should go up, not down. Growth does not mean inflation!"
 
 ---
 
-### Crypto — BTC Below $61K, MSTR's Unforced Error Deepens
+## Key Individual Stories
 
-- **Bitcoin:** $60,463 (-5.24% on Friday), lowest since February 6. Down ~25% from YTD highs.
-- **Spot Bitcoin ETFs:** 12 consecutive days of net outflows, totaling ~$4 billion — worst streak since inception (per Bitwise CIO Matt Hougan).
-- **Capital rotation:** From crypto into AI infrastructure and private-market targets (SpaceX IPO anticipation). Per Citi: "Spot Bitcoin ETFs have recorded net outflows for several consecutive days, reflecting a significant lack of demand from new investors."
-- **Strategy (MSTR):** The 32 BTC sale continues to metastasize. Stock -6.9% Friday, now down ~35% in one month. The symbolic breach of "never sell" is eroding the narrative premium. Unrealized book loss: ~$10.8 billion. STRC preferred mechanics remain a structural drag.
+### Broadcom (AVGO) — The AI Canary
+- Q3 chip revenue guidance missed expectations, raising the question: is AI demand growth decelerating?
+- Stock fell ~20% in two days (Thursday + Friday), erasing ~$400B in market cap.
+- Quote (Ross Mayfield, Baird): *"A parabolic move like most of these stocks have been experiencing is not sustainable under perpetuity. You're pricing in basically perfection."*
 
-**Key risk:** If BTC breaks below $60K with conviction, MSTR's forced-selling feedback loop accelerates — declining stock → pressure on leveraged products → forced BTC selling → lower BTC → rinse and repeat.
+### Alphabet (GOOG/GOOGL) — Historic $85B Equity Raise
+- Largest tech equity offering on record to fund AI infrastructure buildout.
+- Google also disclosed it will pay SpaceX $920M/month to rent 110,000 NVDA GPUs from October 2026–June 2029.
+- Both share classes (GOOG/GOOGL) under pressure.
 
----
+### NVIDIA (NVDA) — Down But Not Out
+- Fell 6.2% to $205.10. The AI bellwether caught in the sector-wide downdraft.
+- Fundamental demand signals remain strong (Alphabet's GPU leasing deal with SpaceX confirms hyperscaler appetite).
 
-### Commodities / Geopolitics — Oil Drifts, Gold Slips
+### Meta Platforms (META) — AI Funding Dilution Risk
+- FT report (2:30pm Friday): Meta may launch a multi-billion-dollar equity offering to fund AI buildout.
+- Stock dropped 5.5% to $593.00.
+- Combined with Alphabet's raise, this signals a wave of mega-cap tech equity issuance that could pressure the sector.
 
-| Commodity | Price | Change |
-|-----------|-------|--------|
-| WTI crude | $92.63/bbl | -0.44% |
-| Brent crude | $94.71/bbl | -0.34% |
-| Gold (Aug futures) | $4,489/oz | -0.35% |
-| Silver | $72.93/oz | -1.41% |
+### Intel (INTC) — Worst Single-Day Hit
+- Down 11.3% to $99.17. Still up ~180% YTD but the sell-off was severe.
+- Options market pricing ±8% swing by end of next week; Wall Street consensus target ~$95.
 
-**Iran War — Day 98 (GlobalSecurity.org, primary source):**
-- First pause in direct IRGC-US kinetic exchanges since the escalatory May 30-31 weekend.
-- No new CENTCOM strikes or IRGC missile/drone launches in the 24-hour window.
-- Hezbollah rejected the US-brokered Israel-Lebanon ceasefire. Israeli strikes killed 4 in Lebanon despite the truce extension.
-- Trump: Strait of Hormuz reopening deal possible "over the next week." Red line for resuming military action: killing US troops. If talks fail: "We'll just go silent. We'll keep the blockade."
-- Iran may impose service fees for ships crossing the strait.
+### Lululemon (LULU) — Consumer Warning
+- Slashed full-year revenue guidance to $11B-$11.15B (flat to -1% YoY).
+- Stock fell 8.5% to $115, lowest since May 2018. Lost nearly half its value YTD.
+- JPMorgan cut PT to $149 from $173.
 
-**CTA positioning:** Quantitative hedge funds have posted double-digit gains in 2026 (SG CTA Index +12.2% YTD) driven by energy trends. Managers are now reducing long energy exposure as price action turns choppier. The risk for CTAs is a broad shift to mean-reversion.
-
----
-
-### FX — Dollar Bid on Yield Spike
-
-- The strong payrolls + surging yields provided a bid for USD. The DXY likely strengthened further from the ~99.4 level pre-payrolls.
-- EUR/USD under pressure — ECB rate decision and US CPI both due next week (Thursday/Friday).
-- USD/JPY: If the 2Y/10Y spread continues to widen on US rate expectations, JPY crosses toward the 160 intervention threshold.
-
----
-
-## The SpaceX IPO Overhang
-
-SpaceX (SPCX) is now confirmed for **June 12** listing on Nasdaq. Key details:
-
-| Metric | Value |
-|--------|-------|
-| Fixed IPO price | $135/share |
-| Shares offered | 555.6 million |
-| Fundraise | ~$75 billion (+ $11.2B greenshoe) |
-| Valuation | $1.75 trillion |
-| Musk voting control | >82% post-offering |
-| S&P 500 entry | No near-term path (S&P won't change rules) |
-
-**Liquidity context:** SpaceX alone will raise more than all US IPOs combined in 2025 ($45B). Add Anthropic (confidential filing) and OpenAI (preparing filing) and the cumulative demand could exceed $200B. Goldman Sachs projects 2026 IPO proceeds could hit $160B — 4× 2025 levels. The bull case is $8 trillion sitting in money market funds. The bear case is forced portfolio rebalancing that triggers selling pressure on existing Mag 7 positions.
-
-**Governance red flag:** Musk gets 10 votes per Class B share vs. 1 vote per Class A. SpaceX qualifies as a "controlled company" — exempt from majority independent board. "This will limit or preclude your ability to influence corporate matters."
+### SpaceX IPO — The Wildcard
+- Reportedly preparing to go public next Friday (June 12/13) at a ~$1.77 trillion valuation.
+- Would be the highest-valued IPO in history.
+- Schwab analysts note: investors may be selling winners to raise cash for the IPO, contributing to the current sell-off.
+- S&P's 12-month seasoning rule means it won't join the index immediately.
 
 ---
 
-## Sentiment Matrix
+## Macro Picture
 
-| Asset Class | Short-Term (1W) | Medium-Term (1-3M) | Key Driver |
+### Labor Market: Hot, Not Slowing
+| Metric | May 2026 | Consensus | Prior |
 |---|---|---|---|
-| **US Large Cap Equities** | 🔴 Bearish (rotation unwind) | 🟡 Neutral | Fed path, earnings season (mid-July) |
-| **Tech / Semis** | 🔴 Strong Bearish ($1.3T wipeout) | 🟡 Neutral (AI demand real but repricing) | AVGO/NVDA recovery, rate sensitivity |
-| **Crypto / BTC Proxy** | 🔴 Strong Bearish (BTC below $61K) | 🔴 Bearish | ETF outflows, MSTR mechanics, SpaceX liquidity drain |
-| **Credit (IG)** | 🟡 Neutral (spreads unchanged) | 🟡 Neutral | Yield-driven demand, issuance absorption |
-| **Credit (HY)** | 🟡 Neutral | 🔴 Bearish | Default cycle emerging, rate pressure |
-| **Rates (UST)** | 🔴 Bearish (yields surging) | 🔴 Bearish | Hike odds rising, sticky inflation |
-| **USD (DXY)** | 🟢 Bullish (rate differential) | 🟡 Neutral | Fed vs. ECB/BoJ divergence |
-| **Oil (WTI)** | 🟡 Neutral (ceasefire pause) | 🟡 Neutral | Iran/Strait of Hormuz, OPEC |
-| **Gold** | 🟡 Neutral | 🟢 Bullish | Real rates, geopolitical premium |
+| Nonfarm Payrolls | +172,000 | +80,000 | +179,000 (revised from 115K) |
+| Unemployment Rate | 4.3% | 4.3% | 4.3% |
+| Avg Hourly Earnings (MoM) | +0.3% | +0.3% | +0.3% |
+| Avg Hourly Earnings (YoY) | +3.4% | +3.4% | +3.4% |
+| Labor Force Participation | 61.8% | — | 61.8% |
+| ADP Employment | +122K | +110K | — |
+| JOLTS Job Openings | 7.618M | — | +738K jump |
+
+### Inflation: Sticky and Climbing
+| Measure | Latest | Trend |
+|---|---|---|
+| CPI (YoY, April) | 3.8% | Highest since 2024 |
+| Core CPI (YoY) | 2.8% | Elevated |
+| PPI (YoY, April) | 6.0% | Hot, second consecutive hot print |
+| Core PCE (YoY, April) | 3.3% | Fed's preferred gauge, climbing |
+| GDP (Q1 final) | +1.6% | Revised down from 2.0% |
+
+### Consumer Stress Beneath the Surface
+- Michigan Consumer Sentiment: **44.8** (record low).
+- Personal Savings Rate: **2.6%** (down from 3.2% in March, 5.8% a year ago).
+- Real Disposable Income: **-0.5% MoM** in April, continued decline.
+
+### Fed Policy — The Warsh Era Begins
+- **Current Fed Funds Rate:** 3.75% upper bound. IORB: 3.65%.
+- **Next FOMC Meeting:** June 17 — Kevin Warsh's first meeting as Chair (replaced Jerome Powell).
+- **Market Pricing:** ~70% probability of at least one hike by December. ~50% by late October.
+- **Analyst View (James McCann, Edward Jones):** "In the near term the data confirms that Fed easing is off the table this year, and markets continue to worry that the next move could be a hike."
+- **Caveat:** The bar for actual hikes remains high. Warsh would need to see a "more persistent spike in inflation" before moving to tightening.
+
+### Geopolitics — The Oil Wildcard
+- US-Iran standoff continues; Strait of Hormuz disruption sustaining Brent in the low-to-mid $90s.
+- WTI crude closed at $90.35 (down 2.9% Friday on risk-off flows, but still elevated).
+- Marine fuel shortages could idle up to 10% of global shipping by late summer → supply-chain inflation.
+- De-escalation hopes caused oil to fall 16.9% in late May, but no deal materialized. Markets treating escalation risk as persistent.
+- Thrivent's base case: "prolonged conflict."
 
 ---
 
-## Contrarian Flags
+## The Week Ahead: June 8–12, 2026
 
-1. **The payrolls beat might not be as strong as it looks.** +172K is great, but the household survey was weaker (+149K employed), long-term unemployment is up 524K YoY, and financial activities (-22K) plus transportation (-92K from peak) are still contracting. The headline masks a two-speed labor market: services booming, goods/tech/office sectors still shedding. If Q2 earnings season (mid-July) reveals cracks in the AI capex narrative, the "strong labor market" story could flip.
+### Key Events
+- **Monday:** Apple WWDC (AI offering announcement expected). Campbell's (CPB), FuelCell (FCEL) earnings.
+- **Tuesday:** US Trade Balance, Wholesale Inventories, Existing Home Sales. Academy Sports (ASO), J.M. Smucker (SJM) earnings.
+- **Wednesday:** **CPI (May)** — the most important data point of the week. MBA Mortgage Apps, Treasury Budget, EIA Crude Inventories. **Oracle (ORCL)** earnings, Chewy (CHWY).
+- **Thursday:** **PPI (May)** — second hot print in a row would amplify rate-hike fears. Initial/Continuing Claims, EIA Natural Gas. **Adobe (ADBE)** earnings, Lennar (LEN), RH Inc. (RH).
+- **Friday:** Michigan Consumer Sentiment (June prelim). **SpaceX IPO expected to begin trading.**
 
-2. **The semiconductor selloff is a positioning event, not a fundamental one.** Wells Fargo's Ohsung Kwon explicitly says this isn't the end of the semi bull market. AVGO's AI guidance was unchanged at $100B+ — the selloff was about missed expectations for an upgrade, not a deterioration. NVDA, AMD, and MRVL haven't reported problems. If the SOX stabilizes early next week, this becomes a buying opportunity in a secular growth story. The 2022 analog: semi selloffs of 20-30% were historically buying opportunities within the AI cycle.
+### Central Bank Calendar
+| Date | Bank | Context |
+|---|---|---|
+| June 10 | Bank of Canada | CAD at G-10 lows; growth/jobs focus |
+| June 11 | ECB | 25bp hike 98.2% priced; Lagarde presser |
+| June 16 | Bank of Japan | After record ¥73.6B intervention |
+| June 17 | **Federal Reserve** | Warsh's first meeting as Chair |
+| June 18 | Bank of England | Political uncertainty weighs on GBP |
 
-3. **Credit markets are not confirming the equity panic.** IG OAS at 74 bps hasn't moved all week. If this were a systemic event, credit would be widening. The divergence suggests the equity selloff is a positioning unwind in over-owned names, not a macro crisis. If credit stays tight, equities could mean-revert quickly — especially if next week's CPI (Thursday) comes in soft.
-
-4. **SpaceX IPO could be a "sell the news" event for the broader market.** The IPO is the most telegraphed liquidity event in history. If it prices and trades well, the "massive supply overhang" narrative could flip — sidelined cash enters the market rather than draining it. If it trades poorly, it could validate the bear case. The $8 trillion in money market funds is a real buffer.
-
-5. **The labor market "strength" is partly World Cup hiring.** Leisure and hospitality added 70K jobs — 5× the 12-month average. This is almost certainly temporary, tournament-related hiring that will reverse after the World Cup ends in July. Excluding this one sector, payrolls were ~+102K — still above consensus but less spectacular.
+### Key Questions for the Week
+1. Will forced liquidation cascade into Monday, or did Friday flush excess?
+2. Is SpaceX IPO-related selling done, or does it continue through Friday?
+3. Will Treasury yields push higher still? (2Y at 52-week high of 4.16%)
+4. Will the SOX semiconductor index find support at its 20-day SMA as it did in mid-May?
+5. Will Apple's WWDC AI announcements restore tech sentiment or disappoint?
+6. Will CPI/PPI come in hot and fuel further yield increases?
 
 ---
 
-## Key Events — Week of June 8
+## Contrarian Signals & Asymmetric Opportunities
 
-| Day | Event | Importance |
-|-----|-------|------------|
-| Mon | SpaceX roadshow continues | ★★★ |
-| Wed | US CPI (May) | ★★★★★ |
-| Thu | ECB rate decision | ★★★★ |
-| Thu | US PPI (May) | ★★★ |
-| Fri | SpaceX IPO pricing (SPCX) | ★★★★★ |
-| Fri | University of Michigan consumer sentiment (prelim) | ★★★ |
-| Mon 6/16 | FOMC decision (2-day meeting begins) | ★★★★★ |
+1. **The sell-off is rate-sensitivity, not recession.** Dow -1.3% vs Nasdaq -4.2% = value rotation, not systemic fear. Fundamentals (earnings +30% YoY, AI capex cycle intact) haven't changed.
+
+2. **Schwab's "Higher Volatility" forecast** implies opportunity in options premium selling if VIX sustains above 20.
+
+3. **Bitcoin below 200-week SMA ($62K).** Historically, BTC has rarely stayed below this level for extended periods. The Strategy (MSTR) BTC sale is bearish near-term but may signal capitulation.
+
+4. **Gold erased all 2026 gains** — if the rate-hike narrative moderates (CPI comes in cool Wednesday), gold could snap back sharply.
+
+5. **ECB hiking into a 0.1% QoQ economy.** The EUR/USD weakness may be overdone if Lagarde signals any dovish tilt at the June 11 meeting.
+
+6. **The "buy the dip" playbook:** Every S&P 500 pullback of 5%+ since October 2023 has been bought. The 20.6% rally from March 30 needed a breather. But the damage to momentum and "dip buyer mentality" (Schwab's words) is real.
 
 ---
 
-## Bottom Line
+## Sources
 
-Friday was a regime-change day. The "bad news is good news" trade that powered a 9-week equity winning streak is dead. Strong data now means higher rates for longer — and possibly rate hikes. The AI/semiconductor complex, the most crowded trade in markets, suffered a $1.3 trillion positioning unwind that may or may not be done.
+- CNN Business — "Nasdaq, S&P 500 Suffer Worst Day of Year" (June 5, 2026)
+- Wall Street Journal — Live Markets Coverage (June 5, 2026)
+- Charles Schwab — Weekly Trader's Outlook, Nathan Peterson & Jim Ferraioli (June 5, 2026)
+- Yahoo Finance / Investopedia — Markets News (June 5, 2026)
+- The Motley Fool — Stock Market Today (June 5, 2026)
+- RollingOut — "S&P 500, Nasdaq Fall as Chip Sell-Off Deepens" (June 5, 2026)
+- Thrivent Funds — June 2026 Market Update, Steve Lowe CFA (June 5, 2026)
+- Convera — FX Outlook for June 2026 (June 3, 2026)
+- Monex Global — Monthly Currency Outlook June 2026
+- TradingEconomics — DXY, United States Dollar data
+- BestExchangeRates — USD Market Update (June 6, 2026)
+- Federal Reserve — FOMC Minutes April 29, 2026; FRED data
+- CME FedWatch Tool — Rate hike probabilities
+- Bureau of Labor Statistics — May 2026 Employment Situation
+- Forbes — "10 Best Stocks to Buy Now for June 2026"
 
-The question for next week: does this become a broader contagion, or was it a one-day flush that clears the way for a more sustainable rally? The answer hinges on three catalysts: (1) Wednesday's CPI — a soft print would be the most bullish outcome, reviving the "soft landing" narrative; (2) the SpaceX IPO — whether it absorbs or attracts capital; and (3) whether the semiconductor selloff stabilizes or accelerates into forced deleveraging.
+---
 
-The highest-convexity positions: long semis on further weakness (if you believe the fundamental story is intact), short duration (if hike odds keep rising), and long gold as a hedge against the stagflation tail risk. The contrarian trade: long BTC at $60K if you believe the ETF outflow streak is mean-reverting and the SpaceX IPO narrative is overpriced.
-
-*Generated: June 6, 2026 06:30 ET — BoltNews Weekend Edition*
+*Generated: June 6, 2026 18:10 UTC | BoltNews Weekend Briefing | Not investment advice.*
