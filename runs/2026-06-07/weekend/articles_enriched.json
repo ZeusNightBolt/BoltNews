@@ -1,0 +1,294 @@
+[
+  {
+    "id": 1,
+    "title": "The 1-Minute Market Report, June 7, 2026",
+    "source": "Seeking Alpha",
+    "url": "https://seekingalpha.com/article/4912642-the-1-minute-market-report-june-7-2026",
+    "author": "Erik Conley",
+    "category": "Equities",
+    "date": "2026-06-07",
+    "summary": "The 1-Minute Market Report, June 7, 2026",
+    "key_data": {
+      "SPY": {
+        "close": 737.55,
+        "chg_pct": -2.58
+      },
+      "QQQ": {
+        "close": 705.06,
+        "chg_pct": -4.8
+      },
+      "DIA": {
+        "close": 509.7,
+        "chg_pct": -1.35
+      },
+      "IWM": {
+        "close": 281.65,
+        "chg_pct": -3.55
+      }
+    },
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "id": 2,
+    "title": "Weekly Trader's Stock Market Outlook",
+    "source": "Charles Schwab",
+    "url": "https://www.schwab.com/learn/story/weekly-traders-outlook",
+    "author": "Nathan Peterson, Jim Ferraioli",
+    "category": "Equities",
+    "date": "2026-06-05",
+    "summary": "Weekly Trader's Stock Market Outlook",
+    "key_data": {
+      "nfp_may": 172000,
+      "nfp_expected": 80000,
+      "unemployment": 4.3,
+      "yield_2y": 4.164,
+      "yield_10y": 4.53,
+      "vix_chg_pct": 28,
+      "fed_hike_oct_pct": 66.2,
+      "spx_rally_from_mar30": 20.6
+    },
+    "age_hours": 48.0,
+    "rejected_reason": null
+  },
+  {
+    "id": 3,
+    "title": "Stocks fall sharply as strong jobs data fuels rate hike bets",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-06-05/",
+    "author": "Chibuike Oguh et al.",
+    "category": "Equities",
+    "date": "2026-06-05",
+    "summary": "Stocks fall sharply as strong jobs data fuels rate hike bets",
+    "key_data": {
+      "dow_chg_pct": -1.4,
+      "sp500_chg_pct": -2.64,
+      "nasdaq_chg_pct": -4.2,
+      "brent": 93.09,
+      "wti": 90.54,
+      "gold": 4322.85,
+      "bitcoin": 61156.75,
+      "usd_index_chg_pct": 0.62
+    },
+    "age_hours": 48.0,
+    "rejected_reason": null
+  },
+  {
+    "id": 4,
+    "title": "Nasdaq plunges 4%, Dow and S&P 500 sink as AI trade halts on Fed hike bets",
+    "source": "Yahoo Finance",
+    "url": "https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-nasdaq-sink-as-jobs-report-fuels-fed-hike-bets-chip-stocks-sell-off-230134285.html",
+    "category": "Equities",
+    "date": "2026-06-05",
+    "summary": "Nasdaq plunges 4%, Dow and S&P 500 sink as AI trade halts on Fed hike bets",
+    "key_data": {
+      "nvda_mcap": "4.97T",
+      "nvda_chg_pct": -6,
+      "btc_200dma_breach": true,
+      "chip_sector_value_erased": "1T"
+    },
+    "age_hours": 48.0,
+    "rejected_reason": null
+  },
+  {
+    "id": 7,
+    "title": "June 2026 Market Update: Stocks and Inflation Keep Rising",
+    "source": "Thrivent Funds",
+    "url": "https://www.thriventfunds.com/insights/market-update/june-2026-market-update-stocks-and-inflation-keep-rising.html",
+    "author": "Steve Lowe, CFA",
+    "category": "Rates",
+    "date": "2026-06-05",
+    "summary": "June 2026 Market Update: Stocks and Inflation Keep Rising",
+    "key_data": {
+      "headline_cpi": 3.8,
+      "core_cpi": 2.8,
+      "headline_ppi": 6.0,
+      "core_ppi": 5.2,
+      "q1_gdp_revised": 1.6,
+      "consumer_sentiment": 44.8,
+      "yield_30y_peak": 5.2
+    },
+    "age_hours": 48.0,
+    "rejected_reason": null
+  },
+  {
+    "id": 5,
+    "title": "2026 Mid-Year Outlook: U.S. Stocks and Economy",
+    "source": "Charles Schwab",
+    "url": "https://www.schwab.com/learn/story/us-stock-market-outlook",
+    "author": "Liz Ann Sonders, Kevin Gordon",
+    "category": "macro_outlook",
+    "date": "2026-06-03",
+    "summary": "Economic growth rebounding but consumers strained by negative real wage growth, weak savings (2.6%), rising energy costs. Inflation sticky: supercore at 3.5% YoY. AI capex adding to inflation as a demand shock alongside Iran war supply shock. S&P 500 earnings growth forecast for FY2026 surged to 25%. But concentration risk extreme: only ~17% of stocks outperformed index. Hyperscaler capex: $800B in 2026 (80% increase), $900B+ in 2027. Capex reaching ~75% of cash flows \u2014 reminiscent of late-1990s. Markets vulnerable to disappointment with stretched positioning, thin equity risk premium, rising bond yields.",
+    "key_data": {
+      "savings_rate": 2.6,
+      "supercore_cpi": 3.5,
+      "sp500_earnings_growth_fy2026": 25,
+      "hyperscaler_capex_2026": "800B",
+      "breadth_pct_outperforming": 17
+    },
+    "rejected_reason": "stale",
+    "age_hours": 96.0
+  },
+  {
+    "id": 6,
+    "title": "2026 Midyear Investment Outlook: Constructive, Not Complacent",
+    "source": "Morgan Stanley",
+    "url": "https://www.morganstanley.com/insights/articles/investment-outlook-midyear-2026",
+    "author": "Serena Tang et al.",
+    "category": "macro_outlook",
+    "date": "2026-05-15",
+    "summary": "Overweight equities, underweight core fixed income. S&P 500 year-end 2026 target raised to 8,000 (from 7,800). Mid-2027 forecast: 8,300 (12% gain). Q1 earnings beat by 6% \u2014 strongest in 4 years. AI capex estimates revised sharply higher: 2026 $800B, 2027 $1.16T. Rising corporate debt issuance for AI may pressure credit. Dollar likely to weaken near-term on moderating inflation/rate expectations, recovering into 2027. Oil and gas prices expected elevated through year-end even if Hormuz exports begin recovering. Main risk: acceleration in inflation to levels Fed cannot ignore.",
+    "key_data": {
+      "sp500_target_ye2026": 8000,
+      "sp500_target_mid2027": 8300,
+      "q1_earnings_beat_pct": 6,
+      "hyperscaler_capex_2026": "800B",
+      "hyperscaler_capex_2027": "1.16T"
+    },
+    "rejected_reason": "stale",
+    "age_hours": 552.0
+  },
+  {
+    "id": 8,
+    "title": "Economic Outlook - June 2026",
+    "source": "Welch & Forbes",
+    "url": "https://www.welchforbes.com/insights/economic-outlook-june-2026/",
+    "category": "macro_outlook",
+    "date": "2026-06-04",
+    "summary": "Hotter inflation worried markets in May. April PPI surged 1.4% MoM (vs 0.5% expected). Headline CPI 3.8% YoY (highest since May 2023). Core PCE 3.3% (highest since Nov 2023). Bond yields spiked: 10-year added >50bps since Iran War began; 30-year at highest since pre-GFC 2007. 2-year above 4% since mid-May. Fed minutes revealed heightened inflation concerns. Fed funds futures pricing one rate increase by December. Gasoline $4.49/gal (up 42% YoY). Personal income flat vs +0.4% expected. Durable goods orders +7.9% (strong, helped by AI capex). GDP Q1 revised to 1.6%.",
+    "key_data": {
+      "ppi_mom_april": 1.4,
+      "cpi_yoy": 3.8,
+      "core_pce_yoy": 3.3,
+      "gasoline_per_gal": 4.49,
+      "gasoline_yoy_chg": 42,
+      "durable_goods_mom": 7.9,
+      "yield_10y_iran_war_chg_bps": 50
+    },
+    "rejected_reason": "stale",
+    "age_hours": 72.0
+  },
+  {
+    "id": 9,
+    "title": "Oil prices rise as Iran reviews US proposal to halt war",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/business/energy/oil-steadies-uncertainty-over-us-iran-talks-keeps-markets-edge-2026-06-02/",
+    "category": "geopolitics",
+    "date": "2026-06-02",
+    "summary": "Brent rose to $96.00 (highest since May 26), WTI to $93.76. Iran examining US proposal but communications paused. Trump claims deal within a week. Ritterbusch: 'significant reopening of Strait doesn't appear much closer than months ago.' IEA warns global oil inventories could hit critical levels ahead of peak summer demand. ~20% of global oil/LNG flows disrupted. OPEC+ set for fourth oil quota hike since Hormuz closure. Conflicting signals from White House, Iran, Israel keeping markets on edge.",
+    "key_data": {
+      "brent": 96.0,
+      "wti": 93.76,
+      "global_oil_disrupted_pct": 20,
+      "opec_quota_hikes_since_closure": 4
+    },
+    "rejected_reason": "stale",
+    "age_hours": 120.0
+  },
+  {
+    "id": 10,
+    "title": "Stock market 'euphoria' masks looming Iran war recession risk",
+    "source": "CNBC",
+    "url": "https://www.cnbc.com/2026/05/04/strait-hormuz-gas-price-oil-shock-recession-risk-economy-iran-us-war.html",
+    "author": "CNBC",
+    "category": "geopolitics",
+    "date": "2026-05-04",
+    "summary": "Investors underplaying Iran war economic impact. S&P 500 hit ATH of 7,230 on May 1 despite >50% oil surge since Feb 28. Amrita Sen (Energy Aspect): 'Sleepwalking into potentially a pretty big recession. Extremely misplaced euphoria.' Oil at Brent $111, WTI $104. OPEC production increase 'largely symbolic.' Strait of Hormuz disruption requires demand destruction to 2013 levels. Morgan Stanley's Eisenschidt: 'nearing a day of reckoning.' ECB rate hike likely if no resolution in 1-2 weeks. New oil floor: $80-90 long-term. Collateral damage: LNG, chemicals, fertilizers, food prices.",
+    "key_data": {
+      "brent_may4": 111.23,
+      "wti_may4": 104.16,
+      "oil_surge_since_feb28_pct": 50,
+      "spx_ath_may1": 7230.12,
+      "new_oil_floor": "80-90"
+    },
+    "rejected_reason": "stale",
+    "age_hours": 816.0
+  },
+  {
+    "id": 11,
+    "title": "SpaceX targets $135 IPO price at valuation of $1.77 trillion",
+    "source": "CNBC",
+    "url": "https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html",
+    "category": "equities",
+    "date": "2026-06-03",
+    "summary": "SpaceX sets fixed IPO price of $135/share (not a range). 555.6M shares offered, raising $75B (+$11.2B underwriter option). Valuation: $1.77T (7th largest US company, surpassing Tesla). Nasdaq debut June 12, ticker SPCX. Musk retains 82%+ voting control. Lead underwriter: Goldman Sachs + Morgan Stanley, BofA, Citi, JPM. Largest IPO ever (>3x Alibaba). 5% shares reserved for employees. Competitive context: Anthropic filed confidentially June 1, OpenAI preparing filing. Speculation about future SpaceX-Tesla combination.",
+    "key_data": {
+      "ipo_price": 135,
+      "valuation": "1.77T",
+      "raise_amount": "75B",
+      "ticker": "SPCX",
+      "listing_date": "2026-06-12",
+      "musk_voting_control_pct": 82
+    },
+    "rejected_reason": "stale",
+    "age_hours": 96.0
+  },
+  {
+    "id": 12,
+    "title": "2026 Credit Outlook: From Scarcity to Selection",
+    "source": "Apollo Academy",
+    "url": "https://www.apolloacademy.com/2026-credit-outlook/",
+    "author": "John Cortese et al.",
+    "category": "credit",
+    "date": "2026-01-14",
+    "summary": "Credit markets undergoing regime shift: from scarcity to higher-supply buyer's market. Hyperscaler investment tripled since 2023. Cumulative AI spending >$2.7T (2025-2029). Internal cash flows insufficient; external debt financing now primary driver across IG, private credit, project finance, CRE, ABS. AI issuance creating concentration and correlation risk \u2014 apparent diversification across sectors reflects single macro bet on AI. K-shaped economy driving dispersion, not distress. Opportunity areas: European private credit, sports financing.",
+    "key_data": {
+      "ai_cumulative_spending_2025_2029": "2.7T",
+      "hyperscaler_investment_growth_since_2023": "tripled",
+      "market_regime": "buyer's market"
+    },
+    "rejected_reason": "stale",
+    "age_hours": 3456.0
+  },
+  {
+    "id": 13,
+    "title": "Stock market next week: Outlook for June 1-5, 2026",
+    "source": "CNBC",
+    "url": "https://www.cnbc.com/2026/05/29/stock-market-next-week-outlook-for-june-1-5-2026.html",
+    "category": "week_ahead",
+    "date": "2026-05-29",
+    "summary": "Wall Street entered June at all-time highs on Iran peace hopes and AI growth. Nasdaq up >8% since April. Q1 S&P 500 earnings blended growth 28%+ (IT sector 54%+). Iran war resolution expected within 2-3 weeks \u2014 political pressure in midterm election year. Risk factors: consumer health deteriorating (savings, wage growth), June historically worst month in midterm election years. Key quote: 'The real bet is we're coming to resolution on Iran, slowly but surely, in the next two, three weeks.'",
+    "key_data": {
+      "q1_earnings_growth": 28,
+      "it_sector_earnings_growth": 54,
+      "nasdaq_since_april_pct": 8
+    },
+    "rejected_reason": "stale",
+    "age_hours": 216.0
+  },
+  {
+    "id": 14,
+    "title": "BMO Commodities Outlook for June 2026",
+    "source": "BMO Capital Markets",
+    "url": "https://economics.bmo.com/media/filer_public/dd/1e/dd1e0a2d-25f7-4dad-81ac-d57ed381ae82/commoditiesoutlook.pdf",
+    "category": "commodities",
+    "date": "2026-06-01",
+    "summary": "Commodities outlook for June 2026 from BMO Capital Markets. World Bank data: non-energy index rose 2.5%, metals +3.7%, precious metals -1.7%. Deutsche Bank forecasts 2026 average oil at $61.50/b but this predates current war-driven levels. Trading Economics consensus shows broad commodity price elevation driven by geopolitical supply disruptions. Next World Bank update: July 2, 2026.",
+    "key_data": {
+      "non_energy_index_chg": 2.5,
+      "metals_chg": 3.7,
+      "precious_metals_chg": -1.7
+    },
+    "rejected_reason": "stale",
+    "age_hours": 144.0
+  },
+  {
+    "id": 15,
+    "title": "Weekly Economic Calendar: June 8-14, 2026",
+    "source": "LiteFinance",
+    "url": "https://www.litefinance.org/blog/analysts-opinions/weekly-economic-calendar-for-08062026-14062026/",
+    "category": "week_ahead",
+    "date": "2026-06-03",
+    "summary": "KEY EVENT: US CPI on Wednesday June 10. Recent headline CPI 3.8% YoY, core 2.8%. Monday June 8: no major releases (51 earnings though). Tuesday: China trade balance. Wednesday: China CPI + US CPI + BoC rate decision (current 2.25%). Thursday: ECB rate decision (main refinancing 2.15%) + US PPI. Friday: German HICP final + U. Michigan sentiment prelim. Fed's next FOMC meeting June 16-17 (Kevin Warsh's first as chair). BoC likely to pause; ECB facing hawkish pressure from energy inflation but recession risks.",
+    "key_data": {
+      "cpi_date": "2026-06-10",
+      "fomc_date": "2026-06-16",
+      "boc_rate": 2.25,
+      "ecb_main_rate": 2.15,
+      "ecb_deposit_rate": 2.0
+    },
+    "rejected_reason": "stale",
+    "age_hours": 96.0
+  }
+]
