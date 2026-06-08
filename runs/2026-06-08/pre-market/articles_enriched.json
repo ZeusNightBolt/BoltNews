@@ -1,0 +1,360 @@
+[
+  {
+    "id": "iran-israel-escalation-cnbc",
+    "title": "Stock Futures Mixed as Iran Attack on Israel Shakes Fragile Ceasefire",
+    "url": "https://www.cnbc.com/2026/06/07/stock-market-today-live-updates.html",
+    "source": "CNBC",
+    "category": "Equities",
+    "date": "2026-06-08",
+    "summary": "Stock Futures Mixed as Iran Attack on Israel Shakes Fragile Ceasefire",
+    "tickers": [],
+    "keywords": [
+      "Iran",
+      "Israel",
+      "missile",
+      "ceasefire",
+      "oil",
+      "SPX",
+      "Kospi",
+      "Nikkei"
+    ],
+    "sentiment": "bearish",
+    "impact": "high",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "oil-surge-iran-news18",
+    "title": "Crude Oil Prices Surge 4% After Iran Missile Strikes on Israel; Asian Markets Tumble Up To 8%",
+    "url": "https://www.news18.com/business/economy/crude-oil-prices-surge-4-after-iran-missile-strikes-on-israel-asian-markets-tumble-up-to-8-ws-l-10135551.html",
+    "source": "News18",
+    "category": "Macro",
+    "date": "2026-06-08",
+    "summary": "Crude Oil Prices Surge 4% After Iran Missile Strikes on Israel; Asian Markets Tumble Up To 8%",
+    "tickers": [
+      "AVGO"
+    ],
+    "keywords": [
+      "oil",
+      "Brent",
+      "WTI",
+      "Iran",
+      "Israel",
+      "dollar index",
+      "Kospi",
+      "Nikkei",
+      "Trump"
+    ],
+    "sentiment": "bearish",
+    "impact": "high",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "brent-crude-tradingeconomics",
+    "title": "Brent Crude at $97.39 \u2014 Up 4.62%, +45% YoY; Strait of Hormuz Near-Closure",
+    "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+    "source": "Trading Economics",
+    "category": "Credit",
+    "date": "2026-06-08",
+    "summary": "Brent Crude at $97.39 \u2014 Up 4.62%, +45% YoY; Strait of Hormuz Near-Closure",
+    "tickers": [],
+    "keywords": [
+      "Brent",
+      "crude",
+      "OPEC+",
+      "Strait of Hormuz",
+      "China",
+      "supply"
+    ],
+    "sentiment": "bullish",
+    "impact": "high",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "mstr-saylor-btc-coindesk",
+    "title": "Strategy: Saylor Revives Bitcoin-Buy Speculation; Executives Plan $15M Stock Sales",
+    "url": "https://www.coindesk.com/business/2026/06/06/michael-saylor-revives-bitcoin-buy-speculation-as-scrutiny-over-strategy-grows",
+    "source": "CoinDesk",
+    "category": "Equities",
+    "date": "2026-06-07",
+    "summary": "Strategy: Saylor Revives Bitcoin-Buy Speculation; Executives Plan $15M Stock Sales",
+    "tickers": [
+      "MSTR"
+    ],
+    "keywords": [
+      "MSTR",
+      "Bitcoin",
+      "Saylor",
+      "BTC",
+      "Strategy",
+      "crypto"
+    ],
+    "sentiment": "bearish",
+    "impact": "medium",
+    "age_hours": 24.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "semis-selloff-mrvl-avgo",
+    "title": "Semiconductor Selloff: Broadcom -12%, Marvell -17%; Broadcom Preferred at 64x vs 90x",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/better-buy-semiconductor-sell-off-022200092.html",
+    "source": "Yahoo Finance / Motley Fool",
+    "category": "Equities",
+    "date": "2026-06-07",
+    "summary": "Semiconductor Selloff: Broadcom -12%, Marvell -17%; Broadcom Preferred at 64x vs 90x",
+    "tickers": [
+      "AVGO",
+      "MRVL"
+    ],
+    "keywords": [
+      "semiconductor",
+      "AI",
+      "Broadcom",
+      "Marvell",
+      "valuation",
+      "selloff"
+    ],
+    "sentiment": "neutral",
+    "impact": "medium",
+    "age_hours": 24.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "rivian-r2-launch",
+    "title": "Rivian R2 SUV Order Phase Begins June 9 \u2014 8-Day Rally Ahead of Mass-Market Push",
+    "url": "https://stocktwits.com/news-articles/markets/equity/rivn-stock-surges-as-r2-nears-delivery-kickoff/cZ0WRzjRevO",
+    "source": "Stocktwits / Yahoo Finance",
+    "category": "Equities",
+    "date": "2026-06-07",
+    "summary": "Rivian R2 SUV Order Phase Begins June 9 \u2014 8-Day Rally Ahead of Mass-Market Push",
+    "tickers": [
+      "RIVN"
+    ],
+    "keywords": [
+      "Rivian",
+      "R2",
+      "EV",
+      "SUV",
+      "Tesla",
+      "delivery"
+    ],
+    "sentiment": "bullish",
+    "impact": "medium",
+    "age_hours": 24.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "gold-weakness-tradingeconomics",
+    "title": "Gold Falls to $4,294 \u2014 Down 9.32% Monthly Despite Iran-Israel Escalation",
+    "url": "https://tradingeconomics.com/commodity/gold",
+    "source": "Trading Economics",
+    "category": "Equities",
+    "date": "2026-06-08",
+    "summary": "Gold Falls to $4,294 \u2014 Down 9.32% Monthly Despite Iran-Israel Escalation",
+    "tickers": [],
+    "keywords": [
+      "gold",
+      "safe haven",
+      "precious metals",
+      "XAU",
+      "contrarian"
+    ],
+    "sentiment": "bearish",
+    "impact": "medium",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "dxy-dollar-strength",
+    "title": "DXY Rises to 100.14 \u2014 Up 2.23% Monthly on Strong US Data, Rate Differential",
+    "url": "https://tradingeconomics.com/united-states/currency",
+    "source": "Trading Economics",
+    "category": "FX",
+    "date": "2026-06-08",
+    "summary": "DXY Rises to 100.14 \u2014 Up 2.23% Monthly on Strong US Data, Rate Differential",
+    "tickers": [],
+    "keywords": [
+      "DXY",
+      "dollar",
+      "forex",
+      "currency",
+      "yields",
+      "rate differential"
+    ],
+    "sentiment": "bullish",
+    "impact": "medium",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "id": "jobs-report-may-cnbc",
+    "title": "May Jobs Report: 172K Payrolls \u2014 More Than Double Expectations; Rate Cut Hopes Fade",
+    "url": "https://www.cnbc.com/2026/06/05/jobs-report-may-2026.html",
+    "source": "CNBC",
+    "category": "macro",
+    "date": "2026-06-05",
+    "summary": "172K jobs added vs 80K expected. Unemployment 4.3% unchanged. Wage growth +0.3% MoM/+3.4% YoY. March+April revisions added +93K. Leisure/hospitality +70K (World Cup boost). Treasury yields jumped sharply higher. Rate cuts off near-term horizon per analysts. Q1 GDP 1.6% annualized; Atlanta Fed tracking ~3% Q2. Fed focused on persistent inflation, not labor weakness.",
+    "tickers": [],
+    "keywords": [
+      "jobs",
+      "payrolls",
+      "unemployment",
+      "Fed",
+      "wages",
+      "CPI",
+      "inflation"
+    ],
+    "sentiment": "hawkish",
+    "impact": "high",
+    "rejected_reason": "stale",
+    "age_hours": 72.0
+  },
+  {
+    "id": "fed-tracker-forbes",
+    "title": "Fed Meeting Tracker: Next FOMC June 16-17; Polymarket 99% 'No Change'",
+    "url": "https://www.forbes.com/sites/investor-hub/article/fed-meeting-tracker-interest-rate-strategy/",
+    "source": "Forbes",
+    "category": "monetary_policy",
+    "date": "2026-06-02",
+    "summary": "Current rate: 3.50-3.75%. Next FOMC June 16-17 (SEP included). March SEP: PCE 2.7% for 2026, GDP 2.4%, unemployment 4.4%. CPI jumped 2.4%\u21923.3% in March. Rate HIKE sentiment rising \u2014 'for first time in years, prevailing sentiment is a rate hike much more likely than cut.' Polymarket: 99% no change at June meeting, 1% for 25bp cut. Powell: Iran war, tariffs pushing energy costs higher \u2192 feeds inflation.",
+    "tickers": [],
+    "keywords": [
+      "Fed",
+      "FOMC",
+      "rates",
+      "Powell",
+      "inflation",
+      "dot plot",
+      "SEP"
+    ],
+    "sentiment": "hawkish",
+    "impact": "high",
+    "rejected_reason": "stale",
+    "age_hours": 144.0
+  },
+  {
+    "id": "spacex-ipo-reuters",
+    "title": "SpaceX Targets Record $75B IPO at $135/Share \u2014 $1.75T Valuation, June 12 Debut",
+    "url": "https://www.reuters.com/business/media-telecom/spacex-plans-raise-75-billion-ipo-135-per-share-source-says-2026-06-03/",
+    "source": "Reuters",
+    "category": "equities",
+    "date": "2026-06-03",
+    "summary": "Fixed price $135/share (no range). 555.6M shares, all primary. $75B raise \u2014 largest IPO ever (3x Alibaba). Ticker SPCX on Nasdaq, June 12. Musk retains 82% voting control. 2025 rev $18.67B, net loss $4.94B. Only Starlink profitable. P/S at 93.7x. 30% retail allocation. Roadshow started June 5. Morningstar fair value $780B \u2014 48% below IPO price. xAI merger valued at $1.25T combined in Feb. Anthropic and OpenAI IPOs also expected.",
+    "tickers": [
+      "RKLB"
+    ],
+    "keywords": [
+      "SpaceX",
+      "IPO",
+      "SPCX",
+      "Musk",
+      "Starlink",
+      "xAI",
+      "valuation"
+    ],
+    "sentiment": "neutral",
+    "impact": "high",
+    "rejected_reason": "stale",
+    "age_hours": 120.0
+  },
+  {
+    "id": "mstr-sale-analysis-247wallst",
+    "title": "Buy, Sell or Hold MSTR After Strategy's First Bitcoin Sale in Years?",
+    "url": "https://247wallst.com/investing/2026/06/04/buy-sell-or-hold-mstr-after-strategys-first-bitcoin-sale-in-years/",
+    "source": "24/7 Wall St.",
+    "category": "crypto",
+    "date": "2026-06-04",
+    "summary": "MSTR at $126, down 72% from July 2025 highs, -31% in last month. Q4 2025: $17.44B unrealized loss. Polymarket: 63% MSCI delisting probability by end 2026. Holding 843K BTC at $75,699 avg cost; current BTC ~$64K. Sale was tiny (0.0038% of holdings) but broke psychological contract. Verdict: HOLD. Next 1-2 weeks critical \u2014 BTC purchase announcement would restore confidence; another sale would signal structural shift.",
+    "tickers": [
+      "MSTR"
+    ],
+    "keywords": [
+      "MSTR",
+      "Bitcoin",
+      "Saylor",
+      "MSCI",
+      "delisting",
+      "unrealized loss"
+    ],
+    "sentiment": "bearish",
+    "impact": "medium",
+    "rejected_reason": "stale",
+    "age_hours": 96.0
+  },
+  {
+    "id": "smci-gorilla-ai-deal",
+    "title": "Super Micro Closes $2B AI Infrastructure Deal with Gorilla Technology in India",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-extends-ai-factory-031639427.html",
+    "source": "Yahoo Finance",
+    "category": "equities",
+    "date": "2026-06-02",
+    "summary": "SMCI closed $2B AI infrastructure deal with Gorilla Technology (GRRR) for India. Covers 20,736 B300 cards, 5,120 B200 cards, networking equipment. SMCI up 34.5% YTD, ~20% last month, but -9.7% past week amid semis selloff. Helios AI factory platform launch. Analyst price targets $15-50.",
+    "tickers": [
+      "SMCI",
+      "GRRR"
+    ],
+    "keywords": [
+      "SMCI",
+      "AI",
+      "India",
+      "data center",
+      "GPU",
+      "Super Micro"
+    ],
+    "sentiment": "bullish",
+    "impact": "medium",
+    "rejected_reason": "stale",
+    "age_hours": 144.0
+  },
+  {
+    "id": "credit-outlook-pinebridge",
+    "title": "IG Credit: AI Capex Boom Driving Record $2.25T Supply in 2026 \u2014 Spreads at 25-Year Tights",
+    "url": "https://www.pinebridge.com/en/insights/2026-investment-grade-credit-outlook",
+    "source": "PineBridge Investments",
+    "category": "credit",
+    "date": "2026-02-26",
+    "summary": "IG spreads at levels last seen mid-1990s. AI capex driving unprecedented supply: $600B in 2026, $4T cumulative through 2030. Meta, Oracle, Google, Amazon raised >$100B combined in Q4 2025 alone. 2026 supply forecast $2.25T (+35% YoY). For first time since 2022, supply may outpace demand. Banks look compelling; technology warrants caution. Alpha from what you DON'T own. Selective, defensive positioning recommended.",
+    "tickers": [],
+    "keywords": [
+      "IG credit",
+      "spreads",
+      "AI capex",
+      "supply",
+      "bonds",
+      "investment grade"
+    ],
+    "sentiment": "cautious",
+    "impact": "medium",
+    "rejected_reason": "stale",
+    "age_hours": 2448.0
+  },
+  {
+    "id": "defense-stocks-ibd",
+    "title": "Defense Stocks Hit Pause as Trump Pentagon Remakes Military Industrial Complex",
+    "url": "https://www.investors.com/news/defense-stocks-trump-pentagon-military-industrial-complex/",
+    "source": "Investor's Business Daily",
+    "category": "equities",
+    "date": "2026-06-05",
+    "summary": "Defense stocks (RTX, LMT, NOC, GD) seeing mixed signals. Trump Pentagon remaking procurement priorities toward advanced warfare, missile defense, space-based systems. NATO allies increasing defense budgets. KeyBanc initiated coverage favoring 'new space' over legacy primes: RKLB, ASTS highlighted. Iran conflict should benefit defense but Trump's restructuring introduces uncertainty.",
+    "tickers": [
+      "RTX",
+      "LMT",
+      "NOC",
+      "RKLB",
+      "ASTS"
+    ],
+    "keywords": [
+      "defense",
+      "Pentagon",
+      "aerospace",
+      "missile defense",
+      "NATO"
+    ],
+    "sentiment": "neutral",
+    "impact": "medium",
+    "rejected_reason": "stale",
+    "age_hours": 72.0
+  }
+]

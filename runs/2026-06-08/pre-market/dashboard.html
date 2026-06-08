@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-08</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-08 &middot; 15 articles &middot; 9 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews — Pre-Market Briefing</h1>
+<p><strong>2026-06-08</strong> | 8 articles (≤48h) | 7 context refs | 7 rejected (>48h)</p>
+<h2>Equities</h2>
+<ul><li><a href="https://www.cnbc.com/2026/06/07/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock Futures Mixed as Iran Attack on Israel Shakes Fragile Ceasefire</a></li><li><a href="https://www.coindesk.com/business/2026/06/06/michael-saylor-revives-bitcoin-buy-speculation-as-scrutiny-over-strategy-grows" target="_blank" rel="noopener">Strategy: Saylor Revives Bitcoin-Buy Speculation; Executives Plan $15M Stock Sales</a></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/better-buy-semiconductor-sell-off-022200092.html" target="_blank" rel="noopener">Semiconductor Selloff: Broadcom -12%, Marvell -17%; Broadcom Preferred at 64x vs 90x</a></li><li><a href="https://stocktwits.com/news-articles/markets/equity/rivn-stock-surges-as-r2-nears-delivery-kickoff/cZ0WRzjRevO" target="_blank" rel="noopener">Rivian R2 SUV Order Phase Begins June 9 — 8-Day Rally Ahead of Mass-Market Push</a></li><li><a href="https://tradingeconomics.com/commodity/gold" target="_blank" rel="noopener">Gold Falls to $4,294 — Down 9.32% Monthly Despite Iran-Israel Escalation</a></li></ul>
+<h2>Macro</h2>
+<ul><li><a href="https://www.news18.com/business/economy/crude-oil-prices-surge-4-after-iran-missile-strikes-on-israel-asian-markets-tumble-up-to-8-ws-l-10135551.html" target="_blank" rel="noopener">Crude Oil Prices Surge 4% After Iran Missile Strikes on Israel; Asian Markets Tumble Up To 8%</a></li></ul>
+<h2>Credit</h2>
+<ul><li><a href="https://tradingeconomics.com/commodity/brent-crude-oil" target="_blank" rel="noopener">Brent Crude at $97.39 — Up 4.62%, +45% YoY; Strait of Hormuz Near-Closure</a></li></ul>
+<h2>FX</h2>
+<ul><li><a href="https://tradingeconomics.com/united-states/currency" target="_blank" rel="noopener">DXY Rises to 100.14 — Up 2.23% Monthly on Strong US Data, Rate Differential</a></li></ul>
+<hr class="divider">
+<h2>📚 Historical Context (reference only — NOT current news)</h2>
+<p><em>The following 7 sources are >48h old and included ONLY as background context.</em></p>
+<p><em>They are NOT part of today's news digest. Use the daily summary dumps for historical tracking.</em></p>
+<ul><li><a href="https://www.cnbc.com/2026/06/05/jobs-report-may-2026.html" target="_blank" rel="noopener">May Jobs Report: 172K Payrolls — More Than Double Expectations; Rate Cut Hopes Fade</a> — ~72.0h old</li><li><a href="https://www.forbes.com/sites/investor-hub/article/fed-meeting-tracker-interest-rate-strategy/" target="_blank" rel="noopener">Fed Meeting Tracker: Next FOMC June 16-17; Polymarket 99% 'No Change'</a> — ~144.0h old</li><li><a href="https://www.reuters.com/business/media-telecom/spacex-plans-raise-75-billion-ipo-135-per-share-source-says-2026-06-03/" target="_blank" rel="noopener">SpaceX Targets Record $75B IPO at $135/Share — $1.75T Valuation, June 12 Debut</a> — ~120.0h old</li><li><a href="https://247wallst.com/investing/2026/06/04/buy-sell-or-hold-mstr-after-strategys-first-bitcoin-sale-in-years/" target="_blank" rel="noopener">Buy, Sell or Hold MSTR After Strategy's First Bitcoin Sale in Years?</a> — ~96.0h old</li><li><a href="https://finance.yahoo.com/markets/stocks/articles/super-micro-extends-ai-factory-031639427.html" target="_blank" rel="noopener">Super Micro Closes $2B AI Infrastructure Deal with Gorilla Technology in India</a> — ~144.0h old</li><li><a href="https://www.pinebridge.com/en/insights/2026-investment-grade-credit-outlook" target="_blank" rel="noopener">IG Credit: AI Capex Boom Driving Record $2.25T Supply in 2026 — Spreads at 25-Year Tights</a> — ~2448.0h old</li><li><a href="https://www.investors.com/news/defense-stocks-trump-pentagon-military-industrial-complex/" target="_blank" rel="noopener">Defense Stocks Hit Pause as Trump Pentagon Remakes Military Industrial Complex</a> — ~72.0h old</li></ul>
+<hr class="divider">
+<p><em>Generated by BoltNews • 8 articles (≤48h) • 4 categories • 7 stale articles rejected • 7 kept as context</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnbc.com/2026/06/07/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock Futures Mixed as Iran Attack on Israel Shakes Fragile Ceasefire</a>
+<a class="source-link" href="https://www.news18.com/business/economy/crude-oil-prices-surge-4-after-iran-missile-strikes-on-israel-asian-markets-tumble-up-to-8-ws-l-10135551.html" target="_blank" rel="noopener">Crude Oil Prices Surge 4% After Iran Missile Strikes on Israel; Asian Markets Tu</a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/brent-crude-oil" target="_blank" rel="noopener">Brent Crude at $97.39 — Up 4.62%, +45% YoY; Strait of Hormuz Near-Closure</a>
+<a class="source-link" href="https://www.coindesk.com/business/2026/06/06/michael-saylor-revives-bitcoin-buy-speculation-as-scrutiny-over-strategy-grows" target="_blank" rel="noopener">Strategy: Saylor Revives Bitcoin-Buy Speculation; Executives Plan $15M Stock Sal</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/better-buy-semiconductor-sell-off-022200092.html" target="_blank" rel="noopener">Semiconductor Selloff: Broadcom -12%, Marvell -17%; Broadcom Preferred at 64x vs</a>
+<a class="source-link" href="https://stocktwits.com/news-articles/markets/equity/rivn-stock-surges-as-r2-nears-delivery-kickoff/cZ0WRzjRevO" target="_blank" rel="noopener">Rivian R2 SUV Order Phase Begins June 9 — 8-Day Rally Ahead of Mass-Market Push</a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/gold" target="_blank" rel="noopener">Gold Falls to $4,294 — Down 9.32% Monthly Despite Iran-Israel Escalation</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/currency" target="_blank" rel="noopener">DXY Rises to 100.14 — Up 2.23% Monthly on Strong US Data, Rate Differential</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/05/jobs-report-may-2026.html" target="_blank" rel="noopener">May Jobs Report: 172K Payrolls — More Than Double Expectations; Rate Cut Hopes F</a>
+<a class="source-link" href="https://www.forbes.com/sites/investor-hub/article/fed-meeting-tracker-interest-rate-strategy/" target="_blank" rel="noopener">Fed Meeting Tracker: Next FOMC June 16-17; Polymarket 99% 'No Change'</a>
+<a class="source-link" href="https://www.reuters.com/business/media-telecom/spacex-plans-raise-75-billion-ipo-135-per-share-source-says-2026-06-03/" target="_blank" rel="noopener">SpaceX Targets Record $75B IPO at $135/Share — $1.75T Valuation, June 12 Debut</a>
+<a class="source-link" href="https://247wallst.com/investing/2026/06/04/buy-sell-or-hold-mstr-after-strategys-first-bitcoin-sale-in-years/" target="_blank" rel="noopener">Buy, Sell or Hold MSTR After Strategy's First Bitcoin Sale in Years?</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/super-micro-extends-ai-factory-031639427.html" target="_blank" rel="noopener">Super Micro Closes $2B AI Infrastructure Deal with Gorilla Technology in India</a>
+<a class="source-link" href="https://www.pinebridge.com/en/insights/2026-investment-grade-credit-outlook" target="_blank" rel="noopener">IG Credit: AI Capex Boom Driving Record $2.25T Supply in 2026 — Spreads at 25-Ye</a>
+<a class="source-link" href="https://www.investors.com/news/defense-stocks-trump-pentagon-military-industrial-complex/" target="_blank" rel="noopener">Defense Stocks Hit Pause as Trump Pentagon Remakes Military Industrial Complex</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-08 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
