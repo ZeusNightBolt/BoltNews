@@ -6,6 +6,7 @@ GitHub-dark theme, mobile-responsive. Does NOT generate article cards —
 that's the old headline-only format. The briefing IS the content.
 """
 import argparse
+import html
 import json
 import re
 import sys
@@ -106,20 +107,32 @@ def _build_table(rows: list[str]) -> str:
 
 
 def _inline_md(text: str) -> str:
-    """Convert inline markdown: **bold**, *italic*, `code`, [links](url), ticker tags."""
-    # Code
-    text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
-    # Bold
+    """Convert inline markdown safely: **bold**, *italic*, `code`, [links](url)."""
+    placeholders: list[str] = []
+
+    def stash(value: str) -> str:
+        placeholders.append(value)
+        return f"@@BNPH{len(placeholders)-1}@@"
+
+    def link_repl(match: re.Match) -> str:
+        label = html.escape(match.group(1), quote=False)
+        url = html.escape(match.group(2), quote=True)
+        if not (url.startswith("http://") or url.startswith("https://") or url.startswith("#")):
+            url = "#"
+        return stash(f'<a href="{url}" target="_blank" rel="noopener">{label}</a>')
+
+    def code_repl(match: re.Match) -> str:
+        code = html.escape(match.group(1), quote=False)
+        cls = ' class="ticker"' if re.fullmatch(r"[A-Z]{2,5}", match.group(1)) else ""
+        return stash(f"<code{cls}>{code}</code>")
+
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', link_repl, text)
+    text = re.sub(r'`([^`]+)`', code_repl, text)
+    text = html.escape(text, quote=False)
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
-    # Italic
-    text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
-    # Links
-    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
-    # Ticker tags (ALL_CAPS 2-5 chars after `)
-    text = re.sub(r'`([A-Z]{2,5})`', r'<code class="ticker">\1</code>', text)
-    # Date/author meta
-    text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
-    
+    text = re.sub(r'(?<!\*)\*([^*]+?)\*(?!\*)', r'<em>\1</em>', text)
+    for i, value in enumerate(placeholders):
+        text = text.replace(f"@@BNPH{i}@@", value)
     return text
 
 
@@ -374,12 +387,23 @@ def main():
     parser.add_argument("--date", type=str, required=True)
     args = parser.parse_args()
 
-    # PRIMARY: Read the synthesized summary.md
-    if not args.summary.exists():
-        print(f"ERROR: summary.md not found at {args.summary}", file=sys.stderr)
+    # PRIMARY: Read synthesized briefing.md when present. summary.md is allowed
+    # to be an article digest/link index, but the dashboard must render the
+    # research briefing, not just source links.
+    briefing_path = args.summary.parent / "briefing.md"
+    content_path = briefing_path if briefing_path.exists() else args.summary
+    if not content_path.exists():
+        print(f"ERROR: briefing/summary markdown not found at {content_path}", file=sys.stderr)
         sys.exit(1)
 
-    summary_md = args.summary.read_text()
+    summary_md = content_path.read_text()
+    if "Executive Summary" not in summary_md and "Cross-Asset" not in summary_md:
+        print(
+            "ERROR: dashboard content is not a synthesized briefing "
+            "(missing Executive Summary/Cross-Asset markers). Refusing link-only dashboard.",
+            file=sys.stderr,
+        )
+        sys.exit(2)
 
     # SECONDARY: Read articles.json for source links
     articles = []
@@ -404,6 +428,7 @@ def main():
         f.write(html)
 
     print(f"Dashboard: {args.output} ({len(html)} bytes)")
+    print(f"  Content source: {content_path}")
     print(f"  Summary: {len(summary_md)} chars → {len(md_to_html(summary_md))} chars HTML")
     print(f"  Source links: {len(articles)} articles")
 

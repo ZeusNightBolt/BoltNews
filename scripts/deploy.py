@@ -71,6 +71,18 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
         print(f"ERROR: dashboard.html not found at {dashboard_src}. Cannot deploy.", file=sys.stderr)
         return False
 
+    html_text = dashboard_src.read_text(errors="replace")
+    if "Executive Summary" not in html_text and "Cross-Asset" not in html_text:
+        print(
+            "ERROR: dashboard.html does not contain synthesized briefing markers "
+            "(Executive Summary/Cross-Asset). Refusing to deploy link-only dashboard.",
+            file=sys.stderr,
+        )
+        return False
+    if html_text.count('class="source-link"') > 0 and html_text.count("<p>") < 8:
+        print("ERROR: dashboard appears source-link dominated. Refusing deploy.", file=sys.stderr)
+        return False
+
     # ═══════════════════════════════════════════
     # RECENCY GATE: Verify articles are fresh before deploying
     # ═══════════════════════════════════════════
