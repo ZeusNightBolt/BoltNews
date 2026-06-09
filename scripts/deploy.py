@@ -128,7 +128,7 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
     repo_run_dir.mkdir(parents=True, exist_ok=True)
 
     files_copied = 0
-    for fname in ["summary.md", "articles.json", "articles_enriched.json", "dashboard.html"]:
+    for fname in ["briefing.md", "summary.md", "articles.json", "articles_enriched.json", "search_plan.json", "dashboard.html"]:
         src = run_dir / fname
         if src.exists():
             run(["cp", str(src), str(repo_run_dir / fname)])

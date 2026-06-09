@@ -408,7 +408,12 @@ def main():
     # SECONDARY: Read articles.json for source links
     articles = []
     enriched_path = args.input.parent / "articles_enriched.json"
-    articles_path = enriched_path if enriched_path.exists() else args.input
+    # Avoid stale enriched feeds shadowing a freshly populated articles.json.
+    # Prefer enriched only when it is at least as new as the input article feed.
+    if enriched_path.exists() and enriched_path.stat().st_mtime >= args.input.stat().st_mtime:
+        articles_path = enriched_path
+    else:
+        articles_path = args.input
     
     if articles_path.exists():
         try:

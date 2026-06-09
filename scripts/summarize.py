@@ -65,7 +65,21 @@ def load_articles(path: Path) -> list[dict]:
         data = json.load(f)
     if isinstance(data, list):
         return data
-    return data.get("articles", [])
+    articles = data.get("articles", [])
+    # Guard against a search-plan frame being accidentally passed as articles.json.
+    # Plan frames contain search_queries/recency_warning and either no articles key
+    # or an empty articles list. Treat that as a pipeline error, not as a valid
+    # zero-article news day, because it produces empty dashboards.
+    if (
+        isinstance(data, dict)
+        and not articles
+        and ("search_queries" in data or "recency_warning" in data or "prioritized_tickers" in data)
+    ):
+        raise ValueError(
+            f"{path} is a search plan, not an article feed. "
+            "Populate articles.json with extracted articles before summarizing."
+        )
+    return articles
 
 
 def is_article_stale(article: dict, max_hours: int, run_date_str: str) -> tuple[bool, float | None]:
@@ -255,18 +269,15 @@ def main():
                         help=f"Max article age in hours (default: {MAX_NEWS_HOURS})")
     args = parser.parse_args()
 
-    articles = load_articles(args.input)
+    try:
+        articles = load_articles(args.input)
+    except ValueError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(2)
 
     if not articles:
-        print("WARNING: No articles to summarize. Writing empty summary.", file=sys.stderr)
-        summary = (
-            f"# BoltNews — {'Weekend Briefing' if args.mode == 'weekend' else args.mode.title()}\n\n"
-            f"**{args.date}** | 0 articles\n\n"
-            f"*No market-moving news found in the past {args.max_hours} hours.*\n"
-        )
-        with open(args.output, "w") as f:
-            f.write(summary)
-        return
+        print("ERROR: No articles to summarize; refusing to write an empty summary/dashboard feed.", file=sys.stderr)
+        sys.exit(2)
 
     # ═══════════════════════════════════════════
     # RECENCY GATE — THE PROGRAMMATIC ENFORCEMENT
