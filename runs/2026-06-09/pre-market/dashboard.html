@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-09</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-09 &middot; 0 articles &middot; 0 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews Pre-Market Research Briefing — June 9, 2026</h1>
+<p><strong>Run Date:</strong> 2026-06-09 | <strong>Mode:</strong> Pre-Market | <strong>Analyst:</strong> Hermes Research Desk</p>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p><strong>A tentative chip-led bounce masks deepening macro fragility.</strong> Monday's session saw the S&amp;P 500 claw back 0.30% (7,405.73) and the Nasdaq recover 0.86% (25,929.66) after Friday's worst semiconductor rout in six years erased roughly $1 trillion in chip market cap. The SOX Semiconductor Index surged 5.6% in a classic dip-buying rotation, but the Dow slipped 0.16% and market breadth was neutral-to-negative. The VIX spiked to 21.51 intraday before settling near 18.29 in pre-market — elevated but not panicked.</p>
+<p><strong>The macro setup is deteriorating faster than equities acknowledge.</strong> The Fed is poised to formally drop its easing bias at the June 16-17 FOMC meeting under new Chair Kevin Warsh, and the CME FedWatch Tool now prices a 72% probability of at least one rate hike in 2026. Wednesday's May CPI report (June 10, 8:30am ET) is the week's critical risk event: RBC Economics forecasts headline CPI at 4.2% YoY — a three-year high — while core is expected at 2.9%. The head-core divergence is a warning, not a comfort: surging energy and input costs historically bleed into core with a 2-3 month lag.</p>
+<p><strong>Geopolitical tensions eased but the Strait of Hormuz remains effectively closed</strong> under a US-Iran dual blockade, keeping a structural floor under energy prices. WTI crude retreated to $89.11 pre-market (-2.40%) after Trump claimed an Iran deal could be reached in "two or three days," but the physical supply disruption persists.</p>
+<p><strong>The SpaceX IPO on Friday (June 12) is a critical sentiment test.</strong> Blockbuster offerings have historically marked cycle peaks (Callie Cox, Ritholtz Wealth Management). If the IPO absorbs well, it signals risk appetite intact; a weak debut would confirm exhaustion across risk assets.</p>
+<p><strong>Key risk for today's session:</strong> NFIB Small Business Optimism (6:00am), Trade Balance (8:30am), and Existing Home Sales (10:00am) data releases, plus positioning ahead of Wednesday's CPI.</p>
+<hr class="divider">
+<h2>Asset Class Deep Dive</h2>
+<h3>Equities</h3>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Monday Close</th><th>Change</th><th>Pre-Market Futures (Jun 9)</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,405.73</td><td>+0.30%</td><td>7,450.50 (+0.47%)</td></tr><tr><td>Nasdaq</td><td>25,929.66</td><td>+0.86%</td><td>29,692.00 (+0.81%)</td></tr><tr><td>Dow</td><td>50,786.01</td><td>-0.16%</td><td>50,979.00 (+0.24%)</td></tr><tr><td>Russell 2000</td><td>2,855.42</td><td>+0.77%</td><td>—</td></tr><tr><td>VIX</td><td>18.92 close / 18.29 pre-mkt</td><td>-12.04% close</td><td>—</td></tr></tbody></table></div>
+<p><strong>Friday's rout in context:</strong> The S&amp;P 500 dropped 2.64% on June 5, snapping a nine-week winning streak. May payrolls printed 172K (double consensus), triggering a violent repricing of Fed expectations. The SOX index crashed 10% — its worst day in over six years. Combined with Broadcom's unchanged AI chip forecast, the selloff was concentrated in the names that had led the rally: MU -13%, MRVL double-digit loss, quantum stocks -10%+ each.</p>
+<p><strong>Monday's rebound was narrow and chip-concentrated.</strong> MU +9.87%, INTC +11.19% (Google reportedly ordered &gt;3M tensor processing units through 2028), MRVL +9.63% (set to join S&amp;P 500 on June 22). GLW +9% on a multi-billion fiber deal with Amazon for AI data centers. AAPL -1.9% on a "sell-the-news" response to WWDC AI Siri upgrades — Tim Cook's last WWDC as CEO.</p>
+<p><strong>Valuation context:</strong> S&amp;P 500 earnings growth projected at 22.8% for 2026, with info tech at 44.1%. The SOX has doubled since late March. Citi analysts view the pullback as "healthy" and highlight AVGO, TXN, AMAT as top buy-rated picks. But at these multiples, the index is priced for an earnings expansion that rising rates directly threaten.</p>
+<p><strong>South Korea's Kospi</strong> plunged 8% Monday (foreign selling, forced deleveraging) before recovering to close +8.18% — the volatility signals fragile positioning in Asia tech.</p>
+<p><strong>Fear &amp; Greed Index:</strong> 39 (Fear territory).</p>
+<p><em>Sources: CNBC (June 8 close), Reuters, CNN Pre-Market, Charles Schwab Market Update, Citi Research</em></p>
+<hr class="divider">
+<h3>Rates</h3>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield (Jun 5)</th><th>Change</th></tr></thead><tbody><tr><td>2-Year</td><td>4.17%</td><td>Highest since Feb 2025</td></tr><tr><td>10-Year</td><td>4.55%</td><td>+0.006 pre-market Jun 9</td></tr><tr><td>10Y-2Y Spread</td><td>+0.38% to +0.41%</td><td>Positive, modestly steepening</td></tr><tr><td>30Y Mortgage</td><td>6.48%</td><td>Freddie Mac PMMS</td></tr></tbody></table></div>
+<p><strong>The curve has been positively sloped since Sep 2024</strong>, but the shallow 38-41bp spread is not a "normal" curve — it reflects a market pricing both near-term tightening and long-term growth uncertainty. The 10Y-3M spread has oscillated between positive and negative since Feb 2026, a historically reliable recession signal when sustained negative.</p>
+<p><strong>Fed hawkish pivot accelerating.</strong> Fed Governor Christopher Waller (May 22, Frankfurt): "I would support removing the 'easing bias' language in our policy statement to make it clear that a rate cut is no more likely in the future than a rate increase." The Forbes article (Simon Moore, Jun 8) notes this is expected to be formalized at Chair Warsh's first FOMC meeting (June 16-17). CME FedWatch: cuts "highly unlikely" in 2026; one or two hikes priced as "relatively likely."</p>
+<p><strong>The irony:</strong> Trump frequently attacked former Chair Powell for not cutting fast enough; his appointee Warsh may now coordinate rate <em>increases</em> after Powell cut rates in 2024-2025.</p>
+<p><strong>CPI preview (Wednesday, June 10):</strong> RBC Economics forecasts headline +0.5% m/m → 4.2% YoY (three-year high); core +0.3% m/m → 2.9% YoY. Briefs.co warns: "A headline spike now can become a core spike a few months later." PPI (Thursday) is expected at +0.6% m/m for both headline and core (RBC).</p>
+<p><em>Sources: Advisor Perspectives (Jun 5), FRED (T10Y2Y), Forbes (Simon Moore, Jun 8), RBC Economics (Jun 5), Briefs.co (Jun 5), CME FedWatch</em></p>
+<hr class="divider">
+<h3>Credit</h3>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Level</th><th>Context</th></tr></thead><tbody><tr><td>IG OAS (ICE BofA)</td><td>~80bp</td><td>Near 25-year tights</td></tr><tr><td>BBB OAS</td><td>~100bp</td><td>Compressed</td></tr><tr><td>AA OAS</td><td>~51bp</td><td>Compressed</td></tr><tr><td>AAA OAS</td><td>~40bp</td><td>Compressed</td></tr><tr><td>HY OAS</td><td>Not updated Jun 9</td><td>—</td></tr></tbody></table></div>
+<p><strong>Credit markets remain eerily calm</strong> relative to the equity volatility. Investment-grade spreads at ~80bp are near 25-year tights — this is not pricing any meaningful default or recession risk. The MacroMicro US Credit Spread indicator shows 9.22% as of June 5 (this appears to be a different metric, not OAS). The disconnect with rates vol and equity vol is a contrarian flag: either credit is right and equities are overreacting, or credit is complacent and due for a correction.</p>
+<p><strong>No CDX or HY spread data available for June 9</strong> from primary sources. The SOLVE IG CDS Market Summary for May 2026 exists but is behind a paywall/registration gate.</p>
+<p><em>Sources: InvestmentGrade.com, MacroMicro, FRED (BAMLH0A0HYM2), SOLVE Fixed Income (May 2026)</em></p>
+<hr class="divider">
+<h3>FX</h3>
+<div class="table-wrapper"><table><thead><tr><th>Pair/Index</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>DXY</td><td>99.89</td><td>-0.15% (pre-market)</td></tr><tr><td>DXY (Jun 8 close)</td><td>100.11</td><td>+0.04%</td></tr><tr><td>EUR/USD</td><td>Implied ~1.12</td><td>—</td></tr><tr><td>USD/JPY</td><td>Not quoted Jun 9</td><td>—</td></tr></tbody></table></div>
+<p><strong>DXY has strengthened 2.20% over the past month</strong> and sits near the psychologically important 100 handle. Forex.com notes that coming into 2026 it was "really easy to be a USD bear" — similar to the consensus USD-bull positioning entering 2025 — and that the 100 level has acted as consistent support. The hawkish Fed repricing is dollar-supportive, but a sustained break above 100 would require confirmation from CPI.</p>
+<p><strong>Indonesia surprised with a rate hike</strong> as the rupiah lingers near record lows — an EM stress signal worth monitoring.</p>
+<p><em>Sources: Trading Economics, Yahoo Finance (DX-Y.NYB), Forex.com, CNBC</em></p>
+<hr class="divider">
+<h3>Commodities</h3>
+<div class="table-wrapper"><table><thead><tr><th>Commodity</th><th>Price (Jun 9 pre-mkt)</th><th>Day Change</th><th>Month Change</th><th>YoY</th></tr></thead><tbody><tr><td>WTI Crude</td><td>$89.11</td><td>-2.40%</td><td>-8.11%</td><td>+38.69%</td></tr><tr><td>Brent Crude</td><td>$93.12</td><td>-1.29%</td><td>-10.64%</td><td>+39.26%</td></tr><tr><td>Natural Gas</td><td>$3.18</td><td>+0.99%</td><td>+8.35%</td><td>-10.76%</td></tr><tr><td>Gold</td><td>$4,353.00</td><td>-0.24%</td><td>—</td><td>—</td></tr><tr><td>Silver</td><td>$68.42</td><td>-0.23%</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p><strong>Oil: Ceasefire hopes are compressing the risk premium, but the supply disruption is physical reality.</strong> Iran and Israel halted attacks Monday after a weekend exchange — the first direct strikes since their April ceasefire. Trump claims a deal is possible in "two or three days" and the Strait of Hormuz would reopen "immediately." But the strait remains effectively closed under a dual US-Iran blockade. Trading Economics notes "severely disrupting shipments of crude, refined fuels, and natural gas to global markets."</p>
+<p>Rystad Energy economists warn oil could hit $150/bbl if the conflict continues. Separately, OPEC+ approved another 188K bpd production increase for July, and China has been drawing down inventories rather than importing — both bearish offsets. Iraq and UAE are racing for alternative pipeline routes.</p>
+<p><strong>Gold</strong> at $4,353 remains in a structural uptrend but is pulling back with the dollar. Year-to-date range: $3,250.50–$5,626.80.</p>
+<p><strong>Natural gas</strong> is the outlier, +8.35% month-over-month at $3.18/MMBtu, reflecting supply constraints from the Hormuz closure.</p>
+<p><em>Sources: Trading Economics, CNN Pre-Market, CNBC, FT Commodities</em></p>
+<hr class="divider">
+<h3>Volatility &amp; Crypto</h3>
+<p><strong>VIX:</strong> Closed at 18.92 on June 8 (-12.04%), down from Friday's spike above 21. Pre-market June 9: 18.29 (-3.33%). The VIX futures curve remains in contango, suggesting the market expects continued turbulence. Schwab's Nathan Peterson: "As traders, we shouldn't be too shocked by this sharp pullback in tech stocks, given the velocity of the rally over the past two months."</p>
+<p class="bold-line"><strong>Crypto — lagging the equity bounce asymmetrically:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Price (Jun 9)</th><th>24h Change</th><th>Weekly Change</th></tr></thead><tbody><tr><td>BTC</td><td>$62,722</td><td>-0.61%</td><td>-10.8%</td></tr><tr><td>ETH</td><td>$1,671</td><td>+0.01%</td><td>-16%</td></tr><tr><td>SOL</td><td>$66.16</td><td>+0.03%</td><td>-17%</td></tr><tr><td>XRP</td><td>$1.16</td><td>+1.48%</td><td>—</td></tr></tbody></table></div>
+<p>Bitcoin's positive beta with AI stocks during the selloff did NOT translate to a symmetrical bounce on the recovery. BTC slipped to ~$62,600 after rejecting $64,155 on Monday. Glassnode data shows realized losses averaged $1.2B/day over the past week.</p>
+<p><strong>On-chain MVRV signals:</strong> Santiment's 30-day MVRV turned negative for BTC (-10%), ETH (-12%), LINK (-9%), XRP (-8%), ADA (-18%). Santiment rates BTC/ETH/LINK/XRP as "fair buy" and ADA as "strong buy." However, this is a sentiment/valuation signal, not a flow signal. ETF redemptions ran for 10 straight sessions through May 30; US institutional flows remain net sellers.</p>
+<p><strong>Tether dominance</strong> jumped 13.55% to 9% last week — normally interpreted as "dry powder" awaiting deployment. BUT: Tether's market cap actually declined 0.7% to $186.89B (third straight weekly drop), suggesting capital is <em>leaving crypto entirely</em>, not rotating into stablecoins.</p>
+<p><strong>SpaceX IPO (June 12)</strong> is being framed by market-maker Wintermute as a crypto catalyst: "If investors absorb the deal well, it reads as a good sign for crypto." The OTC desk flow shows retail selling crypto to rotate into stocks and US institutions offloading BTC bought a month ago.</p>
+<p><em>Sources: CoinDesk (Jun 9), Santiment, Glassnode (via Schwab), Wintermute (via CoinDesk), CNN Pre-Market</em></p>
+<hr class="divider">
+<h2>Sentiment Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Short-Term Sentiment</th><th>Medium-Term Bias</th><th>Key Catalyst</th></tr></thead><tbody><tr><td>US Equities</td><td>Cautious bounce (Fear)</td><td>Neutral-Bearish</td><td>May CPI (Jun 10)</td></tr><tr><td>US Tech/Semis</td><td>Dip-buying, fragile</td><td>Cautious Bull</td><td>AVGO AI demand, ORCL earnings</td></tr><tr><td>US Rates</td><td>Hawkish repricing</td><td>Hawkish</td><td>FOMC Jun 16-17, CPI</td></tr><tr><td>Credit</td><td>Complacent (tight spreads)</td><td>Neutral</td><td>IG OAS at 25yr tights</td></tr><tr><td>USD (DXY)</td><td>Strengthening</td><td>Bullish</td><td>Rate differential, safe-haven</td></tr><tr><td>Crude Oil</td><td>Easing risk premium</td><td>Bullish structural</td><td>Iran deal / Hormuz reopening</td></tr><tr><td>Gold</td><td>Consolidating</td><td>Bullish structural</td><td>Inflation hedge demand</td></tr><tr><td>BTC/Crypto</td><td>Fear/capitulation</td><td>Bearish-Neutral</td><td>SpaceX IPO sentiment proxy</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Regime Signal</th><th>Reading</th><th>Implication</th></tr></thead><tbody><tr><td>Equity-Rates Correlation</td><td>Negative (stocks down, yields up Friday)</td><td>Classic "good news is bad news" — growth scares are now rate scares</td></tr><tr><td>Credit-Equity Divergence</td><td>IG spreads at tights, equities volatile</td><td>One is wrong. Historically, credit leads.</td></tr><tr><td>Dollar-Oil Correlation</td><td>Both elevated</td><td>EM stress building (Indonesia rate hike)</td></tr><tr><td>Crypto-Equity Beta</td><td>Positive on downside, zero on upside</td><td>Distribution signal — crypto as liquidity canary</td></tr><tr><td>VIX Term Structure</td><td>Contango (futures &gt; spot)</td><td>Market pricing persistent uncertainty</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Contrarian Flags</h2>
+<p>1. <strong>Credit market complacency.</strong> IG OAS at ~80bp is near 25-year tights while equities are swinging 2-4% and the VIX spiked above 21. Either credit markets are correctly pricing a soft landing, or they are structurally behind. The 2007 parallel is uncomfortable: credit was the last shoe to drop.</p>
+<p>2. <strong>Consensus USD-bear positioning.</strong> Forex.com explicitly flags that coming into 2026 "it's really easy to be a USD bear" — and that consensus is often dangerous. The DXY has quietly rallied 2.2% in a month. A CPI print above 4.2% could trigger a violent USD short squeeze.</p>
+<p>3. <strong>SpaceX IPO as a cycle top signal.</strong> Callie Cox (Ritholtz): "Blockbuster offerings have marked the peak of excess in past market cycles." Steve Eisman (Neuberger Berman) expressed skepticism about the asteroid mining narrative. The IPO's reception is a real-time sentiment test.</p>
+<p>4. <strong>Copper and industrial metals are not confirming the equity bounce.</strong> Silver -0.23%, gold -0.24% — commodities are not participating in the risk-on move, suggesting the equity bounce is positioning-driven rather than fundamentally supported.</p>
+<p>5. <strong>The head-core CPI divergence is a trap.</strong> Markets may rally if core CPI prints 0.3% m/m (in-line), but RBC and Briefs.co both flag that surging input costs — ISM prices paid components soaring, NFIB 30% of firms planning price hikes — will bleed into core with a lag. A headline 4.2% print cannot be dismissed as "just energy."</p>
+<hr class="divider">
+<h2>Key Events — Week of June 8-12</h2>
+<div class="table-wrapper"><table><thead><tr><th>Date</th><th>Time (ET)</th><th>Event</th><th>Consensus/Forecast</th></tr></thead><tbody><tr><td>Jun 9</td><td>6:00 AM</td><td>NFIB Small Business Optimism</td><td>96.0 (prev. 95.9)</td></tr><tr><td>Jun 9</td><td>8:30 AM</td><td>International Trade Balance</td><td>-$55.8B (prev. -$60.3B)</td></tr><tr><td>Jun 9</td><td>10:00 AM</td><td>Existing Home Sales</td><td>4.08M annualized</td></tr><tr><td><strong>Jun 10</strong></td><td><strong>8:30 AM</strong></td><td><strong>May CPI (Headline/Core)</strong></td><td><strong>4.2% YoY / 2.9% YoY (RBC)</strong></td></tr><tr><td>Jun 10</td><td>After Close</td><td>ORCL Q4 FY26 Earnings</td><td>EPS $1.64, Rev $16.22B</td></tr><tr><td>Jun 11</td><td>8:30 AM</td><td>May PPI</td><td>+0.6% m/m headline &amp; core (RBC)</td></tr><tr><td><strong>Jun 12</strong></td><td>—</td><td><strong>SpaceX IPO (SPCX)</strong></td><td>Pricing Jun 11, trading Jun 12</td></tr><tr><td>Jun 16-17</td><td>—</td><td>FOMC Meeting (Warsh's first)</td><td>Easing bias removal expected</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Ticker-Specific Notes</h2>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Event/Catalyst</th><th>Detail</th></tr></thead><tbody><tr><td><strong>AVGO</strong></td><td>Q2 earnings (Jun 3)</td><td>EPS $2.44 beat, Rev $22.19B slight miss, unchanged $100B AI chip target. Stock -15% on report, +2.8% Monday.</td></tr><tr><td><strong>ORCL</strong></td><td>Q4 earnings (Jun 10)</td><td>EPS est. $1.64, Rev $16.22B. Deeply negative FCF (-$24.7B in Q3) is the concern.</td></tr><tr><td><strong>MRVL</strong></td><td>S&amp;P 500 inclusion</td><td>Joins S&amp;P 500 before Jun 22 open. +9.6% Monday.</td></tr><tr><td><strong>INTC</strong></td><td>Google chip order</td><td>The Information: Google ordered &gt;3M tensor processing units through 2028. +11.2% Monday.</td></tr><tr><td><strong>NVDA</strong></td><td>SK Hynix partnership</td><td>Co-developing next-gen memory for AI infrastructure. CEO Jensen Huang declined Senate testimony on AI/China.</td></tr><tr><td><strong>AAPL</strong></td><td>WWDC 2026</td><td>AI-powered Siri revamp unveiled. Stock -1.9% (sell the news). Tim Cook's last WWDC as CEO.</td></tr><tr><td><strong>GLW</strong></td><td>Amazon fiber deal</td><td>Multi-billion dollar deal to power Amazon AI data centers. +9% Monday.</td></tr><tr><td><strong>GSK</strong></td><td>Nuvalent acquisition</td><td>$10.6B acquisition of US drugmaker Nuvalent.</td></tr><tr><td><strong>OpenAI</strong></td><td>IPO filing</td><td>Confidentially filed for IPO — no date set.</td></tr><tr><td><strong>MSTR/COIN</strong></td><td>Crypto-exposed</td><td>Lifted by BTC bounce to $63K, but weekly still deep in red.</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Bottom Line</h2>
+<p>Today's pre-market futures (+0.47% S&amp;P, +0.81% Nasdaq) suggest a modest continuation of Monday's bounce. But the market is walking into the most consequential CPI print of 2026 on Wednesday. With headline inflation expected at a three-year high (4.2%), the Fed's easing-bias removal all but locked in for next week, and a historic SpaceX IPO testing risk appetite on Friday, the asymmetry favors defensive positioning. The credit market's eerie calm and crypto's failure to bounce with equities are warning signs that the dip-buying may be mechanical rather than conviction-driven.</p>
+<p><em>Research completed 2026-06-09 ~06:30 UTC. All data from primary and secondary sources as cited. No forward-looking statements constitute investment advice.</em></p>
+  </div>
+
+  
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-09 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
