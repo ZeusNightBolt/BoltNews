@@ -1,0 +1,202 @@
+[
+  {
+    "title": "Morning Bid: Chip chill, jobs heat and war",
+    "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-view-usa-2026-06-08/",
+    "source": "Reuters",
+    "published_at": "2026-06-08T06:00:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "Reuters framed the US morning setup around a chip-sector rout, strong US jobs data, higher Fed hike odds, rising Treasury yields, and Middle East oil risk. SOX fell 10% Friday, Broadcom was down 20% over two days, Nasdaq was off about 4% into the weekend, and markets priced almost an 80% chance of a Fed hike by year-end after May payrolls rose 172,000 with +93,000 revisions.",
+    "key_points": [
+      "SOX semiconductor index plunged 10% Friday",
+      "Broadcom down 20% over two days",
+      "May payrolls +172,000 and March/April revisions +93,000",
+      "Markets saw almost 80% chance of a Fed hike by year-end",
+      "Crude jumped over 4% on renewed Iran-Israel attacks"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Rates",
+    "summary": "Morning Bid: Chip chill, jobs heat and war \u2014 Reuters framed the US morning setup around a chip-sector rout, strong US jobs data, higher Fed hike odds, rising Treasury yields, and Middle East oil risk",
+    "rejected_reason": null
+  },
+  {
+    "title": "Yields mixed after jobs data lifts Fed hike odds",
+    "url": "https://www.reuters.com/world/middle-east/yields-mixed-after-jobs-data-lifts-fed-hike-odds-2026-06-08/",
+    "source": "Reuters",
+    "published_at": "2026-06-08T15:00:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "Reuters reported fed funds futures pricing a 70% chance of a December hike after stronger jobs data. The 2-year yield fell 0.9bp to 4.153% after hitting a 15-month high Friday; the 10-year rose 1.4bp to 4.55%; the 2s10s curve steepened to 39.4bp. Treasury will sell $119B of coupon supply this week: $58B 3Y Tuesday, $39B 10Y Wednesday, $22B 30Y Thursday.",
+    "key_points": [
+      "Fed funds futures show 70% December hike probability",
+      "2Y yield 4.153%, down 0.9bp",
+      "10Y yield 4.55%, up 1.4bp",
+      "2s10s curve 39.4bp",
+      "$119B Treasury coupon supply this week"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Rates",
+    "summary": "Yields mixed after jobs data lifts Fed hike odds \u2014 Reuters reported fed funds futures pricing a 70% chance of a December hike after stronger jobs data",
+    "rejected_reason": null
+  },
+  {
+    "title": "Dollar eases as investors weigh Middle East hopes, rate outlook",
+    "url": "https://www.reuters.com/world/asia-pacific/dollar-hovers-around-two-month-high-iran-israel-truce-hangs-balance-2026-06-09/",
+    "source": "Reuters",
+    "published_at": "2026-06-09T02:00:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "Reuters said the dollar edged lower Tuesday as hopes for a Strait of Hormuz reopening reduced safe-haven demand, while rate expectations stayed hawkish. DXY was down 0.12% at 99.88; EURUSD rose 0.1% to $1.1545; USDJPY traded near 160.22; AUDUSD rose 0.14% to $0.7054. CME FedWatch showed a 70% chance of a Fed hike by December; markets also expected a 25bp ECB hike Thursday.",
+    "key_points": [
+      "DXY -0.12% to 99.88",
+      "EURUSD +0.1% to $1.1545",
+      "USDJPY near 160.22",
+      "70% December Fed hike probability",
+      "ECB expected to hike 25bp Thursday"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "FX",
+    "summary": "Dollar eases as investors weigh Middle East hopes, rate outlook \u2014 Reuters said the dollar edged lower Tuesday as hopes for a Strait of Hormuz reopening reduced safe-haven demand, while rate expectations stayed hawkish",
+    "rejected_reason": null
+  },
+  {
+    "title": "Gold steady as lower oil offsets US rate-hike fears",
+    "url": "https://www.reuters.com/world/india/gold-extends-falls-rising-treasury-yields-2026-06-09/",
+    "source": "Reuters",
+    "published_at": "2026-06-09T08:50:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "Reuters reported spot gold steady at $4,327.42/oz at 0850 GMT after a two-day slump, with August gold futures down 0.3% at $4,351.30. Traders saw more than a 70% chance of a December Fed hike. Gold closed below its 200-day moving average Friday for the first time since October 2023, which Citi called a negative technical signal.",
+    "key_points": [
+      "Spot gold $4,327.42/oz",
+      "August gold futures -0.3% at $4,351.30",
+      "Spot silver +0.4% to $68.48/oz",
+      "Gold below 200DMA for first time since Oct 2023",
+      "May CPI due Wednesday, PPI Thursday"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Macro",
+    "summary": "Gold steady as lower oil offsets US rate-hike fears \u2014 Reuters reported spot gold steady at $4,327.42/oz at 0850 GMT after a two-day slump, with August gold futures down 0.3% at $4,351.30",
+    "rejected_reason": null
+  },
+  {
+    "title": "Oil prices settle $1 higher after Iran and Israel say they have halted attacks",
+    "url": "https://www.reuters.com/business/energy/oil-prices-rise-more-than-2-israel-strikes-lebanon-2026-06-07/",
+    "source": "Reuters",
+    "published_at": "2026-06-08T17:00:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "Reuters reported Brent settled up $1.16, or 1.3%, at $94.25/bbl and WTI up $0.76, or 0.8%, at $91.30/bbl Monday after rising more than 5% intraday on renewed Iran-Israel strikes before easing after both countries said attacks had halted. Since the conflict began just over 100 days ago, Brent was up about 31% and WTI about 37%; Brent previously peaked above $126/bbl in April.",
+    "key_points": [
+      "Brent settled $94.25/bbl, +1.3%",
+      "WTI settled $91.30/bbl, +0.8%",
+      "Oil rose more than 5% intraday before paring",
+      "Brent +31% since conflict began",
+      "OPEC+ approved fourth output target increase in four months"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Macro",
+    "summary": "Oil prices settle $1 higher after Iran and Israel say they have halted attacks \u2014 Reuters reported Brent settled up $1.16, or 1.3%, at $94.25/bbl and WTI up $0.76, or 0.8%, at $91.30/bbl Monday after rising more than 5% intraday on renewed Iran-Isr...",
+    "rejected_reason": null
+  },
+  {
+    "title": "Stocks making the biggest moves premarket: Nvidia, Marvell, Flex and more",
+    "url": "https://www.cnbc.com/2026/06/08/stocks-making-the-biggest-moves-premarket-nvidia-marvell-flex-and-more.html",
+    "source": "CNBC",
+    "published_at": "2026-06-08T07:48:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "NVDA",
+    "description": "CNBC reported chip and AI-linked premarket rebounds: Nvidia +2.3% on an SK Hynix advanced-memory partnership for AI factory buildout; Marvell almost +9% and Flex +4% on S&P 500 additions; Micron +7%; Broadcom +3%; AMD +2.7%. Nurix surged 24% on a Roche collaboration.",
+    "key_points": [
+      "NVDA +2.3% premarket on SK Hynix AI-memory partnership",
+      "MRVL almost +9% premarket",
+      "Flex +4% premarket",
+      "MU +7%, AVGO +3%, AMD +2.7%",
+      "Nurix +24% on Roche collaboration"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Equities",
+    "summary": "Stocks making the biggest moves premarket: Nvidia, Marvell, Flex and more \u2014 CNBC reported chip and AI-linked premarket rebounds: Nvidia +2.3% on an SK Hynix advanced-memory partnership for AI factory buildout; Marvell almost +9% and Flex +4% on S&...",
+    "rejected_reason": null
+  },
+  {
+    "title": "Marvell to join S&P 500, stock jumps 10%",
+    "url": "https://www.cnbc.com/2026/06/08/marvell-sp500-index-addition.html",
+    "source": "CNBC",
+    "published_at": "2026-06-08T10:00:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MRVL",
+    "description": "CNBC reported Marvell was up 10.4% shortly after Monday's open after S&P Global said it would join the S&P 500 on June 22 with Flex. Pool Corp and Campbell's are being removed. Marvell was up 210% YTD, had a $230B market cap, reported Q1 revenue of $2.4B, and had surged 32.5% on June 2 after Nvidia CEO Jensen Huang called it the next trillion-dollar company.",
+    "key_points": [
+      "MRVL +10.4% shortly after Monday open",
+      "S&P 500 addition effective June 22",
+      "MRVL +210% YTD",
+      "$230B market cap",
+      "Q1 revenue $2.4B"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Equities",
+    "summary": "Marvell to join S&P 500, stock jumps 10% \u2014 CNBC reported Marvell was up 10.4% shortly after Monday's open after S&P Global said it would join the S&P 500 on June 22 with Flex",
+    "rejected_reason": null
+  },
+  {
+    "title": "Yahoo Finance market snapshot: US stock futures climb as AI trade takes center stage",
+    "url": "https://finance.yahoo.com/",
+    "source": "Yahoo Finance",
+    "published_at": "2026-06-09T07:00:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "Yahoo Finance showed US equity futures higher Tuesday morning: S&P futures 7,445.25 (+0.39%), Dow futures 50,961 (+0.21%), Nasdaq futures 29,656.75 (+0.69%), Russell futures 2,881.50 (+0.77%). Crude oil was 89.17 (-2.33%), gold 4,351.90 (-0.26%), 10Y yield 4.5520 (+0.35%), VIX 18.18 (-3.91%). Lead story: OpenAI confidentially filed IPO paperwork after Anthropic did the same a week earlier.",
+    "key_points": [
+      "S&P futures +0.39%",
+      "Nasdaq futures +0.69%",
+      "Russell futures +0.77%",
+      "Crude oil -2.33%",
+      "OpenAI confidential IPO filing after Anthropic"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Equities",
+    "summary": "Yahoo Finance market snapshot: US stock futures climb as AI trade takes center stage \u2014 Yahoo Finance showed US equity futures higher Tuesday morning: S&P futures 7,445.25 (+0.39%), Dow futures 50,961 (+0.21%), Nasdaq futures 29,656.75 (+0.69%), Ru...",
+    "rejected_reason": null
+  },
+  {
+    "title": "Yahoo Finance markets overview",
+    "url": "https://finance.yahoo.com/markets/",
+    "source": "Yahoo Finance",
+    "published_at": "2026-06-09T07:00:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "Yahoo Finance market overview showed cash/global cross-asset levels: Nasdaq +0.86%, Russell 2000 +0.77%, S&P 500 +0.30%, Dow -0.16%, DXY 99.85 (-0.20%), VIX 18.18 (-3.91%). Europe was mostly higher led by Euronext 100 +0.91% and Euro Stoxx 50 +0.88%; Asia had KOSPI +8.18% and Nikkei +2.17%. Energy fell, with Brent -2.03% and WTI -2.40%; 10Y yield 4.5520 and 30Y 5.02.",
+    "key_points": [
+      "Nasdaq +0.86%, S&P 500 +0.30%, Dow -0.16%",
+      "KOSPI +8.18%, Nikkei +2.17%",
+      "Brent -2.03%, WTI -2.40%",
+      "10Y 4.5520, 30Y 5.02",
+      "VIX -3.91% to 18.18"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Equities",
+    "summary": "Yahoo Finance markets overview \u2014 Yahoo Finance market overview showed cash/global cross-asset levels: Nasdaq +0.86%, Russell 2000 +0.77%, S&P 500 +0.30%, Dow -0.16%, DXY 99.85 (-0.20%), VIX 18.18 (-3.91%)",
+    "rejected_reason": null
+  },
+  {
+    "title": "Global oil prices erase most gains after topping $98 a barrel",
+    "url": "https://www.marketwatch.com/story/u-s-stock-futures-slide-oil-prices-surge-as-new-attacks-threaten-the-cease-fire-with-iran-6e433c90",
+    "source": "MarketWatch",
+    "published_at": "2026-06-08T08:39:00",
+    "fetched_at": "2026-06-09T07:10:00",
+    "ticker": "MACRO",
+    "description": "MarketWatch reported WTI rose 1.4% to $91.76 after hitting $95.48, while Brent rose 1.6% to $94.55 after briefly topping $98 and gaining more than 5% intraday. Prices erased most gains after Iran signaled its latest operation against Israel had ended, though it warned attacks could resume. OPEC+ approved a 188,000 bpd July production-target increase that analysts said was unlikely to affect prices while Hormuz remained effectively constrained.",
+    "key_points": [
+      "WTI hit $95.48 then traded $91.76",
+      "Brent topped $98 then traded $94.55",
+      "OPEC+ July target increase 188,000 bpd",
+      "Iran signaled current operation ended",
+      "Hormuz remains key supply constraint"
+    ],
+    "age_hours": -7.166666666666667,
+    "category": "Rates",
+    "summary": "Global oil prices erase most gains after topping $98 a barrel \u2014 MarketWatch reported WTI rose 1.4% to $91.76 after hitting $95.48, while Brent rose 1.6% to $94.55 after briefly topping $98 and gaining more than 5% intraday",
+    "rejected_reason": null
+  }
+]

@@ -1,636 +1,115 @@
 {
   "mode": "pre-market",
-  "is_weekend": false,
-  "target_date": "2026-06-09",
+  "date": "2026-06-09",
   "date_suffix": "June 09, 2026",
   "recency_hours": 24,
-  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 24 hours (since ~2026-06-09). All search queries include 'June 09, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
-  "generated": "2026-06-09T06:00:56.035630",
-  "total_tickers": 148,
-  "prioritized_tickers": [
-    "CRM",
-    "ZS",
-    "VEEV",
-    "SNOW",
-    "ULTA",
-    "HPE",
-    "MRVL",
-    "PANW",
-    "DELL",
-    "CIEN",
-    "CRWD",
-    "SNPS",
-    "AZO",
-    "COST",
-    "AVGO",
-    "ONDS",
-    "OKLO",
-    "IONQ",
-    "ASTS",
-    "NVTS",
-    "RDW",
-    "RGTI",
-    "QBTS",
-    "SMCI",
-    "SOFI",
-    "CIFR",
-    "AAL",
-    "LITE",
-    "AAOI",
-    "MSTR",
-    "RIVN",
-    "BE",
-    "CVNA",
-    "COIN",
-    "CRWV",
-    "ON",
-    "WDC",
-    "VSH",
-    "FSLR",
-    "CRCL",
-    "ALAB",
-    "SNDK",
-    "RKLB",
-    "STRL",
-    "NOW",
-    "MCHP",
-    "GPN",
-    "PYPL",
-    "QCOM",
-    "ADBE"
-  ],
-  "topics": [
-    "S&P 500",
-    "NASDAQ",
-    "Dow Jones",
-    "Russell 2000",
-    "Federal Reserve",
-    "FOMC",
-    "interest rates",
-    "Treasury yields",
-    "US dollar",
-    "DXY",
-    "forex",
-    "currency markets",
-    "credit markets",
-    "corporate bonds",
-    "investment grade"
-  ],
-  "search_queries": [
+  "generated": "2026-06-09T07:10:00",
+  "stats": {
+    "articles_found": 10,
+    "articles_filtered": 10,
+    "articles_stale_rejected": 0,
+    "extraction_method": "web_search + web_extract"
+  },
+  "articles": [
     {
-      "type": "ticker",
-      "ticker": "CRM",
-      "name": "SALESFORCE INC",
-      "queries": [
-        "CRM stock news today June 09, 2026",
-        "CRM Software - Application news June 09, 2026"
-      ]
+      "title": "Morning Bid: Chip chill, jobs heat and war",
+      "url": "https://www.reuters.com/commentary/reuters-open-interest/global-markets-view-usa-2026-06-08/",
+      "source": "Reuters",
+      "published_at": "2026-06-08T06:00:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "Reuters framed the US morning setup around a chip-sector rout, strong US jobs data, higher Fed hike odds, rising Treasury yields, and Middle East oil risk. SOX fell 10% Friday, Broadcom was down 20% over two days, Nasdaq was off about 4% into the weekend, and markets priced almost an 80% chance of a Fed hike by year-end after May payrolls rose 172,000 with +93,000 revisions.",
+      "key_points": ["SOX semiconductor index plunged 10% Friday", "Broadcom down 20% over two days", "May payrolls +172,000 and March/April revisions +93,000", "Markets saw almost 80% chance of a Fed hike by year-end", "Crude jumped over 4% on renewed Iran-Israel attacks"]
     },
     {
-      "type": "ticker",
-      "ticker": "ZS",
-      "name": "ZSCALER INC",
-      "queries": [
-        "ZS stock news today June 09, 2026",
-        "ZS Software - Infrastructure news June 09, 2026"
-      ]
+      "title": "Yields mixed after jobs data lifts Fed hike odds",
+      "url": "https://www.reuters.com/world/middle-east/yields-mixed-after-jobs-data-lifts-fed-hike-odds-2026-06-08/",
+      "source": "Reuters",
+      "published_at": "2026-06-08T15:00:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "Reuters reported fed funds futures pricing a 70% chance of a December hike after stronger jobs data. The 2-year yield fell 0.9bp to 4.153% after hitting a 15-month high Friday; the 10-year rose 1.4bp to 4.55%; the 2s10s curve steepened to 39.4bp. Treasury will sell $119B of coupon supply this week: $58B 3Y Tuesday, $39B 10Y Wednesday, $22B 30Y Thursday.",
+      "key_points": ["Fed funds futures show 70% December hike probability", "2Y yield 4.153%, down 0.9bp", "10Y yield 4.55%, up 1.4bp", "2s10s curve 39.4bp", "$119B Treasury coupon supply this week"]
     },
     {
-      "type": "ticker",
-      "ticker": "VEEV",
-      "name": "VEEVA SYSTEMS-A",
-      "queries": [
-        "VEEV stock news today June 09, 2026",
-        "VEEV Health Information Services news June 09, 2026"
-      ]
+      "title": "Dollar eases as investors weigh Middle East hopes, rate outlook",
+      "url": "https://www.reuters.com/world/asia-pacific/dollar-hovers-around-two-month-high-iran-israel-truce-hangs-balance-2026-06-09/",
+      "source": "Reuters",
+      "published_at": "2026-06-09T02:00:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "Reuters said the dollar edged lower Tuesday as hopes for a Strait of Hormuz reopening reduced safe-haven demand, while rate expectations stayed hawkish. DXY was down 0.12% at 99.88; EURUSD rose 0.1% to $1.1545; USDJPY traded near 160.22; AUDUSD rose 0.14% to $0.7054. CME FedWatch showed a 70% chance of a Fed hike by December; markets also expected a 25bp ECB hike Thursday.",
+      "key_points": ["DXY -0.12% to 99.88", "EURUSD +0.1% to $1.1545", "USDJPY near 160.22", "70% December Fed hike probability", "ECB expected to hike 25bp Thursday"]
     },
     {
-      "type": "ticker",
-      "ticker": "SNOW",
-      "name": "SNOWFLAKE INC",
-      "queries": [
-        "SNOW stock news today June 09, 2026",
-        "SNOW Software - Application news June 09, 2026"
-      ]
+      "title": "Gold steady as lower oil offsets US rate-hike fears",
+      "url": "https://www.reuters.com/world/india/gold-extends-falls-rising-treasury-yields-2026-06-09/",
+      "source": "Reuters",
+      "published_at": "2026-06-09T08:50:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "Reuters reported spot gold steady at $4,327.42/oz at 0850 GMT after a two-day slump, with August gold futures down 0.3% at $4,351.30. Traders saw more than a 70% chance of a December Fed hike. Gold closed below its 200-day moving average Friday for the first time since October 2023, which Citi called a negative technical signal.",
+      "key_points": ["Spot gold $4,327.42/oz", "August gold futures -0.3% at $4,351.30", "Spot silver +0.4% to $68.48/oz", "Gold below 200DMA for first time since Oct 2023", "May CPI due Wednesday, PPI Thursday"]
     },
     {
-      "type": "ticker",
-      "ticker": "ULTA",
-      "name": "ULTA BEAUTY INC",
-      "queries": [
-        "ULTA stock news today June 09, 2026",
-        "ULTA Specialty Retail news June 09, 2026"
-      ]
+      "title": "Oil prices settle $1 higher after Iran and Israel say they have halted attacks",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-more-than-2-israel-strikes-lebanon-2026-06-07/",
+      "source": "Reuters",
+      "published_at": "2026-06-08T17:00:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "Reuters reported Brent settled up $1.16, or 1.3%, at $94.25/bbl and WTI up $0.76, or 0.8%, at $91.30/bbl Monday after rising more than 5% intraday on renewed Iran-Israel strikes before easing after both countries said attacks had halted. Since the conflict began just over 100 days ago, Brent was up about 31% and WTI about 37%; Brent previously peaked above $126/bbl in April.",
+      "key_points": ["Brent settled $94.25/bbl, +1.3%", "WTI settled $91.30/bbl, +0.8%", "Oil rose more than 5% intraday before paring", "Brent +31% since conflict began", "OPEC+ approved fourth output target increase in four months"]
     },
     {
-      "type": "ticker",
-      "ticker": "HPE",
-      "name": "HEWLETT PACKA",
-      "queries": [
-        "HPE stock news today June 09, 2026",
-        "HPE Communication Equipment news June 09, 2026"
-      ]
+      "title": "Stocks making the biggest moves premarket: Nvidia, Marvell, Flex and more",
+      "url": "https://www.cnbc.com/2026/06/08/stocks-making-the-biggest-moves-premarket-nvidia-marvell-flex-and-more.html",
+      "source": "CNBC",
+      "published_at": "2026-06-08T07:48:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "NVDA",
+      "description": "CNBC reported chip and AI-linked premarket rebounds: Nvidia +2.3% on an SK Hynix advanced-memory partnership for AI factory buildout; Marvell almost +9% and Flex +4% on S&P 500 additions; Micron +7%; Broadcom +3%; AMD +2.7%. Nurix surged 24% on a Roche collaboration.",
+      "key_points": ["NVDA +2.3% premarket on SK Hynix AI-memory partnership", "MRVL almost +9% premarket", "Flex +4% premarket", "MU +7%, AVGO +3%, AMD +2.7%", "Nurix +24% on Roche collaboration"]
     },
     {
-      "type": "ticker",
+      "title": "Marvell to join S&P 500, stock jumps 10%",
+      "url": "https://www.cnbc.com/2026/06/08/marvell-sp500-index-addition.html",
+      "source": "CNBC",
+      "published_at": "2026-06-08T10:00:00",
+      "fetched_at": "2026-06-09T07:10:00",
       "ticker": "MRVL",
-      "name": "MARVELL TECHNOLO",
-      "queries": [
-        "MRVL stock news today June 09, 2026",
-        "MRVL Semiconductors news June 09, 2026"
-      ]
+      "description": "CNBC reported Marvell was up 10.4% shortly after Monday's open after S&P Global said it would join the S&P 500 on June 22 with Flex. Pool Corp and Campbell's are being removed. Marvell was up 210% YTD, had a $230B market cap, reported Q1 revenue of $2.4B, and had surged 32.5% on June 2 after Nvidia CEO Jensen Huang called it the next trillion-dollar company.",
+      "key_points": ["MRVL +10.4% shortly after Monday open", "S&P 500 addition effective June 22", "MRVL +210% YTD", "$230B market cap", "Q1 revenue $2.4B"]
     },
     {
-      "type": "ticker",
-      "ticker": "PANW",
-      "name": "PALO ALTO NETWOR",
-      "queries": [
-        "PANW stock news today June 09, 2026",
-        "PANW Software - Infrastructure news June 09, 2026"
-      ]
+      "title": "Yahoo Finance market snapshot: US stock futures climb as AI trade takes center stage",
+      "url": "https://finance.yahoo.com/",
+      "source": "Yahoo Finance",
+      "published_at": "2026-06-09T07:00:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "Yahoo Finance showed US equity futures higher Tuesday morning: S&P futures 7,445.25 (+0.39%), Dow futures 50,961 (+0.21%), Nasdaq futures 29,656.75 (+0.69%), Russell futures 2,881.50 (+0.77%). Crude oil was 89.17 (-2.33%), gold 4,351.90 (-0.26%), 10Y yield 4.5520 (+0.35%), VIX 18.18 (-3.91%). Lead story: OpenAI confidentially filed IPO paperwork after Anthropic did the same a week earlier.",
+      "key_points": ["S&P futures +0.39%", "Nasdaq futures +0.69%", "Russell futures +0.77%", "Crude oil -2.33%", "OpenAI confidential IPO filing after Anthropic"]
     },
     {
-      "type": "ticker",
-      "ticker": "DELL",
-      "name": "DELL TECHN-C",
-      "queries": [
-        "DELL stock news today June 09, 2026",
-        "DELL Computer Hardware news June 09, 2026"
-      ]
+      "title": "Yahoo Finance markets overview",
+      "url": "https://finance.yahoo.com/markets/",
+      "source": "Yahoo Finance",
+      "published_at": "2026-06-09T07:00:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "Yahoo Finance market overview showed cash/global cross-asset levels: Nasdaq +0.86%, Russell 2000 +0.77%, S&P 500 +0.30%, Dow -0.16%, DXY 99.85 (-0.20%), VIX 18.18 (-3.91%). Europe was mostly higher led by Euronext 100 +0.91% and Euro Stoxx 50 +0.88%; Asia had KOSPI +8.18% and Nikkei +2.17%. Energy fell, with Brent -2.03% and WTI -2.40%; 10Y yield 4.5520 and 30Y 5.02.",
+      "key_points": ["Nasdaq +0.86%, S&P 500 +0.30%, Dow -0.16%", "KOSPI +8.18%, Nikkei +2.17%", "Brent -2.03%, WTI -2.40%", "10Y 4.5520, 30Y 5.02", "VIX -3.91% to 18.18"]
     },
     {
-      "type": "ticker",
-      "ticker": "CIEN",
-      "name": "CIENA CORP",
-      "queries": [
-        "CIEN stock news today June 09, 2026",
-        "CIEN Communication Equipment news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CRWD",
-      "name": "CROWDSTRIKE HO-A",
-      "queries": [
-        "CRWD stock news today June 09, 2026",
-        "CRWD Software - Infrastructure news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SNPS",
-      "name": "SYNOPSYS INC",
-      "queries": [
-        "SNPS stock news today June 09, 2026",
-        "SNPS Software - Infrastructure news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "AZO",
-      "name": "AUTOZONE INC",
-      "queries": [
-        "AZO stock news today June 09, 2026",
-        "AZO Auto Parts news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "COST",
-      "name": "COSTCO WHOLESALE",
-      "queries": [
-        "COST stock news today June 09, 2026",
-        "COST Discount Stores news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "AVGO",
-      "name": "BROADCOM INC",
-      "queries": [
-        "AVGO stock news today June 09, 2026",
-        "AVGO Semiconductors news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ONDS",
-      "name": "ONDAS HOLDINGS I",
-      "queries": [
-        "ONDS stock news today June 09, 2026",
-        "ONDS Communication Equipment news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "OKLO",
-      "name": "OKLO INC",
-      "queries": [
-        "OKLO stock news today June 09, 2026",
-        "OKLO Utilities - Independent Power Producers news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "IONQ",
-      "name": "IONQ INC",
-      "queries": [
-        "IONQ stock news today June 09, 2026",
-        "IONQ Computer Hardware news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ASTS",
-      "name": "AST SPACEMOBILE",
-      "queries": [
-        "ASTS stock news today June 09, 2026",
-        "ASTS Communication Equipment news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "NVTS",
-      "name": "NAVITAS SEMICOND",
-      "queries": [
-        "NVTS stock news today June 09, 2026",
-        "NVTS Semiconductors news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RDW",
-      "name": "REDWIRE CORP",
-      "queries": [
-        "RDW stock news today June 09, 2026",
-        "RDW Aerospace & Defense news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RGTI",
-      "name": "RIGETTI COMPUTIN",
-      "queries": [
-        "RGTI stock news today June 09, 2026",
-        "RGTI Computer Hardware news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "QBTS",
-      "name": "D-WAVE QUANTUM I",
-      "queries": [
-        "QBTS stock news today June 09, 2026",
-        "QBTS Computer Hardware news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SMCI",
-      "name": "SUPER MICRO COMP",
-      "queries": [
-        "SMCI stock news today June 09, 2026",
-        "SMCI Computer Hardware news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SOFI",
-      "name": "SOFI TECHNOLOGIE",
-      "queries": [
-        "SOFI stock news today June 09, 2026",
-        "SOFI Credit Services news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CIFR",
-      "name": "CIPHER MINING IN",
-      "queries": [
-        "CIFR stock news today June 09, 2026",
-        "CIFR Information Technology Services news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "AAL",
-      "name": "AMERICAN AIRLINE",
-      "queries": [
-        "AAL stock news today June 09, 2026",
-        "AAL Airlines news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "LITE",
-      "name": "LUMENTUM HOL",
-      "queries": [
-        "LITE stock news today June 09, 2026",
-        "LITE Communication Equipment news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "AAOI",
-      "name": "APPLIED OPTOELEC",
-      "queries": [
-        "AAOI stock news today June 09, 2026",
-        "AAOI Communication Equipment news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "MSTR",
-      "name": "STRATEGY INC",
-      "queries": [
-        "MSTR stock news today June 09, 2026",
-        "MSTR Software - Application news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RIVN",
-      "name": "RIVIAN AUTOMOT-A",
-      "queries": [
-        "RIVN stock news today June 09, 2026",
-        "RIVN Auto Manufacturers news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "BE",
-      "name": "BLOOM ENERGY C-A",
-      "queries": [
-        "BE stock news today June 09, 2026",
-        "BE Electrical Equipment & Parts news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CVNA",
-      "name": "CARVANA CO",
-      "queries": [
-        "CVNA stock news today June 09, 2026",
-        "CVNA Auto & Truck Dealerships news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "COIN",
-      "name": "COINBASE GLOBA-A",
-      "queries": [
-        "COIN stock news today June 09, 2026",
-        "COIN Financial Data & Stock Exchanges news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CRWV",
-      "name": "COREWEAVE I-CL A",
-      "queries": [
-        "CRWV stock news today June 09, 2026",
-        "CRWV Software - Infrastructure news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ON",
-      "name": "ON SEMICONDUCTOR",
-      "queries": [
-        "ON stock news today June 09, 2026",
-        "ON Semiconductors news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "WDC",
-      "name": "WESTERN DIGITAL",
-      "queries": [
-        "WDC stock news today June 09, 2026",
-        "WDC Computer Hardware news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "VSH",
-      "name": "VISHAY INTERTECH",
-      "queries": [
-        "VSH stock news today June 09, 2026",
-        "VSH Semiconductors news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "FSLR",
-      "name": "FIRST SOLAR INC",
-      "queries": [
-        "FSLR stock news today June 09, 2026",
-        "FSLR Solar news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "CRCL",
-      "name": "CIRCLE INTERNET",
-      "queries": [
-        "CRCL stock news today June 09, 2026",
-        "CRCL Capital Markets news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ALAB",
-      "name": "ASTERA LABS INC",
-      "queries": [
-        "ALAB stock news today June 09, 2026",
-        "ALAB Semiconductors news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "SNDK",
-      "name": "SANDISK CORP",
-      "queries": [
-        "SNDK stock news today June 09, 2026",
-        "SNDK Computer Hardware news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "RKLB",
-      "name": "ROCKET LAB CORP",
-      "queries": [
-        "RKLB stock news today June 09, 2026",
-        "RKLB Aerospace & Defense news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "STRL",
-      "name": "STERLING INFRAST",
-      "queries": [
-        "STRL stock news today June 09, 2026",
-        "STRL Engineering & Construction news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "NOW",
-      "name": "SERVICENOW INC",
-      "queries": [
-        "NOW stock news today June 09, 2026",
-        "NOW Software - Application news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "MCHP",
-      "name": "MICROCHIP TECH",
-      "queries": [
-        "MCHP stock news today June 09, 2026",
-        "MCHP Semiconductors news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "GPN",
-      "name": "GLOBAL PAYMENTS",
-      "queries": [
-        "GPN stock news today June 09, 2026",
-        "GPN Specialty Business Services news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "PYPL",
-      "name": "PAYPAL HOLDINGS",
-      "queries": [
-        "PYPL stock news today June 09, 2026",
-        "PYPL Credit Services news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "QCOM",
-      "name": "QUALCOMM INC",
-      "queries": [
-        "QCOM stock news today June 09, 2026",
-        "QCOM Semiconductors news June 09, 2026"
-      ]
-    },
-    {
-      "type": "ticker",
-      "ticker": "ADBE",
-      "name": "ADOBE INC",
-      "queries": [
-        "ADBE stock news today June 09, 2026",
-        "ADBE Software - Application news June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "S&P 500",
-      "queries": [
-        "S&P 500 June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "NASDAQ",
-      "queries": [
-        "NASDAQ June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Dow Jones",
-      "queries": [
-        "Dow Jones June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Russell 2000",
-      "queries": [
-        "Russell 2000 June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Federal Reserve",
-      "queries": [
-        "Federal Reserve June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "FOMC",
-      "queries": [
-        "FOMC June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "interest rates",
-      "queries": [
-        "interest rates June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Treasury yields",
-      "queries": [
-        "Treasury yields June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "US dollar",
-      "queries": [
-        "US dollar June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "DXY",
-      "queries": [
-        "DXY June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "forex",
-      "queries": [
-        "forex June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "currency markets",
-      "queries": [
-        "currency markets June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "credit markets",
-      "queries": [
-        "credit markets June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "corporate bonds",
-      "queries": [
-        "corporate bonds June 09, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "investment grade",
-      "queries": [
-        "investment grade June 09, 2026"
-      ]
+      "title": "Global oil prices erase most gains after topping $98 a barrel",
+      "url": "https://www.marketwatch.com/story/u-s-stock-futures-slide-oil-prices-surge-as-new-attacks-threaten-the-cease-fire-with-iran-6e433c90",
+      "source": "MarketWatch",
+      "published_at": "2026-06-08T08:39:00",
+      "fetched_at": "2026-06-09T07:10:00",
+      "ticker": "MACRO",
+      "description": "MarketWatch reported WTI rose 1.4% to $91.76 after hitting $95.48, while Brent rose 1.6% to $94.55 after briefly topping $98 and gaining more than 5% intraday. Prices erased most gains after Iran signaled its latest operation against Israel had ended, though it warned attacks could resume. OPEC+ approved a 188,000 bpd July production-target increase that analysts said was unlikely to affect prices while Hormuz remained effectively constrained.",
+      "key_points": ["WTI hit $95.48 then traded $91.76", "Brent topped $98 then traded $94.55", "OPEC+ July target increase 188,000 bpd", "Iran signaled current operation ended", "Hormuz remains key supply constraint"]
     }
   ]
 }
