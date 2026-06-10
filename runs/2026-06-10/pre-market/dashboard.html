@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-10</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-10 &middot; 15 articles &middot; 1 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews Pre-Market Research Briefing — June 10, 2026</h1>
+<p><strong>Published:</strong> Wednesday, June 10, 2026 | 06:15 ET | <strong>Mode:</strong> Pre-Market</p>
+<p><strong>Next FOMC:</strong> June 17, 2026 | <strong>CPI Release:</strong> Today, 8:30 AM ET</p>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p>Markets enter Wednesday's session braced for the most consequential CPI print since early 2023, with consensus expecting headline inflation to breach 4.2% YoY — the hottest reading since April 2023. The bond market is already voting: the 2Y Treasury yield at 4.14% sits well above the Fed's 3.50%–3.75% policy band, signaling that the $31 trillion Treasury market believes rates are "not high enough" (Jack McIntyre, Brandywine Global). Meanwhile, fresh US-Iran kinetic exchanges — a US Apache helicopter shot down over the Strait of Hormuz, followed by US "self-defense strikes" — have pushed Brent crude back above $92/bbl after it touched a seven-week low. The rotation out of AI/semiconductor names that erased $1.4 trillion in market cap on June 6 has paused but not reversed; 301 of 500 S&amp;P stocks advanced Tuesday even as the headline index fell. The equal-weight S&amp;P 500 rose 0.2% while the cap-weight index lost 0.26%. Three AI mega-IPOs (SpaceX pricing June 11, OpenAI and Anthropic filed confidentially) are creating a capital-markets overhang. The dominant question: does CPI confirm the bond market's hawkish re-pricing, or does a soft core print provide relief?</p>
+<p class="bold-line"><strong>Key levels:</strong></p>
+<ul><li>S&amp;P 500: 7,386.65 (-0.26% June 9) | Nasdaq 100 futures pre-market: 29,282 (-0.46%)</li><li>10Y UST: 4.53% | 2Y UST: 4.14% | Fed funds: 3.50%–3.75%</li><li>VIX: 20.18 (+6.68%) | Brent: $92.00 (+0.9% pre-mkt) | WTI: $88.20 (-3.4% June 9)</li><li>Gold: $4,279 (-1.93%) | Bitcoin: $62,398</li></ul>
+<hr class="divider">
+<h2>Asset Class Deep Dive</h2>
+<h3>Equities</h3>
+<p class="bold-line"><strong>Index Close (June 9, 2026):</strong></p>
+<ul><li>S&amp;P 500: 7,386.65 (-0.26%) — recovered from intraday -2.7%</li><li>Dow Jones: 50,872.11 (+0.17%, +86 pts)</li><li>Nasdaq Composite: 25,678.82 (-0.97%) — recovered from intraday -3.5%</li><li>Russell 2000: 2,855.93 (+0.02%)</li><li>S&amp;P 500 Equal Weight ETF (RSP): +0.2%</li></ul>
+<p class="bold-line"><strong>The Rotation:</strong></p>
+<p>Tuesday was a tale of two markets. The cap-weighted indexes were dragged down by mega-cap tech (-~2% for the IT sector), while 301 of 500 S&amp;P 500 stocks actually advanced. "Old economy" sectors led: healthcare (IYH +0.7%), banks (KBE +1%), homebuilders (ITB +2%). This continues the growth-to-value rotation triggered by the June 6 semiconductor collapse.</p>
+<p class="bold-line"><strong>The AI Semiconductor Wreckage:</strong></p>
+<p>The Philadelphia Semiconductor Index (SOXX) plunged 10% on June 6 — its worst single-day decline in six years — vaporizing $1.4 trillion in market cap. The SMH ETF bounced 6% Monday, then gave back 1% Tuesday.</p>
+<p>Individual damage (June 6 close):</p>
+<ul><li>Broadcom (AVGO): -12.6% from record highs. Disappointing guidance was the proximate trigger.</li><li>Marvell (MRVL): -17% after Jensen Huang had called it "the next trillion-dollar company" and shares surged +32% to $290.79.</li><li>Nvidia (NVDA): lost $279B in market cap, but percentage decline was modest vs. peers.</li><li>AMD: -3.56% — relatively resilient; seen as more reasonably valued.</li></ul>
+<p><strong>Key Quote — Wells Fargo strategist Ohsung Kwon:</strong> "The semiconductor sector was way overbought."</p>
+<p><strong>Key Quote — Nvidia CEO Jensen Huang:</strong> Called the selloff a "buying opportunity."</p>
+<p><strong>SMCI:</strong> Fell 7.62% on June 9, ranking among the day's top losers alongside CTRA (-8.62%), GLW (-7.25%), NOW (-6.32%), and ENPH (-5.92%).</p>
+<p><strong>CoreWeave (CRWV):</strong> Stock has more than doubled since its March 2025 IPO. Founders have sold $2.3 billion in shares since the lockup expired. Chief Strategy Officer Brian Venturo alone sold &gt;$1.1 billion — the second-largest insider seller YTD by value.</p>
+<p class="bold-line"><strong>Apple (AAPL) — WWDC 2026:</strong></p>
+<p>Tim Cook's final WWDC as CEO featured Siri AI and Apple Intelligence enhancements. Morgan Stanley reiterated Overweight ($360 PT), calling it "a net positive" with progress on the AI roadmap and "earlier monetization opportunity than we expected." UBS countered that "investors will be underwhelmed" and AI features "wouldn't be enough to drive demand for iPhones." Shares fell steadily through the keynote.</p>
+<p class="bold-line"><strong>Oracle (ORCL) — Earnings Today After Close:</strong></p>
+<p>FY Q4 2026 results due after the close. BofA reiterated Buy, raised PT to $240 from $200 (26.5x CY27E P/E, prior 22x), citing "robust demand trends across both cloud infrastructure and database workloads." S&amp;P Global expects FY2026 revenue +17% to $67.3B. Stock at $205.81, down from $211.82 previous close. 52-week range: $134.57–$343.01.</p>
+<p><strong>J.M. Smucker (SJM):</strong> +3.5% on EPS beat ($2.77 adj. vs. $2.64 est.), revenue $2.27B (vs. $2.26B est.).</p>
+<p><strong>GSK / Nuvalent:</strong> GSK acquiring Nuvalent for $10.6B cash ($124/share). Nuvalent +39.28% to $123.25. GSK -1%.</p>
+<h3>Rates</h3>
+<p class="bold-line"><strong>Yield Curve Snapshot (June 10, 2026, ~04:00 ET — Trading Economics):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Tenor</th><th>Yield</th><th>Day Δ (bp)</th><th>Month Δ (bp)</th><th>Year Δ (bp)</th></tr></thead><tbody><tr><td>2Y</td><td>4.14%</td><td>+0.8</td><td>+17.7</td><td>+18.7</td></tr><tr><td>5Y</td><td>4.27%</td><td>+1.6</td><td>+18.6</td><td>+23.9</td></tr><tr><td>10Y</td><td>4.53%</td><td>+1.0</td><td>+12.1</td><td>+10.7</td></tr><tr><td>30Y</td><td>5.01%</td><td>+1.6</td><td>+2.4</td><td>+9.3</td></tr></tbody></table></div>
+<ul><li><strong>2s10s spread:</strong> ~39 bp — modestly positive, not inverted.</li><li><strong>10Y TIPS (real yield):</strong> 2.18% → 10Y breakeven inflation: ~2.35%.</li><li><strong>Key signal:</strong> The 2Y yield at 4.14% sits ~40 bp above the Fed funds rate (3.75%). Historically, this spread presages further tightening.</li></ul>
+<p class="bold-line"><strong>What's Driving Yields:</strong></p>
+<p>1. <strong>Iran tensions:</strong> Renewed US strikes on Iran pushed energy prices higher, adding to inflation fears. Yields rose on the strikes after falling Monday on de-escalation hopes.</p>
+<p>2. <strong>Strong labor market:</strong> Last week's NFP reinforced rate-hike expectations — December hike probability at ~70%, October at ~51% (Trading Economics).</p>
+<p>3. <strong>CPI anticipation:</strong> Markets positioning ahead of today's CPI release.</p>
+<p><strong>Fed Chair Kevin Warsh</strong> presides over his first real test. MarketWatch headline: "Inflation could top 4% this week. The bond market wants Fed Chair Warsh to prove he'll fight it."</p>
+<p><strong>Trading Economics forecast:</strong> 10Y at 4.51% by end of Q2 2026, falling to 4.29% in 12 months — implying a near-term peak.</p>
+<h3>Credit</h3>
+<ul><li><strong>IG issuance forecast for 2026:</strong> $2.25 trillion, a 35% YoY increase (PineBridge). Supply wave is material.</li><li><strong>IG OAS (Option-Adjusted Spread):</strong> Positively sloped curve — investors are rewarded for extending duration in IG credit.</li><li><strong>Q2 2026 outlook (Breckinridge):</strong> IG yields remain elevated vs. pre-pandemic levels. Credit quality improving. The positively sloped curve benefits intermediate and long-duration bond buyers.</li><li><strong>Schwab 2026 outlook:</strong> IG corporate bond yields "still high compared to the years leading up to the pandemic." Credit fundamentals improving.</li><li><strong>No significant HY distress signals in today's flow.</strong></li></ul>
+<h3>FX</h3>
+<ul><li><strong>DXY / Dollar:</strong> Limited movement in pre-market. The dollar continues to benefit from rate-hike expectations and geopolitical safe-haven flows from the Iran conflict.</li><li><strong>EUR/USD:</strong> JPMorgan forecast path: 1.19 (Sep 2025) → 1.22 (Mar/Jun 2026). Dollar strength expected to moderate over the medium term.</li><li><strong>USD/JPY:</strong> JPMorgan expects 141 (Sep 2025) → 139 (Mar/Jun 2026).</li><li><strong>ActionForex:</strong> Live rates indicate range-bound trading ahead of CPI. No major central bank decisions today.</li><li><strong>Key dynamic:</strong> Higher US rates + Iran risk premium bid = supportive for DXY near term. If CPI surprises soft, expect dollar to give back some gains.</li></ul>
+<h3>Commodities</h3>
+<p class="bold-line"><strong>Crude Oil:</strong></p>
+<ul><li>Brent: $92.00 (+0.9% pre-market June 10) — bounced from June 9 settle of $91.45, which was the lowest since April 17 and the first close below the 100-day moving average since January (Reuters).</li><li>WTI: $88.20 settle June 9 (-3.4%), lowest since May 29.</li><li><strong>Catalyst:</strong> US Army Apache helicopter shot down by Iran over Strait of Hormuz → Trump ordered "self-defense strikes" → oil bounced off session lows. Trump simultaneously said an Iran nuclear deal could be reached in "two or three days."</li></ul>
+<p><strong>Strait of Hormuz Status:</strong> Effectively closed by a double blockade — Iran blocks most shipping, US blockades Iranian ports. The Strait carried ~20% of global crude and LNG pre-war. US Energy Secretary Chris Wright said ship traffic is "rising very meaningfully."</p>
+<p class="bold-line"><strong>Supply/Demand:</strong></p>
+<ul><li>EIA projects 2026 world production at 99.0M bpd (vs. record 106.1M in 2025). Demand at 102.9M bpd. OECD inventories drawing to lowest since at least 2003.</li><li>China's May crude imports slumped 29% YoY to an 8-year low — demand destruction is real.</li></ul>
+<p class="bold-line"><strong>Precious Metals:</strong></p>
+<ul><li>Gold: $4,279.20/oz (-1.93% June 9), lowest close since December 10, 2025. Since the Iran war began, gold is down 18.32%. The decline defies safe-haven intuition: rising real rates (10Y TIPS at 2.18%) are crushing the zero-yield asset.</li><li>Silver: $65.24/oz (-4.88%), lowest settle since December 18, 2025.</li></ul>
+<h3>Volatility / Crypto</h3>
+<p><strong>VIX:</strong> 20.18, +1.26 (+6.68%) on June 9. Elevated but not panicked. CPI release + FOMC next week + Iran uncertainty are keeping a floor under vol. The VIX term structure is likely in contango given the event risk cluster.</p>
+<p><strong>Bitcoin:</strong> $62,398 (down $664/1.1% on June 9). MSTR's purchase of 1,550 BTC for $101M (total holdings: 845,256 BTC) failed to move price — a bearish signal for crypto sentiment. BTC has decoupled from the AI/momentum trade and is trading more like a risk-off asset amidst rate-hike fears.</p>
+<p><strong>MSTR (Strategy Inc.):</strong> Stock trading $114–$128 range (Coinbase data). Saylor's BTC treasury strategy faces pressure as: (a) BTC price stagnant, (b) rate-hike expectations compress the premium on leveraged BTC proxies, (c) Polymarket odds of MSTR selling BTC hit 84% in May after a $30M BTC transfer to Coinbase Prime.</p>
+<hr class="divider">
+<h2>Sentiment Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Sentiment</th><th>Drivers</th><th>1-Week Δ</th></tr></thead><tbody><tr><td>US Equities (broad)</td><td><strong>Cautious</strong></td><td>Rotation from growth to value; breadth actually decent (301 advancers)</td><td>Deteriorating (AI drawdown)</td></tr><tr><td>Mega-Cap Tech</td><td><strong>Bearish</strong></td><td>$1.4T AI semi wipeout; profit-taking; CPI risk</td><td>Sharply deteriorating</td></tr><tr><td>US Treasuries</td><td><strong>Hawkish</strong></td><td>2Y above Fed funds; rate-hike bets building</td><td>More hawkish</td></tr><tr><td>IG Credit</td><td><strong>Stable</strong></td><td>Elevated yields, positively sloped curve, improving quality</td><td>Stable</td></tr><tr><td>USD (DXY)</td><td><strong>Bullish</strong></td><td>Rate differential + Iran safe-haven bid</td><td>Mildly stronger</td></tr><tr><td>Crude Oil</td><td><strong>Volatile/Bullish</strong></td><td>Iran strikes offset deal hopes; Strait still blocked</td><td>Whippy</td></tr><tr><td>Gold</td><td><strong>Bearish</strong></td><td>Crushed by rising real rates; -18% since Iran war began</td><td>Deteriorating</td></tr><tr><td>Bitcoin/Crypto</td><td><strong>Bearish</strong></td><td>Rate sensitivity; MSTR buys not moving price</td><td>Deteriorating</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Regime Signal</th><th>Observation</th><th>Implication</th></tr></thead><tbody><tr><td><strong>2Y &gt; Fed Funds</strong></td><td>4.14% vs. 3.75% ceiling</td><td>Bond market pricing further tightening; historically reliable</td></tr><tr><td><strong>Growth → Value Rotation</strong></td><td>IT -2%, Healthcare +0.7%, Banks +1%</td><td>Classic late-cycle / rate-hike-anticipation rotation</td></tr><tr><td><strong>Equal-Weight &gt; Cap-Weight</strong></td><td>RSP +0.2% vs. S&amp;P -0.26%</td><td>Concentration risk being repriced; AI/mega-cap premium compressing</td></tr><tr><td><strong>Gold ↓, Yields ↑</strong></td><td>Gold -18% from war highs, 10Y TIPS 2.18%</td><td>Real rates driving gold, not geopolitics — defies safe-haven narrative</td></tr><tr><td><strong>Oil Volatility</strong></td><td>Brent $91.45–$92.00 range in 24h</td><td>Strait of Hormuz binary: deal = sub-$85; escalation = $100+</td></tr><tr><td><strong>VIX Elevated, Not Panicked</strong></td><td>20.18</td><td>Event-risk premium; CPI could move it 3-5 points either direction</td></tr><tr><td><strong>Insider Selling (CRWV)</strong></td><td>$2.3B since lockup expiry</td><td>Red flag for AI infrastructure names; stock doubled, insiders exiting</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Contrarian Flags</h2>
+<p>1. <strong>Gold's collapse is the silent story.</strong> An 18.32% decline since the Iran war began, with war still active, is extraordinary. The market is saying: real rates matter more than geopolitical fear. If the Iran situation de-escalates, gold could fall further as real rates remain elevated. But if rates eventually fall (Trading Economics sees 10Y at 4.29% in 12 months), gold's current pricing might look like a generational entry.</p>
+<p>2. <strong>The S&amp;P 500 Equal-Weight index rose while the headline fell.</strong> 301 stocks advanced. This is not a broad market panic — it's a concentrated AI/tech valuation reset. The "everything bubble" narrative is overstated. Value, financials, healthcare, and housing are functioning normally.</p>
+<p>3. <strong>The bond market may be overshooting.</strong> The 2Y at 4.14% prices in rate hikes that the Fed has not signaled. Fed Chair Warsh has not endorsed further tightening. If CPI comes in at or below consensus (MUFG: 0.47% MoM headline, 0.28% MoM core), the bond market could reverse sharply — a powerful rates rally that would lift growth stocks.</p>
+<p>4. <strong>SpaceX IPO as a sentiment signal.</strong> At $1.75 trillion valuation (94x trailing sales — cheaper than Rocket Lab at 131x, per Forbes), the IPO is both an overhang (capital absorption) and a potential peak-signal for AI euphoria. But if it prices June 11 and trades well June 12, it could re-ignite risk appetite.</p>
+<p>5. <strong>China crude imports -29% YoY.</strong> This demand destruction from the world's largest crude importer is getting less attention than supply-side Iran fears. If China demand remains weak, oil's upside from a Strait closure may be more muted than headline risk suggests.</p>
+<p>6. <strong>OpenAI files IPO at $852B while losing money and shuttering products.</strong> Sora was shut down in April 2026. The company loses $1.22 for every $1 of revenue ($14B projected 2026 losses). Anthropic filed too. This cluster of money-losing AI IPOs could mark the top of the AI private-market valuation cycle. Public market price discovery may be brutal.</p>
+<hr class="divider">
+<h2>Calendar — This Week</h2>
+<div class="table-wrapper"><table><thead><tr><th>Date</th><th>Event</th><th>Importance</th></tr></thead><tbody><tr><td><strong>Today, June 10, 8:30 AM</strong></td><td><strong>May CPI Release</strong></td><td>Critical — consensus 4.2% YoY headline, 2.9% YoY core</td></tr><tr><td><strong>Today, June 10, After Close</strong></td><td><strong>Oracle (ORCL) Q4 FY2026 Earnings</strong></td><td>High — AI cloud demand read-through</td></tr><tr><td><strong>June 11</strong></td><td><strong>SpaceX IPO Pricing</strong></td><td>High — $75B raise at $135/share</td></tr><tr><td><strong>June 12</strong></td><td><strong>SpaceX (SPCX) First Trade (Nasdaq)</strong></td><td>Market-moving — sentiment bellwether</td></tr><tr><td><strong>June 17</strong></td><td><strong>FOMC Decision</strong></td><td>Critical — rate decision + dot plot + Warsh press conference</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Data Table: Key Market Levels</h2>
+<div class="table-wrapper"><table><thead><tr><th>Ticker / Index</th><th>Level</th><th>Daily Δ</th><th>Notes</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,386.65</td><td>-0.26%</td><td>Recovered from -2.7% intraday</td></tr><tr><td>Dow Jones</td><td>50,872.11</td><td>+0.17%</td><td>Old economy bid</td></tr><tr><td>Nasdaq Comp</td><td>25,678.82</td><td>-0.97%</td><td>Recovered from -3.5% intraday</td></tr><tr><td>Russell 2000</td><td>2,855.93</td><td>+0.02%</td><td>Small caps flat</td></tr><tr><td>Nasdaq 100 Fut</td><td>29,282.41</td><td>-0.46%</td><td>Pre-market June 10</td></tr><tr><td>VIX</td><td>20.18</td><td>+6.68%</td><td>Event risk cluster</td></tr><tr><td>2Y UST</td><td>4.14%</td><td>+0.8 bp</td><td>Above Fed funds ceiling</td></tr><tr><td>10Y UST</td><td>4.53%</td><td>+1.0 bp</td><td>Holding near highs</td></tr><tr><td>30Y UST</td><td>5.01%</td><td>+1.6 bp</td><td></td></tr><tr><td>Brent Crude</td><td>$92.00</td><td>+0.9%</td><td>Pre-market; low was $91.45</td></tr><tr><td>WTI Crude</td><td>$88.20</td><td>-3.4%</td><td>June 9 settle</td></tr><tr><td>Gold</td><td>$4,279.20</td><td>-1.93%</td><td>Lowest since Dec 10, 2025</td></tr><tr><td>Silver</td><td>$65.24</td><td>-4.88%</td><td>Lowest since Dec 18, 2025</td></tr><tr><td>Bitcoin</td><td>$62,398</td><td>-1.1%</td><td>MSTR buys not moving price</td></tr><tr><td>DXY</td><td>~104.5 (est.)</td><td>—</td><td>Rate + geopolitical bid</td></tr></tbody></table></div>
+<p><em>Sources: CNBC, Yahoo Finance, Trading Economics, MarketWatch, CEPR, MUFG Research, The Guardian, Fortune, Reuters, NDTV Profit. All data from primary or authoritative secondary sources as specified. Pre-market levels as of ~06:00 ET June 10, 2026.</em></p>
+<hr class="divider">
+<p class="bold-line"><strong>Research produced autonomously by BoltNews Pipeline. Not investment advice. For institutional use only.</strong></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-june-9-dow-sp-500-nasdaq-rise-ai-225640870.html" target="_blank" rel="noopener">Stock market today: Dow rises, S&P 500, Nasdaq fall as tech rotation trade resum</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/08/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock market news for June 9, 2026 — S&P 500, Nasdaq close lower; Dow ends highe</a>
+<a class="source-link" href="https://intellectia.ai/blog/ai-semiconductor-selloff-june-2026" target="_blank" rel="noopener">AVGO: AI Semiconductor Stocks Selloff June 2026: $1.4T Crash Analysis</a>
+<a class="source-link" href="https://congress.net/chip-sector-suffers-worst-single-day-collapse-in-six-years-as-marvell-mrvl-and-micron-mu-lead-losses/" target="_blank" rel="noopener">MRVL: Chip Sector Suffers Worst Single-Day Collapse In Six Years As Marvell and Micron</a>
+<a class="source-link" href="https://www.marketwatch.com/story/inflation-could-top-4-this-week-the-bond-market-wants-fed-chair-warsh-to-prove-hell-fight-it-fbb6b04b" target="_blank" rel="noopener">Inflation could top 4% this week. The bond market wants Fed Chair Warsh to prove</a>
+<a class="source-link" href="https://www.ndtvprofit.com/markets/oil-prices-on-june-10-brent-crude-edges-higher-from-seven-week-low-to-92-as-us-strikes-iran-11614986" target="_blank" rel="noopener">Oil Prices On June 10: Brent Crude Edges Higher From Seven-Week Low To $92 As US</a>
+<a class="source-link" href="https://www.theguardian.com/technology/2026/jun/08/openai-ipo-files-for-public-stock-market" target="_blank" rel="noopener">OpenAI confidentially files for initial public offering on US stock market</a>
+<a class="source-link" href="https://fortune.com/2026/06/09/openai-files-confidential-s-1-sec-ipo/" target="_blank" rel="noopener">OpenAI files confidential SEC S-1 paperwork for IPO</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html" target="_blank" rel="noopener">SPCX: SpaceX targets $135 IPO price at valuation of $1.77 trillion</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/coreweave-faces-fresh-insider-selling-125714361.html" target="_blank" rel="noopener">CRWV: CoreWeave Faces Fresh Insider Selling Scrutiny</a>
+<a class="source-link" href="https://www.coindesk.com/markets/2026/06/09/strategy-s-bitcoin-purchase-fails-to-stir-btc-price" target="_blank" rel="noopener">MSTR: Strategy's bitcoin purchase fails to stir BTC price: Crypto Markets Today</a>
+<a class="source-link" href="https://investor.oracle.com/investor-news/news-details/2026/Oracle-Sets-the-Date-for-its-Fourth-Quarter-Fiscal-Year-2026-Earnings-Announcement/default.aspx" target="_blank" rel="noopener">ORCL: Oracle Sets Date for Q4 FY2026 Earnings — June 10 After Close</a>
+<a class="source-link" href="https://cepr.net/publications/may-2026-cpi-preview/" target="_blank" rel="noopener">May CPI Preview: Energy Prices Could Push Inflation Above 4%</a>
+<a class="source-link" href="https://www.mufgresearch.com/macro/us-inflation-update-june-9-2026/" target="_blank" rel="noopener">US Inflation Update — May 2026 CPI Preview</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank" rel="noopener">US 10 Year Treasury Note Yield — Quote, Chart, Historical Data</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-10 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

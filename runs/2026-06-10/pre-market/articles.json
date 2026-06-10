@@ -1,0 +1,122 @@
+[
+  {
+    "ticker": "",
+    "title": "Stock market today: Dow rises, S&P 500, Nasdaq fall as tech rotation trade resumes, US-Iran tensions flare",
+    "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-june-9-dow-sp-500-nasdaq-rise-ai-225640870.html",
+    "description": "Dow +0.2%, S&P 500 -0.3%, Nasdaq ~-1%. Tech rotation resumed. Apache helicopter shot down over Strait of Hormuz. CPI preview: consensus 4.2% YoY.",
+    "date": "2026-06-09",
+    "source": "Yahoo Finance"
+  },
+  {
+    "ticker": "",
+    "title": "Stock market news for June 9, 2026 — S&P 500, Nasdaq close lower; Dow ends higher",
+    "url": "https://www.cnbc.com/2026/06/08/stock-market-today-live-updates.html",
+    "description": "S&P 500 7,386.65 (-0.26%), Nasdaq 25,678.82 (-0.97%), Dow 50,872.11 (+0.17%). 301 S&P stocks advanced despite index decline. SMH -1%.",
+    "date": "2026-06-09",
+    "source": "CNBC"
+  },
+  {
+    "ticker": "AVGO",
+    "title": "AI Semiconductor Stocks Selloff June 2026: $1.4T Crash Analysis",
+    "url": "https://intellectia.ai/blog/ai-semiconductor-selloff-june-2026",
+    "description": "SOXX plunged 10% on June 6, erasing $1.4T. Broadcom -12.6%, Marvell -17%. Rotational not structural. Jensen Huang called it a buying opportunity.",
+    "date": "2026-06-09",
+    "source": "Intellectia"
+  },
+  {
+    "ticker": "MRVL",
+    "title": "Chip Sector Suffers Worst Single-Day Collapse In Six Years As Marvell and Micron Lead Losses",
+    "url": "https://congress.net/chip-sector-suffers-worst-single-day-collapse-in-six-years-as-marvell-mrvl-and-micron-mu-lead-losses/",
+    "description": "SMH -10% on June 6, worst since March 2020. Marvell (MRVL) -17% after Jensen Huang had called it 'the next trillion-dollar company'.",
+    "date": "2026-06-09",
+    "source": "Congress.net"
+  },
+  {
+    "ticker": "",
+    "title": "Inflation could top 4% this week. The bond market wants Fed Chair Warsh to prove he'll fight it.",
+    "url": "https://www.marketwatch.com/story/inflation-could-top-4-this-week-the-bond-market-wants-fed-chair-warsh-to-prove-hell-fight-it-fbb6b04b",
+    "description": "2Y Treasury yields surged to ~4.15% above the Fed's 3.50-3.75% band. '$31 trillion Treasury market has an unequivocal message: rates aren't high enough.' — Jack McIntyre, Brandywine Global",
+    "date": "2026-06-09",
+    "source": "MarketWatch"
+  },
+  {
+    "ticker": "",
+    "title": "Oil Prices On June 10: Brent Crude Edges Higher From Seven-Week Low To $92 As US Strikes Iran",
+    "url": "https://www.ndtvprofit.com/markets/oil-prices-on-june-10-brent-crude-edges-higher-from-seven-week-low-to-92-as-us-strikes-iran-11614986",
+    "description": "Brent +0.9% to $92 in early trade June 10 after settling at $91.45 (lowest since Apr 17). US helicopter shot down by Iran over Strait of Hormuz triggered US self-defense strikes.",
+    "date": "2026-06-10",
+    "source": "NDTV Profit"
+  },
+  {
+    "ticker": "",
+    "title": "OpenAI confidentially files for initial public offering on US stock market",
+    "url": "https://www.theguardian.com/technology/2026/jun/08/openai-ipo-files-for-public-stock-market",
+    "description": "OpenAI submitted confidential S-1 to SEC. Valued at $852B. Not profitable. CEO Sam Altman outlined three goals including AGI for everyone. Sora shut down April 2026.",
+    "date": "2026-06-08",
+    "source": "The Guardian"
+  },
+  {
+    "ticker": "",
+    "title": "OpenAI files confidential SEC S-1 paperwork for IPO",
+    "url": "https://fortune.com/2026/06/09/openai-files-confidential-s-1-sec-ipo/",
+    "description": "OpenAI joins Anthropic and SpaceX in AI IPO race. CFO Sarah Friar: 'I want us to be ready to tap public markets.' Altman met with Sen. Bernie Sanders on public ownership stakes.",
+    "date": "2026-06-09",
+    "source": "Fortune"
+  },
+  {
+    "ticker": "SPCX",
+    "title": "SpaceX targets $135 IPO price at valuation of $1.77 trillion",
+    "url": "https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html",
+    "description": "SpaceX fixed $135/share price. $75B raise, 555.6M shares. 2x oversubscribed. Institutional books close June 10, pricing June 11, trading June 12 (Nasdaq: SPCX).",
+    "date": "2026-06-03",
+    "source": "CNBC"
+  },
+  {
+    "ticker": "CRWV",
+    "title": "CoreWeave Faces Fresh Insider Selling Scrutiny",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-faces-fresh-insider-selling-125714361.html",
+    "description": "Founders sold $2.3B since lockup expired. CSO Brian Venturo sold >$1.1B, second-largest insider seller YTD. Stock doubled since March 2025 IPO.",
+    "date": "2026-06-09",
+    "source": "Yahoo Finance"
+  },
+  {
+    "ticker": "MSTR",
+    "title": "Strategy's bitcoin purchase fails to stir BTC price: Crypto Markets Today",
+    "url": "https://www.coindesk.com/markets/2026/06/09/strategy-s-bitcoin-purchase-fails-to-stir-btc-price",
+    "description": "MSTR bought 1,550 BTC for $101M, total holdings 845,256 BTC. BTC price failed to react. Bearish signal for crypto sentiment.",
+    "date": "2026-06-09",
+    "source": "CoinDesk"
+  },
+  {
+    "ticker": "ORCL",
+    "title": "Oracle Sets Date for Q4 FY2026 Earnings — June 10 After Close",
+    "url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Sets-the-Date-for-its-Fourth-Quarter-Fiscal-Year-2026-Earnings-Announcement/default.aspx",
+    "description": "ORCL Q4 FY2026 earnings June 10 after close. BofA Buy, PT raised to $240. FY2026 revenue expected +17% to $67.3B (S&P Global).",
+    "date": "2026-06-01",
+    "source": "Oracle IR"
+  },
+  {
+    "ticker": "",
+    "title": "May CPI Preview: Energy Prices Could Push Inflation Above 4%",
+    "url": "https://cepr.net/publications/may-2026-cpi-preview/",
+    "description": "Dean Baker (CEPR): Headline CPI 0.7-0.8% MoM, ~4.3% YoY. Core 0.3-0.4% MoM, 3.0% YoY. Gasoline +7% in May. Rental inflation normalizing from BLS error distortion.",
+    "date": "2026-06-08",
+    "source": "CEPR"
+  },
+  {
+    "ticker": "",
+    "title": "US Inflation Update — May 2026 CPI Preview",
+    "url": "https://www.mufgresearch.com/macro/us-inflation-update-june-9-2026/",
+    "description": "MUFG forecasts headline CPI 0.47% MoM / 4.2% YoY, core 0.28% MoM / 2.9% YoY. Upside risk: renewed Iran tensions. 2Y sell-off if core >0.3% MoM.",
+    "date": "2026-06-09",
+    "source": "MUFG Research"
+  },
+  {
+    "ticker": "",
+    "title": "US 10 Year Treasury Note Yield — Quote, Chart, Historical Data",
+    "url": "https://tradingeconomics.com/united-states/government-bond-yield",
+    "description": "10Y at 4.53% June 10. 2Y at 4.14%. Fed funds 3.75%. 2Y above Fed funds signaling further tightening. December rate hike probability ~70%.",
+    "date": "2026-06-10",
+    "source": "Trading Economics"
+  }
+]
