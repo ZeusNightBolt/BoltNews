@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Stock Market News for Jun 12, 2026",
+    "url": "https://www.zacks.com/stock/news/2936222/stock-market-news-for-jun-12-2026",
+    "source": "Zacks",
+    "date": "2026-06-12",
+    "category": "Equities",
+    "summary": "Stock Market News for Jun 12, 2026",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Markets News, June 11, 2026: U.S. Stocks Jump as Tech Shares Rebound",
+    "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06112026-11995532",
+    "source": "Investopedia",
+    "date": "2026-06-11",
+    "category": "Equities",
+    "summary": "Markets News, June 11, 2026: U.S. Stocks Jump as Tech Shares Rebound",
+    "age_hours": 24.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Equities rally, dollar dips with oil as Trump cancels Iran attacks",
+    "url": "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-06-11/",
+    "source": "Reuters",
+    "date": "2026-06-11",
+    "category": "FX",
+    "summary": "Equities rally, dollar dips with oil as Trump cancels Iran attacks",
+    "age_hours": 24.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Brent, WTI oil prices: Trump calls off Iran strikes",
+    "url": "https://www.cnbc.com/2026/06/11/brent-wti-oil-prices-us-launches-fresh-strikes-on-iran-.html",
+    "source": "CNBC",
+    "date": "2026-06-11",
+    "category": "Macro",
+    "summary": "Brent, WTI oil prices: Trump calls off Iran strikes",
+    "age_hours": 24.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Crypto Market Recovers 1.7%: Bitcoin Up, DeFi Rise 5.2%",
+    "url": "https://www.coingabbar.com/en/crypto-currency-news/crypto-market-update-june-12-2026-bitcoin-btc-price-defi-rise",
+    "source": "CoinGabbar",
+    "date": "2026-06-12",
+    "category": "Equities",
+    "summary": "Crypto Market Recovers 1.7%: Bitcoin Up, DeFi Rise 5.2%",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Iran war live: Trump claims Tehran deal 'approved', cancels new strikes",
+    "url": "https://www.aljazeera.com/news/liveblog/2026/6/12/iran-war-live-trump-claims-tehran-deal-approved-cancels-new-strikes",
+    "source": "Al Jazeera",
+    "date": "2026-06-12",
+    "category": "Equities",
+    "summary": "Iran war live: Trump claims Tehran deal 'approved', cancels new strikes",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Trump now says a peace deal will be announced 'soon,' cancels further strikes",
+    "url": "https://www.npr.org/2026/06/11/nx-s1-5854970/trump-iran-peace-deal-cancel-strikes",
+    "source": "NPR",
+    "date": "2026-06-11",
+    "category": "Equities",
+    "summary": "Trump now says a peace deal will be announced 'soon,' cancels further strikes",
+    "age_hours": 24.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "SpaceX (SPCX) IPO: Live updates",
+    "url": "https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html",
+    "source": "CNBC",
+    "date": "2026-06-12",
+    "category": "Equities",
+    "summary": "SpaceX (SPCX) IPO: Live updates",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "US Treasury Yield Curve Today: June 12, 2026",
+    "url": "https://primerates.com/primerate/treasury-yield-curve/",
+    "source": "PrimeRates",
+    "date": "2026-06-12",
+    "category": "Rates",
+    "summary": "US Treasury Yield Curve Today: June 12, 2026",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Gold Spot (XAUUSD) Commodity Price & Market Analysis",
+    "url": "https://sigmanomics.com/commodities-markets/xauusd",
+    "source": "Sigmanomics",
+    "date": "2026-06-12",
+    "category": "FX",
+    "summary": "Gold Spot (XAUUSD) Commodity Price & Market Analysis",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "DXY Exchange Rate",
+    "url": "https://tradingeconomics.com/united-states/currency",
+    "source": "Trading Economics",
+    "date": "2026-06-12",
+    "category": "FX",
+    "summary": "DXY Exchange Rate",
+    "age_hours": 0.0,
+    "rejected_reason": null
+  },
+  {
+    "title": "Fed Signals Shift At June Meeting With Markets Pricing In 2026 Hike",
+    "url": "https://www.forbes.com/sites/simonmoore/2026/06/08/fed-may-remove-easing-language-at-june-meeting-setting-up-a-potential-2026-hike/",
+    "source": "Forbes",
+    "date": "2026-06-08",
+    "category": "rates",
+    "summary": "Fed set to remove easing bias at June 16-17 FOMC. Waller: 'inflation is not headed in the right direction.' Markets pricing 1-2 rate hikes in 2026. Warsh chairs first FOMC meeting.",
+    "rejected_reason": "stale",
+    "age_hours": 96.0
+  },
+  {
+    "title": "ICE BofA US High Yield Index Option-Adjusted Spread",
+    "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+    "source": "FRED (Federal Reserve)",
+    "date": "2026-06-09",
+    "category": "credit",
+    "summary": "HY OAS 2.78% as of June 9. IG OAS ~77bp as of mid-May. Corporate bond spreads remain compressed despite macro uncertainty.",
+    "rejected_reason": "stale",
+    "age_hours": 72.0
+  }
+]
