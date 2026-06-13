@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "run_date": "2026-06-13",
+    "mode": "weekend",
+    "generated": "2026-06-13T06:30:00",
+    "total_articles": 12,
+    "recency_gate": "48h",
+    "note": "Weekend pre-market briefing. Articles sourced via web_search + web_extract deep extraction."
+  },
+  "articles": [
+    {
+      "id": "investopedia-0612-recap",
+      "title": "Markets News, June 12, 2026: Indexes Close Higher on SpaceX Debut Day, Finish Up for Week; Oil Falls on Hopes of US-Iran Deal",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06122026-11996464",
+      "source": "Investopedia",
+      "date": "2026-06-12",
+      "category": "equities",
+      "tags": ["market-recap", "spacex-ipo", "oil", "iran", "ppi"],
+      "summary": "Dow +0.7%, S&P 500 +0.5%, Nasdaq +0.3%. S&P 500 marks 10th positive week in 11. SpaceX IPO closed at $160.95 (+19%). Oil fell on Iran deal hopes: WTI -3.2% to $84.88, Brent -3.4% to $87.33. PPI +1.1% MoM, +6.5% YoY — highest since Nov 2022. Jobless claims 229k, highest since Feb. Stagflation warning."
+    },
+    {
+      "id": "cnbc-week-ahead-0612",
+      "title": "Stock market next week: Outlook for June 15-19, 2026",
+      "url": "https://www.cnbc.com/2026/06/12/stock-market-next-week-outlook-for-june-15-19-2026.html",
+      "source": "CNBC",
+      "date": "2026-06-12",
+      "category": "equities",
+      "tags": ["week-ahead", "economic-calendar", "fomc", "spacex", "semiconductors"],
+      "summary": "SpaceX IPO aftermath and Nasdaq-100 inclusion in 15 trading days. Semiconductors ETF SOXX up >11% for week. Russell 2000 hit all-time highs, +4% week, +19% YTD. FOMC June 16-17: Warsh's first meeting, rates expected unchanged, easing bias removal likely. Week ahead calendar: Empire State, Industrial Production, Retail Sales, FOMC decision. Markets closed Friday June 19 for Juneteenth."
+    },
+    {
+      "id": "cnbc-warsh-0612",
+      "title": "For Warsh as Fed chair, silence may be the point",
+      "url": "https://www.cnbc.com/2026/06/12/warsh-fed-chair-interest-rates.html",
+      "source": "CNBC",
+      "date": "2026-06-12",
+      "category": "rates",
+      "tags": ["fed", "warsh", "fomc", "communication", "dot-plot"],
+      "summary": "Warsh plans 'regime change' in Fed communications: fewer press conferences (4/year vs 8), less forward guidance, possible dot-plot reform. Wants to eliminate easing bias. Three FOMC members dissented last meeting to remove it. Markets have 'almost no idea' where Warsh stands on rates. J.P. Morgan: Warsh 'could see him saying he can't rule out' rate hikes."
+    },
+    {
+      "id": "forbes-fed-hike-0608",
+      "title": "Fed Signals Shift At June Meeting With Markets Pricing In 2026 Hike",
+      "url": "https://www.forbes.com/sites/simonmoore/2026/06/08/fed-may-remove-easing-language-at-june-meeting-setting-up-a-potential-2026-hike/",
+      "source": "Forbes",
+      "date": "2026-06-08",
+      "category": "rates",
+      "tags": ["fed", "fomc", "rate-hike", "warsh", "inflation"],
+      "summary": "Gov. Waller supports removing easing bias. CPI headline 3.8%, core 2.8% — both above 2% target. Markets pricing 1-2 rate hikes in 2026. Rate cuts off the table. Warsh may decline to discuss future policy in detail at first meeting."
+    },
+    {
+      "id": "reuters-oil-0612",
+      "title": "Brent falls to lowest since March on expected peace deal",
+      "url": "https://www.reuters.com/business/energy/oil-extends-losses-trump-calls-off-planned-strikes-iran-2026-06-12/",
+      "source": "Reuters",
+      "date": "2026-06-12",
+      "category": "commodities",
+      "tags": ["oil", "iran", "peace-deal", "brent", "wti"],
+      "summary": "Brent $87.33 (-3.4%), lowest since March. WTI $84.88 (-3.2%). U.S.-Iran MoU could be signed as soon as Sunday in Geneva. Iran's Araghchi says MoU 'has never been closer.' Trump called off airstrikes Thursday. ING: $120-130/bbl risk if flows don't resume by late July. Goldman cut 2027 Brent forecast to $80/bbl. OPEC cut 2026 demand growth to 970k bpd."
+    },
+    {
+      "id": "forex-dollar-0612",
+      "title": "Dollar forecast - Forex Friday | June 12, 2026",
+      "url": "https://www.forex.com/en/news-and-analysis/dollar-forecast-forex-friday-june-12-2026/",
+      "source": "FOREX.com",
+      "date": "2026-06-12",
+      "category": "fx",
+      "tags": ["dollar", "dxy", "central-banks", "boj", "boe"],
+      "summary": "Dollar Index bearish engulfing candle at 100.00 resistance. Iran FM: MoU 'never been closer.' SpaceX IPO creating dollar demand. Week ahead: BoJ (Tue, 25bp hike priced in), FOMC (Wed, hawkish tone expected), BoE (Thu). Dollar direction hinges on FOMC forward guidance."
+    },
+    {
+      "id": "coindesk-btc-0612",
+      "title": "While BTC price holds near $63,000, some data points to pain ahead for bulls",
+      "url": "https://www.coindesk.com/markets/2026/06/12/while-bitcoin-holds-near-usd63-000-some-data-points-to-pain-ahead-for-bulls",
+      "source": "CoinDesk",
+      "date": "2026-06-12",
+      "category": "crypto",
+      "tags": ["bitcoin", "etf", "onchain", "options"],
+      "summary": "BTC $63,702, only 9% above realized price of ~$53,600. ETF demand shrinking at fastest pace since launch. Total BTC demand fell 652k BTC last week — largest contraction since Jan 2022. Sellers crystallized 187k BTC losses over 30 days. Options market biased for bounce to $75,000 by late July. VELVET surged 1,400% on pre-IPO hype, faces sell-the-news risk."
+    },
+    {
+      "id": "kitco-gold-0612",
+      "title": "Gold's record rally falters as bulls run into Fed rate expectations, stronger dollar",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-06-12/golds-record-rally-falters-bulls-run-fed-rate-expectations-stronger",
+      "source": "Kitco",
+      "date": "2026-06-12",
+      "category": "commodities",
+      "tags": ["gold", "precious-metals", "fed", "dollar"],
+      "summary": "Gold at $4,187/oz, down 25% from January record of $5,595. Rally faltering on Fed rate expectations and stronger dollar. Speculative mania overboughtness reached 43.4% above 200-day moving average at peak."
+    },
+    {
+      "id": "cnbc-spacex-0612",
+      "title": "SpaceX (SPCX) IPO: Live updates — SPCX closes at $161, jumping 19%",
+      "url": "https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html",
+      "source": "CNBC",
+      "date": "2026-06-12",
+      "category": "equities",
+      "tags": ["spacex", "ipo", "spcx", "musk"],
+      "summary": "SPCX: IPO $135, opened $150, closed $160.95 (+19.2%). After-hours $166.76. Market cap ~$2.1T at close, ~$2.2T after-hours. $75B raised — largest IPO ever. 500M+ shares traded. CFRA: Sell, $115 PT. NYU Damodaran: richly priced, bull case $1.3T. Starlink only profitable segment; SpaceX lost $4.9B in 2025. xAI acquisition included. Space stocks sold off: Virgin Galactic -34%, Rocket Lab -10%+."
+    },
+    {
+      "id": "aaii-sentiment-0611",
+      "title": "AAII Sentiment Survey: Pessimism Surges",
+      "url": "https://www.aaii.com/sentimentsurvey",
+      "source": "AAII",
+      "date": "2026-06-11",
+      "category": "macro",
+      "tags": ["sentiment", "aaii", "contrarian"],
+      "summary": "AAII Bears: 47.7%, Bulls: 30.3%, Neutral: 22.0%. Bull-Bear spread -17.29%, surging from -0.73% prior week. Near extreme pessimism territory — historically a contrarian bullish signal."
+    },
+    {
+      "id": "schwab-weekly-0612",
+      "title": "Weekly Trader's Stock Market Outlook",
+      "url": "https://www.schwab.com/learn/story/weekly-traders-outlook",
+      "source": "Charles Schwab",
+      "date": "2026-06-12",
+      "category": "equities",
+      "tags": ["weekly-outlook", "iran", "oil", "sentiment"],
+      "summary": "Stocks on track for weekly gains following bumpy start. Reports of potential Iran deal, lower oil prices and yields lift investor sentiment."
+    },
+    {
+      "id": "yf-kiplinger-cal-0612",
+      "title": "Economic Data This Week (June 15-19): Retail Sales, FOMC, Industrial Production",
+      "url": "https://finance.yahoo.com/economy/articles/look-economic-data-week-june-182922160.html",
+      "source": "Yahoo Finance / Kiplinger",
+      "date": "2026-06-12",
+      "category": "macro",
+      "tags": ["economic-calendar", "retail-sales", "fomc", "industrial-production"],
+      "summary": "Week ahead: Monday — Empire State, Industrial Production, Capacity Utilization. Tuesday — Housing Starts, Import/Export Prices. Wednesday — Retail Sales (May), FOMC decision + projections, Jabil earnings. Thursday — Jobless Claims, Philly Fed, Leading Indicators, Accenture & Kroger earnings. Friday — Markets closed (Juneteenth)."
+    }
+  ]
+}
