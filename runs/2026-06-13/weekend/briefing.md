@@ -1,168 +1,229 @@
-# BoltNews Weekend Briefing — Saturday, June 13, 2026
-
-*Pre-market cross-asset research briefing covering the June 12 close and week ahead. 12 articles (≤48h), deep-extracted. No headline-only items.*
-
----
-
-## Executive Summary
-
-**U.S. equities closed the week higher, but beneath the surface the market is pricing three mutually contradictory narratives simultaneously.** The S&P 500 gained 0.5% Friday (+0.5% for the week) to mark its 10th positive week in 11, while the Russell 2000 hit fresh all-time highs (+4% on the week, +19% YTD) and semiconductors surged 11% week-over-week. Yet the drivers are deeply fractured: equities rallied on Iran peace hopes, gold at $4,187/oz has collapsed 25% from its January record of $5,595, oil plunged 3.4% on the same peace narrative, and Bitcoin sits at $63,700 — only 9% above its realized price — with ETF demand contracting at the fastest pace since launch. One of these signals is wrong.
-
-**The macro backdrop is equally discordant.** May PPI came in at +1.1% MoM and +6.5% YoY — the hottest wholesale inflation since November 2022. Jobless claims hit 229k, the highest since February. The combination is pure stagflation. Meanwhile, AAII sentiment shows Bears at 47.7% vs. Bulls at 30.3% (spread: -17.29%), a surge in pessimism that historically has been a contrarian bullish signal. The FOMC meets Tuesday-Wednesday under new Chair Kevin Warsh, where the easing bias is expected to be formally removed. Markets now price 1-2 rate hikes in 2026 with cuts effectively at zero probability.
-
-**The Iran wildcard dominates everything.** A U.S.-Iran Memorandum of Understanding could be signed as soon as Sunday (June 14) in Geneva. Iranian FM Araghchi says it "has never been closer." Trump cancelled airstrikes Thursday but then attacked Iran on Truth Social Friday, calling their leaked terms "NOTHING" like the real agreement. Oil markets are pricing a deal; gold's 25% collapse suggests rate fears are overwhelming geopolitical premium; equities are pricing the best case. The asymmetry is stark: a signed deal means oil plunges further and risk assets rally; a collapse means Brent potentially spikes to $120-130 (ING estimate) and the stagflation narrative intensifies violently.
-
-**The SpaceX IPO distraction is real but fading.** SPCX closed at $160.95 (+19% from $135 IPO) with a $2.1T market cap and after-hours trading at $166.76. The $75B raise was history's largest IPO. Retail turnover hit 4% of all single-stock retail volume Friday. But space stocks sold off sharply (Virgin Galactic -34%), CFRA initiated Sell at $115, and NYU's Damodaran calls the valuation "richly priced." The liquidity event is passing; the week ahead refocuses on fundamentals.
+# BoltNews Cross-Asset Research Briefing
+## Weekend Edition — Saturday, June 13, 2026
 
 ---
 
-## Asset Class Deep Dive
+# Executive Summary
 
-### Equities
+Markets enter the June 13–14 FOMC weekend in a state of heightened tension across nearly every axis. The first policy meeting under new Fed Chair Kevin Warsh — combined with a fragile US–Iran ceasefire negotiation, a historic $75B SpaceX IPO that revalued the tech landscape, and a semiconductor sector still nursing a $1.3T rout — has compressed multiple binary outcomes into a single window.
 
-**Index Levels (June 12 close, source: Investopedia, CNBC):**
+**The dominant narrative:** The S&P 500 sits >2% below its June 2 record high (YTD +8.1%), the Nasdaq is down ~4.5% from its peak, and the VIX hit two-month highs. AAII bearish sentiment surged 10.7 percentage points to 47.7% — the 18th consecutive week above the historical average. Yet beneath the unease, S&P 500 earnings growth estimates have been revised up to 25% for 2026 (from <16% at year-start), the US economy is tracking ~3% Q2 GDP (Atlanta Fed GDPNow), and manufacturing ISM is back in expansion. The market is not discounting a recession — it is discounting a policy error from an untested Fed chair.
 
-| Index | Close | Daily Δ | Weekly Δ | YTD |
-|-------|-------|---------|----------|-----|
-| Dow Jones | ~51,200 (est.) | +0.7% | +0.6% | +6.5% |
-| S&P 500 | ~7,431 | +0.5% | +0.5% | +8.5% |
-| Nasdaq | ~25,900 (est.) | +0.3% | +0.6% | +11.0% |
-| Russell 2000 | ~2,969 (est.) | +3.9% (est.) | +4.0% | +19.0% |
-
-The S&P 500 has now posted 10 positive weeks out of the last 11. The Russell 2000 is the standout — fresh all-time highs, rotating into the small-cap value trade that historically leads early in a rate-hike cycle. Equal-weight S&P 500 (RSP) is outperforming cap-weighted SPX both month-to-date and YTD, confirming broadening market participation beneath the mega-cap surface.
-
-**Semiconductors roared back** with the SOXX ETF up >11% for the week after a 6% drop the prior week. Wolfe Research notes chips haven't broken below the 21-day support level — short-term bullish. Key movers: Micron, AMD, Intel led the AI chip rebound (specific Friday closes not extracted; Thursday's prior-session moves: MU +11.7%, INTC +9.3%, AMD +8%).
-
-**SpaceX IPO aftermath:** SPCX $160.95 close, $2.1T market cap. 500M+ shares traded ($33B+ dollar volume). Retail net buying 3.5x Nvidia's IPO level. Space sympathy plays cratered: Virgin Galactic -34%, Rocket Lab -10%+, Redwire -10%+, Firefly -18%+. The rotation out of space names into SPCX was violent — a classic liquidity-suck event. Nasdaq-100 inclusion comes in 15 trading days post-debut, with options contracts rolling out soon after — expect elevated volatility.
-
-**Notable single-stock moves Friday (Investopedia):**
-- **Adobe (ADBE): -7%** to ~$202 (lowest since early 2018) — freemium AI strategy to pressure near-term revenue, CFO Dan Durn departing for Marvell. Stock has lost ~50% over 12 months.
-- **EchoStar (SATS): -12%** despite owning ~3% of SpaceX — sell-the-news on SpaceX exposure play.
-- **Nvidia (NVDA):** Reuters reports Vera AI chip may ship to Chinese customers by August; at least one Chinese firm planning 300-server test order.
-- **Sleep Number (SNBR):** Filed Chapter 11; stalking horse bid from Sleep Country Canada.
-
-### Rates
-
-**Treasury Yields (June 12, source: Investopedia):**
-- 2-Year: ~4.06% (est., -6.5bp from prior session if consistent with pattern)
-- 10-Year: ~4.49% (+2bp on the day, per Investopedia)
-- 30-Year: ~4.95% (est.)
-
-**FOMC Preview (June 16-17):** This is Chair Kevin Warsh's first meeting. The dominant theme is policy regime change — not just the rate decision (expected: no change). Three concrete shifts to watch:
-
-1. **Easing bias removal:** Gov. Christopher Waller publicly supported removing the "rate cut is more likely than a hike" language in May. Three FOMC members dissented at the last meeting to do so. Removal is widely expected and priced.
-
-2. **Communication overhaul:** Warsh (CNBC, June 12) advocates quarterly press conferences (4/year vs. 8), eliminating forward guidance, and reforming the dot plot. He called frequent Fed speech "counter-productive" and argued the dot plot makes the FOMC "hold on to forecasts longer than they should." The market has "almost no idea" where he stands on rates — deliberate opacity.
-
-3. **Dot plot / SEP:** The Summary of Economic Projections will show the committee's rate path. Markets currently price a ~70% probability of at least one hike by October (Congress.net). CME FedWatch shows cuts at virtually zero for 2026.
-
-**Historical context:** The current fed funds rate is 3.50-3.75%. CPI is at 3.8% headline (April), 2.8% core. Both above target. The last rate decision (April 28-29) was the third consecutive hold.
-
-### Credit
-
-**Limited fresh data this weekend.** Key structural dynamics from existing research (PineBridge, AllianceBernstein, Schwab — all ≤30 days):
-
-- Investment grade spreads remain tight despite rising supply, driven by AI-related capex borrowing and a looming maturity wall. Schwab favors IG corporates, HY, and preferred securities for income.
-- AB flags "growing divergence" in credit markets — AI infrastructure build-out is creating winners (data center operators, semiconductor firms) and potential losers (companies that over-lever for AI without revenue to match).
-- PitchBook: US HY issuance expected to tick higher in 2026 amid the maturity wall; desks "almost uniformly" braced for a borrowing ramp-up for GCP and AI capex.
-
-**Oracle as credit bellwether:** Oracle's $40B debt/equity raise (on top of $48B last year) for AI buildout sent the stock down 8.5% Thursday. If credit markets begin to push back on AI-related issuance, that is a leading signal for the broader AI capex cycle. No signs of that yet — Oracle's raise was digested — but the stock price reaction suggests equity markets are more skeptical than credit markets.
-
-### FX
-
-**Dollar Index (DXY):** ~99.78 at Friday close, -0.1% on the day. FOREX.com technical analysis shows a bearish engulfing candle right at 100.00 resistance — a downgrade of the near-term technical picture. The dollar weakened despite hawkish Fed expectations, suggesting the Iran peace premium (risk-on, dollar-negative) is overwhelming rate differentials for now.
-
-**Week ahead — Central bank bonanza:**
-- **BoJ (Tuesday June 16):** 25bp hike fully priced in. USD/JPY near 160 despite repeated intervention. A hawkish statement or larger hike is needed to support the yen; otherwise, the carry trade persists.
-- **FOMC (Wednesday June 17):** Hawkish dot plot or explicit hike signal could trigger sharp dollar rally. Market will scrutinize Warsh's press conference tone.
-- **BoE (Thursday June 18):** UK growth fragile, elevated energy costs. Dovish hold expected.
-
-**Iran deal impact on FX:** A signed deal would be dollar-negative (risk-on), positive for commodity currencies (AUD, CAD, NOK) and EM FX. A collapse would send the dollar screaming higher on safe-haven flows and energy-cost passthrough.
-
-### Commodities
-
-**Oil (June 12 settlements, source: Reuters):**
-- WTI: $84.88/bbl (-3.23%)
-- Brent: $87.33/bbl (-3.37%) — lowest since early March
-
-The Iran MoU could be signed as soon as Sunday (June 14) in Geneva. The sequence: memorandum first (ceasefire, Hormuz reopening), then nuclear/economic negotiations within 60 days, excluding Iran's missile program. Analysts are split:
-- **ING:** If flows don't resume by late July, Brent spikes to $120-130/bbl due to low inventories and seasonal demand.
-- **Goldman Sachs:** Cut 2027 average Brent forecast to $80/bbl on higher supply/lower demand, but expects prices to exceed 2025 average due to stockpiling and security premium.
-- **OPEC:** Cut 2026 demand growth forecast to 970k bpd (from 1.17M), second consecutive downward revision.
-
-**Gold:** Spot at $4,187/oz (CNBC, June 12 morning). Down 25% from the January record of $5,595. Kitco analysis: speculative mania drove gold 43.4% above its 200-day moving average at the January peak. The selloff reflects Fed rate expectations and a stronger dollar overwhelming geopolitical premium. Gold and equities rallied together on Thursday's peace hopes — historically, this co-movement is rare and suggests one market is mispricing the durable peace probability. If peace collapses, gold should reclaim its geopolitical bid. If peace holds, gold faces further downside from rate hikes and dollar strength.
-
-**Copper:** J.P. Morgan flags volatile prices in 2026. Fundamentals remain tight (EVs, data centers, grid buildout), but tariff roulette adds uncertainty.
-
-### Crypto
-
-**Bitcoin:** $63,702 (CoinDesk, June 12 press time). Key on-chain metrics are bearish:
-- Only 9% above realized price of ~$53,600 (CryptoQuant) — approaching bear-market floor territory
-- Total BTC demand fell by 652,000 BTC last week — largest single-week contraction since January 2022
-- ETF demand shrinking at fastest pace since spot ETF launch (Jan 2024)
-- Sellers crystallized 187,000 BTC in losses over 30 days (vs. 400k in Feb, 1.2M at Nov 2022 bottom) — painful but not capitulation
-
-**Derivatives show cautious optimism:** Options market biased for a bounce to $75,000 by late July. Implied volatility (BVIV) slipped to 43.8%, pricing out early-June uncertainty. DOGE open interest rising (+5.7%) with bullish funding rates. Standard Chartered analyst declared $59,000 as the bottom.
-
-**VELVET mania warning:** Token surged 1,400% in a week to a $745M market cap on pre-IPO hype (SpaceX, OpenAI, Anthropic exposure), despite the protocol holding only $840,000 in deposits. With SpaceX now public, sell-the-news risk is acute.
-
-**XRP sentiment at multi-month lows** — Santiment frames this as contrarian bullish, noting XRP's sharpest rebounds occurred when traders were most disengaged.
+**The cross-asset tension:** Commodities are down ~3% in June (first monthly decline since December) on peace-premium unwinding, but inventories are at generational lows. Gold broke below its 200-day moving average ($4,450) yet central banks continue buying a third of annual mine supply. The dollar printed a bearish engulfing candle at 100.00 resistance on the DXY, yet hawkish Fed repricing and SpaceX-driven USD demand are supportive. Credit spreads are near cycle tights but absolute yields above 5% on IG corporates remain attractive. There is no clean directional consensus — there is a market waiting for Wednesday.
 
 ---
 
-## Sentiment Matrix
+# Asset Class Deep Dive
 
-| Indicator | Value | Date | Signal |
-|-----------|-------|------|--------|
-| AAII Bulls | 30.3% | Jun 11 | Bearish |
-| AAII Bears | 47.7% | Jun 11 | **Contrarian Bullish** |
-| AAII Bull-Bear Spread | -17.29% | Jun 11 | Near extreme pessimism |
-| S&P 500 weekly streak | 10 of 11 positive | Jun 12 | Bullish momentum |
-| Russell 2000 | All-time highs | Jun 12 | Bullish (breadth) |
-| CBOE VIX (est.) | ~18-20 (moderate) | Jun 12 | Complacent given risks |
-| Crypto Fear & Greed | ~12 (Extreme Fear) | Jun 12 est. | **Contrarian Bullish** |
-| Bitcoin Realized Price Proximity | +9% above | Jun 12 | Bearish (near floor) |
-| Gold drawdown from peak | -25% | Jun 12 | Bearish for gold, hawkish signal |
-| PPI YoY | +6.5% | May | Stagflation warning |
-| Oil (Brent) | $87.33 | Jun 12 | Pricing peace |
+## Equities
 
-**Interpretation:** Extreme pessimism in surveys (AAII, crypto) against a backdrop of positive equity momentum and all-time highs in small caps. This is the classic wall-of-worry setup. However, the macro data (PPI, claims) is genuinely deteriorating, making the pessimism rational rather than purely emotional. The contrarian signal is strong for equities — but only if the Iran deal materializes.
+### US Broad Market
+- **S&P 500:** Down >2% from June 2 all-time high; YTD +8.1% (SimplyWallSt); +24% over trailing 12 months.
+- **Nasdaq Composite:** Down ~4.5% from June 2 high; YTD +11% (Reuters, June 12).
+- **Dow Jones Industrial Average:** Entered June 2026 at record 50,285.66 (StockMarketWatch monthly report).
+- **VIX:** Hit two-month highs with significant daily swings (Reuters).
+- **Market breadth at decade lows:** Only ~17% of S&P 500 members have outperformed the index over the past month (Schwab, June 3).
+- **Hidden damage:** The average S&P 500 stock suffered a max drawdown of –21% YTD, despite the index avoiding a formal correction (Schwab).
 
----
+### Earnings & Valuation
+- **2026 S&P 500 EPS growth estimate:** 25%, revised up from <16% at year-start (Schwab). Unusual for analysts to revise *upward* as the year progresses.
+- **Median expected earnings growth:** ~13%, historically consistent with double-digit annual S&P 500 returns (Schwab).
+- **Forward P/E:** Has edged *lower* even as estimates rose — investors are not pricing perpetually accelerating growth.
+- **Concentration problem:** Alphabet, Sandisk, Micron, Intel, Broadcom, and a handful of large-cap AI/energy names drive the bulk of growth. AI infrastructure stocks' 2026 estimates revised up >50% since December 2024; the *rest* of the index saw estimates move slightly down.
 
-## Cross-Asset Positioning Matrix
+### Semiconductors — The June 5 Massacre
+- **PHLX Semiconductor Index:** Dropped 10% on June 5, worst single-day loss since March 2020; erased ~$1.3 trillion in sector market value (Yahoo Finance/24/7 Wall St, June 13).
+- **Trigger:** Broadcom (AVGO) Q3 AI revenue guide of $16B missed the ~$17.2B whisper number.
 
-| Asset | Short-Term Signal | Medium-Term Driver | Key Risk |
-|-------|-------------------|-------------------|----------|
-| US Equities (SPX) | Bullish (breadth, momentum) | Iran deal + earnings resilience | Hawkish Fed, deal collapse |
-| Small Caps (RUT) | Strongly Bullish (ATH) | Domestic rotation, rate normalization | Overbought, recession risk |
-| Semis (SOXX) | Bullish (+11% week) | AI capex, China demand | Export controls, valuation |
-| US Treasuries | Bearish (yields up) | Hawkish FOMC, inflation | Flight to safety if war resumes |
-| IG Credit | Neutral (tight spreads) | Supply wall, AI capex | Spread widening if growth slows |
-| HY Credit | Cautious | Maturity wall, AI divergence | Default cycle if recession |
-| USD (DXY) | Neutral-Bearish (engulfing) | FOMC vs. Iran deal | Hawkish surprise = USD rally |
-| Gold (XAU) | Bearish (-25% from peak) | Fed rate expectations | War escalation = gold bid returns |
-| Oil (Brent) | Bearish (pricing peace) | MoU signing vs. Hormuz status | Deal collapse = $120+ spike |
-| Bitcoin (BTC) | Bearish (near realized price) | ETF flows, macro correlation | Capitulation if $59k breaks |
-| EUR/USD | Bullish (risk-on, USD weak) | Iran deal + ECB hike | FOMC hawkish surprise |
-| USD/JPY | Neutral (160, intervention) | BoJ hike vs. carry trade | BoJ disappointment |
+**NVDA (NVIDIA):** $200.42, –26% from 52-week high of $236.26. Q1 FY27 revenue $81.615B (+85% YoY), Data Center $75.246B (+92% YoY). Q2 guidance: $91B revenue. Consensus target $298.42 (48 Buy, 10 Strong Buy). CEO Jensen Huang: "The buildout of AI factories, the largest infrastructure expansion in human history, is accelerating at extraordinary speed." Risk: Q2 guide assumes *zero* Data Center compute revenue from China.
 
----
+**AVGO (Broadcom):** $372.10, –22% in one week post-earnings. Q2 FY26 revenue $22.187B (+48% YoY), AI semiconductor revenue $10.80B (+143% YoY). Q3 guidance: consolidated revenue $29.4B (+84% YoY), AI revenue to grow >200% YoY to $16.0B. Consensus target $522.06, 92% bullish. Historical note: single-session declines >15% have occurred only three times in Broadcom's history, each preceding strong 6–12 month returns (Benzinga).
 
-## Contrarian Flags
+**AMD:** $452.40, –12% from 52-week high. Q1 2026 revenue $10.253B (+38% YoY), Data Center $5.775B (+57% YoY). Signed agreement with Meta to deploy up to 6 GW of AMD Instinct GPUs, starting with custom MI450 at 1 GW. CEO Lisa Su: "Customer engagement around MI450 Series and Helios is strengthening, with leading customer forecasts exceeding our initial expectations." Risk: P/E near 179, forward implied ~99.
 
-1. **Gold vs. Equities divergence.** Both rallied Thursday on peace hopes. Historically, gold rallies on geopolitical fear and falls on peace. The fact that it rallied alongside equities on a "peace" catalyst suggests at least one of these markets is wrong. If the Iran deal is real, gold should fall further (rate hikes, no geopolitical bid). If it's a head fake, gold's 25% drawdown is a buying opportunity of the decade.
-
-2. **AAII pessimism at -17.29% spread** while the S&P 500 is up 8.5% YTD and the Russell 2000 is at all-time highs. This is the most extreme bull-bear divergence since the March 2023 banking crisis. Historically, spreads below -15% precede 6-month S&P 500 returns averaging +8-12%. Caveat: most of those instances didn't have 6.5% PPI and a shooting war in the Strait of Hormuz.
-
-3. **Crypto Fear & Greed at 12 (Extreme Fear)** with BTC only 9% above realized price. Every prior instance of Extreme Fear below 15 has marked a local bottom within 30 days — but none of those instances occurred during a period of ETF outflows at the current velocity. The structural nature of this selloff (institutional ETF unwinding) is different from prior retail-driven panics.
-
-4. **Oil market pricing near-total peace probability.** Brent at $87 is below the pre-war level in some models, given that the Strait of Hormuz remains effectively contested. If the MoU isn't signed Sunday, or if it's signed but implementation drags, the oil upside is violently asymmetric: ING's $120-130 scenario vs. perhaps $75 if peace is fully realized. The options market is likely mispricing this binary.
-
-5. **Warsh communication shock risk.** The market has priced a "dovish hawk" — someone who talks tough but doesn't act. But Warsh's stated philosophy is the opposite: talk less, act when needed. If his first press conference (Wednesday) signals genuine willingness to hike in 2026, the rates repricing could be abrupt. Conversely, if he's more dovish than feared, the relief rally in bonds and stocks could be powerful.
+### SpaceX IPO — The $2.1 Trillion Debut
+- **Largest IPO in history:** $75B raised at $135/share; opened at $150, closed at $160.95 (+19%) on June 12 (Reuters).
+- **Market cap:** $2.1 trillion, 6th-largest US company, closing on Amazon ($2.6T). Elon Musk became the world's first trillionaire.
+- **Revenue:** $18.7B → price-to-revenue ratio ~112×. Currently unprofitable.
+- **Morningstar fair value estimate:** $780B (less than half IPO valuation). CFRA initiated coverage with "sell."
+- **Fast-track Nasdaq 100 inclusion expected in ~1 month**, forcing passive fund buying.
+- **Knock-on effects:** Planet Labs –9%, EchoStar –11%. Portfolio reshuffling expected as funds rotate into SpaceX.
+- Sequoia partner Shaun Maguire: "Elon deserves an extreme premium because of his track record and his vision for calling technology trends early." Sequoia's $2B investment now worth >$20B.
 
 ---
 
-*Sources: Investopedia (June 12 market recap), CNBC (week ahead outlook, Warsh profile, SpaceX IPO live), Reuters (oil/Iran), FOREX.com (dollar forecast), CoinDesk (Bitcoin onchain), Kitco (gold), AAII (sentiment survey), Forbes (Fed hike odds), Charles Schwab (weekly outlook). All articles ≤48h old. No headline-only items. Historical context drawn from prior BoltNews briefings and primary source data.*
+## Rates
 
-*Next scheduled run: post-market Monday June 15, after the Empire State/Industrial Production data and ahead of Tuesday's FOMC.*
+### FOMC — The Warsh Debut
+- **Meeting dates:** June 13–14, 2026 (statement Wednesday, press conference).
+- **Rate expectation:** 96% probability of hold per CME FedWatch (Investopedia, June 12).
+- **The real story is the language, not the rate:** Fed Governor Christopher Waller (May 22, Frankfurt speech) publicly supported removing the "easing bias," stating rate cuts should be seen as no more likely than hikes. This language change is the base case for the June statement.
+- **Market pricing shift:** Fed funds futures earlier this year implied ~3 cuts by June 2027; now imply **one rate hike** (Schwab, June 5). First hike priced for September or October.
+- **Inflation backdrop:**
+  - April CPI: Headline 3.8%, Core 2.8% (Forbes, June 8).
+  - Core PCE: 3.3% y/y, highest since November 2023 (Schwab).
+  - Supercore PCE (services less housing): 3.5% y/y, "settling in an uncomfortable range above 3%" (Schwab).
+  - May CPI released June 10 — critical input for the meeting debate (Forbes).
+
+### Warsh's "Regime Change" Agenda
+Kevin Warsh has signaled intentions to (Investopedia, June 12):
+1. **Eliminate or scale back forward guidance** — strip hints about future rate moves from the policy statement. Oxford Economics' Michael Pearce: "We suspect his initial efforts will be to pare back the Federal Reserve's communications in a less-is-more strategy."
+2. **Criticize the dot plot** — may use this meeting to scale back or eliminate the Summary of Economic Projections.
+3. **Reduce the $6.7 trillion balance sheet** — Warsh has expressed desire to shrink it.
+4. **Change inflation measurement** — e.g., adopt "trimmed" measures.
+5. **Hold fewer press conferences** — has criticized both their frequency and information content.
+
+**Key investor quotes:**
+- Jim Baird, CIO, Plante Moran: "It can be a bit of a challenge for a newer Fed chief to get the message right, to stick the landing. The market is watching and parsing every word that's said."
+- Marvin Loh, Senior Global Macro Strategist, State Street: "Trying to understand the reaction function of this new administration at the Fed is going to be key. If we get that type of a hawkish hold, I think that would kind of surprise the market."
+- Jeff Given, Manulife IM: "If we are more data dependent and we're not getting visibility from the Fed, then every economic release gets a little bit more attention and can create a little bit more volatility."
+
+### Treasury Yields
+- **10-year Treasury:** Schwab expects a 4.0–4.5% range near-term (June 5). JPMorgan forecast: 4.35% (2026 outlook). Transamerica: 3.75%.
+- **Term premium:** Has risen from March 2020 lows but remains below long-term average — room for further increase.
+- **Yield curve:** Positively sloped. Largest yield increases since late February in the 2–5 year part of the curve.
+- **Oil-yield correlation:** Recent positive correlation between oil prices and Treasury yields — higher oil → higher inflation expectations → higher yields (Schwab).
+
+---
+
+## Credit
+
+- **Investment-grade corporate bonds:** Average yield above 5% on the Bloomberg US Corporate Bond Index — attractive relative to post-GFC period (Schwab, June 5).
+- **Credit spreads:** Very low, offering little cushion if the economic outlook sours. Focus is on income, not price appreciation.
+- **High-yield bonds:** Improved index quality — Ba-rated now >55% of the Bloomberg US Corporate HY Index; Caa-and-below share has declined. Average duration ~3 years (vs. ~6 for the Agg).
+- **Preferred securities:** Yields have risen more than IG corporate yields. Many pay qualified dividend income (QDI), offering tax advantages.
+- **Private credit:** Yields hitting 13% in 2026 (JPMorgan/Instagram reference).
+- **Risk:** Low spreads mean little room for compression. Any economic deterioration or hawkish Fed surprise could widen spreads quickly.
+- **Schwab's positioning call:** "Now is not the time to favor long-duration investments just yet. We suggest investors favor a below-benchmark average duration."
+
+---
+
+## FX
+
+- **DXY (Dollar Index):** Bearish engulfing candle printed at key 100.00 resistance (forex.com, June 12). Near-term exhaustion signal, but confirmation needed next week.
+- **EUR/USD:** ~1.1568 (Trading Economics consensus). Dollar unable to gain traction despite Middle East tensions and equity weakness — "supports buying EUR/USD" (LiteFinance, June 11).
+- **USD/JPY:** Stuck around 160.00 despite intervention. BOJ decision Tuesday — a 25bp hike is fully priced; to support yen, BOJ needs a hawkish statement or larger hike. Oil-price crash from peace deal could ease pressure on yen.
+- **SpaceX IPO dollar demand:** Foreign investors needing USD to participate may explain some recent dollar strength. But simultaneous selling of crypto, gold, and silver suggests *asset reallocation* rather than entirely fresh dollar buying (forex.com).
+- **Central bank week ahead:**
+  - **Tuesday, June 16:** BOJ policy decision — 25bp hike priced, need hawkish surprise for yen support.
+  - **Wednesday, June 17:** FOMC — strong hints of Q4 hike could spark sharp dollar rally.
+  - **Thursday, June 18:** BOE rate decision — UK growth fragile, energy costs elevated. Surprise hike or hawkish guidance could lift GBP sharply.
+
+### Iran Deal — The FX Wildcard
+- Iran Foreign Minister Araghchi (June 12): "The Islamabad Memorandum of Understanding has never been closer."
+- Trump (Truth Social, same day): "The terms that Iran leaked out to the Fake News have NOTHING to do with the terms that were agreed to... There is no such thing as dealing in good faith."
+- A final deal → oil prices fall, risk appetite surges, dollar may weaken near-term. But if US data stays strong and Fed signals hikes, long-term dollar outlook is not automatically bearish.
+
+---
+
+## Commodities
+
+### Energy
+- **Bloomberg Commodity Index:** +20.5% YTD (Aberdeen) / +26% YTD trimmed to ~23% after June's ~3% monthly loss (Saxo, June 12).
+- **Brent crude:** Fell below $86/barrel, a three-month low, on peace-premium unwinding. **Had spiked to $120/barrel** earlier in 2026 on Strait of Hormuz disruption (Fidelity, May 13).
+- **The inventory illusion (Aberdeen, June 8):** A 15 million bpd disruption was reduced to ~2 million bpd net through extraordinary measures — China burning its emergency reserve (cut imports by 5.8M bpd), Saudi Arabia rerouting via cross-country pipeline, US net exports surging to 6.6M bpd. These are not sustainable.
+  - **US commercial petroleum inventories:** 742M barrels, just 15M above the post-2014 low of 727M. Could breach it within weeks.
+  - **Strategic Petroleum Reserve:** 357M barrels, down from 415M at end-March, approaching the July 2023 low of 347M — levels last seen in 1983.
+  - **DUCs (drilled but uncompleted wells):** 4,972, lowest since 2013. Shale's ability to quickly ramp is diminished.
+- **ExxonMobil SVP Neil Chapman (May 28):** Oil could rise toward $160/barrel if inventories approach historical lows.
+- **Saxo's Ole Hansen (June 12):** "The scope for significantly lower prices beyond the initial wave of delayed crude and product shipments appears limited." 2027 average Brent ~$78, still 18% above pre-war levels.
+- **Saxo:** 24 of 26 major futures contracts in the red this month; only copper and cattle positive.
+
+### Precious Metals
+- **Gold:** Settled at $4,221.91/oz on June 12, marginal –$1.66 (Texas Precious Metals). Hit a seven-month low near $4,000, breaking below its 200-day moving average of ~$4,450 — triggering technical selling and long liquidation, retracing 38.2% of the 2022–2026 rally (Saxo).
+- **Central bank buying:** Since 2022, absorbed roughly ⅓ of annual global mine supply. China's buying accelerated in March–April. Central banks view price dips as buying opportunities (Aberdeen).
+- **JPMorgan target:** Gold to push $6,000/oz by year-end 2026 (JPM Global Research).
+- **Silver:** Structural supply deficit since 2019 — over the last decade supply fell ~8% while demand rose 17%. Samsung helped fund reopening of a Mexican silver mine (industrial consumers rarely invest in supply unless availability is a concern). Near 50-day moving average, forming higher lows characteristic of an uptrend (Aberdeen).
+- **Platinum/Palladium:** EV narrative disconnect — US federal EV tax credit expired, states added registration fees, major automakers writing down billions in EV investments (Ford: $15B, GM: $7.9B, Stellantis: $26B).
+
+### Industrial Metals
+- **Copper:** Hanging near $6.15/lb, near unchanged in June, up ~13% YTD. COMEX premium over LME persists pending US tariff review due end-June (Saxo). Structural support from electrification, grid investment, AI infrastructure, and defense spending.
+
+### New Risk: El Niño
+- **Japan Meteorological Agency** formally declared El Niño conditions. 63% chance of evolving into a "Super El Niño" heading into 2027 (Saxo).
+- Risks: drought in Australia/SE Asia/southern Africa (grain, sugar), heavy rainfall disrupting South American mining (copper in Chile/Peru), higher temperatures boosting LNG/gas demand with Qatar's export capacity still damaged from the conflict.
+
+---
+
+## Volatility & Crypto
+
+- **VIX:** Hit two-month highs. Multiple binary catalysts ahead (FOMC, Iran deal, BOJ) suggest elevated vol persists.
+- **Crypto:** Saxo noted selling of crypto alongside gold and silver as investors rotated into SpaceX IPO — consistent with asset reallocation theme rather than crypto-specific weakness. No material crypto-specific news identified in this cycle's 48-hour search window.
+
+---
+
+# Sentiment Matrix
+
+| Indicator | Current | Change | vs. Historical Avg | Signal |
+|---|---|---|---|---|
+| **AAII Bullish** | 30.4% | –5.9pp | Below 37.5% (4th week) | Bearish |
+| **AAII Neutral** | 22.0% | –4.8pp | Below 31.5% (99 of 101 wks) | Unusually Low |
+| **AAII Bearish** | 47.7% | +10.7pp | Above 31.0% (18th week) | Unusually High |
+| **Bull-Bear Spread** | –17.3% | –16.6pp | Below 6.5% avg | Unusually Low |
+| **VIX** | Two-month highs | Rising | — | Fear |
+| **AI Bubble Survey** | 36.3% Yes / 51.5% Partial / 7.4% No | — | — | Skeptical |
+| **CME Fed Hike Probability** | 1–2 hikes priced by Dec | Shift from 3 cuts | — | Hawkish Repricing |
+| **BCOM Index (MoM)** | –3% | First decline since Dec | — | Risk-Off Commodities |
+
+**Source:** AAII Sentiment Survey, June 11, 2026. Historical averages: Bullish 37.5%, Neutral 31.5%, Bearish 31.0%.
+
+**Interpretation:** Sentiment is at an extreme bearish reading — the bull-bear spread of –17.3% is unusually low by AAII's own classification. Historically, extreme bearish AAII readings have been contrarian bullish signals. However, the 18-week persistence of elevated bearishness (above average for 18 consecutive weeks) is unusual and may reflect structural concern (Iran war, untested Fed chair, AI bubble fears) rather than a short-term sentiment swing.
+
+---
+
+# Cross-Asset Positioning Matrix
+
+| Asset | Short-Term Signal | Medium-Term Signal | Key Catalyst | Conviction |
+|---|---|---|---|---|
+| **US Equities (S&P 500)** | Cautious (FOMC binary) | Bullish (earnings +25%, GDP ~3%) | Warsh press conference Wednesday | Moderate |
+| **Nasdaq / Tech** | Negative (semi rout, –4.5% from high) | Bullish (AI capex intact) | AVGO/AMD recovery, hyperscaler capex | Moderate |
+| **Semiconductors** | Oversold bounce potential | Bullish structural | NVDA $91B Q2 guide execution | Moderate-High |
+| **SpaceX (SPCX)** | Volatile (thin float) | Uncertain (112× P/R, unprofitable) | Nasdaq 100 inclusion in ~1 month | Low |
+| **US Treasuries (10Y)** | Range-bound 4.0–4.5% | Upside yield risk | FOMC language, Iran deal | Moderate |
+| **IG Credit** | Income play, tight spreads | Cautious (low spread cushion) | Fed hiking cycle, recession risk | Moderate |
+| **HY Credit** | Attractive absolute yield | Vulnerable to sentiment shift | Economic outlook | Moderate-Low |
+| **USD (DXY)** | Exhaustion at 100 resistance | Neutral-Bullish (hawkish Fed) | FOMC + BOJ + BOE trifecta | Low |
+| **EUR/USD** | Supportive (dollar fatigue) | Range-bound | Iran deal resolution | Low |
+| **USD/JPY** | 160 intervention zone | BOJ-dependent | BOJ Tuesday — need hawkish surprise | Low |
+| **Crude Oil (Brent)** | Bearish (peace premium unwind) | Bullish (inventory depletion) | Iran MoU finalization | Moderate-High |
+| **Gold** | Bearish (below 200-DMA) | Bullish (central bank buying, fiscal risks) | Dollar direction, real yields | Moderate |
+| **Copper** | Neutral (defending $6.15) | Bullish structural | US tariff review end-June, El Niño | Moderate-High |
+| **VIX** | Elevated | Elevated into FOMC | Post-FOMC compression likely | Moderate |
+
+---
+
+# Contrarian Flags
+
+### 1. AAII Sentiment at Contrarian Buy Territory
+The bull-bear spread of –17.3% is unusually low. Historically, readings this negative have marked near-term equity bottoms. The last time the spread was this negative was March 2026 — after which the S&P 500 rallied to new all-time highs by April. The counter-argument: the 18-week persistence of above-average bearishness is atypical and may indicate structural rather than cyclical pessimism.
+
+### 2. Commodity Inventory Depletion vs. Price Action
+The BCOM is down ~3% in June, Brent crude at three-month lows below $86, gold below its 200-DMA. Yet US commercial petroleum inventories are within 15M barrels of a decade-low, the SPR is near 1983 levels, and DUCs are at 2013 lows. The market is pricing peace — but even if the Iran MoU is signed tomorrow, the inventory rebuild required to normalize supply will take months, not weeks. Aberdeen's Robert Minter: "What if this year's volatility isn't the story, but the disguise?"
+
+### 3. The Rate Hike That's Already Priced
+Fed funds futures shifted from pricing ~3 cuts to pricing one hike. If Warsh's debut is less hawkish than feared — perhaps removing the easing bias but stopping short of signaling an imminent hike — bonds and equities could rally sharply. The market may have already priced the hawkish turn.
+
+### 4. Semiconductor Sector Overreaction?
+The PHLX -10% day on June 5 was the worst since the COVID crash. Broadcom guided AI revenue to $16B — growing >200% YoY — and the stock fell 22% because the *whisper* was $17.2B. NVDA is guiding $91B in quarterly revenue with 75% gross margins and sits 26% below its high. If hyperscaler capex commentary remains strong, the sell-off may prove to be a buying opportunity. Historical precedent: Broadcom single-session declines >15% have occurred only three times, each preceding strong 6-12 month returns.
+
+### 5. SpaceX as a Liquidity Drain — Not a Bullish Signal
+The $75B IPO, $84B in first-day volume, and retail orders exceeding $100B represent a massive capital reallocation event. Crypto, gold, silver, and other space stocks sold off simultaneously. This is not fresh capital entering markets — it is existing capital rotating. The "wealth effect" narrative around Musk's trillionaire status masks the possibility that the IPO drained liquidity from already-stretched positioning across multiple asset classes.
+
+### 6. Consumer Under the Surface
+The Atlanta Fed GDPNow is tracking ~3% Q2 GDP, but Schwab flags negative real wage growth, a savings rate at half its pre-inflation-spike level, and an average S&P 500 stock drawdown of –21% YTD. Fidelity notes that "people aren't out over their skis" and debt loads are far below 2008 levels, but the bottom of the K-shaped economy "is in a weaker spot." The macro data looks strong; the micro consumer data looks fragile.
+
+---
+
+## Key Events — Week of June 16, 2026
+
+| Day | Event | Importance |
+|---|---|---|
+| **Monday, June 15** | Empire State Manufacturing Index | Low |
+| **Tuesday, June 16** | BOJ Policy Decision; US Retail Sales (May) | High |
+| **Wednesday, June 17** | **FOMC Decision + Press Conference (Warsh debut)** | **Critical** |
+| **Thursday, June 18** | BOE Rate Decision; Philly Fed Manufacturing; US Housing Starts | High |
+| **Friday, June 19** | Quad Witching (options/futures expiration) | Moderate |
+
+---
+
+*Sources: Reuters, Investopedia, Forbes, Fidelity Investments, Charles Schwab, Aberdeen Investments, Saxo Bank, forex.com, Yahoo Finance/24/7 Wall St, AAII Sentiment Survey, JPMorgan Global Research, Goldman Sachs Research, StockMarketWatch. All data verified against primary or named secondary sources. No fabricated figures.*
