@@ -1,0 +1,159 @@
+{
+  "pm_date": "2026-06-09",
+  "am_date": "2026-06-10",
+  "consolidated_at": "2026-06-10T06:13:30.182219",
+  "pm_articles": 24,
+  "am_articles": 28,
+  "pm_data_points": 10,
+  "am_data_points": 17,
+  "diff": {
+    "evolved": 4,
+    "confirmed": 0,
+    "pm_only": 1,
+    "am_only": 11,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "0.26%",
+        "am_value": "18.32%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "down 0.26% ",
+        "am_raw": "down 18.32%",
+        "pct_change": 6946.2,
+        "direction": "up"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "pm_value": "0.26%",
+        "am_value": "0.2%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "S&P 500 closed down 0.26% ",
+        "am_raw": "S&P 500 rose 0.2% ",
+        "pct_change": -23.1,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "percent_move",
+        "pm_value": "-4%",
+        "am_value": "+0.9%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "-4% after hours",
+        "am_raw": "+0.9% pre-market",
+        "pct_change": 122.5,
+        "direction": "up"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "pm_value": "$280M",
+        "am_value": "$2.27B",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "revenue $280M ",
+        "am_raw": "revenue $2.27B ",
+        "pct_change": -99.2,
+        "direction": "down"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "0.97%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Nasdaq fell 0.97% ",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "am_value": "$92.00",
+        "am_source": "briefing.md",
+        "am_raw": "Brent: $92.00 (+0.9%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "am_value": "$92.00",
+        "am_source": "briefing.md",
+        "am_raw": "Brent: $92.00 (+0.9%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "am_value": "$91.45",
+        "am_source": "briefing.md",
+        "am_raw": "Brent $91.45"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dollar_amount",
+        "am_value": "$205.81",
+        "am_source": "briefing.md",
+        "am_raw": "Stock at $205.81"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "fed_funds",
+        "am_value": "3.50%",
+        "am_source": "briefing.md",
+        "am_raw": "Fed funds: 3.50%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "fed_funds",
+        "am_value": "3.75%",
+        "am_source": "Trading Economics",
+        "am_raw": "Fed funds 3.75%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "am_value": "$88.20",
+        "am_source": "briefing.md",
+        "am_raw": "WTI: $88.20 (-3.4%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "am_value": "$88.20",
+        "am_source": "briefing.md",
+        "am_raw": "WTI: $88.20 "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "am_value": "20.18",
+        "am_source": "briefing.md",
+        "am_raw": "VIX: 20.18 (+6.68%)"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "am_value": "$205.81,",
+        "am_source": "briefing.md",
+        "am_raw": "Stock at $205.81, "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "am_value": "$114",
+        "am_source": "briefing.md",
+        "am_raw": "Stock trading $114"
+      }
+    ],
+    "contradicted": []
+  }
+}

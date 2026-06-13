@@ -1,0 +1,105 @@
+{
+  "pm_date": "2026-06-10",
+  "am_date": "2026-06-11",
+  "consolidated_at": "2026-06-11T06:09:42.679994",
+  "pm_articles": 25,
+  "am_articles": 25,
+  "pm_data_points": 5,
+  "am_data_points": 7,
+  "diff": {
+    "evolved": 1,
+    "confirmed": 0,
+    "pm_only": 4,
+    "am_only": 5,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "1.98%",
+        "am_value": "-4.18%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "Nasdaq dropped 1.98% ",
+        "am_raw": "Nasdaq -4.18% ",
+        "pct_change": -311.1,
+        "direction": "down"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "fed_funds",
+        "pm_value": "3.50%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Fed funds: 3.50%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "pm_value": "1.62%",
+        "pm_source": "briefing.md",
+        "pm_raw": "S&P 500 fell 1.62% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "pm_value": "1.62%",
+        "pm_source": "briefing.md",
+        "pm_raw": "S&P 500 fell 1.62%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "pm_value": "$39",
+        "pm_source": "briefing.md",
+        "pm_raw": "closed $39",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "4.4%",
+        "am_source": "briefing.md",
+        "am_raw": "down 4.4% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "3%",
+        "am_source": "briefing.md",
+        "am_raw": "down 3% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "percent_move",
+        "am_value": "10%",
+        "am_source": "briefing.md",
+        "am_raw": "10% after-hours"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "percent_move",
+        "am_value": "10%",
+        "am_source": "briefing.md",
+        "am_raw": "10% AH"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "percent_move",
+        "am_value": "+0.1%",
+        "am_source": "briefing.md",
+        "am_raw": "+0.1% ah"
+      }
+    ],
+    "contradicted": []
+  }
+}

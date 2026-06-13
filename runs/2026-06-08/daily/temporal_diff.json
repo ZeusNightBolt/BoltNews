@@ -1,0 +1,158 @@
+{
+  "pm_date": "2026-06-08",
+  "am_date": "2026-06-09",
+  "consolidated_at": "2026-06-09T07:03:36.565391",
+  "pm_articles": 12,
+  "am_articles": 24,
+  "pm_data_points": 2,
+  "am_data_points": 22,
+  "diff": {
+    "evolved": 1,
+    "confirmed": 0,
+    "pm_only": 1,
+    "am_only": 16,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "2.18%",
+        "am_value": "+0.69%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "Nasdaq 100 surged 2.18% ",
+        "am_raw": "Nasdaq futures +0.69%",
+        "pct_change": -68.3,
+        "direction": "down"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "pm_value": "$1.75",
+        "pm_source": "briefing.md",
+        "pm_raw": "share for a $1.75",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "am_value": "$94.25",
+        "am_source": "briefing.md",
+        "am_raw": "Brent $94.25 "
+      },
+      {
+        "ticker": "MRVL",
+        "metric": "revenue",
+        "am_value": "$2.4B",
+        "am_source": "CNBC",
+        "am_raw": "revenue $2.4B"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "am_value": "$91.30",
+        "am_source": "briefing.md",
+        "am_raw": "WTI $91.30"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "am_value": "18.18.",
+        "am_source": "briefing.md",
+        "am_raw": "VIX 18.18. "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "am_value": "18.18",
+        "am_source": "Yahoo Finance",
+        "am_raw": "VIX 18.18 (-3.91%)"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "am_value": "18.18",
+        "am_source": "Yahoo Finance",
+        "am_raw": "VIX 18.18 (-3.91%)"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "am_value": "+0.30%",
+        "am_source": "Yahoo Finance",
+        "am_raw": "S&P 500 +0.30%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "am_value": "+0.30%",
+        "am_source": "Yahoo Finance",
+        "am_raw": "S&P 500 +0.30%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "20%",
+        "am_source": "Reuters",
+        "am_raw": "down 20% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "20%",
+        "am_source": "Reuters",
+        "am_raw": "down 20% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "0.12%",
+        "am_source": "Reuters",
+        "am_raw": "down 0.12% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "0.3%",
+        "am_source": "Reuters",
+        "am_raw": "down 0.3% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "-0.16%",
+        "am_source": "Yahoo Finance",
+        "am_raw": "Dow -0.16%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "-0.16%",
+        "am_source": "Yahoo Finance",
+        "am_raw": "Dow -0.16% "
+      },
+      {
+        "ticker": "MRVL",
+        "metric": "sp500",
+        "am_value": "+210%",
+        "am_source": "CNBC",
+        "am_raw": "S&P 500 addition effective June 22 MRVL +210% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "russell2000",
+        "am_value": "+0.77%",
+        "am_source": "Yahoo Finance",
+        "am_raw": "Russell 2000 +0.77%"
+      }
+    ],
+    "contradicted": []
+  }
+}

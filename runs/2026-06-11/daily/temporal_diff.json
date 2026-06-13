@@ -1,0 +1,137 @@
+{
+  "pm_date": "2026-06-11",
+  "am_date": "2026-06-12",
+  "consolidated_at": "2026-06-12T06:07:31.544715",
+  "pm_articles": 26,
+  "am_articles": 25,
+  "pm_data_points": 10,
+  "am_data_points": 9,
+  "diff": {
+    "evolved": 0,
+    "confirmed": 1,
+    "pm_only": 8,
+    "am_only": 5,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "pm_value": "+1.75%",
+        "am_value": "1.75%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "S&P 500 surging +1.75% ",
+        "am_raw": "S&P 500 adding 1.75% ",
+        "pct_change": 0.0,
+        "direction": "flat"
+      }
+    ],
+    "evolved": [],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "pm_value": "$1.77",
+        "pm_source": "briefing.md",
+        "pm_raw": "share for a $1.77",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "10y",
+        "pm_value": "2.33%",
+        "pm_source": "briefing.md",
+        "pm_raw": "10-year 2.33% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "pm_value": "$75",
+        "pm_source": "briefing.md",
+        "pm_raw": "WTI $75",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "pm_value": "$100",
+        "pm_source": "briefing.md",
+        "pm_raw": "WTI $100",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "russell2000",
+        "pm_value": "+2.94%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Russell 2000 up +2.94%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "+23%",
+        "pm_source": "briefing.md",
+        "pm_raw": "down to +23% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "95.6%",
+        "pm_source": "briefing.md",
+        "pm_raw": "down from 95.6% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "+2.54%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Nasdaq +2.54%",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "30y",
+        "am_value": "5.03%",
+        "am_source": "briefing.md",
+        "am_raw": "30Y 5.03%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "am_value": "$19.2B",
+        "am_source": "briefing.md",
+        "am_raw": "revenue $19.2B "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "am_value": "19.44",
+        "am_source": "briefing.md",
+        "am_raw": "VIX: 19.44 (-2.2%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "2y",
+        "am_value": "4.13%",
+        "am_source": "briefing.md",
+        "am_raw": "2Y 4.13%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dollar_amount",
+        "am_value": "$135",
+        "am_source": "briefing.md",
+        "am_raw": "trading on Nasdaq at $135"
+      }
+    ],
+    "contradicted": []
+  }
+}
