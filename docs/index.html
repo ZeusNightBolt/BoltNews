@@ -7,12 +7,102 @@
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:#0d1117; color:#c9d1d9; line-height:1.6; margin:0; padding:24px; }
 a { color:#58a6ff; }
-.wrap { max-width:920px; margin:0 auto; }
-li { margin:8px 0; }
+.wrap { max-width:960px; margin:0 auto; }
 .nav { margin-bottom:20px; }
+.doc { background:#161b22; border:1px solid #30363d; border-radius:12px; padding:18px; }
+li { margin:8px 0; }
 </style>
 </head>
-<body><main class="wrap"><div class="nav"><a href="../index.html">← Latest</a> · <a href="../archive.html">Archive</a></div><h1>BoltNews Docs</h1><ul><li><a href="archive.md">archive.md</a></li>
+<body><main class="wrap"><div class="nav"><a href="../index.html">← Latest</a> · <a href="../archive.html">Archive</a></div><h1>BoltNews Docs</h1><section class="doc"># BoltNews Docs Index<br>
+<br>
+Live dashboard: https://zeusnightbolt.github.io/BoltNews/<br>
+<br>
+Archive: https://zeusnightbolt.github.io/BoltNews/archive.html<br>
+<br>
+Data index: https://zeusnightbolt.github.io/BoltNews/data/index.html<br>
+<br>
+## Current operating contract<br>
+<br>
+BoltNews is a cross-asset research briefing pipeline, not a headline aggregator. The authoritative content artifact is:<br>
+<br>
+```text<br>
+runs/{YYYY-MM-DD}/{mode}/briefing.md<br>
+```<br>
+<br>
+`summary.md` is only an article/link digest and fallback input. Dashboards, Telegram delivery, archive pages, and weekly rollups should use `briefing.md` as the primary research note.<br>
+<br>
+## Required briefing templates<br>
+<br>
+- [Briefing Template Specification](briefing-template-spec.md)<br>
+  - Pre-market starts with `Futures and Current Market Snapshot`, then overnight headlines and the day setup.<br>
+  - Post-market starts with `Closing Market Snapshot`, then why markets moved and tomorrow&#x27;s setup.<br>
+  - Weekend starts with `Weekly Market Scoreboard`, then cross-asset narrative and next-week risks.<br>
+  - Every mode ends with `Source Notes and Data Quality`.<br>
+<br>
+- [Multi-Agent Discovery Flow](multi-agent-news-flow.md)<br>
+  - Uses bounded lanes: market snapshot, headlines, macro/rates/FX, equities/earnings, commodities/credit/vol, dedupe-validation-synthesis.<br>
+  - Requires lane timeouts, search/extraction timeouts, recency windows, weekday topic keywords, and JSON output schema.<br>
+  - Prevents reasoning-window overload by splitting discovery and preserving partial lane outputs.<br>
+<br>
+## Daily and weekly cycle<br>
+<br>
+- [Daily Cycle Spec](daily-cycle-spec.md)<br>
+  - 6 PM post-market run covers the trading session.<br>
+  - 6 AM pre-market run covers overnight and the day setup.<br>
+  - Temporal reasoning compares the two and writes `runs/{date}/daily/temporal_brief.md`.<br>
+<br>
+- Weekly rollup<br>
+  - Friday 8 PM ET.<br>
+  - Loads temporal briefs first, then individual run `briefing.md` files.<br>
+  - Avoids mechanical concatenation.<br>
+<br>
+## GitHub Pages propagation<br>
+<br>
+`deploy.py` now regenerates and propagates:<br>
+<br>
+- homepage dashboard from `briefing.md`<br>
+- `archive.html` from actual `gh-pages` files<br>
+- `docs/*.md`<br>
+- `docs/index.html`<br>
+- `data/project/sources.json`<br>
+- `data/project/universe.json`<br>
+- `data/runs/{date}/{mode}/*`<br>
+- `data/index.json`<br>
+- `data/index.html`<br>
+- `.nojekyll` so GitHub Pages serves markdown/data files literally<br>
+<br>
+## Deterministic safeguards<br>
+<br>
+- `scripts/validate_run.py` is the guardrail before deploy/final success.<br>
+- It rejects missing artifacts, malformed JSON, `articles.json` accidentally containing a search plan, section-incomplete briefings, zero-article feeds, and link-only dashboards.<br>
+- `scripts/run_pipeline.py` preserves existing agent-populated run artifacts by default. Use `--fresh` only when intentionally discarding a run; cron should not use `--fresh` after article/briefing synthesis.<br>
+- `scripts/deploy.py` treats main-branch push failure, unreadable article feeds, zero articles, and stale article ages as deploy-blocking errors.<br>
+<br>
+After deploy, verify cache-busted live URLs:<br>
+<br>
+- `https://zeusnightbolt.github.io/BoltNews/index.html?v=&lt;cachebuster&gt;`<br>
+- `https://zeusnightbolt.github.io/BoltNews/archive.html?v=&lt;cachebuster&gt;`<br>
+- `https://zeusnightbolt.github.io/BoltNews/docs/index.html?v=&lt;cachebuster&gt;`<br>
+- `https://zeusnightbolt.github.io/BoltNews/data/index.html?v=&lt;cachebuster&gt;`<br>
+<br>
+## Current briefings and artifacts<br>
+<br>
+- [Historical Briefings &amp; Weekly Rollups](archive.md)<br>
+- [Data Index](../data/index.html)<br>
+- [Project Sources](../data/project/sources.json)<br>
+- [Project Universe](../data/project/universe.json)<br>
+<br>
+## Failure modes to prevent<br>
+<br>
+- Headline-only briefings.<br>
+- Dashboard built from `summary.md` instead of `briefing.md`.<br>
+- Missing first section: futures/current snapshot for pre-market, closing snapshot for post-market, weekly scoreboard for weekend.<br>
+- Stale search results accepted as fresh news.<br>
+- Articles without timestamps accepted without disclosure.<br>
+- Archive links pointing to files that do not exist.<br>
+- GitHub Pages raw files visible on GitHub but 404ing on `github.io` because `.nojekyll` is missing.<br>
+- Cron prompts using old summary/link-index format instead of the new template and docs.<br>
+</section><h2>Files</h2><ul><li><a href="archive.md">archive.md</a></li>
 <li><a href="briefing-template-spec.md">briefing-template-spec.md</a></li>
 <li><a href="daily-cycle-spec.md">daily-cycle-spec.md</a></li>
 <li><a href="fix-link-only-github-pages-dashboard-2026-06-08.md">fix-link-only-github-pages-dashboard-2026-06-08.md</a></li>
