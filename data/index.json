@@ -1,0 +1,27 @@
+{
+  "generated_on": "2026-06-14",
+  "latest": {
+    "date": "2026-06-14",
+    "mode": "weekend",
+    "files": [
+      "runs/2026-06-14/weekend/briefing.md",
+      "runs/2026-06-14/weekend/summary.md",
+      "runs/2026-06-14/weekend/articles.json",
+      "runs/2026-06-14/weekend/search_plan.json",
+      "runs/2026-06-14/weekend/dashboard.html"
+    ]
+  },
+  "project_files": [
+    "project/sources.json",
+    "project/universe.json"
+  ],
+  "files": [
+    "project/sources.json",
+    "project/universe.json",
+    "runs/2026-06-14/weekend/articles.json",
+    "runs/2026-06-14/weekend/briefing.md",
+    "runs/2026-06-14/weekend/dashboard.html",
+    "runs/2026-06-14/weekend/search_plan.json",
+    "runs/2026-06-14/weekend/summary.md"
+  ]
+}
