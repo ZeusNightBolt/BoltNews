@@ -1,131 +1,220 @@
-# BoltNews — Project Overview
+# BoltNews — Cross-Asset News Briefing Pipeline
 
-**Objective:** Daily automated news intelligence pipeline for a fundamental long/short portfolio manager. Curates market-moving news across rates, FX, credit, equities, and derivatives. Filters out non-market noise (societal issues, ESG activism, etc.).
+BoltNews is a daily automated market-intelligence pipeline for a fundamental long/short portfolio manager. It produces synthesized cross-asset research notes across equities, rates, credit, FX, commodities, volatility, and crypto — not headline dumps.
 
-## Architecture
+Live dashboard: https://zeusnightbolt.github.io/BoltNews/
 
-```
-┌─────────────┐     ┌──────────────┐     ┌──────────────┐
-│ Universe    │────▶│ Article      │────▶│ Dedup +      │
-│ Builder     │     │ Fetcher      │     │ Summarizer   │
-│ (weekly)    │     │ (daily 2x)   │     │              │
-└─────────────┘     └──────────────┘     └──────────────┘
-                                                 │
-                    ┌──────────────┐              │
-                    │ GitHub Pages │◀─────────────┤
-                    │ Deploy       │              │
-                    └──────────────┘     ┌──────────────┐
-                                         │ Dashboard    │
-                                         │ Builder      │
-                                         └──────────────┘
+Archive: https://zeusnightbolt.github.io/BoltNews/archive.html
 
-┌─────────────┐
-│ Weekly      │──▶ Friday 8PM ET rollup
-│ Rollup      │
-└─────────────┘
+Data index: https://zeusnightbolt.github.io/BoltNews/data/index.html
+
+Docs index: https://zeusnightbolt.github.io/BoltNews/docs/index.html
+
+## Current operating contract
+
+The authoritative briefing artifact is:
+
+```text
+runs/{YYYY-MM-DD}/{mode}/briefing.md
 ```
 
-## Pipeline Stages
+`summary.md` is only an article/link digest and fallback input. The dashboard must render `briefing.md`; deploy refuses link-only dashboards missing synthesized briefing markers.
 
-### 1. Universe Builder (`scripts/build_universe.py`)
-- Reads VTI holdings from DuckDB `vti_daily_enriched_latest`
-- Filters: market cap ≥ $5B, dollar volume > 0
-- Ranks by dollar volume, takes top 15% (floor: 50 tickers)
-- Supplements with generic market topics (SPX, Fed, rates, etc.)
-- Output: `data/universe.json`
+Every briefing must follow the canonical templates in `docs/briefing-template-spec.md` and every discovery run must use the multi-agent lane structure in `docs/multi-agent-news-flow.md`.
 
-### 2. Article Fetcher (`scripts/fetch_articles.py`)
-- Generates search plan from universe + sources
-- Agent executes web_search queries for tickers and topics
-- Filters articles by market relevance (blocked: social issues, ESG activism)
-- Prioritizes: earnings, analyst actions, M&A, macro events
-- Output: `runs/{date}/{mode}/articles.json`
+## Briefing modes and section order
 
-### 3. Deduplication + Summarizer (`scripts/summarize.py`)
-- Clusters similar articles by Jaccard word overlap (~35% threshold)
-- Within clusters: keeps most detailed + contrasting views
-- Categorizes into: Rates, FX, Credit, Equities, Derivatives, Macro, Regulatory
-- Generates one-liner summaries (title + first sentence)
-- Output: `runs/{date}/{mode}/summary.md`
+### Pre-market
 
-### 4. Dashboard Builder (`scripts/build_dashboard.py`)
-- Self-contained HTML with GitHub-dark theme
-- Category tabs, search bar, article cards with ticker tags
-- Mobile-responsive (Safari iOS compatible)
-- Output: `runs/{date}/{mode}/dashboard.html`
+Purpose: answer "Where are markets now, what happened overnight, and what is today's setup?"
 
-### 5. Deploy (`scripts/deploy.py`)
-- Pushes all artifacts to `ZeusNightBolt/BoltNews` main branch
-- Deploys dashboard to `gh-pages` branch
-- Archived at `https://zeusnightbolt.github.io/BoltNews/`
+Required top sections:
 
-### 6. Weekly Rollup (`scripts/weekly_rollup.py`)
-- Aggregates Mon-Fri summaries
-- Identifies recurring themes via keyword frequency
-- Output: `weekly/{YYYY-MM-DD}.md`
+1. `Futures and Current Market Snapshot`
+2. `Overnight Top Developments`
+3. `Global Session Recap`
+4. `Macro, Rates, and Policy Setup`
+5. `FX and Commodities`
+6. `Equities and Single-Stock Watchlist`
+7. `Sector and Factor Setup`
+8. `Today's Risk Map`
+9. `Source Notes and Data Quality`
 
-## Schedule
+### Post-market
 
-| Job | Time (ET) | Frequency | Cron |
-|-----|-----------|-----------|------|
-| Pre-Market | 6:00 AM | Weekdays | `boltnews-pre-market` |
-| Post-Market | 6:00 PM | Weekdays | `boltnews-post-market` |
-| Weekly Rollup | 8:00 PM | Fridays | `boltnews-weekly-rollup` |
-| Universe Refresh | Monday pre-market | Weekly | (inline in pre-market) |
+Purpose: answer "What moved today, what changed, and what carries into tomorrow?"
 
-## Key Design Decisions
+Required top sections:
 
-1. **Search-first, scrape-later**: web_search for discovery → web_extract for content → browser only for paywalled sources
-2. **No paid APIs**: All free/public sources. SearXNG for search, curl+readability for extraction, Firefox BiDi for anti-bot sites
-3. **Agent-driven execution**: Cron jobs run as agent sessions — the agent performs searches, extracts content, and composes summaries in real-time
-4. **Stateless runs**: Each run starts fresh. Context comes from markdown files on disk, not session memory
-5. **GitHub as source of truth**: All output pushed to GitHub. Cloud record. Reproducible.
+1. `Closing Market Snapshot`
+2. `Why Markets Moved`
+3. `Equity Market Internals`
+4. `Rates, Macro, and Policy`
+5. `Earnings and Corporate Developments`
+6. `Cross-Asset Confirmation or Divergence`
+7. `Tomorrow Setup`
+8. `Source Notes and Data Quality`
 
-## Filesystem
+### Weekend
 
+Purpose: answer "What changed this week, what matters next week, and what risks are underpriced?"
+
+Required top sections:
+
+1. `Weekly Market Scoreboard`
+2. `Dominant Cross-Asset Narrative`
+3. `Asset Class Deep Dive`
+4. `Positioning, Sentiment, and Flows`
+5. `Earnings, Guidance, and Corporate Actions`
+6. `Macro and Policy Outlook`
+7. `Next Week Calendar and Watchlist`
+8. `Contrarian Flags and Underpriced Risks`
+9. `Source Notes and Data Quality`
+
+## Multi-agent discovery lanes
+
+`scripts/fetch_articles.py --plan-only` writes `search_plan.json` with schema version 2.0. The plan includes mode-specific section order, weekday topic keywords, lane budgets, timeouts, verification gates, and a self-contained subagent handoff prompt.
+
+Default lanes:
+
+1. `market-snapshot` — futures/close, yields, DXY, oil, gold, vol, crypto.
+2. `overnight-or-session-headlines` — overnight, session, or weekly top developments.
+3. `macro-policy-rates-fx` — Fed, central banks, inflation, jobs, curve, dollar, FX.
+4. `equities-earnings-single-stocks` — earnings, guidance, analyst actions, movers.
+5. `commodities-credit-vol` — oil/gas/metals, credit, defaults/refinancing, options/vol.
+6. `dedupe-validation-synthesis` — stale filtering, timestamp validation, dedupe, coverage checks, synthesis.
+
+Timeout defaults:
+
+- Global discovery budget: 1,800 seconds.
+- Lane timeout: 300-480 seconds.
+- Search timeout: 45 seconds/query.
+- Extraction timeout: 75 seconds/URL.
+- SearXNG backoff: `[3, 8, 20]` seconds.
+
+## Pipeline stages
+
+1. Universe build: `scripts/build_universe.py`
+   - Reads VTI holdings from the local market-data warehouse.
+   - Filters/liquidity-ranks names and writes `data/universe.json`.
+
+2. Search-plan generation: `scripts/fetch_articles.py`
+   - Generates mode/date/weekday-specific search plans and lane handoff context.
+   - Writes `runs/{date}/{mode}/search_plan.json`.
+
+3. Article discovery and extraction: agent lane execution
+   - Executes query plan using web search and full-text extraction.
+   - Rejects stale, headline-only, no-timestamp, and non-market records.
+   - Writes `articles.json` and optionally `articles_enriched.json`.
+
+4. Synthesis: `briefing.md`
+   - Produces the formal research note in the canonical section order.
+   - Numeric claims require source and timestamp/as-of context.
+   - Missing required data is labeled `Data unavailable — <reason>`.
+
+5. Dashboard build: `scripts/build_dashboard.py`
+   - Renders `briefing.md` to static HTML.
+   - Generates a heading-derived Table of Contents from `##`/`###` headings.
+   - Verifies TOC anchors resolve locally.
+
+6. Deploy and propagation: `scripts/deploy.py`
+   - Pushes run artifacts to `main`.
+   - Pushes the static dashboard to `gh-pages`.
+
+## GitHub Pages propagation
+
+`scripts/deploy.py` is responsible for publishing not just the latest dashboard, but the audit trail and navigation indexes:
+
+   - Regenerates `archive.html` from actual `gh-pages` files.
+   - Propagates docs/data indexes and files:
+     - `docs/*.md`
+     - `docs/index.html`
+     - `data/project/sources.json`
+     - `data/project/universe.json`
+     - `data/runs/{date}/{mode}/*`
+     - `data/index.json`
+     - `data/index.html`
+   - Writes `.nojekyll` so GitHub Pages serves markdown/data files literally.
+
+7. Temporal reasoning consolidation: `scripts/reasoning_consolidate.py`
+   - Auto-triggered after pre-market runs.
+   - Compares post-market vs pre-market data points.
+   - Produces `temporal_brief.md` and `temporal_diff.json`.
+   - Never revert to mechanical concatenation.
+
+8. Weekly rollup: `scripts/weekly_rollup.py`
+   - Aggregates week artifacts and temporal briefs.
+   - Produces a weekly research synthesis.
+
+## Cron jobs
+
+| Job | ID | Schedule | Contract |
+|---|---|---|---|
+| BoltNews Pre-Market | `57148987bc98` | 6:00 AM ET daily | Use `docs/briefing-template-spec.md`; start with futures/current market snapshot; write `briefing.md`; build/deploy/dashboard; auto-consolidate after run. |
+| BoltNews Post-Market | `cffe38c452c9` | 6:00 PM ET daily | Use post-market template; start with closing market snapshot; write `briefing.md`; build/deploy/dashboard. |
+| BoltNews Weekly Rollup | `949d2440242b` | 8:00 PM ET Friday | Use weekly template; load temporal briefs first; write weekly rollup and deploy/index artifacts. |
+
+Cron prompts are intentionally self-contained and reference the docs above so scheduled runs do not fall back to stale prompt formats.
+
+## Fresh-run verification checklist
+
+Before reporting success for any run:
+
+- `python3.12 -m py_compile scripts/*.py` for changed scripts.
+- `search_plan.json` contains `schema_version`, `briefing_template`, `topic_keyword_pack`, `lanes`, `agent_execution`, `verification_gates`, and `handoff_prompt_template`.
+- `briefing.md` exists and follows the required section order for the mode.
+- `dashboard.html` contains the Table of Contents and synthesized briefing markers.
+- `archive.html` links only to files that exist on `gh-pages`.
+- `data/index.json` and `data/index.html` include current project/run files.
+- Live GitHub Pages cache-busted checks pass for:
+  - `/index.html?v=<cachebuster>`
+  - `/archive.html?v=<cachebuster>`
+  - `/docs/index.html?v=<cachebuster>`
+  - `/data/index.html?v=<cachebuster>`
+- Live link check returns 0 missing links.
+
+## Source and quality rules
+
+- Prefer primary/official sources for market data, central banks, regulators, company releases, and filings.
+- Use newswires and financial media for event discovery and market color.
+- Full extraction is mandatory for narrative claims.
+- Headline-only output is a failure.
+- Stale article backfill is a failure.
+- Unsupported numeric claims are a failure.
+- If source quality is weak or conflicting, label it in `Source Notes and Data Quality`.
+
+## Filesystem layout
+
+```text
+runs/{date}/{mode}/
+├── search_plan.json       # mode/date/weekday-specific plan with agent lanes
+├── articles.json          # accepted article records
+├── articles_enriched.json # optional full extracted records
+├── briefing.md            # authoritative research note
+├── summary.md             # article/link digest only
+└── dashboard.html         # rendered static dashboard
+
+data/
+├── sources.json
+└── universe.json
+
+docs/
+├── briefing-template-spec.md
+├── multi-agent-news-flow.md
+├── daily-cycle-spec.md
+├── archive.md
+└── index.md
 ```
-~/.hermes/os/projects/boltnews/
-├── INDEX.md              # Auto-generated layer 1 index
-├── PROJECT.md            # This file
-├── docs/                 # Playbooks and methodology
-├── scripts/              # Pipeline scripts (Python 3.12)
-│   ├── run_pipeline.py   # Master orchestrator
-│   ├── build_universe.py # Ticker universe builder
-│   ├── fetch_articles.py # Search plan generator
-│   ├── summarize.py      # Dedup + categorize + summarize
-│   ├── build_dashboard.py# HTML dashboard builder
-│   ├── deploy.py         # GitHub + GH Pages deploy
-│   └── weekly_rollup.py  # Friday weekly aggregation
-├── data/
-│   ├── universe.json     # Filtered ticker watchlist
-│   └── sources.json      # Seed + discovered news sources
-├── runs/
-│   └── YYYY-MM-DD/
-│       ├── pre-market/
-│       │   ├── articles.json
-│       │   ├── articles_enriched.json
-│       │   ├── summary.md
-│       │   └── dashboard.html
-│       └── post-market/
-│           ├── articles.json
-│           ├── articles_enriched.json
-│           ├── summary.md
-│           └── dashboard.html
-└── weekly/
-    └── YYYY-MM-DD.md     # Friday rollups
+
+## Local commands
+
+```bash
+# Generate a plan only
+python3.12 scripts/fetch_articles.py --mode pre-market --date YYYY-MM-DD --universe data/universe.json --sources data/sources.json --output /tmp/search_plan.json --plan-only
+
+# Build dashboard from authoritative briefing
+python3.12 scripts/build_dashboard.py --input runs/YYYY-MM-DD/MODE/articles.json --summary runs/YYYY-MM-DD/MODE/briefing.md --output runs/YYYY-MM-DD/MODE/dashboard.html --mode MODE --date YYYY-MM-DD
+
+# Deploy and propagate docs/data indexes
+python3.12 scripts/deploy.py --run-dir runs/YYYY-MM-DD/MODE --mode MODE --date YYYY-MM-DD
 ```
-
-## GitHub
-
-- **Repo**: `ZeusNightBolt/BoltNews`
-- **Main branch**: Full project + run archives
-- **gh-pages branch**: Dashboard deployments
-- **Pages URL**: `https://zeusnightbolt.github.io/BoltNews/`
-- **Raw access**: `https://raw.githubusercontent.com/ZeusNightBolt/BoltNews/main/runs/{date}/{mode}/summary.md`
-
-## Dependencies
-
-- Python 3.12 (system)
-- DuckDB (for universe builder)
-- Standard library + no external scraping deps (agent uses web_search/web_extract)
-- Git + GitHub token (for deploy)
