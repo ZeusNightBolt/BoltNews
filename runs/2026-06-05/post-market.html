@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-05</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-05 &middot; 15 articles &middot; 7 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews Post-Market Briefing — Friday, June 5, 2026</h1>
+<hr class="divider">
+<h2>Executive Summary: The Great Reset — Strong Jobs Kill Rate-Cut Hopes, Trigger Tech Massacre</h2>
+<p><strong>Dominant narrative:</strong> The May jobs report (+172K vs +80K consensus) didn't just beat — it obliterated expectations, forcing a violent repricing of the entire macro landscape. Wall Street's 9-week winning streak ended in a single session as the market pivoted from "when will the Fed cut?" to "will the Fed hike?" The damage was concentrated in the most crowded trades: semiconductors, AI, and crypto.</p>
+<p>The Nasdaq had its worst day since April 2025 (-4.18%) and worst week in over a year. The SOX semiconductor index suffered its largest single-day drop since March 2020 — the COVID crash. $1.3 trillion in market value evaporated. The VIX spiked 40% to 21.51. The 2-year Treasury yield hit its highest level since February 2025. Bitcoin cracked $60,000 for the first time since October 2024.</p>
+<p><strong>The structural shift is real:</strong> Rate hike probability by December surged to 43% (from 26% a month ago). The probability of two or more hikes doubled to ~25%. Lazard's Ronald Temple: "Any hopes of a Fed rate cut have effectively been eliminated." This is no longer about a "higher for longer" pause — it's about whether the next move is UP.</p>
+<p><strong>The contrarian signal:</strong> Every single analyst quoted about the semiconductor selloff called it a buying opportunity. Wells Fargo: "I don't think it's the end of the semi bull market." Goldman Sachs on AVGO: buy the dip. Kitco's gold survey: every analyst called the gold break below 200-day MA a buyable dip. When consensus is this uniform on "buy the dip," conviction needs to come from a catalyst, not just cheapness.</p>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Today's Move</th><th>Key Level</th><th>Signal</th><th>Rate-Hike Impact</th></tr></thead><tbody><tr><td><strong>Equities (S&P 500)</strong></td><td>-2.64% to 7,384</td><td>Snapped 9-week win streak</td><td><strong>Bearish</strong> — breadth 3.1:1 negative</td><td>Valuation compression; tech most exposed</td></tr><tr><td><strong>Equities (Nasdaq)</strong></td><td>-4.18% to 25,709</td><td>Worst week >1 year</td><td><strong>Bearish</strong> — AI/chip rout</td><td>High-duration growth crushed</td></tr><tr><td><strong>Equities (Dow)</strong></td><td>-1.35% to 50,867</td><td>Rotation into defensives</td><td><strong>Defensive bid</strong> — only staples gained</td><td>Less rate-sensitive, but -695pts hurts</td></tr><tr><td><strong>Equities (Russell 2000)</strong></td><td>-3.47% to 2,834</td><td>Small caps hit hard</td><td><strong>Bearish</strong> — rates hurt leveraged smalls</td><td>Debt-sensitive, refinance risk</td></tr><tr><td><strong>Semis (SOX)</strong></td><td>-6.3% intraday</td><td>Worst day since Mar 2020</td><td><strong>Severe</strong> — positioning unwind</td><td>AI capex funded by debt</td></tr><tr><td><strong>10Y Treasury</strong></td><td>4.54% (+6bp)</td><td>Highest since May 21</td><td><strong>Bearish bonds</strong> — curve steepening</td><td>2s10s steepening on hike fears</td></tr><tr><td><strong>2Y Treasury</strong></td><td>4.16% (+11bp)</td><td>Highest since Feb 2025</td><td><strong>Hawkish</strong> — front-end repricing</td><td>Most sensitive to Fed path</td></tr><tr><td><strong>30Y Treasury</strong></td><td>5.01% (+3bp)</td><td>Back above 5%</td><td><strong>Bearish</strong> — LQD risk trigger at 5.25%</td><td>Long-end watching inflation</td></tr><tr><td><strong>DXY (USD)</strong></td><td>100.07 (+0.66%)</td><td>+2.1% on month</td><td><strong>Bullish USD</strong> — rate differential widening</td><td>Higher real rates support dollar</td></tr><tr><td><strong>Gold</strong></td><td>$4,327 (-3.0%)</td><td>Below 200-day MA</td><td><strong>Bearish near-term</strong> — $4,099 support</td><td>Non-yielding, hurt by real rates</td></tr><tr><td><strong>Silver</strong></td><td>$68.28 (-7.0%)</td><td>Sharply below $70</td><td><strong>Bearish</strong> — industrial + monetary</td><td>Double-hit from rates + growth fears</td></tr><tr><td><strong>WTI Crude</strong></td><td>$90.25 (-3.0%)</td><td>Iran risk premium intact</td><td><strong>Neutral/bearish</strong> — USD strength headwind</td><td>Iran/Strait supply risk offsets</td></tr><tr><td><strong>Bitcoin</strong></td><td>~$59,500 (-6.4%)</td><td>Below $60K, lowest since Oct '24</td><td><strong>Bearish</strong> — -18% weekly, -31% YTD</td><td>Risk-off + broken equity correlation</td></tr><tr><td><strong>IG Credit Spreads</strong></td><td>~70bp</td><td>vs 132bp historical avg</td><td><strong>Complacent</strong> — no margin for error</td><td>Any spread widening hurts LQD</td></tr><tr><td><strong>VIX</strong></td><td>21.51 (+39.7%)</td><td>Above 20 for first time in weeks</td><td><strong>Fear awakening</strong> — vol regime shift?</td><td>Sustained >20 would signal regime change</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Key Movers — Scoreboard</h2>
+<p class="bold-line"><strong>LOSERS:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Change</th><th>Reason</th></tr></thead><tbody><tr><td>AVGO</td><td>-7.9%</td><td>Post-earnings slide continues (-13% since report); AI guidance no raise</td></tr><tr><td>NVDA</td><td>-6.2%</td><td>Broad chip selloff; crowded positioning unwind</td></tr><tr><td>AMD</td><td>~-8%</td><td>Semiconductor rout</td></tr><tr><td>MU</td><td>~-8%</td><td>Memory chip selloff</td></tr><tr><td>MRVL</td><td>~-8%</td><td>Chip sector contagion; S&P 500 inclusion candidate</td></tr><tr><td>LULU</td><td>-8.6%</td><td>Q1 beat overshadowed by FY guidance cut; Americas -3% rev</td></tr><tr><td>MSTR</td><td>-11.3%</td><td>Bitcoin sale narrative damage; -27% weekly (worst since Nov 2022)</td></tr><tr><td>COIN</td><td>-7.1%</td><td>Baird downgrade on weak volumes; -21% weekly</td></tr></tbody></table></div>
+<p class="bold-line"><strong>RELATIVE WINNERS:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Change</th><th>Reason</th></tr></thead><tbody><tr><td>Consumer Staples (XLP)</td><td>+ (only S&P sector green)</td><td>Defensive rotation</td></tr><tr><td>COO (Cooper Cos.)</td><td>+8.6%</td><td>Beat Q2 estimates (contact lenses)</td></tr><tr><td>WNTR (Short MSTR ETF)</td><td>+7.4%</td><td>Bitcoin/MSTR collapse plays</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Critical Data Points</h2>
+<h3>Jobs Report Details (BLS, June 5 2026)</h3>
+<ul><li><strong>Nonfarm payrolls:</strong> +172,000 (consensus: +80,000)</li><li><strong>Revisions:</strong> March +29K, April +64K (combined +93K upward)</li><li><strong>Unemployment:</strong> 4.3% (unchanged, 15th month in 4.3-4.5% range)</li><li><strong>Wages:</strong> +0.3% MoM, +3.4% YoY (both in line)</li><li><strong>Participation rate:</strong> 61.8% (steady)</li><li><strong>U-6 underemployment:</strong> 8.1% (edged down)</li><li><strong>Sector leaders:</strong> Leisure/hospitality +70K (World Cup boost), local gov +55K, healthcare +35K</li></ul>
+<h3>Fed Probability Shift (CME FedWatch)</h3>
+<ul><li><strong>Rate hike by Dec 2026:</strong> 43% (from 38% Thursday, 26% a month ago)</li><li><strong>Two or more hikes by Dec 2026:</strong> ~25% (doubled overnight)</li><li><strong>June 16-17 FOMC:</strong> 93%+ probability of HOLD</li><li><strong>Full-year 2026:</strong> Polymarket 57% zero cuts (vs Fed dot plot calling for one)</li></ul>
+<h3>Treasury Curve</h3>
+<ul><li><strong>2Y:</strong> 4.162% (+11bp) — highest since Feb 25, 2025</li><li><strong>10Y:</strong> 4.544% (+6bp) — highest since May 21</li><li><strong>30Y:</strong> 5.007% (+3bp)</li><li><strong>2s10s spread:</strong> ~38bp (steepening)</li><li><strong>10Y real yield:</strong> 2.07%</li></ul>
+<h3>Commodities</h3>
+<ul><li><strong>Gold spot:</strong> $4,327 (-3.0%), broke 200-day MA</li><li><strong>Silver spot:</strong> $68.28 (-7.0%)</li><li><strong>WTI crude:</strong> $90.25 (-3.0%)</li><li><strong>Brent:</strong> ~$97.44</li></ul>
+<h3>Crypto</h3>
+<ul><li><strong>BTC:</strong> Intraday low $59,099.25; -16% to -18% weekly</li><li><strong>BTC ATH:</strong> $126,272 (Oct 2025) → now 51.7% below</li><li><strong>BTC YTD:</strong> -31.2%</li><li><strong>ETF net assets:</strong> $80.4B (from $107.8B on May 14)</li><li><strong>MSTR average cost basis:</strong> $75,699 → BTC ~$15K underwater</li></ul>
+<hr class="divider">
+<h2>The Structural Case for Hikes (Bear Case)</h2>
+<p>The jobs report isn't the only hawkish data point. The constellation is turning:</p>
+<p>1. <strong>JOLTS (April):</strong> Job openings surged to 2-year high</p>
+<p>2. <strong>Inflation:</strong> Estimated >4% (3-year high) driven by Iran war oil spike</p>
+<p>3. <strong>Wages:</strong> Steady at 3.4% YoY — not accelerating but not cooling</p>
+<p>4. <strong>Labor supply:</strong> Immigration curbs + aging workforce creating structural tightness</p>
+<p>5. <strong>GDP:</strong> Q1 +1.6%, Q2 tracking +3.0% (Atlanta Fed) — reacceleration</p>
+<p>6. <strong>Credit:</strong> IG spreads at 70bp = no stress, no reason for Fed to ease</p>
+<p>Fifth Third's Bill Adams: "Labor supply is turning into a supply-side constraint to growth, which could pressure the Fed to raise rates later this year even if inflation shocks from the Middle East and tariffs fade."</p>
+<p class="bold-line"><strong>This is the most hawkish macro setup since the 2022 hiking cycle began.</strong></p>
+<hr class="divider">
+<h2>Contrarian Signals & Caveats</h2>
+<p>1. <strong>The "buy the dip" chorus is deafening.</strong> Wells Fargo, Goldman Sachs, virtually every gold analyst, and Strive's Matt Cole on Bitcoin — all calling this a buying opportunity. When consensus is this uniform, the pain may not be over. Positioning, not fundamentals, may still be unwinding.</p>
+<p>2. <strong>Vanguard and Oxford Economics see the jobs beat as transitory.</strong> "A seasonal surge rather than a turning point" (Vanguard). "Inflation will keep rising, squeezing consumers and moderating job gains over summer" (Oxford). If they're right, the hike fears are overpriced.</p>
+<p>3. <strong>The selloff was orderly.</strong> Volume at 22.89B shares vs 20.29B average. No forced liquidations, no circuit breakers, no counterparty crises. The VIX at 21.51 is elevated but not panicked. This was a positioning unwind, not a crash.</p>
+<p>4. <strong>SpaceX IPO could be a massive sentiment catalyst.</strong> $150B demand vs $75B raise. Pricing June 11, debut June 12. If the IPO pops, it could reignite risk appetite and divert attention from the macro headwinds — or it could suck liquidity from existing positions.</p>
+<p>5. <strong>ECB hiking Thursday could paradoxically help.</strong> If the ECB hikes 25bp, EUR/USD could strengthen, weakening the dollar and providing relief to commodities and EM — but it also reinforces the global tightening narrative.</p>
+<hr class="divider">
+<h2>Week Ahead — Key Catalysts</h2>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Event</th><th>Importance</th></tr></thead><tbody><tr><td>Mon Jun 8</td><td>Quiet — post-SpaceX positioning</td><td>Low</td></tr><tr><td>Tue Jun 9</td><td>US Existing Home Sales</td><td>Medium</td></tr><tr><td><strong>Wed Jun 10</strong></td><td><strong>US CPI (May)</strong> + BoC Decision</td><td><strong>CRITICAL</strong> — inflation print will validate or reject hike narrative</td></tr><tr><td><strong>Thu Jun 11</strong></td><td><strong>US PPI (May)</strong> + ECB Decision + SpaceX IPO Pricing</td><td><strong>CRITICAL</strong> — triple catalyst day</td></tr><tr><td>Fri Jun 12</td><td>U. Michigan Sentiment + SpaceX Trading Debut</td><td>High</td></tr></tbody></table></div>
+<p><strong>The CPI print on Wednesday is the next binary event.</strong> If inflation prints hot (>4% headline), the rate hike narrative hardens and the tech rout likely extends. If it cools, the "transitory" camp gains credibility and dip-buyers get their catalyst.</p>
+<hr class="divider">
+<h2>Bottom Line</h2>
+<p>Friday, June 5, 2026, was the day the market's rate-cut fantasy died. The May jobs report didn't just beat — it revealed a labor market that's reaccelerating despite geopolitical headwinds, $90+ oil, and restrictive rates. The Fed is now being pulled toward hikes, not cuts.</p>
+<p>The damage was concentrated in the most crowded trades — semiconductors, AI, and crypto — but breadth was decisively negative. This wasn't a rotation; it was a broad de-risking triggered by a genuine macro regime shift.</p>
+<p><strong>The asymmetry now favors caution.</strong> With IG spreads at 70bp (no cushion), the 30Y back above 5%, VIX above 20, and hike probabilities surging, the risk-reward in the most crowded trades has deteriorated materially. The contrarian buy signals are everywhere — but they need a catalyst. Next week's CPI provides it.</p>
+<hr class="divider">
+<p><em>Sources: BLS, CNBC, Reuters, WSJ, Investopedia, Kitco, Yahoo Finance, CME FedWatch, Polymarket, Trading Economics</em></p>
+<p><em>Generated: 2026-06-05 18:45 ET | Mode: Post-Market | Friday</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnbc.com/2026/06/05/jobs-report-may-2026.html" target="_blank" rel="noopener">May Payrolls Surge +172K, More Than Double Consensus; Unemployment 4.3% — Rate C</a>
+<a class="source-link" href="https://www.reuters.com/business/nasdaq-sp-futures-slip-semiconductors-drag-payrolls-focus-2026-06-05/" target="_blank" rel="noopener">Nasdaq Plunges 4.2% — Worst Day Since April 2025; Chip Rout Erases $1.3T as Jobs</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/05/treasury-yields-ease-as-traders-await-key-labor-market-data-.html" target="_blank" rel="noopener">Treasury Yields Surge: 10Y Hits 4.54%, 2Y Spikes 11bp to 4.16% (Highest Since Fe</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-outlook-post-may-jobs-report-11992054" target="_blank" rel="noopener">Post-Jobs Report Analysis: From 'When to Cut' to 'Will They Hike?' — Hike Odds S</a>
+<a class="source-link" href="https://www.wsj.com/tech/ai/selloff-in-chip-stocks-prompts-nasdaq-bloodbath-36fd8c52" target="_blank" rel="noopener">Nasdaq Bloodbath: Chip Stocks Lead Worst Week in Over a Year; VIX Spikes 40% to </a>
+<a class="source-link" href="https://finance.yahoo.com/quote/AVGO/" target="_blank" rel="noopener">Broadcom (AVGO) Falls Another 7.9% Friday — Down 13% Since Earnings; Goldman Say</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/05/bitcoin-dismal-week-price-below-all-time-high-crypto-investors.html" target="_blank" rel="noopener">Bitcoin Cracks $60K — Lowest Since Oct 2024; -18% Weekly Loss; 51.7% Below ATH o</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/05/crypto-mutiny-on-strategy-shorts-target-mstr-in-bitcoin-bloodbath.html" target="_blank" rel="noopener">Crypto Mutiny on Strategy (MSTR): Puts >2x Calls, $250M in Bearish Premium; Stoc</a>
+<a class="source-link" href="https://stockanalysis.com/stocks/coin/history/" target="_blank" rel="noopener">Coinbase (COIN) Falls 7.1% to $158.70; Baird Flags 15-20% Volume Decline, Downgr</a>
+<a class="source-link" href="https://www.thestreet.com/latest-news/lulu-lululemon-earnings-call-updates-q1-2026" target="_blank" rel="noopener">Lululemon (LULU) Cuts FY Outlook, Stock -8.6%; Americas Revenue -3%, Margins Com</a>
+<a class="source-link" href="https://www.kitco.com/news/article/2026-06-05/gold-breaks-below-key-technical-support-analysts-see-buying-opportunity" target="_blank" rel="noopener">Gold Breaks Below 200-Day MA, Spot at $4,327 (-3%); Analysts Call It a Buyable D</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/options/articles/corporate-bond-spreads-tightening-fast-143348082.html" target="_blank" rel="noopener">Investment Grade Credit Spreads at 70bp (vs 132bp Historical): 'Almost No Margin</a>
+<a class="source-link" href="https://www.reuters.com/business/finance/spacex-ipo-running-two-times-oversubscribed-sources-say-2026-06-05/" target="_blank" rel="noopener">SpaceX IPO 2x Oversubscribed: $150B Demand vs $75B Raise; Pricing June 11, Nasda</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/currency" target="_blank" rel="noopener">DXY Surges to 100.07 (+0.66%) on Hawkish Jobs Print; FX Markets Reprice Fed Path</a>
+<a class="source-link" href="https://www.wsj.com/tech/ai/selloff-in-chip-stocks-prompts-nasdaq-bloodbath-36fd8c52" target="_blank" rel="noopener">Oil Retreats 3% to $90.25 on Stronger Dollar; Iran War / Strait of Hormuz Risk P</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-05 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

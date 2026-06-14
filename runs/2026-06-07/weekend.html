@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Weekend Briefing | 2026-06-07</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Weekend Briefing</span></h1>
+    <div class="subtitle">2026-06-07 &middot; 14 articles &middot; 4 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews — Weekend Briefing: Post-Market Analysis & Week Ahead</h1>
+<p><strong>2026-06-07</strong> | 14 articles extracted | 10+ full-extraction sources</p>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p class="bold-line"><strong>Dominant Narrative: Rate Hike Fears + Strait of Hormuz Escalation Crush Risk Assets.</strong></p>
+<p>Markets enter the June 8–12 week in a <strong>materially more fragile environment</strong> than Friday's close. Three shocks converged:</p>
+<p>1. <strong>May NFP blew past expectations</strong> at 172K (consensus 85K), with +93K in upward revisions. Markets now fully price a quarter-point Fed hike by year-end. DXY surged above 100 for the first time since April.</p>
+<p>2. <strong>Ceasefire collapsed over the weekend.</strong> US forces intercepted Iranian drones targeting the Strait of Hormuz and struck coastal radar sites; Iran retaliated with ballistic missiles at US bases in Kuwait and Bahrain (6 of 7 intercepted). Iran conditions peace talks on release of $24B in frozen assets. Hormuz disruption enters its 100th day.</p>
+<p>3. <strong>Tech rout accelerated.</strong> Nasdaq-100 fell 4.7% on Friday — biggest single-day drop since October 2025. S&P 500 snapped a 9-week winning streak, down >2% for the week.</p>
+<p><strong>The week ahead is binary</strong>: May CPI (Wed), Apple WWDC (Mon), SpaceX IPO (Fri), ECB decision (Thu). A hot CPI print above the 4.2% consensus would likely seal a rate hike at the June 16-17 FOMC — Kevin Warsh's first meeting as Chair.</p>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Signal</th><th>Key Level / Data Point</th><th>Bias</th><th>Contrarian Flag</th></tr></thead><tbody><tr><td><strong>Equities (S&P 500)</strong></td><td>Selloff (-2% wk)</td><td>S&P 500 ~7,400; MS target 8,000</td><td>Bearish near-term</td><td>MS year-end target 8,000 (+12%); earnings beat by 6% in Q1</td></tr><tr><td><strong>Rates (UST 10Y)</strong></td><td>Yields rising</td><td>Market pricing full 25bp hike by YE</td><td>Bearish bonds</td><td>Fitch: Fed holds in 2026, cuts resume 2027</td></tr><tr><td><strong>Credit</strong></td><td>Supply wave pending</td><td>Top 5 tech capex: $800B (2026) → $1.16T (2027)</td><td>Cautious</td><td>AI financing may improve terms for quality issuers</td></tr><tr><td><strong>FX (DXY)</strong></td><td>Surged above 100</td><td>EUR/USD broke below 1.16</td><td>USD bullish</td><td>Dollar weakness expected 2H 2026 (MS)</td></tr><tr><td><strong>Commodities (WTI)</strong></td><td>Consolidating</td><td>WTI $90.5; critical $88 support</td><td>Bearish breakdown risk</td><td>Bullish breakout targets $127-$157 (Fib ext)</td></tr><tr><td><strong>Gold</strong></td><td>Crushed (-4% wk)</td><td>Below $4,320/oz</td><td>Bearish</td><td>Central bank buying could resume if rates peak</td></tr><tr><td><strong>Crypto (BTC)</strong></td><td>Deeply oversold</td><td>$61,822; RSI-14 at 24; ETF outflows $3.1B</td><td>Bearish but extreme</td><td>RSI 24 = most oversold since FTX; institutional ETF outflows may exhaust</td></tr><tr><td><strong>Vol (VIX)</strong></td><td>Spiking</td><td>Nasdaq -4.7% largest drop since Oct 2025</td><td>Elevated</td><td>—</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Section-by-Section Analysis</h2>
+<h3>1. Rates & Macro: The Fed Repricing</h3>
+<p><strong>What changed:</strong> The May jobs report (172K vs 85K expected, +93K revisions) triggered a violent repricing of the Fed path. Going into the week, markets had priced rate cuts; going out, they price a hike by December.</p>
+<p class="bold-line"><strong>Key numbers:</strong></p>
+<ul><li>April CPI: 3.8% YoY (headline), 2.8% YoY (core)</li><li>April PPI: 6.0% YoY</li><li>April PCE: 3.8% YoY</li><li>May CPI consensus: <strong>4.2% YoY</strong> (Wed, 8:30 AM ET)</li><li>Next FOMC: <strong>June 16-17</strong> (Kevin Warsh's first meeting)</li><li>ECB: 25bp hike expected Thursday; Lagarde press conference key</li></ul>
+<p><strong>Fitch Ratings</strong> cut global 2026 growth forecast by 0.2pp to 2.4%. US: -0.3pp to 1.9%. Eurozone: -0.4pp to 0.9%. But AI/IT boom cushioning: US IT investment +18% YoY in Q1, global semi sales +80% YoY in March. China upgraded +0.3pp to 4.6% on strong exports.</p>
+<p><strong>Contrarian:</strong> Morgan Stanley expects the Fed to hold, not hike — and sees the dollar weakening in 2H 2026 with a recovery only in 2027.</p>
+<h3>2. Oil & Commodities: The Hormuz Impasse</h3>
+<p><strong>Ceasefire collapsed Saturday.</strong> The sequence: US intercepted Iranian drones targeting Strait of Hormuz → struck coastal radar sites at Sirik and Qeshm Island → Iran launched ballistic missiles at US bases in Kuwait and Bahrain.</p>
+<p><strong>Oil price action:</strong> Extreme intra-week volatility. Brent/Brent surged ~10% early week to $99/$97, then reversed Thursday on brief deal hopes. Closed: Brent $93, WTI $90.5.</p>
+<p><strong>WTI technicals (FOREX.com):</strong> Consolidating in symmetrical triangle. Three scenarios:</p>
+<ul><li><strong>Rebound:</strong> Bounce from $88 → $95-$100</li><li><strong>Bullish breakout:</strong> Above $95 → $127, $135, $157 (Fibonacci extensions)</li><li><strong>Bearish breakdown:</strong> Below $86 → $74, then $67</li></ul>
+<p><strong>Fitch's adverse scenario:</strong> Oil at $100/bbl average → US growth 0.8%, Eurozone 0.3%, equities -10%, credit tightening.</p>
+<p><strong>Supply context:</strong> 6 consecutive weeks of US crude draws. OPEC increased output 188K bpd for June but Hormuz disruption limits impact. UAE expanding Fujairah port to bypass Strait.</p>
+<p><strong>Gold & Silver crushed:</strong> Gold -4% to $4,320, silver -8% to $67.5 — dollar/yield surge punishing non-yielding assets.</p>
+<p><strong>Contrarian:</strong> A bearish oil breakdown below $86 would rapidly ease inflation fears, potentially reversing the hawkish Fed trade and reviving risk-on sentiment across equities.</p>
+<h3>3. Equities: Tech Selloff, but Catalysts Ahead</h3>
+<p class="bold-line"><strong>Last week's damage:</strong></p>
+<ul><li>Nasdaq-100: -4.7% (biggest daily drop since Oct 2025)</li><li>S&P 500: -2%+ (snapped 9-week win streak)</li><li>NVDA: -6.19% ($205.10)</li><li>TSLA: -6.56% ($391)</li><li>BTC: ~$60K (down >50% from all-time highs)</li></ul>
+<p><strong>NVDA's strategic move:</strong> Announced N1X processor and RTX Spark superchip for PCs (fall 2026) — directly challenging Intel/AMD/Qualcomm/Apple. But insider selling is a concern: $388M sold past 3 months, zero buying. P/E 31.41x vs 5-year median 30.39x.</p>
+<p><strong>TSLA catalysts:</strong> SpaceX IPO priced at $135/share ($1.77T valuation). Elon in direct talks with ASML for $119B TeraFab chip plant — ASML CEO: "very serious." JPMorgan upgraded to Neutral (PT $475) — new analyst abandoned bearish stance. But Robotaxi fleet shrank to 20 cars, Roadster demo delayed to August.</p>
+<p><strong>Morgan Stanley midyear outlook:</strong> Overweight equities. S&P 500 year-end target 8,000 (raised from 7,800), mid-2027 target 8,300. Q1 earnings beat by 6% — strongest in 4 years. AI capex cycle the structural driver.</p>
+<h3>4. Crypto: Deep Oversold With ETF-Driven Selling</h3>
+<p><strong>BTC: $61,822 with RSI-14 at 24</strong> — the most oversold reading since the FTX collapse. This is extreme by any measure.</p>
+<p><strong>The ETF feedback loop:</strong> When ETF investors sell shares, the fund must sell actual Bitcoin. BlackRock IBIT lost >$3.1B in two weeks (May 18–June 3). Fidelity FBTC also hemorrhaging. The "sticky institutional money" thesis has broken — ETF investors are panic-selling just as fast as crypto natives.</p>
+<p class="bold-line"><strong>Spot volumes collapsed:<strong> CEX spot volume $679B in April — lowest since October 2023. Coinbase Q1 loss $394M, trading volume -50% YoY. Google search interest for "cryptocurrency" down 70 points from August 2025 peak. </strong>The problem isn't just selling — it's a complete absence of buyers.</strong></p>
+<p><strong>Contrarian:</strong> RSI-14 at 24 is historically a strong mean-reversion signal. ETF outflows may exhaust as weak hands clear. $1.89B options expiry on June 5 may have been a capitulation event.</p>
+<h3>5. FX: Dollar Surge; EUR/USD Breaks Down</h3>
+<p><strong>EUR/USD</strong> plunged below 1.16. Support: 1.1500 → 1.1410 (March low). The driver: widening US-EU rate divergence. Market prices Fed hike; ECB's 25bp hike is expected and won't change the spread significantly.</p>
+<p><strong>BOJ:</strong> 80% probability of June hike — policy divergence theme extends to USD/JPY.</p>
+<p><strong>Dollar outlook (Morgan Stanley):</strong> Near-term strength, then weakness in 2H 2026 as inflation moderates, rebounding in 2027 on French election risk and stronger US growth.</p>
+<hr class="divider">
+<h2>Week Ahead Calendar (June 8–12)</h2>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Event</th><th>Impact</th></tr></thead><tbody><tr><td><strong>Mon Jun 8</strong></td><td>Apple WWDC Keynote (1PM ET) — Siri AI revamp, Gemini deal</td><td>AAPL, tech sentiment</td></tr><tr><td><strong>Tue Jun 9</strong></td><td>Cracker Barrel (CBRL) Q3, Casey's (CASY) Q4</td><td>Consumer spending pulse</td></tr><tr><td><strong>Wed Jun 10</strong></td><td><strong>May CPI (8:30AM)</strong> — consensus 4.2% YoY headline</td><td><strong>BINARY: makes/breaks rate hike case</strong></td></tr><tr><td><strong>Wed Jun 10</strong></td><td>Oracle (ORCL) Q4, Chewy (CHWY) Q1</td><td>Tech/consumer earnings</td></tr><tr><td><strong>Thu Jun 11</strong></td><td><strong>ECB Rate Decision</strong> — 25bp hike expected</td><td>EUR/USD, global rates</td></tr><tr><td><strong>Thu Jun 11</strong></td><td>Adobe (ADBE) Q2, Lennar (LEN) Q1</td><td>Tech/housing earnings</td></tr><tr><td><strong>Fri Jun 12</strong></td><td><strong>SpaceX IPO (SPCX)</strong> — $75B raise, ~$1.8T valuation</td><td>Market structure, risk appetite</td></tr><tr><td><strong>Fri Jun 12</strong></td><td>UMich Consumer Sentiment (10AM) — May hit record low</td><td>Consumer health</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Key Risks & Convexity Assessment</h2>
+<div class="table-wrapper"><table><thead><tr><th>Scenario</th><th>Probability</th><th>Downside</th><th>Upside</th><th>Convexity</th></tr></thead><tbody><tr><td>Hot CPI + Hormuz escalation</td><td>~35%</td><td>S&P -5-8%, VIX >30, gold <$4,000</td><td>—</td><td>Negative skew</td></tr><tr><td>CPI in-line + ceasefire progress</td><td>~30%</td><td>—</td><td>S&P +3-5%, oil -$10, risk-on rally</td><td>Positive</td></tr><tr><td>CPI in-line + Hormuz status quo</td><td>~25%</td><td>Sideways to slightly down</td><td>Modest relief rally</td><td>Mixed</td></tr><tr><td>SpaceX IPO blowout + positive catalysts</td><td>~10%</td><td>Limited (event risk already priced)</td><td>Sentiment shift, IPO pipeline opens</td><td><strong>Asymmetric upside</strong></td></tr></tbody></table></div>
+<p><strong>Asymmetric opportunity:</strong> If CPI comes in below 4.2% AND there's any Hormuz progress, the simultaneous unwind of rate hike hedges + oil risk premium + extreme oversold positioning in crypto could produce a violent counter-trend rally. Positioning is extremely one-sided. RSI-24 in BTC, DXY above 100, gold crushed — all suggest stretched conditions.</p>
+<hr class="divider">
+<p><em>Generated by BoltNews • 14 articles (≤48h) • 10+ full-extraction sources • June 7, 2026 Weekend Briefing</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.investopedia.com/what-to-expect-in-markets-this-week-a-new-consumer-price-index-reading-and-updates-from-tech-giants-11991100" target="_blank" rel="noopener">What to Expect in Markets This Week: May CPI Report, Updates from Tech Giants</a>
+<a class="source-link" href="https://www.morganstanley.com/insights/articles/investment-outlook-midyear-2026" target="_blank" rel="noopener">2026 Midyear Investment Outlook: Constructive, Not Complacent</a>
+<a class="source-link" href="https://seekingalpha.com/article/4912679-wall-street-week-ahead" target="_blank" rel="noopener">Wall Street Week Ahead: CPI, Apple WWDC, SpaceX IPO, ORCL/ADBE Earnings</a>
+<a class="source-link" href="https://www.bnnbloomberg.ca/business/international/2026/06/07/global-airlines-slash-2026-profit-forecast-on-fuel-shock-from-iran-war/" target="_blank" rel="noopener">Global Airlines Slash 2026 Profit Forecast on Fuel Shock from Iran War</a>
+<a class="source-link" href="https://economynext.com/oil-crisis-hits-world-growth-outlook-as-forecasts-revised-down-fitch-ratings-274599/" target="_blank" rel="noopener">Oil Crisis Hits World Growth Outlook as Forecasts Revised Down: Fitch Ratings</a>
+<a class="source-link" href="https://www.moneycontrol.com/news/business/commodities/gulf-strikes-and-fed-funds-rate-hike-fears-keep-commodity-markets-on-edge-ahead-of-cpi-13942855.html" target="_blank" rel="noopener">Gulf Strikes and Fed Rate Hike Fears Keep Commodity Markets on Edge Ahead of CPI</a>
+<a class="source-link" href="https://www.forex.com/en/news-and-analysis/crude-oil-weekly-outlook-will-wti-rebound-from-key-88-support-again/" target="_blank" rel="noopener">USO: Crude Oil Weekly Outlook: Will WTI Rebound from Key $88 Support Again?</a>
+<a class="source-link" href="https://www.forex.com/en-us/news-and-analysis/weekly-eur-usd-outlook-us-cpi-and-ecb-in-focus-after-strong-jobs-data/" target="_blank" rel="noopener">Weekly EUR/USD Outlook: US CPI and ECB in Focus After Strong Jobs Data</a>
+<a class="source-link" href="https://www.gurufocus.com/news/8904576/nvidia-nvda-expands-ai-offerings-with-new-processor-amid-market-decline" target="_blank" rel="noopener">NVDA: Nvidia Expands AI Offerings with New N1X Processor Amid Market Decline</a>
+<a class="source-link" href="https://www.benzinga.com/quote/TSLA/news" target="_blank" rel="noopener">TSLA: Tesla Stock News: SpaceX IPO, TeraFab Chip Plant, JPMorgan Upgrade</a>
+<a class="source-link" href="https://www.barrons.com/articles/spacexs-starlink-review-328e54f1" target="_blank" rel="noopener">TSLA: SpaceX IPO: Starlink Drives $1.8 Trillion Valuation</a>
+<a class="source-link" href="https://www.firstpost.com/tech/wwdc-2026-siris-biggest-upgrade-yet-a-new-standalone-app-and-more-heres-how-to-watch-live-14019807.html" target="_blank" rel="noopener">AAPL: WWDC 2026: Siri Biggest Upgrade Yet — Tim Cook Final Event</a>
+<a class="source-link" href="https://www.briefs.co/news/investors-pull-cash-from-bitcoin-etfs-as-crypto-slides/" target="_blank" rel="noopener">BTC: Investors Pull Cash From Bitcoin ETFs as Crypto Slides — IBIT Loses $3.1B</a>
+<a class="source-link" href="https://crypto.news/crypto-spot-volume-falls-to-679b-as-retail-demand-weakens/" target="_blank" rel="noopener">BTC: Crypto Spot Volume Falls to $679B as Retail Demand Weakens</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-07 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

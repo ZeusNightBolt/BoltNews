@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-09</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-09 &middot; 10 articles &middot; 4 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews Pre-Market Briefing — Tuesday, June 9, 2026</h1>
+<p class="bold-line"><strong>Research Analyst Grade | Cross-Asset | Pre-Market</strong></p>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p>The morning setup is a relief rally, not a clean risk-on reset. U.S. equity futures are higher — S&amp;P futures +0.39%, Nasdaq futures +0.69%, Russell futures +0.77% — as the AI/semiconductor complex stabilizes after Friday's chip flush and Monday's rebound, but the macro constraint is still hawkish: Reuters reports fed funds futures assign a 70% probability of a December Fed hike after May payrolls printed +172,000 and March/April were revised up by +93,000.</p>
+<p>The overnight cross-asset move is a partial reversal of the Iran-war inflation shock. Oil is down this morning — Yahoo shows crude -2.33%, and the markets page shows Brent -2.03% / WTI -2.40% — after Brent settled Monday at $94.25 (+1.3%) and WTI at $91.30 (+0.8%) but gave back intraday spikes above +5% when Iran and Israel said they had halted attacks. That gives equities breathing room and weakens the dollar, but it does not remove the policy problem: 10Y Treasury yield remains around 4.55%, 30Y around 5.02%, and Treasury must absorb $119B of coupon supply this week.</p>
+<p>The dominant equity narrative remains AI concentration. CNBC reports Nvidia +2.3% premarket on an SK Hynix advanced-memory partnership, Broadcom +3%, AMD +2.7%, Micron +7%, and Marvell almost +9% premarket / +10.4% after the open Monday on S&amp;P 500 inclusion. Yahoo's lead story says OpenAI confidentially filed IPO paperwork one week after Anthropic, extending the AI equity-supply narrative already flagged in yesterday's post-market brief.</p>
+<p>The trading risk is that the market is buying a chip rebound while rates are repricing higher. VIX is down to 18.18 (-3.91%), but that compression is occurring before CPI Wednesday, PPI Thursday, an expected 25bp ECB hike Thursday, and the June 16–17 FOMC under new Fed Chair Kevin Warsh.</p>
+<hr class="divider">
+<h2>Equities</h2>
+<p class="bold-line"><strong>Known — source: Yahoo Finance market snapshot / markets page, June 9.</strong></p>
+<ul><li>S&amp;P futures: <strong>7,445.25, +0.39%</strong>.</li><li>Dow futures: <strong>50,961, +0.21%</strong>.</li><li>Nasdaq futures: <strong>29,656.75, +0.69%</strong>.</li><li>Russell futures: <strong>2,881.50, +0.77%</strong>.</li><li>Cash/overview levels shown on Yahoo Markets: Nasdaq <strong>+0.86%</strong>, Russell 2000 <strong>+0.77%</strong>, S&amp;P 500 <strong>+0.30%</strong>, Dow <strong>-0.16%</strong>.</li><li>VIX: <strong>18.18, -3.91%</strong>.</li></ul>
+<p><strong>Interpretation:</strong> The morning tape is recovering Friday's stress rather than discounting lower macro risk. Nasdaq/Russell leadership plus VIX compression says the market is re-adding beta, but Dow underperformance and the rates backdrop say this is still a narrow AI-led bid.</p>
+<h3>AI and semiconductor movers</h3>
+<p class="bold-line"><strong>Known — source: CNBC, June 8.</strong></p>
+<ul><li>Nvidia: <strong>+2.3% premarket</strong> after announcing an SK Hynix advanced-memory partnership for AI factory buildout.</li><li>Marvell: <strong>almost +9% premarket</strong> and later <strong>+10.4% shortly after Monday's open</strong> after S&amp;P Global announced S&amp;P 500 inclusion effective <strong>June 22</strong>.</li><li>Flex: <strong>+4% premarket</strong> on S&amp;P 500 inclusion.</li><li>Micron: <strong>+7% premarket</strong>.</li><li>Broadcom: <strong>+3% premarket</strong> after last week's post-earnings pressure.</li><li>AMD: <strong>+2.7% premarket</strong>.</li><li>Nurix: <strong>+24% premarket</strong> on a Roche collaboration.</li></ul>
+<p><strong>Context from prior local briefing:</strong> Yesterday's post-market markdown recorded Friday's semiconductor drawdown as over <strong>$1T</strong> of market value erased, with AVGO -7.9%, AMD -10.9%, MRVL -16.7%, and MU -13.3%, followed by a Monday snapback in MU, INTC, KLAC, AMAT, LRCX, and MRVL. This morning's tape confirms that the rebound is extending, not reversing.</p>
+<h3>Marvell-specific read-through</h3>
+<p class="bold-line"><strong>Known — source: CNBC, June 8.</strong></p>
+<ul><li>Marvell joins the S&amp;P 500 on <strong>June 22</strong> alongside Flex; Pool Corp and Campbell's are removed.</li><li>CNBC reported Marvell <strong>+210% YTD</strong>, <strong>$230B</strong> market cap, Q1 revenue <strong>$2.4B</strong>, and a <strong>32.5%</strong> one-day gain on June 2 after Nvidia CEO Jensen Huang called it the "next trillion-dollar company."</li></ul>
+<p><strong>Interpretation:</strong> Marvell is now a flow + narrative trade. Index inclusion forces passive demand, but +210% YTD and $230B market cap mean the upside/downside is increasingly dependent on AI capex durability and Nvidia endorsement credibility, not only fundamentals.</p>
+<hr class="divider">
+<h2>Rates</h2>
+<p class="bold-line"><strong>Known — source: Reuters, June 8.</strong></p>
+<ul><li>Fed funds futures price a <strong>70% chance</strong> of a Fed hike by December.</li><li>2Y Treasury yield: <strong>4.153%</strong>, down <strong>0.9bp</strong> Monday after hitting a 15-month high Friday.</li><li>10Y Treasury yield: <strong>4.55%</strong>, up <strong>1.4bp</strong> Monday.</li><li>2s10s curve: <strong>39.4bp</strong>.</li><li>Treasury coupon supply this week: <strong>$119B</strong> total:</li><li><strong>$58B</strong> 3Y notes Tuesday.</li><li><strong>$39B</strong> 10Y notes Wednesday.</li><li><strong>$22B</strong> 30Y bonds Thursday.</li></ul>
+<p class="bold-line"><strong>Known — source: Yahoo Finance, June 9.</strong></p>
+<ul><li>10Y yield: <strong>4.5520</strong>, +0.35%.</li><li>30Y yield: <strong>5.02</strong>, +0.50%.</li><li>TLT: <strong>-0.52%</strong> on the Yahoo Markets page.</li></ul>
+<p><strong>Interpretation:</strong> The rates market is not validating a dovish equity bounce. The front end has partially backed off Friday's spike, but 10Y/30Y pressure and supply risk keep duration as the key cross-asset constraint. The market can absorb higher yields if earnings breadth improves; it cannot absorb higher yields plus narrow AI-only leadership indefinitely.</p>
+<hr class="divider">
+<h2>FX</h2>
+<p class="bold-line"><strong>Known — source: Reuters, June 9.</strong></p>
+<ul><li>DXY: <strong>99.88, -0.12%</strong>.</li><li>EURUSD: <strong>$1.1545, +0.1%</strong>.</li><li>USDJPY: <strong>160.22</strong>.</li><li>AUDUSD: <strong>$0.7054, +0.14%</strong>.</li><li>CME FedWatch December hike probability: <strong>70%</strong>.</li><li>ECB decision: market expects a <strong>25bp hike Thursday</strong>.</li></ul>
+<p class="bold-line"><strong>Known — source: Yahoo Finance, June 9.</strong></p>
+<ul><li>EURUSD: <strong>1.1559, +0.16%</strong>.</li><li>GBPUSD: <strong>1.3388, +0.35%</strong>.</li><li>USDJPY: <strong>160.1590, +0.01%</strong>.</li></ul>
+<p><strong>Interpretation:</strong> The dollar is losing some safe-haven premium as oil and Middle East tails ease, but USDJPY near 160 is still intervention-sensitive. The bigger issue is sequencing: if ECB hikes Thursday while U.S. CPI/PPI keep Warsh-Fed hike odds alive, EURUSD may trade as a policy-differential tug-of-war rather than a pure risk-on pair.</p>
+<hr class="divider">
+<h2>Commodities</h2>
+<h3>Oil</h3>
+<p class="bold-line"><strong>Known — source: Reuters, June 8.</strong></p>
+<ul><li>Brent settled Monday at <strong>$94.25/bbl</strong>, up <strong>$1.16 / +1.3%</strong>.</li><li>WTI settled Monday at <strong>$91.30/bbl</strong>, up <strong>$0.76 / +0.8%</strong>.</li><li>Oil rose more than <strong>5% intraday</strong> before paring gains after Iran and Israel said attacks had halted.</li><li>Since the conflict began just over 100 days ago, Reuters says Brent is up about <strong>31%</strong> and WTI about <strong>37%</strong>.</li><li>Brent previously peaked above <strong>$126/bbl</strong> in April.</li></ul>
+<p class="bold-line"><strong>Known — source: Yahoo Finance / MarketWatch, June 9 / June 8.</strong></p>
+<ul><li>Crude oil: <strong>89.17, -2.33%</strong> on Yahoo snapshot.</li><li>Brent: <strong>-2.03%</strong> and WTI <strong>-2.40%</strong> on Yahoo Markets.</li><li>MarketWatch reported Brent briefly topped <strong>$98/bbl</strong> Monday and WTI hit <strong>$95.48</strong> before giving back gains.</li><li>OPEC+ approved a <strong>188,000 bpd</strong> July target increase, but MarketWatch cited analyst skepticism that this affects prices while Hormuz remains constrained.</li></ul>
+<p><strong>Interpretation:</strong> Oil is transitioning from momentum shock to headline-gamma instrument. Lower crude this morning is supportive for equities and gold, but the conflict premium has not disappeared; it is being repriced intraday around whether the halt in attacks becomes a real settlement.</p>
+<h3>Gold and metals</h3>
+<p class="bold-line"><strong>Known — source: Reuters, June 9.</strong></p>
+<ul><li>Spot gold: <strong>$4,327.42/oz</strong>, unchanged at 0850 GMT.</li><li>August gold futures: <strong>$4,351.30/oz</strong>, <strong>-0.3%</strong>.</li><li>Spot silver: <strong>$68.48/oz</strong>, <strong>+0.4%</strong>.</li><li>Platinum: <strong>$1,759.88/oz</strong>, <strong>+0.3%</strong>.</li><li>Palladium: <strong>$1,225.74/oz</strong>, <strong>+1.7%</strong>.</li><li>Gold closed below its 200-day moving average Friday for the first time since <strong>October 2023</strong>.</li></ul>
+<p><strong>Interpretation:</strong> Gold is not getting a clean bid from weaker oil because the market is focused on real rates and Fed hike odds. The 200DMA break makes gold a poor hedge unless CPI surprises higher enough to revive inflation fear without mechanically pushing real yields higher.</p>
+<hr class="divider">
+<h2>Credit</h2>
+<p><strong>Known/estimated from available data.</strong> No fresh article in this morning's extraction reported a discrete credit-spread shock. The closest live signal is rates and equity volatility: VIX down to <strong>18.18</strong>, Treasury supply <strong>$119B</strong>, 10Y <strong>4.55%</strong>, 30Y <strong>5.02%</strong>.</p>
+<p><strong>Context from local post-market briefing:</strong> Yesterday's markdown noted IG OAS near multi-decade tights, IG all-in yields near 5%, and an "up in quality" carry theme. Today's higher yield/supply setup argues for watching all-in yield demand at auctions before assuming spread resilience continues.</p>
+<p><strong>Interpretation:</strong> Credit risk is latent, not visible. If the market absorbs this week's Treasury supply without 10Y/30Y breaking higher, IG carry remains intact. If supply tails while equities are only AI-led, spreads can widen from very tight starting levels.</p>
+<hr class="divider">
+<h2>Sentiment &amp; Positioning</h2>
+<div class="table-wrapper"><table><thead><tr><th>Indicator</th><th>Latest</th><th>Read-through</th></tr></thead><tbody><tr><td>VIX</td><td><strong>18.18, -3.91%</strong></td><td>Equity fear is compressing despite CPI/Fed event risk.</td></tr><tr><td>Fed December hike odds</td><td><strong>70%</strong></td><td>Rates market is pricing a hawkish path.</td></tr><tr><td>Nasdaq futures</td><td><strong>+0.69%</strong></td><td>AI beta is being re-added pre-market.</td></tr><tr><td>Crude oil</td><td><strong>-2.33%</strong></td><td>Middle East inflation impulse is easing intraday.</td></tr><tr><td>DXY</td><td><strong>99.88–99.85</strong></td><td>Safe-haven dollar bid fading, but still near 100.</td></tr><tr><td>USDJPY</td><td><strong>~160.2</strong></td><td>Intervention-sensitive zone; yen downside risk if BOJ under-delivers.</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Key Data</th></tr></thead><tbody><tr><td>U.S. equities</td><td>Tactical long beta, tight stop</td><td>Relief rally extends if oil stays lower and Nasdaq leadership broadens beyond megacap AI.</td><td>S&amp;P futures +0.39%, Nasdaq futures +0.69%, VIX 18.18.</td></tr><tr><td>Semiconductors / AI</td><td>Long momentum, high convexity but crowded</td><td>Chip rebound has flow support from Nvidia partnership and Marvell/Flex index inclusion; valuation risk remains elevated after Friday's flush.</td><td>NVDA +2.3%, MRVL +9% premarket / +10.4% open, MU +7%, AVGO +3%.</td></tr><tr><td>Rates</td><td>Bearish duration into supply/CPI</td><td>10Y at 4.55%, 30Y at 5.02%, $119B coupon supply, 70% December hike odds.</td><td>3Y $58B Tuesday, 10Y $39B Wednesday, 30Y $22B Thursday.</td></tr><tr><td>Dollar</td><td>Neutral to slightly lower vs EUR/GBP; cautious USDJPY</td><td>Safe-haven premium fades with lower oil, but Fed hike odds cap downside.</td><td>DXY 99.88, EURUSD 1.1545–1.1559, USDJPY ~160.2.</td></tr><tr><td>Oil</td><td>Headline-driven, sell spikes unless attacks resume</td><td>Monday's &gt;5% intraday spike faded; Tuesday crude down &gt;2%, but Hormuz remains a tail.</td><td>Brent $94.25 settle Monday, WTI $91.30; crude -2.33% this morning.</td></tr><tr><td>Gold</td><td>Avoid/chase only on CPI shock</td><td>Lower oil helps, but Fed-hike odds and 200DMA break keep pressure on non-yielding assets.</td><td>Spot gold $4,327.42; below 200DMA first time since Oct 2023.</td></tr><tr><td>Credit</td><td>Carry intact but asymmetric downside</td><td>Tight spreads plus higher Treasury supply create more downside than upside if yields gap higher.</td><td>IG context from local post-market brief; no fresh spread-stress article found.</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Contrarian Flags</h2>
+<p>1. <strong>Vol compression before CPI/PPI is complacent.</strong> VIX at <strong>18.18</strong> is pricing less near-term stress while CPI, PPI, ECB, and FOMC are still ahead.</p>
+<p>2. <strong>AI rebound is flow-led, not macro-led.</strong> Nvidia, Marvell, Micron, Broadcom and AMD are bouncing, but the Fed path moved hawkish, not dovish.</p>
+<p>3. <strong>Oil downside may be over-interpreted.</strong> Crude is down this morning, but Reuters/MarketWatch both show Monday's market remains hostage to Iran-Israel/Hormuz headlines.</p>
+<p>4. <strong>USDJPY near 160 is a policy landmine.</strong> If BOJ under-delivers on June 16, Reuters quoted MUFG warning of a larger negative yen reaction.</p>
+<p>5. <strong>Treasury supply is the cleanest stress test this week.</strong> If $119B coupon supply clears cleanly, equities can look through Fed hike odds; if it tails, the AI rebound becomes much more fragile.</p>
+<hr class="divider">
+<h2>Source Notes</h2>
+<p>Primary/secondary mix:</p>
+<ul><li><strong>Reuters</strong>: rates, FX, gold, oil, Morning Bid macro framing.</li><li><strong>CNBC</strong>: premarket equity movers and Marvell S&amp;P 500 inclusion.</li><li><strong>Yahoo Finance</strong>: live cross-asset market snapshot.</li><li><strong>MarketWatch</strong>: oil intraday reversal and OPEC+ target increase details.</li><li><strong>Local markdown context</strong>: 2026-06-08 post-market briefing for historical event continuity; no re-search used for yesterday's context.</li></ul>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.reuters.com/commentary/reuters-open-interest/global-markets-view-usa-2026-06-08/" target="_blank" rel="noopener">MACRO: Morning Bid: Chip chill, jobs heat and war</a>
+<a class="source-link" href="https://www.reuters.com/world/middle-east/yields-mixed-after-jobs-data-lifts-fed-hike-odds-2026-06-08/" target="_blank" rel="noopener">MACRO: Yields mixed after jobs data lifts Fed hike odds</a>
+<a class="source-link" href="https://www.reuters.com/world/asia-pacific/dollar-hovers-around-two-month-high-iran-israel-truce-hangs-balance-2026-06-09/" target="_blank" rel="noopener">MACRO: Dollar eases as investors weigh Middle East hopes, rate outlook</a>
+<a class="source-link" href="https://www.reuters.com/world/india/gold-extends-falls-rising-treasury-yields-2026-06-09/" target="_blank" rel="noopener">MACRO: Gold steady as lower oil offsets US rate-hike fears</a>
+<a class="source-link" href="https://www.reuters.com/business/energy/oil-prices-rise-more-than-2-israel-strikes-lebanon-2026-06-07/" target="_blank" rel="noopener">MACRO: Oil prices settle $1 higher after Iran and Israel say they have halted attacks</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/08/stocks-making-the-biggest-moves-premarket-nvidia-marvell-flex-and-more.html" target="_blank" rel="noopener">NVDA: Stocks making the biggest moves premarket: Nvidia, Marvell, Flex and more</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/08/marvell-sp500-index-addition.html" target="_blank" rel="noopener">MRVL: Marvell to join S&P 500, stock jumps 10%</a>
+<a class="source-link" href="https://finance.yahoo.com/" target="_blank" rel="noopener">MACRO: Yahoo Finance market snapshot: US stock futures climb as AI trade takes center s</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/" target="_blank" rel="noopener">MACRO: Yahoo Finance markets overview</a>
+<a class="source-link" href="https://www.marketwatch.com/story/u-s-stock-futures-slide-oil-prices-surge-as-new-attacks-threaten-the-cease-fire-with-iran-6e433c90" target="_blank" rel="noopener">MACRO: Global oil prices erase most gains after topping $98 a barrel</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-09 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

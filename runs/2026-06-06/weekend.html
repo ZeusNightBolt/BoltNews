@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Weekend Briefing | June 6, 2026</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Weekend Briefing</span></h1>
+    <div class="subtitle">June 6, 2026 &middot; 14 articles &middot; 6 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews Weekend Briefing — June 6, 2026</h1>
+<p class="bold-line"><strong>Markets closed. Last trade: Friday, June 5, 2026.</strong></p>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p><strong>The S&P 500's nine-week winning streak ended in violent fashion Friday as a blowout May jobs report (+172K vs +80K consensus) flipped the Fed narrative from "cuts delayed" to "hikes probable."</strong> The Nasdaq plunged 4.2% — its worst week since April 2025 — in a cross-asset risk-off event that spared nothing: stocks, bonds, bitcoin, and gold all fell together. The proximate trigger was labor market strength that shattered any remaining rate-cut hopes, but structural cracks had been forming all week: Broadcom's disappointing AI chip guidance (-20% post-earnings), Alphabet's historic $85B equity raise, and reports Meta may follow with its own multi-billion AI funding round. The sell-off has the hallmarks of a deleveraging event rather than a fundamental repricing — the question for next week is whether forced liquidation cascades into Monday or Friday's flush cleared excess.</p>
+<p><strong>The dominant narrative shift: "good news is bad news" returns with a vengeance.</strong> A US economy adding jobs at double the expected pace, with inflation running at 3.8% CPI / 3.3% core PCE, and a new Fed Chair (Kevin Warsh) taking the helm June 17, has markets repricing from "higher for longer" to "how high?" The CME FedWatch now shows ~70% probability of at least one hike by December, up from <50% pre-jobs. The 2-year yield hit 4.16%, a fresh 52-week high.</p>
+<p><strong>Contrarian signal:</strong> The sell-off was broad but sector dispersion tells a story. The Dow fell only 1.3% while the Nasdaq dropped 4.2%. Value/cyclical outperformance suggests this isn't a recession scare — it's a rate-sensitivity purge concentrated in duration-heavy growth names. The fundamentals (AI capex cycle, strong earnings, low unemployment) remain intact. Pullbacks of 5-10% are normal in bull markets. The S&P 500 had rallied 20.6% from March 30 to Tuesday's all-time high without a meaningful pullback.</p>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Signal</th><th>Direction</th><th>Key Level</th><th>1W Change</th><th>Driver</th></tr></thead><tbody><tr><td><strong>US Equities (S&P 500)</strong></td><td>Bearish</td><td>▼▼</td><td>7,383.74</td><td>-2.64%</td><td>Jobs data → rate hike repricing</td></tr><tr><td><strong>Nasdaq Composite</strong></td><td>Bearish</td><td>▼▼▼</td><td>25,709.43</td><td>-4.7%</td><td>AI/tech duration purge; AVGO guidance</td></tr><tr><td><strong>Dow Jones</strong></td><td>Cautious</td><td>▼</td><td>50,866.78</td><td>-0.3%</td><td>Relative value rotation beneficiary</td></tr><tr><td><strong>Semiconductors (SOX)</strong></td><td>Bearish</td><td>▼▼▼</td><td>~20-day SMA test</td><td>-10%+</td><td>AVGO weakness + yield spike double-hit</td></tr><tr><td><strong>Russell 2000 (RUT)</strong></td><td>Bearish</td><td>▼▼</td><td>~-111 pts Friday</td><td>TBD</td><td>Rate sensitivity; regional bank exposure</td></tr><tr><td><strong>UST 10Y Yield</strong></td><td>Hawkish</td><td>▲▲</td><td>4.55%</td><td>+11bps session</td><td>Inflation + strong jobs → no cuts, maybe hikes</td></tr><tr><td><strong>UST 2Y Yield</strong></td><td>Hawkish</td><td>▲▲▲</td><td>4.16% (52wk high)</td><td>Sharp spike</td><td>Directly repricing Fed path</td></tr><tr><td><strong>USD (DXY)</strong></td><td>Bullish</td><td>▲</td><td>100.04</td><td>+0.6% session</td><td>Rate differential + safe haven</td></tr><tr><td><strong>EUR/USD</strong></td><td>Bearish</td><td>▼</td><td>~0.8679</td><td>Weakening</td><td>ECB hike priced but growth divergence</td></tr><tr><td><strong>IG Credit</strong></td><td>Cautious</td><td>▼</td><td>Spreads tightening pre-selloff</td><td>TBD</td><td>Higher yields eventually hurt; AI issuance wave</td></tr><tr><td><strong>HY Credit</strong></td><td>Cautious</td><td>▼</td><td>—</td><td>TBD</td><td>Energy exposure a wildcard</td></tr><tr><td><strong>Gold</strong></td><td>Bearish</td><td>▼▼</td><td>$4,345/oz</td><td>-3.6%</td><td>Higher real rates = non-yielding pain</td></tr><tr><td><strong>Bitcoin</strong></td><td>Bearish</td><td>▼▼▼</td><td><$60,000</td><td>-17%+ weekly</td><td>Below 200W SMA (~$62K); MSTR sold BTC</td></tr><tr><td><strong>WTI Crude</strong></td><td>Neutral</td><td>▼</td><td>$90.35</td><td>-2.9%</td><td>Hormuz disruption vs. de-escalation hopes</td></tr><tr><td><strong>Brent Crude</strong></td><td>Neutral</td><td>▼</td><td>$93.09</td><td>-2%</td><td>Energy inflation channel still open</td></tr><tr><td><strong>VIX</strong></td><td>Fear</td><td>▲▲</td><td>+40% to 2-mo high</td><td>Spike from 15→21+</td><td>Complacency unwound violently</td></tr></tbody></table></div>
+<p><strong>Legend:</strong> ▲ = rising / bullish for asset | ▼ = falling / bearish | Arrows count = magnitude</p>
+<hr class="divider">
+<h2>The Week That Was: June 1–5, 2026</h2>
+<h3>Monday–Tuesday: Record Highs</h3>
+<ul><li>S&P 500 hit fresh all-time high Tuesday, extending the rally to +20.6% from the March 30 lows.</li><li>AI optimism, strong Q1 earnings (up ~30% YoY overall), and easing geopolitical fears powered gains.</li><li>The S&P 500's nine-week winning streak was the longest since 2004.</li></ul>
+<h3>Wednesday–Thursday: Cracks Appear</h3>
+<ul><li><strong>Broadcom (AVGO)</strong> reported Q2 earnings with weaker-than-expected Q3 chip revenue guidance. Stock fell 12.6% Thursday, triggering a sector-wide semiconductor reassessment.</li><li><strong>Alphabet (GOOG/GOOGL)</strong> launched a historic <strong>$85 billion equity raise</strong> to fund AI infrastructure — the largest tech offering on record.</li><li>Memory chip ETF sank 15% as the AI rally began to reverse.</li><li>VIX hit a four-month low (15.18) Thursday — complacency was extreme.</li></ul>
+<h3>Friday: The Dam Breaks</h3>
+<ul><li><strong>BLS May Jobs Report:</strong> +172,000 payrolls vs +80,000 consensus. Prior months revised up by 93K total. Unemployment steady at 4.3%. Wage growth +3.4% YoY in line.</li><li><strong>Everything sold off.</strong> Stocks, bonds, bitcoin, gold — a true cross-asset liquidation.</li><li><strong>Nasdaq:</strong> -4.2% (worst day since April 2025). <strong>S&P 500:</strong> -2.6% (worst since October). <strong>Dow:</strong> -1.4%.</li><li><strong>Semiconductor bloodbath:</strong> Intel -11.3%, Micron -12.4%, AMD -11.0%, Marvell -15%, ARM -12.8%.</li><li><strong>10Y yield</strong> surged to 4.55%; <strong>2Y hit 4.16%</strong> (highest in a year).</li><li>CME FedWatch: ~70% probability of a rate hike by December (up from ~34% pre-jobs).</li><li><strong>Meta (META)</strong> dropped 5.5% on FT report it may launch a multi-billion equity offering for AI.</li><li><strong>Bitcoin</strong> fell below $60,000 for first time since October 2024; -17% for the week after Strategy (MSTR) disclosed its first BTC sale since 2022.</li><li><strong>Gold</strong> erased all 2026 gains, down 3.6% to $4,345/oz.</li><li>Trump posted: "With a great Jobs Report, like just announced, stocks should go up, not down. Growth does not mean inflation!"</li></ul>
+<hr class="divider">
+<h2>Key Individual Stories</h2>
+<h3>Broadcom (AVGO) — The AI Canary</h3>
+<ul><li>Q3 chip revenue guidance missed expectations, raising the question: is AI demand growth decelerating?</li><li>Stock fell ~20% in two days (Thursday + Friday), erasing ~$400B in market cap.</li><li>Quote (Ross Mayfield, Baird): <em>"A parabolic move like most of these stocks have been experiencing is not sustainable under perpetuity. You're pricing in basically perfection."</em></li></ul>
+<h3>Alphabet (GOOG/GOOGL) — Historic $85B Equity Raise</h3>
+<ul><li>Largest tech equity offering on record to fund AI infrastructure buildout.</li><li>Google also disclosed it will pay SpaceX $920M/month to rent 110,000 NVDA GPUs from October 2026–June 2029.</li><li>Both share classes (GOOG/GOOGL) under pressure.</li></ul>
+<h3>NVIDIA (NVDA) — Down But Not Out</h3>
+<ul><li>Fell 6.2% to $205.10. The AI bellwether caught in the sector-wide downdraft.</li><li>Fundamental demand signals remain strong (Alphabet's GPU leasing deal with SpaceX confirms hyperscaler appetite).</li></ul>
+<h3>Meta Platforms (META) — AI Funding Dilution Risk</h3>
+<ul><li>FT report (2:30pm Friday): Meta may launch a multi-billion-dollar equity offering to fund AI buildout.</li><li>Stock dropped 5.5% to $593.00.</li><li>Combined with Alphabet's raise, this signals a wave of mega-cap tech equity issuance that could pressure the sector.</li></ul>
+<h3>Intel (INTC) — Worst Single-Day Hit</h3>
+<ul><li>Down 11.3% to $99.17. Still up ~180% YTD but the sell-off was severe.</li><li>Options market pricing ±8% swing by end of next week; Wall Street consensus target ~$95.</li></ul>
+<h3>Lululemon (LULU) — Consumer Warning</h3>
+<ul><li>Slashed full-year revenue guidance to $11B-$11.15B (flat to -1% YoY).</li><li>Stock fell 8.5% to $115, lowest since May 2018. Lost nearly half its value YTD.</li><li>JPMorgan cut PT to $149 from $173.</li></ul>
+<h3>SpaceX IPO — The Wildcard</h3>
+<ul><li>Reportedly preparing to go public next Friday (June 12/13) at a ~$1.77 trillion valuation.</li><li>Would be the highest-valued IPO in history.</li><li>Schwab analysts note: investors may be selling winners to raise cash for the IPO, contributing to the current sell-off.</li><li>S&P's 12-month seasoning rule means it won't join the index immediately.</li></ul>
+<hr class="divider">
+<h2>Macro Picture</h2>
+<h3>Labor Market: Hot, Not Slowing</h3>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>May 2026</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>Nonfarm Payrolls</td><td>+172,000</td><td>+80,000</td><td>+179,000 (revised from 115K)</td></tr><tr><td>Unemployment Rate</td><td>4.3%</td><td>4.3%</td><td>4.3%</td></tr><tr><td>Avg Hourly Earnings (MoM)</td><td>+0.3%</td><td>+0.3%</td><td>+0.3%</td></tr><tr><td>Avg Hourly Earnings (YoY)</td><td>+3.4%</td><td>+3.4%</td><td>+3.4%</td></tr><tr><td>Labor Force Participation</td><td>61.8%</td><td>—</td><td>61.8%</td></tr><tr><td>ADP Employment</td><td>+122K</td><td>+110K</td><td>—</td></tr><tr><td>JOLTS Job Openings</td><td>7.618M</td><td>—</td><td>+738K jump</td></tr></tbody></table></div>
+<h3>Inflation: Sticky and Climbing</h3>
+<div class="table-wrapper"><table><thead><tr><th>Measure</th><th>Latest</th><th>Trend</th></tr></thead><tbody><tr><td>CPI (YoY, April)</td><td>3.8%</td><td>Highest since 2024</td></tr><tr><td>Core CPI (YoY)</td><td>2.8%</td><td>Elevated</td></tr><tr><td>PPI (YoY, April)</td><td>6.0%</td><td>Hot, second consecutive hot print</td></tr><tr><td>Core PCE (YoY, April)</td><td>3.3%</td><td>Fed's preferred gauge, climbing</td></tr><tr><td>GDP (Q1 final)</td><td>+1.6%</td><td>Revised down from 2.0%</td></tr></tbody></table></div>
+<h3>Consumer Stress Beneath the Surface</h3>
+<ul><li>Michigan Consumer Sentiment: <strong>44.8</strong> (record low).</li><li>Personal Savings Rate: <strong>2.6%</strong> (down from 3.2% in March, 5.8% a year ago).</li><li>Real Disposable Income: <strong>-0.5% MoM</strong> in April, continued decline.</li></ul>
+<h3>Fed Policy — The Warsh Era Begins</h3>
+<ul><li><strong>Current Fed Funds Rate:</strong> 3.75% upper bound. IORB: 3.65%.</li><li><strong>Next FOMC Meeting:</strong> June 17 — Kevin Warsh's first meeting as Chair (replaced Jerome Powell).</li><li><strong>Market Pricing:</strong> ~70% probability of at least one hike by December. ~50% by late October.</li><li><strong>Analyst View (James McCann, Edward Jones):</strong> "In the near term the data confirms that Fed easing is off the table this year, and markets continue to worry that the next move could be a hike."</li><li><strong>Caveat:</strong> The bar for actual hikes remains high. Warsh would need to see a "more persistent spike in inflation" before moving to tightening.</li></ul>
+<h3>Geopolitics — The Oil Wildcard</h3>
+<ul><li>US-Iran standoff continues; Strait of Hormuz disruption sustaining Brent in the low-to-mid $90s.</li><li>WTI crude closed at $90.35 (down 2.9% Friday on risk-off flows, but still elevated).</li><li>Marine fuel shortages could idle up to 10% of global shipping by late summer → supply-chain inflation.</li><li>De-escalation hopes caused oil to fall 16.9% in late May, but no deal materialized. Markets treating escalation risk as persistent.</li><li>Thrivent's base case: "prolonged conflict."</li></ul>
+<hr class="divider">
+<h2>The Week Ahead: June 8–12, 2026</h2>
+<h3>Key Events</h3>
+<ul><li><strong>Monday:</strong> Apple WWDC (AI offering announcement expected). Campbell's (CPB), FuelCell (FCEL) earnings.</li><li><strong>Tuesday:</strong> US Trade Balance, Wholesale Inventories, Existing Home Sales. Academy Sports (ASO), J.M. Smucker (SJM) earnings.</li><li><strong>Wednesday:</strong> <strong>CPI (May)</strong> — the most important data point of the week. MBA Mortgage Apps, Treasury Budget, EIA Crude Inventories. <strong>Oracle (ORCL)</strong> earnings, Chewy (CHWY).</li><li><strong>Thursday:</strong> <strong>PPI (May)</strong> — second hot print in a row would amplify rate-hike fears. Initial/Continuing Claims, EIA Natural Gas. <strong>Adobe (ADBE)</strong> earnings, Lennar (LEN), RH Inc. (RH).</li><li><strong>Friday:</strong> Michigan Consumer Sentiment (June prelim). <strong>SpaceX IPO expected to begin trading.</strong></li></ul>
+<h3>Central Bank Calendar</h3>
+<div class="table-wrapper"><table><thead><tr><th>Date</th><th>Bank</th><th>Context</th></tr></thead><tbody><tr><td>June 10</td><td>Bank of Canada</td><td>CAD at G-10 lows; growth/jobs focus</td></tr><tr><td>June 11</td><td>ECB</td><td>25bp hike 98.2% priced; Lagarde presser</td></tr><tr><td>June 16</td><td>Bank of Japan</td><td>After record ¥73.6B intervention</td></tr><tr><td>June 17</td><td><strong>Federal Reserve</strong></td><td>Warsh's first meeting as Chair</td></tr><tr><td>June 18</td><td>Bank of England</td><td>Political uncertainty weighs on GBP</td></tr></tbody></table></div>
+<h3>Key Questions for the Week</h3>
+<p>1. Will forced liquidation cascade into Monday, or did Friday flush excess?</p>
+<p>2. Is SpaceX IPO-related selling done, or does it continue through Friday?</p>
+<p>3. Will Treasury yields push higher still? (2Y at 52-week high of 4.16%)</p>
+<p>4. Will the SOX semiconductor index find support at its 20-day SMA as it did in mid-May?</p>
+<p>5. Will Apple's WWDC AI announcements restore tech sentiment or disappoint?</p>
+<p>6. Will CPI/PPI come in hot and fuel further yield increases?</p>
+<hr class="divider">
+<h2>Contrarian Signals & Asymmetric Opportunities</h2>
+<p>1. <strong>The sell-off is rate-sensitivity, not recession.</strong> Dow -1.3% vs Nasdaq -4.2% = value rotation, not systemic fear. Fundamentals (earnings +30% YoY, AI capex cycle intact) haven't changed.</p>
+<p>2. <strong>Schwab's "Higher Volatility" forecast</strong> implies opportunity in options premium selling if VIX sustains above 20.</p>
+<p>3. <strong>Bitcoin below 200-week SMA ($62K).</strong> Historically, BTC has rarely stayed below this level for extended periods. The Strategy (MSTR) BTC sale is bearish near-term but may signal capitulation.</p>
+<p>4. <strong>Gold erased all 2026 gains</strong> — if the rate-hike narrative moderates (CPI comes in cool Wednesday), gold could snap back sharply.</p>
+<p>5. <strong>ECB hiking into a 0.1% QoQ economy.</strong> The EUR/USD weakness may be overdone if Lagarde signals any dovish tilt at the June 11 meeting.</p>
+<p>6. <strong>The "buy the dip" playbook:</strong> Every S&P 500 pullback of 5%+ since October 2023 has been bought. The 20.6% rally from March 30 needed a breather. But the damage to momentum and "dip buyer mentality" (Schwab's words) is real.</p>
+<hr class="divider">
+<h2>Sources</h2>
+<ul><li>CNN Business — "Nasdaq, S&P 500 Suffer Worst Day of Year" (June 5, 2026)</li><li>Wall Street Journal — Live Markets Coverage (June 5, 2026)</li><li>Charles Schwab — Weekly Trader's Outlook, Nathan Peterson & Jim Ferraioli (June 5, 2026)</li><li>Yahoo Finance / Investopedia — Markets News (June 5, 2026)</li><li>The Motley Fool — Stock Market Today (June 5, 2026)</li><li>RollingOut — "S&P 500, Nasdaq Fall as Chip Sell-Off Deepens" (June 5, 2026)</li><li>Thrivent Funds — June 2026 Market Update, Steve Lowe CFA (June 5, 2026)</li><li>Convera — FX Outlook for June 2026 (June 3, 2026)</li><li>Monex Global — Monthly Currency Outlook June 2026</li><li>TradingEconomics — DXY, United States Dollar data</li><li>BestExchangeRates — USD Market Update (June 6, 2026)</li><li>Federal Reserve — FOMC Minutes April 29, 2026; FRED data</li><li>CME FedWatch Tool — Rate hike probabilities</li><li>Bureau of Labor Statistics — May 2026 Employment Situation</li><li>Forbes — "10 Best Stocks to Buy Now for June 2026"</li></ul>
+<hr class="divider">
+<p><em>Generated: June 6, 2026 18:10 UTC | BoltNews Weekend Briefing | Not investment advice.</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnn.com/2026/06/05/markets/stock-market-sell-off-fed" target="_blank" rel="noopener">Nasdaq, S&P 500 suffer worst day of year as AI stocks tumble and Fed rate-hike o</a>
+<a class="source-link" href="https://www.wsj.com/livecoverage/may-jobs-report-stock-market-06-05-2026" target="_blank" rel="noopener">Stock Market News for June 5, 2026: Nasdaq Suffers Worst Week in More Than a Yea</a>
+<a class="source-link" href="https://www.schwab.com/learn/story/weekly-traders-outlook" target="_blank" rel="noopener">Weekly Trader's Stock Market Outlook</a>
+<a class="source-link" href="https://www.fool.com/coverage/stock-market-today/2026/06/05/stock-market-today-june-5-strong-jobs-data-drives-broad-sell-off-at-midday/" target="_blank" rel="noopener">Stock Market Today, June 5: Strong Jobs Data Drives Broad Sell-Off at Midday</a>
+<a class="source-link" href="https://rollingout.com/2026/06/05/sp500-nasdaq-chip-selloff-rising-yields/" target="_blank" rel="noopener">S&P 500, Nasdaq Fall as Chip Sell-Off Deepens</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/markets-news-june-5-2026-105000909.html" target="_blank" rel="noopener">Markets News: June 5, 2026 — Nasdaq Ends Day 4% Lower</a>
+<a class="source-link" href="https://www.thriventfunds.com/insights/market-update/june-2026-market-update-stocks-and-inflation-keep-rising.html" target="_blank" rel="noopener">June 2026 Market Update: Stocks and inflation keep rising</a>
+<a class="source-link" href="https://convera.com/blog/market-insights/fx-research/monthly-global-fx-outlook/fx-outlook-june-2026/" target="_blank" rel="noopener">FX Outlook for June 2026: inflation and resilience collide</a>
+<a class="source-link" href="https://monexglobal.com/insights/monthly-currency-outlook-june-2026" target="_blank" rel="noopener">Monthly Currency Outlook — June 2026</a>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-060526" target="_blank" rel="noopener">Stock Market Today: Dow, Nasdaq, S&P 500 Down; Broadcom Falls</a>
+<a class="source-link" href="https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-nvidia-stock-drops-6-in-ugly-day-for-chip-stocks-100000734.html" target="_blank" rel="noopener">NVDA: Tech stocks today: Nvidia stock drops 6% in ugly day for chip stocks</a>
+<a class="source-link" href="https://fred.stlouisfed.org/series/DFEDTARU" target="_blank" rel="noopener">Fed Funds Target Range — Upper Limit (DFEDTARU)</a>
+<a class="source-link" href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm" target="_blank" rel="noopener">FOMC Minutes — April 29, 2026</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/currency" target="_blank" rel="noopener">US Dollar — DXY exchange rate and historical data</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; June &middot; Generated June 6, 2026 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-04</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-04 &middot; 22 articles &middot; 5 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>⚡ BoltNews — Pre-Market Briefing</h1>
+<p><strong>2026-06-04</strong> | 6:20 AM ET | 22 articles | 7 categories</p>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p class="bold-line"><strong>The Dominant Theme: Record-Setting Rally Meets Its First Wall</strong></p>
+<p>After five consecutive sessions of all-time highs and a 9-session S&P 500 winning streak, U.S. equities reversed sharply on June 3 — the S&P 500 fell 0.74% to 7,553.68, the Dow dropped over 600 points (-1.2%), and the Nasdaq Composite declined 0.9%. The selloff was broad but tech-heavy: Information Technology and Consumer Discretionary each fell 1.5%, with IBM, CRM, MSFT, and NVDA all down 3-7%. Energy (+1.9%) was the lone bright spot as oil surged on renewed Iran tensions.</p>
+<p><strong>The narrative tension is acute.</strong> The same session delivered blockbuster AI earnings (AVGO: $22.2B revenue, +48% YoY, AI chips +143%) and a 10% after-hours CRWD collapse despite a beat and raised guidance. The market is now discriminating ruthlessly between AI winners and everything else. LITE plunged 9% — worst S&P performer — in what looks like profit-taking after a +150% YTD run.</p>
+<p><strong>The macro backdrop is as complex as it gets:</strong> the Fed is paralyzed at 3.75% with its deepest internal division since 1992 (8-4 April vote). CPI at 3.8%, oil at $95, and a manufacturing PMI at a 4-year high (54.0) argue for hawkishness. But GDPNow Q2 is being slashed (3.0% from 3.8%) and the labor market data this week could change everything. The FOMC minutes revealed a majority sees potential rate <em>hikes</em> if inflation persists — a hawkish tail risk the bond market hasn't fully priced (10Y at 4.48%, 2s10s ~42bp).</p>
+<p><strong>Iran is the wildcard.</strong> Talks suspended, Strait of Hormuz disrupted, national gas at $4.56/gal (up >40% since February). The OECD calls the conflict "the dominant force shaping the global economy." A formal collapse of US-Iran talks could push oil through $95 and 10Y yields above 4.60%.</p>
+<p><strong>Positioning signal:</strong> The Russell 2000's persistent underperformance (down on days when the S&P hit records) is a classic late-cycle divergence. The VIX rising (+4.77% to 16.05) while indices set records is another yellow flag. The cross-asset picture says: duration is vulnerable, energy is bid, tech leadership is narrowing, and small caps are flashing warning.</p>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction (24h)</th><th>Thesis</th><th>Key Data Points</th></tr></thead><tbody><tr><td><strong>Equities (Large Cap)</strong></td><td>⬇️ Bearish near-term</td><td>Record run exhausted; narrow leadership; RSI 73 on S&P/Nasdaq unsustainable</td><td>S&P -0.74% (7,553), Dow -1.2%, Nasdaq -0.9%; 9-session win streak snapped</td></tr><tr><td><strong>Equities (Small Cap)</strong></td><td>⬇️ Bearish</td><td>Late-cycle divergence; Russell declined while large caps hit records</td><td>Russell 2000 -0.38% June 2, persistent underperformance</td></tr><tr><td><strong>Rates (Front-End)</strong></td><td>➡️ Anchored</td><td>Fed on hold at 3.75%; market prices no change through 2026</td><td>4W bill 3.69%; next FOMC June 17 — consensus no change</td></tr><tr><td><strong>Rates (Long-End)</strong></td><td>⬆️ Bearish bias</td><td>Inflation + oil + hawkish FOMC minutes argue for higher yields</td><td>10Y 4.48% (-2bp today); touched 4.52% recently; 30Y 4.98%</td></tr><tr><td><strong>Credit (IG)</strong></td><td>➡️ Stable</td><td>Attractive carry near 5%; tight spreads but positive slope rewards duration</td><td>IG yields near 15-year highs; Schwab "up-in-quality" maintained</td></tr><tr><td><strong>Credit (HY)</strong></td><td>⬇️ Cautious</td><td>Rich valuations; oil inflation could stress weaker credits</td><td>Spreads tight; Schwab recommends moderation</td></tr><tr><td><strong>FX (USD)</strong></td><td>⬆️ Mildly bullish</td><td>Hawkish Fed + geopolitical risk premium; DXY 99.52</td><td>USD/JPY 159.92 (JPY -11.4% YoY); EUR/USD testing 1.1610 resistance</td></tr><tr><td><strong>Commodities (Oil)</strong></td><td>⬆️ Bullish</td><td>Iran supply risk unresolved; Goldman sees $90 floor</td><td>WTI $95.31 (-0.74% today, +50.4% YoY); Brent $94.98-$97.79</td></tr><tr><td><strong>Commodities (Gold)</strong></td><td>⬇️ Bearish</td><td>Rising real yields + stronger dollar = headwind</td><td>Gold $4,475/oz (-1% June 3)</td></tr><tr><td><strong>Volatility</strong></td><td>⬆️ Rising</td><td>VIX climbing despite records — divergence signal</td><td>VIX 16.05 (+4.77%); equities ignoring bond/oil risk signals</td></tr><tr><td><strong>Crypto</strong></td><td>⬇️ Bearish</td><td>MSTR BTC sale + risk-off rotation; Bitcoin $65.6K</td><td>BTC down from $67.8K high; MSTR -4.72% on BTC sale</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Sentiment & Positioning</h2>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Value</th><th>Signal</th></tr></thead><tbody><tr><td>S&P 500 RSI (14-day)</td><td>~73</td><td>Overbought — typical reversal zone</td></tr><tr><td>VIX</td><td>16.05 (+4.77%)</td><td>Rising vol on record highs = divergence</td></tr><tr><td>Put/Call Ratio</td><td>Not available</td><td>Watch for spike above 1.0</td></tr><tr><td>AAII Sentiment</td><td>Not available</td><td>Likely elevated after record run</td></tr><tr><td>IG Credit Spreads</td><td>Tight</td><td>Complacency in credit</td></tr><tr><td>Oil Volatility</td><td>Elevated</td><td>Iran headlines driving intraday swings</td></tr><tr><td>Fed Hike Odds (Dec)</td><td>~60%</td><td>Bond market pricing hawkish tail</td></tr><tr><td>Russell vs S&P Divergence</td><td>Widening</td><td>Classic late-cycle breadth warning</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Key Developments by Asset Class</h2>
+<h3>Equities</h3>
+<p class="bold-line"><strong>The Selloff: Profit-Taking, Not Panic</strong></p>
+<p>The June 3 reversal was broad but not panicked. Volume was elevated but orderly. The damage concentrated in the most extended names:</p>
+<ul><li><strong>LITE</strong> -9.0% (worst S&P 500 performer; +150% YTD — classic blow-off)</li><li><strong>CRM</strong> -3-7% range (Dow drag alongside IBM, MSFT, NVDA)</li><li><strong>PANW</strong> -5.7% despite beating Q3 estimates (EPS $0.85 vs consensus, $3.0B revenue) — the "priced for perfection" problem</li><li><strong>COST</strong> broke below its 200-day moving average — technically significant for a consumer staple</li></ul>
+<p class="bold-line"><strong>The AI Earnings Dichotomy: AVGO Soars, CRWD Crumbles</strong></p>
+<p>This is the most important signal from the session. Two major tech earnings, two very different outcomes:</p>
+<p><code>AVGO</code> delivered a flawless quarter: revenue $22.2B (+48% YoY), AI semiconductor revenue $10.8B (+143% YoY), Q3 guidance $29.4B with AI >$16B (>200% YoY). The Google $80B AI buildout deal and Meta partnership provide multi-year visibility. Stock +40% YTD, still digesting post-earnings.</p>
+<p><code>CRWD</code> beat on every metric — revenue $1.39B (+26% YoY, beat $1.36B), EPS $1.10 (beat $1.07), ARR $5.51B (+24% YoY). Raised full-year ARR guidance by >$50M. CEO Kurtz declared a "Mythos AI inflection point" — CrowdStrike was the only cybersecurity firm selected by both Anthropic and OpenAI. And yet: <strong>stock fell 10.3% after-hours to $670.80.</strong></p>
+<p>The message: at current valuations, beats aren't enough. The market needs <em>acceleration</em>, not just growth. CRWD's 26% revenue growth and 24% ARR growth, while solid, didn't accelerate enough to justify the multiple. AVGO's 48% revenue growth and 143% AI growth did.</p>
+<p class="bold-line"><strong>Space Sector: Blue Origin Explosion Triggers Contagion</strong></p>
+<p>A Blue Origin New Glenn hotfire test "anomaly" (explosion) at Cape Canaveral triggered a space-sector selloff:</p>
+<ul><li><code>ASTS</code> -5% premarket; analyst Tim Farrar warned only 3-5 Falcon 9 launches realistic in 2026, continuous coverage not before 2028</li><li><code>RKLB</code> -3% (no direct New Glenn dependence but sector-wide risk reassessment)</li><li><code>LUNR</code> -3%, <code>RDW</code> -4%, <code>RKTO</code> -4%</li><li>Deutsche Bank downgraded ASTS to Hold</li></ul>
+<p>The SpaceX IPO overhang ($135/share, $75B raise, $1.75T valuation — as soon as next week) creates a two-tier dynamic: SpaceX gets the premium valuation while competitors face launch-execution risk discounts.</p>
+<p class="bold-line"><strong>MSTR Sells Bitcoin: First Sale Since 2022</strong></p>
+<p>MicroStrategy sold 32 BTC — the first disposition since December 2022 tax-loss harvesting. Stock fell 4.72% to $151.57. With ~843,706 BTC at an average cost basis near $65,000, MSTR is near break-even on its massive position. A symbolic sale, but the market read it as a signal.</p>
+<h3>Rates & Fixed Income</h3>
+<p class="bold-line"><strong>The Fed: Paralyzed and Divided</strong></p>
+<p>The FOMC is in its deepest internal conflict since 1992. Key facts:</p>
+<ul><li><strong>Current rate:</strong> 3.50-3.75%, held for 3 consecutive meetings</li><li><strong>April vote:</strong> 8-4, most dissents since October 1992</li><li><strong>Dissent split:</strong> Governor Miran wanted a 25bp <em>cut</em>; three others objected to <em>dovish</em> statement language</li><li><strong>Minutes:</strong> "Majority highlighted that some policy firming would likely become appropriate if inflation were to continue to run persistently above 2%"</li><li><strong>Market pricing:</strong> ~60% probability of a hike by December</li></ul>
+<p>The Fed's next decision is June 17. No change is the near-certain consensus. But the direction of the next move is genuinely uncertain — a hawkish cut (or dovish hike) is possible depending on this week's labor data.</p>
+<p class="bold-line"><strong>The Curve: Steady but Watching Oil</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield</th><th>Daily Chg</th><th>Monthly Chg</th><th>YoY Chg</th></tr></thead><tbody><tr><td>4W Bill</td><td>3.69%</td><td>+1 bp</td><td>+3.5 bp</td><td>-56 bp</td></tr><tr><td>2Y</td><td>4.06%</td><td>-2.2 bp</td><td>+11.4 bp</td><td>+13.6 bp</td></tr><tr><td>10Y</td><td>4.48%</td><td>-2.1 bp</td><td>+5.0 bp</td><td>+8.8 bp</td></tr><tr><td>30Y</td><td>4.98%</td><td>-1.1 bp</td><td>-0.7 bp</td><td>+10.8 bp</td></tr></tbody></table></div>
+<p>The 2s10s spread at ~42bp is neither inverted nor steep — a "wait and see" curve. The 10Y touched 4.52% during the oil spike and settled at 4.48%. A confirmed Iran talks collapse could easily push it through 4.60%, which would stress equity valuations.</p>
+<h3>Credit</h3>
+<p class="bold-line"><strong>IG: Attractive Carry, Tight Spreads</strong></p>
+<p>Investment-grade yields near 5% offer the highest carry in over a decade. Credit quality is improving and the IG curve is positively sloped, rewarding duration extension. Schwab maintains an "up-in-quality" bias. The trade works as long as recession risk remains contained.</p>
+<p class="bold-line"><strong>HY: Rich but Not Broken</strong></p>
+<p>High-yield spreads are tight, making Schwab cautious. The oil spike is the key risk: if sustained above $95, it feeds into inflation expectations which could push the Fed toward hikes that stress the weakest HY issuers. Bank loans offer floating-rate protection but rich valuations limit upside.</p>
+<h3>FX</h3>
+<p class="bold-line"><strong>Dollar Supported, Yen Under Pressure</strong></p>
+<ul><li><strong>DXY:</strong> 99.52 (+0.3%) — supported by hawkish Fed minutes and geopolitical risk premium</li><li><strong>USD/JPY:</strong> 159.92 (-0.09% today, -11.4% YoY) — yen weakness persists; BOJ normalization expectations not enough to offset rate differential</li><li><strong>EUR/USD:</strong> Testing 1.1610 resistance — range-bound with slight USD advantage</li></ul>
+<p>The dollar's direction hinges on Friday's NFP. A strong print cements the hawkish narrative and pushes DXY above 100. A weak print opens the door to rate-cut pricing and dollar weakness.</p>
+<h3>Commodities</h3>
+<p class="bold-line"><strong>Oil: The Geopolitical Tinderbox</strong></p>
+<p>WTI at $95.31 this morning (-0.74% from yesterday's surge). The key developments:</p>
+<ul><li>Iran suspended US negotiations via Tasnim news agency</li><li>Strait of Hormuz remains disrupted (~20% of global oil/LNG transit)</li><li>Brent settled 4.2% higher at $94.98, WTI +5.5% to $92.16</li><li>Goldman Sachs: crude may stay at $90 even if strait reopens</li><li>OECD: Iran conflict "the dominant force" shaping global economy</li><li>US gas prices: $4.56/gallon, up >40% since late February</li><li>Consumer behavior shifting: smaller, more frequent fill-ups; wholesale clubs gaining share</li></ul>
+<p>The market is pricing a ~60% probability of a Fed hike by December — the oil-inflation channel is the primary transmission mechanism. A formal Iran talks collapse could push oil through $95 and 10Y yields above 4.60%.</p>
+<p><strong>Gold:</strong> $4,475/oz (-1%) — rising real yields and a stronger dollar are headwinds. Gold's inability to rally despite geopolitical chaos suggests the rate story is dominating.</p>
+<h3>Crypto</h3>
+<p>Bitcoin at ~$65,600, down from an overnight high of ~$67,800. The MSTR BTC sale (32 BTC, first since 2022) added selling pressure. Crypto is trading like a risk asset, not a hedge — correlating with the equity selloff rather than providing diversification.</p>
+<hr class="divider">
+<h2>Contrarian Signals & Risk Flags</h2>
+<p>1. <strong>Narrow leadership on record highs:</strong> Only tech and energy finished green on June 2; everything else declined. This is a late-cycle signature, not a healthy bull market.</p>
+<p>2. <strong>VIX rising alongside records:</strong> The VIX rose 4.77% on a day the S&P 500 hit an all-time high. Volatility should not rise in a record-setting tape — this is a divergence that typically precedes corrections.</p>
+<p>3. <strong>Russell 2000 persistent underperformance:</strong> Small caps have lagged severely. The Russell declined while the S&P hit records. Breadth is deteriorating beneath the surface.</p>
+<p>4. <strong>CRWD's 10% after-hours drop on a beat:</strong> When a company beats on every metric, raises guidance, and gets punished 10%, it signals that multiples have overshot — a warning for the entire tech complex.</p>
+<p>5. <strong>Equities ignoring the bond market's inflation signal:</strong> The S&P 500 hit records on June 2 while the 10Y rose 6bp and oil surged 6%. "One of the two markets is mispriced." — RIO Times briefing.</p>
+<p>6. <strong>Brazil's manufacturing PMI collapse (49.1 from 52.6):</strong> The first clear signal that 14.50% Selic is crushing the real economy. A harbinger for what happens when central banks over-tighten into supply shocks.</p>
+<p>7. <strong>Consumer strain at $4.56/gallon:</strong> Walmart CFO noting sub-10 gallon fill-ups for the first time since 2022 is a real-economy stress signal that will flow through to discretionary spending.</p>
+<hr class="divider">
+<h2>The Week Ahead</h2>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Event</th><th>Importance</th><th>What to Watch</th></tr></thead><tbody><tr><td><strong>Today (Wed June 4)</strong></td><td>ADP Private Payrolls</td><td>HIGH</td><td>Pre-NFP labor signal; consensus ~180K</td></tr><tr><td><strong>Today (Wed June 4)</strong></td><td>ISM Services PMI</td><td>HIGH</td><td>Services sector health; prices paid component key for inflation</td></tr><tr><td><strong>Friday (June 6)</strong></td><td>Non-Farm Payrolls</td><td>CRITICAL</td><td>Marquee event for Fed expectations</td></tr><tr><td><strong>Friday (June 6)</strong></td><td>Unemployment Rate</td><td>CRITICAL</td><td>Currently 4.3%; direction matters for rate path</td></tr><tr><td><strong>June 17</strong></td><td>FOMC Decision</td><td>CRITICAL</td><td>Consensus: no change at 3.75%</td></tr><tr><td><strong>Ongoing</strong></td><td>US-Iran Talks</td><td>CRITICAL</td><td>Formal collapse = oil >$95, 10Y >4.60%</td></tr><tr><td><strong>Next Week</strong></td><td>SpaceX IPO</td><td>HIGH</td><td>$75B raise, $1.75T valuation; could launch as soon as next week</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Portfolio Implications</h2>
+<p class="bold-line"><strong>Near-Term (1-2 weeks):</strong></p>
+<ul><li><strong>Equities:</strong> Reduce exposure to extended tech/AI names. The CRWD reaction is a warning. Rotate toward energy (supply-constrained, geopolitical bid) and value (benefits from higher rates).</li><li><strong>Rates:</strong> Duration is vulnerable. Short-duration or floating-rate positioning preferred. Watch the 4.60% level on 10Y — a break higher changes the equity risk premium math.</li><li><strong>Credit:</strong> Stay up-in-quality. IG carry at 5% is attractive; HY faces spread-widening risk if oil stays elevated.</li><li><strong>FX:</strong> Long USD vs JPY (rate differential + risk premium). EUR/USD range-bound; sell rallies toward 1.17.</li><li><strong>Commodities:</strong> Long oil on dips. The Iran supply disruption is structural, not transitory. Gold underweight — rising real yields are the dominant factor.</li><li><strong>Vol:</strong> Long gamma/ tail hedges. VIX at 16 is cheap given the macro uncertainty. The record-highs-with-rising-VIX divergence is a late-cycle warning.</li></ul>
+<p class="bold-line"><strong>Medium-Term (1-3 months):</strong></p>
+<ul><li>The Fed's June 17 decision is a binary catalyst. If the dot plot shifts hawkish (rate hikes in play), equities will reprice. If dovish (Iran de-escalation + weak NFP), the rally could resume.</li><li>The SpaceX IPO is a liquidity event that could draw capital from existing tech positions.</li><li>Watch for consumer stress signals as $4.56 gas flows through to retail spending and credit card delinquencies.</li></ul>
+<hr class="divider">
+<p><em>Generated by BoltNews • 22 articles (≤48h) • 7 categories • Pre-Market Briefing • 2026-06-04</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822" target="_blank" rel="noopener">Markets News, June 3, 2026: Indexes Fall, Ending Run of Records; S&P 500 Snaps 9</a>
+<a class="source-link" href="https://www.fxleaders.com/news/2026/06/01/sp-500-dow-jones-nasdaq-index-push-to-fresh-highs-while-russell-2000-lags/" target="_blank" rel="noopener">S&P 500, Dow Jones, Nasdaq Index Push to Fresh Highs, While Russell 2000 Lags</a>
+<a class="source-link" href="https://www.riotimesonline.com/global-economy-briefing-june-2-2026/" target="_blank" rel="noopener">Global Economy Briefing — June 2, 2026: Records, Oil Spike, Manufacturing PMI at</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/interest-rate" target="_blank" rel="noopener">Federal Reserve Holds Rates at 3.75% — Deepest Dissent Since 1992 (8-4 Vote). Ne</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/4-week-bill-yield" target="_blank" rel="noopener">Treasury Yields June 4: 4W Bill 3.69%, 2Y 4.06%, 10Y 4.48%, 30Y 4.98% — Curve St</a>
+<a class="source-link" href="https://tickeron.com/earnings/AVGO/" target="_blank" rel="noopener">AVGO: Broadcom (AVGO) Q2 FY2026 Earnings: Revenue $22.2B (+48% YoY), EPS $2.44 Beat, A</a>
+<a class="source-link" href="https://www.marketbeat.com/earnings/reports/2026-6-3-crowdstrike-holdings-inc-stock/" target="_blank" rel="noopener">CRWD: CrowdStrike (CRWD) Q1 FY2027: Revenue $1.39B (+26% YoY), EPS $1.10 Beat, But Sto</a>
+<a class="source-link" href="https://economictimes.indiatimes.com/news/international/us/why-are-oil-prices-up-today-and-will-brent-and-us-wti-crude-futures-continue-to-drop-or-rise-again-oil-prices-surge-as-iran-talks-stall-and-supply-concerns-return/articleshow/131450108.cms" target="_blank" rel="noopener">Oil Prices Surge as Iran Suspends US Talks, Strait of Hormuz Supply Fears Return</a>
+<a class="source-link" href="https://www.stocktitan.net/news/NVDA/" target="_blank" rel="noopener">NVDA: NVIDIA (NVDA) $214.75 (-3.62% June 3) — New PC Chip, DGX Station, Cosmos 3, Robo</a>
+<a class="source-link" href="https://stocktwits.com/news-articles/markets/equity/asts-rklb-lunr-rdw-rkto-slide-blue-origin-blowup/cZ0gZ4fReuy" target="_blank" rel="noopener">ASTS: Space Stocks Fall: ASTS -5%, RKLB -3% After Blue Origin Hotfire Explosion — Anal</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822" target="_blank" rel="noopener">SpaceX IPO at $135/Share, 555.6M Shares, Raising ~$75B — Largest IPO Ever, $1.75</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822" target="_blank" rel="noopener">PANW: Palo Alto Networks (PANW) Q3 FY2026: EPS $0.85 Beat, Revenue $3.0B, Stock -5.7% </a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822" target="_blank" rel="noopener">Trump Proposes 10-12.5% Tariffs on 60 Countries Over Forced-Labor; Cuts Industri</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822" target="_blank" rel="noopener">US Gas Prices $4.56/Gallon, Up >40% Since February — Consumer Behavior Shifting</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/crypto/articles/microstrategy-sells-bitcoin-first-time-120915096.html" target="_blank" rel="noopener">MSTR: MicroStrategy (MSTR) Sells 32 BTC for First Time Since 2022 — Stock Drops 4.72%</a>
+<a class="source-link" href="https://tradingeconomics.com/japan/currency" target="_blank" rel="noopener">USD/JPY at 159.92 (-0.09% June 4), EUR/USD Testing 1.1610 Resistance — DXY 99.52</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822" target="_blank" rel="noopener">LITE: Photonics Stocks Give Back Gains: Lumentum (LITE) -9% Worst S&P Performer, Still</a>
+<a class="source-link" href="https://www.riotimesonline.com/global-economy-briefing-june-2-2026/" target="_blank" rel="noopener">ISM Manufacturing PMI (May) Hits 4-Year High at 54.0, New Orders 56.8 — But GDPN</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822" target="_blank" rel="noopener">DELL: Dell (DELL) & HPE Surge on AI Server Demand, Marvell (MRVL) +33% Monday, +5% Wed</a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/crude-oil" target="_blank" rel="noopener">Gold -1% to $4,475/oz as Rising Yields & Stronger Dollar Weigh; WTI $95.31 (-0.7</a>
+<a class="source-link" href="https://www.schwab.com/learn/story/corporate-bond-outlook" target="_blank" rel="noopener">Credit Markets: IG Yields Near 5%, HY Cautious — Schwab 'Up-in-Quality' Theme Ma</a>
+<a class="source-link" href="https://www.riotimesonline.com/global-economy-briefing-june-2-2026/" target="_blank" rel="noopener">What to Watch: ADP Payrolls, ISM Services Today June 4; NFP Friday June 6 — Marq</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-04 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

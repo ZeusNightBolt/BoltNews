@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-09</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-09 &middot; 12 articles &middot; 8 categories</div>
+  </div>
+
+  <div class="content">
+    <h1>BoltNews Post-Market Research Briefing — June 9, 2026</h1>
+<hr class="divider">
+<h2>Executive Summary</h2>
+<p><strong>The S&amp;P 500 closed down 0.26% at 7,386.65, recovering from an intraday plunge of 2.7% after President Trump vowed retaliation for Iran downing a US Apache helicopter over the Strait of Hormuz.</strong> The Nasdaq fell 0.97% (intraday low: -3.3%) while the Dow gained 0.17%, reflecting an aggressive rotation out of tech/semis into value and cyclical names. The equal-weight S&amp;P 500 rose 0.2% and 301 stocks advanced. Oil slid 3.4% on Iran-Israel ceasefire hopes despite the helicopter escalation. Gold hit its lowest since December 2025 before rebounding. Crypto suffered a brutal week (-14% BTC) but showed signs of deleveraging completion. The Fed is poised to remove its easing bias at the June 16-17 FOMC under new Chair Kevin Warsh, with markets pricing 1-2 rate hikes in 2026. Wednesday's May CPI (est. +4.2% YoY) and Friday's record $75B SpaceX IPO create a pressurized near-term environment.</p>
+<hr class="divider">
+<h2>Asset Class Deep Dive</h2>
+<h3>Equities: Rotation, Not Capitulation</h3>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th><th>Intraday Low</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,386.65</td><td>-0.26%</td><td>~7,190 (-2.7%)</td></tr><tr><td>Nasdaq Composite</td><td>25,678.82</td><td>-0.97%</td><td>~24,900 (-3.3%)</td></tr><tr><td>Dow Jones</td><td>50,872.11</td><td>+0.17%</td><td>Briefly negative</td></tr><tr><td>Russell 2000</td><td>—</td><td>~+0.25%</td><td>Briefly negative</td></tr><tr><td>SOX (Semis)</td><td>—</td><td>-1% close</td><td>-8.6% intraday</td></tr><tr><td>S&amp;P 500 Equal-Weight</td><td>—</td><td>+0.2%</td><td>—</td></tr></tbody></table></div>
+<p><strong>Sector performance:</strong> 9 of 11 S&amp;P 500 sectors closed higher. Info Tech was the worst at -2.9% (intraday -5%+), followed by Energy at -1.6% (pressured by falling oil). Leaders: Real Estate, Health Care, Utilities, and Homebuilders (+2% on ITB) — all rate-sensitive cyclicals that benefit from lower yields and soft commodities.</p>
+<p><strong>The semi selloff:</strong> The Philadelphia Semiconductor Index dropped as much as 8.6% intraday before paring to -1%. Friday's rout (worst in six years) was triggered by Broadcom's disappointing forecast. Tuesday morning's chip rebound (+3% early) completely reversed. The SOX remains up over 70% year-to-date even after the drawdown.</p>
+<p><strong>What changed intraday:</strong> Markets opened higher on ceasefire optimism and chip bounce. The reversal began around midday as momentum unwound, then accelerated at 12:46 PM EDT when Trump posted that the US "must, of necessity, respond" to Iran's attack on a US Apache helicopter. The S&amp;P 500 technology sector fell over 4% before recovering in the final hour.</p>
+<p class="bold-line"><strong>Key movers:</strong></p>
+<ul><li>Nuvalent (NUVL): +39% on GSK acquisition at $124/share ($10.6B all-cash)</li><li>Sandisk (SNDK): +7% on analyst upgrades</li><li>Lam Research (LRCX): +7.5%</li><li>SailPoint (SAIL): -12% on Q1 miss (-$0.13 vs. +$0.04 est.)</li><li>Qualcomm (QCOM): -4.4%</li><li>Marvell (MRVL): -4.2%</li><li>J.M. Smucker (SJM): +3.5% on earnings beat ($2.77 adj. EPS vs. $2.64 est.)</li></ul>
+<p class="bold-line"><strong>Earnings / catalysts:</strong></p>
+<ul><li>SailPoint Q1 revenue $280M beat estimates, but EPS miss punished the stock.</li><li>J.M. Smucker beat across EPS and revenue, guided cautiously.</li><li>Vail Resorts (MTN): cut FY adjusted EBITDA guidance to $739-761M; stock -4% after hours.</li><li>Apple WWDC: Tim Cook's final keynote. New Siri AI features underwhelmed. UBS: "not enough to drive iPhone demand." KeyBanc: "no clear signs of monetization."</li></ul>
+<p class="bold-line"><strong>IPO pipeline overhang:</strong></p>
+<ul><li><strong>SpaceX:</strong> Friday June 12, fixed-price $135/share, $75B raise, $1.75T valuation — largest IPO ever. Demand reportedly 4x oversubscribed. Creating liquidity overhang as funds reposition.</li><li><strong>OpenAI:</strong> confidentially filed for IPO late Monday, valued &gt;$850B, could go public as soon as Q4.</li></ul>
+<p class="bold-line"><strong>Analyst quote (Michael O'Rourke, JonesTrading):</strong></p>
+<blockquote>"When the bounce ran its course this morning, the tape came for sale more broadly. There's also a rotation going on … so part of it is more of a momentum unwind."</blockquote>
+<p><strong>Liz Ann Sonders (Charles Schwab)</strong> warned of "too much complacency" in AI/chip trades, noting many stocks had gone "parabolic" and were due for profit-taking.</p>
+<hr class="divider">
+<h3>Rates: Hikes Are Back on the Table</h3>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Level</th><th>Period/Context</th></tr></thead><tbody><tr><td>Fed Funds Rate</td><td>3.75%</td><td>Current target</td></tr><tr><td>10Y Treasury Yield</td><td>~4.56%</td><td>+6bp on the week</td></tr><tr><td>2Y Treasury Yield</td><td>4.17%</td><td>Highest since early 2025</td></tr><tr><td>30Y Treasury Yield</td><td>&gt;5.0%</td><td>Pushed above 5% Friday</td></tr><tr><td>Rate Hike Probability (2026)</td><td>72%</td><td>Per FedWatch; 1-2 hikes priced</td></tr><tr><td>Next FOMC</td><td>June 16-17</td><td>First under Chair Kevin Warsh</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Fed Gov. Christopher Waller (May 22):</strong></p>
+<blockquote>"Inflation is not headed in the right direction. Based on this recent data, I would support removing the 'easing bias' language in our policy statement to make it clear that a rate cut is no more likely in the future than a rate increase."</blockquote>
+<p class="bold-line"><strong>Drivers of the hawkish pivot:</strong></p>
+<p>1. <strong>May payrolls blowout:</strong> +172k vs. consensus ~90k. Unemployment held at 4.3%. The "good news is bad news" dynamic pushed rate cut expectations out.</p>
+<p>2. <strong>Energy inflation:</strong> Strait of Hormuz disruptions continue to pressure headline CPI. April CPI: 3.8% headline, 2.8% core. May CPI (Wednesday) expected +4.2% YoY — the highest since April 2023.</p>
+<p>3. <strong>Warsh factor:</strong> New Fed Chair signals less explicit forward guidance. The June dot plot and SEP will be critical.</p>
+<p><strong>Market pricing (CME FedWatch):</strong> Rate cuts are entirely off the table for 2026. One or two hikes priced, possibly starting September or October.</p>
+<hr class="divider">
+<h3>Credit: Tight Spreads, Orderly Widening</h3>
+<p>Credit markets remain constructive despite equity volatility. IG spreads sit near multi-decade tights (levels last seen mid-1990s). High yield spreads widened marginally but orderly. Key dynamics:</p>
+<ul><li><strong>IG corporates:</strong> Yields remain elevated offering compelling carry. Spreads near tights mean limited capital appreciation potential, but the income component is attractive for longer-horizon investors.</li><li><strong>Leveraged loans / HY:</strong> No signs of stress. The decompression from tech/equities has not spilled into credit.</li><li><strong>Supply:</strong> SIFMA data through June 2 shows active IG issuance. The market continues to absorb supply well.</li><li><strong>Risk:</strong> If the Fed hikes and the economy slows simultaneously, credit could reprice. But for now, fundamentals (low default rates, improving corporate balance sheets) support spreads.</li></ul>
+<p><strong>Charles Schwab 2026 outlook:</strong> "Investment-grade corporate bonds tend to make the most sense in tax-advantaged accounts … while currently low spreads may result in underperformance relative to Treasuries in 2026, the high yields they currently offer still make them attractive."</p>
+<hr class="divider">
+<h3>FX: Dollar Fades After Brief Retaliation Spike</h3>
+<div class="table-wrapper"><table><thead><tr><th>Currency</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>DXY (Dollar Index)</td><td>96.48</td><td>Briefly spiked to 96.62 on Trump retaliation, then faded</td></tr><tr><td>DXY (monthly)</td><td>—</td><td>+1.81% over past month</td></tr></tbody></table></div>
+<p>The dollar briefly rose on Trump's "must respond" post but gave back gains as the session progressed. Directionless trade overall. The DXY remains range-bound between 96-100, with the hawkish Fed providing a floor but geopolitical uncertainty capping upside. Yen intervention risk noted by WSJ — "buy on dips" remains the operative framework for USD/JPY.</p>
+<p><strong>Trading Economics alternative quote:</strong> DXY at 99.73, down 0.31% — source discrepancy suggests check settlement timing. The WSJ's live quote (96.48) is more current for the June 9 session.</p>
+<hr class="divider">
+<h3>Commodities: Oil Slides Despite Escalation; Gold Rebounds From 2-Month Low</h3>
+<p class="bold-line"><strong>Crude Oil:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Grade</th><th>Price</th><th>Daily Change</th><th>Monthly Change</th><th>Yearly Change</th></tr></thead><tbody><tr><td>WTI</td><td>$88.20/bbl (settle)</td><td>-3.4%</td><td>-8.80%</td><td>+37.64%</td></tr><tr><td>Brent</td><td>$92.51/bbl</td><td>-2.73%</td><td>-11.23%</td><td>+38.35%</td></tr></tbody></table></div>
+<p>WTI fell ~3% to the lowest since April 17 as <strong>Iran and Israel agreed to halt attacks</strong>, boosting ceasefire hopes. US Energy Secretary Chris Wright said Strait of Hormuz traffic is "rising very meaningfully." Trump claimed a deal could be reached in "two or three days" and the strait would reopen "immediately." The helicopter shootdown briefly spiked prices before the selloff resumed.</p>
+<p class="bold-line"><strong>Countervailing forces:</strong></p>
+<ul><li><strong>Bullish:</strong> Strait of Hormuz remains effectively closed by dual US-Iran blockade. China crude imports at 8-year low (~7.8M bpd), 4M bpd below 2025 average. US crude stocks drew 7.97M barrels in latest week.</li><li><strong>Bearish:</strong> Iran-Israel ceasefire holding. OPEC+ approved another 188K bpd hike for July. Record US exports (Venezuelan crude at 7-year high of 1.25M bpd).</li><li><strong>12-month forecast (Trading Economics):</strong> $106.98/bbl.</li></ul>
+<p class="bold-line"><strong>Precious Metals:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Metal</th><th>Spot/Close</th><th>Daily Change</th><th>Note</th></tr></thead><tbody><tr><td>Gold (futures close)</td><td>$4,286.40/oz</td><td>-1.76%</td><td>Lowest since Dec 10, 2025</td></tr><tr><td>Gold (spot)</td><td>$4,331.17/oz</td><td>+0.18%</td><td>Rebounded from $4,313.99 low</td></tr><tr><td>Silver</td><td>$65.24/oz</td><td>-4.88%</td><td>Lowest since Dec 18, 2025</td></tr></tbody></table></div>
+<p><strong>The gold paradox:</strong> Futures settled at the lowest since December, but spot rebounded on the Iran-Israel exchange. Gold is down 18.32% since the Iran war began — a counterintuitive move explained by the "peace probability" dynamic. Per the World Gold Council, Polymarket pricing a 72% probability of Strait of Hormuz resolution by year-end created a crowded short-volatility trade in paper gold. When escalation hit, it triggered a violent same-side unwind.</p>
+<p><strong>Physical demand floor:</strong> Coin and bar demand Q1 2026 hit 474 metric tonnes (+42% YoY), the second-highest quarter on record. Central banks resumed net buying in April. This structural demand provides a floor that speculative selling cannot erode.</p>
+<blockquote>"Paper resets create physical buying windows. This one, backed by escalating Middle East risk, appears to be open." — USAGOLD, June 9</blockquote>
+<hr class="divider">
+<h3>Volatility &amp; Crypto: Repricing Risk, Not Systemic Stress</h3>
+<p class="bold-line"><strong>VIX:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Level</th></tr></thead><tbody><tr><td>VIX Close (CBOE)</td><td>20.28</td></tr><tr><td>Intraday High</td><td>20.67</td></tr><tr><td>Prior Close (Jun 8)</td><td>20.29</td></tr><tr><td>Jun 5 (pre-payrolls)</td><td>15.87</td></tr></tbody></table></div>
+<p>VIX hit its highest since April 7 intraday but closed only marginally elevated at ~20.3. The pattern: a spike on the Trump post that quickly faded. This is event-driven vol, not structural fear. Options markets show a clear put skew but no panic.</p>
+<p class="bold-line"><strong>Crypto:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Weekly Move</th><th>Level</th><th>Context</th></tr></thead><tbody><tr><td>BTC</td><td>-14.0%</td><td>~$62,700</td><td>Held above $60k; 2026 low $59,070</td></tr><tr><td>ETH</td><td>-15.8%</td><td>&lt;$2,000</td><td>Broke $2K for first time since March</td></tr><tr><td>US Spot BTC ETF Flows</td><td>-$1.72B</td><td>—</td><td>Persistent weekly outflows</td></tr><tr><td>US Spot ETH ETF Flows</td><td>-$173M</td><td>—</td><td>Weaker but proportional</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Structure:</strong></p>
+<ul><li>$5.4B in leveraged positions liquidated (peak June 4-5).</li><li>Front-end IV spiked from low 30s to mid-40s; 1-week ATM briefly near 60%.</li><li>Risk reversals show persistent put bias.</li><li><strong>Positioning now substantially cleaner:</strong> open interest down, funding soft, 3-month basis compressed to ~3%.</li><li><strong>Zerocap assessment:</strong> "The cleaner interpretation is not panic but consolidation. The market has largely completed its deleveraging phase."</li></ul>
+<p><strong>Strategy Inc. (MSTR):</strong> Sold a small BTC holding for the first time in years, challenging the "unconditional hodler" narrative. Then bought 1,550 BTC for $101M. Total holdings: 845,256 BTC. Bitcoin down ~27% YTD, ~50% from all-time high.</p>
+<p><strong>Tokenized equities</strong> market cap reached $5.5B, fueled by SpaceX IPO access demand.</p>
+<hr class="divider">
+<h2>Sentiment Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset/Theme</th><th>Sentiment</th><th>Direction</th><th>Confidence</th><th>Key Driver</th></tr></thead><tbody><tr><td>US Equities (broad)</td><td>Cautious</td><td>↓</td><td>Moderate</td><td>Tech rotation, geopolitics, CPI, SpaceX</td></tr><tr><td>Tech/Semis</td><td>Bearish</td><td>↓↓</td><td>High</td><td>Valuation reset, Broadcom, profit-taking</td></tr><tr><td>Value/Cyclicals</td><td>Constructive</td><td>↑</td><td>Moderate</td><td>Rotation beneficiary, cheaper energy</td></tr><tr><td>US Rates</td><td>Hawkish</td><td>↑↑</td><td>High</td><td>Strong payrolls, energy inflation, Warsh</td></tr><tr><td>IG Credit</td><td>Stable</td><td>→</td><td>Moderate</td><td>Tight spreads but carry attractive</td></tr><tr><td>USD (DXY)</td><td>Neutral</td><td>→</td><td>Moderate</td><td>Range-bound, hawkish floor vs geo ceiling</td></tr><tr><td>Crude Oil</td><td>Bearish near-term</td><td>↓</td><td>Moderate</td><td>Ceasefire hopes, China weakness, OPEC+ supply</td></tr><tr><td>Gold</td><td>Cautious rebound</td><td>↑</td><td>Low</td><td>Paper unwind vs. physical demand floor</td></tr><tr><td>Crypto (BTC/ETH)</td><td>Consolidating</td><td>→</td><td>Moderate</td><td>Deleveraging complete, waiting for macro catalysts</td></tr><tr><td>VIX</td><td>Elevated-normal</td><td>→</td><td>Moderate</td><td>Event vol, not structural stress</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Signal</th><th>Reading</th><th>Implication</th></tr></thead><tbody><tr><td>Equity-Bond Correlation</td><td>Positive (both selling off Friday)</td><td>Hawkish macro regime — bonds not hedging equities</td></tr><tr><td>Value vs. Growth</td><td>Value outperforming</td><td>Rotation underway, momentum unwind</td></tr><tr><td>USD vs. Commodities</td><td>Dollar bid, commodities soft</td><td>Disinflationary impulse from commodities, hawkish Fed</td></tr><tr><td>Gold vs. Real Yields</td><td>Gold falling with rising real yields</td><td>Gold behaving as real-yield proxy, not safe haven</td></tr><tr><td>BTC vs. Equities</td><td>Crypto selling harder than equities</td><td>Beta on the way down; leverage purge ongoing</td></tr><tr><td>Credit vs. Equities</td><td>Credit orderly, equities volatile</td><td>Equity vol is positioning-driven, not systemic</td></tr><tr><td>Small Caps vs. Large Caps</td><td>Small caps outperforming</td><td>Domestic cyclical bid, less geopolitical beta</td></tr></tbody></table></div>
+<hr class="divider">
+<h2>Contrarian Flags</h2>
+<p>1. <strong>Gold at December lows despite active Middle East war.</strong> The market has fully priced peace. Any escalation that challenges the 72% Hormuz-resolution probability would trigger a violent gold rally. Physical demand (474t Q1 coins/bars, central bank buying) provides a structural floor. <em>Convexity: downside ~$4,200 (physical floor), upside $4,800+ on escalation. Asymmetric.</em></p>
+<p>2. <strong>Oil selling off on ceasefire headlines while a US helicopter was just shot down and the US launched retaliatory strikes.</strong> The market is pricing a resolution that hasn't materialized. The Strait of Hormuz remains closed. If China resumes buying or the ceasefire breaks, the rally would be sharp. <em>The "peace premium" unwind may be overextended.</em></p>
+<p>3. <strong>Markets pricing 72% hike probability at the same time as a tech/equity unwind.</strong> If the Fed hikes into a slowing economy (tech capex pullback, consumer weakening per Goldman), the policy error risk is material. The bond market's 2s10s curve is modestly steepening — not yet signaling recession, but worth watching.</p>
+<p>4. <strong>SpaceX IPO as a "top signal."</strong> The largest IPO in history ($75B, $1.75T valuation) arriving during a tech selloff and geopolitical crisis raises the question: does this absorb the last marginal dollar of AI/momentum enthusiasm? The 4x oversubscription could be genuine demand or a crowded consensus trade.</p>
+<p>5. <strong>Crypto deleveraging is complete, but nobody cares.</strong> Funding is soft, OI is down, basis is compressed. Historically, this is where BTC bottoms form. But ETF flows remain relentlessly negative. The contrarian case: when the last ETF seller is done, the bid from structural accumulators (Saylor, tokenized equity platforms, DeFi) reasserts.</p>
+<p>6. <strong>Existing home sales surprised +3.2% MoM, 3% above consensus.</strong> Housing is not breaking despite the rate environment. Homebuilders rallied 2%. If housing holds, the "soft landing" narrative strengthens — and rate hikes become more palatable.</p>
+<hr class="divider">
+<h2>Key Events This Week</h2>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Event</th><th>Importance</th></tr></thead><tbody><tr><td>Wednesday June 10</td><td>US May CPI (est. +4.2% YoY headline)</td><td>Critical — could move hike pricing 25bp+</td></tr><tr><td>Wednesday June 10</td><td>China May CPI</td><td>Moderate — disinflation/deflation watch</td></tr><tr><td>Thursday June 11</td><td>ECB Rate Decision</td><td>Moderate — EUR/USD impact</td></tr><tr><td>Thursday June 11</td><td>US May PPI, Jobless Claims</td><td>Moderate</td></tr><tr><td>Friday June 12</td><td>SpaceX IPO pricing/trading</td><td>Critical — liquidity overhang resolves</td></tr></tbody></table></div>
+<hr class="divider">
+<p><em>Sources: Reuters, CNBC, TheStreet, Forbes, Argus Media, Trading Economics, Zerocap, USAGOLD, CBOE, WSJ, National Association of Realtors, Federal Reserve. All data as of June 9, 2026 market close.</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.reuters.com/business/media-telecom/wall-st-futures-tick-up-chips-extend-gains-2026-06-09/" target="_blank" rel="noopener">S&P 500, Nasdaq fall as tech selling resumes, Trump vows to react to downed US h</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/08/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock market news for June 9, 2026</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-09-2026" target="_blank" rel="noopener">Nasdaq, S&P 500 lead losers after Trump says U.S. 'must respond' to Iran retalia</a>
+<a class="source-link" href="https://www.forbes.com/sites/simonmoore/2026/06/08/fed-may-remove-easing-language-at-june-meeting-setting-up-a-potential-2026-hike/" target="_blank" rel="noopener">Fed Signals Shift At June Meeting With Markets Pricing In 2026 Hike</a>
+<a class="source-link" href="https://www.argusmedia.com/news-and-insights/latest-market-news/2837255-us-will-retaliate-after-iran-downs-chopper-trump" target="_blank" rel="noopener">US will retaliate after Iran downs chopper: Trump</a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/crude-oil" target="_blank" rel="noopener">Crude Oil - Price, Chart, Historical Data, News</a>
+<a class="source-link" href="https://zerocap.com/insights/weekly-crypto-market-wrap/weekly-crypto-market-wrap-9-june-2026/" target="_blank" rel="noopener">Weekly Crypto Market Wrap: 9 June 2026</a>
+<a class="source-link" href="https://www.usagold.com/daily-precious-metals-market-report-june-9-2026/" target="_blank" rel="noopener">Gold Rebounds From Two-Month Low As Iran-Israel Escalation Offsets Fed Hike Fear</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-june-9-dow-sp-500-nasdaq-rise-ai-225640870.html" target="_blank" rel="noopener">Stock market today: Dow rises, S&P 500, Nasdaq fall as tech rotation accelerates</a>
+<a class="source-link" href="https://www.wsj.com/finance/currencies/buy-on-dips-approach-makes-sense-for-dollar-yen-if-theres-further-fx-intervention-5de5ec5e" target="_blank" rel="noopener">Treasury Yields, Dollar Briefly Rise on Trump's Iran Retaliation Threat</a>
+<a class="source-link" href="https://www.reuters.com/business/media-telecom/spacex-plans-raise-75-billion-ipo-135-per-share-source-says-2026-06-03/" target="_blank" rel="noopener">SpaceX plans to set IPO price at $135 per share, targeting record $75 billion ra</a>
+<a class="source-link" href="https://www.nar.realtor/research-and-statistics/housing-statistics/existing-home-sales" target="_blank" rel="noopener">Existing-Home Sales May 2026</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-09 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

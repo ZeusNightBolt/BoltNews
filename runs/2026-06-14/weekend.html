@@ -28,64 +28,15 @@
     min-height: 100dvh;
     font-size: 15px;
   }
-  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
-
-  /* Navigation */
-  .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    margin: 0 0 22px 0;
-    padding: 10px 0 12px 0;
-    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-  }
-  .brand-mark {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text);
-    font-weight: 700;
-    letter-spacing: 0.2px;
-    text-decoration: none;
-  }
-  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
-  .nav-item {
-    color: var(--text-muted);
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 5px 12px;
-    font-size: 0.82rem;
-    text-decoration: none;
-  }
-  .nav-item:hover {
-    color: var(--text);
-    background: var(--bg-secondary);
-    border-color: var(--border);
-    text-decoration: none;
-  }
-  .nav-item.active {
-    color: #fff;
-    background: var(--accent-emphasis);
-  }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px 24px; }
 
   /* Header */
   .header {
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px 22px 18px 22px;
-    margin-bottom: 30px;
-    background:
-      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
-      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
-    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 20px 0;
+    margin-bottom: 32px;
   }
-  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
   .header .badge {
     display: inline-block;
     background: var(--accent-emphasis);
@@ -138,7 +89,6 @@
     color: var(--text);
   }
   tr:nth-child(even) td { background: var(--bg-secondary); }
-  tr:hover td { background: rgba(88, 166, 255, 0.06); }
 
   /* Blockquote */
   blockquote {
@@ -210,9 +160,6 @@
   /* Mobile */
   @media (max-width: 600px) {
     .container { padding: 12px 16px; }
-    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
-    .nav-links { flex-wrap: wrap; }
-    .header { padding: 18px 16px 16px 16px; }
     .header h1 { font-size: 1.3rem; }
     h2 { font-size: 1.05rem; }
     table { font-size: 0.78rem; }
@@ -225,14 +172,6 @@
 </head>
 <body>
 <div class="container">
-  <nav class="navbar" aria-label="BoltNews navigation">
-    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
-    <div class="nav-links">
-      <a class="nav-item active" href="./index.html">Latest</a>
-      <a class="nav-item" href="./archive.html">Archive</a>
-      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
-    </div>
-  </nav>
   <div class="header">
     <h1>⚡ BoltNews <span class="badge">Weekend Briefing</span></h1>
     <div class="subtitle">2026-06-14 &middot; 15 articles &middot; 1 categories</div>
@@ -341,7 +280,7 @@
 <a class="source-link" href="https://www.xapobank.com/en/blog/june-2026-bitcoin-market-update" target="_blank" rel="noopener">Bitcoin Market Commentary: June 2026 Catalysts</a>
 <a class="source-link" href="https://www.evelyn.com/insights-and-events/insights/investment-outlook-june-2026/" target="_blank" rel="noopener">Investment Outlook June 2026</a>
 <a class="source-link" href="https://seekingalpha.com/article/4914707-the-1-minute-market-report-june-14-2026" target="_blank" rel="noopener">The 1-Minute Market Report, June 14, 2026</a>
-<a class="source-link" href="https://finance.yahoo.com/calendar/earnings?from=2026-06-14&amp;to=2026-06-20&amp;day=2026-06-15" target="_blank" rel="noopener">Earnings Calendar — June 15-19, 2026</a>
+<a class="source-link" href="https://finance.yahoo.com/calendar/earnings?from=2026-06-14&to=2026-06-20&day=2026-06-15" target="_blank" rel="noopener">Earnings Calendar — June 15-19, 2026</a>
 </p>
 </div>
 
