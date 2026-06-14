@@ -7,6 +7,7 @@
       "runs/2026-06-14/weekend/briefing.md",
       "runs/2026-06-14/weekend/summary.md",
       "runs/2026-06-14/weekend/articles.json",
+      "runs/2026-06-14/weekend/articles_enriched.json",
       "runs/2026-06-14/weekend/search_plan.json",
       "runs/2026-06-14/weekend/dashboard.html"
     ]
@@ -19,6 +20,7 @@
     "project/sources.json",
     "project/universe.json",
     "runs/2026-06-14/weekend/articles.json",
+    "runs/2026-06-14/weekend/articles_enriched.json",
     "runs/2026-06-14/weekend/briefing.md",
     "runs/2026-06-14/weekend/dashboard.html",
     "runs/2026-06-14/weekend/search_plan.json",
