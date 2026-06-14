@@ -158,21 +158,110 @@
   .source-link:hover { border-color: var(--accent); color: var(--text); }
 
   /* Mobile */
-  @media (max-width: 600px) {
-    .container { padding: 12px 16px; }
-    .header h1 { font-size: 1.3rem; }
-    h2 { font-size: 1.05rem; }
-    table { font-size: 0.78rem; }
-    th, td { padding: 5px 8px; }
+    @media (max-width: 600px) {
+      .container { padding: 12px 16px; }
+      .header h1 { font-size: 1.3rem; }
+      h2 { font-size: 1.05rem; }
+      table { font-size: 0.78rem; }
+      th, td { padding: 5px 8px; }
+    }
+    @supports (-webkit-touch-callout: none) {
+      body { min-height: -webkit-fill-available; }
+    }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .nav-item {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .nav-item:hover {
+      background: var(--bg-tertiary);
+      color: var(--accent);
+    }
+    .search-box {
+      flex: 1;
+      max-width: 300px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-secondary);
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    .search-box:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
   }
-  @supports (-webkit-touch-callout: none) {
-    body { min-height: -webkit-fill-available; }
+  </style>
+  <script>
+  function searchDocs() {
+    const input = document.getElementById('search').value.toLowerCase();
+    const sections = document.querySelectorAll('h1, h2, h3, p, li, blockquote, .sources-section, .footer');
+    sections.forEach(el => {
+      const text = el.textContent.toLowerCase();
+      if (input === '' || text.includes(input)) {
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  });
+  </script>
+  </style>
+  </head>
+  <body>
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .nav-item {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  .nav-item:hover {
+    background: var(--bg-tertiary);
+    color: var(--accent);
+  }
+  .search-box {
+    flex: 1;
+    max-width: 300px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    color: var(--text);
+    font-size: 0.9rem;
+  }
+  .search-box:focus {
+    outline: none;
+    border-color: var(--accent);
   }
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="header">
+  <nav class="navbar">
+  <a href="index.html" class="nav-item">Home</a>
+  <a href="archive.html" class="nav-item">Archive</a>
+  <input type="text" id="search" placeholder="Search..." oninput="searchDocs()" class="search-box"/>
+</nav>
+<div class="header">
     <h1>⚡ BoltNews <span class="badge">Weekend Briefing</span></h1>
     <div class="subtitle">2026-06-14 &middot; 15 articles &middot; 1 categories</div>
   </div>
@@ -288,6 +377,20 @@
     BoltNews &copy; 2026 &middot; Generated 2026-06-14 &middot; 
     <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
   </div>
+<script>
+function searchDocs() {
+  const input = document.getElementById('search').value.toLowerCase();
+  const sections = document.querySelectorAll('h1, h2, h3, p, li');
+  sections.forEach(el => {
+    const text = el.textContent.toLowerCase();
+    if (input === '' || text.includes(input)) {
+      el.style.display = '';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
+</script>
 </div>
 </body>
 </html>
