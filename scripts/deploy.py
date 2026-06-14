@@ -9,12 +9,94 @@ import os
 import subprocess
 import sys
 from datetime import date
+from html import escape
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 REPO_OWNER = "ZeusNightBolt"
 REPO_NAME = "BoltNews"
 PAGES_URL = f"https://{REPO_OWNER}.github.io/{REPO_NAME}/"
+
+
+ARCHIVE_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Archive</title>
+<style>
+  :root {{
+    --bg: #0d1117; --bg-secondary: #161b22; --bg-tertiary: #21262d;
+    --border: #30363d; --text: #c9d1d9; --text-muted: #8b949e;
+    --accent: #58a6ff; --accent-emphasis: #1f6feb; --green: #3fb950;
+  }}
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100dvh;
+  }}
+  .container {{ max-width: 920px; margin: 0 auto; padding: 20px 24px; }}
+  .navbar {{
+    position: sticky; top: 0; z-index: 10; display: flex; align-items: center;
+    justify-content: space-between; gap: 14px; margin-bottom: 22px; padding: 10px 0 12px;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98), rgba(13,17,23,0.90));
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+  }}
+  .brand-mark {{ color: var(--text); font-weight: 700; text-decoration: none; }}
+  .nav-links {{ display: inline-flex; align-items: center; gap: 8px; }}
+  .nav-item {{ color: var(--text-muted); border: 1px solid transparent; border-radius: 999px; padding: 5px 12px; font-size: 0.82rem; text-decoration: none; }}
+  .nav-item:hover {{ color: var(--text); background: var(--bg-secondary); border-color: var(--border); text-decoration: none; }}
+  .nav-item.active {{ color: #fff; background: var(--accent-emphasis); }}
+  .header {{
+    border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 24px;
+    background: radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%), linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }}
+  h1 {{ font-size: 1.65rem; letter-spacing: -0.02em; }}
+  .subtitle {{ color: var(--text-muted); margin-top: 4px; font-size: 0.9rem; }}
+  .toolbar {{ display: flex; gap: 12px; align-items: center; margin: 18px 0 22px; }}
+  .search-box {{ width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 9px; background: var(--bg-secondary); color: var(--text); }}
+  .run-card {{ border: 1px solid var(--border); border-radius: 12px; background: var(--bg-secondary); margin: 10px 0; overflow: hidden; }}
+  .run-date {{ padding: 10px 14px; color: var(--text-muted); background: rgba(33,38,45,0.75); border-bottom: 1px solid var(--border); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; }}
+  .run-links {{ display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px; }}
+  .run-link {{ color: var(--accent); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 6px 11px; background: var(--bg); font-size: 0.88rem; }}
+  .run-link:hover {{ border-color: var(--accent); text-decoration: none; }}
+  .footer {{ text-align: center; padding: 36px 0; color: var(--text-muted); font-size: 0.75rem; border-top: 1px solid var(--border); margin-top: 48px; }}
+  .footer a {{ color: var(--accent); }}
+  @media (max-width: 600px) {{ .container {{ padding: 12px 16px; }} .navbar {{ align-items: flex-start; flex-direction: column; }} .nav-links {{ flex-wrap: wrap; }} }}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item" href="./index.html">Latest</a>
+      <a class="nav-item active" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>📚 BoltNews Archive</h1>
+    <div class="subtitle">Historical briefings served from GitHub Pages. Generated {generated_on}.</div>
+  </div>
+  <div class="toolbar"><input type="search" id="search" class="search-box" placeholder="Search date or briefing type..." oninput="searchArchive()"></div>
+  <div id="archive-list">
+    {archive_cards}
+  </div>
+  <div class="footer">BoltNews &copy; {year} &middot; <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a></div>
+</div>
+<script>
+function searchArchive() {{
+  const q = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.run-card').forEach(card => {{
+    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+  }});
+}}
+</script>
+</body>
+</html>
+"""
 
 
 def get_github_token() -> str:
@@ -48,6 +130,45 @@ def run(cmd: list[str], cwd: Path | None = None, timeout: int = 120, check: bool
 def check_github_reachable() -> bool:
     result = run(["curl", "-s", "--connect-timeout", "10", "https://github.com"], timeout=15)
     return result.returncode == 0
+
+
+def build_archive_page(gh_pages_dir: Path) -> None:
+    """Regenerate archive.html from files that actually exist on gh-pages."""
+    mode_order = {"pre-market": 0, "post-market": 1, "weekend": 2}
+    runs: dict[str, list[tuple[str, str]]] = {}
+    for date_dir in gh_pages_dir.iterdir():
+        if not date_dir.is_dir() or not re_fullmatch_date(date_dir.name):
+            continue
+        for page in date_dir.glob("*.html"):
+            mode = page.stem
+            if mode.endswith("-summary"):
+                continue
+            label = mode.replace("-", " ").title()
+            runs.setdefault(date_dir.name, []).append((label, f"{date_dir.name}/{page.name}"))
+
+    cards = []
+    for run_date in sorted(runs, reverse=True):
+        links = sorted(runs[run_date], key=lambda item: mode_order.get(item[0].lower().replace(" ", "-"), 99))
+        links_html = "\n".join(
+            f'<a class="run-link" href="{escape(href, quote=True)}">{escape(label)}</a>'
+            for label, href in links
+        )
+        cards.append(
+            f'<section class="run-card"><div class="run-date">{escape(run_date)}</div>'
+            f'<div class="run-links">{links_html}</div></section>'
+        )
+
+    archive_html = ARCHIVE_TEMPLATE.format(
+        generated_on=date.today().isoformat(),
+        year=date.today().year,
+        archive_cards="\n".join(cards) or '<p class="subtitle">No archived pages found.</p>',
+    )
+    (gh_pages_dir / "archive.html").write_text(archive_html)
+
+
+def re_fullmatch_date(value: str) -> bool:
+    parts = value.split("-")
+    return len(parts) == 3 and all(part.isdigit() for part in parts) and len(value) == 10
 
 
 def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
@@ -182,8 +303,18 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
     pages_date_dir.mkdir(parents=True, exist_ok=True)
     run(["cp", str(dashboard_src), str(pages_date_dir / f"{mode}.html")])
 
+    # Backward-compatible path for any older archive links. The generated
+    # archive below links to the compact YYYY-MM-DD/mode.html path, but copying
+    # to runs/YYYY-MM-DD/mode.html keeps historical external links alive.
+    pages_runs_dir = gh_pages_dir / "runs" / run_date
+    pages_runs_dir.mkdir(parents=True, exist_ok=True)
+    run(["cp", str(dashboard_src), str(pages_runs_dir / f"{mode}.html")])
+
     if summary_src.exists():
         run(["cp", str(summary_src), str(pages_date_dir / f"{mode}-summary.md")])
+
+    build_archive_page(gh_pages_dir)
+    print("  [gh-pages] Regenerated archive.html from live page files")
 
     # Commit and FORCE push gh-pages (static assets only, force is safe)
     run(["git", "add", "-A"], cwd=gh_pages_dir)

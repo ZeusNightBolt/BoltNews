@@ -166,15 +166,64 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
     min-height: 100dvh;
     font-size: 15px;
   }}
-  .container {{ max-width: 820px; margin: 0 auto; padding: 20px 24px; }}
+  .container {{ max-width: 920px; margin: 0 auto; padding: 20px 24px; }}
+
+  /* Navigation */
+  .navbar {{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }}
+  .brand-mark {{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }}
+  .nav-links {{ display: inline-flex; align-items: center; gap: 8px; }}
+  .nav-item {{
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }}
+  .nav-item:hover {{
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }}
+  .nav-item.active {{
+    color: #fff;
+    background: var(--accent-emphasis);
+  }}
 
   /* Header */
   .header {{
-    border-bottom: 1px solid var(--border);
-    padding: 28px 0 20px 0;
-    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
   }}
-  .header h1 {{ font-size: 1.6rem; font-weight: 700; color: var(--text); }}
+  .header h1 {{ font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }}
   .header .badge {{
     display: inline-block;
     background: var(--accent-emphasis);
@@ -227,6 +276,7 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
     color: var(--text);
   }}
   tr:nth-child(even) td {{ background: var(--bg-secondary); }}
+  tr:hover td {{ background: rgba(88, 166, 255, 0.06); }}
 
   /* Blockquote */
   blockquote {{
@@ -298,6 +348,9 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
   /* Mobile */
   @media (max-width: 600px) {{
     .container {{ padding: 12px 16px; }}
+    .navbar {{ align-items: flex-start; flex-direction: column; gap: 8px; }}
+    .nav-links {{ flex-wrap: wrap; }}
+    .header {{ padding: 18px 16px 16px 16px; }}
     .header h1 {{ font-size: 1.3rem; }}
     h2 {{ font-size: 1.05rem; }}
     table {{ font-size: 0.78rem; }}
@@ -310,6 +363,14 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
 <div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
   <div class="header">
     <h1>⚡ BoltNews <span class="badge">{mode_label}</span></h1>
     <div class="subtitle">{date} &middot; {article_count} articles &middot; {category_count} categories</div>
@@ -355,12 +416,14 @@ def build_dashboard(summary_md: str, articles: list[dict], mode: str, run_date: 
         sources_lines.append('<h2>📰 Source Articles</h2>')
         sources_lines.append('<p>')
         for a in articles:
-            ticker = a.get("ticker", "")
-            title = a.get("title", "Untitled")[:80]
-            url = a.get("url", "#")
+            ticker = str(a.get("ticker", "")).strip()
+            title = str(a.get("title", "Untitled"))[:80]
+            url = str(a.get("url", "#"))
+            if not (url.startswith("http://") or url.startswith("https://")):
+                url = "#"
             label = f"{ticker}: {title}" if ticker else title
             sources_lines.append(
-                f'<a class="source-link" href="{url}" target="_blank" rel="noopener">{label}</a>'
+                f'<a class="source-link" href="{html.escape(url, quote=True)}" target="_blank" rel="noopener">{html.escape(label)}</a>'
             )
         sources_lines.append('</p>')
         sources_lines.append('</div>')
