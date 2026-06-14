@@ -218,6 +218,33 @@ li {{ margin:8px 0; }}
 '''
 
 
+def html_markdown_doc(title: str, markdown: str, links: list[tuple[str, str]]) -> str:
+    """Render a lightweight docs landing page that includes the markdown text."""
+    doc = escape(markdown).replace("\n", "<br>\n")
+    items = "\n".join(
+        f'<li><a href="{escape(href, quote=True)}">{escape(label)}</a></li>'
+        for label, href in links
+    )
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>{escape(title)}</title>
+<style>
+body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:#0d1117; color:#c9d1d9; line-height:1.6; margin:0; padding:24px; }}
+a {{ color:#58a6ff; }}
+.wrap {{ max-width:960px; margin:0 auto; }}
+.nav {{ margin-bottom:20px; }}
+.doc {{ background:#161b22; border:1px solid #30363d; border-radius:12px; padding:18px; }}
+li {{ margin:8px 0; }}
+</style>
+</head>
+<body><main class="wrap"><div class="nav"><a href="../index.html">← Latest</a> · <a href="../archive.html">Archive</a></div><h1>{escape(title)}</h1><section class="doc">{doc}</section><h2>Files</h2><ul>{items}</ul></main></body>
+</html>
+'''
+
+
 def propagate_indexes_and_files(gh_pages_dir: Path, run_dir: Path, mode: str, run_date: str) -> None:
     """Publish docs, project data, run artifacts, and machine-readable indexes to gh-pages."""
     # Disable Jekyll filtering so every copied markdown/data file is served literally.
@@ -225,7 +252,13 @@ def propagate_indexes_and_files(gh_pages_dir: Path, run_dir: Path, mode: str, ru
 
     docs_copied = copy_tree_files(PROJECT_ROOT / "docs", gh_pages_dir / "docs", suffixes={".md"})
     docs_links = [(rel, rel) for rel in sorted(docs_copied)]
-    (gh_pages_dir / "docs" / "index.html").write_text(html_listing("BoltNews Docs", docs_links))
+    docs_index_md = PROJECT_ROOT / "docs" / "index.md"
+    if docs_index_md.exists():
+        (gh_pages_dir / "docs" / "index.html").write_text(
+            html_markdown_doc("BoltNews Docs", docs_index_md.read_text(errors="replace"), docs_links)
+        )
+    else:
+        (gh_pages_dir / "docs" / "index.html").write_text(html_listing("BoltNews Docs", docs_links))
 
     project_data_dir = gh_pages_dir / "data" / "project"
     project_files = []
