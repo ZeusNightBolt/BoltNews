@@ -5,7 +5,9 @@ Pushes run data to main branch, dashboard.html to gh-pages as index.html.
 CRITICAL: Reads GITHUB_TOKEN from ~/.hermes/.env (not env var — cron jobs have no env).
 """
 import argparse
+import json
 import os
+import shutil
 import subprocess
 import sys
 from datetime import date
@@ -166,6 +168,91 @@ def build_archive_page(gh_pages_dir: Path) -> None:
     (gh_pages_dir / "archive.html").write_text(archive_html)
 
 
+def copy_file_if_exists(src: Path, dst: Path) -> bool:
+    """Copy one file, creating parent dirs. Return True if copied."""
+    if not src.exists() or not src.is_file():
+        return False
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dst)
+    return True
+
+
+def copy_tree_files(src_dir: Path, dst_dir: Path, suffixes: set[str] | None = None) -> list[str]:
+    """Copy files from a tree without mutating while iterating over it."""
+    copied: list[str] = []
+    if not src_dir.exists():
+        return copied
+    files = [p for p in src_dir.rglob("*") if p.is_file()]
+    for src in files:
+        if suffixes and src.suffix not in suffixes:
+            continue
+        rel = src.relative_to(src_dir)
+        dst = dst_dir / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+        copied.append(str(rel))
+    return copied
+
+
+def html_listing(title: str, links: list[tuple[str, str]]) -> str:
+    items = "\n".join(
+        f'<li><a href="{escape(href, quote=True)}">{escape(label)}</a></li>'
+        for label, href in links
+    )
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>{escape(title)}</title>
+<style>
+body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:#0d1117; color:#c9d1d9; line-height:1.6; margin:0; padding:24px; }}
+a {{ color:#58a6ff; }}
+.wrap {{ max-width:920px; margin:0 auto; }}
+li {{ margin:8px 0; }}
+.nav {{ margin-bottom:20px; }}
+</style>
+</head>
+<body><main class="wrap"><div class="nav"><a href="../index.html">← Latest</a> · <a href="../archive.html">Archive</a></div><h1>{escape(title)}</h1><ul>{items}</ul></main></body>
+</html>
+'''
+
+
+def propagate_indexes_and_files(gh_pages_dir: Path, run_dir: Path, mode: str, run_date: str) -> None:
+    """Publish docs, project data, run artifacts, and machine-readable indexes to gh-pages."""
+    docs_copied = copy_tree_files(PROJECT_ROOT / "docs", gh_pages_dir / "docs", suffixes={".md"})
+    docs_links = [(rel, rel) for rel in sorted(docs_copied)]
+    (gh_pages_dir / "docs" / "index.html").write_text(html_listing("BoltNews Docs", docs_links))
+
+    project_data_dir = gh_pages_dir / "data" / "project"
+    project_files = []
+    for name in ["sources.json", "universe.json"]:
+        if copy_file_if_exists(PROJECT_ROOT / "data" / name, project_data_dir / name):
+            project_files.append(f"project/{name}")
+
+    run_data_dir = gh_pages_dir / "data" / "runs" / run_date / mode
+    run_files = []
+    for name in ["briefing.md", "summary.md", "articles.json", "articles_enriched.json", "search_plan.json", "dashboard.html"]:
+        if copy_file_if_exists(run_dir / name, run_data_dir / name):
+            run_files.append(f"runs/{run_date}/{mode}/{name}")
+
+    data_root = gh_pages_dir / "data"
+    all_data_files = sorted(
+        str(p.relative_to(data_root))
+        for p in list(data_root.rglob("*"))
+        if p.is_file() and p.name not in {"index.json", "index.html"}
+    )
+    index = {
+        "generated_on": date.today().isoformat(),
+        "latest": {"date": run_date, "mode": mode, "files": run_files},
+        "project_files": project_files,
+        "files": all_data_files,
+    }
+    (data_root / "index.json").write_text(json.dumps(index, indent=2))
+    data_links = [(rel, rel) for rel in all_data_files]
+    (data_root / "index.html").write_text(html_listing("BoltNews Data Index", data_links))
+
+
 def re_fullmatch_date(value: str) -> bool:
     parts = value.split("-")
     return len(parts) == 3 and all(part.isdigit() for part in parts) and len(value) == 10
@@ -312,6 +399,9 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
 
     if summary_src.exists():
         run(["cp", str(summary_src), str(pages_date_dir / f"{mode}-summary.md")])
+
+    propagate_indexes_and_files(gh_pages_dir, run_dir, mode, run_date)
+    print("  [gh-pages] Propagated docs, data files, and index manifests")
 
     build_archive_page(gh_pages_dir)
     print("  [gh-pages] Regenerated archive.html from live page files")
