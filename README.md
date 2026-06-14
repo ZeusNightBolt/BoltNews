@@ -62,13 +62,13 @@ Purpose: answer "What changed this week, what matters next week, and what risks 
 Required top sections:
 
 1. `Weekly Market Scoreboard`
-2. `Dominant Cross-Asset Narrative`
-3. `Asset Class Deep Dive`
-4. `Positioning, Sentiment, and Flows`
-5. `Earnings, Guidance, and Corporate Actions`
-6. `Macro and Policy Outlook`
-7. `Next Week Calendar and Watchlist`
-8. `Contrarian Flags and Underpriced Risks`
+2. `The Week's Core Narrative`
+3. `Macro and Policy Review`
+4. `Equity and Sector Review`
+5. `Commodities, FX, Credit, and Volatility`
+6. `Geopolitics and Event Risk`
+7. `Next Week Playbook`
+8. `Historical Context`
 9. `Source Notes and Data Quality`
 
 ## Multi-agent discovery lanes
@@ -155,8 +155,9 @@ Timeout defaults:
 
 | Job | ID | Schedule | Contract |
 |---|---|---|---|
-| BoltNews Pre-Market | `57148987bc98` | 6:00 AM ET daily | Use `docs/briefing-template-spec.md`; start with futures/current market snapshot; write `briefing.md`; build/deploy/dashboard; auto-consolidate after run. |
-| BoltNews Post-Market | `cffe38c452c9` | 6:00 PM ET daily | Use post-market template; start with closing market snapshot; write `briefing.md`; build/deploy/dashboard. |
+| BoltNews Pre-Market | `57148987bc98` | 6:00 AM ET Monday-Friday | Use `docs/briefing-template-spec.md`; start with futures/current market snapshot; write `briefing.md`; run `validate_run.py`; build/deploy/dashboard; auto-consolidate after run. |
+| BoltNews Post-Market | `cffe38c452c9` | 6:00 PM ET Monday-Friday | Use post-market template; start with closing market snapshot; write `briefing.md`; run `validate_run.py`; build/deploy/dashboard. |
+| BoltNews Weekend | `396458906931` | 10:00 AM ET Sunday | Use weekend template with 72h recency window; write weekend `briefing.md`; run `validate_run.py`; build/deploy/dashboard. |
 | BoltNews Weekly Rollup | `949d2440242b` | 8:00 PM ET Friday | Use weekly template; load temporal briefs first; write weekly rollup and deploy/index artifacts. |
 
 Cron prompts are intentionally self-contained and reference the docs above so scheduled runs do not fall back to stale prompt formats.
