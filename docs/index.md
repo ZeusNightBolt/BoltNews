@@ -56,6 +56,13 @@ runs/{YYYY-MM-DD}/{mode}/briefing.md
 - `data/index.html`
 - `.nojekyll` so GitHub Pages serves markdown/data files literally
 
+## Deterministic safeguards
+
+- `scripts/validate_run.py` is the guardrail before deploy/final success.
+- It rejects missing artifacts, malformed JSON, `articles.json` accidentally containing a search plan, section-incomplete briefings, zero-article feeds, and link-only dashboards.
+- `scripts/run_pipeline.py` preserves existing agent-populated run artifacts by default. Use `--fresh` only when intentionally discarding a run; cron should not use `--fresh` after article/briefing synthesis.
+- `scripts/deploy.py` treats main-branch push failure, unreadable article feeds, zero articles, and stale article ages as deploy-blocking errors.
+
 After deploy, verify cache-busted live URLs:
 
 - `https://zeusnightbolt.github.io/BoltNews/index.html?v=<cachebuster>`

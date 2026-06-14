@@ -24,7 +24,18 @@ def is_weekend(d: date | None = None) -> bool:
 
 def safe_run(cmd: list[str], timeout: int = 120, label: str = "") -> subprocess.CompletedProcess:
     """Run a subprocess, print output, return result."""
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired as exc:
+        print(
+            f"[{label or 'subprocess'}] TIMEOUT after {timeout}s: {' '.join(cmd)}",
+            file=sys.stderr,
+        )
+        if exc.stdout:
+            print(str(exc.stdout)[-2000:])
+        if exc.stderr:
+            print(str(exc.stderr)[-1000:], file=sys.stderr)
+        return subprocess.CompletedProcess(cmd, 124, exc.stdout or "", exc.stderr or "")
     if result.stdout:
         # Print last 2000 chars of stdout
         out = result.stdout[-2000:] if len(result.stdout) > 2000 else result.stdout
@@ -43,7 +54,9 @@ parser.add_argument("--date", type=str, default=None,
 parser.add_argument("--skip-universe", action="store_true", help="Skip universe rebuild")
 parser.add_argument("--skip-deploy", action="store_true", help="Skip GitHub deploy")
 parser.add_argument("--resume", action="store_true",
-                    help="Preserve existing run artifacts. Default fresh runs clear generated files/caches first.")
+                    help="Deprecated no-op: existing run artifacts are preserved by default.")
+parser.add_argument("--fresh", action="store_true",
+                    help="Explicitly clear generated run artifacts before starting. Dangerous for agent-assisted runs.")
 parser.add_argument("--dry-run", action="store_true", help="Print plan, don't execute")
 args = parser.parse_args()
 
@@ -56,8 +69,8 @@ if args.mode is None:
         args.mode = "weekend"
     else:
         args.mode = "pre-market"
-elif is_weekend(today):
-    args.mode = "weekend"
+# If --mode is explicitly supplied, honor it. Weekend coercion belongs only to
+# auto-detection; otherwise cron/debug runs silently do the wrong mode.
 
 run_dir = RUNS_DIR / run_date / args.mode
 
@@ -67,19 +80,22 @@ if args.dry_run:
     print(f"Output dir: {run_dir}")
     print(f"Universe: {'rebuild (Monday)' if today.weekday() == 0 else 'skip (not Monday)'}")
     print(f"Deploy: {'skip' if args.skip_deploy else 'GitHub + GH Pages'}")
-    print(f"Files that would be created:")
+    print("Deterministic script stages create/verify search_plan.json and then require")
+    print("agent-populated articles.json + briefing.md before summary/dashboard/deploy.")
+    print(f"Files required for successful finalization:")
     print(f"  {run_dir}/search_plan.json")
-    print(f"  {run_dir}/articles.json")
-    print(f"  {run_dir}/briefing.md")
+    print(f"  {run_dir}/articles.json  (fresh extracted article feed)")
+    print(f"  {run_dir}/briefing.md    (canonical synthesized research note)")
     print(f"  {run_dir}/summary.md")
     print(f"  {run_dir}/dashboard.html")
     sys.exit(0)
 
 run_dir.mkdir(parents=True, exist_ok=True)
 
-# Fresh-run hygiene: never let stale article feeds, enriched data, summaries,
-# dashboards, or extractor caches leak into a new run. Use --resume only when
-# intentionally continuing a partially completed run.
+# Fresh-run hygiene is opt-in. The documented pipeline has an LLM-assisted
+# collection/synthesis boundary between search_plan.json and articles.json /
+# briefing.md. Clearing by default deleted those agent-populated artifacts and
+# made weekend cron runs fail or report misleading partial state.
 def clear_generated_run_state(path: Path) -> None:
     generated_files = [
         "articles.json",
@@ -112,10 +128,10 @@ def clear_generated_run_state(path: Path) -> None:
     print(f"Fresh run: cleared {len(removed)} generated files/caches" + (f" ({', '.join(removed)})" if removed else ""))
 
 
-if args.resume:
-    print("Resume mode: preserving existing run artifacts")
-else:
+if args.fresh:
     clear_generated_run_state(run_dir)
+else:
+    print("Resume/default mode: preserving existing run artifacts; use --fresh to clear")
 
 print(f"=== BoltNews Pipeline ===")
 print(f"Date: {run_date} ({today.strftime('%A')}) | Mode: {args.mode}" +
@@ -177,7 +193,8 @@ result = safe_run(
     timeout=30, label="fetch_articles"
 )
 if result.returncode != 0:
-    print("WARNING: Search plan generation failed. Agent will use defaults.", file=sys.stderr)
+    print("FATAL: Search plan generation failed. Refusing to continue with defaults.", file=sys.stderr)
+    sys.exit(1)
 
 # ═══════════════════════
 # Stage 4: Summarize (agent writes articles.json, then summarize.py runs)
@@ -199,11 +216,13 @@ result = safe_run(
         "--output", str(summary_path),
         "--mode", args.mode,
         "--date", run_date,
+        "--max-hours", "72" if args.mode == "weekend" else "48",
     ],
     timeout=300, label="summarize"
 )
 if result.returncode != 0:
-    print("WARNING: Summarizer failed. Dashboard will render from raw articles.", file=sys.stderr)
+    print("FATAL: Summarizer failed. Refusing dashboard/deploy success.", file=sys.stderr)
+    sys.exit(1)
 
 # ═══════════════════════
 # Stage 5: Build Dashboard
@@ -214,7 +233,7 @@ result = safe_run(
     [
         "python3.12", str(SCRIPTS_DIR / "build_dashboard.py"),
         "--input", str(articles_path),
-        "--summary", str(summary_path),
+        "--summary", str(run_dir / "briefing.md"),
         "--output", str(dashboard_path),
         "--mode", args.mode,
         "--date", run_date,
@@ -223,9 +242,22 @@ result = safe_run(
 )
 if result.returncode != 0:
     print("ERROR: Dashboard build failed.", file=sys.stderr)
-    if not args.skip_deploy:
-        print("Skipping deploy — dashboard is required.", file=sys.stderr)
-        sys.exit(1)
+    print("Skipping deploy — dashboard is required.", file=sys.stderr)
+    sys.exit(1)
+
+print("[5b/7] Validating run artifacts before deploy/reporting success...")
+result = safe_run(
+    [
+        "python3.12", str(SCRIPTS_DIR / "validate_run.py"),
+        "--run-dir", str(run_dir),
+        "--mode", args.mode,
+        "--date", run_date,
+    ],
+    timeout=60, label="validate_run",
+)
+if result.returncode != 0:
+    print("FATAL: Run artifact validation failed. Refusing deploy/final success.", file=sys.stderr)
+    sys.exit(1)
 
 # ═══════════════════════
 # Stage 6: Deploy to GitHub Pages
@@ -263,7 +295,12 @@ if args.mode == "pre-market":
         print("WARNING: Temporal reasoning consolidation failed. Temporal brief NOT generated.", file=sys.stderr)
         print("  → Check runs/{prev_date}/daily/temporal_brief.md", file=sys.stderr)
 else:
-    print("[7/7] Temporal reasoning: skipped (post-market — consolidation runs after 6AM)")
+    if args.mode == "post-market":
+        print("[7/7] Temporal reasoning: skipped (post-market — consolidation runs after next pre-market)")
+    elif args.mode == "weekend":
+        print("[7/7] Temporal reasoning: skipped (weekend mode)")
+    else:
+        print(f"[7/7] Temporal reasoning: skipped (mode={args.mode})")
 
 # ═══════════════════════
 # Complete

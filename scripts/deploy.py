@@ -277,16 +277,22 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
     dashboard_src = run_dir / "dashboard.html"
     summary_src = run_dir / "summary.md"
     articles_src = run_dir / "articles.json"
+    briefing_src = run_dir / "briefing.md"
 
     if not dashboard_src.exists():
         print(f"ERROR: dashboard.html not found at {dashboard_src}. Cannot deploy.", file=sys.stderr)
         return False
+    for required in (briefing_src, summary_src, articles_src, run_dir / "search_plan.json"):
+        if not required.exists() or required.stat().st_size == 0:
+            print(f"ERROR: required artifact missing/empty: {required}", file=sys.stderr)
+            return False
 
     html_text = dashboard_src.read_text(errors="replace")
-    if "Executive Summary" not in html_text and "Cross-Asset" not in html_text:
+    synthesized_markers = ("Executive Summary", "Cross-Asset", "Weekly Market Scoreboard", "The Week's Core Narrative")
+    if not any(marker in html_text for marker in synthesized_markers):
         print(
             "ERROR: dashboard.html does not contain synthesized briefing markers "
-            "(Executive Summary/Cross-Asset). Refusing to deploy link-only dashboard.",
+            "(Executive/Cross-Asset/Weekend). Refusing to deploy link-only dashboard.",
             file=sys.stderr,
         )
         return False
@@ -297,27 +303,30 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
     # ═══════════════════════════════════════════
     # RECENCY GATE: Verify articles are fresh before deploying
     # ═══════════════════════════════════════════
-    max_hours = 48
-    stale_warning = False
+    max_hours = 72 if mode == "weekend" else 48
     try:
         with open(articles_src) as f:
             import json as _json
             data = _json.load(f)
+        if isinstance(data, dict) and ({"search_queries", "prioritized_tickers", "recency_warning"} & set(data)) and not data.get("articles"):
+            print("ERROR: articles.json is search-plan-shaped, not an article feed. Refusing deploy.", file=sys.stderr)
+            return False
         articles_list = data if isinstance(data, list) else data.get("articles", [])
         article_count = len(articles_list)
         if article_count == 0:
-            print(f"WARNING: articles.json has 0 articles. Dashboard may be empty.", file=sys.stderr)
-            stale_warning = True
-        # Check for explicit age_hours on articles
-        stale_count = sum(1 for a in articles_list 
-                         if isinstance(a, dict) and a.get("age_hours", 0) 
-                         and (isinstance(a["age_hours"], (int, float)) and a["age_hours"] > max_hours))
+            print("ERROR: articles.json has 0 articles. Refusing deploy.", file=sys.stderr)
+            return False
+        stale_count = sum(
+            1 for a in articles_list
+            if isinstance(a, dict) and a.get("age_hours", 0)
+            and (isinstance(a["age_hours"], (int, float)) and a["age_hours"] > max_hours)
+        )
         if stale_count > 0:
-            print(f"WARNING: {stale_count}/{article_count} articles are >{max_hours}h old. Deploying anyway.", file=sys.stderr)
-            stale_warning = True
-    except Exception:
-        pass  # Can't read articles.json — proceed anyway
-    # Note: stale_warning doesn't block deploy, but the flag is logged
+            print(f"ERROR: {stale_count}/{article_count} articles are >{max_hours}h old. Refusing deploy.", file=sys.stderr)
+            return False
+    except Exception as exc:
+        print(f"ERROR: cannot validate articles.json: {exc}. Refusing deploy.", file=sys.stderr)
+        return False
 
     deploy_dir = Path("/tmp/boltnews-deploy")
     gh_pages_dir = Path("/tmp/boltnews-gh-pages")
@@ -362,7 +371,7 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
         result = run(["git", "push", "origin", "main"], cwd=deploy_dir, timeout=120)
         if result.returncode != 0:
             print(f"ERROR pushing main: {result.stderr[-500:]}", file=sys.stderr)
-            # Don't return False — gh-pages deploy can still work
+            return False
     else:
         print("  [main] No changes to commit")
 

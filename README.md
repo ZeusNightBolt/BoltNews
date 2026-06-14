@@ -116,8 +116,13 @@ Timeout defaults:
    - Renders `briefing.md` to static HTML.
    - Generates a heading-derived Table of Contents from `##`/`###` headings.
    - Verifies TOC anchors resolve locally.
+   - Fails closed on missing, invalid, zero-article, or search-plan-shaped article feeds.
 
-6. Deploy and propagation: `scripts/deploy.py`
+6. Deterministic run validation: `scripts/validate_run.py`
+   - Blocks deploy/final success if required artifacts are missing, malformed, stale-plan-shaped, section-incomplete, or link-only.
+   - Validates `search_plan.json`, `articles.json`, `briefing.md`, `summary.md`, and `dashboard.html` before cron can report success.
+
+7. Deploy and propagation: `scripts/deploy.py`
    - Pushes run artifacts to `main`.
    - Pushes the static dashboard to `gh-pages`.
 

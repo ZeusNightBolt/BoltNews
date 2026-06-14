@@ -838,6 +838,12 @@ def main() -> None:
     am_summary = load_summary(am_dir)
     
     print(f"  PM articles: {len(pm_articles)}, AM articles: {len(am_articles)}")
+    if not pm_articles and not pm_summary.strip():
+        print("❌ PM run has no article or briefing context; refusing temporal hallucination", file=sys.stderr)
+        sys.exit(1)
+    if not am_articles and not am_summary.strip():
+        print("❌ AM run has no article or briefing context; refusing temporal hallucination", file=sys.stderr)
+        sys.exit(1)
     
     # Generate temporal narrative
     narrative = generate_temporal_narrative(

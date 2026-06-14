@@ -577,10 +577,11 @@ def main():
         sys.exit(1)
 
     summary_md = content_path.read_text()
-    if "Executive Summary" not in summary_md and "Cross-Asset" not in summary_md:
+    synthesized_markers = ("Executive Summary", "Cross-Asset", "Weekly Market Scoreboard", "The Week's Core Narrative")
+    if not any(marker in summary_md for marker in synthesized_markers):
         print(
             "ERROR: dashboard content is not a synthesized briefing "
-            "(missing Executive Summary/Cross-Asset markers). Refusing link-only dashboard.",
+            "(missing synthesized briefing markers). Refusing link-only dashboard.",
             file=sys.stderr,
         )
         sys.exit(2)
@@ -595,16 +596,29 @@ def main():
     else:
         articles_path = args.input
     
-    if articles_path.exists():
-        try:
-            with open(articles_path) as f:
-                data = json.load(f)
-            if isinstance(data, list):
-                articles = data
-            elif isinstance(data, dict):
-                articles = data.get("articles", data if data.get("title") else [])
-        except (json.JSONDecodeError, KeyError):
-            pass
+    if not articles_path.exists():
+        print(f"ERROR: article feed not found: {articles_path}", file=sys.stderr)
+        sys.exit(3)
+    try:
+        with open(articles_path) as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            articles = data
+        elif isinstance(data, dict):
+            if {"search_queries", "prioritized_tickers", "recency_warning"} & set(data) and not data.get("articles"):
+                print(f"ERROR: {articles_path} is a search plan, not an article feed", file=sys.stderr)
+                sys.exit(3)
+            articles = data.get("articles", data if data.get("title") else [])
+        else:
+            print(f"ERROR: unsupported article feed shape in {articles_path}", file=sys.stderr)
+            sys.exit(3)
+    except (json.JSONDecodeError, KeyError, OSError) as exc:
+        print(f"ERROR: failed reading article feed {articles_path}: {exc}", file=sys.stderr)
+        sys.exit(3)
+
+    if not articles:
+        print(f"ERROR: article feed has zero articles: {articles_path}", file=sys.stderr)
+        sys.exit(3)
 
     # Build
     html = build_dashboard(summary_md, articles, args.mode, args.date)

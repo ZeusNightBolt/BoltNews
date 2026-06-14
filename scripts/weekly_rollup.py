@@ -21,6 +21,7 @@ WEEKLY_DIR = PROJECT_ROOT / "weekly"
 
 BRIEFING_MARKERS = ("Executive Summary", "Cross-Asset", "Positioning", "Contrarian")
 RUN_MODES = ("pre-market", "post-market")
+WEEKEND_RUN_MODES = ("weekend",)
 
 
 def parse_date(value: str | None) -> date:
@@ -28,9 +29,15 @@ def parse_date(value: str | None) -> date:
 
 
 def get_week_dates(asof: date) -> list[str]:
-    """Get Monday-Friday dates for the week containing *asof*."""
+    """Get week dates containing *asof*.
+
+    Friday rollups keep the legacy Monday-Friday window. If the rollup is run
+    on Saturday/Sunday, include weekend dates so weekend briefings are not dead
+    code for weekly aggregation/debug runs.
+    """
     monday = asof - timedelta(days=asof.weekday())
-    return [(monday + timedelta(days=i)).isoformat() for i in range(5)]
+    days = 7 if asof.weekday() >= 5 else 5
+    return [(monday + timedelta(days=i)).isoformat() for i in range(days)]
 
 
 def read_text(path: Path) -> str | None:
@@ -126,7 +133,8 @@ def collect_week_context(week_dates: list[str]) -> tuple[list[dict], list[dict],
         temporal = load_daily_temporal(d)
         if temporal:
             contexts.append(temporal)
-        for mode in RUN_MODES:
+        modes = WEEKEND_RUN_MODES if date.fromisoformat(d).weekday() >= 5 else RUN_MODES
+        for mode in modes:
             run_context = load_run_markdown(d, mode)
             articles, article_source = load_articles(d, mode)
             all_articles.extend(articles)
@@ -223,13 +231,14 @@ def build_weekly_summary(week_dates: list[str], asof: date | None = None) -> str
             lines.append("*No markdown context found for this date.*")
             lines.append("")
             continue
-        # Show temporal first, then AM, then PM.
-        order = {"daily": 0, "pre-market": 1, "post-market": 2}
+        # Show temporal first, then AM, then PM, then weekend.
+        order = {"daily": 0, "pre-market": 1, "post-market": 2, "weekend": 3}
         for ctx in sorted(day_contexts, key=lambda c: order.get(c["mode"], 99)):
             label = {
                 "daily": "Temporal reasoning",
-                "pre-market": "Pre-market briefing",
-                "post-market": "Post-market briefing",
+                "pre-market": "Pre-market",
+                "post-market": "Post-market",
+                "weekend": "Weekend",
             }.get(ctx["mode"], ctx["mode"])
             rel = ctx["path"].relative_to(PROJECT_ROOT)
             lines.append(f"#### {label} — `{rel}` ({ctx['quality']}, {ctx['chars']} chars)")
