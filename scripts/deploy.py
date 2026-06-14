@@ -220,6 +220,9 @@ li {{ margin:8px 0; }}
 
 def propagate_indexes_and_files(gh_pages_dir: Path, run_dir: Path, mode: str, run_date: str) -> None:
     """Publish docs, project data, run artifacts, and machine-readable indexes to gh-pages."""
+    # Disable Jekyll filtering so every copied markdown/data file is served literally.
+    (gh_pages_dir / ".nojekyll").write_text("")
+
     docs_copied = copy_tree_files(PROJECT_ROOT / "docs", gh_pages_dir / "docs", suffixes={".md"})
     docs_links = [(rel, rel) for rel in sorted(docs_copied)]
     (gh_pages_dir / "docs" / "index.html").write_text(html_listing("BoltNews Docs", docs_links))
