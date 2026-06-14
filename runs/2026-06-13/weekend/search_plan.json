@@ -1,0 +1,386 @@
+{
+  "mode": "weekend",
+  "is_weekend": true,
+  "target_date": "2026-06-13",
+  "date_suffix": "June 13, 2026",
+  "recency_hours": 24,
+  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 24 hours (since ~2026-06-13). All search queries include 'June 13, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
+  "generated": "2026-06-13T18:00:42.281699",
+  "total_tickers": 148,
+  "prioritized_tickers": [
+    "NVDA",
+    "GOOGL",
+    "GOOG",
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "AVGO",
+    "META",
+    "TSLA",
+    "MU",
+    "WMT",
+    "LLY",
+    "AMD",
+    "JPM",
+    "XOM",
+    "V",
+    "INTC",
+    "JNJ",
+    "ORCL",
+    "CSCO",
+    "COST",
+    "MA",
+    "CAT",
+    "LRCX",
+    "ABBV"
+  ],
+  "topics": [
+    "stock market recap analysis",
+    "markets outlook forecast",
+    "federal reserve policy",
+    "global macro outlook",
+    "credit markets outlook",
+    "currency markets analysis",
+    "commodities outlook",
+    "investing strategy",
+    "hedge fund manager",
+    "Barron's markets",
+    "Wall Street week ahead",
+    "earnings week ahead",
+    "economic data next week",
+    "investor sentiment survey",
+    "markets weekend reading"
+  ],
+  "search_queries": [
+    {
+      "type": "ticker",
+      "ticker": "NVDA",
+      "name": "NVIDIA CORP",
+      "queries": [
+        "NVDA stock news June 13, 2026",
+        "NVDA Semiconductors analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "GOOGL",
+      "name": "ALPHABET INC-A",
+      "queries": [
+        "GOOGL stock news June 13, 2026",
+        "GOOGL Internet Content & Information analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "GOOG",
+      "name": "ALPHABET INC-C",
+      "queries": [
+        "GOOG stock news June 13, 2026",
+        "GOOG Internet Content & Information analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AAPL",
+      "name": "APPLE INC",
+      "queries": [
+        "AAPL stock news June 13, 2026",
+        "AAPL Consumer Electronics analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MSFT",
+      "name": "MICROSOFT CORP",
+      "queries": [
+        "MSFT stock news June 13, 2026",
+        "MSFT Software - Infrastructure analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AMZN",
+      "name": "AMAZON.COM INC",
+      "queries": [
+        "AMZN stock news June 13, 2026",
+        "AMZN Internet Retail analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AVGO",
+      "name": "BROADCOM INC",
+      "queries": [
+        "AVGO stock news June 13, 2026",
+        "AVGO Semiconductors analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "META",
+      "name": "META PLATFORMS-A",
+      "queries": [
+        "META stock news June 13, 2026",
+        "META Internet Content & Information analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "TSLA",
+      "name": "TESLA INC",
+      "queries": [
+        "TSLA stock news June 13, 2026",
+        "TSLA Auto Manufacturers analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MU",
+      "name": "MICRON TECH",
+      "queries": [
+        "MU stock news June 13, 2026",
+        "MU Semiconductors analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "WMT",
+      "name": "WALMART INC",
+      "queries": [
+        "WMT stock news June 13, 2026",
+        "WMT Discount Stores analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "LLY",
+      "name": "ELI LILLY & CO",
+      "queries": [
+        "LLY stock news June 13, 2026",
+        "LLY Drug Manufacturers - General analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AMD",
+      "name": "ADV MICRO DEVICE",
+      "queries": [
+        "AMD stock news June 13, 2026",
+        "AMD Semiconductors analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "JPM",
+      "name": "JPMORGAN CHASE",
+      "queries": [
+        "JPM stock news June 13, 2026",
+        "JPM Banks - Diversified analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "XOM",
+      "name": "EXXON MOBIL CORP",
+      "queries": [
+        "XOM stock news June 13, 2026",
+        "XOM Oil & Gas Integrated analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "V",
+      "name": "VISA INC-CLASS A",
+      "queries": [
+        "V stock news June 13, 2026",
+        "V Credit Services analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "INTC",
+      "name": "INTEL CORP",
+      "queries": [
+        "INTC stock news June 13, 2026",
+        "INTC Semiconductors analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "JNJ",
+      "name": "JOHNSON&JOHNSON",
+      "queries": [
+        "JNJ stock news June 13, 2026",
+        "JNJ Drug Manufacturers - General analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ORCL",
+      "name": "ORACLE CORP",
+      "queries": [
+        "ORCL stock news June 13, 2026",
+        "ORCL Software - Infrastructure analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CSCO",
+      "name": "CISCO SYSTEMS",
+      "queries": [
+        "CSCO stock news June 13, 2026",
+        "CSCO Communication Equipment analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "COST",
+      "name": "COSTCO WHOLESALE",
+      "queries": [
+        "COST stock news June 13, 2026",
+        "COST Discount Stores analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MA",
+      "name": "MASTERCARD INC-A",
+      "queries": [
+        "MA stock news June 13, 2026",
+        "MA Credit Services analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CAT",
+      "name": "CATERPILLAR INC",
+      "queries": [
+        "CAT stock news June 13, 2026",
+        "CAT Farm & Heavy Construction Machinery analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "LRCX",
+      "name": "LAM RESEARCH",
+      "queries": [
+        "LRCX stock news June 13, 2026",
+        "LRCX Semiconductor Equipment & Materials analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ABBV",
+      "name": "ABBVIE INC",
+      "queries": [
+        "ABBV stock news June 13, 2026",
+        "ABBV Drug Manufacturers - General analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "stock market recap analysis",
+      "queries": [
+        "stock market recap analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "markets outlook forecast",
+      "queries": [
+        "markets outlook forecast June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "federal reserve policy",
+      "queries": [
+        "federal reserve policy June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "global macro outlook",
+      "queries": [
+        "global macro outlook June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "credit markets outlook",
+      "queries": [
+        "credit markets outlook June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "currency markets analysis",
+      "queries": [
+        "currency markets analysis June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "commodities outlook",
+      "queries": [
+        "commodities outlook June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "investing strategy",
+      "queries": [
+        "investing strategy June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "hedge fund manager",
+      "queries": [
+        "hedge fund manager June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Barron's markets",
+      "queries": [
+        "Barron's markets June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Wall Street week ahead",
+      "queries": [
+        "Wall Street week ahead June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "earnings week ahead",
+      "queries": [
+        "earnings week ahead June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "economic data next week",
+      "queries": [
+        "economic data next week June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "investor sentiment survey",
+      "queries": [
+        "investor sentiment survey June 13, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "markets weekend reading",
+      "queries": [
+        "markets weekend reading June 13, 2026"
+      ]
+    }
+  ]
+}
