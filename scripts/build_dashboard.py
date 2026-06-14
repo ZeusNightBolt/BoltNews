@@ -18,6 +18,7 @@ def md_to_html(md: str) -> str:
     """Convert BoltNews markdown briefing to clean HTML."""
     lines = md.split('\n')
     html_lines = []
+    heading_counts: dict[str, int] = {}
     i = 0
     
     while i < len(lines):
@@ -40,11 +41,14 @@ def md_to_html(md: str) -> str:
         
         # H1, H2, H3
         if line.startswith('### '):
-            html_lines.append(f'<h3>{_inline_md(line[4:])}</h3>')
+            title = line[4:].strip()
+            html_lines.append(f'<h3 id="{_heading_id(title, heading_counts)}">{_inline_md(title)}</h3>')
         elif line.startswith('## '):
-            html_lines.append(f'<h2>{_inline_md(line[3:])}</h2>')
+            title = line[3:].strip()
+            html_lines.append(f'<h2 id="{_heading_id(title, heading_counts)}">{_inline_md(title)}</h2>')
         elif line.startswith('# '):
-            html_lines.append(f'<h1>{_inline_md(line[2:])}</h1>')
+            title = line[2:].strip()
+            html_lines.append(f'<h1 id="{_heading_id(title, heading_counts)}">{_inline_md(title)}</h1>')
         
         # Unordered list
         elif line.strip().startswith('- '):
@@ -84,6 +88,65 @@ def md_to_html(md: str) -> str:
         i += 1
     
     return '\n'.join(html_lines)
+
+
+def build_toc(md: str) -> str:
+    """Build an in-page table of contents from briefing headings."""
+    entries: list[tuple[int, str, str]] = []
+    heading_counts: dict[str, int] = {}
+    for line in md.split('\n'):
+        if line.startswith('### '):
+            level, title = 3, line[4:].strip()
+        elif line.startswith('## '):
+            level, title = 2, line[3:].strip()
+        elif line.startswith('# '):
+            level, title = 1, line[2:].strip()
+        else:
+            continue
+        if not title:
+            continue
+        # Keep the body title addressable, but the TOC itself is for section navigation.
+        if level == 1 and entries:
+            continue
+        entries.append((level, title, _heading_id(title, heading_counts)))
+
+    section_entries = [(level, title, anchor) for level, title, anchor in entries if level >= 2]
+    if not section_entries:
+        return ''
+
+    items = []
+    for level, title, anchor in section_entries:
+        items.append(
+            f'<a class="toc-link toc-level-{level}" href="#{html.escape(anchor, quote=True)}">'
+            f'{html.escape(_strip_inline_md(title))}</a>'
+        )
+    return (
+        '<nav class="toc-card" aria-label="Briefing table of contents">'
+        '<div class="toc-eyebrow">Briefing Navigation</div>'
+        '<h2 class="toc-title">Table of Contents</h2>'
+        f'<div class="toc-grid">{"".join(items)}</div>'
+        '</nav>'
+    )
+
+
+def _strip_inline_md(text: str) -> str:
+    """Strip simple inline markdown for plain-text labels and slugs."""
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'\1', text)
+    text = re.sub(r'[`*_]+', '', text)
+    return html.unescape(text).strip()
+
+
+def _slugify(text: str) -> str:
+    slug = re.sub(r'[^a-z0-9]+', '-', _strip_inline_md(text).lower()).strip('-')
+    return slug or 'section'
+
+
+def _heading_id(title: str, counts: dict[str, int]) -> str:
+    base = _slugify(title)
+    counts[base] = counts.get(base, 0) + 1
+    if counts[base] == 1:
+        return base
+    return f'{base}-{counts[base]}'
 
 
 def _build_table(rows: list[str]) -> str:
@@ -237,6 +300,56 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
   }}
   .header .subtitle {{ font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }}
 
+  /* Table of contents */
+  .toc-card {{
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }}
+  .toc-eyebrow {{
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }}
+  .toc-title {{
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }}
+  .toc-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }}
+  .toc-link {{
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }}
+  .toc-link:hover {{
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }}
+  .toc-level-3 {{
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }}
+
+  h1, h2, h3 {{ scroll-margin-top: 78px; }}
+
   /* Content typography */
   h1 {{ font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }}
   h2 {{ font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }}
@@ -376,6 +489,8 @@ DASHBOARD_TEMPLATE = """<!DOCTYPE html>
     <div class="subtitle">{date} &middot; {article_count} articles &middot; {category_count} categories</div>
   </div>
 
+  {toc_html}
+
   <div class="content">
     {briefing_html}
   </div>
@@ -402,6 +517,7 @@ def build_dashboard(summary_md: str, articles: list[dict], mode: str, run_date: 
 
     # Convert markdown briefing to HTML
     briefing_html = md_to_html(summary_md)
+    toc_html = build_toc(summary_md)
 
     # Build source reference links from articles
     sources_lines = []
@@ -435,6 +551,7 @@ def build_dashboard(summary_md: str, articles: list[dict], mode: str, run_date: 
         date=run_date,
         article_count=article_count,
         category_count=category_count,
+        toc_html=toc_html,
         briefing_html=briefing_html,
         sources_html=sources_html,
         year=run_date[:4],
