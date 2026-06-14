@@ -1,11 +1,315 @@
 {
+  "schema_version": "2.0",
   "mode": "weekend",
+  "weekday": "Sunday",
+  "weekday_index": 6,
   "is_weekend": true,
   "target_date": "2026-06-14",
   "date_suffix": "June 14, 2026",
-  "recency_hours": 24,
-  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 24 hours (since ~2026-06-14). All search queries include 'June 14, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
-  "generated": "2026-06-14T06:03:25.766749",
+  "recency_hours": 72,
+  "recency": {
+    "hours": 72,
+    "window_start_iso": "2026-06-11T20:00:00-04:00",
+    "window_end_iso": "2026-06-14T20:00:00-04:00",
+    "timezone": "America/New_York",
+    "require_article_timestamp": true,
+    "reject_if_timestamp_missing": true,
+    "reject_if_older_than_window": true
+  },
+  "source_policy": {
+    "preferred_sources": [
+      "Reuters",
+      "Bloomberg",
+      "WSJ",
+      "CNBC",
+      "MarketWatch",
+      "Yahoo Finance",
+      "official releases",
+      "central banks",
+      "exchanges",
+      "regulators"
+    ],
+    "allowed_source_classes": [
+      "newswire",
+      "market_data",
+      "official",
+      "central_bank",
+      "company_release",
+      "rates",
+      "fx",
+      "commodities",
+      "credit",
+      "analysis"
+    ],
+    "restricted_source_classes": [
+      "forum",
+      "social"
+    ],
+    "paywall_policy": "Extract if accessible; never invent text behind a paywall.",
+    "historical_context_policy": "Use prior BoltNews markdown artifacts only; do not web-search stale context."
+  },
+  "briefing_template": {
+    "required_sections": [
+      "Weekly Market Scoreboard",
+      "The Week's Core Narrative",
+      "Macro and Policy Review",
+      "Equity and Sector Review",
+      "Commodities, FX, Credit, and Volatility",
+      "Geopolitics and Event Risk",
+      "Next Week Playbook",
+      "Historical Context",
+      "Source Notes and Data Quality"
+    ],
+    "authoritative_output": "briefing.md",
+    "summary_md_policy": "article digest/link index only; never primary dashboard content"
+  },
+  "topic_keyword_pack": {
+    "pack_id": "sunday-weekend",
+    "weekday": "Sunday",
+    "mode": "weekend",
+    "primary_topics": [
+      "Wall Street week ahead",
+      "earnings week ahead",
+      "economic data next week",
+      "Fed week ahead",
+      "global macro outlook",
+      "stock market weekly recap",
+      "Barron's markets",
+      "investor sentiment survey",
+      "hedge fund positioning",
+      "credit markets outlook"
+    ],
+    "secondary_topics": [
+      "currency markets outlook",
+      "oil gold commodities outlook",
+      "AI semiconductor outlook",
+      "consumer stocks outlook",
+      "bank stocks outlook"
+    ],
+    "exclusion_terms": [
+      "racism",
+      "sexism",
+      "discrimination",
+      "diversity initiative",
+      "DEI",
+      "climate protest",
+      "social justice",
+      "inequality",
+      "activist investor ESG",
+      "labor strike",
+      "union vote",
+      "woke",
+      "gender pay gap",
+      "human rights",
+      "refugee",
+      "immigration ban",
+      "abortion",
+      "gun control",
+      "police",
+      "BLM",
+      "LGBTQ",
+      "transgender",
+      "carbon neutral",
+      "sustainability report",
+      "ESG score"
+    ],
+    "query_templates": [
+      "{topic} {date_suffix}",
+      "{topic} markets today {date_suffix}",
+      "{topic} Reuters Bloomberg CNBC {date_suffix}",
+      "{topic} stocks bonds yields {date_suffix}"
+    ]
+  },
+  "agent_execution": {
+    "global_timeout_seconds": 1800,
+    "max_parallel_agents": 6,
+    "search_timeout_seconds": 45,
+    "extract_timeout_seconds": 75,
+    "searxng_backoff_seconds": [
+      3,
+      8,
+      20
+    ],
+    "max_retries_per_query": 2,
+    "dedupe_keys": [
+      "canonical_url",
+      "normalized_headline",
+      "source"
+    ]
+  },
+  "lanes": [
+    {
+      "lane": "market-snapshot",
+      "agents": 1,
+      "lane_timeout_seconds": 300,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 60,
+      "max_articles": 12,
+      "assigned_sections": [
+        "Weekly Market Scoreboard"
+      ],
+      "assigned_topics": [
+        "stock futures",
+        "market close",
+        "Treasury yields",
+        "DXY",
+        "WTI Brent oil",
+        "gold",
+        "VIX"
+      ]
+    },
+    {
+      "lane": "overnight-or-session-headlines",
+      "agents": 1,
+      "lane_timeout_seconds": 420,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "The Week's Core Narrative"
+      ],
+      "assigned_topics": [
+        "Wall Street week ahead",
+        "earnings week ahead",
+        "economic data next week",
+        "Fed week ahead",
+        "global macro outlook",
+        "stock market weekly recap",
+        "Barron's markets",
+        "investor sentiment survey"
+      ]
+    },
+    {
+      "lane": "macro-policy-rates-fx",
+      "agents": 1,
+      "lane_timeout_seconds": 420,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "Macro and Policy Review"
+      ],
+      "assigned_topics": [
+        "economic data next week",
+        "Fed week ahead"
+      ]
+    },
+    {
+      "lane": "equities-earnings-single-stocks",
+      "agents": 2,
+      "lane_timeout_seconds": 480,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 35,
+      "assigned_sections": [
+        "Equity and Sector Review"
+      ],
+      "assigned_tickers": [
+        "NVDA",
+        "GOOGL",
+        "GOOG",
+        "AAPL",
+        "MSFT",
+        "AMZN",
+        "AVGO",
+        "META",
+        "TSLA",
+        "MU",
+        "WMT",
+        "LLY",
+        "AMD",
+        "JPM",
+        "XOM",
+        "V",
+        "INTC",
+        "JNJ",
+        "ORCL",
+        "CSCO",
+        "COST",
+        "MA",
+        "CAT",
+        "LRCX",
+        "ABBV"
+      ],
+      "assigned_topics": [
+        "earnings",
+        "guidance",
+        "analyst upgrades downgrades",
+        "pre-market movers",
+        "after-hours movers"
+      ]
+    },
+    {
+      "lane": "commodities-credit-vol",
+      "agents": 1,
+      "lane_timeout_seconds": 360,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "Commodities, FX, Credit, and Volatility"
+      ],
+      "assigned_topics": [
+        "credit markets outlook",
+        "oil gold commodities outlook"
+      ]
+    },
+    {
+      "lane": "dedupe-validation-synthesis",
+      "agents": 1,
+      "lane_timeout_seconds": 300,
+      "requires_all_discovery_outputs": true,
+      "assigned_sections": [
+        "Source Notes and Data Quality"
+      ],
+      "assigned_topics": []
+    }
+  ],
+  "verification_gates": [
+    {
+      "gate": "schema",
+      "require": [
+        "mode",
+        "date",
+        "date_suffix",
+        "recency_hours",
+        "generated",
+        "articles",
+        "stats"
+      ]
+    },
+    {
+      "gate": "timestamp",
+      "rule": "Each article needs parseable published_at inside the recency window unless explicitly typed market_data."
+    },
+    {
+      "gate": "freshness",
+      "rule": "Reject stale indicators unless clearly historical context from BoltNews archives."
+    },
+    {
+      "gate": "extraction",
+      "rule": "Reject headline-only records; require lead paragraph or extracted_text/body snippet."
+    },
+    {
+      "gate": "relevance",
+      "rule": "Require explicit market impact, signal keywords, or direct macro/asset relevance."
+    },
+    {
+      "gate": "dedupe",
+      "rule": "Dedupe on canonical URL, normalized URL, and normalized headline/source pair."
+    },
+    {
+      "gate": "coverage",
+      "rule": "briefing.md must include required sections for weekend: Weekly Market Scoreboard, The Week's Core Narrative, Macro and Policy Review, Equity and Sector Review, Commodities, FX, Credit, and Volatility, Geopolitics and Event Risk, Next Week Playbook, Historical Context, Source Notes and Data Quality"
+    },
+    {
+      "gate": "dashboard",
+      "rule": "Rendered dashboard TOC anchors must resolve and internal links must not 404."
+    }
+  ],
+  "handoff_prompt_template": "You are a BoltNews article discovery subagent.\nMode: {mode}\nTarget date: {target_date}\nWeekday: {weekday}\nRecency window: {window_start_iso} to {window_end_iso} ({timezone})\nLane: {lane}\nAssigned section(s): {sections}\nAssigned search items: {items}\nQuery templates: {query_templates}\nTimeouts: search={search_timeout_seconds}s, extraction={extract_timeout_seconds}s, lane={lane_timeout_seconds}s\n\nRules:\n1. Accept only articles published inside the recency window.\n2. Every accepted article requires title/headline, url, source, published_at, fetched_at, tickers/topics, assigned_section, summary/lead paragraph, and extracted_text/body excerpt.\n3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot.\n4. Reject stale, evergreen, quote-page, and headline-only records.\n5. Do not web-search historical context; use prior BoltNews markdown artifacts only.\n6. Prefer Reuters/Bloomberg/WSJ/CNBC/MarketWatch/Yahoo/official releases/central banks/exchanges/regulators.\n7. Return JSON only using the lane output schema.\n",
+  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 72 hours (window starts 2026-06-11T20:00:00-04:00). All search queries include 'June 14, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
+  "generated": "2026-06-14T18:07:37.800368",
   "total_tickers": 148,
   "prioritized_tickers": [
     "NVDA",
@@ -35,352 +339,1002 @@
     "ABBV"
   ],
   "topics": [
-    "stock market recap analysis",
-    "markets outlook forecast",
-    "federal reserve policy",
-    "global macro outlook",
-    "credit markets outlook",
-    "currency markets analysis",
-    "commodities outlook",
-    "investing strategy",
-    "hedge fund manager",
-    "Barron's markets",
     "Wall Street week ahead",
     "earnings week ahead",
     "economic data next week",
+    "Fed week ahead",
+    "global macro outlook",
+    "stock market weekly recap",
+    "Barron's markets",
     "investor sentiment survey",
-    "markets weekend reading"
+    "hedge fund positioning",
+    "credit markets outlook",
+    "currency markets outlook",
+    "oil gold commodities outlook",
+    "AI semiconductor outlook",
+    "consumer stocks outlook",
+    "bank stocks outlook"
   ],
   "search_queries": [
     {
+      "id": "ticker-nvda",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "NVDA",
       "name": "NVIDIA CORP",
       "queries": [
         "NVDA stock news June 14, 2026",
-        "NVDA Semiconductors analysis June 14, 2026"
-      ]
+        "NVDA Semiconductors analysis June 14, 2026",
+        "NVDA stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-googl",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "GOOGL",
       "name": "ALPHABET INC-A",
       "queries": [
         "GOOGL stock news June 14, 2026",
-        "GOOGL Internet Content & Information analysis June 14, 2026"
-      ]
+        "GOOGL Internet Content & Information analysis June 14, 2026",
+        "GOOGL stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-goog",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "GOOG",
       "name": "ALPHABET INC-C",
       "queries": [
         "GOOG stock news June 14, 2026",
-        "GOOG Internet Content & Information analysis June 14, 2026"
-      ]
+        "GOOG Internet Content & Information analysis June 14, 2026",
+        "GOOG stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-aapl",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "AAPL",
       "name": "APPLE INC",
       "queries": [
         "AAPL stock news June 14, 2026",
-        "AAPL Consumer Electronics analysis June 14, 2026"
-      ]
+        "AAPL Consumer Electronics analysis June 14, 2026",
+        "AAPL stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-msft",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "MSFT",
       "name": "MICROSOFT CORP",
       "queries": [
         "MSFT stock news June 14, 2026",
-        "MSFT Software - Infrastructure analysis June 14, 2026"
-      ]
+        "MSFT Software - Infrastructure analysis June 14, 2026",
+        "MSFT stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-amzn",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "AMZN",
       "name": "AMAZON.COM INC",
       "queries": [
         "AMZN stock news June 14, 2026",
-        "AMZN Internet Retail analysis June 14, 2026"
-      ]
+        "AMZN Internet Retail analysis June 14, 2026",
+        "AMZN stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-avgo",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "AVGO",
       "name": "BROADCOM INC",
       "queries": [
         "AVGO stock news June 14, 2026",
-        "AVGO Semiconductors analysis June 14, 2026"
-      ]
+        "AVGO Semiconductors analysis June 14, 2026",
+        "AVGO stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-meta",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "META",
       "name": "META PLATFORMS-A",
       "queries": [
         "META stock news June 14, 2026",
-        "META Internet Content & Information analysis June 14, 2026"
-      ]
+        "META Internet Content & Information analysis June 14, 2026",
+        "META stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-tsla",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "TSLA",
       "name": "TESLA INC",
       "queries": [
         "TSLA stock news June 14, 2026",
-        "TSLA Auto Manufacturers analysis June 14, 2026"
-      ]
+        "TSLA Auto Manufacturers analysis June 14, 2026",
+        "TSLA stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-mu",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "MU",
       "name": "MICRON TECH",
       "queries": [
         "MU stock news June 14, 2026",
-        "MU Semiconductors analysis June 14, 2026"
-      ]
+        "MU Semiconductors analysis June 14, 2026",
+        "MU stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-wmt",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "WMT",
       "name": "WALMART INC",
       "queries": [
         "WMT stock news June 14, 2026",
-        "WMT Discount Stores analysis June 14, 2026"
-      ]
+        "WMT Discount Stores analysis June 14, 2026",
+        "WMT stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-lly",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "LLY",
       "name": "ELI LILLY & CO",
       "queries": [
         "LLY stock news June 14, 2026",
-        "LLY Drug Manufacturers - General analysis June 14, 2026"
-      ]
+        "LLY Drug Manufacturers - General analysis June 14, 2026",
+        "LLY stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-amd",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "AMD",
       "name": "ADV MICRO DEVICE",
       "queries": [
         "AMD stock news June 14, 2026",
-        "AMD Semiconductors analysis June 14, 2026"
-      ]
+        "AMD Semiconductors analysis June 14, 2026",
+        "AMD stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-jpm",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "JPM",
       "name": "JPMORGAN CHASE",
       "queries": [
         "JPM stock news June 14, 2026",
-        "JPM Banks - Diversified analysis June 14, 2026"
-      ]
+        "JPM Banks - Diversified analysis June 14, 2026",
+        "JPM stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-xom",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "XOM",
       "name": "EXXON MOBIL CORP",
       "queries": [
         "XOM stock news June 14, 2026",
-        "XOM Oil & Gas Integrated analysis June 14, 2026"
-      ]
+        "XOM Oil & Gas Integrated analysis June 14, 2026",
+        "XOM stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-v",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "V",
       "name": "VISA INC-CLASS A",
       "queries": [
         "V stock news June 14, 2026",
-        "V Credit Services analysis June 14, 2026"
-      ]
+        "V Credit Services analysis June 14, 2026",
+        "V stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-intc",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "INTC",
       "name": "INTEL CORP",
       "queries": [
         "INTC stock news June 14, 2026",
-        "INTC Semiconductors analysis June 14, 2026"
-      ]
+        "INTC Semiconductors analysis June 14, 2026",
+        "INTC stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-jnj",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "JNJ",
       "name": "JOHNSON&JOHNSON",
       "queries": [
         "JNJ stock news June 14, 2026",
-        "JNJ Drug Manufacturers - General analysis June 14, 2026"
-      ]
+        "JNJ Drug Manufacturers - General analysis June 14, 2026",
+        "JNJ stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-orcl",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "ORCL",
       "name": "ORACLE CORP",
       "queries": [
         "ORCL stock news June 14, 2026",
-        "ORCL Software - Infrastructure analysis June 14, 2026"
-      ]
+        "ORCL Software - Infrastructure analysis June 14, 2026",
+        "ORCL stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-csco",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "CSCO",
       "name": "CISCO SYSTEMS",
       "queries": [
         "CSCO stock news June 14, 2026",
-        "CSCO Communication Equipment analysis June 14, 2026"
-      ]
+        "CSCO Communication Equipment analysis June 14, 2026",
+        "CSCO stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-cost",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "COST",
       "name": "COSTCO WHOLESALE",
       "queries": [
         "COST stock news June 14, 2026",
-        "COST Discount Stores analysis June 14, 2026"
-      ]
+        "COST Discount Stores analysis June 14, 2026",
+        "COST stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-ma",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "MA",
       "name": "MASTERCARD INC-A",
       "queries": [
         "MA stock news June 14, 2026",
-        "MA Credit Services analysis June 14, 2026"
-      ]
+        "MA Credit Services analysis June 14, 2026",
+        "MA stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-cat",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "CAT",
       "name": "CATERPILLAR INC",
       "queries": [
         "CAT stock news June 14, 2026",
-        "CAT Farm & Heavy Construction Machinery analysis June 14, 2026"
-      ]
+        "CAT Farm & Heavy Construction Machinery analysis June 14, 2026",
+        "CAT stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-lrcx",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "LRCX",
       "name": "LAM RESEARCH",
       "queries": [
         "LRCX stock news June 14, 2026",
-        "LRCX Semiconductor Equipment & Materials analysis June 14, 2026"
-      ]
+        "LRCX Semiconductor Equipment & Materials analysis June 14, 2026",
+        "LRCX stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
+      "id": "ticker-abbv",
       "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "ticker": "ABBV",
       "name": "ABBVIE INC",
       "queries": [
         "ABBV stock news June 14, 2026",
-        "ABBV Drug Manufacturers - General analysis June 14, 2026"
-      ]
+        "ABBV Drug Manufacturers - General analysis June 14, 2026",
+        "ABBV stock outlook investor focus June 14, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
     },
     {
-      "type": "topic",
-      "topic": "stock market recap analysis",
-      "queries": [
-        "stock market recap analysis June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "markets outlook forecast",
-      "queries": [
-        "markets outlook forecast June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "federal reserve policy",
-      "queries": [
-        "federal reserve policy June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "global macro outlook",
-      "queries": [
-        "global macro outlook June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "credit markets outlook",
-      "queries": [
-        "credit markets outlook June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "currency markets analysis",
-      "queries": [
-        "currency markets analysis June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "commodities outlook",
-      "queries": [
-        "commodities outlook June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "investing strategy",
-      "queries": [
-        "investing strategy June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "hedge fund manager",
-      "queries": [
-        "hedge fund manager June 14, 2026"
-      ]
-    },
-    {
-      "type": "topic",
-      "topic": "Barron's markets",
-      "queries": [
-        "Barron's markets June 14, 2026"
-      ]
-    },
-    {
+      "id": "topic-001",
       "type": "topic",
       "topic": "Wall Street week ahead",
+      "lane": "market-snapshot",
+      "priority": 1,
+      "expected_sections": [
+        "Weekly Market Scoreboard"
+      ],
       "queries": [
-        "Wall Street week ahead June 14, 2026"
-      ]
+        "Wall Street week ahead June 14, 2026",
+        "Wall Street week ahead markets today June 14, 2026",
+        "Wall Street week ahead Reuters Bloomberg CNBC June 14, 2026",
+        "Wall Street week ahead stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
     },
     {
+      "id": "topic-002",
       "type": "topic",
       "topic": "earnings week ahead",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
       "queries": [
-        "earnings week ahead June 14, 2026"
-      ]
+        "earnings week ahead June 14, 2026",
+        "earnings week ahead markets today June 14, 2026",
+        "earnings week ahead Reuters Bloomberg CNBC June 14, 2026",
+        "earnings week ahead stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
     },
     {
+      "id": "topic-003",
       "type": "topic",
       "topic": "economic data next week",
+      "lane": "macro-policy-rates-fx",
+      "priority": 1,
+      "expected_sections": [
+        "Macro and Policy Review"
+      ],
       "queries": [
-        "economic data next week June 14, 2026"
-      ]
+        "economic data next week June 14, 2026",
+        "economic data next week markets today June 14, 2026",
+        "economic data next week Reuters Bloomberg CNBC June 14, 2026",
+        "economic data next week stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
     },
     {
+      "id": "topic-004",
+      "type": "topic",
+      "topic": "Fed week ahead",
+      "lane": "macro-policy-rates-fx",
+      "priority": 1,
+      "expected_sections": [
+        "Macro and Policy Review"
+      ],
+      "queries": [
+        "Fed week ahead June 14, 2026",
+        "Fed week ahead markets today June 14, 2026",
+        "Fed week ahead Reuters Bloomberg CNBC June 14, 2026",
+        "Fed week ahead stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-005",
+      "type": "topic",
+      "topic": "global macro outlook",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "The Week's Core Narrative"
+      ],
+      "queries": [
+        "global macro outlook June 14, 2026",
+        "global macro outlook markets today June 14, 2026",
+        "global macro outlook Reuters Bloomberg CNBC June 14, 2026",
+        "global macro outlook stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-006",
+      "type": "topic",
+      "topic": "stock market weekly recap",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
+      "queries": [
+        "stock market weekly recap June 14, 2026",
+        "stock market weekly recap markets today June 14, 2026",
+        "stock market weekly recap Reuters Bloomberg CNBC June 14, 2026",
+        "stock market weekly recap stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-007",
+      "type": "topic",
+      "topic": "Barron's markets",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "The Week's Core Narrative"
+      ],
+      "queries": [
+        "Barron's markets June 14, 2026",
+        "Barron's markets markets today June 14, 2026",
+        "Barron's markets Reuters Bloomberg CNBC June 14, 2026",
+        "Barron's markets stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-008",
       "type": "topic",
       "topic": "investor sentiment survey",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "The Week's Core Narrative"
+      ],
       "queries": [
-        "investor sentiment survey June 14, 2026"
-      ]
+        "investor sentiment survey June 14, 2026",
+        "investor sentiment survey markets today June 14, 2026",
+        "investor sentiment survey Reuters Bloomberg CNBC June 14, 2026",
+        "investor sentiment survey stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
     },
     {
+      "id": "topic-009",
       "type": "topic",
-      "topic": "markets weekend reading",
+      "topic": "hedge fund positioning",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "The Week's Core Narrative"
+      ],
       "queries": [
-        "markets weekend reading June 14, 2026"
-      ]
+        "hedge fund positioning June 14, 2026",
+        "hedge fund positioning markets today June 14, 2026",
+        "hedge fund positioning Reuters Bloomberg CNBC June 14, 2026",
+        "hedge fund positioning stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-010",
+      "type": "topic",
+      "topic": "credit markets outlook",
+      "lane": "commodities-credit-vol",
+      "priority": 1,
+      "expected_sections": [
+        "Commodities, FX, Credit, and Volatility"
+      ],
+      "queries": [
+        "credit markets outlook June 14, 2026",
+        "credit markets outlook markets today June 14, 2026",
+        "credit markets outlook Reuters Bloomberg CNBC June 14, 2026",
+        "credit markets outlook stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-011",
+      "type": "topic",
+      "topic": "currency markets outlook",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "The Week's Core Narrative"
+      ],
+      "queries": [
+        "currency markets outlook June 14, 2026",
+        "currency markets outlook markets today June 14, 2026",
+        "currency markets outlook Reuters Bloomberg CNBC June 14, 2026",
+        "currency markets outlook stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-012",
+      "type": "topic",
+      "topic": "oil gold commodities outlook",
+      "lane": "commodities-credit-vol",
+      "priority": 2,
+      "expected_sections": [
+        "Commodities, FX, Credit, and Volatility"
+      ],
+      "queries": [
+        "oil gold commodities outlook June 14, 2026",
+        "oil gold commodities outlook markets today June 14, 2026",
+        "oil gold commodities outlook Reuters Bloomberg CNBC June 14, 2026",
+        "oil gold commodities outlook stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-013",
+      "type": "topic",
+      "topic": "AI semiconductor outlook",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 2,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
+      "queries": [
+        "AI semiconductor outlook June 14, 2026",
+        "AI semiconductor outlook markets today June 14, 2026",
+        "AI semiconductor outlook Reuters Bloomberg CNBC June 14, 2026",
+        "AI semiconductor outlook stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-014",
+      "type": "topic",
+      "topic": "consumer stocks outlook",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 2,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
+      "queries": [
+        "consumer stocks outlook June 14, 2026",
+        "consumer stocks outlook markets today June 14, 2026",
+        "consumer stocks outlook Reuters Bloomberg CNBC June 14, 2026",
+        "consumer stocks outlook stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-015",
+      "type": "topic",
+      "topic": "bank stocks outlook",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 2,
+      "expected_sections": [
+        "Equity and Sector Review"
+      ],
+      "queries": [
+        "bank stocks outlook June 14, 2026",
+        "bank stocks outlook markets today June 14, 2026",
+        "bank stocks outlook Reuters Bloomberg CNBC June 14, 2026",
+        "bank stocks outlook stocks bonds yields June 14, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 72,
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
     }
   ]
 }
