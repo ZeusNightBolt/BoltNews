@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-15</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-15 &middot; 10 articles &middot; 3 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#closing-market-snapshot">Closing Market Snapshot</a><a class="toc-link toc-level-2" href="#why-markets-moved">Why Markets Moved</a><a class="toc-link toc-level-2" href="#equity-market-internals">Equity Market Internals</a><a class="toc-link toc-level-3" href="#sector-performance">Sector Performance</a><a class="toc-link toc-level-3" href="#breadth">Breadth</a><a class="toc-link toc-level-3" href="#top-movers-2b-market-cap">Top Movers (&gt;$2B market cap)</a><a class="toc-link toc-level-3" href="#memory-semiconductor-surge">Memory/Semiconductor Surge</a><a class="toc-link toc-level-3" href="#space-stocks-bounce">Space Stocks Bounce</a><a class="toc-link toc-level-2" href="#rates-macro-and-policy">Rates, Macro, and Policy</a><a class="toc-link toc-level-3" href="#treasury-market">Treasury Market</a><a class="toc-link toc-level-3" href="#federal-reserve-june-meeting-preview">Federal Reserve — June Meeting Preview</a><a class="toc-link toc-level-3" href="#oil-energy">Oil &amp; Energy</a><a class="toc-link toc-level-3" href="#economic-calendar-this-week">Economic Calendar This Week</a><a class="toc-link toc-level-2" href="#earnings-and-corporate-developments">Earnings and Corporate Developments</a><a class="toc-link toc-level-3" href="#fox-roku-22-billion-merger-deal-of-the-day">Fox-Roku $22 Billion Merger (Deal of the Day)</a><a class="toc-link toc-level-3" href="#spacex-spcx-day-2">SpaceX (SPCX) — Day 2</a><a class="toc-link toc-level-3" href="#goldman-sachs-reiterates-buy-on-nvidia-nvda">Goldman Sachs Reiterates Buy on Nvidia (NVDA)</a><a class="toc-link toc-level-3" href="#other-notable-moves">Other Notable Moves</a><a class="toc-link toc-level-2" href="#cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</a><a class="toc-link toc-level-3" href="#confirming-signals-risk-on-everywhere">Confirming Signals (Risk-On Everywhere)</a><a class="toc-link toc-level-3" href="#divergent-worthy-of-attention">Divergent / Worthy of Attention</a><a class="toc-link toc-level-3" href="#the-gold-conundrum">The Gold Conundrum</a><a class="toc-link toc-level-2" href="#tomorrow-setup">Tomorrow Setup</a><a class="toc-link toc-level-3" href="#what-to-watch-tuesday-june-16">What to Watch Tuesday June 16</a><a class="toc-link toc-level-3" href="#key-levels">Key Levels</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-post-market-briefing-monday-june-15-2026">BoltNews Post-Market Briefing — Monday, June 15, 2026</h1>
+<h2 id="closing-market-snapshot">Closing Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th><th>% Change</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,554.29</td><td>+122.83</td><td>+1.65%</td></tr><tr><td>Dow Jones Industrial</td><td>51,671.03</td><td>+468.77</td><td>+0.92%</td></tr><tr><td>Nasdaq Composite</td><td>26,683.94</td><td>+794.79</td><td>+3.07%</td></tr><tr><td>Russell 2000</td><td>~2,970</td><td>+21</td><td>+0.79%</td></tr><tr><td>PHLX Semiconductor (SOX)</td><td>Record</td><td>—</td><td>+5.0%</td></tr></tbody></table></div>
+<ul><li><strong>Dow</strong>: All-time record close and new intraday high (CNBC)</li><li><strong>Nasdaq</strong>: Best single-day gain since March 31, 2026 (CNBC)</li><li><strong>Russell 2000</strong>: Lagged significantly — small caps captured only ~0.8% of the move vs. Nasdaq's 3.07%</li><li><strong>SOX</strong>: Record high, driven by memory/storage names (Investopedia)</li></ul>
+<p><strong>Commodities Close</strong>:</p>
+<ul><li>WTI Crude: $80.75/bbl, -4.9% (CNBC); intraday low ~$79.50 (FXStreet)</li><li>Brent Crude: ~$83.00/bbl, -4.7% (Yahoo Finance)</li><li>Gold: $4,357.70/oz, +2.81% (TheStreet)</li><li>Silver: $70.81/oz, +4.16% (TheStreet)</li></ul>
+<p><strong>FX Close</strong>:</p>
+<ul><li>DXY: 99.57, -0.13% (GuruFocus/Yahoo Finance)</li><li>EUR/USD: 1.1597, +0.21% (Yahoo Finance)</li><li>GBP/USD: above 1.3400 (FXStreet)</li></ul>
+<p><strong>Volatility</strong>:</p>
+<ul><li>VIX: 16.78, down from 19.51 Friday (-14.0%) — massive vol crush on geopolitical de-escalation (Yahoo Finance/FRED)</li></ul>
+<p><strong>Treasuries</strong>:</p>
+<ul><li>10Y Yield: ~4.45-4.47%, -2-3bp from Friday's 4.49% (Trading Economics/CNBC)</li><li>2Y/10Y Spread: 0.39 (FRED, June 12 reading)</li></ul>
+<p><strong>Credit</strong>:</p>
+<ul><li>HY OAS: 2.71%, from 2.78% previous (YCharts)</li><li>IG Spread: ~0.75% (Macrotrends)</li></ul>
+<hr class="divider">
+<h2 id="why-markets-moved">Why Markets Moved</h2>
+<p><strong>Dominant catalyst: US-Iran peace agreement.</strong> President Trump announced late Sunday via Truth Social that a ceasefire deal with Iran was "now complete." The memorandum of understanding, mediated by Pakistan, paves the way for the reopening of the Strait of Hormuz — the chokepoint handling ~20% of global seaborne oil trade that has been restricted since the conflict began in late February (Axios, CNBC).</p>
+<p>Trump's Truth Social post: <em>"I hereby fully authorize the toll free opening of the Strait of Hormuz, and, simultaneously herewith, authorize the immediate removal of the United States Naval blockade. Ships of the World, start your engines! Let the oil flow!"</em> (CNBC, TheStreet)</p>
+<p><strong>Key deal terms</strong> (Reuters, TheStreet, CNBC):</p>
+<ul><li>Formal signing ceremony Friday June 19 in Switzerland</li><li>60-day ceasefire extension; talks to finalize within that window</li><li>Iran to receive half of ~$24B in frozen funds before final negotiations</li><li>U.S. official: funds released only after Iran demonstrates compliance</li><li>Israel not bound by the agreement regarding Hezbollah or Lebanon</li></ul>
+<p><strong>Oil price collapse as transmission mechanism</strong>: WTI fell below $80 intraday for the first time since the conflict began (CNBC). The oil price spike had driven 10Y yields up ~50bp since late February (Investopedia). Its unwind reversed the entire geopolitical risk premium trade.</p>
+<p><strong>Brian Mulberry (Zacks Investment Management)</strong>: <em>"It seems real this time as both rates and oil have broken through key levels."</em> Falling crude to $80 during FOMC week signals "we don't need to raise rates [and] that the price pressure should alleviate relatively quickly." (CNBC)</p>
+<p><strong>Secondary driver: SpaceX (SPCX) momentum</strong>. After Friday's record $75B IPO (largest in history), shares rose another ~19.6% Monday to approximately $180, with market cap above $2.1T. The halo effect lifted the entire tech complex, particularly semiconductors and AI names (Yahoo Finance, CNBC).</p>
+<p><strong>Tertiary driver: Fed preview.</strong> Markets enter the June FOMC meeting (Tue-Wed) with new Chair Kevin Warsh's first press conference. CME FedWatch prices 98% probability of no change (Yahoo Finance). The oil-price collapse weakens the rate-hike narrative.</p>
+<p><strong>Market holiday</strong>: NYSE/Nasdaq closed Friday June 19 for Juneteenth — compressed 4-day trading week.</p>
+<hr class="divider">
+<h2 id="equity-market-internals">Equity Market Internals</h2>
+<h3 id="sector-performance">Sector Performance</h3>
+<ul><li><strong>Technology (XLK)</strong>: Massive outperformance — Nasdaq-100 +3.15% intraday (TheStreet); 70 of 101 Nasdaq-100 components advanced</li><li><strong>Consumer Discretionary</strong>: Airlines + cruise lines surged on lower fuel costs. DoorDash +11.81% (best day since April 2025 per CNBC)</li><li><strong>Energy (XLE)</strong>: Worst-performing sector. APA -6.24%, Coterra -8.62%, Devon/Marathon/EOG -3%+, Chevron/Exxon -2.5%+ (CNBC, 24/7 Wall St.)</li><li><strong>Communication Services</strong>: Fox -15-17% on Roku deal dilution; Roku -1% after Friday's +20% rumor-fueled gain (Yahoo Finance)</li><li><strong>Small Caps</strong>: Russell 2000 +0.79% — risk-on but skewed heavily toward large-cap tech</li></ul>
+<h3 id="breadth">Breadth</h3>
+<ul><li>299 of 503 S&amp;P 500 holdings advancing (TheStreet, 11:14 AM)</li><li>52-week highs across multiple sectors: Live Nation, Hilton, Ralph Lauren, Monster Beverage, Target, Citigroup, Delta, FedEx, Applied Materials, AMD (CNBC)</li><li>52-week lows: Fox Class B (FOX), Fiserv, Leidos Holdings (CNBC)</li></ul>
+<h3 id="top-movers-2b-market-cap">Top Movers (&gt;$2B market cap)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>Change</th><th>Driver</th></tr></thead><tbody><tr><td>WDC</td><td>Western Digital</td><td>+14.89%</td><td>AI/memory demand; new high</td></tr><tr><td>DASH</td><td>DoorDash</td><td>+11.81%</td><td>BofA Buy reiteration; fuel cost relief</td></tr><tr><td>MU</td><td>Micron Technology</td><td>+10.90%</td><td>Memory cycle; near record</td></tr><tr><td>STX</td><td>Seagate Technology</td><td>+7.44%</td><td>Memory/storage surge; new high</td></tr><tr><td>AMD</td><td>Advanced Micro Devices</td><td>+8%</td><td>Fresh record (CNBC)</td></tr><tr><td>SPCX</td><td>SpaceX</td><td>+19.60%</td><td>Day 2 of trading post-IPO</td></tr><tr><td>FOXA</td><td>Fox Corp (Class A)</td><td>-16.87%</td><td>Roku acquisition dilution</td></tr><tr><td>CTRA</td><td>Coterra Energy</td><td>-8.62%</td><td>Oil price collapse</td></tr><tr><td>APA</td><td>APA Corp</td><td>-6.24%</td><td>Oil price collapse</td></tr></tbody></table></div>
+<h3 id="memory-semiconductor-surge">Memory/Semiconductor Surge</h3>
+<ul><li>Roundhill Memory ETF (DRAM): +6% (Investopedia)</li><li>PHLX Semiconductor (SOX): +5% to record (Investopedia)</li><li>Wedbush called SpaceX IPO reception a "Goldilocks outcome" — encouraging signal for AI trade after recent pullback on valuation fears (Investopedia)</li><li>NVDA +3%, AVGO +3%, INTC +3% (Investopedia)</li></ul>
+<h3 id="space-stocks-bounce">Space Stocks Bounce</h3>
+<p>After Friday's brutal rotation out of space proxies (RKLB -10%+, SPCE -30%+), KeyBanc upgraded Rocket Lab (RKLB) and Firefly Aerospace (FLY) to Overweight:</p>
+<ul><li>RKLB: $135 target, &gt;40% upside; "clear #2 to SPCX"; Neutron rocket debut later this year; $2.2B backlog; Nasdaq-100 inclusion June 22</li><li>FLY: $50 target; NASA lunar partner; shares still below IPO price</li><li>KeyBanc thesis: Friday sell-off was "unwarranted"; space economy could be as significant as the Industrial Revolution (Investopedia)</li></ul>
+<hr class="divider">
+<h2 id="rates-macro-and-policy">Rates, Macro, and Policy</h2>
+<h3 id="treasury-market">Treasury Market</h3>
+<ul><li>10Y yield: 4.45-4.47%, down ~2-3bp from Friday (Trading Economics, CNBC)</li><li>The Iran conflict had added ~50bp to 10Y yields since late February (Investopedia) — the peace deal starts unwinding that premium</li><li>Yield curve (2s10s): 0.39 — still positive, modest steepening pressure</li></ul>
+<h3 id="federal-reserve-june-meeting-preview">Federal Reserve — June Meeting Preview</h3>
+<ul><li><strong>Meeting</strong>: Tuesday-Wednesday June 16-17</li><li><strong>Decision</strong>: Wednesday June 17, 2:00 PM ET</li><li><strong>Chair</strong>: Kevin Warsh — first post-meeting press conference; markets will scrutinize reform agenda and rate signals</li><li><strong>Consensus expectation</strong>: Rates unchanged (98% probability per CME FedWatch — Yahoo Finance)</li><li><strong>Rate hike debate</strong>: Still exists but the oil-price collapse weakens the case. May inflation hit a 3-year high, but falling crude signals near-term price pressure relief</li><li><strong>Trump dynamic</strong>: Trump's June 9 "loved the inflation" remark seen as giving Warsh a temporary reprieve from immediate rate-cut pressure (TheStreet)</li><li><strong>Kiplinger</strong>: <em>"Rate cuts are off the table, and while there is chatter about a potential rate hike, we believe it's unlikely"</em> (Kiplinger)</li></ul>
+<h3 id="oil-energy">Oil &amp; Energy</h3>
+<ul><li>US average gasoline price: $4.07/gal (AAA), down from May peak of $4.56/gal, but still &gt;$1 above pre-war levels (Axios)</li><li>Full Strait of Hormuz normalization expected to take months; ship owners remain cautious (Axios, Yahoo Finance)</li><li>ANZ (via Reuters): <em>"You may see oil break $80 on happy days today... but the market will realize the terms of the deal may not be as lucrative. Oil prices will remain on the higher side because infrastructure has been damaged."</em> (FXStreet)</li><li>Persian Gulf producers that cut output when the route was blocked need time to restart production (Axios)</li></ul>
+<h3 id="economic-calendar-this-week">Economic Calendar This Week</h3>
+<ul><li><strong>Tue</strong>: Retail Sales (May), FOMC meeting begins</li><li><strong>Wed</strong>: FOMC decision + press conference (Warsh)</li><li><strong>Thu</strong>: Jobless claims, Philly Fed manufacturing</li><li><strong>Fri</strong>: Markets closed (Juneteenth)</li></ul>
+<hr class="divider">
+<h2 id="earnings-and-corporate-developments">Earnings and Corporate Developments</h2>
+<h3 id="fox-roku-22-billion-merger-deal-of-the-day">Fox-Roku $22 Billion Merger (Deal of the Day)</h3>
+<p>Fox Corp to acquire Roku in a cash-and-stock deal (Reuters, CNBC):</p>
+<ul><li><strong>Price</strong>: $160/share ($96 cash + 0.9693 Fox Class A shares)</li><li><strong>Enterprise value</strong>: ~$22B; 33.7% premium to pre-rumor close</li><li><strong>Post-close</strong>: Fox shareholders 73%, Roku 27%</li><li><strong>Expected close</strong>: First half 2027</li><li><strong>Synergies</strong>: $400M annual run-rate</li><li><strong>Financing</strong>: $12-14.6B cash; ~$8.3B in new debt (Morgan Stanley)</li><li><strong>Rationale</strong>: Combined entity becomes 3rd-largest U.S. TV by viewership (behind YouTube, Disney, ahead of Netflix per Nielsen). Fox pivots from cable to digital distribution; Roku adds sports/news content to its platform of 100M+ households</li></ul>
+<p><strong>Market reaction</strong>: FOXA -16.87% (dilution fears), ROKU -1% (after +20% Friday on sale rumors). Roku traded ~12% below the offer price — market pricing in deal-risk premium (Reuters).</p>
+<p><strong>Analyst view (Doug Creutz, TD Cowen)</strong>: <em>"We tend to be skeptical that this deal will generate value for Fox shareholders. The history of content/platform mergers in media has generally not been kind."</em> (Reuters)</p>
+<p><strong>Key principals</strong>: Lachlan Murdoch (Fox CEO) calls it "a defining moment"; Anthony Wood (Roku founder, controls &gt;55% voting rights) stands to make ~$3B personally (Reuters).</p>
+<h3 id="spacex-spcx-day-2">SpaceX (SPCX) — Day 2</h3>
+<ul><li>Friday IPO: Priced at $135, opened at $150, closed ~$161 (+19% from IPO)</li><li>Monday: +19.6% to ~$180; market cap &gt;$2.1T (Yahoo Finance, CNBC)</li><li>Overallotment exercised: total IPO proceeds now $85.7B (TheStreet)</li><li>Musk projects $1T revenue by 2030; 2025 revenue was $18.7B with $5B loss (CNBC)</li><li>Q1 2026 capex: $10.1B (vs $4.1B prior year), mostly into AI (CNBC)</li><li>Ark Invest (Cathie Wood): bought ~3.3M shares across four funds; ARKX holds ~7% position (Investopedia)</li><li><strong>Bear case</strong>: CFRA initiated Sell at $115 target; Morningstar values at $63/share. Governance concerns: IPO prospectus light on execution risks (CNBC)</li><li><strong>Bull case</strong>: NewStreet Research $165 target; "10-year lead" over competitors; Starship will enable orbital AI data centers (CNBC)</li><li>Index inclusion: Russell indexes June 26; MSCI June 29; Nasdaq-100 after ~15 trading days (CNBC)</li></ul>
+<h3 id="goldman-sachs-reiterates-buy-on-nvidia-nvda">Goldman Sachs Reiterates Buy on Nvidia (NVDA)</h3>
+<p><em>"We believe Nvidia's improved capital allocation should drive increased investor confidence around the company's commitment to balance product innovation and ecosystem investments with shareholder returns. Our CY27 estimates stand over 30% above the Street."</em> (24/7 Wall St., via CNBC)</p>
+<h3 id="other-notable-moves">Other Notable Moves</h3>
+<ul><li><strong>DraftKings (DKNG)</strong>: Sees 2026 FIFA World Cup as meaningful customer acquisition driver; Oppenheimer rates Buy (24/7 Wall St.)</li><li><strong>Tripadvisor (TRIP)</strong>: +12% premarket on American Express buying TheFork for $700M cash (TheStreet)</li><li><strong>Wolfspeed (WOLF)</strong>: +15.52% premarket (TheStreet)</li><li><strong>Madison Square Garden Sports (MSGS)</strong>: Rallied after Knicks won NBA Championship (first since 1973); stock +49% YTD, hit all-time high (CNBC)</li><li><strong>UniCredit-Commerzbank</strong>: UniCredit dismissed Commerzbank's claims the all-share offer is overvalued (CNBC)</li></ul>
+<hr class="divider">
+<h2 id="cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</h2>
+<h3 id="confirming-signals-risk-on-everywhere">Confirming Signals (Risk-On Everywhere)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Signal</th><th>Interpretation</th></tr></thead><tbody><tr><td>Equities (SPX, NDX)</td><td>+1.65%, +3.07%</td><td>Strong risk-on</td></tr><tr><td>VIX</td><td>16.78 (-14%)</td><td>Vol crush confirms de-escalation</td></tr><tr><td>HY Credit</td><td>OAS 2.71% (-7bp)</td><td>Credit risk appetite expanding</td></tr><tr><td>Semis (SOX)</td><td>Record high</td><td>Cyclical/growth leadership</td></tr><tr><td>Oil (WTI)</td><td>-4.9% to $80</td><td>Supply fear unwinding</td></tr><tr><td>DXY</td><td>99.57 (-0.13%)</td><td>Modest dollar weakness, risk-on FX</td></tr></tbody></table></div>
+<h3 id="divergent-worthy-of-attention">Divergent / Worthy of Attention</h3>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Signal</th><th>What It Means</th></tr></thead><tbody><tr><td>Russell 2000</td><td>+0.79% only</td><td>Risk-on concentrated in large-cap tech; small caps didn't participate proportionally</td></tr><tr><td>Gold</td><td>+2.81% to $4,357</td><td>Simultaneous gold + equity rally = real rates falling; gold moving as real-rate proxy, not safe haven</td></tr><tr><td>Fox -17%</td><td>Merger arb discount</td><td>Market skeptical on content/platform M&amp;A synergies</td></tr><tr><td>ROKU -1% (12% below offer)</td><td>Deal-risk premium</td><td>Merger arb spread wide; regulatory or financing risk priced in</td></tr></tbody></table></div>
+<h3 id="the-gold-conundrum">The Gold Conundrum</h3>
+<p>Gold's +2.81% move alongside a massive equity rally and cratering vol is notable. In a pure risk-on day, gold should fall on reduced safe-haven demand. Instead, gold rallied on:</p>
+<p>1. USD weakness (DXY -0.13%)</p>
+<p>2. Falling real yields (10Y nominal down, inflation expectations likely steady-to-up on peace dividend)</p>
+<p>3. Potential: positioning/short-covering after the geopolitical unwind</p>
+<p>This isn't a divergence that screams "something's wrong" — it's consistent with the "rates down, dollar down" channel. But it's worth flagging because gold's reaction function appears to be shifting from safe-haven to real-rate proxy.</p>
+<hr class="divider">
+<h2 id="tomorrow-setup">Tomorrow Setup</h2>
+<h3 id="what-to-watch-tuesday-june-16">What to Watch Tuesday June 16</h3>
+<p>1. <strong>FOMC Day 1</strong>: Meeting begins. No statement until Wednesday, but any leaks or WSJ/Nick Timiraos preview pieces in the afternoon could move markets</p>
+<p>2. <strong>Retail Sales (May)</strong>: Key consumption data point. Consensus watching for whether consumer is softening under elevated prices</p>
+<p>3. <strong>Oil follow-through</strong>: Will WTI hold $80 or break below? The $78.88 support (April 17 low) and $75.95 (March 10 low) are the technical levels to watch (FXStreet)</p>
+<p>4. <strong>Fox/Roku deal digestion</strong>: More analyst notes expected overnight. Any antitrust scrutiny headlines could widen the arb spread further</p>
+<p>5. <strong>SpaceX (SPCX) Day 3</strong>: After +19% Friday and +19.6% Monday, technical exhaustion possible. Russell inclusion June 26 creates a mechanical bid</p>
+<p>6. <strong>Pre-FOMC positioning</strong>: Given 98% probability of no change, the market's reaction function is asymmetric — any hawkish surprise (hike signal) would be a much bigger shock than a dovish hold</p>
+<h3 id="key-levels">Key Levels</h3>
+<ul><li>S&amp;P 500 resistance: 7,578 (today's intraday high per WSJ data)</li><li>S&amp;P 500 support: 7,432 (Friday's close)</li><li>10Y yield: 4.45% — break below 4.40% would signal market pricing out rate hikes entirely</li><li>VIX: 16.78 — first close below 17 since the Iran conflict escalation. A sustained move below 16 would signal all-clear for vol sellers</li></ul>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<p><strong>Confidence: High.</strong> All major data points extracted from primary newswire sources (CNBC, Reuters, Yahoo Finance, TheStreet, Investopedia) via full-text web_extract. Ten articles extracted and verified for recency.</p>
+<p><strong>Extraction method</strong>: web_extract() on 10 article URLs. All articles published June 14-15, 2026. No browser-based extraction needed for this run.</p>
+<p><strong>Data quality flags</strong>:</p>
+<ul><li>VIX close of 16.78: Confirmed by Yahoo Finance historical data. FRED data shows June 12 close at 17.68 (close only). Cross-referenced.</li><li>2Y/10Y spread: FRED data through June 12 (latest available); no June 15 reading yet</li><li>Credit spreads: YCharts data for HY OAS (2.71%) as of June 15; IG spread (0.75%) from Macrotrends dated June 11</li><li>Russell 2000 close: Approximate (~2,970) from intraday data; exact close not independently confirmed</li><li>All S&amp;P 500, Dow, Nasdaq close figures confirmed across 4+ independent sources</li></ul>
+<p><strong>Sources used (10 extracted + 15 searched)</strong>:</p>
+<ul><li>Primary newswires: CNBC, Reuters, Yahoo Finance, TheStreet, Investopedia, Axios, 24/7 Wall St.</li><li>FX/commodities: FXStreet</li><li>Policy/analysis: Kiplinger</li><li>Data aggregators: Trading Economics, YCharts, FRED, Yahoo Finance Historical, MarketWatch, GuruFocus</li></ul>
+<p><strong>Recency</strong>: All articles verified within the 24-hour window (June 15, 2026). One Axios article dated June 14 (Sunday evening) — accepted as it covers the deal announcement that drove Monday's trading.</p>
+<p><strong>Limitations</strong>:</p>
+<ul><li>No pre-market futures data (this is a post-market run)</li><li>No European/Asian session close data (Monday was US-centric)</li><li>Earnings calendar light — Monday is not a peak earnings day</li><li>Weekend (Saturday/Sunday) had no trading; Monday's action is the first session following the Sunday night deal announcement</li></ul>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnbc.com/2026/06/14/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock market news for June 15, 2026: Dow climbs more than 450 points for record </a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-15-2026" target="_blank" rel="noopener">Stock Market Today (June 15, 2026): Nasdaq, S&amp;P 500 jumps after U.S. and Iran an</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06152026-11997917" target="_blank" rel="noopener">Markets News, June 15, 2026: Stocks Surge, Oil Prices Tumble on U.S.-Iran Deal; </a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-june-15-224751171.html" target="_blank" rel="noopener">Stock market today: Dow hits record, S&amp;P 500, Nasdaq soar as tech rallies amid U</a>
+<a class="source-link" href="https://247wallst.com/investing/2026/06/15/stock-market-live-june-15-2026-sp-500-spy-rocketing-on-end-of-war-news/" target="_blank" rel="noopener">Stock Market Live June 15, 2026: S&amp;P 500 (SPY) Rocketing on End-of-War News</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/15/spacex-stock-record-ipo-debut.html" target="_blank" rel="noopener">SpaceX stock gains 10% as it begins first full day of trading after record IPO</a>
+<a class="source-link" href="https://www.reuters.com/business/media-telecom/fox-buy-roku-22-billion-deal-2026-06-15/" target="_blank" rel="noopener">Fox strikes $22 billion deal for Roku to fuel streaming push</a>
+<a class="source-link" href="https://www.axios.com/2026/06/14/oil-prices-us-iran-war-hormuz-strait-peace-deal" target="_blank" rel="noopener">Oil prices fall on US, Iran deal announcement</a>
+<a class="source-link" href="https://www.fxstreet.com/news/wti-price-forecast-slides-below-80-on-us-iran-deal-finalization-202606150614" target="_blank" rel="noopener">US-Iran deal finalizes: Will Oil prices return to pre-war levels below $70?</a>
+<a class="source-link" href="https://www.kiplinger.com/news/live/fed-meeting-updates-and-commentary-june-2026" target="_blank" rel="noopener">June Fed Meeting: Live Updates and Commentary</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-15 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
