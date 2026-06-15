@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-15</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-15 &middot; 18 articles &middot; 1 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-3" href="#1-us-iran-peace-deal-framework-agreed-mou-signing-friday">1. US-Iran Peace Deal Framework Agreed — MOU Signing Friday</a><a class="toc-link toc-level-3" href="#2-oil-crashes-5-strait-of-hormuz-reopening">2. Oil Crashes 5% — Strait of Hormuz Reopening</a><a class="toc-link toc-level-3" href="#3-japan-nikkei-5-korea-kospi-5-2-record-intraday-highs">3. Japan Nikkei +5%, Korea Kospi +5.2% — Record Intraday Highs</a><a class="toc-link toc-level-3" href="#4-dollar-hits-10-day-low-gold-defies-risk-on-up-2">4. Dollar Hits 10-Day Low; Gold Defies Risk-On — Up 2%</a><a class="toc-link toc-level-3" href="#5-fed-this-week-98-probability-of-hold-boj-expected-to-hike-to-1-00">5. Fed This Week — 98% Probability of Hold; BOJ Expected to Hike to 1.00%</a><a class="toc-link toc-level-3" href="#6-europe-opens-strong-dax-1-8-cac-40-1-9">6. Europe Opens Strong — DAX +1.8%, CAC 40 +1.9%</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-3" href="#treasury-curve">Treasury Curve</a><a class="toc-link toc-level-3" href="#central-bank-week">Central Bank Week</a><a class="toc-link toc-level-3" href="#this-week-s-economic-calendar">This Week&#x27;s Economic Calendar</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-3" href="#pre-market-expected-movers-peace-deal-beneficiaries">Pre-Market Expected Movers (Peace Deal Beneficiaries)</a><a class="toc-link toc-level-3" href="#expected-losers">Expected Losers</a><a class="toc-link toc-level-3" href="#single-stock-news">Single-Stock News</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-3" href="#today-s-expected-leadership">Today&#x27;s Expected Leadership</a><a class="toc-link toc-level-3" href="#today-s-expected-laggards">Today&#x27;s Expected Laggards</a><a class="toc-link toc-level-3" href="#factor-watch">Factor Watch</a><a class="toc-link toc-level-3" href="#breadth-indicators">Breadth Indicators</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-3" href="#scheduled-catalysts">Scheduled Catalysts</a><a class="toc-link toc-level-3" href="#unscheduled-risks">Unscheduled Risks</a><a class="toc-link toc-level-3" href="#key-levels">Key Levels</a><a class="toc-link toc-level-3" href="#bull-base-bear-scenarios">Bull / Base / Bear Scenarios</a><a class="toc-link toc-level-2" href="#sentiment-positioning">Sentiment &amp; Positioning</a><a class="toc-link toc-level-2" href="#cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</a><a class="toc-link toc-level-2" href="#contrarian-flags">Contrarian Flags</a><a class="toc-link toc-level-3" href="#1-gold-s-reluctance-to-sell-off">1. Gold&#x27;s Reluctance to Sell Off</a><a class="toc-link toc-level-3" href="#2-nuclear-question-unresolved">2. Nuclear Question Unresolved</a><a class="toc-link toc-level-3" href="#3-deal-not-signed-until-friday">3. Deal Not Signed Until Friday</a><a class="toc-link toc-level-3" href="#4-vix-at-17-78-complacency-risk">4. VIX at 17.78 — Complacency Risk</a><a class="toc-link toc-level-3" href="#5-oil-supply-recovery-is-not-instant">5. Oil Supply Recovery Is Not Instant</a><a class="toc-link toc-level-3" href="#6-retail-crowding-into-spacex-selling-everything-else">6. Retail Crowding into SpaceX — Selling Everything Else</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a><a class="toc-link toc-level-3" href="#market-data">Market Data</a><a class="toc-link toc-level-3" href="#macro-policy">Macro / Policy</a><a class="toc-link toc-level-3" href="#geopolitics">Geopolitics</a><a class="toc-link toc-level-3" href="#companies">Companies</a><a class="toc-link toc-level-3" href="#stale-conflicting-data">Stale / Conflicting Data</a><a class="toc-link toc-level-3" href="#data-unavailable">Data Unavailable</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-monday-june-15-2026">BoltNews Pre-Market Briefing — Monday, June 15, 2026</h1>
+<p><strong>As of:</strong> ~6:00 AM ET | <strong>Mode:</strong> Pre-Market | <strong>Recency window:</strong> June 14, 6:00 AM ET – June 15, 6:00 AM ET</p>
+<hr class="divider">
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Level</th><th>Change</th><th>% Change</th><th>Source / As-Of</th></tr></thead><tbody><tr><td>S&amp;P 500 Futures</td><td>7,525.50 (est.)</td><td>+88</td><td>+1.19%</td><td>CNBC, Jun 15 6AM ET</td></tr><tr><td>Nasdaq 100 Futures</td><td>30,605 (est.)</td><td>+600</td><td>+2.00%</td><td>CNBC, Jun 15 6AM ET</td></tr><tr><td>Dow Futures</td><td>52,095 (est.)</td><td>+438</td><td>+0.85%</td><td>CNBC, Jun 15 6AM ET</td></tr><tr><td>VIX (Fri close)</td><td>17.78</td><td>-1.78</td><td>-9.10%</td><td>Sigmanomics/CBOE, Jun 12 close</td></tr><tr><td>10Y Treasury</td><td>4.423%</td><td>-5 bps</td><td>—</td><td>CNBC, Jun 15 AM</td></tr><tr><td>DXY (USD Index)</td><td>99.483</td><td>-0.32%</td><td>—</td><td>CNBC, Jun 15 AM</td></tr><tr><td>WTI Crude</td><td>$80.83</td><td>-$4.05</td><td>-4.77%</td><td>CNBC, Jun 15 AM</td></tr><tr><td>Brent Crude</td><td>$83.77</td><td>-$3.50</td><td>-4.0%</td><td>CNBC, Jun 15 AM</td></tr><tr><td>Spot Gold</td><td>$4,302</td><td>+$84</td><td>+1.99%</td><td>CNBC, Jun 15 AM</td></tr><tr><td>Bitcoin</td><td>~$72,000 (Fri)</td><td>—</td><td>—</td><td>Bitcoin Magazine, Jun 13</td></tr></tbody></table></div>
+<p><strong>S&amp;P 500 Friday Close (Jun 12):</strong> 7,431.46, +0.50% on the day, +0.6% for the week. Nasdaq Composite +0.7% for the week. (Yahoo Finance, MCapitalMgt weekly recap)</p>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<h3 id="1-us-iran-peace-deal-framework-agreed-mou-signing-friday">1. US-Iran Peace Deal Framework Agreed — MOU Signing Friday</h3>
+<p class="bold-line"><strong>Impact: Global risk-on surge, oil -5%, dollar at 10-day low</strong></p>
+<p>President Trump announced Sunday evening that the US and Iran reached a completed peace deal ending nearly four months of conflict. The framework includes: immediate/permanent cessation of military operations, toll-free reopening of the Strait of Hormuz, and end of the US naval blockade. Pakistan PM Shehbaz Sharif confirmed the official signing in Switzerland on Friday, June 19. Trump on Truth Social: <em>"Ships of the World, start your engines. Let the oil flow!"</em></p>
+<p><strong>Critical caveat:</strong> Iran's nuclear program is left for further negotiations — no nuclear agreement yet. Nick Rees (Monex Europe): <em>"Without a nuclear agreement, I don't think we can simply assume that any deal's going to hold."</em> Josh Gilbert (eToro): <em>"The deal isn't actually signed until June 19th, the details are still thin, and this conflict has shown more than once that headlines can turn on a dime."</em></p>
+<p><em>Sources: Reuters (Jun 15, 2026), CNBC (Jun 14, 9:21 PM ET), CNBC (Jun 14, 9:30 PM ET), Share Talk (Jun 15)</em></p>
+<h3 id="2-oil-crashes-5-strait-of-hormuz-reopening">2. Oil Crashes 5% — Strait of Hormuz Reopening</h3>
+<p class="bold-line"><strong>WTI $80.83, Brent $83.77 — from May peak of $126</strong></p>
+<p>Crude plunged over 5% to two-month lows. Trading Economics: WTI at $80.19 (-5.53%), Brent at $82.96 (-5.01%). CBA's Vivek Dhar: expects Brent ~$80 by year-end if Strait stays open. Key threshold: oil flows need only 60-70% of pre-war levels to restore supply surplus expectations. Risks: damaged refineries, sea mines, uncertain tanker traffic.</p>
+<p><em>Sources: Trading Economics (Jun 15), CNBC (Jun 14, 9:21 PM ET)</em></p>
+<h3 id="3-japan-nikkei-5-korea-kospi-5-2-record-intraday-highs">3. Japan Nikkei +5%, Korea Kospi +5.2% — Record Intraday Highs</h3>
+<p class="bold-line"><strong>Asia surges as energy importers celebrate lower oil</strong></p>
+<p>Nikkei 225 hit 69,317.50 (+4.99%, record intraday high); Kospi at 8,545.98 (+5.20%). SoftBank +12%, Tokyo Electron +9.19%, Samsung +4.65%, SK Hynix +6.42%. China CSI 300 +2.39% to 4,891.71; Shanghai Composite +1.61% to 4,096.47. Energy stocks the losers: PetroChina -2.41%, CNOOC -4.62%.</p>
+<p><em>Sources: CNBC (Jun 15), Trading Economics (Jun 15)</em></p>
+<h3 id="4-dollar-hits-10-day-low-gold-defies-risk-on-up-2">4. Dollar Hits 10-Day Low; Gold Defies Risk-On — Up 2%</h3>
+<p class="bold-line"><strong>DXY 99.48; EUR $1.1607; Gold $4,302 (+2%)</strong></p>
+<p>The dollar weakened broadly as risk appetite surged. EUR +0.35%, AUD +0.50%, NZD +0.40%. JPY weakened to 160.15 (intervention threshold). Gold's +2% rally in a risk-on session is a notable divergence: Billy Leung (Global X ETFs): <em>"Gold is the interesting outlier here. In a clean risk-on trade, gold should be selling off ... but it is holding bid around $4,300, which tells you the market is not fully trusting the deal yet."</em> JPMorgan projects gold averaging $6,000/oz in late 2026, potentially $6,300 in 2027.</p>
+<p><em>Sources: Reuters (Jun 15), CNBC (Jun 14, 9:30 PM ET), CNBC (Jun 14, 9:21 PM ET)</em></p>
+<h3 id="5-fed-this-week-98-probability-of-hold-boj-expected-to-hike-to-1-00">5. Fed This Week — 98% Probability of Hold; BOJ Expected to Hike to 1.00%</h3>
+<p class="bold-line"><strong>Fed: 3.50-3.75%, focus on new Chair Warsh's press conference</strong></p>
+<p>CME FedWatch: 98% probability of no change. The Iran peace deal is reducing the probability of a December hike — now ~50% (was &gt;70% a week ago). BOJ expected to raise to 1.00% (31-year high) on June 16, signaling readiness for further hikes. ECB already hiked Thursday. Prashant Newnaha (TD Securities): <em>"No doubt central bankers will be breathing a sigh of relief ... that upside risks to inflation appear to be receding."</em></p>
+<p><em>Sources: Reuters (Jun 15), CNBC (Jun 14, 9:30 PM ET)</em></p>
+<h3 id="6-europe-opens-strong-dax-1-8-cac-40-1-9">6. Europe Opens Strong — DAX +1.8%, CAC 40 +1.9%</h3>
+<p class="bold-line"><strong>Carmakers/aerospace surge; energy stocks slammed</strong></p>
+<p>Stoxx 600 +1.2%. Renault +5.6%, Stellantis +5.6%, BMW +3.9%, Rolls-Royce +5.4%, Airbus +3.8%, Lufthansa +5.7%. Energy: Var Energi -7.3%, TotalEnergies -5.8%, BP -4.4%, Shell -4.3%. FTSE 100 lagging at +0.8% (energy-heavy index weight).</p>
+<p><em>Source: CNBC (Jun 14/15)</em></p>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<div class="table-wrapper"><table><thead><tr><th>Market</th><th>Index</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>Japan</td><td>Nikkei 225</td><td>69,317.50</td><td>+4.99%</td></tr><tr><td>South Korea</td><td>Kospi</td><td>8,545.98</td><td>+5.20%</td></tr><tr><td>China</td><td>Shanghai Comp</td><td>4,096.47</td><td>+1.61%</td></tr><tr><td>China</td><td>CSI 300</td><td>4,891.71</td><td>+2.39%</td></tr><tr><td>Hong Kong</td><td>Hang Seng</td><td>24,842.67</td><td>+0.50%</td></tr><tr><td>Australia</td><td>ASX 200</td><td>8,914.00</td><td>+1.25%</td></tr><tr><td>India</td><td>Nifty 50</td><td>23,896.50</td><td>+1.16%</td></tr><tr><td>Germany</td><td>DAX</td><td>—</td><td>+1.8% (early)</td></tr><tr><td>France</td><td>CAC 40</td><td>—</td><td>+1.9% (early)</td></tr><tr><td>UK</td><td>FTSE 100</td><td>—</td><td>+0.8% (early)</td></tr></tbody></table></div>
+<p><strong>Macro catalysts from Asia:</strong> China May industrial production, retail sales, and unemployment data awaited. Shanghai Composite's 1.61% gain masks rotation — mining/tech surged (Zijin Mining +7.63%, Zhongji Innolight +8.36%), energy tanked (PetroChina -2.41%, CNOOC -4.62%). The peace deal + lower oil thesis favors manufacturing-heavy Asian economies disproportionately.</p>
+<p><em>Sources: CNBC (Jun 15), Trading Economics (Jun 15)</em></p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<h3 id="treasury-curve">Treasury Curve</h3>
+<ul><li><strong>10Y:</strong> 4.423%, down 5 bps overnight</li><li><strong>2Y/10Y spread:</strong> Inversion persists (Friday Jun 12 Treasury data shows inverted curve)</li><li><strong>Key signal:</strong> Billy Leung (Global X ETFs): <em>"Yields falling alongside equities rising confirms that the market had already been treating the energy shock as transitory rather than structural."</em></li><li><strong>Dollar:</strong> DXY 99.48, weakest since June 5</li></ul>
+<h3 id="central-bank-week">Central Bank Week</h3>
+<div class="table-wrapper"><table><thead><tr><th>Bank</th><th>Date</th><th>Expected</th><th>Rate</th><th>Context</th></tr></thead><tbody><tr><td>Fed</td><td>Jun 16-17</td><td>Hold</td><td>3.50-3.75%</td><td>New Chair Kevin Warsh's first press conference; focus on statement language around easing bias</td></tr><tr><td>BOJ</td><td>Jun 16</td><td>Hike to 1.00%</td><td>0.75%</td><td>31-year high; hawkish despite governor's temporary absence</td></tr><tr><td>BOE</td><td>Jun 18</td><td>Hold</td><td>—</td><td>—</td></tr><tr><td>RBA</td><td>This week</td><td>Hold</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p><strong>Fed December hike probability:</strong> ~50% (down from &gt;70% a week ago), per CME FedWatch via Reuters. Forbes (Jun 8): Fed may drop easing bias language at June meeting, setting up potential 2026 hike.</p>
+<h3 id="this-week-s-economic-calendar">This Week's Economic Calendar</h3>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Release</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>Tue</td><td>Retail Sales (May)</td><td>—</td><td>—</td></tr><tr><td>Tue-Wed</td><td>Housing data</td><td>—</td><td>—</td></tr><tr><td>Wed</td><td>FOMC decision</td><td>Hold</td><td>3.50-3.75%</td></tr><tr><td>Thu</td><td>Jobless claims</td><td>—</td><td>—</td></tr><tr><td>Fri</td><td>Markets closed (Juneteenth)</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p><em>Sources: Reuters (Jun 15), CNBC (Jun 15), CME FedWatch, Forbes (Jun 8)</em></p>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Level</th><th>Change</th><th>Driver</th></tr></thead><tbody><tr><td>DXY</td><td>99.483</td><td>-0.32%</td><td>Safe-haven unwinding; 10-day low</td></tr><tr><td>EUR/USD</td><td>1.1607</td><td>+0.35%</td><td>Risk-on, dollar weakness</td></tr><tr><td>GBP/USD</td><td>1.3448</td><td>+0.30%</td><td>Broad dollar decline</td></tr><tr><td>USD/JPY</td><td>160.15</td><td>Yen weaker</td><td>Near intervention threshold</td></tr><tr><td>AUD/USD</td><td>0.7075</td><td>+0.50%</td><td>Risk proxy, commodity beneficiary</td></tr><tr><td>NZD/USD</td><td>0.5854</td><td>+0.40%</td><td>Risk-on sentiment</td></tr><tr><td>WTI</td><td>$80.83</td><td>-4.77%</td><td>Strait of Hormuz reopening</td></tr><tr><td>Brent</td><td>$83.77</td><td>-4.0%</td><td>Supply disruption fears fading</td></tr><tr><td>Gold</td><td>$4,302</td><td>+1.99%</td><td>Contrarian bid — distrust of deal</td></tr><tr><td>Natural Gas</td><td>$3.04</td><td>-2.59%</td><td>Broader energy selloff</td></tr></tbody></table></div>
+<p><strong>Cross-asset signal:</strong> The simultaneous decline in oil, dollar, and Treasury yields while equities surge is a classic "peace dividend" trade — inflation expectations compressing, growth expectations improving. The gold bid at $4,300 is the only dissonant note, suggesting the market hedged against deal failure.</p>
+<p><em>Sources: Reuters (Jun 15), CNBC (Jun 14/15), Trading Economics (Jun 15)</em></p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<h3 id="pre-market-expected-movers-peace-deal-beneficiaries">Pre-Market Expected Movers (Peace Deal Beneficiaries)</h3>
+<ul><li><strong>Airlines/Travel:</strong> AAL, UAL, DAL, LUV — lower jet fuel = margin expansion; European peers Lufthansa +5.7%, Ryanair +5.5%, IAG +4.0%</li><li><strong>Autos:</strong> TSLA, F, GM — consumer discretionary boost; European peers Renault +5.6%, BMW +3.9%</li><li><strong>Tech (growth):</strong> Broad risk-on bid — Nasdaq futures +2.0% leading. Asian semis surged (Tokyo Electron +9.2%, Advantest +7.7%, SK Hynix +6.4%)</li></ul>
+<h3 id="expected-losers">Expected Losers</h3>
+<ul><li><strong>Energy:</strong> XOM, CVX, OXY, COP — oil -5% directly hits revenue. European peers TotalEnergies -5.8%, BP -4.4%, Shell -4.3%. PetroChina -2.4%, CNOOC -4.6%. Coal: China Shenhua -6.3%.</li></ul>
+<h3 id="single-stock-news">Single-Stock News</h3>
+<p><strong>SMCI (Super Micro Computer)</strong> — $7B equity raise priced for AI orders</p>
+<ul><li>Common stock: 45.45M shares at $27.50, closing Jun 12 (~$1.22B net)</li><li>Depositary shares: 75M at $50 (7.0% mandatory convertible preferred), closing TODAY Jun 15 (~$3.68B net)</li><li>ATM program: $1.25B through JPM/GS/Citi, starting Q3</li><li>Purpose: Fund components for ~$39B of AI server orders from 20+ customers</li><li><em>Source: BusinessWire (Jun 11, 2026)</em></li></ul>
+<p><strong>CRM (Salesforce)</strong> — New Chief Accounting Officer effective today</p>
+<ul><li>Guy Wanger appointed as CAO and Principal Accounting Officer, effective June 15, 2026.</li><li><em>Source: Simply Wall St / SEC filing</em></li></ul>
+<p><strong>AVGO (Broadcom)</strong> — Institutional accumulation</p>
+<ul><li>Landscape Capital Management increased AVGO stake by 207.9% in Q4 (SEC filing)</li><li>AVGO Q2 2026 earnings (Jun 3): Revenue +48% YoY to $22.2B, driven by custom AI chips (Google TPU)</li><li>Analysts raising price targets despite share price decline post-earnings</li><li><em>Sources: MarketBeat (Jun 15), CNBC (Jun 3)</em></li></ul>
+<p><strong>MSTR (Strategy)</strong> — First BTC sale since 2022 rattles crypto</p>
+<ul><li>Sold 32 BTC to fund distributions on preferred stock STRC</li><li>Bitcoin slipped below $72,000, down ~3%</li><li>Previously: bought 1,550 BTC for ~$107M (Jun 8); $12.4B in unrealized gains on 663K+ BTC holdings</li><li><em>Sources: Bitcoin Magazine, CNBC (Jun 1), The Block</em></li></ul>
+<p><strong>RIVN (Rivian)</strong> — Upgraded, pre-market surge</p>
+<ul><li>RIVN jumped 20% pre-market on Friday Jun 12 after analyst upgrade</li><li>Q4 loss of $0.66/share; robust 2026 delivery forecast driven by R2 launch</li><li><em>Source: StockTwits (Jun 12), Trefis (Feb 13)</em></li></ul>
+<p><strong>SpaceX IPO Aftermath</strong> — Opened $150 (+11% from $135 IPO), market cap &gt;$2T</p>
+<ul><li>Retail bought ~$118M on debut day — &gt;50% of all single-stock net buying (VandaTrack)</li><li>But retail sold YTD winners (Micron, Marvell, Robinhood) to fund it</li><li>Hyperliquid perpetual futures spiked from ~$166 to &gt;$180 Sunday evening (possible short squeeze)</li><li>Evan Schlossman (SuRo Capital): "A successful SpaceX IPO is generally a positive signal for broader investor interest in innovation and technology."</li><li><em>Source: CNBC (Jun 14)</em></li></ul>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<h3 id="today-s-expected-leadership">Today's Expected Leadership</h3>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Thesis</th><th>Evidence</th></tr></thead><tbody><tr><td><strong>Tech / Semis</strong></td><td>Risk-on + AI demand tailwinds</td><td>Nasdaq futures +2.0%; Asian semis +5-10%; AVGO institutional buying</td></tr><tr><td><strong>Consumer Discretionary</strong></td><td>Lower oil = consumer relief</td><td>Autos/travel surging globally; airline stocks +4-7% in Europe</td></tr><tr><td><strong>Industrials / Transports</strong></td><td>Fuel cost collapse, trade normalization</td><td>Lufthansa +5.7%, Rolls-Royce +5.4%, shipping beneficiaries</td></tr><tr><td><strong>Financials</strong></td><td>Steeper curve if inflation fears ease</td><td>BOJ hike + Fed hold = global rate normalization</td></tr></tbody></table></div>
+<h3 id="today-s-expected-laggards">Today's Expected Laggards</h3>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Thesis</th><th>Evidence</th></tr></thead><tbody><tr><td><strong>Energy</strong></td><td>Oil -5%, peace dividend crushing war premium</td><td>TotalEnergies -5.8%, BP -4.4%, Shell -4.3%, PetroChina -2.4%</td></tr><tr><td><strong>Utilities / Defensives</strong></td><td>Rotation out of safety into cyclicals</td><td>Risk-on regime shift</td></tr><tr><td><strong>Gold miners</strong></td><td>Complex — gold up but energy costs down; mixed signal</td><td>Gold at $4,300 but oil cost relief</td></tr></tbody></table></div>
+<h3 id="factor-watch">Factor Watch</h3>
+<ul><li><strong>Growth vs Value:</strong> Growth favored — Nasdaq +2.0% vs Dow +0.85%. AI semis leading.</li><li><strong>Small vs Large:</strong> Russell 2000 likely to benefit from domestic energy cost relief; watch IWM</li><li><strong>Cyclicals vs Defensives:</strong> Strong cyclical bid — autos, airlines, industrials surging</li></ul>
+<h3 id="breadth-indicators">Breadth Indicators</h3>
+<ul><li>Last week's close: S&amp;P 500 +0.6% for the week despite -2.59% drawdown earlier (CAPIS)</li><li>S&amp;P 500 up 5.81% from January peak (CAPIS, Jun 12)</li><li>VIX at 17.78 — below 20, pre-deal compression</li></ul>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<h3 id="scheduled-catalysts">Scheduled Catalysts</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time</th><th>Event</th><th>Impact</th></tr></thead><tbody><tr><td>All day</td><td>Deal optimism/fragility — MOU not signed until Friday</td><td>Maximum market sensitivity to any contrary headline</td></tr><tr><td>10:00 AM</td><td>Housing Market Index (Jun)</td><td>Moderate</td></tr><tr><td>After close</td><td>Dave &amp; Buster's (PLAY) earnings ($0.60 est.)</td><td>Low — single stock</td></tr><tr><td>Ongoing</td><td>SMCI depositary share offering closes today ($3.68B)</td><td>Moderate — dilution pressure</td></tr><tr><td>Week</td><td>Fed meeting Tue-Wed, BOJ Tue</td><td>High — policy pivot potential</td></tr></tbody></table></div>
+<h3 id="unscheduled-risks">Unscheduled Risks</h3>
+<div class="table-wrapper"><table><thead><tr><th>Risk</th><th>Probability</th><th>Impact</th></tr></thead><tbody><tr><td>Iran deal falls apart before Friday signing</td><td>Low-moderate</td><td>Extreme — oil spike, risk-off cascade</td></tr><tr><td>Trump escalates nuclear demands</td><td>Moderate</td><td>High — "If Iran failed to reach a final nuclear accord ... he would restart military attacks" (NYT/CNBC)</td></tr><tr><td>BOJ surprises hawkish (above 1.00%)</td><td>Low</td><td>Moderate — yen surge, carry trade unwind</td></tr><tr><td>China data disappoints (IP/retail sales)</td><td>Low-moderate</td><td>Moderate — Asia rally partially unwinds</td></tr><tr><td>Israel-Hezbollah escalation scuttles deal</td><td>Low</td><td>High — deal almost derailed by Lebanon strikes on Sunday</td></tr></tbody></table></div>
+<h3 id="key-levels">Key Levels</h3>
+<ul><li><strong>S&amp;P 500:</strong> Resistance 7,525 (pre-market high); Support 7,400 (Fri close area)</li><li><strong>WTI:</strong> Support $78-80 (pre-war range floor); Resistance $85</li><li><strong>DXY:</strong> Support 99.00 (psychological); Resistance 100</li><li><strong>10Y:</strong> Support 4.35%; Resistance 4.50%</li><li><strong>VIX:</strong> 17.78 — any spike above 20 signals deal anxiety</li></ul>
+<h3 id="bull-base-bear-scenarios">Bull / Base / Bear Scenarios</h3>
+<ul><li><strong>Bull (25%):</strong> Deal signed Friday, nuclear framework follows, oil stabilizes $75-80. S&amp;P 500 rallies to new highs. Cyclical/value rotation accelerates. Fed language turns dovish. S&amp;P +3-5% on the week.</li><li><strong>Base (55%):</strong> Deal signed but nuclear unresolved. Oil $80-85. Risk-on holds but fades. S&amp;P +1-2% on the week. VIX stays 16-19.</li><li><strong>Bear (20%):</strong> Deal collapses pre-signing. Oil spikes to $95+. Risk-off across all assets. S&amp;P gives back all peace-deal gains. VIX above 25.</li></ul>
+<hr class="divider">
+<h2 id="sentiment-positioning">Sentiment &amp; Positioning</h2>
+<div class="table-wrapper"><table><thead><tr><th>Indicator</th><th>Value</th><th>Signal</th></tr></thead><tbody><tr><td>VIX (Fri close)</td><td>17.78</td><td>Low — complacency risk if deal wobbles</td></tr><tr><td>AAII Sentiment</td><td>Not available</td><td>Check this week's survey</td></tr><tr><td>CME FedWatch (Dec hike)</td><td>~50%</td><td>Down from &gt;70% — rates fear receding</td></tr><tr><td>DXY</td><td>99.48 (10-day low)</td><td>Risk-on confirmed</td></tr><tr><td>Gold</td><td>$4,302 (+2%)</td><td>CONTRARIAN — market hedging deal failure</td></tr><tr><td>Bitcoin</td><td>&lt;$72K</td><td>Weak — MSTR selling overhang</td></tr><tr><td>Oil vol (GVZ)</td><td>28.33 (Jun 11)</td><td>Down from 32.18 — geopolitical vol compressing</td></tr><tr><td>10Y-2Y spread</td><td>Inverted</td><td>Recession signal persists despite risk-on</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Supporting Data</th></tr></thead><tbody><tr><td><strong>US Equities</strong></td><td>Bullish</td><td>Peace dividend: lower energy costs, easing inflation, Fed less hawkish</td><td>S&amp;P futures +1.2%, Nasdaq +2.0%, VIX 17.78</td></tr><tr><td><strong>European Equities</strong></td><td>Bullish</td><td>Energy importers benefit disproportionately; autos/aerospace surge</td><td>DAX +1.8%, CAC +1.9%, Stoxx 600 +1.2%</td></tr><tr><td><strong>Japan Equities</strong></td><td>Very Bullish</td><td>Major energy importer; BOJ hike priced in; yen weakness helps exporters</td><td>Nikkei +5.0%, Topix +2.6%</td></tr><tr><td><strong>EM Equities</strong></td><td>Bullish</td><td>Lower oil = lower import bills; China stimulus expectations</td><td>CSI 300 +2.4%, Nifty +1.2%</td></tr><tr><td><strong>US Treasuries</strong></td><td>Bullish (yields lower)</td><td>Inflation risk premium compressing; flight from oil</td><td>10Y -5bps to 4.423%</td></tr><tr><td><strong>USD</strong></td><td>Bearish</td><td>Safe-haven unwinding; risk appetite surge</td><td>DXY -0.32% to 99.48</td></tr><tr><td><strong>Oil</strong></td><td>Bearish</td><td>Strait reopening; supply normalization</td><td>WTI -5% to $80.83</td></tr><tr><td><strong>Gold</strong></td><td>Bullish (contrarian)</td><td>Hedging against deal failure; central bank buying</td><td>+2% to $4,302</td></tr><tr><td><strong>Credit</strong></td><td>Bullish</td><td>Lower energy costs = lower default risk for cyclicals</td><td>Implied by equity/haven rotation</td></tr><tr><td><strong>Volatility</strong></td><td>Bearish</td><td>Geopolitical risk premium collapsing</td><td>VIX 17.78, GVZ declining</td></tr></tbody></table></div>
+<p><strong>Cross-asset confirmation:</strong> Equities up + yields down + dollar down + oil down = clean risk-on rotation. The only dissonance is gold's bid — a real-time hedge that ~$118B in peace optimism could reverse by Friday.</p>
+<hr class="divider">
+<h2 id="contrarian-flags">Contrarian Flags</h2>
+<h3 id="1-gold-s-reluctance-to-sell-off">1. Gold's Reluctance to Sell Off</h3>
+<p>In every other risk-on session, gold falls as the geopolitical premium unwinds. Gold at $4,302 (+2%) while oil crashes 5% is the market pricing two incompatible futures simultaneously. Either oil is right (peace holds, gold should fall) or gold is right (deal fragile, oil rebound coming). Billy Leung: "The market is not fully trusting the deal yet."</p>
+<h3 id="2-nuclear-question-unresolved">2. Nuclear Question Unresolved</h3>
+<p>The entire peace framework leaves Iran's nuclear program for further negotiations. Trump's threat was explicit: if no nuclear accord, restart military attacks. This is not a detail — it's the core issue that started the conflict. The market's +5% Nikkei rally is pricing the best case.</p>
+<h3 id="3-deal-not-signed-until-friday">3. Deal Not Signed Until Friday</h3>
+<p>Four trading days between now and the Switzerland signing. The conflict has reversed on headlines before. The Sunday Israel-Hezbollah strike almost derailed it. Every headline between now and Friday carries asymmetric downside risk.</p>
+<h3 id="4-vix-at-17-78-complacency-risk">4. VIX at 17.78 — Complacency Risk</h3>
+<p>Pre-deal VIX was elevated on war uncertainty. Post-deal announcement, VIX is pricing near-total resolution. If the deal wobbles, VIX could gap to 25+ rapidly. Options premium is cheap for tail hedges.</p>
+<h3 id="5-oil-supply-recovery-is-not-instant">5. Oil Supply Recovery Is Not Instant</h3>
+<p>CBA's Dhar notes: damaged refineries, sea mines, uncertain tanker traffic. Even with the Strait open, getting to 60-70% of pre-war flows takes "months rather than weeks" (Nick Twidale, ATFX). The market may be over-discounting the speed of normalization.</p>
+<h3 id="6-retail-crowding-into-spacex-selling-everything-else">6. Retail Crowding into SpaceX — Selling Everything Else</h3>
+<p>VandaTrack data shows retail dumped YTD winners (Micron, Marvell, Robinhood) to buy SpaceX. This is not healthy broadening — it's rotation by FOMO. If SpaceX retraces, retail has no dry powder.</p>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<h3 id="market-data">Market Data</h3>
+<ul><li><strong>Futures/Snapshot:</strong> CNBC pre-market page, Markets Insider pre-market — real-time or near-real-time quotes. CNN pre-market showed Jun 12 data (stale for today's snapshot — used CNBC instead).</li><li><strong>Oil:</strong> Trading Economics CFD data ($80.19 WTI), CNBC futures data ($80.83 July delivery) — minor discrepancy due to contract/instrument differences. Both show ~5% decline.</li><li><strong>Treasuries:</strong> CNBC reporting 10Y at 4.423% (-5bps). Treasury.gov has Friday Jun 12 daily rates available for verification.</li><li><strong>VIX:</strong> Sigmanomics reports Jun 12 close at 17.78 (-9.10%). FRED data confirms similar range.</li></ul>
+<h3 id="macro-policy">Macro / Policy</h3>
+<ul><li><strong>Fed/BOJ expectations:</strong> Reuters (Jun 15), CNBC (Jun 14). CME FedWatch probabilities cited in both sources.</li><li><strong>Economic calendar:</strong> Yahoo Finance/Kiplinger (Jun 12). Friday Jun 19 closed for Juneteenth.</li></ul>
+<h3 id="geopolitics">Geopolitics</h3>
+<ul><li><strong>Peace deal terms:</strong> Multiple primary sources (Reuters, CNBC) citing official announcements. Pakistan PM confirmation. Trump Truth Social post.</li><li><strong>Nuclear caveat:</strong> Explicitly noted in both Reuters and CNBC reporting — not speculation.</li></ul>
+<h3 id="companies">Companies</h3>
+<ul><li><strong>SMCI:</strong> BusinessWire press release (Jun 11) — primary corporate source. Closing dates: common Jun 12, depositary shares Jun 15 (today).</li><li><strong>CRM:</strong> SEC filing / Simply Wall St — CAO appointment effective Jun 15.</li><li><strong>AVGO:</strong> SEC 13F filing via MarketBeat; Q2 earnings from CNBC (Jun 3).</li><li><strong>MSTR:</strong> Bitcoin Magazine, CNBC (Jun 1), The Block — BTC sale confirmed via SEC filing.</li><li><strong>RIVN:</strong> StockTwits aggregation; Q4 earnings from Trefis (Feb 13 — stale for context but included for pre-market move context).</li></ul>
+<h3 id="stale-conflicting-data">Stale / Conflicting Data</h3>
+<ul><li><strong>CNN pre-market page</strong> (used in search) showed Jun 12 data — rejected for snapshot, used CNBC instead.</li><li><strong>Gold prices:</strong> Trading Economics reports $4,338.90 (+2.77%); CNBC reports $4,302 (+2%). Minor discrepancy (~$37) — both confirm directional move. Used CNBC's more conservative figure for headline.</li><li><strong>Oil prices:</strong> Trading Economics WTI $80.19 (-5.53%) vs CNBC $80.83 (-4.77%) — different instruments (CFD vs futures). Direction consistent.</li><li><strong>S&amp;P 500 Friday close:</strong> 7,431.46 confirmed via Yahoo Finance historical data.</li></ul>
+<h3 id="data-unavailable">Data Unavailable</h3>
+<ul><li>AAII Sentiment Survey — not available for current week</li><li>Real-time Russell 2000 futures — not captured in search results</li><li>Credit spreads (HY OAS, IG OAS) — not captured in this run's searches</li><li>Pre-market single-stock prices for most tickers — would require dedicated data terminal</li></ul>
+<hr class="divider">
+<p><em>BoltNews Pre-Market Briefing | June 15, 2026 | Generated ~6:00 AM ET</em></p>
+<p><em>Recency window: 24 hours ending June 15, 2026 6:00 AM ET</em></p>
+<p><em>Next run: Post-Market — Monday, June 15, 2026 at 6:00 PM ET</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.reuters.com/world/asia-pacific/forex-dollar-hits-10-day-low-us-iran-reach-peace-deal-2026-06-15/" target="_blank" rel="noopener">Dollar hovers around 10-day low as US, Iran reach peace deal</a>
+<a class="source-link" href="https://www.cnbc.com/amp/2026/06/15/dollar-hits-10-day-low-as-us-iran-reach-peace-deal.html" target="_blank" rel="noopener">Dollar hits 10-day low as US, Iran reach peace deal</a>
+<a class="source-link" href="https://www.share-talk.com/what-happened-overnight-monday-15th-june-2026/" target="_blank" rel="noopener">What Happened Overnight – Monday 15th June 2026</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/14/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock market today: U.S. stock futures jump on Iran deal; Nikkei surges 5%</a>
+<a class="source-link" href="https://www.cnbc.com/amp/2026/06/15/us-iran-deal-stocks-bonds-gold-oil.html" target="_blank" rel="noopener">Markets cheer U.S.-Iran agreement, but some investors caution deal is yet to be </a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/crude-oil" target="_blank" rel="noopener">Crude Oil Price — June 15, 2026</a>
+<a class="source-link" href="https://tradingeconomics.com/china/stock-market" target="_blank" rel="noopener">China Shanghai Composite Stock Market Index — June 15, 2026</a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/gold" target="_blank" rel="noopener">Gold Price — June 15, 2026</a>
+<a class="source-link" href="https://www.businesswire.com/news/home/20260611831736/en/Supermicro-Announces-Pricing-of-Equity-and-Equity-Linked-Financing-Transactions-To-Fund-AI-Orders" target="_blank" rel="noopener">Supermicro Announces Pricing of Equity and Equity-Linked Financing Transactions </a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/earnings-calendar-analysis-week-june-162434561.html" target="_blank" rel="noopener">Earnings Calendar and Analysis for This Week (June 15-19)</a>
+<a class="source-link" href="https://bitcoinmagazine.com/news/strategy-mstr-sells-bitcoin" target="_blank" rel="noopener">Strategy (MSTR) Sells 32 Bitcoin, First BTC Sale Since 2022</a>
+<a class="source-link" href="https://simplywall.st/stocks/us/software/nyse-crm/salesforce" target="_blank" rel="noopener">Salesforce Appoints Guy Wanger as Chief Accounting Officer</a>
+<a class="source-link" href="https://www.marketbeat.com/instant-alerts/filing-broadcom-inc-avgo-stock-holdings-increased-by-landscape-capital-management-llc-2026-06-15/" target="_blank" rel="noopener">Broadcom Inc. Stock Holdings Increased by Landscape Capital Management</a>
+<a class="source-link" href="https://www.mcapitalmgt.com/weekly-market-recap-week-ending-june-12-2026/" target="_blank" rel="noopener">Weekly Market Recap – Week Ending June 12, 2026</a>
+<a class="source-link" href="https://www.msn.com/en-in/news/insight/gold-rebounds-on-us-iran-peace-hopes-jpmorgan-bullish-outlook/gm-GMB8770137" target="_blank" rel="noopener">Gold rebounds on US-Iran peace hopes, JPMorgan bullish outlook</a>
+<a class="source-link" href="https://www.forbes.com/sites/simonmoore/2026/06/08/fed-may-remove-easing-language-at-june-meeting-setting-up-a-potential-2026-hike/" target="_blank" rel="noopener">Fed Signals Shift At June Meeting With Markets Pricing In 2026 Hike</a>
+<a class="source-link" href="https://stocktwits.com/news-articles/markets/equity/rivian-rivn-stock-surges-analyst-upgrades-q4-earnings/cZR5pRjR4sA" target="_blank" rel="noopener">RIVN Stock Surges 20% Pre-Market On Upgrade</a>
+<a class="source-link" href="https://sigmanomics.com/index-markets/vix" target="_blank" rel="noopener">CBOE Volatility Index (VIX) — June 12, 2026 Close</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-15 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
