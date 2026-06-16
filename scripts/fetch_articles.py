@@ -15,6 +15,7 @@ import time
 from datetime import datetime, timedelta, date
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from session_logic import session_window
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
@@ -105,27 +106,8 @@ LANE_SECTION_MAP = {
 
 
 def recency_window(target_date: str, mode: str) -> dict:
-    """Return a mode-aware America/New_York recency window for handoffs."""
-    tz = ZoneInfo("America/New_York")
-    d = date.fromisoformat(target_date)
-    if mode == "pre-market":
-        end = datetime(d.year, d.month, d.day, 6, 0, tzinfo=tz)
-    elif mode == "post-market":
-        end = datetime(d.year, d.month, d.day, 18, 0, tzinfo=tz)
-    else:
-        end = datetime(d.year, d.month, d.day, 20, 0, tzinfo=tz)
-    hours = RECENCY_HOURS if mode != "weekend" else 72
-    start = end - timedelta(hours=hours)
-    return {
-        "hours": hours,
-        "window_start_iso": start.isoformat(),
-        "window_end_iso": end.isoformat(),
-        "timezone": "America/New_York",
-        "require_article_timestamp": True,
-        "reject_if_timestamp_missing": True,
-        "reject_if_older_than_window": True,
-    }
-
+    """Return a Wall-Street-calendar/session-aware recency window."""
+    return session_window(target_date, mode)
 
 def topic_keyword_pack(weekday: str, mode: str, universe_topics: list[str]) -> dict:
     """Return mode + weekday specific topic keywords for the run."""
@@ -207,9 +189,9 @@ def handoff_prompt_template() -> str:
         "Query templates: {query_templates}\n"
         "Timeouts: search={search_timeout_seconds}s, extraction={extract_timeout_seconds}s, lane={lane_timeout_seconds}s\n\n"
         "Rules:\n"
-        "1. Accept only articles published inside the recency window.\n"
+        "1. Accept only articles published inside the Wall Street session window, not merely the calendar day.\n"
         "2. Every accepted article requires title/headline, url, source, published_at, fetched_at, tickers/topics, assigned_section, summary/lead paragraph, and extracted_text/body excerpt.\n"
-        "3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot.\n"
+        "3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot. For post-market, reject articles before the 9:30 AM ET cash open.\n"
         "4. Reject stale, evergreen, quote-page, and headline-only records.\n"
         "5. Do not web-search historical context; use prior BoltNews markdown artifacts only.\n"
         "6. Prefer Reuters/Bloomberg/WSJ/CNBC/MarketWatch/Yahoo/official releases/central banks/exchanges/regulators.\n"
@@ -366,7 +348,7 @@ def generate_search_plan(universe: dict, mode: str, target_date: str) -> dict:
             f"AGENT INSTRUCTION: Only accept articles published within the past "
             f"{run_recency['hours']} hours (window starts {run_recency['window_start_iso']}). "
             f"All search queries include '{date_suffix}' to enforce recency. "
-            f"DO NOT include articles from earlier dates. Historical context "
+            f"DO NOT include articles outside that trading-session window, including prior-day rally articles in a post-market recap. Historical context "
             f"is stored in markdown dumps — this pipeline is for NEW content only."
         ),
         "generated": datetime.now().isoformat(),
@@ -446,6 +428,8 @@ def generate_search_plan(universe: dict, mode: str, target_date: str) -> dict:
             "article_acceptance": {
                 "require_published_at": True,
                 "max_age_hours": run_recency["hours"],
+                "window_start_iso": run_recency["window_start_iso"],
+                "window_end_iso": run_recency["window_end_iso"],
                 "require_market_relevance": True,
                 "reject_summary_only": True,
             },

@@ -6,15 +6,20 @@
   "is_weekend": false,
   "target_date": "2026-06-16",
   "date_suffix": "June 16, 2026",
-  "recency_hours": 24,
+  "recency_hours": 8.5,
   "recency": {
-    "hours": 24,
-    "window_start_iso": "2026-06-15T18:00:00-04:00",
+    "mode": "post-market",
+    "label": "regular trading day + immediate after-hours",
+    "window_start_iso": "2026-06-16T09:30:00-04:00",
     "window_end_iso": "2026-06-16T18:00:00-04:00",
+    "hours": 8.5,
     "timezone": "America/New_York",
     "require_article_timestamp": true,
     "reject_if_timestamp_missing": true,
-    "reject_if_older_than_window": true
+    "reject_if_outside_window": true,
+    "calendar": "NYSE-like US equity calendar with weekends and major Wall Street holidays",
+    "target_is_trading_day": true,
+    "previous_trading_day": "2026-06-15"
   },
   "source_policy": {
     "preferred_sources": [
@@ -210,56 +215,56 @@
         "Earnings and Corporate Developments"
       ],
       "assigned_tickers": [
-        "ADBE",
-        "ORCL",
-        "APLD",
-        "RGTI",
-        "RDW",
-        "ASTS",
-        "IONQ",
-        "NVTS",
-        "QBTS",
-        "SOFI",
-        "SATS",
-        "LITE",
-        "CIFR",
-        "AAOI",
-        "SMCI",
-        "AAL",
-        "AXTI",
-        "WDAY",
-        "MSTR",
-        "CVNA",
-        "BE",
-        "CRWV",
-        "COIN",
-        "WDC",
-        "ON",
+        "HPQ",
+        "NTAP",
         "CRM",
-        "RDDT",
-        "ALAB",
-        "NUVL",
-        "SNDK",
-        "CRCL",
+        "ZS",
         "SNOW",
-        "MCHP",
-        "NOW",
-        "RKLB",
-        "ROKU",
-        "MPWR",
         "HPE",
-        "VST",
-        "UAL",
-        "TER",
-        "QCOM",
+        "MDB",
+        "OKTA",
         "MRVL",
-        "COHR",
-        "DDOG",
-        "BSX",
-        "HOOD",
-        "APP",
-        "INTU",
-        "VRT"
+        "PANW",
+        "DELL",
+        "CIEN",
+        "CRWD",
+        "ADSK",
+        "SNPS",
+        "AZO",
+        "COST",
+        "AVGO",
+        "ONDS",
+        "OKLO",
+        "IONQ",
+        "ASTS",
+        "IT",
+        "RDW",
+        "RGTI",
+        "SMCI",
+        "SOFI",
+        "PINS",
+        "LITE",
+        "AAOI",
+        "MSTR",
+        "WDAY",
+        "HUBS",
+        "BE",
+        "COIN",
+        "CRWV",
+        "ON",
+        "WDC",
+        "FSLR",
+        "TEAM",
+        "CRCL",
+        "ALAB",
+        "RDDT",
+        "SNDK",
+        "XPO",
+        "RKLB",
+        "GDDY",
+        "NOW",
+        "UNP",
+        "QCOM"
       ],
       "assigned_topics": [
         "earnings",
@@ -336,61 +341,61 @@
       "rule": "Rendered dashboard TOC anchors must resolve and internal links must not 404."
     }
   ],
-  "handoff_prompt_template": "You are a BoltNews article discovery subagent.\nMode: {mode}\nTarget date: {target_date}\nWeekday: {weekday}\nRecency window: {window_start_iso} to {window_end_iso} ({timezone})\nLane: {lane}\nAssigned section(s): {sections}\nAssigned search items: {items}\nQuery templates: {query_templates}\nTimeouts: search={search_timeout_seconds}s, extraction={extract_timeout_seconds}s, lane={lane_timeout_seconds}s\n\nRules:\n1. Accept only articles published inside the recency window.\n2. Every accepted article requires title/headline, url, source, published_at, fetched_at, tickers/topics, assigned_section, summary/lead paragraph, and extracted_text/body excerpt.\n3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot.\n4. Reject stale, evergreen, quote-page, and headline-only records.\n5. Do not web-search historical context; use prior BoltNews markdown artifacts only.\n6. Prefer Reuters/Bloomberg/WSJ/CNBC/MarketWatch/Yahoo/official releases/central banks/exchanges/regulators.\n7. Return JSON only using the lane output schema.\n",
-  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 24 hours (window starts 2026-06-15T18:00:00-04:00). All search queries include 'June 16, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
-  "generated": "2026-06-16T18:01:05.759401",
+  "handoff_prompt_template": "You are a BoltNews article discovery subagent.\nMode: {mode}\nTarget date: {target_date}\nWeekday: {weekday}\nRecency window: {window_start_iso} to {window_end_iso} ({timezone})\nLane: {lane}\nAssigned section(s): {sections}\nAssigned search items: {items}\nQuery templates: {query_templates}\nTimeouts: search={search_timeout_seconds}s, extraction={extract_timeout_seconds}s, lane={lane_timeout_seconds}s\n\nRules:\n1. Accept only articles published inside the Wall Street session window, not merely the calendar day.\n2. Every accepted article requires title/headline, url, source, published_at, fetched_at, tickers/topics, assigned_section, summary/lead paragraph, and extracted_text/body excerpt.\n3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot. For post-market, reject articles before the 9:30 AM ET cash open.\n4. Reject stale, evergreen, quote-page, and headline-only records.\n5. Do not web-search historical context; use prior BoltNews markdown artifacts only.\n6. Prefer Reuters/Bloomberg/WSJ/CNBC/MarketWatch/Yahoo/official releases/central banks/exchanges/regulators.\n7. Return JSON only using the lane output schema.\n",
+  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 8.5 hours (window starts 2026-06-16T09:30:00-04:00). All search queries include 'June 16, 2026' to enforce recency. DO NOT include articles outside that trading-session window, including prior-day rally articles in a post-market recap. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
+  "generated": "2026-06-16T19:40:55.778926",
   "total_tickers": 148,
   "prioritized_tickers": [
-    "ADBE",
-    "ORCL",
-    "APLD",
-    "RGTI",
-    "RDW",
-    "ASTS",
-    "IONQ",
-    "NVTS",
-    "QBTS",
-    "SOFI",
-    "SATS",
-    "LITE",
-    "CIFR",
-    "AAOI",
-    "SMCI",
-    "AAL",
-    "AXTI",
-    "WDAY",
-    "MSTR",
-    "CVNA",
-    "BE",
-    "CRWV",
-    "COIN",
-    "WDC",
-    "ON",
+    "HPQ",
+    "NTAP",
     "CRM",
-    "RDDT",
-    "ALAB",
-    "NUVL",
-    "SNDK",
-    "CRCL",
+    "ZS",
     "SNOW",
-    "MCHP",
-    "NOW",
-    "RKLB",
-    "ROKU",
-    "MPWR",
     "HPE",
-    "VST",
-    "UAL",
-    "TER",
-    "QCOM",
+    "MDB",
+    "OKTA",
     "MRVL",
-    "COHR",
-    "DDOG",
-    "BSX",
-    "HOOD",
-    "APP",
-    "INTU",
-    "VRT"
+    "PANW",
+    "DELL",
+    "CIEN",
+    "CRWD",
+    "ADSK",
+    "SNPS",
+    "AZO",
+    "COST",
+    "AVGO",
+    "ONDS",
+    "OKLO",
+    "IONQ",
+    "ASTS",
+    "IT",
+    "RDW",
+    "RGTI",
+    "SMCI",
+    "SOFI",
+    "PINS",
+    "LITE",
+    "AAOI",
+    "MSTR",
+    "WDAY",
+    "HUBS",
+    "BE",
+    "COIN",
+    "CRWV",
+    "ON",
+    "WDC",
+    "FSLR",
+    "TEAM",
+    "CRCL",
+    "ALAB",
+    "RDDT",
+    "SNDK",
+    "XPO",
+    "RKLB",
+    "GDDY",
+    "NOW",
+    "UNP",
+    "QCOM"
   ],
   "topics": [
     "Tuesday market close",
@@ -414,7 +419,7 @@
   ],
   "search_queries": [
     {
-      "id": "ticker-adbe",
+      "id": "ticker-hpq",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -422,13 +427,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "ADBE",
-      "name": "ADOBE INC",
+      "ticker": "HPQ",
+      "name": "HP INC",
       "queries": [
-        "ADBE stock news today June 16, 2026",
-        "ADBE Software - Application news June 16, 2026",
-        "ADBE earnings guidance analyst rating June 16, 2026",
-        "ADBE shares premarket after hours June 16, 2026"
+        "HPQ stock news today June 16, 2026",
+        "HPQ Computer Hardware news June 16, 2026",
+        "HPQ earnings guidance analyst rating June 16, 2026",
+        "HPQ shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -436,7 +441,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-orcl",
+      "id": "ticker-ntap",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -444,519 +449,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "ORCL",
-      "name": "ORACLE CORP",
+      "ticker": "NTAP",
+      "name": "NETAPP INC",
       "queries": [
-        "ORCL stock news today June 16, 2026",
-        "ORCL Software - Infrastructure news June 16, 2026",
-        "ORCL earnings guidance analyst rating June 16, 2026",
-        "ORCL shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-apld",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "APLD",
-      "name": "APPLIED DIGITAL",
-      "queries": [
-        "APLD stock news today June 16, 2026",
-        "APLD Information Technology Services news June 16, 2026",
-        "APLD earnings guidance analyst rating June 16, 2026",
-        "APLD shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-rgti",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "RGTI",
-      "name": "RIGETTI COMPUTIN",
-      "queries": [
-        "RGTI stock news today June 16, 2026",
-        "RGTI Computer Hardware news June 16, 2026",
-        "RGTI earnings guidance analyst rating June 16, 2026",
-        "RGTI shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-rdw",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "RDW",
-      "name": "REDWIRE CORP",
-      "queries": [
-        "RDW stock news today June 16, 2026",
-        "RDW Aerospace & Defense news June 16, 2026",
-        "RDW earnings guidance analyst rating June 16, 2026",
-        "RDW shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-asts",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "ASTS",
-      "name": "AST SPACEMOBILE",
-      "queries": [
-        "ASTS stock news today June 16, 2026",
-        "ASTS Communication Equipment news June 16, 2026",
-        "ASTS earnings guidance analyst rating June 16, 2026",
-        "ASTS shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-ionq",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "IONQ",
-      "name": "IONQ INC",
-      "queries": [
-        "IONQ stock news today June 16, 2026",
-        "IONQ Computer Hardware news June 16, 2026",
-        "IONQ earnings guidance analyst rating June 16, 2026",
-        "IONQ shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-nvts",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "NVTS",
-      "name": "NAVITAS SEMICOND",
-      "queries": [
-        "NVTS stock news today June 16, 2026",
-        "NVTS Semiconductors news June 16, 2026",
-        "NVTS earnings guidance analyst rating June 16, 2026",
-        "NVTS shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-qbts",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "QBTS",
-      "name": "D-WAVE QUANTUM I",
-      "queries": [
-        "QBTS stock news today June 16, 2026",
-        "QBTS Computer Hardware news June 16, 2026",
-        "QBTS earnings guidance analyst rating June 16, 2026",
-        "QBTS shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-sofi",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "SOFI",
-      "name": "SOFI TECHNOLOGIE",
-      "queries": [
-        "SOFI stock news today June 16, 2026",
-        "SOFI Credit Services news June 16, 2026",
-        "SOFI earnings guidance analyst rating June 16, 2026",
-        "SOFI shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-sats",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "SATS",
-      "name": "ECHOSTAR CORP-A",
-      "queries": [
-        "SATS stock news today June 16, 2026",
-        "SATS Telecom Services news June 16, 2026",
-        "SATS earnings guidance analyst rating June 16, 2026",
-        "SATS shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-lite",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "LITE",
-      "name": "LUMENTUM HOL",
-      "queries": [
-        "LITE stock news today June 16, 2026",
-        "LITE Communication Equipment news June 16, 2026",
-        "LITE earnings guidance analyst rating June 16, 2026",
-        "LITE shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-cifr",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "CIFR",
-      "name": "CIPHER DIGITAL I",
-      "queries": [
-        "CIFR stock news today June 16, 2026",
-        "CIFR Information Technology Services news June 16, 2026",
-        "CIFR earnings guidance analyst rating June 16, 2026",
-        "CIFR shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-aaoi",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "AAOI",
-      "name": "APPLIED OPTOELEC",
-      "queries": [
-        "AAOI stock news today June 16, 2026",
-        "AAOI Communication Equipment news June 16, 2026",
-        "AAOI earnings guidance analyst rating June 16, 2026",
-        "AAOI shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-smci",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "SMCI",
-      "name": "SUPER MICRO COMP",
-      "queries": [
-        "SMCI stock news today June 16, 2026",
-        "SMCI Computer Hardware news June 16, 2026",
-        "SMCI earnings guidance analyst rating June 16, 2026",
-        "SMCI shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-aal",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "AAL",
-      "name": "AMERICAN AIRLINE",
-      "queries": [
-        "AAL stock news today June 16, 2026",
-        "AAL Airlines news June 16, 2026",
-        "AAL earnings guidance analyst rating June 16, 2026",
-        "AAL shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-axti",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "AXTI",
-      "name": "AXT INC",
-      "queries": [
-        "AXTI stock news today June 16, 2026",
-        "AXTI Semiconductor Equipment & Materials news June 16, 2026",
-        "AXTI earnings guidance analyst rating June 16, 2026",
-        "AXTI shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-wday",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "WDAY",
-      "name": "WORKDAY INC-A",
-      "queries": [
-        "WDAY stock news today June 16, 2026",
-        "WDAY Software - Application news June 16, 2026",
-        "WDAY earnings guidance analyst rating June 16, 2026",
-        "WDAY shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-mstr",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "MSTR",
-      "name": "STRATEGY INC",
-      "queries": [
-        "MSTR stock news today June 16, 2026",
-        "MSTR Software - Application news June 16, 2026",
-        "MSTR earnings guidance analyst rating June 16, 2026",
-        "MSTR shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-cvna",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "CVNA",
-      "name": "CARVANA CO",
-      "queries": [
-        "CVNA stock news today June 16, 2026",
-        "CVNA Auto & Truck Dealerships news June 16, 2026",
-        "CVNA earnings guidance analyst rating June 16, 2026",
-        "CVNA shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-be",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "BE",
-      "name": "BLOOM ENERGY C-A",
-      "queries": [
-        "BE stock news today June 16, 2026",
-        "BE Electrical Equipment & Parts news June 16, 2026",
-        "BE earnings guidance analyst rating June 16, 2026",
-        "BE shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-crwv",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "CRWV",
-      "name": "COREWEAVE I-CL A",
-      "queries": [
-        "CRWV stock news today June 16, 2026",
-        "CRWV Software - Infrastructure news June 16, 2026",
-        "CRWV earnings guidance analyst rating June 16, 2026",
-        "CRWV shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-coin",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "COIN",
-      "name": "COINBASE GLOBA-A",
-      "queries": [
-        "COIN stock news today June 16, 2026",
-        "COIN Financial Data & Stock Exchanges news June 16, 2026",
-        "COIN earnings guidance analyst rating June 16, 2026",
-        "COIN shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-wdc",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "WDC",
-      "name": "WESTERN DIGITAL",
-      "queries": [
-        "WDC stock news today June 16, 2026",
-        "WDC Computer Hardware news June 16, 2026",
-        "WDC earnings guidance analyst rating June 16, 2026",
-        "WDC shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-on",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "ON",
-      "name": "ON SEMICONDUCTOR",
-      "queries": [
-        "ON stock news today June 16, 2026",
-        "ON Semiconductors news June 16, 2026",
-        "ON earnings guidance analyst rating June 16, 2026",
-        "ON shares premarket after hours June 16, 2026"
+        "NTAP stock news today June 16, 2026",
+        "NTAP Software - Infrastructure news June 16, 2026",
+        "NTAP earnings guidance analyst rating June 16, 2026",
+        "NTAP shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -986,7 +485,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-rddt",
+      "id": "ticker-zs",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -994,101 +493,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "RDDT",
-      "name": "REDDIT INC-A",
+      "ticker": "ZS",
+      "name": "ZSCALER INC",
       "queries": [
-        "RDDT stock news today June 16, 2026",
-        "RDDT Internet Content & Information news June 16, 2026",
-        "RDDT earnings guidance analyst rating June 16, 2026",
-        "RDDT shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-alab",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "ALAB",
-      "name": "ASTERA LABS INC",
-      "queries": [
-        "ALAB stock news today June 16, 2026",
-        "ALAB Semiconductors news June 16, 2026",
-        "ALAB earnings guidance analyst rating June 16, 2026",
-        "ALAB shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-nuvl",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "NUVL",
-      "name": "NUVALENT INC-A",
-      "queries": [
-        "NUVL stock news today June 16, 2026",
-        "NUVL Biotechnology news June 16, 2026",
-        "NUVL earnings guidance analyst rating June 16, 2026",
-        "NUVL shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-sndk",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "SNDK",
-      "name": "SANDISK CORP",
-      "queries": [
-        "SNDK stock news today June 16, 2026",
-        "SNDK Computer Hardware news June 16, 2026",
-        "SNDK earnings guidance analyst rating June 16, 2026",
-        "SNDK shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-crcl",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "CRCL",
-      "name": "CIRCLE INTERNET",
-      "queries": [
-        "CRCL stock news today June 16, 2026",
-        "CRCL Capital Markets news June 16, 2026",
-        "CRCL earnings guidance analyst rating June 16, 2026",
-        "CRCL shares premarket after hours June 16, 2026"
+        "ZS stock news today June 16, 2026",
+        "ZS Software - Infrastructure news June 16, 2026",
+        "ZS earnings guidance analyst rating June 16, 2026",
+        "ZS shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1118,116 +529,6 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-mchp",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "MCHP",
-      "name": "MICROCHIP TECH",
-      "queries": [
-        "MCHP stock news today June 16, 2026",
-        "MCHP Semiconductors news June 16, 2026",
-        "MCHP earnings guidance analyst rating June 16, 2026",
-        "MCHP shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-now",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "NOW",
-      "name": "SERVICENOW INC",
-      "queries": [
-        "NOW stock news today June 16, 2026",
-        "NOW Software - Application news June 16, 2026",
-        "NOW earnings guidance analyst rating June 16, 2026",
-        "NOW shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-rklb",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "RKLB",
-      "name": "ROCKET LAB CORP",
-      "queries": [
-        "RKLB stock news today June 16, 2026",
-        "RKLB Aerospace & Defense news June 16, 2026",
-        "RKLB earnings guidance analyst rating June 16, 2026",
-        "RKLB shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-roku",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "ROKU",
-      "name": "ROKU INC",
-      "queries": [
-        "ROKU stock news today June 16, 2026",
-        "ROKU Entertainment news June 16, 2026",
-        "ROKU earnings guidance analyst rating June 16, 2026",
-        "ROKU shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-mpwr",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "MPWR",
-      "name": "MONOLITHIC POWER",
-      "queries": [
-        "MPWR stock news today June 16, 2026",
-        "MPWR Semiconductors news June 16, 2026",
-        "MPWR earnings guidance analyst rating June 16, 2026",
-        "MPWR shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
       "id": "ticker-hpe",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
@@ -1250,7 +551,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-vst",
+      "id": "ticker-mdb",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1258,13 +559,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "VST",
-      "name": "VISTRA CORP",
+      "ticker": "MDB",
+      "name": "MONGODB INC",
       "queries": [
-        "VST stock news today June 16, 2026",
-        "VST Utilities - Independent Power Producers news June 16, 2026",
-        "VST earnings guidance analyst rating June 16, 2026",
-        "VST shares premarket after hours June 16, 2026"
+        "MDB stock news today June 16, 2026",
+        "MDB Software - Infrastructure news June 16, 2026",
+        "MDB earnings guidance analyst rating June 16, 2026",
+        "MDB shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1272,7 +573,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-ual",
+      "id": "ticker-okta",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1280,57 +581,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "UAL",
-      "name": "UNITED AIRLINES",
+      "ticker": "OKTA",
+      "name": "OKTA INC",
       "queries": [
-        "UAL stock news today June 16, 2026",
-        "UAL Airlines news June 16, 2026",
-        "UAL earnings guidance analyst rating June 16, 2026",
-        "UAL shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-ter",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "TER",
-      "name": "TERADYNE INC",
-      "queries": [
-        "TER stock news today June 16, 2026",
-        "TER Semiconductor Equipment & Materials news June 16, 2026",
-        "TER earnings guidance analyst rating June 16, 2026",
-        "TER shares premarket after hours June 16, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-qcom",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Earnings and Corporate Developments",
-        "Equity Market Internals"
-      ],
-      "ticker": "QCOM",
-      "name": "QUALCOMM INC",
-      "queries": [
-        "QCOM stock news today June 16, 2026",
-        "QCOM Semiconductors news June 16, 2026",
-        "QCOM earnings guidance analyst rating June 16, 2026",
-        "QCOM shares premarket after hours June 16, 2026"
+        "OKTA stock news today June 16, 2026",
+        "OKTA Software - Infrastructure news June 16, 2026",
+        "OKTA earnings guidance analyst rating June 16, 2026",
+        "OKTA shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1360,7 +617,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-cohr",
+      "id": "ticker-panw",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1368,13 +625,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "COHR",
-      "name": "COHERENT CORP",
+      "ticker": "PANW",
+      "name": "PALO ALTO NETWOR",
       "queries": [
-        "COHR stock news today June 16, 2026",
-        "COHR Scientific & Technical Instruments news June 16, 2026",
-        "COHR earnings guidance analyst rating June 16, 2026",
-        "COHR shares premarket after hours June 16, 2026"
+        "PANW stock news today June 16, 2026",
+        "PANW Software - Infrastructure news June 16, 2026",
+        "PANW earnings guidance analyst rating June 16, 2026",
+        "PANW shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1382,7 +639,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-ddog",
+      "id": "ticker-dell",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1390,13 +647,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "DDOG",
-      "name": "DATADOG INC-A",
+      "ticker": "DELL",
+      "name": "DELL TECHN-C",
       "queries": [
-        "DDOG stock news today June 16, 2026",
-        "DDOG Software - Application news June 16, 2026",
-        "DDOG earnings guidance analyst rating June 16, 2026",
-        "DDOG shares premarket after hours June 16, 2026"
+        "DELL stock news today June 16, 2026",
+        "DELL Computer Hardware news June 16, 2026",
+        "DELL earnings guidance analyst rating June 16, 2026",
+        "DELL shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1404,7 +661,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-bsx",
+      "id": "ticker-cien",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1412,13 +669,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "BSX",
-      "name": "BOSTON SCIENTIFC",
+      "ticker": "CIEN",
+      "name": "CIENA CORP",
       "queries": [
-        "BSX stock news today June 16, 2026",
-        "BSX Medical Devices news June 16, 2026",
-        "BSX earnings guidance analyst rating June 16, 2026",
-        "BSX shares premarket after hours June 16, 2026"
+        "CIEN stock news today June 16, 2026",
+        "CIEN Communication Equipment news June 16, 2026",
+        "CIEN earnings guidance analyst rating June 16, 2026",
+        "CIEN shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1426,7 +683,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-hood",
+      "id": "ticker-crwd",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1434,13 +691,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "HOOD",
-      "name": "ROBINHOOD MARK-A",
+      "ticker": "CRWD",
+      "name": "CROWDSTRIKE HO-A",
       "queries": [
-        "HOOD stock news today June 16, 2026",
-        "HOOD Capital Markets news June 16, 2026",
-        "HOOD earnings guidance analyst rating June 16, 2026",
-        "HOOD shares premarket after hours June 16, 2026"
+        "CRWD stock news today June 16, 2026",
+        "CRWD Software - Infrastructure news June 16, 2026",
+        "CRWD earnings guidance analyst rating June 16, 2026",
+        "CRWD shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1448,7 +705,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-app",
+      "id": "ticker-adsk",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1456,13 +713,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "APP",
-      "name": "APPLOVIN CO-CL A",
+      "ticker": "ADSK",
+      "name": "AUTODESK INC",
       "queries": [
-        "APP stock news today June 16, 2026",
-        "APP Advertising Agencies news June 16, 2026",
-        "APP earnings guidance analyst rating June 16, 2026",
-        "APP shares premarket after hours June 16, 2026"
+        "ADSK stock news today June 16, 2026",
+        "ADSK Software - Application news June 16, 2026",
+        "ADSK earnings guidance analyst rating June 16, 2026",
+        "ADSK shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1470,7 +727,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-intu",
+      "id": "ticker-snps",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1478,13 +735,13 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "INTU",
-      "name": "INTUIT INC",
+      "ticker": "SNPS",
+      "name": "SYNOPSYS INC",
       "queries": [
-        "INTU stock news today June 16, 2026",
-        "INTU Software - Application news June 16, 2026",
-        "INTU earnings guidance analyst rating June 16, 2026",
-        "INTU shares premarket after hours June 16, 2026"
+        "SNPS stock news today June 16, 2026",
+        "SNPS Software - Infrastructure news June 16, 2026",
+        "SNPS earnings guidance analyst rating June 16, 2026",
+        "SNPS shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1492,7 +749,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-vrt",
+      "id": "ticker-azo",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1500,13 +757,761 @@
         "Earnings and Corporate Developments",
         "Equity Market Internals"
       ],
-      "ticker": "VRT",
-      "name": "VERTIV HOLDING-A",
+      "ticker": "AZO",
+      "name": "AUTOZONE INC",
       "queries": [
-        "VRT stock news today June 16, 2026",
-        "VRT Electrical Equipment & Parts news June 16, 2026",
-        "VRT earnings guidance analyst rating June 16, 2026",
-        "VRT shares premarket after hours June 16, 2026"
+        "AZO stock news today June 16, 2026",
+        "AZO Auto Parts news June 16, 2026",
+        "AZO earnings guidance analyst rating June 16, 2026",
+        "AZO shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cost",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "COST",
+      "name": "COSTCO WHOLESALE",
+      "queries": [
+        "COST stock news today June 16, 2026",
+        "COST Discount Stores news June 16, 2026",
+        "COST earnings guidance analyst rating June 16, 2026",
+        "COST shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-avgo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "AVGO",
+      "name": "BROADCOM INC",
+      "queries": [
+        "AVGO stock news today June 16, 2026",
+        "AVGO Semiconductors news June 16, 2026",
+        "AVGO earnings guidance analyst rating June 16, 2026",
+        "AVGO shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-onds",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ONDS",
+      "name": "ONDAS HOLDINGS I",
+      "queries": [
+        "ONDS stock news today June 16, 2026",
+        "ONDS Communication Equipment news June 16, 2026",
+        "ONDS earnings guidance analyst rating June 16, 2026",
+        "ONDS shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-oklo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "OKLO",
+      "name": "OKLO INC",
+      "queries": [
+        "OKLO stock news today June 16, 2026",
+        "OKLO Utilities - Independent Power Producers news June 16, 2026",
+        "OKLO earnings guidance analyst rating June 16, 2026",
+        "OKLO shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-ionq",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "IONQ",
+      "name": "IONQ INC",
+      "queries": [
+        "IONQ stock news today June 16, 2026",
+        "IONQ Computer Hardware news June 16, 2026",
+        "IONQ earnings guidance analyst rating June 16, 2026",
+        "IONQ shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-asts",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ASTS",
+      "name": "AST SPACEMOBILE",
+      "queries": [
+        "ASTS stock news today June 16, 2026",
+        "ASTS Communication Equipment news June 16, 2026",
+        "ASTS earnings guidance analyst rating June 16, 2026",
+        "ASTS shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-it",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "IT",
+      "name": "GARTNER INC",
+      "queries": [
+        "IT stock news today June 16, 2026",
+        "IT Information Technology Services news June 16, 2026",
+        "IT earnings guidance analyst rating June 16, 2026",
+        "IT shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rdw",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RDW",
+      "name": "REDWIRE CORP",
+      "queries": [
+        "RDW stock news today June 16, 2026",
+        "RDW Aerospace & Defense news June 16, 2026",
+        "RDW earnings guidance analyst rating June 16, 2026",
+        "RDW shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rgti",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RGTI",
+      "name": "RIGETTI COMPUTIN",
+      "queries": [
+        "RGTI stock news today June 16, 2026",
+        "RGTI Computer Hardware news June 16, 2026",
+        "RGTI earnings guidance analyst rating June 16, 2026",
+        "RGTI shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-smci",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SMCI",
+      "name": "SUPER MICRO COMP",
+      "queries": [
+        "SMCI stock news today June 16, 2026",
+        "SMCI Computer Hardware news June 16, 2026",
+        "SMCI earnings guidance analyst rating June 16, 2026",
+        "SMCI shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sofi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SOFI",
+      "name": "SOFI TECHNOLOGIE",
+      "queries": [
+        "SOFI stock news today June 16, 2026",
+        "SOFI Credit Services news June 16, 2026",
+        "SOFI earnings guidance analyst rating June 16, 2026",
+        "SOFI shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-pins",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "PINS",
+      "name": "PINTEREST INC -A",
+      "queries": [
+        "PINS stock news today June 16, 2026",
+        "PINS Internet Content & Information news June 16, 2026",
+        "PINS earnings guidance analyst rating June 16, 2026",
+        "PINS shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-lite",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "LITE",
+      "name": "LUMENTUM HOL",
+      "queries": [
+        "LITE stock news today June 16, 2026",
+        "LITE Communication Equipment news June 16, 2026",
+        "LITE earnings guidance analyst rating June 16, 2026",
+        "LITE shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-aaoi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "AAOI",
+      "name": "APPLIED OPTOELEC",
+      "queries": [
+        "AAOI stock news today June 16, 2026",
+        "AAOI Communication Equipment news June 16, 2026",
+        "AAOI earnings guidance analyst rating June 16, 2026",
+        "AAOI shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mstr",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "MSTR",
+      "name": "STRATEGY INC",
+      "queries": [
+        "MSTR stock news today June 16, 2026",
+        "MSTR Software - Application news June 16, 2026",
+        "MSTR earnings guidance analyst rating June 16, 2026",
+        "MSTR shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-wday",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "WDAY",
+      "name": "WORKDAY INC-A",
+      "queries": [
+        "WDAY stock news today June 16, 2026",
+        "WDAY Software - Application news June 16, 2026",
+        "WDAY earnings guidance analyst rating June 16, 2026",
+        "WDAY shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-hubs",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "HUBS",
+      "name": "HUBSPOT INC",
+      "queries": [
+        "HUBS stock news today June 16, 2026",
+        "HUBS Software - Application news June 16, 2026",
+        "HUBS earnings guidance analyst rating June 16, 2026",
+        "HUBS shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-be",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "BE",
+      "name": "BLOOM ENERGY C-A",
+      "queries": [
+        "BE stock news today June 16, 2026",
+        "BE Electrical Equipment & Parts news June 16, 2026",
+        "BE earnings guidance analyst rating June 16, 2026",
+        "BE shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-coin",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "COIN",
+      "name": "COINBASE GLOBA-A",
+      "queries": [
+        "COIN stock news today June 16, 2026",
+        "COIN Financial Data & Stock Exchanges news June 16, 2026",
+        "COIN earnings guidance analyst rating June 16, 2026",
+        "COIN shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crwv",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "CRWV",
+      "name": "COREWEAVE I-CL A",
+      "queries": [
+        "CRWV stock news today June 16, 2026",
+        "CRWV Software - Infrastructure news June 16, 2026",
+        "CRWV earnings guidance analyst rating June 16, 2026",
+        "CRWV shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-on",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ON",
+      "name": "ON SEMICONDUCTOR",
+      "queries": [
+        "ON stock news today June 16, 2026",
+        "ON Semiconductors news June 16, 2026",
+        "ON earnings guidance analyst rating June 16, 2026",
+        "ON shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-wdc",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "WDC",
+      "name": "WESTERN DIGITAL",
+      "queries": [
+        "WDC stock news today June 16, 2026",
+        "WDC Computer Hardware news June 16, 2026",
+        "WDC earnings guidance analyst rating June 16, 2026",
+        "WDC shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-fslr",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "FSLR",
+      "name": "FIRST SOLAR INC",
+      "queries": [
+        "FSLR stock news today June 16, 2026",
+        "FSLR Solar news June 16, 2026",
+        "FSLR earnings guidance analyst rating June 16, 2026",
+        "FSLR shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-team",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "TEAM",
+      "name": "ATLASSIAN CORP-A",
+      "queries": [
+        "TEAM stock news today June 16, 2026",
+        "TEAM Software - Application news June 16, 2026",
+        "TEAM earnings guidance analyst rating June 16, 2026",
+        "TEAM shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crcl",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "CRCL",
+      "name": "CIRCLE INTERNET",
+      "queries": [
+        "CRCL stock news today June 16, 2026",
+        "CRCL Capital Markets news June 16, 2026",
+        "CRCL earnings guidance analyst rating June 16, 2026",
+        "CRCL shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-alab",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ALAB",
+      "name": "ASTERA LABS INC",
+      "queries": [
+        "ALAB stock news today June 16, 2026",
+        "ALAB Semiconductors news June 16, 2026",
+        "ALAB earnings guidance analyst rating June 16, 2026",
+        "ALAB shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rddt",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RDDT",
+      "name": "REDDIT INC-A",
+      "queries": [
+        "RDDT stock news today June 16, 2026",
+        "RDDT Internet Content & Information news June 16, 2026",
+        "RDDT earnings guidance analyst rating June 16, 2026",
+        "RDDT shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sndk",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SNDK",
+      "name": "SANDISK CORP",
+      "queries": [
+        "SNDK stock news today June 16, 2026",
+        "SNDK Computer Hardware news June 16, 2026",
+        "SNDK earnings guidance analyst rating June 16, 2026",
+        "SNDK shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-xpo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "XPO",
+      "name": "XPO INC",
+      "queries": [
+        "XPO stock news today June 16, 2026",
+        "XPO Trucking news June 16, 2026",
+        "XPO earnings guidance analyst rating June 16, 2026",
+        "XPO shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rklb",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RKLB",
+      "name": "ROCKET LAB CORP",
+      "queries": [
+        "RKLB stock news today June 16, 2026",
+        "RKLB Aerospace & Defense news June 16, 2026",
+        "RKLB earnings guidance analyst rating June 16, 2026",
+        "RKLB shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-gddy",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "GDDY",
+      "name": "GODADDY INC-A",
+      "queries": [
+        "GDDY stock news today June 16, 2026",
+        "GDDY Software - Infrastructure news June 16, 2026",
+        "GDDY earnings guidance analyst rating June 16, 2026",
+        "GDDY shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-now",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "NOW",
+      "name": "SERVICENOW INC",
+      "queries": [
+        "NOW stock news today June 16, 2026",
+        "NOW Software - Application news June 16, 2026",
+        "NOW earnings guidance analyst rating June 16, 2026",
+        "NOW shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-unp",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "UNP",
+      "name": "UNION PAC CORP",
+      "queries": [
+        "UNP stock news today June 16, 2026",
+        "UNP Railroads news June 16, 2026",
+        "UNP earnings guidance analyst rating June 16, 2026",
+        "UNP shares premarket after hours June 16, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-qcom",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "QCOM",
+      "name": "QUALCOMM INC",
+      "queries": [
+        "QCOM stock news today June 16, 2026",
+        "QCOM Semiconductors news June 16, 2026",
+        "QCOM earnings guidance analyst rating June 16, 2026",
+        "QCOM shares premarket after hours June 16, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1540,7 +1545,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1573,7 +1580,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1606,7 +1615,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1638,7 +1649,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1670,7 +1683,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1702,7 +1717,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1734,7 +1751,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1766,7 +1785,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1798,7 +1819,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1830,7 +1853,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1862,7 +1887,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1894,7 +1921,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1926,7 +1955,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1958,7 +1989,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -1990,7 +2023,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -2022,7 +2057,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -2054,7 +2091,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }
@@ -2086,7 +2125,9 @@
       "freshness_required": true,
       "article_acceptance": {
         "require_published_at": true,
-        "max_age_hours": 24,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-06-16T09:30:00-04:00",
+        "window_end_iso": "2026-06-16T18:00:00-04:00",
         "require_market_relevance": true,
         "reject_summary_only": true
       }

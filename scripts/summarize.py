@@ -13,10 +13,12 @@ from collections import defaultdict
 from datetime import datetime, timedelta, date
 from pathlib import Path
 
+from session_logic import article_in_window, session_window
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # === RECENCY GATES ===
-MAX_NEWS_HOURS = 48  # Hard cutoff: articles older than this are REJECTED
+MAX_NEWS_HOURS = 48  # Legacy hard cutoff; session_window is stricter for weekday runs
 STALE_WARN_HOURS = 24  # Articles older than this get a [24h+] age flag
 
 # Stale indicators — comprehensive patterns that signal >48h content
@@ -111,6 +113,19 @@ def is_article_stale(article: dict, max_hours: int, run_date_str: str) -> tuple[
     
     # Method 3: No evidence of staleness → accept with unknown age
     return False, None
+
+
+def session_filter_article(article: dict, mode: str, run_date_str: str) -> tuple[bool, str, float | None]:
+    """Return whether an article belongs to the Wall Street session window."""
+    window = session_window(run_date_str, mode)
+    ok, reason, age_hours = article_in_window(article, window)
+    if not ok:
+        return False, reason, age_hours
+    text = (article.get("title", "") + " " + article.get("description", "")).lower()
+    for pattern in STALE_PATTERNS:
+        if re.search(pattern, text):
+            return False, "stale_text_pattern", age_hours
+    return True, reason, age_hours
 
 
 def categorize_article(article: dict) -> str:
@@ -287,19 +302,20 @@ def main():
     rejected_count = 0
 
     for a in articles:
-        is_stale, age_hours = is_article_stale(a, args.max_hours, args.date)
-        if is_stale:
+        in_window, reason, age_hours = session_filter_article(a, args.mode, args.date)
+        if not in_window:
             if a.get("title") or a.get("description"):
-                a["rejected_reason"] = "stale"
+                a["rejected_reason"] = reason
                 a["age_hours"] = age_hours
                 context_articles.append(a)
             rejected_count += 1
         else:
-            a["age_hours"] = age_hours  # May be None if no explicit timestamp
+            a["age_hours"] = age_hours
+            a["session_window_status"] = reason
             fresh_articles.append(a)
 
-    print(f"Recency filter ({args.max_hours}h): "
-          f"{len(articles)} → {len(fresh_articles)} fresh, "
+    print(f"Session-window filter ({args.mode} {args.date}): "
+          f"{len(articles)} → {len(fresh_articles)} inside window, "
           f"{len(context_articles)} context, {rejected_count} rejected")
 
     stale_stats = {

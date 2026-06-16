@@ -15,6 +15,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from session_logic import article_in_window, session_window
+
 REQUIRED_SEARCH_PLAN_KEYS = {
     "schema_version",
     "recency",
@@ -62,6 +64,24 @@ REQUIRED_SECTIONS = {
 }
 
 PLAN_SHAPED_KEYS = {"search_queries", "prioritized_tickers", "recency_warning"}
+CONTRADICTION_PHRASES = {
+    "lower": [
+        r"wall street closed higher",
+        r"markets rallied today",
+        r"market rallied today",
+        r"s&p 500\s+\+",
+        r"nasdaq\s+\+",
+        r"technology led the rally",
+        r"equities\s*↑",
+        r"risk-on rotation",
+        r"strong risk-on session",
+    ],
+    "higher": [
+        r"markets sold off today",
+        r"wall street closed lower",
+        r"risk-off session",
+    ],
+}
 
 
 def fail(msg: str) -> None:
@@ -134,22 +154,58 @@ def validate_search_plan(path: Path, mode: str) -> None:
     lanes = data.get("lanes")
     if not isinstance(lanes, list) or len(lanes) < 5:
         fail("search_plan.json lanes must include the multi-agent lane plan")
+    recency = data.get("recency") or {}
+    if not isinstance(recency, dict):
+        fail("search_plan.json recency must be an object")
+    for key in ("window_start_iso", "window_end_iso", "timezone", "calendar"):
+        if not recency.get(key):
+            fail(f"search_plan.json recency missing session/calendar field: {key}")
 
 
-def validate_articles(path: Path, min_articles: int) -> list[dict[str, Any]]:
+def validate_articles(path: Path, min_articles: int, mode: str, run_date: str) -> list[dict[str, Any]]:
     articles = normalize_articles(load_json(path))
     if len(articles) < min_articles:
         fail(f"articles.json has {len(articles)} articles; minimum required is {min_articles}")
     bad = []
+    outside = []
+    window = session_window(run_date, mode)
     for i, a in enumerate(articles):
         title = str(a.get("title") or a.get("headline") or "").strip()
         url = str(a.get("url") or "").strip()
         body = str(a.get("extracted_text") or a.get("content") or a.get("description") or a.get("summary") or "").strip()
         if not title or not url or len(body) < 40:
             bad.append(i)
+        if str(a.get("type") or "").lower() != "market_data":
+            ok, reason, _age = article_in_window(a, window)
+            if not ok:
+                outside.append((i, reason, title[:80]))
     if bad:
         fail(f"articles.json contains {len(bad)} records missing title/url/substantive text; examples={bad[:5]}")
+    if outside:
+        fail(f"articles.json contains {len(outside)} records outside session window; examples={outside[:5]}")
     return articles
+
+
+def validate_market_snapshot(path: Path, mode: str, run_date: str, briefing: str) -> None:
+    if mode == "weekend":
+        return
+    data = load_json(path)
+    if not isinstance(data, dict):
+        fail("market_snapshot.json must be an object")
+    if data.get("date") != run_date or data.get("mode") != mode:
+        fail("market_snapshot.json date/mode does not match run")
+    direction = str(data.get("market_direction") or "unknown").lower()
+    if direction not in {"higher", "lower", "mixed"}:
+        fail(f"market_snapshot.json has invalid market_direction: {direction}")
+    symbols = data.get("symbols") or {}
+    for required in ("sp500", "nasdaq", "dow"):
+        row = symbols.get(required) or {}
+        if not isinstance(row.get("pct_change"), (int, float)):
+            fail(f"market_snapshot.json missing pct_change for {required}")
+    text = briefing.lower()
+    hits = [pat for pat in CONTRADICTION_PHRASES.get(direction, []) if re.search(pat, text)]
+    if hits:
+        fail(f"briefing.md contradicts market_snapshot direction={direction}; matched phrases={hits[:5]}")
 
 
 def validate_dashboard(path: Path) -> None:
@@ -183,13 +239,14 @@ def main() -> None:
     min_articles = args.min_articles if args.min_articles is not None else (5 if args.mode == "weekend" else 8)
 
     validate_search_plan(run_dir / "search_plan.json", args.mode)
-    articles = validate_articles(run_dir / "articles.json", min_articles)
+    articles = validate_articles(run_dir / "articles.json", min_articles, args.mode, args.date)
 
     briefing_path = run_dir / "briefing.md"
     if not briefing_path.exists() or briefing_path.stat().st_size < 2_000:
         fail(f"briefing.md missing or too small: {briefing_path}")
     briefing = briefing_path.read_text(errors="replace")
     validate_sections(briefing, args.mode)
+    validate_market_snapshot(run_dir / "market_snapshot.json", args.mode, args.date, briefing)
 
     summary_path = run_dir / "summary.md"
     if not summary_path.exists() or summary_path.stat().st_size < 200:

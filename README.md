@@ -119,12 +119,19 @@ Timeout defaults:
    - Fails closed on missing, invalid, zero-article, or search-plan-shaped article feeds.
 
 6. Deterministic run validation: `scripts/validate_run.py`
-   - Blocks deploy/final success if required artifacts are missing, malformed, stale-plan-shaped, section-incomplete, or link-only.
-   - Validates `search_plan.json`, `articles.json`, `briefing.md`, `summary.md`, and `dashboard.html` before cron can report success.
+   - Blocks deploy/final success if required artifacts are missing, malformed, stale-plan-shaped, section-incomplete, link-only, outside the Wall Street session window, or contradicted by market prices.
+   - Validates `search_plan.json`, `articles.json`, `briefing.md`, `summary.md`, `market_snapshot.json` for weekday runs, and `dashboard.html` before cron can report success.
+   - Uses `scripts/session_logic.py` for NYSE-like holiday/weekend logic and pre/post-market acceptance windows.
 
-7. Deploy and propagation: `scripts/deploy.py`
+7. Deterministic market snapshot: `scripts/market_snapshot.py`
+   - Writes `market_snapshot.json` before validation for weekday runs.
+   - Cross-checks S&P 500, Nasdaq, Dow, Russell 2000, VIX, SPY, QQQ, and IWM.
+   - Prevents the LLM from claiming a broad advance when the broad tape closed lower.
+
+8. Deploy and propagation: `scripts/deploy.py`
    - Pushes run artifacts to `main`.
    - Pushes the static dashboard to `gh-pages`.
+   - Requires weekday `market_snapshot.json` and propagates it to `data/runs/{date}/{mode}/`.
 
 ## GitHub Pages propagation
 
@@ -141,13 +148,13 @@ Timeout defaults:
      - `data/index.html`
    - Writes `.nojekyll` so GitHub Pages serves markdown/data files literally.
 
-7. Temporal reasoning consolidation: `scripts/reasoning_consolidate.py`
+9. Temporal reasoning consolidation: `scripts/reasoning_consolidate.py`
    - Auto-triggered after pre-market runs.
    - Compares post-market vs pre-market data points.
    - Produces `temporal_brief.md` and `temporal_diff.json`.
    - Never revert to mechanical concatenation.
 
-8. Weekly rollup: `scripts/weekly_rollup.py`
+10. Weekly rollup: `scripts/weekly_rollup.py`
    - Aggregates week artifacts and temporal briefs.
    - Produces a weekly research synthesis.
 

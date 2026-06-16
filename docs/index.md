@@ -59,9 +59,13 @@ runs/{YYYY-MM-DD}/{mode}/briefing.md
 ## Deterministic safeguards
 
 - `scripts/validate_run.py` is the guardrail before deploy/final success.
+- `scripts/session_logic.py` defines the Wall Street session window and NYSE-like holiday calendar.
+- `scripts/market_snapshot.py` writes deterministic price evidence to `market_snapshot.json` for weekday runs.
 - It rejects missing artifacts, malformed JSON, `articles.json` accidentally containing a search plan, section-incomplete briefings, zero-article feeds, and link-only dashboards.
 - `scripts/run_pipeline.py` preserves existing agent-populated run artifacts by default. Use `--fresh` only when intentionally discarding a run; cron should not use `--fresh` after article/briefing synthesis.
-- `scripts/deploy.py` treats main-branch push failure, unreadable article feeds, zero articles, and stale article ages as deploy-blocking errors.
+- `scripts/deploy.py` treats main-branch push failure, unreadable article feeds, zero articles, missing weekday market snapshots, and stale article ages as deploy-blocking errors.
+- Weekday runs fail closed if `briefing.md` contradicts `market_snapshot.json` direction (for example, claiming a broad advance when S&P 500/Nasdaq closed lower).
+- Post-market article acceptance is narrowed to the cash-session/immediate-after-hours window: 09:30–18:00 ET.
 
 After deploy, verify cache-busted live URLs:
 

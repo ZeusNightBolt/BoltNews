@@ -245,7 +245,27 @@ if result.returncode != 0:
     print("Skipping deploy — dashboard is required.", file=sys.stderr)
     sys.exit(1)
 
-print("[5b/7] Validating run artifacts before deploy/reporting success...")
+# ═══════════════════════
+# Stage 5b: Deterministic Market Snapshot
+# ═══════════════════════
+if args.mode != "weekend":
+    print("[5b/8] Fetching deterministic market snapshot...")
+    result = safe_run(
+        [
+            "python3.12", str(SCRIPTS_DIR / "market_snapshot.py"),
+            "--output", str(run_dir / "market_snapshot.json"),
+            "--mode", args.mode,
+            "--date", run_date,
+        ],
+        timeout=90, label="market_snapshot",
+    )
+    if result.returncode != 0:
+        print("FATAL: Market snapshot failed. Refusing to let LLM infer market direction.", file=sys.stderr)
+        sys.exit(1)
+else:
+    print("[5b/8] Market snapshot: skipped (weekend mode)")
+
+print("[5c/8] Validating run artifacts before deploy/reporting success...")
 result = safe_run(
     [
         "python3.12", str(SCRIPTS_DIR / "validate_run.py"),
@@ -263,9 +283,9 @@ if result.returncode != 0:
 # Stage 6: Deploy to GitHub Pages
 # ═══════════════════════
 if args.skip_deploy:
-    print("[6/7] Deploy: SKIPPED (--skip-deploy)")
+    print("[6/8] Deploy: SKIPPED (--skip-deploy)")
 else:
-    print("[6/7] Deploying to GitHub + GitHub Pages...")
+    print("[6/8] Deploying to GitHub + GitHub Pages...")
     result = safe_run(
         [
             "python3.12", str(SCRIPTS_DIR / "deploy.py"),
@@ -283,7 +303,7 @@ else:
 # Stage 7: Temporal Reasoning Consolidation (PRE-MARKET ONLY)
 # ═══════════════════════
 if args.mode == "pre-market":
-    print("[7/7] Running temporal reasoning consolidation...")
+    print("[7/8] Running temporal reasoning consolidation...")
     result = safe_run(
         [
             "python3.12", str(SCRIPTS_DIR / "reasoning_consolidate.py"),
@@ -296,11 +316,11 @@ if args.mode == "pre-market":
         print("  → Check runs/{prev_date}/daily/temporal_brief.md", file=sys.stderr)
 else:
     if args.mode == "post-market":
-        print("[7/7] Temporal reasoning: skipped (post-market — consolidation runs after next pre-market)")
+        print("[7/8] Temporal reasoning: skipped (post-market — consolidation runs after next pre-market)")
     elif args.mode == "weekend":
-        print("[7/7] Temporal reasoning: skipped (weekend mode)")
+        print("[7/8] Temporal reasoning: skipped (weekend mode)")
     else:
-        print(f"[7/7] Temporal reasoning: skipped (mode={args.mode})")
+        print(f"[7/8] Temporal reasoning: skipped (mode={args.mode})")
 
 # ═══════════════════════
 # Complete

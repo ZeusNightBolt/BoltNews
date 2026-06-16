@@ -268,7 +268,7 @@ def propagate_indexes_and_files(gh_pages_dir: Path, run_dir: Path, mode: str, ru
 
     run_data_dir = gh_pages_dir / "data" / "runs" / run_date / mode
     run_files = []
-    for name in ["briefing.md", "summary.md", "articles.json", "articles_enriched.json", "search_plan.json", "dashboard.html"]:
+    for name in ["briefing.md", "summary.md", "articles.json", "articles_enriched.json", "search_plan.json", "market_snapshot.json", "dashboard.html"]:
         if copy_file_if_exists(run_dir / name, run_data_dir / name):
             run_files.append(f"runs/{run_date}/{mode}/{name}")
 
@@ -315,7 +315,10 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
     if not dashboard_src.exists():
         print(f"ERROR: dashboard.html not found at {dashboard_src}. Cannot deploy.", file=sys.stderr)
         return False
-    for required in (briefing_src, summary_src, articles_src, run_dir / "search_plan.json"):
+    required_files = [briefing_src, summary_src, articles_src, run_dir / "search_plan.json"]
+    if mode != "weekend":
+        required_files.append(run_dir / "market_snapshot.json")
+    for required in required_files:
         if not required.exists() or required.stat().st_size == 0:
             print(f"ERROR: required artifact missing/empty: {required}", file=sys.stderr)
             return False
@@ -381,7 +384,7 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
     repo_run_dir.mkdir(parents=True, exist_ok=True)
 
     files_copied = 0
-    for fname in ["briefing.md", "summary.md", "articles.json", "articles_enriched.json", "search_plan.json", "dashboard.html"]:
+    for fname in ["briefing.md", "summary.md", "articles.json", "articles_enriched.json", "search_plan.json", "market_snapshot.json", "dashboard.html"]:
         src = run_dir / fname
         if src.exists():
             run(["cp", str(src), str(repo_run_dir / fname)])
