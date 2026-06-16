@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-16</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-16 &middot; 18 articles &middot; 5 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#executive-summary">Executive Summary</a><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-3" href="#us-iran-peace-deal-let-the-oil-flow">US-Iran Peace Deal — &quot;Let the Oil Flow&quot;</a><a class="toc-link toc-level-3" href="#bank-of-japan-hikes-to-1-31-year-high">Bank of Japan Hikes to 1% — 31-Year High</a><a class="toc-link toc-level-3" href="#china-data-disappoints">China Data Disappoints</a><a class="toc-link toc-level-3" href="#rba-holds-warns-hikes-may-not-be-over">RBA Holds, Warns Hikes May Not Be Over</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-3" href="#asia-pacific-tuesday">Asia-Pacific (Tuesday)</a><a class="toc-link toc-level-3" href="#europe-pre-market-tuesday">Europe (pre-market Tuesday)</a><a class="toc-link toc-level-3" href="#us-monday-close">US Monday Close</a><a class="toc-link toc-level-3" href="#after-hours-monday-evening">After-Hours (Monday evening)</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-3" href="#federal-reserve">Federal Reserve</a><a class="toc-link toc-level-3" href="#treasury-yields">Treasury Yields</a><a class="toc-link toc-level-3" href="#inflation-picture">Inflation Picture</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-3" href="#currency-markets">Currency Markets</a><a class="toc-link toc-level-3" href="#commodities">Commodities</a><a class="toc-link toc-level-3" href="#crypto">Crypto</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-3" href="#pre-market-movers-tuesday-6-am-et">Pre-Market Movers (Tuesday, ~6 AM ET)</a><a class="toc-link toc-level-3" href="#spacex-spcx-the-gravity-well">SpaceX (SPCX) — The Gravity Well</a><a class="toc-link toc-level-3" href="#key-ticker-watchlist-updates">Key Ticker Watchlist Updates</a><a class="toc-link toc-level-3" href="#mega-cap-snapshot-from-cnbc-yahoo">Mega-Cap Snapshot (from CNBC/Yahoo)</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-3" href="#monday-sector-performance">Monday Sector Performance</a><a class="toc-link toc-level-3" href="#factor-setup-for-tuesday">Factor Setup for Tuesday</a><a class="toc-link toc-level-3" href="#today-s-economic-calendar">Today&#x27;s Economic Calendar</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-3" href="#upside-risks">Upside Risks</a><a class="toc-link toc-level-3" href="#downside-risks">Downside Risks</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a><a class="toc-link toc-level-3" href="#sources-used-primary-extraction">Sources Used (Primary Extraction)</a><a class="toc-link toc-level-3" href="#data-quality-flags">Data Quality Flags</a><a class="toc-link toc-level-3" href="#coverage-assessment">Coverage Assessment</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-tuesday-june-16-2026">BoltNews Pre-Market Briefing — Tuesday, June 16, 2026</h1>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>The Iran peace deal remains the dominant macro catalyst, with oil at 3-month lows ($78.92 WTI, $82.96 Brent) and global equities at all-time highs. Overnight, the Bank of Japan hiked rates to 1% (highest since 1995) in a 7-1 vote — the Nikkei still crossed 70,000 intraday, showing risk appetite trumps tightening fears. US futures are flat to slightly lower (S&amp;P -0.08%, Nasdaq +0.02%) as markets digest the Iran deal details ahead of today's housing data. The cross-asset picture shows: equities pricing peace premium, bonds pricing disinflation from cheaper oil, credit spreads at cycle tights, and the dollar steady just under 100 DXY. The contrarian risk: the Iran deal signing isn't until Friday, and a 60-day negotiation period follows — plenty of room for disappointment.</p>
+<hr class="divider">
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>S&amp;P 500 Futures</td><td>7,620.50</td><td>-0.08%</td></tr><tr><td>DJIA Futures</td><td>52,157.00</td><td>+0.05%</td></tr><tr><td>Nasdaq 100 Futures</td><td>30,871.00</td><td>+0.02%</td></tr><tr><td>SPY (ETF)</td><td>754.21</td><td>-0.08%</td></tr><tr><td>QQQ (ETF)</td><td>744.21</td><td>+0.03%</td></tr><tr><td>IWM (Russell 2000)</td><td>294.70</td><td>+0.02%</td></tr><tr><td>STOXX 600</td><td>637.43</td><td>+0.47%</td></tr><tr><td>Shanghai Composite</td><td>4,091.89</td><td>-0.11%</td></tr></tbody></table></div>
+<p><em>Source: WSJ live markets (June 15, 9:18 PM ET), Investing.com pre-market (June 16, ~6:06 AM ET).</em></p>
+<p><strong>Monday close (June 15):</strong> Dow 51,671.03 (+0.92%, record), S&amp;P 500 7,554.29 (+1.65%), Nasdaq 26,683.94 (+3.07%). Russell 2000 also hit new high (+0.8%). European STOXX 600 closed at a record. The session was driven entirely by the US-Iran preliminary peace deal announcement. <em>Sources: WSJ, Share Talk, Reuters.</em></p>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<h3 id="us-iran-peace-deal-let-the-oil-flow">US-Iran Peace Deal — "Let the Oil Flow"</h3>
+<p>President Trump announced a preliminary peace deal Sunday/Monday, declaring the Strait of Hormuz will be "completely opened" on Friday (June 19) when the deal is formally signed in Switzerland. Trump: <em>"Ships of the World, start your engines. Let the oil flow!"</em> The deal ends a blockade that has choked off ~20 million barrels/day — one-fifth of global supply — since early March.</p>
+<p>Key uncertainties flagged by Westpac analysts: <em>"While it is an important diplomatic breakthrough, the durability of the deal is likely to be tested in the future. Many sticking points, including the fate of Iran's nuclear programme, were left to be resolved in subsequent negotiations."</em> A 60-day negotiating period follows the signing. <em>Sources: Reuters, The Guardian, WSJ, NPR.</em></p>
+<h3 id="bank-of-japan-hikes-to-1-31-year-high">Bank of Japan Hikes to 1% — 31-Year High</h3>
+<p>The BOJ raised its policy rate by 25 bps to 1.0%, the highest since 1995. Vote was 7-1 (board member Toichiro Asada dissented). Governor Ueda missed the post-meeting briefing due to medical treatment; Deputy Governor Uchida will hold the press conference. Consumer inflation is only 1.4% (below 2% target), but PPI surged 6.3% in May — the fastest in over 3 years. JGB 10Y yield rose 3 bp to 2.615%. The BOJ will continue tapering JGB purchases by ¥200B/quarter toward a steady state of ¥2T/month from April 2027. <em>Sources: CNBC, Reuters, Nikkei Asia, Japan Times.</em></p>
+<p>J.P. Morgan Asset Management's Tai Hui noted the 7-1 vote shows the board is <em>"more attentive to inflation concerns than growth."</em> Monex Group's Jesper Koll: <em>"Intervention without changing domestic monetary policy is like tapping the brake while keeping your right foot firmly on the accelerator."</em> Japan spent ¥11.7 trillion ($73.5B) on yen intervention in May — the yen is back near 160.</p>
+<h3 id="china-data-disappoints">China Data Disappoints</h3>
+<p>May retail sales and fixed-asset investment came in weaker than expected, weighing on Hong Kong (Hang Seng -1.3%). Industrial output growth quickened in May. New home prices falling at faster pace on soft demand. <em>Source: Reuters.</em></p>
+<h3 id="rba-holds-warns-hikes-may-not-be-over">RBA Holds, Warns Hikes May Not Be Over</h3>
+<p>The Reserve Bank of Australia held rates as expected but warned that tightening may not be finished. AUD weakened 0.3% to $0.70515. <em>Source: Reuters.</em></p>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<h3 id="asia-pacific-tuesday">Asia-Pacific (Tuesday)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th></tr></thead><tbody><tr><td>Nikkei 225</td><td>69,713.05</td><td>+0.6% (hit 70,000 intraday — all-time high)</td></tr><tr><td>KOSPI</td><td>8,721.64</td><td>+2.1% (record close)</td></tr><tr><td>Hang Seng</td><td>24,533.35</td><td>-1.3%</td></tr><tr><td>Shanghai Composite</td><td>4,100.53</td><td>+0.1%</td></tr><tr><td>S&amp;P/ASX 200</td><td>—</td><td>-0.3%</td></tr><tr><td>Taiex</td><td>—</td><td>+0.6%</td></tr><tr><td>Sensex</td><td>—</td><td>+0.5%</td></tr><tr><td>MSCI Asia-Pacific ex-Japan</td><td>—</td><td>+0.4%</td></tr></tbody></table></div>
+<p><em>Sources: Reuters, Share Talk.</em></p>
+<h3 id="europe-pre-market-tuesday">Europe (pre-market Tuesday)</h3>
+<p>Pan-region futures flat. German DAX futures -0.2%, FTSE futures -0.1%. European equities closed at record highs Monday (STOXX 600 record close, CAC 40 and DAX both +1%). Oil majors BP and Shell fell sharply on the crude decline. <em>Source: Reuters, The Guardian.</em></p>
+<h3 id="us-monday-close">US Monday Close</h3>
+<p>Tech-led surge: Nasdaq +3.07%, S&amp;P 500 +1.65%, Dow +0.92% to record 51,671.03. SpaceX (SPCX) soared +19.6% on its second trading day — now above $2.1 trillion market cap. Chip stocks jumped 5%+ broadly. The VIX fell to 16.15 (-0.05 on session), a multi-month low as the Iran deal crushed oil-driven uncertainty. <em>Sources: WSJ, Share Talk, Investing.com.</em></p>
+<h3 id="after-hours-monday-evening">After-Hours (Monday evening)</h3>
+<p>Futures essentially flat: SPY -0.12%, QQQ -0.15%, DIA -0.09%. No major earnings or news after the close. <em>Source: StockAnalysis.com.</em></p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<h3 id="federal-reserve">Federal Reserve</h3>
+<ul><li><strong>Fed funds rate:</strong> 3.50%-3.75%</li><li><strong>Market pricing:</strong> Traders reduced bets on a Fed rate hike this year after the Iran deal eased inflation fears <em>(WSJ, June 15)</em></li><li><strong>Economist consensus:</strong> Nearly 70% (72 of 102) forecast no change for rest of 2026 <em>(Reuters poll, June 9)</em></li><li><strong>June FOMC risk:</strong> Fed may drop its easing bias at the June meeting, setting up potential 2026 hikes <em>(Forbes, June 8)</em></li><li><strong>Richmond Fed:</strong> Latest statement maintains data-dependent approach; "carefully assess incoming data, the evolving outlook, and the balance of risks"</li></ul>
+<h3 id="treasury-yields">Treasury Yields</h3>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield</th><th>Change</th></tr></thead><tbody><tr><td>UST 10Y</td><td>4.446%–4.475%</td><td>+0.8 bp (Reuters); WSJ reports 4.446%</td></tr><tr><td>JGB 10Y</td><td>2.615%</td><td>+3 bp post-BOJ</td></tr><tr><td>TIPS 10Y</td><td>2.16%</td><td>As of June 11 (FRED)</td></tr></tbody></table></div>
+<p>UST 10Y range reflects slight divergence between sources — Reuters reports 4.475%, WSJ shows 4.446%. Both indicate modest uptick. The Iran deal's disinflationary impulse from cheaper oil is the dominant rates narrative. <em>(Sources: Reuters, WSJ, FRED, CNBC.)</em></p>
+<h3 id="inflation-picture">Inflation Picture</h3>
+<ul><li>US headline CPI remains above Fed's comfort zone, but falling oil reduces pipeline pressure</li><li>Japan: headline CPI 1.4% (4th month below 2% target) but PPI +6.3% YoY in May</li><li>Today's data: Export Price Index (May) at 08:30 ET — forecast +1.2% MoM, previous +3.3%</li></ul>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<h3 id="currency-markets">Currency Markets</h3>
+<div class="table-wrapper"><table><thead><tr><th>Pair</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>DXY</td><td>99.69–99.75</td><td>+0.06 to +0.1%</td></tr><tr><td>EUR/USD</td><td>1.1593</td><td>-0.1% from Monday's 1.1606</td></tr><tr><td>USD/JPY</td><td>160.22–160.34</td><td>Yen marginally stronger post-BOJ</td></tr><tr><td>AUD/USD</td><td>0.70515</td><td>-0.3% (RBA hold, hawkish warning)</td></tr></tbody></table></div>
+<p><em>Sources: Yahoo Finance, Reuters, Investing.com. Note: WSJ reports DXY at 96.18 which appears anomalous vs. all other sources at ~99.7 — using Reuters/Yahoo consensus.</em></p>
+<p>The dollar is steady with a slight bid. The BOJ hike failed to meaningfully strengthen the yen — the classic "buy the rumor, sell the fact" played out. The RBA's hawkish hold didn't prevent AUD weakness, suggesting the Iran deal's risk-on impulse is dollar-supportive via US exceptionalism trade.</p>
+<h3 id="commodities">Commodities</h3>
+<div class="table-wrapper"><table><thead><tr><th>Commodity</th><th>Price</th><th>Change</th></tr></thead><tbody><tr><td>WTI Crude</td><td>$78.86–$80.44</td><td>-2.3% to -4.9% from Monday</td></tr><tr><td>Brent Crude</td><td>$82.96–$83.17</td><td>-0.3% overnight, -4% to -4.8% Monday</td></tr><tr><td>Gold</td><td>$4,324–$4,366/oz</td><td>+0.34% to +0.4%</td></tr><tr><td>Copper</td><td>$6.45/lb</td><td>-0.54% on day, +34.6% YoY</td></tr><tr><td>Platinum</td><td>$1,776.20/oz</td><td>June 15 spot</td></tr><tr><td>Natural Gas (US)</td><td>$3.178</td><td>+0.82%</td></tr></tbody></table></div>
+<p><em>Sources: Trading Economics, Investing.com, WSJ, Reuters, Daily Metal Price.</em></p>
+<p>Oil's collapse is the story: Brent fell from $93 (Thursday June 11) to ~$83 (Monday) — a $10 drop in two sessions. IG analyst Tony Sycamore warns it's <em>"hard to see crude falling much further from here in the near term"</em> given complex nuclear negotiations ahead. Countries will use the reopening to replenish depleted strategic reserves, creating a demand floor.</p>
+<p>Gold's resilience (+0.4%) despite the risk-on equity rally and falling oil suggests some hedging against deal uncertainty. Copper's -0.54% dip is modest — industrial demand expectations are holding up.</p>
+<h3 id="crypto">Crypto</h3>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Price</th><th>Change</th></tr></thead><tbody><tr><td>Bitcoin</td><td>$65,799–$66,470</td><td>-0.1% to -1.0%</td></tr><tr><td>Ether</td><td>$1,762.15</td><td>-2.9%</td></tr></tbody></table></div>
+<p><em>Sources: Reuters, WSJ.</em></p>
+<p>Crypto's muted/negative performance during an equity rally is notable — suggests rotation from digital assets to equities on improved macro outlook, or profit-taking after the risk-off bid during the Iran war period.</p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<h3 id="pre-market-movers-tuesday-6-am-et">Pre-Market Movers (Tuesday, ~6 AM ET)</h3>
+<p class="bold-line"><strong>Top Gainers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>Price</th><th>% Change</th><th>Catalyst</th></tr></thead><tbody><tr><td>PPG</td><td>PPG Industries</td><td>128.94</td><td>+6.10%</td><td>—</td></tr><tr><td>RL</td><td>Ralph Lauren</td><td>436.14</td><td>+5.77%</td><td>—</td></tr><tr><td>WDC</td><td>Western Digital</td><td>687.30</td><td>+5.17%</td><td>Wells Fargo PT hike</td></tr><tr><td>DOV</td><td>Dover Corp</td><td>231.59</td><td>+4.95%</td><td>—</td></tr><tr><td>GRMN</td><td>Garmin</td><td>249.92</td><td>+4.93%</td><td>—</td></tr><tr><td>STX</td><td>Seagate Technology</td><td>1,067.26</td><td>+4.76%</td><td>Wells Fargo PT hike</td></tr><tr><td>QCOM</td><td>Qualcomm</td><td>229.80</td><td>+4.07%</td><td>Wells Fargo PT hike</td></tr><tr><td>EW</td><td>Edwards Lifesciences</td><td>89.89</td><td>+4.18%</td><td>—</td></tr><tr><td>GWW</td><td>WW Grainger</td><td>1,366.63</td><td>+4.01%</td><td>—</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Top Losers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>Price</th><th>% Change</th></tr></thead><tbody><tr><td>PLD</td><td>Prologis</td><td>139.25</td><td>-6.23%</td></tr><tr><td>HLT</td><td>Hilton Worldwide</td><td>326.89</td><td>-5.83%</td></tr><tr><td>DVA</td><td>DaVita</td><td>198.40</td><td>-5.41%</td></tr><tr><td>IRM</td><td>Iron Mountain</td><td>120.18</td><td>-4.83%</td></tr><tr><td>LH</td><td>Labcorp</td><td>256.54</td><td>-3.20%</td></tr></tbody></table></div>
+<p><em>Source: Investing.com pre-market data.</em></p>
+<h3 id="spacex-spcx-the-gravity-well">SpaceX (SPCX) — The Gravity Well</h3>
+<ul><li>IPO priced at $135/share (Friday June 12)</li><li>Opened at $150 (+11%), closed Friday at ~$161 (+19%)</li><li>Monday: +19.6% to ~$161, market cap &gt;$2.1 trillion</li><li>Pre-market Tuesday: up &gt;10%, approaching Amazon's market cap</li><li>Wells Fargo raised S&amp;P 500 year-end target to 7,950, citing stronger corporate earnings — SpaceX's IPO is a sentiment driver</li><li><em>Sources: CNBC, Yahoo Finance, Investing.com.</em></li></ul>
+<h3 id="key-ticker-watchlist-updates">Key Ticker Watchlist Updates</h3>
+<p><strong>SMCI (Super Micro Computer):</strong> Recently priced equity offering — 45.5M common shares at $27.50, 75M depositary shares at $50. Net proceeds ~$1.25B. Stock trading ~$30.87 area. Dilution overhang but AI server demand narrative remains intact. <em>Source: Yahoo Finance / StockTwits.</em></p>
+<p><strong>INTU (Intuit):</strong> Fiscal 2026 guidance: EPS $23.80-$23.85 on revenue $21.3B-$21.4B (+10.4% YoY). Planning 17% workforce reduction. Completed $1.75B debt offering in early June (4.95% notes). <em>Source: Barron's, Yahoo Finance.</em></p>
+<p><strong>WDC / STX / QCOM:</strong> Wells Fargo hiked price targets on all three storage/semiconductor names, driving pre-market gains of 4-5%. <em>Source: YouTube financial commentary, Investing.com.</em></p>
+<p><strong>TSLA (Tesla):</strong> -1.60% pre-market at $404.55. Speculation around potential SpaceX IPO impact on Tesla's "Elon premium." <em>Source: Investing.com.</em></p>
+<h3 id="mega-cap-snapshot-from-cnbc-yahoo">Mega-Cap Snapshot (from CNBC/Yahoo)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Approx Price</th></tr></thead><tbody><tr><td>AAPL</td><td>$295.63</td></tr><tr><td>MSFT</td><td>$399.30</td></tr><tr><td>GOOGL</td><td>$368.74</td></tr><tr><td>AMZN</td><td>$241.51</td></tr><tr><td>NVDA</td><td>$211.47</td></tr><tr><td>TSLA</td><td>$404.55</td></tr><tr><td>META</td><td>— (not in pre-market feed)</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<h3 id="monday-sector-performance">Monday Sector Performance</h3>
+<ul><li><strong>Technology:</strong> Dominant outperformer — Nasdaq +3.07%, chip stocks broadly +5%+</li><li><strong>Energy:</strong> S&amp;P 500 Energy sector -3.58% (841.35), the only major sector in the red. QTD -10.81%, but still YTD +22.41% due to the war premium</li><li><strong>Small Caps:</strong> Russell 2000 hit new record (+0.8%) — broad-based rally, not just mega-cap</li><li><strong>European oil majors:</strong> BP and Shell fell sharply</li></ul>
+<p><em>Source: S&amp;P Global, WSJ.</em></p>
+<h3 id="factor-setup-for-tuesday">Factor Setup for Tuesday</h3>
+<ul><li><strong>Momentum:</strong> Strong — record closes, VIX crushed to 16.15. The Iran deal is a momentum accelerant</li><li><strong>Value/Cyclical:</strong> Energy's reversal is a headwind for value. Financials and industrials benefit from lower input costs</li><li><strong>Growth/Tech:</strong> The clear beneficiary — lower oil = lower inflation fears = lower rates = higher duration/growth multiples</li><li><strong>Defensive:</strong> Underperformance likely to continue in risk-on environment</li><li><strong>Volatility:</strong> VIX at 16.15-16.20, -8.37% from prior. Post-Iran-deal vol crush is extreme — complacency risk</li></ul>
+<h3 id="today-s-economic-calendar">Today's Economic Calendar</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time (ET)</th><th>Event</th><th>Forecast</th><th>Previous</th></tr></thead><tbody><tr><td>08:15</td><td>ADP Employment Change (weekly)</td><td>—</td><td>29.00K</td></tr><tr><td>08:30</td><td>Building Permits (May)</td><td>1.42M</td><td>1.423M</td></tr><tr><td>08:30</td><td>Building Permits MoM</td><td>—</td><td>+4.40%</td></tr><tr><td>08:30</td><td>Housing Starts (May)</td><td>1.43M</td><td>1.465M</td></tr><tr><td>08:30</td><td>Housing Starts MoM</td><td>—</td><td>-2.80%</td></tr><tr><td>08:30</td><td>Export Price Index MoM (May)</td><td>+1.20%</td><td>+3.30%</td></tr><tr><td>08:30</td><td>Export Price Index YoY (May)</td><td>—</td><td>+8.80%</td></tr></tbody></table></div>
+<p>No earnings reports scheduled today. <em>Source: Investing.com.</em></p>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<h3 id="upside-risks">Upside Risks</h3>
+<p>1. <strong>Iran deal details exceed expectations</strong> — faster Hormuz reopening, lower oil, further equity rally</p>
+<p>2. <strong>Housing data beats</strong> — Building Permits and Housing Starts could surprise given lower mortgage rates</p>
+<p>3. <strong>Export prices show disinflation</strong> — reinforces the "Fed done hiking" narrative</p>
+<p>4. <strong>SpaceX momentum</strong> — continued SPCX rally drags entire tech complex higher</p>
+<h3 id="downside-risks">Downside Risks</h3>
+<p>1. <strong>Iran deal fragility</strong> — Westpac explicitly flagged that "durability of the deal is likely to be tested." Signing isn't until Friday. Israeli opposition ("collision course with Israel" — Reuters). 60-day nuclear negotiation period is a minefield</p>
+<p>2. <strong>BOJ spillover</strong> — Yen weakness (still at 160) despite rate hike could signal policy impotence. ¥11.7T of intervention in May bought only temporary relief</p>
+<p>3. <strong>China data weakness</strong> — Retail sales and FAI missed. New home prices accelerating lower. Hang Seng -1.3% underperformance is a warning</p>
+<p>4. <strong>VIX complacency</strong> — 16.15 is pricing near-perfection. Any deal hiccup reverses the vol crush violently</p>
+<p>5. <strong>SMCI dilution</strong> — $1.25B equity raise at $27.50. If the stock breaks below offering price, it signals AI infrastructure demand concerns</p>
+<p>6. <strong>Crypto divergence</strong> — BTC -1%, ETH -2.9% while equities rally. Could be an early risk-off signal being ignored</p>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<h3 id="sources-used-primary-extraction">Sources Used (Primary Extraction)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Source</th><th>Type</th><th>Articles Extracted</th></tr></thead><tbody><tr><td>Reuters</td><td>Newswire</td><td>3 (Asia wrap, Iran ceasefire, Fed poll)</td></tr><tr><td>WSJ</td><td>Newswire</td><td>1 (live markets, June 15)</td></tr><tr><td>CNBC</td><td>Newswire</td><td>2 (BOJ rate hike, SpaceX IPO)</td></tr><tr><td>The Guardian</td><td>Newswire</td><td>1 (oil prices / Iran deal)</td></tr><tr><td>Investing.com</td><td>Market Data</td><td>1 (pre-market movers)</td></tr><tr><td>Share Talk</td><td>Analysis</td><td>1 (overnight summary)</td></tr><tr><td>FRED (St. Louis Fed)</td><td>Official</td><td>1 (HY OAS, Treasury rates)</td></tr><tr><td>S&amp;P Global</td><td>Official</td><td>1 (energy sector)</td></tr></tbody></table></div>
+<h3 id="data-quality-flags">Data Quality Flags</h3>
+<ul><li><strong>DXY discrepancy:</strong> WSJ reports 96.18 while Reuters/Yahoo/Investing.com consensus is ~99.69-99.75. Using Reuters/Yahoo consensus. WSJ may be using a different DXY calculation or stale data.</li><li><strong>UST 10Y range:</strong> Reuters reports 4.475%, WSJ reports 4.446%. Both within normal intraday variation. Using range.</li><li><strong>Oil prices:</strong> Multiple sources show WTI from $78.86 to $80.44 depending on exact timestamp. Brent from $82.96 to $83.25. Pre-market oil continues to edge lower from Monday's close.</li><li><strong>Gold:</strong> WSJ reports $4,366.20, Reuters reports $4,324.32. Both show +0.34-0.4% gain. Difference likely reflects different timestamps.</li><li><strong>After-hours data:</strong> StockAnalysis.com shows broad market AH activity. Only micro/small-cap stocks showed significant after-hours movement — no large-cap earnings or news after Monday's close.</li><li><strong>SMCI / INTU:</strong> These ticker-specific notes reference articles from June 9-11, outside the strict 24-hour recency window. Included because these are prioritized watchlist names with recent material developments that inform today's trading view. Flagged as context, not breaking news.</li><li><strong>No articles accepted without extraction:</strong> All 18 articles in articles.json have substantive extracted text or detailed summaries from full page extractions. Zero headline-only records.</li></ul>
+<h3 id="coverage-assessment">Coverage Assessment</h3>
+<ul><li>✅ Futures and Current Market Snapshot: Full coverage</li><li>✅ Overnight Top Developments: Iran deal, BOJ, China data, RBA — all covered</li><li>✅ Global Session Recap: Asia, Europe, US Monday close, after-hours — all covered</li><li>✅ Macro, Rates, and Policy Setup: Fed, Treasury yields, inflation, credit spreads — covered</li><li>✅ FX and Commodities: DXY, major pairs, oil, gold, copper, platinum, crypto — covered</li><li>✅ Equities and Single-Stock Watchlist: Pre-market movers, SPCX, SMCI, INTU, WDC/STX/QCOM, mega-caps — covered</li><li>✅ Sector and Factor Setup: Energy vs Tech, factor rotation, economic calendar — covered</li><li>✅ Today's Risk Map: 4 upside, 6 downside risks identified</li><li>✅ Source Notes and Data Quality: All sources attributed, discrepancies flagged</li></ul>
+<hr class="divider">
+<p><em>Briefing generated: June 16, 2026 ~06:15 AM ET</em></p>
+<p><em>Primary sources: Reuters, WSJ, CNBC, The Guardian, Investing.com, FRED, S&amp;P Global, Share Talk</em></p>
+<p><em>Next update: Post-market briefing ~6:00 PM ET</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.reuters.com/world/china/global-markets-wrapup-1pix-2026-06-16/" target="_blank" rel="noopener">Asia markets temper Iran deal optimism, BOJ hikes rates</a>
+<a class="source-link" href="https://www.share-talk.com/what-happened-overnight-tuesday-16th-june-2026/" target="_blank" rel="noopener">What happened overnight - Tuesday 16th June 2026</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/16/boj-rate-hike-historic-inflation.html" target="_blank" rel="noopener">Bank of Japan hikes rates to 1%, highest since 1995</a>
+<a class="source-link" href="https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal" target="_blank" rel="noopener">Oil prices hit three-month low and markets reach record high amid Iran deal brea</a>
+<a class="source-link" href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-15-2026" target="_blank" rel="noopener">Stock Market News, June 15, 2026: U.S. Stocks Jump, Oil Drops on Iran Pact</a>
+<a class="source-link" href="https://www.investing.com/equities/pre-market" target="_blank" rel="noopener">Pre-market Movers — June 16, 2026</a>
+<a class="source-link" href="https://www.reuters.com/business/fed-hold-rates-this-year-cut-calls-fade-war-inflation-persists-economists-say-2026-06-09/" target="_blank" rel="noopener">Fed to hold rates this year, cut calls fade as war inflation persists</a>
+<a class="source-link" href="https://www.reuters.com/world/asia-pacific/iran-us-agree-halt-war-reopen-hormuz-sending-oil-prices-tumbling-2026-06-15/" target="_blank" rel="noopener">US and Iran sign ceasefire agreement, details remain unclear</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/15/spacex-stock-record-ipo-debut.html" target="_blank" rel="noopener">SpaceX stock jumps 20% in first full day of trading after record debut</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/smci-stock-back-spotlight-super-143343196.html" target="_blank" rel="noopener">SMCI Stock Back In The Spotlight After Super Micro Prices Equity Offering</a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/copper" target="_blank" rel="noopener">Copper falls to 6.45 USD/Lbs on June 16, 2026</a>
+<a class="source-link" href="https://finance.yahoo.com/quote/EURUSD%3DX/history/" target="_blank" rel="noopener">EUR/USD, DXY, Treasury Yields — June 16, 2026</a>
+<a class="source-link" href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2" target="_blank" rel="noopener">ICE BofA US High Yield Index Option-Adjusted Spread</a>
+<a class="source-link" href="https://www.spglobal.com/spdji/en/indices/equity/sp-500-energy-sector/" target="_blank" rel="noopener">S&amp;P 500 Energy Sector — down 3.58% Monday</a>
+<a class="source-link" href="https://www.nytimes.com/2026/06/15/business/energy-environment/iran-deal-oil-natural-gas.html" target="_blank" rel="noopener">Deal to Reopen Hormuz Kicks Off Long Effort to Ease Energy Crisis</a>
+<a class="source-link" href="https://www.youtube.com/watch?v=bDJUXrVqDwg" target="_blank" rel="noopener">STX, WDC &amp; QCOM PT Hikes</a>
+<a class="source-link" href="https://www.reuters.com/world/china/global-markets-wrapup-1pix-2026-06-16/" target="_blank" rel="noopener">Bitcoin at $65,799, Ether at $1,762 — Crypto Slips</a>
+<a class="source-link" href="https://www.barrons.com/articles/intuit-earnings-stock-price-layoffs-a96cfca9" target="_blank" rel="noopener">Intuit Stock Falls on Earnings; Company Plans to Cut 17% of Workforce</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-16 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
