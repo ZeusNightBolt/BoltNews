@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-16</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-16 &middot; 11 articles &middot; 1 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#closing-market-snapshot">Closing Market Snapshot</a><a class="toc-link toc-level-2" href="#why-markets-moved">Why Markets Moved</a><a class="toc-link toc-level-2" href="#equity-market-internals">Equity Market Internals</a><a class="toc-link toc-level-2" href="#rates-macro-and-policy">Rates, Macro, and Policy</a><a class="toc-link toc-level-3" href="#treasury-yields">Treasury Yields</a><a class="toc-link toc-level-3" href="#federal-reserve">Federal Reserve</a><a class="toc-link toc-level-3" href="#economic-data-released-june-16">Economic Data Released June 16</a><a class="toc-link toc-level-3" href="#inflation-context-may-cpi-released-june-10">Inflation Context (May CPI, released June 10)</a><a class="toc-link toc-level-2" href="#earnings-and-corporate-developments">Earnings and Corporate Developments</a><a class="toc-link toc-level-3" href="#spacex-anysphere-spcx-60-billion-ai-deal">SpaceX / Anysphere (SPCX) — $60 Billion AI Deal</a><a class="toc-link toc-level-3" href="#robinhood-hood-10-workforce-reduction">Robinhood (HOOD) — 10% Workforce Reduction</a><a class="toc-link toc-level-3" href="#yum-brands-yum-pizza-hut-divestiture">Yum Brands (YUM) — Pizza Hut Divestiture</a><a class="toc-link toc-level-3" href="#other-pre-market-movers-thestreet">Other Pre-Market Movers (TheStreet)</a><a class="toc-link toc-level-3" href="#quantum-computing-basket-june-15-move">Quantum Computing Basket (June 15 Move)</a><a class="toc-link toc-level-2" href="#cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</a><a class="toc-link toc-level-2" href="#tomorrow-setup">Tomorrow Setup</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a><a class="toc-link toc-level-3" href="#data-conflicts-flagged">Data Conflicts Flagged</a><a class="toc-link toc-level-3" href="#sources-used-deep-extraction">Sources Used (Deep Extraction)</a><a class="toc-link toc-level-3" href="#non-extracted-search-level-sources">Non-Extracted / Search-Level Sources</a><a class="toc-link toc-level-3" href="#articles-rejected-not-extracted">Articles Rejected / Not Extracted</a><a class="toc-link toc-level-3" href="#confidence-assessment">Confidence Assessment</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-post-market-briefing-tuesday-june-16-2026">BoltNews Post-Market Briefing — Tuesday, June 16, 2026</h1>
+<p><strong>Run:</strong> post-market | <strong>Generated:</strong> 2026-06-16T18:00:00-04:00</p>
+<p><strong>Recency window:</strong> 2026-06-15T18:00:00 to 2026-06-16T18:00:00 ET</p>
+<hr class="divider">
+<h2 id="closing-market-snapshot">Closing Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th><th>% Change</th></tr></thead><tbody><tr><td><strong>S&amp;P 500</strong></td><td>7,559.99</td><td>+126 pts (est.)</td><td>+1.7%</td></tr><tr><td><strong>Dow Jones</strong></td><td>52,148.44</td><td>~+470 pts</td><td>+0.9%</td></tr><tr><td><strong>Nasdaq Composite</strong></td><td>26,683.94</td><td>+795.10</td><td>+3.1%</td></tr><tr><td><strong>Russell 2000</strong></td><td>2,955.49</td><td>—</td><td>—</td></tr><tr><td><strong>VIX</strong></td><td>16.20</td><td>−1.48</td><td>−8.4%</td></tr></tbody></table></div>
+<p><strong>Sources:</strong> S&amp;P 500, Dow, Russell 2000 closes from Yahoo Finance historical data. Nasdaq and S&amp;P 500 % change from Zacks. VIX from Yahoo Finance/FRED (FRED lists 16.20 for June 15; Yahoo confirms 16.20 for June 16).</p>
+<p><strong>Volume:</strong> 21.29 billion shares (above 20-session average of 20.82 billion). NYSE: 41 new 52-week highs, 3 new lows. Nasdaq: 202 new highs, 89 new lows. — <em>Zacks</em></p>
+<p><strong>Sector breadth (S&amp;P 500):</strong> 7 of 11 sectors positive, 4 negative. — <em>Zacks</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Sector ETF</th><th>Performance</th></tr></thead><tbody><tr><td>XLK (Technology)</td><td>+3.4%</td></tr><tr><td>XLC (Communication Services)</td><td>+2.4%</td></tr><tr><td>XLY (Consumer Discretionary)</td><td>+1.9%</td></tr><tr><td>XLE (Energy)</td><td>−3.6%</td></tr></tbody></table></div>
+<p><strong>Dow breadth:</strong> 18 of 30 components positive, 12 negative. Top performer: Boeing (BA) +4.5%. — <em>Zacks</em></p>
+<hr class="divider">
+<h2 id="why-markets-moved">Why Markets Moved</h2>
+<p>Wall Street closed higher on Tuesday, driven by two dominant forces: the <strong>U.S.–Iran peace agreement</strong> deflating the oil-risk premium, and <strong>FOMC meeting anticipation</strong> under new Chair Kevin Warsh.</p>
+<p>The peace deal, brokered by Pakistan and confirmed by President Trump on Sunday, commits both sides to a ceasefire and reopens the Strait of Hormuz. The formal signing is expected Friday in Switzerland. Crude oil prices collapsed on the news — WTI fell from ~$84/bbl Friday to below $79/bbl Tuesday, a cumulative ~6% drop over two sessions. This removed the single largest near-term inflation impulse that had driven May CPI to 4.2% YoY headline. — <em>TheStreet, Kiplinger, Kitco</em></p>
+<p>The FOMC began its two-day meeting Tuesday, the first chaired by Kevin Warsh. Markets priced a near-certainty of a rate hold at 3.50%–3.75%, with the key question being whether the committee drops its easing bias for a neutral stance. The decision and updated Summary of Economic Projections drop Wednesday at 2:00 PM ET, followed by Warsh's first press conference at 2:30 PM. — <em>FXStreet, Kiplinger</em></p>
+<p>Technology led the rally despite TheStreet's intraday blog noting Nasdaq was negative at 2:58 PM — a late-session surge reversed the tape. Energy was the sole notable loser, down 3.6% as oil stocks repriced to the Iran deal. — <em>Zacks, TheStreet</em></p>
+<p><strong>Data note:</strong> The Zacks closing article reports S&amp;P 500 +1.7% and Nasdaq +3.1%. TheStreet's live blog (2:58 PM snapshot) showed S&amp;P −0.08% and Nasdaq −0.52%, but the final hour appears to have swung sharply positive. This intraday-to-close divergence is flagged for verification.</p>
+<hr class="divider">
+<h2 id="equity-market-internals">Equity Market Internals</h2>
+<p><strong>Breadth:</strong> Constructive. 7 of 11 sectors positive. Tech (+3.4%) and Communication Services (+2.4%) dominated, while Energy (−3.6%) was the sole material drag. The VIX collapsed 8.4% to 16.20, its lowest since early March. — <em>Zacks</em></p>
+<p><strong>Volume:</strong> 21.29B shares, above the 20-day average of 20.82B — indicating conviction behind the move.</p>
+<p><strong>52-week extremes:</strong> Nasdaq posted 202 new highs vs 89 new lows (2.3:1 ratio). S&amp;P 500 posted 41 new highs vs 3 new lows (13.7:1) — strong signal. — <em>Zacks</em></p>
+<p class="bold-line"><strong>Notable movers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Catalyst</th><th>Source</th></tr></thead><tbody><tr><td><strong>SPCX (SpaceX)</strong></td><td>+20% to $216.27</td><td>$60B all-stock acquisition of Anysphere/Cursor (AI coding)</td><td>Reuters, TheStreet, Morningstar</td></tr><tr><td><strong>BA (Boeing)</strong></td><td>+4.5%</td><td>Topped the Dow; no single-driver catalyst cited</td><td>Zacks</td></tr><tr><td><strong>WDC (Western Digital)</strong></td><td>+8.9% premarket</td><td>Unspecified; tech sympathy</td><td>TheStreet</td></tr><tr><td><strong>STX (Seagate)</strong></td><td>+7.3% premarket</td><td>Unspecified; tech sympathy</td><td>TheStreet</td></tr><tr><td><strong>HOOD (Robinhood)</strong></td><td>+2% (gained after layoff news)</td><td>Announced 10% workforce reduction (~290 jobs), ~$28M restructuring charges; CEO cited push for "lean, hyper-focused" org</td><td>Yahoo Finance/Quartz, SEC filing</td></tr><tr><td><strong>YUM (Yum Brands)</strong></td><td>+0.85% to $156.00</td><td>Sold Pizza Hut to LongRange Capital for $1.5B; Yum China deal for ~$1.2B; net proceeds ~$2.3B</td><td>TheStreet</td></tr><tr><td><strong>QUBT, QBTS</strong></td><td>+12% each</td><td>Quantum basket rally on risk-on sentiment (June 15 move; Tuesday follow-through likely)</td><td>Yahoo Finance</td></tr><tr><td><strong>RGTI (Rigetti)</strong></td><td>+9%</td><td>Quantum basket sympathy</td><td>Yahoo Finance</td></tr><tr><td><strong>IONQ</strong></td><td>+6%</td><td>Quantum basket sympathy; largest market cap in group at ~$23B</td><td>Yahoo Finance</td></tr></tbody></table></div>
+<p><strong>Quantum computing basket note:</strong> The June 15 rally in QUBT/QBTS/RGTI/IONQ was purely sentiment-driven — no quantum-specific catalyst. The basket trades as a high-beta thematic block. IONQ at 115× price-to-sales is priced for perfection. — <em>Yahoo Finance</em></p>
+<hr class="divider">
+<h2 id="rates-macro-and-policy">Rates, Macro, and Policy</h2>
+<h3 id="treasury-yields">Treasury Yields</h3>
+<div class="table-wrapper"><table><thead><tr><th>Tenor</th><th>Yield</th><th>Change</th></tr></thead><tbody><tr><td>2-year</td><td>4.06%</td><td>+0.02 bp from Monday's 4.064%</td></tr><tr><td>10-year</td><td>4.48%</td><td>+3 bp from prior day's 4.45%</td></tr></tbody></table></div>
+<p><strong>Sources:</strong> 2-year from Trading Economics and Kiplinger; 10-year from YCharts.</p>
+<p>Yields edged marginally higher ahead of the FOMC decision. The 2-year remains pinned near 4.06%, reflecting conviction that no rate change is coming Wednesday. The 10-year's slight uptick to 4.48% suggests bond markets are not yet pricing in a dovish pivot despite the oil-price collapse. — <em>Kiplinger, Trading Economics</em></p>
+<h3 id="federal-reserve">Federal Reserve</h3>
+<ul><li><strong>FOMC Meeting:</strong> June 16–17, Kevin Warsh's first as Chair.</li><li><strong>Rate expectation:</strong> 100% priced for hold at 3.50%–3.75%. Markets price ~65% odds rates stay unchanged through year-end (per PrimeRates, late May).</li><li><strong>Key signal to watch:</strong> Whether the committee drops the "easing bias" language for a neutral stance. April minutes showed a majority already favored this shift. April meeting under Powell saw 4 dissenting votes — most since 1992.</li><li><strong>Dot plot:</strong> Warsh has publicly questioned its usefulness; potential changes in framing are a wildcard. — <em>FXStreet, Kiplinger</em></li></ul>
+<h3 id="economic-data-released-june-16">Economic Data Released June 16</h3>
+<div class="table-wrapper"><table><thead><tr><th>Indicator</th><th>Period</th><th>Actual</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>NY Empire State Mfg Index</td><td>June</td><td>5.7</td><td>13.9</td><td>19.6 (May)</td></tr><tr><td>Industrial Production MoM</td><td>May</td><td>+0.1%</td><td>—</td><td>+0.9% (April, revised)</td></tr><tr><td>Capacity Utilization</td><td>May</td><td>76.2%</td><td>76.3%</td><td>76.1% (April)</td></tr><tr><td>Housing Starts</td><td>May</td><td>1.177M annualized</td><td>1.43M</td><td>—</td></tr><tr><td>NAHB Housing Market Index</td><td>June</td><td>35</td><td>—</td><td>37 (April)</td></tr></tbody></table></div>
+<p><strong>Manufacturing:</strong> The NY Empire State index slumped to 5.7 from 19.6, missing consensus of 13.9 by a wide margin — signaling a sharp regional factory slowdown. Industrial production barely rose (+0.1% MoM) after a strong April. — <em>Zacks</em></p>
+<p><strong>Housing:</strong> Starts collapsed 15.4% to 1.177M, the lowest since May 2020, badly missing the 1.43M consensus. Builder sentiment (NAHB) fell to 35, its lowest since late 2025. — <em>TheStreet</em></p>
+<h3 id="inflation-context-may-cpi-released-june-10">Inflation Context (May CPI, released June 10)</h3>
+<ul><li>Headline CPI: +0.5% MoM, <strong>4.2% YoY</strong> (three-year high)</li><li>Core CPI: +0.2% MoM, 2.9% YoY</li><li>Energy accounted for &gt;60% of the monthly increase; energy index rose 3.9% in May</li><li>Duke University survey of former Fed officials: median year-end PCE estimate 3.5% (vs 2% target); 17 of 32 projecting said a rate hike would be appropriate in 2026 — <em>Kiplinger</em></li></ul>
+<hr class="divider">
+<h2 id="earnings-and-corporate-developments">Earnings and Corporate Developments</h2>
+<h3 id="spacex-anysphere-spcx-60-billion-ai-deal">SpaceX / Anysphere (SPCX) — $60 Billion AI Deal</h3>
+<ul><li>SpaceX will acquire Anysphere (maker of AI coding agent Cursor) for <strong>$60 billion in an all-stock transaction</strong>.</li><li>Deal expected to close Q3 2026, subject to regulatory approval.</li><li>Termination fee: $10B (standard) or $4B (antitrust failure).</li><li>SpaceX stock: +20% Tuesday to $216.27. Market cap reached $2.85 trillion, surpassing Amazon ($2.65T).</li><li>Cursor's annualized B2B revenue: ~$2.6B. Prior valuation: $50B (a16z, Thrive, Nvidia, Google-backed).</li><li>Strategic rationale: SpaceX's xAI division (acquired Feb 2026) gains developer data for training Grok models; Cursor competes with Anthropic and OpenAI in AI coding.</li><li>SpaceX recently struck cloud deals with Anthropic and Google worth ~$26B/year combined, with 90-day termination clauses. — <em>Reuters, TheStreet, CBS News</em></li></ul>
+<blockquote>"One of the things that makes SpaceX so valuable is how valuable it is. The Cursor acquisition costs materially less in dilution because of SpaceX's high valuation." — Bill Ackman, on X</blockquote>
+<h3 id="robinhood-hood-10-workforce-reduction">Robinhood (HOOD) — 10% Workforce Reduction</h3>
+<ul><li>Cutting ~290 jobs (10% of FTEs). ~$20M cash severance + ~$8M share-based comp charges, booked Q2 2026.</li><li>CEO Vlad Tenev: "We cannot default to operating as a heavily layered organization. We must be a lean, hyper-focused team."</li><li>Context: June MTD average daily trading volumes at record levels across equities, options, and prediction markets. But Q1 showed headcount +22% YoY while annualized revenue per employee fell 8% to $1.4M.</li><li>Stock reaction: +2% Tuesday. — <em>Yahoo Finance/Quartz, Barron's, SEC filing</em></li></ul>
+<h3 id="yum-brands-yum-pizza-hut-divestiture">Yum Brands (YUM) — Pizza Hut Divestiture</h3>
+<ul><li>Selling Pizza Hut to LongRange Capital for $1.5B; separately selling mainland China locations to Yum China for ~$1.2B.</li><li>Combined net proceeds after taxes: ~$2.3B, plus potential $75M earn-out through 2030.</li><li>One-time separation costs: ~$85M through 2026. Board authorized incremental $4B share buyback.</li><li>Stock: +0.85% to $156.00.</li><li>Strategic review began November 2025 amid declining comparable-store sales. — <em>TheStreet, Yum Brands press release</em></li></ul>
+<h3 id="other-pre-market-movers-thestreet">Other Pre-Market Movers (TheStreet)</h3>
+<ul><li><strong>Olin (OLN):</strong> +6.7% premarket</li><li><strong>Huntsman (HUN):</strong> −6% premarket</li><li><strong>Hilton (HLT):</strong> −5.3% premarket</li><li><strong>Qorvo (QRVO):</strong> −3.9% premarket</li></ul>
+<h3 id="quantum-computing-basket-june-15-move">Quantum Computing Basket (June 15 Move)</h3>
+<ul><li>QUBT +12%, QBTS +12%, RGTI +9%, IONQ +6% — driven by broad risk-on from Iran peace deal, not quantum-specific news.</li><li>IONQ: Q1 revenue $64.67M, raised FY2026 guidance to $260M–$270M, but trades at 115× P/S.</li><li>RGTI: Q1 revenue $4.4M (nearly 3× prior year), 108-qubit system on AWS Braket/Azure Quantum.</li><li>No new earnings or product catalysts — pure sentiment. — <em>Yahoo Finance</em></li></ul>
+<hr class="divider">
+<h2 id="cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</h2>
+<p class="bold-line"><strong>What confirmed:</strong></p>
+<ul><li><strong>Equities ↑ + Bonds stable = risk-on rotation.</strong> S&amp;P 500 +1.7%, VIX −8.4% to 16.20, credit spreads tight (HY BB OAS at 1.62% per YCharts). The rally was broad — 7 of 11 sectors positive, strong breadth, above-average volume.</li><li><strong>Oil ↓ + Gold ↑ = geopolitical repricing.</strong> WTI fell ~4% intraday to ~$78.66 as Iran peace deal removed the Hormuz risk premium. Gold rose 0.81% to $4,343 despite reduced safe-haven demand, suggesting the rate-sensitive bid (lower yields from oil disinflation) offset the geopolitical bid.</li><li><strong>DXY stable at 99.56.</strong> Dollar barely moved, consistent with a Fed-on-hold expectation.</li></ul>
+<p class="bold-line"><strong>What diverged:</strong></p>
+<ul><li><strong>Energy (−3.6%) vs the rest of the market.</strong> The sector was the only material drag, directly traceable to the Iran deal. This is a clean thematic divergence, not a warning signal.</li><li><strong>Housing data vs equity optimism.</strong> Housing starts collapsed to May 2020 lows (1.177M vs 1.43M consensus), and builder sentiment fell to 35. Equities shrugged this off entirely — either correctly (oil disinflation should ease mortgage rates) or incorrectly (the housing slowdown signals broader demand weakness). Worth monitoring.</li><li><strong>Manufacturing data softness.</strong> NY Empire State at 5.7 (vs 13.9 consensus) and IP at +0.1% MoM were weak, but markets focused on the oil-driven inflation relief.</li></ul>
+<p class="bold-line"><strong>Sentiment check:</strong></p>
+<ul><li>VIX at 16.20 is the lowest since early March — complacency territory. The March VIX spike to 31.05 (March 27) was the last fear event.</li><li>Quantum basket rally on pure risk appetite (no fundamentals) is a late-cycle sentiment indicator.</li></ul>
+<hr class="divider">
+<h2 id="tomorrow-setup">Tomorrow Setup</h2>
+<p class="bold-line"><strong>FOMC Decision Day — the main event:</strong></p>
+<ul><li><strong>2:00 PM ET:</strong> Rate decision + Summary of Economic Projections (SEP) + dot plot.</li><li><strong>2:30 PM ET:</strong> Chair Warsh's first press conference.</li><li><strong>Expected:</strong> Hold at 3.50%–3.75%. The market-moving variable is the <em>policy stance language</em> — easing bias removal → neutral stance signals no cuts through year-end. A hawkish surprise would be a rate hike signal in the dot plot.</li><li><strong>Key watchpoints:</strong> Warsh's communication style (he has criticized forward guidance and dot plots), any balance-sheet runoff commentary, and whether the SEP shows inflation forecasts above 3% through year-end.</li></ul>
+<p class="bold-line"><strong>Economic data due Wednesday:</strong></p>
+<ul><li>MBA Mortgage Applications (7:00 AM ET)</li><li>No other major releases expected</li></ul>
+<p class="bold-line"><strong>After-hours earnings to watch:</strong></p>
+<ul><li>No major after-hours reports flagged for Tuesday evening. The next significant earnings batch begins Thursday.</li></ul>
+<p class="bold-line"><strong>Geopolitical calendar:</strong></p>
+<ul><li>Iran peace deal formal signing expected Friday (June 19) in Switzerland. Israel has publicly rejected the terms — this is a live risk for oil prices if the deal fractures before signing.</li><li>Juneteenth market holiday: Friday, June 19 — U.S. markets closed.</li></ul>
+<p class="bold-line"><strong>Pre-market futures (as of 6:00 PM ET):</strong></p>
+<ul><li>Futures data not available at close of this briefing. Kiplinger and Kitco reports noted S&amp;P 500 futures +0.1%, Dow +0.1%, Nasdaq +0.3% in early Tuesday trading. After-hours ETF data from StockAnalysis shows SPY −0.08%, QQQ −0.06%, DIA −0.09% in the early after-hours session.</li></ul>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<h3 id="data-conflicts-flagged">Data Conflicts Flagged</h3>
+<p>1. <strong>S&amp;P 500 / Nasdaq closing levels:</strong> Zacks reports S&amp;P 500 +1.7% and Nasdaq +3.1%. TheStreet's 2:58 PM intraday snapshot showed S&amp;P 500 −0.08% and Nasdaq −0.52%, implying a massive late-session reversal. Yahoo Finance close data (7,559.99 for S&amp;P 500) is consistent with Zacks' directional call but the magnitude of the intraday-to-close swing is unusual. <strong>Confidence: Moderate.</strong> Verify with primary exchange close data when available.</p>
+<p>2. <strong>VIX timing:</strong> FRED reports 16.20 for June 15; Yahoo Finance shows 16.20 for June 16. Both agree on the level, minor date discrepancy. Not material.</p>
+<h3 id="sources-used-deep-extraction">Sources Used (Deep Extraction)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Source</th><th>Articles Extracted</th><th>Data Quality</th></tr></thead><tbody><tr><td>Zacks</td><td>1 (full)</td><td>High — specific close data, breadth, sector detail</td></tr><tr><td>TheStreet</td><td>1 (full)</td><td>High — live blog with intraday + corporate detail</td></tr><tr><td>Reuters</td><td>1 (full)</td><td>High — SpaceX deal terms, analyst quotes</td></tr><tr><td>Yahoo Finance/Quartz</td><td>1 (full)</td><td>High — Robinhood layoff details, SEC filing ref</td></tr><tr><td>Kitco</td><td>1 (full)</td><td>Moderate — AI-assisted, human-verified; commodity prices</td></tr><tr><td>Kiplinger</td><td>1 (full)</td><td>High — FOMC context, Warsh bio, CPI detail, Duke survey</td></tr><tr><td>FXStreet</td><td>1 (full)</td><td>Moderate-High — FOMC preview, rate-path odds</td></tr><tr><td>Yahoo Finance (quantum)</td><td>1 (full)</td><td>Moderate — quantum basket analysis</td></tr><tr><td>StockAnalysis (after-hours)</td><td>1 (full)</td><td>Moderate — ETF after-hours moves</td></tr><tr><td>Trading Economics</td><td>1 (description)</td><td>Moderate — 2Y yield level</td></tr><tr><td>YCharts</td><td>1 (description)</td><td>Moderate — 10Y yield, HY spreads</td></tr><tr><td>FRED (St. Louis Fed)</td><td>N/A (direct query)</td><td>High — VIX, credit spread levels</td></tr><tr><td>Yahoo Finance (historical)</td><td>N/A (direct query)</td><td>High — index close levels</td></tr></tbody></table></div>
+<h3 id="non-extracted-search-level-sources">Non-Extracted / Search-Level Sources</h3>
+<ul><li>Morningstar — SpaceX price data (search snippet only)</li><li>CBS News — SpaceX deal confirmation (search snippet)</li><li>Forbes — Robinhood layoff confirmation (search snippet)</li><li>MarketWatch — DXY close 99.56 (search snippet)</li><li>Forex.com — DXY technical outlook (search snippet)</li><li>Barchart — APLD calendar mention (search snippet)</li></ul>
+<h3 id="articles-rejected-not-extracted">Articles Rejected / Not Extracted</h3>
+<ul><li>Any articles lacking June 16, 2026 timestamps</li><li>Yum China/Fidelity PR newswire — redundant with Yum Brands primary press release</li><li>Zacks promotional content (stock picks, "7 Best Strong Buy" — filtered)</li><li>Search results referencing June 15 or earlier dates (stale indicators)</li><li>General "semiconductor stocks to buy" articles with no June 16 news hook</li><li>YouTube video links (not text-extractable)</li></ul>
+<h3 id="confidence-assessment">Confidence Assessment</h3>
+<ul><li><strong>Closing levels and sector data:</strong> High confidence (multiple cross-referenced sources)</li><li><strong>FOMC preview and Warsh context:</strong> High confidence (Kiplinger + FXStreet)</li><li><strong>SpaceX deal terms:</strong> High confidence (Reuters primary)</li><li><strong>Oil price dynamics:</strong> High confidence (Kitco + TheStreet + Kiplinger)</li><li><strong>Nasdaq +3.1% magnitude:</strong> Moderate confidence (Zacks only; TheStreet intraday conflicts)</li><li><strong>Credit spread levels:</strong> Moderate confidence (latest FRED data is June 11; YCharts June 16 for HY BB only)</li></ul>
+<hr class="divider">
+<p><em>End of briefing. Next run: Pre-market, Wednesday June 17, 2026 at 6:00 AM ET.</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.zacks.com/stock/news/2937721/stock-market-news-for-jun-16-2026" target="_blank" rel="noopener">Stock Market News for Jun 16, 2026</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-16-2026" target="_blank" rel="noopener">Stock Market Today (June 16, 2026): SpaceX jumps 20% after announcing AI deal; N</a>
+<a class="source-link" href="https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/" target="_blank" rel="noopener">SpaceX locks in $60 billion Cursor deal to close gap with rivals in AI coding ra</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/robinhood-layoffs-2026-company-cuts-144314489.html" target="_blank" rel="noopener">Robinhood layoffs see company cut 10% of workforce</a>
+<a class="source-link" href="https://www.kitco.com/news/article/2026-06-16/gold-silver-firm-us-iran-deal-cools-crude-kitco-am-report" target="_blank" rel="noopener">Gold, silver firm as U.S.-Iran deal cools crude - Kitco AM Report</a>
+<a class="source-link" href="https://www.kiplinger.com/news/live/fed-meeting-updates-and-commentary-june-2026" target="_blank" rel="noopener">June Fed Meeting: Live Updates and Commentary</a>
+<a class="source-link" href="https://www.fxstreet.com/analysis/kevin-warsh-opens-first-fed-meeting-june-16-with-rate-hold-expected-202606151326" target="_blank" rel="noopener">Kevin Warsh opens first Fed meeting June 16 with rate hold expected</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/quantum-computing-d-wave-quantum-152650838.html" target="_blank" rel="noopener">Quantum Computing and D-Wave Quantum Jump 12%, Rigetti Climbs 9%, IonQ Gains 6% </a>
+<a class="source-link" href="https://stockanalysis.com/markets/afterhours/" target="_blank" rel="noopener">Today&#x27;s After Hours Stock Movers</a>
+<a class="source-link" href="https://www.yum.com/wps/portal/yumbrands/Yumbrands/news/press-releases/yum+brands+inc+enters+into+agreements+to+sell+pizza+hut+for+2.7+billion" target="_blank" rel="noopener">Yum! Brands, Inc. enters into agreements to sell Pizza Hut for $2.7 billion</a>
+<a class="source-link" href="https://www.forbes.com/sites/tylerroush/2026/06/16/robinhood-cuts-10-of-workforce-citing-heavily-layered-operations/" target="_blank" rel="noopener">Robinhood Cuts 10% Of Workforce—Citing &#x27;Heavily-Layered&#x27; Operations</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-16 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,516 @@
+{
+  "schema_version": "2.0",
+  "run": {
+    "mode": "post-market",
+    "date": "2026-06-16",
+    "generated": "2026-06-16T18:00:00-04:00",
+    "recency_window": {
+      "start": "2026-06-15T18:00:00-04:00",
+      "end": "2026-06-16T18:00:00-04:00"
+    }
+  },
+  "stats": {
+    "total_discovered": 28,
+    "deep_extracted": 11,
+    "snippet_only": 8,
+    "rejected_stale": 5,
+    "rejected_noise": 4
+  },
+  "articles": [
+    {
+      "id": "zacks-20260616-market-close",
+      "title": "Stock Market News for Jun 16, 2026",
+      "url": "https://www.zacks.com/stock/news/2937721/stock-market-news-for-jun-16-2026",
+      "source": "Zacks",
+      "source_class": "analysis",
+      "published_at": "2026-06-16T16:00:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "high",
+      "categories": [
+        "market-close",
+        "equities",
+        "macro"
+      ],
+      "tickers": [
+        "SPX",
+        "DJI",
+        "IXIC",
+        "BA",
+        "XLK",
+        "XLE",
+        "XLC",
+        "XLY"
+      ],
+      "data_points": {
+        "S&P 500 close": "7,554.29 (+1.7%)",
+        "Dow close": "51,671.03 (+0.9%, +468.77 pts)",
+        "Nasdaq close": "26,683.94 (+3.1%, +795.10 pts)",
+        "VIX": "16.20 (-8.4%)",
+        "volume_billion": 21.29,
+        "sector_breadth": "7 positive / 4 negative",
+        "nyse_52w_highs": 41,
+        "nyse_52w_lows": 3,
+        "nasdaq_52w_highs": 202,
+        "nasdaq_52w_lows": 89,
+        "ny_empire_state": 5.7,
+        "industrial_production_mom": 0.1,
+        "capacity_utilization": 76.2
+      },
+      "extracted_text": "Wall Street closed higher on Tuesday after the U.S.-Iran peace agreement eased geopolitical tensions. Dow +0.9% to 51,671, Nasdaq +3.1% to 26,684, S&P 500 +1.7% to 7,554. VIX fell 8.4% to 16.20. Seven of 11 sectors positive; tech +3.4%, energy -3.6%. NY Empire State Mfg fell to 5.7 vs 13.9 consensus. Industrial Production +0.1% MoM."
+    },
+    {
+      "id": "thestreet-20260616-live",
+      "title": "Stock Market Today (June 16, 2026): SpaceX jumps 20% after announcing AI deal; Nasdaq, S&P 500 decline",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-16-2026",
+      "source": "TheStreet",
+      "source_class": "newswire",
+      "published_at": "2026-06-16T14:58:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "high",
+      "categories": [
+        "market-close",
+        "equities",
+        "corporate",
+        "geopolitics",
+        "commodities"
+      ],
+      "tickers": [
+        "SPCX",
+        "SPX",
+        "DJI",
+        "IXIC",
+        "RUT",
+        "HOOD",
+        "YUM",
+        "WDC",
+        "STX",
+        "OLN",
+        "HUN",
+        "HLT",
+        "QRVO"
+      ],
+      "data_points": {
+        "intraday_dow": "+0.96%",
+        "intraday_sp500": "-0.08%",
+        "intraday_nasdaq": "-0.52%",
+        "intraday_russell": "-0.25%",
+        "SPCX_change": "+20%",
+        "SPCX_price": 216.27,
+        "SPCX_mcap_trillion": 2.85,
+        "wti_close": 78.66,
+        "wti_change_pct": -2.6,
+        "brent_close": 81.17,
+        "brent_change_pct": -2.4,
+        "housing_starts_millions": 1.177,
+        "housing_starts_change_pct": -15.4,
+        "nahb_index": 35,
+        "HOOD_layoffs_pct": 10,
+        "HOOD_layoffs_jobs": 290,
+        "YUM_pizza_hut_sale_billions": 1.5,
+        "YUM_yum_china_sale_billions": 1.2
+      },
+      "extracted_text": "Mixed equities intraday with Dow +0.96%, S&P -0.08%, Nasdaq -0.52% at 2:58 PM. SpaceX jumped 20% after acquiring Anysphere/Cursor for $60B all-stock. US-Iran ceasefire framework signed, oil fell sharply: WTI -2.6% to $78.66, Brent -2.4% to $81.17. Robinhood cut 10% of workforce. Yum Brands sold Pizza Hut for $2.7B. Housing starts collapsed to 1.177M (-15.4%), NAHB fell to 35."
+    },
+    {
+      "id": "reuters-20260616-spacex-cursor",
+      "title": "SpaceX locks in $60 billion Cursor deal to close gap with rivals in AI coding race",
+      "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
+      "source": "Reuters",
+      "source_class": "newswire",
+      "published_at": "2026-06-16T11:00:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "high",
+      "categories": [
+        "corporate",
+        "M&A",
+        "AI"
+      ],
+      "tickers": [
+        "SPCX"
+      ],
+      "data_points": {
+        "deal_value_billions": 60,
+        "deal_type": "all-stock",
+        "target": "Anysphere (Cursor)",
+        "expected_close": "Q3 2026",
+        "termination_fee_standard_billions": 10,
+        "termination_fee_antitrust_billions": 4,
+        "SPCX_ipo_price": 135,
+        "SPCX_current_price": 211.27,
+        "SPCX_mcap_trillion": 2.53,
+        "cursor_annual_revenue_billions": 2.6,
+        "cursor_prior_valuation_billions": 50,
+        "cloud_deals_annual_billions": 26
+      },
+      "notable_quotes": [
+        "\"Cursor does not have the scale of OpenAI or Anthropic, but it has built some very impressive coding models relative to cost.\" \u2014 Matt Britzman, Hargreaves Lansdown",
+        "\"One of the things that makes SpaceX so valuable is how valuable it is. The Cursor acquisition costs materially less in dilution because of SpaceX's high valuation.\" \u2014 Bill Ackman"
+      ],
+      "extracted_text": "SpaceX to acquire Anysphere (maker of AI coding agent Cursor) for $60B in all-stock deal, expected to close Q3 2026. Termination fees: $10B standard, $4B antitrust. SpaceX stock +10% on announcement, market cap $2.53T. Cursor annualized B2B revenue $2.6B, prior valuation $50B. Deal strengthens xAI against Anthropic and OpenAI."
+    },
+    {
+      "id": "yahoo-robinhood-20260616-layoffs",
+      "title": "Robinhood layoffs see company cut 10% of workforce",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/robinhood-layoffs-2026-company-cuts-144314489.html",
+      "source": "Yahoo Finance / Quartz",
+      "source_class": "newswire",
+      "published_at": "2026-06-16T10:43:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "high",
+      "categories": [
+        "corporate",
+        "layoffs",
+        "fintech"
+      ],
+      "tickers": [
+        "HOOD"
+      ],
+      "data_points": {
+        "layoff_pct": 10,
+        "jobs_cut": 290,
+        "severance_charges_millions": 20,
+        "share_comp_charges_millions": 8,
+        "total_employees": 2900,
+        "revenue_per_employee_millions": 1.4,
+        "revenue_per_employee_yoy_change_pct": -8,
+        "headcount_yoy_change_pct": 22,
+        "stock_reaction": "+2%"
+      },
+      "notable_quotes": [
+        "\"We cannot default to operating as a heavily layered organization. We must be a lean, hyper-focused team where every single individual is empowered to make a massive impact.\" \u2014 Vlad Tenev, CEO"
+      ],
+      "extracted_text": "Robinhood Markets announced 10% workforce reduction affecting ~290 employees. CEO Vlad Tenev cited need for lean, hyper-focused team. $20M severance + $8M share-based comp charges booked Q2 2026. Company has ~2,900 FTEs. Q1 headcount rose 22% YoY while revenue per employee fell 8% to $1.4M."
+    },
+    {
+      "id": "kitco-20260616-commodities",
+      "title": "Gold, silver firm as U.S.-Iran deal cools crude - Kitco AM Report",
+      "url": "https://www.kitco.com/news/article/2026-06-16/gold-silver-firm-us-iran-deal-cools-crude-kitco-am-report",
+      "source": "Kitco News",
+      "source_class": "commodities",
+      "published_at": "2026-06-16T09:18:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "high",
+      "categories": [
+        "commodities",
+        "geopolitics",
+        "macro"
+      ],
+      "tickers": [],
+      "data_points": {
+        "spot_gold": 4343.2,
+        "spot_gold_change_pct": 0.81,
+        "spot_silver": 70.47,
+        "spot_silver_change_pct": 0.86,
+        "wti_crude": 78.4,
+        "brent_below_80": true,
+        "dxy": "slightly firmer",
+        "sp500_futures": "+0.1%",
+        "dow_futures": "+0.1%",
+        "nasdaq_futures": "+0.3%",
+        "nikkei": "briefly above 70,000",
+        "boj_rate": "1% (highest in 3 decades)"
+      },
+      "extracted_text": "Spot gold +0.81% to $4,343/oz, silver +0.86% to $70.47/oz. WTI crude fell to ~$78.40/bbl, Brent briefly below $80 for first time since March. Iran peace deal reopened Strait of Hormuz, tankers resumed shipping. FOMC meeting begins Tuesday, rate hold expected. Nikkei briefly topped 70,000 after BOJ raised rate to 1%."
+    },
+    {
+      "id": "kiplinger-20260616-fomc",
+      "title": "June Fed Meeting: Live Updates and Commentary",
+      "url": "https://www.kiplinger.com/news/live/fed-meeting-updates-and-commentary-june-2026",
+      "source": "Kiplinger",
+      "source_class": "analysis",
+      "published_at": "2026-06-16T15:00:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "high",
+      "categories": [
+        "macro",
+        "FOMC",
+        "rates"
+      ],
+      "tickers": [],
+      "data_points": {
+        "fomc_dates": "June 16-17",
+        "rate_expectation": "hold at 3.50-3.75%",
+        "fed_chair": "Kevin Warsh (first meeting)",
+        "may_cpi_headline_yoy": 4.2,
+        "may_cpi_core_yoy": 2.9,
+        "may_cpi_energy_mom": 3.9,
+        "wti_peak_march9": 119.48,
+        "duke_survey_year_end_pce_median": 3.5,
+        "duke_survey_rate_hike_appropriate": "17 of 32",
+        "two_year_yield": "4.06-4.07%",
+        "warsh_confirmation_vote": "54-45",
+        "warsh_confirmed": "May 13, 2026"
+      },
+      "extracted_text": "Kevin Warsh chairs first FOMC meeting June 16-17. Rate hold at 3.50-3.75% widely expected. May CPI headline 4.2% YoY, core 2.9%. Energy accounted for >60% of monthly CPI increase. Duke survey: median year-end PCE 3.5%, 17 of 32 former officials say rate hike appropriate in 2026. WTI fell below $80 on Iran deal."
+    },
+    {
+      "id": "fxstreet-20260616-fomc-preview",
+      "title": "Kevin Warsh opens first Fed meeting June 16 with rate hold expected",
+      "url": "https://www.fxstreet.com/analysis/kevin-warsh-opens-first-fed-meeting-june-16-with-rate-hold-expected-202606151326",
+      "source": "FXStreet",
+      "source_class": "fx",
+      "published_at": "2026-06-15T13:26:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "high",
+      "categories": [
+        "macro",
+        "FOMC",
+        "rates",
+        "crypto"
+      ],
+      "tickers": [
+        "BTC"
+      ],
+      "data_points": {
+        "rate_expectation": "hold at 3.50-3.75%",
+        "easing_bias_removal_expected": true,
+        "april_dissents": 4,
+        "april_dissents_most_since": 1992,
+        "year_end_hold_odds_pct": 65,
+        "bitcoin_price": 63686,
+        "bitcoin_mcap_trillion": 1.28,
+        "warsh_confirmed": "May 22, 2026",
+        "press_conference": "June 17, 2:30 PM ET"
+      },
+      "extracted_text": "FOMC June 16-17 expected to hold rates at 3.50-3.75%. Committee expected to shift from easing bias to neutral stance. April meeting saw 4 dissents, most since 1992. Markets price ~65% odds rates hold through year-end. Warsh confirmed May 22 in 54-45 Senate vote. Press conference June 17 at 2:30 PM ET."
+    },
+    {
+      "id": "yahoo-quantum-20260615-basket",
+      "title": "Quantum Computing and D-Wave Quantum Jump 12%, Rigetti Climbs 9%, IonQ Gains 6% Amid Risk-On Optimism",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/quantum-computing-d-wave-quantum-152650838.html",
+      "source": "Yahoo Finance",
+      "source_class": "newswire",
+      "published_at": "2026-06-15T15:26:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "moderate",
+      "categories": [
+        "equities",
+        "quantum-computing",
+        "sentiment"
+      ],
+      "tickers": [
+        "QUBT",
+        "QBTS",
+        "RGTI",
+        "IONQ"
+      ],
+      "data_points": {
+        "QUBT_change_pct": 12,
+        "QUBT_price": 11.1,
+        "QBTS_change_pct": 12,
+        "QBTS_price": 26.14,
+        "RGTI_change_pct": 9,
+        "RGTI_price": 22.92,
+        "IONQ_change_pct": 6,
+        "IONQ_price": 61.51,
+        "IONQ_mcap_billions": 23,
+        "IONQ_ps_ratio": 115,
+        "IONQ_q1_revenue_millions": 64.67,
+        "IONQ_fy2026_guidance": "260-270M",
+        "RGTI_q1_revenue_millions": 4.4,
+        "VIX": 16.24
+      },
+      "extracted_text": "Quantum computing stocks surged Monday June 15 on risk-on sentiment from Iran peace deal. QUBT +12%, QBTS +12%, RGTI +9%, IONQ +6%. No quantum-specific catalyst. IONQ trades at 115x price-to-sales, Q1 revenue $64.67M, raised FY2026 guidance to $260-270M. RGTI Q1 revenue $4.4M, 108-qubit system on AWS Braket."
+    },
+    {
+      "id": "stockanalysis-20260616-afterhours",
+      "title": "Today's After Hours Stock Movers",
+      "url": "https://stockanalysis.com/markets/afterhours/",
+      "source": "Stock Analysis",
+      "source_class": "market_data",
+      "published_at": "2026-06-16T16:30:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_extract",
+      "depth": "full",
+      "relevance": "moderate",
+      "categories": [
+        "after-hours",
+        "equities"
+      ],
+      "tickers": [
+        "SDOT",
+        "FLZH",
+        "GDHG",
+        "LZB",
+        "TRNR"
+      ],
+      "data_points": {
+        "spy_after_hours_change_pct": -0.08,
+        "qqq_after_hours_change_pct": -0.06,
+        "dia_after_hours_change_pct": -0.09,
+        "iwm_after_hours_change_pct": -0.14,
+        "top_gainer": "SDOT +52.83%",
+        "top_loser": "TRNR -16.85%"
+      },
+      "extracted_text": "After-hours ETF moves: SPY -0.08%, QQQ -0.06%, DIA -0.09%, IWM -0.14%. Top gainer: SDOT +52.83%. Top loser: TRNR -16.85%. Notable: LZB +11.52% after hours."
+    },
+    {
+      "id": "yum-brands-20260616-pr",
+      "title": "Yum! Brands, Inc. enters into agreements to sell Pizza Hut for $2.7 billion",
+      "url": "https://www.yum.com/wps/portal/yumbrands/Yumbrands/news/press-releases/yum+brands+inc+enters+into+agreements+to+sell+pizza+hut+for+2.7+billion",
+      "source": "Yum Brands (Press Release)",
+      "source_class": "company_release",
+      "published_at": "2026-06-16T08:15:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_search",
+      "depth": "snippet",
+      "relevance": "moderate",
+      "categories": [
+        "corporate",
+        "M&A"
+      ],
+      "tickers": [
+        "YUM",
+        "YUMC"
+      ],
+      "data_points": {
+        "total_sale_value_billions": 2.7,
+        "share_buyback_billions": 4
+      },
+      "extracted_text": "Yum Brands sold Pizza Hut to LongRange Capital for $1.5B and mainland China locations to Yum China for ~$1.2B. Combined net proceeds ~$2.3B plus $75M earn-out. Board authorized incremental $4B share buyback. Stock +0.85%."
+    },
+    {
+      "id": "forbes-20260616-robinhood",
+      "title": "Robinhood Cuts 10% Of Workforce\u2014Citing 'Heavily-Layered' Operations",
+      "url": "https://www.forbes.com/sites/tylerroush/2026/06/16/robinhood-cuts-10-of-workforce-citing-heavily-layered-operations/",
+      "source": "Forbes",
+      "source_class": "newswire",
+      "published_at": "2026-06-16T12:00:00-04:00",
+      "fetched_at": "2026-06-16T18:00:00-04:00",
+      "extraction_method": "web_search",
+      "depth": "snippet",
+      "relevance": "moderate",
+      "categories": [
+        "corporate",
+        "layoffs",
+        "fintech"
+      ],
+      "tickers": [
+        "HOOD"
+      ],
+      "data_points": {
+        "layoff_pct": 10,
+        "description": "citing efforts to make the trading platform lean and..."
+      },
+      "extracted_text": "Robinhood cutting 10% of workforce, citing heavily-layered operations and push for leaner organization. Approximately 290 jobs affected."
+    }
+  ],
+  "market_data_snapshots": {
+    "indices": {
+      "SPX": {
+        "close": 7559.99,
+        "source": "Yahoo Finance historical"
+      },
+      "DJI": {
+        "close": 52148.44,
+        "source": "Yahoo Finance historical"
+      },
+      "IXIC": {
+        "close": 26683.94,
+        "source": "Zacks"
+      },
+      "RUT": {
+        "close": 2955.49,
+        "source": "Yahoo Finance historical"
+      },
+      "VIX": {
+        "close": 16.2,
+        "source": "Yahoo Finance / FRED"
+      }
+    },
+    "treasuries": {
+      "2Y": {
+        "yield": 4.06,
+        "source": "Trading Economics / Kiplinger"
+      },
+      "10Y": {
+        "yield": 4.48,
+        "source": "YCharts"
+      }
+    },
+    "fx": {
+      "DXY": {
+        "close": 99.56,
+        "source": "MarketWatch"
+      }
+    },
+    "commodities": {
+      "WTI": {
+        "close": 78.66,
+        "source": "TheStreet / Kitco"
+      },
+      "Brent": {
+        "close": 81.17,
+        "source": "TheStreet"
+      },
+      "Gold": {
+        "spot": 4343.2,
+        "source": "Kitco"
+      },
+      "Silver": {
+        "spot": 70.47,
+        "source": "Kitco"
+      }
+    },
+    "credit": {
+      "HY_OAS": {
+        "level": 2.78,
+        "date": "2026-06-11",
+        "source": "FRED"
+      },
+      "IG_spread": {
+        "level": 0.75,
+        "date": "2026-06-11",
+        "source": "Macrotrends"
+      },
+      "HY_BB_OAS": {
+        "level": 1.62,
+        "date": "2026-06-16",
+        "source": "YCharts"
+      }
+    }
+  },
+  "rejected_articles": [
+    {
+      "reason": "stale_date",
+      "url": "https://finance.yahoo.com/economy/policy/articles/fed-rate-cuts-2026-now-102912675.html",
+      "note": "Published May 17, 2026"
+    },
+    {
+      "reason": "stale_date",
+      "url": "https://www.zacks.com/stock/news/2936947/oracle-and-adobe-are-part-of-zacks-earnings-preview",
+      "note": "Published June 15 \u2014 earnings preview, not June 16 news"
+    },
+    {
+      "reason": "stale_date",
+      "url": "https://www.investors.com/news/technology/adobe-stock-adbe-fiscal-q2-2026-earnings/",
+      "note": "Published 5 days ago \u2014 ADBE earnings from prior week"
+    },
+    {
+      "reason": "noise_filter",
+      "url": "https://www.aol.com/articles/meet-super-semiconductor-stock-crushing-181700854.html",
+      "note": "Promotional/SEO content, no June 16 news hook"
+    },
+    {
+      "reason": "noise_filter",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/3-semiconductor-stocks-buy-while-143037327.html",
+      "note": "Generic listicle, not date-specific news"
+    }
+  ]
+}
