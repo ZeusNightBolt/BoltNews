@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-17</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-17 &middot; 8 articles &middot; 5 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#1-futures-and-current-market-snapshot">1. Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#2-overnight-top-developments">2. Overnight Top Developments</a><a class="toc-link toc-level-2" href="#3-global-session-recap">3. Global Session Recap</a><a class="toc-link toc-level-2" href="#4-macro-rates-and-policy-setup">4. Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-3" href="#fomc-decision-the-warsh-unknown">FOMC Decision — The Warsh Unknown</a><a class="toc-link toc-level-3" href="#yield-curve">Yield Curve</a><a class="toc-link toc-level-3" href="#today-s-data-calendar">Today&#x27;s Data Calendar</a><a class="toc-link toc-level-2" href="#5-fx-and-commodities">5. FX and Commodities</a><a class="toc-link toc-level-3" href="#dollar-dxy">Dollar (DXY)</a><a class="toc-link toc-level-3" href="#key-fx-pairs">Key FX Pairs</a><a class="toc-link toc-level-3" href="#oil">Oil</a><a class="toc-link toc-level-3" href="#gold">Gold</a><a class="toc-link toc-level-3" href="#crypto">Crypto</a><a class="toc-link toc-level-2" href="#6-equities-and-single-stock-watchlist">6. Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-3" href="#pre-market-movers-cnn-6-07-am-et">Pre-Market Movers (CNN, 6:07 AM ET)</a><a class="toc-link toc-level-3" href="#sector-thematic-movers">Sector &amp; Thematic Movers</a><a class="toc-link toc-level-3" href="#ticker-specific-catalysts-from-universe">Ticker-Specific Catalysts from Universe</a><a class="toc-link toc-level-2" href="#7-sector-and-factor-setup">7. Sector and Factor Setup</a><a class="toc-link toc-level-3" href="#tuesday-sector-performance-s-p-500-11-sectors">Tuesday Sector Performance (S&amp;P 500, 11 sectors)</a><a class="toc-link toc-level-3" href="#factor-performance-inferred-from-sector-data">Factor Performance (Inferred from sector data)</a><a class="toc-link toc-level-3" href="#breadth">Breadth</a><a class="toc-link toc-level-2" href="#8-today-s-risk-map">8. Today&#x27;s Risk Map</a><a class="toc-link toc-level-3" href="#tier-1-fomc-decision-2-00-pm-et-warsh-press-conference-2-30-pm-et">Tier 1: FOMC Decision (2:00 PM ET) + Warsh Press Conference (2:30 PM ET)</a><a class="toc-link toc-level-3" href="#tier-2-us-iran-deal-signing-friday">Tier 2: US-Iran Deal Signing (Friday)</a><a class="toc-link toc-level-3" href="#tier-3-retail-sales-8-30-am">Tier 3: Retail Sales (8:30 AM)</a><a class="toc-link toc-level-3" href="#tier-4-eia-petroleum-10-30-am">Tier 4: EIA Petroleum (10:30 AM)</a><a class="toc-link toc-level-3" href="#tier-5-remainder-of-week">Tier 5: Remainder of Week</a><a class="toc-link toc-level-2" href="#9-cross-asset-positioning-matrix">9. Cross-Asset Positioning Matrix</a><a class="toc-link toc-level-2" href="#10-contrarian-flags">10. Contrarian Flags</a><a class="toc-link toc-level-2" href="#11-source-notes-and-data-quality">11. Source Notes and Data Quality</a><a class="toc-link toc-level-3" href="#high-confidence-primary-sources">High Confidence (Primary Sources)</a><a class="toc-link toc-level-3" href="#moderate-confidence-secondary-analyst-sources">Moderate Confidence (Secondary/Analyst Sources)</a><a class="toc-link toc-level-3" href="#data-gaps">Data Gaps</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-wednesday-june-17-2026">BoltNews Pre-Market Briefing — Wednesday, June 17, 2026</h1>
+<p class="bold-line"><strong>FOMC Decision Day | Kevin Warsh's Debut as Fed Chair</strong></p>
+<hr class="divider">
+<h2 id="1-futures-and-current-market-snapshot">1. Futures and Current Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Futures Level</th><th>Change</th><th>% Change</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,591.75</td><td>+4.50</td><td>+0.06%</td></tr><tr><td>Nasdaq-100</td><td>30,456.75</td><td>+143.00</td><td>+0.47%</td></tr><tr><td>Dow</td><td>52,442.00</td><td>-28.00</td><td>-0.05%</td></tr></tbody></table></div>
+<p><strong>Tuesday close (June 16):</strong> Dow 51,999.67 (+0.64%, 2nd straight record), S&amp;P 500 7,511.35 (-0.57%), Nasdaq 26,376.34 (-1.15%), Russell 2000 2,939.19 (-0.87%). Dow's record masked significant tech weakness — semis (SOX) plunged 5.7%, Info Tech sector lost 2.3%. Seven of 11 S&amp;P sectors closed higher. Financials +1.5%, Industrials +0.7%. (Source: Reuters, CNN — primary)</p>
+<div class="table-wrapper"><table><thead><tr><th>Commodity</th><th>Price</th><th>Change</th></tr></thead><tbody><tr><td>WTI Crude</td><td>$76.02</td><td>-$0.03</td></tr><tr><td>Brent Crude</td><td>$77.19</td><td>+$0.06</td></tr><tr><td>Gold</td><td>$4,348.60</td><td>-$5.80</td></tr><tr><td>Silver</td><td>$70.00</td><td>-$0.01</td></tr><tr><td>Natural Gas</td><td>$3.26</td><td>+$0.02</td></tr></tbody></table></div>
+<div class="table-wrapper"><table><thead><tr><th>Key Rate/Yield</th><th>Level</th></tr></thead><tbody><tr><td>10Y Treasury</td><td>4.44%</td></tr><tr><td>2Y Treasury</td><td>4.06%</td></tr><tr><td>30Y Treasury</td><td>4.93%</td></tr><tr><td>DXY</td><td>99.51</td></tr><tr><td>VIX (close)</td><td>16.39</td></tr><tr><td>Bitcoin</td><td>$64,832 (-1.16%)</td></tr></tbody></table></div>
+<p><strong>Sentiment:</strong> CNN Fear &amp; Greed Index reads "Fear." VIX at 16.39 with June 17 VIX futures at 17.07 — a modest event-risk premium priced for the FOMC meeting. VIX options show IV rank of 92% with IV at 147%, indicating elevated demand for volatility protection around today's decision. (Source: CNN, Cboe, OptionCharts — market_data)</p>
+<hr class="divider">
+<h2 id="2-overnight-top-developments">2. Overnight Top Developments</h2>
+<p class="bold-line"><strong>1. FOMC Decision Day — Warsh Debut (2:00 PM ET)</strong></p>
+<p>The Federal Reserve concludes its two-day meeting today with new Chair Kevin Warsh's first policy decision and press conference (2:30 PM ET). Rates are universally expected to remain unchanged at 3.50–3.75% (CME FedWatch: 97% probability). The decision itself is not the story — the press conference, dot plot, and Warsh's communication style are. Critically, Warsh is <strong>not expected to submit his own dot</strong> to the Summary of Economic Projections — an unprecedented move for a Fed Chair that signals potential overhaul of Fed communications. (Source: Kiplinger, Reuters, Fed calendar — primary + secondary)</p>
+<p class="bold-line"><strong>2. US-Iran Peace Deal: Oil Route Reopening</strong></p>
+<p>Brent crude has dived below $80, down more than one-third from recent peaks, after President Trump announced a US-Iran interim deal. Key terms: 60-day ceasefire extension, Strait of Hormuz reopening, Iran allowed to sell oil upon signing. Formal signing ceremony set for Friday in Switzerland. Iran's potential exports could add approximately 2% of global oil supply. The Strait has been blockaded for three months, driving US strategic oil reserves to their lowest since 1983. Pakistan's PM confirmed military operations terminated. (Source: Reuters, CNBC — primary)</p>
+<p class="bold-line"><strong>3. Tech Rotation Continues: Semis Crushed, Chips Bounce Pre-market</strong></p>
+<p>The Philadelphia Semiconductor Index (SOX) fell 5.7% Tuesday — its worst single-day decline in the current cycle — as profit-taking hit AI/tech names following Monday's 3%+ Nasdaq rally. However, pre-market Wednesday shows chip stocks bouncing: Intel +3.7%, Micron +3.2%, ASML +4%, SOXQ ETF +2.3%. The rotation into cyclicals (Financials +1.5%, Industrials +0.7%) is the dominant positioning theme. (Source: Reuters, CNBC, CNN — primary)</p>
+<p class="bold-line"><strong>4. Asia Rallies; Japan Hits Another Record</strong></p>
+<p>Nikkei 225 closed at 69,902.25 (+0.72%), another all-time high. Bank of Japan raised its policy rate 25bps to 1.0% Tuesday — highest in over 30 years — yet the yen failed to strengthen, with USD/JPY at 160.30 and intervention risk cited as the main downside cap. Japan May exports surged 17% YoY (fastest since Nov 2022), with semiconductor exports up 61.2%. Kospi +1.58%, CSI 300 +0.97%, Nifty 50 +0.41%. TSMC fell 1.7% dragging Taiwan's TAIEX 1% lower. (Source: CNBC, Reuters — primary)</p>
+<p class="bold-line"><strong>5. Europe Mixed; BMW Profit Warning Hits Autos</strong></p>
+<p>Stoxx 600 +0.3%. DAX -0.38% dragged by BMW, which plunged 7.5% after issuing a profit warning citing weak Chinese demand and Middle East war disruptions. European autos &amp; parts sector fell 2.8%. FTSE 100 +0.1%, CAC 40 -0.1%. UK inflation data due today expected to show acceleration to 3% annual rate. (Source: CNBC — primary)</p>
+<hr class="divider">
+<h2 id="3-global-session-recap">3. Global Session Recap</h2>
+<div class="table-wrapper"><table><thead><tr><th>Region</th><th>Index</th><th>Close</th><th>Change</th></tr></thead><tbody><tr><td>Japan</td><td>Nikkei 225</td><td>69,902.25</td><td>+0.72% (record)</td></tr><tr><td>South Korea</td><td>Kospi</td><td>8,864.24</td><td>+1.58%</td></tr><tr><td>China</td><td>CSI 300</td><td>4,931.39</td><td>+0.97%</td></tr><tr><td>Hong Kong</td><td>Hang Seng</td><td>24,312.16</td><td>-0.74%</td></tr><tr><td>Australia</td><td>S&amp;P/ASX 200</td><td>8,966.30</td><td>+0.54%</td></tr><tr><td>India</td><td>Nifty 50</td><td>24,088.60</td><td>+0.41%</td></tr><tr><td>Germany</td><td>DAX</td><td>24,891.77</td><td>+0.07%</td></tr><tr><td>UK</td><td>FTSE 100</td><td>10,484.71</td><td>+0.09%</td></tr></tbody></table></div>
+<p>Asia broadly positive despite the US tech selloff. Japan's export data was a standout — +17% YoY with semiconductor exports surging 61.2%. The BoJ's rate hike to 1% did not strengthen the yen, underscoring the carry trade's persistence. Global bonds rallied as oil's decline eased inflation concerns: Japan 10Y -4bps to 2.61%, Australia 10Y -6bps to 4.78%. (Source: CNBC, Reuters — primary)</p>
+<hr class="divider">
+<h2 id="4-macro-rates-and-policy-setup">4. Macro, Rates, and Policy Setup</h2>
+<h3 id="fomc-decision-the-warsh-unknown">FOMC Decision — The Warsh Unknown</h3>
+<p>This is the dominant macro event. Chair Kevin Warsh (confirmed 54-45 on May 13, replacing Jerome Powell) is a known hawk historically but has recently advocated for lower rates — creating genuine two-way risk. Five things to watch per Thrivent's David Royal:</p>
+<p>1. <strong>Inflation framing</strong> — If energy-driven broadening is cited, it's hawkish; if core goods are called out as flat, dovish</p>
+<p>2. <strong>Forward guidance &amp; dot plot</strong> — Warsh's well-known skepticism could signal a communication overhaul</p>
+<p>3. <strong>Communication style</strong> — Terse/JD-trained lawyer style could read as discipline or evasiveness</p>
+<p>4. <strong>Fed independence</strong> — Strength of defense matters for the Treasury market given Warsh's close Trump ties</p>
+<p>5. <strong>Balance sheet</strong> — How much focus on quantitative tightening vs. rate policy</p>
+<p>The Hilsenrath Survey of 34 former Fed officials showed 17 of 32 believe a rate hike is likely appropriate in 2026, with a median year-end PCE inflation forecast of 3.5% vs. the 2% target. CME FedWatch shows a 56% probability of a December rate hike (down from higher levels as oil retreated). (Source: Kiplinger, Trading Economics — primary)</p>
+<h3 id="yield-curve">Yield Curve</h3>
+<p>The 10Y yield at 4.44% is at a three-week low, down 16bps over the past month. The move is driven entirely by falling oil prices and peace-premium unwinding. Key levels across the curve:</p>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield</th><th>MoM Change</th></tr></thead><tbody><tr><td>2Y</td><td>4.06%</td><td>-0.3bps</td></tr><tr><td>5Y</td><td>4.16%</td><td>-8bps</td></tr><tr><td>10Y</td><td>4.44%</td><td>-15.7bps</td></tr><tr><td>30Y</td><td>4.93%</td><td>-19.3bps</td></tr></tbody></table></div>
+<p>The long end is rallying faster than the short end — a bull steepening consistent with inflation relief, not recession fear. 10Y TIPS at 2.13% implies a 2.31% breakeven inflation rate. (Source: Trading Economics — market_data)</p>
+<h3 id="today-s-data-calendar">Today's Data Calendar</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time (ET)</th><th>Release</th><th>Impact</th><th>Consensus</th></tr></thead><tbody><tr><td>7:00 AM</td><td>MBA Mortgage Applications</td><td>Low</td><td>—</td></tr><tr><td>8:30 AM</td><td>Retail Sales (ex-vehicles)</td><td><strong>High</strong></td><td>—</td></tr><tr><td>10:00 AM</td><td>Atlanta Fed Business Inflation Expectations</td><td>Low</td><td>—</td></tr><tr><td>10:00 AM</td><td>Business Inventories</td><td>Medium</td><td>—</td></tr><tr><td>10:00 AM</td><td>Pending Home Sales Index</td><td>Medium</td><td>—</td></tr><tr><td>10:30 AM</td><td>EIA Petroleum Status</td><td><strong>High</strong></td><td>—</td></tr><tr><td>2:00 PM</td><td><strong>FOMC Rate Decision</strong></td><td><strong>Extreme</strong></td><td>Unchanged</td></tr><tr><td>2:30 PM</td><td><strong>Warsh Press Conference</strong></td><td><strong>Extreme</strong></td><td>—</td></tr></tbody></table></div>
+<p>(Source: CNN, Yahoo Finance — primary)</p>
+<hr class="divider">
+<h2 id="5-fx-and-commodities">5. FX and Commodities</h2>
+<h3 id="dollar-dxy">Dollar (DXY)</h3>
+<p>DXY at 99.51, testing major uptrend support at 99.50. FOREX.com's Michael Boutros: "DXY is at a crucial juncture near 99.50 — a level that could define the next directional move depending on the Fed's guidance." 52-week range: 95.55–100.64. A break below 99.50 on dovish Warsh could accelerate USD weakness; a hold and hawkish signal could spark a rally. (Source: FOREX.com — primary)</p>
+<h3 id="key-fx-pairs">Key FX Pairs</h3>
+<ul><li>EUR/USD: ~1.16 (firmed only slightly)</li><li>USD/JPY: 160.30 (intervention risk capping upside after BoJ hike failed to lift yen)</li></ul>
+<h3 id="oil">Oil</h3>
+<p>The macro story of the week. WTI crude at $76.02, down from ~$80+ pre-deal. The US-Iran agreement, if signed Friday, would reopen the Strait of Hormuz and allow Iranian crude exports — potentially adding ~2% of global supply. The peace premium unwind accounts for approximately $10-12/barrel of the decline from recent peaks. EIA Petroleum Status report at 10:30 AM will be closely watched for inventory impact (prior: crude -7.2M barrels). (Source: Reuters, CNN — primary)</p>
+<h3 id="gold">Gold</h3>
+<p>Gold at $4,348.60, having bounced strongly from support around $4,000. Still down &gt;20% from January peaks. FOREX.com notes: "XAU/USD rebounded hard from key support — is the bottom in?" The bounce is consistent with falling real yields and a weaker dollar. Gold's direction today hinges almost entirely on Warsh's tone. (Source: CNN, FOREX.com — primary)</p>
+<h3 id="crypto">Crypto</h3>
+<p>Bitcoin at $64,832 (-1.16%), Ether at $1,770 (-1.18%). BTC found support above $64,000 but remains range-bound ahead of the Fed. ProShares Bitcoin ETF (BITO) -1.44% pre-market. (Source: CNN — primary)</p>
+<hr class="divider">
+<h2 id="6-equities-and-single-stock-watchlist">6. Equities and Single-Stock Watchlist</h2>
+<h3 id="pre-market-movers-cnn-6-07-am-et">Pre-Market Movers (CNN, 6:07 AM ET)</h3>
+<p class="bold-line"><strong>Notable Gainers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>Price</th><th>Change</th></tr></thead><tbody><tr><td>LNAI</td><td>Lunai Bioworks</td><td>$5.73</td><td>+101.4%</td></tr><tr><td>ASTS</td><td>AST SpaceMobile</td><td>$86.10</td><td>+4.68%</td></tr><tr><td>INTC</td><td>Intel</td><td>$121.41</td><td>+3.72%</td></tr><tr><td>SPCX</td><td>SpaceX (IPO)</td><td>$208.45</td><td>+3.30%</td></tr><tr><td>MU</td><td>Micron Technology</td><td>$1,053.28</td><td>+3.19%</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Earnings Today (Before Open):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>EPS Est.</th><th>Revenue Est.</th><th>AH Move</th></tr></thead><tbody><tr><td>KMX</td><td>CarMax</td><td>$0.94</td><td>$7.41B</td><td>-0.9%</td></tr><tr><td>JBL</td><td>Jabil</td><td>$3.10</td><td>$8.61B</td><td>+0.8%</td></tr></tbody></table></div>
+<p class="bold-line"><strong>After-Hours Movers (Tuesday):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>Move</th><th>Catalyst</th></tr></thead><tbody><tr><td>LZB</td><td>La-Z-Boy</td><td>+17.7%</td><td>Q4 beat: $1.26 vs $0.82 est, $300M buyback</td></tr><tr><td>SOPH</td><td>Sophia Genetics</td><td>-4.9%</td><td>Proposed public offering</td></tr><tr><td>KMX</td><td>CarMax</td><td>-0.9%</td><td>Ahead of earnings</td></tr><tr><td>JBL</td><td>Jabil</td><td>+0.8%</td><td>Ahead of earnings</td></tr></tbody></table></div>
+<h3 id="sector-thematic-movers">Sector &amp; Thematic Movers</h3>
+<p><strong>Space Economy:</strong> SpaceX (SPCX) closed $201.80 (+4.8%) Tuesday after hitting intraday record $225.64. Market cap surpassed Amazon, briefly exceeded Microsoft. Now 5th-most valuable US company. AST SpaceMobile (ASTS) pre-market +4.7%. (Source: Reuters, CNN — primary)</p>
+<p><strong>Semiconductors:</strong> Massive Tuesday selloff (SOX -5.7%) followed by Wednesday pre-market bounce: INTC +3.7%, MU +3.2%, ASML +4%, SOXQ ETF +2.3%. The SOX move was the worst single-day decline of this cycle, driven by profit-taking after Monday's AI-fueled surge (Nasdaq +3%+ Monday). SMCI remains under pressure — Yahoo Finance reports the stock dropped 30% recently on a $7B financing plan announcement despite a substantial AI server order backlog. (Source: Reuters, CNBC, CNN, Yahoo Finance — primary)</p>
+<p><strong>Cloud/Software:</strong> ORCL and CRM both at/near 52-week lows per Motley Fool (June 13): ORCL "tumbled this week," CRM "down about 37% year to date." The rotation out of high-multiple software into cyclicals is pronounced. Zacks Earnings Preview (June 15) notes ORCL and ADBE are part of a positive earnings outlook as S&amp;P 500 estimates rise. (Source: Motley Fool, Zacks — secondary)</p>
+<p><strong>AI Infrastructure:</strong> HPE stock up 26% on AI infrastructure beat per HeyGotrade, "catching up to Dell and SMCI." Management raised FY26 guidance. Citi's Scott Chronert expects AI infrastructure leadership to continue into Q2 earnings season. (Source: CNBC/Citi, HeyGotrade — secondary)</p>
+<p><strong>Autos:</strong> BMW -7.5% in Europe after profit warning — weak Chinese demand cited alongside Middle East disruptions. European autos sector -2.8%. (Source: CNBC — primary)</p>
+<h3 id="ticker-specific-catalysts-from-universe">Ticker-Specific Catalysts from Universe</h3>
+<ul><li><strong>SMCI:</strong> $7B financing plan for AI server backlog; stock -30% on dilution concerns (Yahoo Finance — secondary)</li><li><strong>HPE:</strong> +26% on AI infrastructure beat, raised FY26 guidance (HeyGotrade — secondary)</li><li><strong>CRM:</strong> Touched 52-week low, -37% YTD (Motley Fool — secondary)</li><li><strong>ORCL:</strong> Tumbled amid cloud selloff (Motley Fool — secondary)</li><li><strong>RKLB, ASTS:</strong> Space sector momentum from SpaceX IPO surge</li></ul>
+<hr class="divider">
+<h2 id="7-sector-and-factor-setup">7. Sector and Factor Setup</h2>
+<h3 id="tuesday-sector-performance-s-p-500-11-sectors">Tuesday Sector Performance (S&amp;P 500, 11 sectors)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Change</th><th>Signal</th></tr></thead><tbody><tr><td>Financials</td><td>+1.49%</td><td><strong>Leading</strong> — rate sensitivity, curve steepening</td></tr><tr><td>Utilities</td><td>+0.69%</td><td>Defensive rotation</td></tr><tr><td>Industrials</td><td>+0.67%</td><td>Cyclical bid</td></tr><tr><td>Energy</td><td>-0.25%</td><td>Oil price drag</td></tr><tr><td>Consumer Discretionary</td><td>-0.11%</td><td>Mixed consumer signals</td></tr><tr><td>Information Technology</td><td>-2.32%</td><td><strong>Worst performer</strong> — profit-taking</td></tr></tbody></table></div>
+<p><strong>7 of 11 sectors closed higher</strong> — the broad market was positive outside of tech. This is a textbook sector rotation: money moving from crowded AI/semiconductor positions into rate-sensitive cyclicals ahead of FOMC.</p>
+<h3 id="factor-performance-inferred-from-sector-data">Factor Performance (Inferred from sector data)</h3>
+<ul><li><strong>Value</strong> over <strong>Growth</strong>: Financials + Industrials outperforming Tech by &gt;300bps</li><li><strong>Large Cap</strong> over <strong>Small Cap</strong>: Russell 2000 (-0.87%) lagged S&amp;P 500 (-0.57%)</li><li><strong>Low Vol</strong> bid: Utilities (+0.69%) suggests defensive positioning ahead of FOMC</li><li><strong>Momentum</strong> unwinding: The SOX -5.7% move is a momentum-factor drawdown</li></ul>
+<h3 id="breadth">Breadth</h3>
+<p>NYSE advancers led decliners 1.06-to-1 (338 new highs vs 84 new lows). Nasdaq decliners led 1.44-to-1 (1,963 up, 2,835 down; 78 new highs, 119 new lows). S&amp;P 500: 23 new 52-week highs, 3 new lows. Total US exchange volume: 20.98B shares vs. 20.84B 20-session average. The NYSE breadth was constructive; the Nasdaq breadth was weak — consistent with rotation rather than broad liquidation. (Source: Reuters — primary)</p>
+<hr class="divider">
+<h2 id="8-today-s-risk-map">8. Today's Risk Map</h2>
+<h3 id="tier-1-fomc-decision-2-00-pm-et-warsh-press-conference-2-30-pm-et">Tier 1: FOMC Decision (2:00 PM ET) + Warsh Press Conference (2:30 PM ET)</h3>
+<p class="bold-line"><strong>Scenario analysis:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Scenario</th><th>Probability (est.)</th><th>Equity Impact</th><th>Bond Impact</th><th>Dollar Impact</th></tr></thead><tbody><tr><td>Dovish Warsh (downplays dots, patient on inflation, pushes back on hike pricing)</td><td>45%</td><td>Bullish — SPX +1-2%, tech leads, VIX crush</td><td>10Y toward 4.30%, curve steepens</td><td>DXY breaks below 99.50</td></tr><tr><td>Neutral/Hawkish (holds line, references inflation persistence, doesn't push back on market hike pricing)</td><td>40%</td><td>Mixed/flat — rotation continues, semis under pressure</td><td>10Y holds 4.40-4.50%</td><td>DXY holds 99.50</td></tr><tr><td>Explicitly Hawkish (endorses hike pricing, focuses on balance sheet reduction, hawkish dot plot shift)</td><td>15%</td><td>Bearish — SPX -1-2%, tech slammed, VIX spike above 20</td><td>10Y toward 4.60%+</td><td>DXY rallies toward 100.50</td></tr></tbody></table></div>
+<p><strong>Conviction:</strong> Moderate. Warsh is historically hawkish but politically constrained (Trump wants lower rates). The dot-plot-withholding signal is the wildcard — it could be read as dovish (masking hawkish disagreement) or as a power move that unsettles markets.</p>
+<h3 id="tier-2-us-iran-deal-signing-friday">Tier 2: US-Iran Deal Signing (Friday)</h3>
+<p>Positive asymmetric catalyst: if the deal holds and oil stays below $80, inflation fears recede further. Risk: Congressional pushback (Trump open to sharing details after key members called for pre-signing review). Deal collapse would spike oil and reverse the disinflation trade.</p>
+<h3 id="tier-3-retail-sales-8-30-am">Tier 3: Retail Sales (8:30 AM)</h3>
+<p>High-impact data point. Strong print would complicate the dovish narrative; weak print supports it. Consensus not yet available at time of briefing.</p>
+<h3 id="tier-4-eia-petroleum-10-30-am">Tier 4: EIA Petroleum (10:30 AM)</h3>
+<p>Crude inventory data — prior week showed -7.2M barrel draw. A build would confirm the Iran-deal supply narrative and could push oil below $75.</p>
+<h3 id="tier-5-remainder-of-week">Tier 5: Remainder of Week</h3>
+<ul><li>Thursday: Accenture (ACN), Kroger (KR) earnings before open</li><li>Ongoing: Peace deal finalization, potential for additional economic data surprises</li></ul>
+<hr class="divider">
+<h2 id="9-cross-asset-positioning-matrix">9. Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Key Data Point</th></tr></thead><tbody><tr><td><strong>Equities (broad)</strong></td><td>Cautious/Neutral</td><td>Rotation from growth to value; FOMC binary event</td><td>SPX -0.57%, 7 of 11 sectors up</td></tr><tr><td><strong>Tech/Semis</strong></td><td>Bearish near-term</td><td>Profit-taking after Monday surge; SOX -5.7% worst day of cycle</td><td>SOX -5.7%, Info Tech -2.32%</td></tr><tr><td><strong>Financials</strong></td><td>Bullish</td><td>Curve steepening, rate sensitivity</td><td>Financials +1.49% Tuesday</td></tr><tr><td><strong>Treasuries</strong></td><td>Bullish (yields lower)</td><td>Oil decline = inflation relief; 10Y at 3-week low</td><td>10Y 4.44%, -16bps MoM</td></tr><tr><td><strong>Credit</strong></td><td>Stable</td><td>IG OAS near 25-year tights (~80bps); no stress signals</td><td>IG OAS ~80bps (ICE BofA, est. from InvestmentGrade.com April data)</td></tr><tr><td><strong>Dollar (DXY)</strong></td><td>Bearish risk</td><td>Testing 99.50 support; FOMC binary</td><td>DXY 99.51</td></tr><tr><td><strong>Oil</strong></td><td>Bearish</td><td>Iran deal = supply glut; Strait of Hormuz reopening</td><td>WTI $76.02, down &gt;$10 from peak</td></tr><tr><td><strong>Gold</strong></td><td>Bullish</td><td>Falling real yields, weaker dollar, geopolitical hedge</td><td>$4,348, bounced from $4,000 support</td></tr><tr><td><strong>Vol (VIX)</strong></td><td>Elevated into event</td><td>VIX futures 17.07 pricing FOMC risk; IV rank 92%</td><td>VIX 16.39, futures 17.07</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="10-contrarian-flags">10. Contrarian Flags</h2>
+<p>1. <strong>The dot-plot story is bigger than the rate decision.</strong> Markets are pricing a 97% chance of no change — the decision is fully discounted. But Warsh potentially withholding his dot is unprecedented and could signal a fundamental shift in how the Fed communicates forward guidance. Markets may be underpricing the structural uncertainty this introduces.</p>
+<p>2. <strong>The rotation is real, not a head fake.</strong> Seven sectors up while tech gets hammered (-2.3%) with broad NYSE breadth (1.06:1 advancers) suggests genuine capital reallocation, not just hedging. If Warsh is dovish, does the rotation reverse or accelerate? Historically, dovish FOMC outcomes fuel the risk-on trade that benefits tech. But if the rotation is driven by valuation concerns independent of rates, it could persist.</p>
+<p>3. <strong>Oil at $76 is not priced into earnings estimates.</strong> The Iran deal has moved oil from $88+ to $76 in days. Q2 earnings estimates were built on much higher energy cost assumptions. If oil stabilizes below $80, expect upward revisions for energy-sensitive sectors (transports, industrials, consumer discretionary) and downward revisions for energy sector earnings.</p>
+<p>4. <strong>Japan's rate hike to 1% is a slow-motion carry trade unwind.</strong> The BoJ raised rates to 1% (highest in 30+ years) and the yen didn't budge — USD/JPY at 160.30. This suggests the carry trade is deeply embedded. But history shows carry trades unwind violently, not gradually. The intervention risk around 160 is real and a sharp yen move would ripple through risk assets globally.</p>
+<p>5. <strong>VIX at 16.39 with VIX futures at 17.07 and IV rank at 92% suggests the options market is pricing more event risk than spot VIX reflects.</strong> The gap between spot VIX (pre-FOMC calm) and VIX futures (post-FOMC expectation) implies an expected ~0.7-point jump. If Warsh stays on script, that premium collapses (vol crush). If he surprises, it underprices the move.</p>
+<hr class="divider">
+<h2 id="11-source-notes-and-data-quality">11. Source Notes and Data Quality</h2>
+<h3 id="high-confidence-primary-sources">High Confidence (Primary Sources)</h3>
+<ul><li><strong>S&amp;P 500/Dow/Nasdaq closing levels, sector performance, breadth, volume:</strong> Reuters market wrap, confirmed by CNN</li><li><strong>FOMC meeting dates, Warsh confirmation:</strong> Federal Reserve official calendar, Kiplinger</li><li><strong>Treasury yields, curve data:</strong> Trading Economics (over-the-counter interbank quotes)</li><li><strong>Pre-market futures, commodities, crypto:</strong> CNN (6:07 AM ET snapshot)</li><li><strong>Oil deal details, Strait of Hormuz:</strong> Reuters, CNBC</li><li><strong>Asia-Pacific index closes:</strong> CNBC live updates</li><li><strong>Earnings estimates (KMX, JBL, LZB):</strong> Benzinga Pro data</li></ul>
+<h3 id="moderate-confidence-secondary-analyst-sources">Moderate Confidence (Secondary/Analyst Sources)</h3>
+<ul><li><strong>CME FedWatch probability (97% no change):</strong> StockTitan citing CME — not independently verified against CME website</li><li><strong>Hilsenrath Survey, analyst quotes:</strong> Via Kiplinger aggregation — original sources not independently verified</li><li><strong>DXY technical levels:</strong> FOREX.com analysis (industry source, not official)</li><li><strong>Credit spreads (IG OAS ~80bps):</strong> InvestmentGrade.com April data — not current June data; directional only</li><li><strong>SMCI $7B financing, stock -30%:</strong> Yahoo Finance — not independently verified against SEC filing</li><li><strong>HPE +26%, CRM -37% YTD:</strong> Via HeyGotrade, Motley Fool — secondary aggregation</li></ul>
+<h3 id="data-gaps">Data Gaps</h3>
+<ul><li><strong>Credit spreads:</strong> No current (June 17) CDX or OAS data available from primary sources in this extraction run. IG OAS estimated from April data as directional anchor.</li><li><strong>Full pre-market mover list:</strong> Only top 10 by volume captured; comprehensive list requires dedicated API</li><li><strong>Retail sales consensus:</strong> Not available at briefing time</li><li><strong>Warsh dot-plot submission:</strong> Reported by CNBC and Kiplinger as "not expected" but not confirmed by Fed — this is a critical unknown</li></ul>
+<hr class="divider">
+<p><em>Briefing generated: June 17, 2026, 06:03–06:15 AM ET. All data points attributed to specific sources. See articles.json for full extraction details and URLs. Market data via scripts/market_snapshot.py and primary source extraction.</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.reuters.com/business/wall-street-futures-subdued-focus-shifts-fed-spacex-jumps-third-day-2026-06-16/" target="_blank" rel="noopener">Nasdaq and S&amp;P 500 slip while Dow hits record close</a>
+<a class="source-link" href="https://www.kiplinger.com/news/live/fed-meeting-updates-and-commentary-june-2026" target="_blank" rel="noopener">June Fed Meeting: Live Updates and Commentary</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/16/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock market today: Live updates - June 16, 2026</a>
+<a class="source-link" href="https://www.reuters.com/world/china/global-markets-global-markets-2026-06-17/" target="_blank" rel="noopener">Oil extends fall, stocks steady as traders wait on Warsh</a>
+<a class="source-link" href="https://www.forex.com/en-us/news-and-analysis/us-dollar-technical-outlook-dxy-at-crucial-level-as-traders-brace-for-fed-6-16-2026/" target="_blank" rel="noopener">US Dollar Technical Outlook: DXY at Crucial Level as Traders Brace for Fed</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank" rel="noopener">US 10 Year Treasury Note Yield - Quote - Chart - Historical Data</a>
+<a class="source-link" href="https://www.benzinga.com/markets/equities/26/06/53241962/carmax-jabil-and-3-stocks-to-watch-heading-into-wednesday" target="_blank" rel="noopener">CarMax, Jabil And 3 Stocks To Watch Heading Into Wednesday</a>
+<a class="source-link" href="https://www.cnn.com/markets/premarkets" target="_blank" rel="noopener">Pre-market Stock Trading - CNN</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-17 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
