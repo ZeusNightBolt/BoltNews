@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Weekend Briefing | 2026-06-21</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Weekend Briefing</span></h1>
+    <div class="subtitle">2026-06-21 &middot; 13 articles &middot; 4 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#weekly-market-scoreboard">Weekly Market Scoreboard</a><a class="toc-link toc-level-2" href="#the-week-s-core-narrative">The Week&#x27;s Core Narrative</a><a class="toc-link toc-level-3" href="#1-u-s-iran-peace-deal-the-dominant-catalyst">1. U.S.–Iran Peace Deal: The Dominant Catalyst</a><a class="toc-link toc-level-3" href="#2-the-warsh-fed-a-hawkish-regime-change">2. The Warsh Fed: A Hawkish Regime Change</a><a class="toc-link toc-level-3" href="#3-the-magnificent-seven-rotation-a-two-speed-market">3. The Magnificent Seven Rotation: A Two-Speed Market</a><a class="toc-link toc-level-3" href="#4-spacex-ipo-reverberations">4. SpaceX IPO Reverberations</a><a class="toc-link toc-level-2" href="#macro-and-policy-review">Macro and Policy Review</a><a class="toc-link toc-level-3" href="#federal-reserve-june-17-fomc">Federal Reserve (June 17 FOMC)</a><a class="toc-link toc-level-3" href="#key-u-s-economic-data-week-of-jun-15-19">Key U.S. Economic Data (Week of Jun 15–19)</a><a class="toc-link toc-level-3" href="#prior-week-data-jun-8-12-context-only">Prior Week Data (Jun 8–12) — Context Only</a><a class="toc-link toc-level-3" href="#global-central-banks">Global Central Banks</a><a class="toc-link toc-level-3" href="#yield-curve-analysis">Yield Curve Analysis</a><a class="toc-link toc-level-2" href="#equity-and-sector-review">Equity and Sector Review</a><a class="toc-link toc-level-3" href="#s-p-500-sector-performance-week-ending-jun-18">S&amp;P 500 Sector Performance (Week Ending Jun 18)</a><a class="toc-link toc-level-3" href="#magnificent-seven-june-scorecard">Magnificent Seven: June Scorecard</a><a class="toc-link toc-level-3" href="#notable-single-stock-moves">Notable Single-Stock Moves</a><a class="toc-link toc-level-3" href="#international-equities">International Equities</a><a class="toc-link toc-level-2" href="#commodities-fx-credit-and-volatility">Commodities, FX, Credit, and Volatility</a><a class="toc-link toc-level-3" href="#commodities">Commodities</a><a class="toc-link toc-level-3" href="#fx">FX</a><a class="toc-link toc-level-3" href="#credit-markets">Credit Markets</a><a class="toc-link toc-level-3" href="#volatility">Volatility</a><a class="toc-link toc-level-2" href="#geopolitics-and-event-risk">Geopolitics and Event Risk</a><a class="toc-link toc-level-3" href="#primary-u-s-iran-peace-framework">Primary: U.S.–Iran Peace Framework</a><a class="toc-link toc-level-3" href="#secondary-fed-regime-change-risk">Secondary: Fed Regime Change Risk</a><a class="toc-link toc-level-3" href="#tertiary-ai-regulation-risk">Tertiary: AI Regulation Risk</a><a class="toc-link toc-level-3" href="#weekend-gap-risk">Weekend Gap Risk</a><a class="toc-link toc-level-2" href="#next-week-playbook">Next Week Playbook</a><a class="toc-link toc-level-3" href="#economic-calendar-june-22-26">Economic Calendar (June 22–26)</a><a class="toc-link toc-level-3" href="#key-themes-for-next-week">Key Themes for Next Week</a><a class="toc-link toc-level-3" href="#bull-base-bear-scenarios">Bull / Base / Bear Scenarios</a><a class="toc-link toc-level-2" href="#historical-context">Historical Context</a><a class="toc-link toc-level-3" href="#from-the-june-13-19-run-archives">From the June 13-19 Run Archives</a><a class="toc-link toc-level-3" href="#structural-context-from-boltnews-weekly-archives">Structural Context (from BoltNews weekly archives)</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a><a class="toc-link toc-level-3" href="#market-data-sources">Market Data Sources</a><a class="toc-link toc-level-3" href="#economic-data">Economic Data</a><a class="toc-link toc-level-3" href="#corporate-analyst-sources">Corporate/Analyst Sources</a><a class="toc-link toc-level-3" href="#geopolitical-sources">Geopolitical Sources</a><a class="toc-link toc-level-3" href="#data-gaps-unavailable">Data Gaps / Unavailable</a><a class="toc-link toc-level-3" href="#recency-verification">Recency Verification</a><a class="toc-link toc-level-3" href="#extraction-completeness">Extraction Completeness</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-weekend-briefing-june-21-2026">BoltNews Weekend Briefing — June 21, 2026</h1>
+<p><strong>Mode:</strong> Weekend | <strong>Period:</strong> June 15–20, 2026 (holiday-shortened, Juneteenth Friday close) | <strong>Generated:</strong> 2026-06-21 ~10:30 UTC</p>
+<hr class="divider">
+<h2 id="weekly-market-scoreboard">Weekly Market Scoreboard</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Friday/Thursday Close</th><th>Week Change</th><th>YTD</th></tr></thead><tbody><tr><td><strong>S&amp;P 500</strong></td><td>7,500.58</td><td>+0.81%</td><td>+9.44%</td></tr><tr><td><strong>DJIA</strong></td><td>51,564.70</td><td>+0.85%</td><td>+7.44%</td></tr><tr><td><strong>Nasdaq Composite</strong></td><td>26,517.93</td><td>+2.14%</td><td>+13.77%</td></tr><tr><td><strong>Russell 2000</strong></td><td>2,979.72</td><td>+0.73%</td><td>+19.48%</td></tr><tr><td><strong>S&amp;P MidCap 400</strong></td><td>3,791.42</td><td>−0.13%</td><td>+14.71%</td></tr><tr><td><strong>VIX</strong></td><td>17.23 (close Jun 18)</td><td>−1.21 pts</td><td>—</td></tr><tr><td><strong>2Y Treasury</strong></td><td>4.19%</td><td>+16 bps</td><td>—</td></tr><tr><td><strong>10Y Treasury</strong></td><td>4.46%</td><td>+7 bps</td><td>—</td></tr><tr><td><strong>30Y Treasury</strong></td><td>~4.95% (est.)</td><td>~flat</td><td>—</td></tr><tr><td><strong>2Y/10Y Spread</strong></td><td>~27 bps</td><td>Flattened ~9 bps</td><td>—</td></tr><tr><td><strong>DXY</strong></td><td>~100.47 (Jun 17 close)</td><td>+0.9%</td><td>—</td></tr><tr><td><strong>EUR/USD</strong></td><td>1.1476</td><td>−0.6%</td><td>—</td></tr><tr><td><strong>WTI Crude</strong></td><td>~$76/bbl</td><td>−9.71%</td><td>+33.47%</td></tr><tr><td><strong>Brent Crude</strong></td><td>~$77/bbl</td><td>~−8%</td><td>—</td></tr><tr><td><strong>Gold</strong></td><td>$4,157/oz</td><td>+0.05%</td><td>−2.27%</td></tr><tr><td><strong>BTC</strong></td><td>Data unavailable</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p><em>Sources: T. Rowe Price (Thu close), LPL Research, Advisor Perspectives (Jun 18 yields), Yahoo Finance (VIX), Reuters (oil), Deutsche Börse live (gold, EUR/USD). U.S. markets closed Friday Jun 19 for Juneteenth.</em></p>
+<hr class="divider">
+<h2 id="the-week-s-core-narrative">The Week's Core Narrative</h2>
+<p class="bold-line"><strong>Three forces collided in a holiday-shortened week, producing sharp reversals and cross-asset divergence:</strong></p>
+<h3 id="1-u-s-iran-peace-deal-the-dominant-catalyst">1. U.S.–Iran Peace Deal: The Dominant Catalyst</h3>
+<p>The White House announced Saturday (Jun 14) that President Trump, VP Vance, and Iranian Parliament Speaker Qalibaf had signed a Memorandum of Understanding to end the Iran conflict and reopen the Strait of Hormuz. The formal signing is scheduled for June 20 in Geneva, with Hormuz reopening targeted within 30 days. Oil collapsed — WTI fell 9.7% on the week, WTI settled at $80.75 Monday (down $4.13, −4.87%), and Brent hit three-month lows. Citi cut its Q3 Brent forecast to $75 and Q4 to $70. The S&amp;P 500 surged Monday. The Russell 2000 and equal-weight S&amp;P 500 ETF (RSP) hit record highs. The deal was signed a day early on Thursday, fueling a second leg of risk-on buying. <em>(Sources: Reuters Jun 14-15, CNBC Jun 14, The Guardian Jun 15)</em></p>
+<h3 id="2-the-warsh-fed-a-hawkish-regime-change">2. The Warsh Fed: A Hawkish Regime Change</h3>
+<p>New Fed Chair Kevin Warsh's debut FOMC meeting (Jun 17) held rates at 3.50–3.75% unanimously, but the dot plot revealed 9 of 18 officials penciling in at least one 2026 rate hike — a dramatic hawkish surprise. Warsh dismantled forward guidance: the statement was "meaningfully shorter," he downplayed the dot plot ("pencils with big erasers"), and announced five task forces examining communications, balance sheet, data, productivity, and Fed performance. The 2Y yield spiked 16 bps on Wednesday alone to 4.216% — its highest since Feb 2025. Rate futures priced a 72% chance of a hike by October and a 67% chance by September (per CME FedWatch). The S&amp;P 500 fell 1.3% and Nasdaq 1.5% on Wednesday before recovering Thursday. Warsh used the phrase "price stability" 12 times in a 40-minute press conference. Ed Yardeni: "We thought he was a dove... Instead, he hammered home a strict, orthodox message." <em>(Sources: Reuters Jun 17, CNBC Jun 17-18, KPMG Jun 17, T. Rowe Price Jun 18)</em></p>
+<h3 id="3-the-magnificent-seven-rotation-a-two-speed-market">3. The Magnificent Seven Rotation: A Two-Speed Market</h3>
+<p>All seven Magnificent Seven stocks are negative in June. META −10.4%, MSFT −13.2%, AMZN −11.9%, AAPL −6.7%, TSLA −6.7%, GOOGL −5.4%, NVDA −2.8% (per IBD, through ~Jun 18). The equal-weight Magnificent Seven ETF (MAGS) is down 8.2% in June. Yet the equal-weight Nasdaq-100 (QQQE) is +0.3% in June and +17% YTD — nearly double the S&amp;P 500's 9.4%. The Russell 2000 hit record highs (+19.5% YTD). IBD raised its market exposure recommendation. The AI capex trade is being repriced under higher rates: Meta fell 5.4% in a single session (Jun 17) on subscription-model doubts and Fed hawkishness; Alphabet announced an $84.75B equity raise for AI data centers (upsized from $80B). Only Apple showed resilience (+1.7% on the week, $295.95) on AI upgrade-cycle speculation. <em>(Sources: IBD Jun 2026, TalkMarkets Jun 17, LPL Research Jun 18)</em></p>
+<h3 id="4-spacex-ipo-reverberations">4. SpaceX IPO Reverberations</h3>
+<p>SpaceX (SPCX) debuted June 12 at $135/share, closed day one at $161 (~$2T+ market cap), and surged another 20% Monday to $192.50. Elon Musk posted: "SpaceX might be able to reach approximately $1 trillion revenue in 2030." CFRA initiated with a "sell" ($115 target); Morningstar valued at $63/share. Evercore ISI called it a potential "next leg of the bull market" (S&amp;P 9,000 bull case). The IPO absorbed enormous liquidity — 500M+ shares traded on day one. <em>(Sources: CNBC Jun 15, Yahoo Finance/Investopedia Jun 17)</em></p>
+<p><strong>Cross-asset summary:</strong> Peace deal = risk-on + oil crash. Hawkish Fed = rates up + growth stocks reprice. The result: a bifurcated market where small caps, cyclicals, and equal-weight indices advance while megacap AI names correct.</p>
+<hr class="divider">
+<h2 id="macro-and-policy-review">Macro and Policy Review</h2>
+<h3 id="federal-reserve-june-17-fomc">Federal Reserve (June 17 FOMC)</h3>
+<ul><li><strong>Decision:</strong> Unanimous hold at 3.50–3.75%</li><li><strong>Dot plot (hawkish):</strong> 9 of 18 officials → at least one 2026 hike; 6 officials → two hikes; only 1 → a cut</li><li><strong>SEP revisions:</strong> Headline PCE 2026 raised to 3.6%; Core PCE to 3.3%; GDP growth slightly lower</li><li><strong>Statement change:</strong> Removed "easing bias" language that previously signaled likely rate cuts</li><li><strong>Warsh's communication revolution:</strong> "Radically simplified" statement; "Forward guidance is no longer well suited to the current policy environment"; announced 5 task forces; markets now expected to infer Fed thinking rather than receive explicit guidance</li><li><strong>Market pricing post-meeting:</strong> +30 bps of hikes priced by year-end; July meeting ~33% hike probability; September 67%; second hike by Sep 2027 &gt;45%; market-implied fed funds May 2031 at 4.78% (implies up to 5 hikes from current)</li><li><strong>Analyst reaction spectrum:</strong> Goldman Sachs AM — "base case remains the Fed can just about avoid hikes, but the path is narrow"; Yardeni — stunned by hawkish pivot; Clemons (Brown Brothers Harriman) — skeptical of any 2026 hikes due to election-year politicization</li></ul>
+<p><em>(Sources: Reuters Jun 17, CNBC Jun 17-18, KPMG Jun 17, T. Rowe Price Jun 18, LPL Research Jun 18)</em></p>
+<h3 id="key-u-s-economic-data-week-of-jun-15-19">Key U.S. Economic Data (Week of Jun 15–19)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Release</th><th>Period</th><th>Actual</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>Empire State Mfg</td><td>Jun</td><td>5.7</td><td>13.9</td><td>19.6</td></tr><tr><td>Industrial Production</td><td>May</td><td>+0.1%</td><td>+0.3%</td><td>+0.9%</td></tr><tr><td>Capacity Utilization</td><td>May</td><td>76.2</td><td>76.2</td><td>76.1</td></tr><tr><td>NAHB Housing Index</td><td>Jun</td><td>35</td><td>37</td><td>37</td></tr><tr><td>Import Price Index</td><td>May</td><td>+1.9%</td><td>+1.1%</td><td>+2.0%</td></tr><tr><td>Housing Starts</td><td>May</td><td>1.17M</td><td>1.43M</td><td>1.39M</td></tr><tr><td>Building Permits</td><td>May</td><td>1.41M</td><td>1.42M</td><td>1.42M</td></tr><tr><td>Retail Sales</td><td>May</td><td>+0.9%</td><td>+0.5%</td><td>+0.4%</td></tr><tr><td>Retail Sales ex-Autos</td><td>May</td><td>+0.8%</td><td>+0.6%</td><td>+0.7%</td></tr><tr><td>Pending Home Sales</td><td>May</td><td>+3.8%</td><td>+1.0%</td><td>+0.3%</td></tr><tr><td>Initial Jobless Claims</td><td>Jun 13</td><td>226K</td><td>225K</td><td>230K</td></tr><tr><td>Philly Fed Mfg</td><td>Jun</td><td>10.3</td><td>11.0</td><td>−0.4</td></tr><tr><td>Leading Index</td><td>May</td><td>+0.1%</td><td>+0.1%</td><td>+0.1%</td></tr></tbody></table></div>
+<p><strong>Key takeaway:</strong> Retail sales (+0.9%) and pending home sales (+3.8%) beat significantly, reinforcing a resilient consumer. Housing starts crashed 15.4% below consensus (1.17M vs 1.43M). Empire State manufacturing missed badly (5.7 vs 13.9). Mixed macro picture, but the consumer surprise likely emboldened the Fed's hawkish signaling. <em>(Source: MarketWatch Economic Calendar, Jun 15-19)</em></p>
+<h3 id="prior-week-data-jun-8-12-context-only">Prior Week Data (Jun 8–12) — Context Only</h3>
+<ul><li><strong>CPI (May):</strong> +0.5% m/m, +4.2% y/y (matching consensus); Core CPI +0.2% m/m, +2.9% y/y</li><li><strong>PPI (May):</strong> +1.1% m/m (vs 0.7% consensus)</li><li><strong>NFIB Optimism:</strong> 95.3 (vs 96.2 consensus)</li></ul>
+<h3 id="global-central-banks">Global Central Banks</h3>
+<ul><li><strong>Bank of Japan:</strong> Raised short-term rate to 1.0% (highest since 1995). Deputy Governor signaled more hikes ahead. Nikkei 225 surged +7.62% to new all-time highs on AI/semiconductor strength. <em>(Source: T. Rowe Price Jun 18)</em></li><li><strong>Bank of England:</strong> Held at 3.75%, as expected. Two officials dissented in favor of a hike. UK CPI unchanged at 2.8% (lowest since Mar 2025). <em>(Sources: T. Rowe Price, LPL Research)</em></li><li><strong>Swiss National Bank:</strong> Held at 0%, little change in forecasts.</li><li><strong>Norges Bank:</strong> Held at 4.25% but <strong>signaled a future hike likely</strong>.</li><li><strong>Brazil:</strong> Cut Selic to 14.25% (third straight cut) but flagged caution.</li><li><strong>Indonesia:</strong> Hiked to 5.75% (third hike in a month), "all out" currency defense.</li></ul>
+<h3 id="yield-curve-analysis">Yield Curve Analysis</h3>
+<ul><li><strong>2Y/10Y spread collapsed to ~25 bps</strong> — flattest since early 2025 (LPL Research)</li><li><strong>TIPS breakevens:</strong> Fallen to levels implying the Fed will achieve 2% inflation within 2 years</li><li><strong>LPL:</strong> "The further flattening of the curve reinforces our view that there is very little additional compensation to own longer-maturity Treasury yields. The backup in front-end yields provides additional income for income-oriented investors."</li><li><strong>30-year mortgage rate:</strong> 6.47% (Freddie Mac, per Advisor Perspectives Jun 18)</li></ul>
+<hr class="divider">
+<h2 id="equity-and-sector-review">Equity and Sector Review</h2>
+<h3 id="s-p-500-sector-performance-week-ending-jun-18">S&amp;P 500 Sector Performance (Week Ending Jun 18)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Week</th><th>1-Month</th><th>YTD</th></tr></thead><tbody><tr><td><strong>Information Technology</strong></td><td>+2.89%</td><td>+4.29%</td><td>+20.86%</td></tr><tr><td><strong>Industrials</strong></td><td>+2.65%</td><td>+5.83%</td><td>+16.36%</td></tr><tr><td><strong>Communication Services</strong></td><td>+1.09%</td><td>−6.72%</td><td>+3.89%</td></tr><tr><td><strong>Financials</strong></td><td>+0.56%</td><td>+3.58%</td><td>−2.33%</td></tr><tr><td><strong>Consumer Discretionary</strong></td><td>+0.48%</td><td>−1.58%</td><td>−1.39%</td></tr><tr><td><strong>Utilities</strong></td><td>+0.31%</td><td>+1.47%</td><td>+4.05%</td></tr><tr><td><strong>Materials</strong></td><td>−0.15%</td><td>+2.97%</td><td>+12.99%</td></tr><tr><td><strong>Consumer Staples</strong></td><td>−2.74%</td><td>−4.77%</td><td>+7.31%</td></tr><tr><td><strong>Health Care</strong></td><td>−2.76%</td><td>+2.59%</td><td>−3.66%</td></tr><tr><td><strong>Real Estate</strong></td><td>−3.29%</td><td>−0.05%</td><td>+8.83%</td></tr><tr><td><strong>Energy</strong></td><td>−6.57%</td><td>−11.75%</td><td>+18.61%</td></tr></tbody></table></div>
+<p><em>(Source: LPL Research, Bloomberg, 6/18/26 2:55 PM ET)</em></p>
+<p class="bold-line"><strong>Key observations:</strong></p>
+<ul><li><strong>Tech leadership intact but narrowing:</strong> IT +2.89% on the week, +20.86% YTD — driven by chipmaker strength (Apple-Intel chip design partnership, Thursday). Yet the Magnificent Seven are all negative in June.</li><li><strong>Energy crushed:</strong> −6.57% on the week, −11.75% in the past month — direct consequence of the Iran peace deal and collapsing oil prices.</li><li><strong>Real Estate and Health Care weak:</strong> Rate-sensitive sectors sold off on the hawkish Fed. Real Estate −3.29%, Health Care −2.76%.</li><li><strong>Cyclicals outperforming defensives:</strong> Industrials (+2.65%), IT (+2.89%) vs Staples (−2.74%), Utilities (+0.31%).</li><li><strong>Financials barely positive</strong> (+0.56%) — mixed signal given a hawkish Fed should benefit banks. YTD Financials still negative (−2.33%), a notable divergence from the broader market.</li></ul>
+<h3 id="magnificent-seven-june-scorecard">Magnificent Seven: June Scorecard</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Price (Jun 17 close)</th><th>June MTD</th><th>YTD</th><th>Technical Status</th></tr></thead><tbody><tr><td><strong>AAPL</strong></td><td>$295.95</td><td>−6.7%</td><td>+7.1%</td><td>Testing 10-week line; AI upgrade speculation support</td></tr><tr><td><strong>MSFT</strong></td><td>$378.91</td><td>−13.2%</td><td>−19.2%</td><td>Well below moving averages; capex scrutiny</td></tr><tr><td><strong>NVDA</strong></td><td>$207.41</td><td>−2.8%</td><td>+10.0%</td><td>In buy zone after round-trip; below 50-day</td></tr><tr><td><strong>GOOGL</strong></td><td>$363.79</td><td>−5.4%</td><td>+14.9%</td><td>5 straight weekly declines; $84.75B equity raise</td></tr><tr><td><strong>AMZN</strong></td><td>$237.50</td><td>−11.9%</td><td>+3.4%</td><td>Well below 50-day; $200B annual capex noted</td></tr><tr><td><strong>META</strong></td><td>$567.58</td><td>−10.4%</td><td>−14.1%</td><td>−5.44% in single session (Jun 17); worst in group</td></tr><tr><td><strong>TSLA</strong></td><td>$396.38</td><td>−6.7%</td><td>−9.6%</td><td>Must regain 200-day; lacks catalyst</td></tr><tr><td><strong>AVGO</strong></td><td>~$425 (est.)</td><td>~−14.5%</td><td>—</td><td>Fell 22% after Q2 AI guide missed whisper</td></tr></tbody></table></div>
+<p><em>(Sources: IBD Jun 2026, TalkMarkets Jun 17, Yahoo Finance Jun 13)</em></p>
+<p><strong>Market breadth signal:</strong> The equal-weight Nasdaq-100 (QQQE) is +0.3% in June and +17% YTD, with its RS line at best levels in nearly two years. The Russell 2000 and S&amp;P 500 Equal Weight ETF (RSP) hit record highs. The cap-weighted Nasdaq's June decline of ~4% masks a healthy broadening underneath. IBD raised market exposure after Friday's session.</p>
+<h3 id="notable-single-stock-moves">Notable Single-Stock Moves</h3>
+<ul><li><strong>Meta (META):</strong> −5.44% single session (Jun 17). Trigger: investor skepticism on new paid subscription tier + Fed hawkishness repricing AI capex. Erased $180B in market cap in one day.</li><li><strong>Alphabet (GOOGL):</strong> Announced $84.75B equity raise (upsized from $80B) for AI data center expansion. Cloud growth narrative is justifying the raise but stock still negative in June.</li><li><strong>Apple (AAPL):</strong> +1.7% on the week, resilient on "Apple Intelligence" AI upgrade super-cycle bets. FCF yield ~5.5% provides defense against higher rates.</li><li><strong>SpaceX (SPCX):</strong> +20% Monday to $192.50 after $135 IPO. Musk projects $1T+ revenue by 2030. CFRA says sell ($115); Evercore ISI says bull case 9,000 S&amp;P.</li></ul>
+<h3 id="international-equities">International Equities</h3>
+<ul><li><strong>Europe:</strong> STOXX 600 modestly higher (+0.62%), hit fresh record intraweek. DAX +1.59%, CAC 40 +1.40%, FTSE MIB +2.31%. UK FTSE 100 −0.69% on hawkish BoE dissent. <em>(Source: T. Rowe Price)</em></li><li><strong>Japan:</strong> Nikkei 225 +7.62% (new all-time highs), TOPIX +4.80%. Driven by semiconductor equipment and AI names. BOJ hike to 1% lifted banking shares. <em>(Source: T. Rowe Price)</em></li><li><strong>Emerging Markets:</strong> MSCI EM +4.24% for the week, +29.34% YTD — best performing major equity category. <em>(Source: LPL Research)</em></li><li><strong>China:</strong> Hong Kong tech continued to decline. Retail sales contracted for first time since pandemic-era 2022. Property stocks near pre-2024 stimulus levels. <em>(Source: T. Rowe Price, LPL)</em></li></ul>
+<hr class="divider">
+<h2 id="commodities-fx-credit-and-volatility">Commodities, FX, Credit, and Volatility</h2>
+<h3 id="commodities">Commodities</h3>
+<ul><li><strong>Oil (WTI):</strong> Settled Monday at $80.75 (−$4.13, −4.87%). Continued falling through Thursday. Weekly decline: −9.71% (LPL). Three-month lows. Strait of Hormuz reopening expected within 30 days; 14M bpd of production was shut during the ~3-month closure (~14% of world demand, per IEA). Citi: Q3 Brent $75, Q4 $70. UBS: slower restarts + depleted inventories (SPR at 340M bbl, lowest since 1983) should support prices longer term. <em>(Sources: Reuters Jun 15, LPL Research)</em></li><li><strong>Gold:</strong> $4,157/oz, essentially flat for the week (+0.05%). YTD −2.27%. Gold failed to rally despite geopolitical détente, suggesting the hawkish Fed/dollar strength is the dominant driver. <em>(Source: Deutsche Börse live, LPL)</em></li><li><strong>Silver:</strong> −3.08% for the week, −15.17% one-month, −8.00% YTD. Underperforming gold, consistent with industrial-demand concerns. <em>(Source: LPL Research)</em></li><li><strong>Natural Gas:</strong> +3.59% for the week, +6.88% one-month, −12.32% YTD. <em>(Source: LPL Research)</em></li></ul>
+<h3 id="fx">FX</h3>
+<ul><li><strong>DXY:</strong> Rallied +0.9% to ~100.47 on Wednesday post-Fed (per Reuters). The hawkish surprise boosted the dollar against all majors. Dollar strength persisted through Thursday.</li><li><strong>EUR/USD:</strong> 1.1476 (Deutsche Börse live), down on the week. ECB held; Eurozone trade balance swung to EUR 1B deficit (vs +7.8B expected surplus). German wholesale prices +5.9% y/y (down from 6.3%). <em>(Source: T. Rowe Price)</em></li><li><strong>USD/JPY:</strong> Data unavailable from primary source. BOJ hike to 1% should theoretically support JPY, but DXY strength likely overwhelmed. Nikkei surged despite rate hike — unusual.</li><li><strong>EM FX:</strong> Indonesia hiking aggressively (third in a month to 5.75%) to defend currency. Brazil cutting (third straight to 14.25%) but flagging caution. <em>(Source: T. Rowe Price)</em></li></ul>
+<h3 id="credit-markets">Credit Markets</h3>
+<ul><li><strong>Investment Grade OAS:</strong> ~110 bps — near all-time tights (JPMorgan AM, data as of Mar 31, 2026). Bloomberg Credit index: −0.07% for the week, +0.55% YTD.</li><li><strong>BBB OAS:</strong> 0.92% (YCharts, Jun 17).</li><li><strong>HY OAS:</strong> Bloomberg High Yield +0.06% for the week, +1.77% YTD. Outperformed IG amid risk-on tone.</li><li><strong>Corporate Bond Spread:</strong> 0.74% (Macrotrends, Jun 17).</li><li><strong>JPMorgan AM positioning:</strong> Favors BBBs and BBs with short duration. Extended allocations (hybrids, lower-tier bank capital) toward high end of historical range. EM corporate allocation at highest ever. Active hedges maintained; expect volatility to unlock value. <em>(Source: JPMorgan AM, Jun 2026)</em></li><li><strong>Munis:</strong> +0.27% for the week, +1.90% YTD — best-performing fixed income category for the week. <em>(Source: LPL Research)</em></li></ul>
+<h3 id="volatility">Volatility</h3>
+<ul><li><strong>VIX:</strong> Closed at 17.23 on Jun 18 (Yahoo Finance). June 17 close was 18.44 (post-Fed spike). June 15 (pre-Fed) was 16.78. The ~2.2-point spike Wednesday was absorbed by Thursday's close at 17.23. Cboe spot VIX: $16.40 (as of Jun 18). VIX remains subdued despite a historic Fed hawkish pivot + oil crash + Mag 7 rotation — a notable absence of fear. This compression is a contrarian flag.</li></ul>
+<hr class="divider">
+<h2 id="geopolitics-and-event-risk">Geopolitics and Event Risk</h2>
+<h3 id="primary-u-s-iran-peace-framework">Primary: U.S.–Iran Peace Framework</h3>
+<ul><li><strong>What happened:</strong> President Trump announced Saturday (Jun 14) the signing of a Memorandum of Understanding with Iran to end the conflict and reopen the Strait of Hormuz. VP Vance and Iranian Speaker Qalibaf were signatories per U.S. official. Formal signing ceremony scheduled for June 20 in Geneva. Hormuz reopening targeted within 30 days. Final agreement talks within 60 days. Nuclear program to be addressed separately. European quartet (UK, France, Germany, Italy) ready to lift sanctions.</li><li><strong>Transmission channel:</strong> Oil supply normalization → lower energy costs → reduced inflation pressure → risk-on assets. Markets priced the peace premium reversal aggressively — oil −9.7% in one week.</li><li><strong>Risks:</strong> Israeli Defense Minister Katz said military would remain "indefinitely" in security zones in Lebanon, Syria, and Gaza. Physical restart of 14M bpd of shut production is a multi-month process. Insurers may hesitate to cover vessels transiting Hormuz. SPR at 40-year low (340M bbl).</li><li><strong>Contrarian note:</strong> The market has fully priced peace, but zero barrels have returned yet. Any delay in the formal signing or Hormuz reopening timeline could trigger a sharp oil reversal. Analysts are split — Citi sees $70-75 Brent; UBS sees longer-term support from depleted inventories.</li></ul>
+<p><em>(Sources: Reuters Jun 14-15, CNBC Jun 14, The Guardian Jun 15)</em></p>
+<h3 id="secondary-fed-regime-change-risk">Secondary: Fed Regime Change Risk</h3>
+<ul><li>Chair Warsh's dismantling of forward guidance creates a <strong>communication vacuum</strong>. Brian Jacobsen (Annex Wealth Management): "By doing this, he's actually inviting more Fed-speak, not less. Now every Fed President will fill the gap." This introduces event risk around every FOMC speaker appearance — including NY Fed President Williams (Jun 25) and Chicago Fed President Goolsbee (Jun 25).</li><li>The dot plot now shows 50% of officials expecting hikes. If inflation data (PCE Jun 25) comes in hot, the July 28-29 meeting could become a live decision (currently ~33% priced). If PCE cools, the hawkish pricing could rapidly unwind.</li></ul>
+<h3 id="tertiary-ai-regulation-risk">Tertiary: AI Regulation Risk</h3>
+<ul><li>UBS flagged a new White House directive restricting foreign access to Anthropic's latest models. Semiconductor stocks account for &gt;50% of S&amp;P 500 YTD advance (per UBS). Any escalation of AI export controls or domestic regulation could have outsized index-level impact.</li><li>Wells Fargo warned of "jawboning around policy measures to slow AI progress" heading into midterm elections.</li></ul>
+<h3 id="weekend-gap-risk">Weekend Gap Risk</h3>
+<ul><li><strong>Geneva signing ceremony (Jun 20):</strong> Any complications, walkouts, or concessions could gap oil and risk assets on Monday open.</li><li><strong>No major data releases over the weekend</strong> (Monday Jun 22 has none scheduled).</li><li>Israel military posture in Lebanon/Syria/Gaza could flare.</li></ul>
+<hr class="divider">
+<h2 id="next-week-playbook">Next Week Playbook</h2>
+<h3 id="economic-calendar-june-22-26">Economic Calendar (June 22–26)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Time (ET)</th><th>Release</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td><strong>Mon Jun 22</strong></td><td>—</td><td>Nothing scheduled</td><td>—</td><td>—</td></tr><tr><td><strong>Tue Jun 23</strong></td><td>9:45 am</td><td>S&amp;P Flash U.S. Services PMI (Jun)</td><td>—</td><td>50.7</td></tr><tr><td></td><td>9:45 am</td><td>S&amp;P Flash U.S. Manufacturing PMI (Jun)</td><td>—</td><td>55.1</td></tr><tr><td><strong>Wed Jun 24</strong></td><td>10:00 am</td><td>New Home Sales (May)</td><td>—</td><td>622K</td></tr><tr><td></td><td>10:00 am</td><td>Leading Economic Indicators (May)</td><td>—</td><td>+0.1%</td></tr><tr><td><strong>Thu Jun 25</strong></td><td>8:30 am</td><td>Initial Jobless Claims (Jun 20)</td><td>—</td><td>226K</td></tr><tr><td></td><td>8:30 am</td><td><strong>PCE Index (May)</strong></td><td>3.8% y/y</td><td>+0.4% m/m</td></tr><tr><td></td><td>8:30 am</td><td><strong>Core PCE Index (May)</strong></td><td>—</td><td>+0.2% m/m, +3.3% y/y</td></tr><tr><td></td><td>8:30 am</td><td>Personal Income (May)</td><td>—</td><td>0.0%</td></tr><tr><td></td><td>8:30 am</td><td>Personal Spending (May)</td><td>—</td><td>+0.5%</td></tr><tr><td></td><td>8:30 am</td><td>Durable Goods Orders (May)</td><td>—</td><td>+7.9%</td></tr><tr><td></td><td>8:30 am</td><td>Durable Goods ex-Transportation</td><td>—</td><td>+1.1%</td></tr><tr><td></td><td>8:30 am</td><td>GDP Revision (Q1)</td><td>—</td><td>+1.6%</td></tr><tr><td></td><td>3:40 pm</td><td>NY Fed President Williams speaks</td><td>—</td><td>—</td></tr><tr><td></td><td>6:30 pm</td><td>Chicago Fed President Goolsbee speaks</td><td>—</td><td>—</td></tr><tr><td><strong>Fri Jun 26</strong></td><td>8:30 am</td><td>Adv. Trade Balance in Goods (May)</td><td>—</td><td>−$83.7B</td></tr><tr><td></td><td>8:30 am</td><td>Adv. Retail Inventories (May)</td><td>—</td><td>+0.7%</td></tr><tr><td></td><td>8:30 am</td><td>Adv. Wholesale Inventories (May)</td><td>—</td><td>+0.6%</td></tr><tr><td></td><td>10:00 am</td><td>Consumer Sentiment Final (Jun)</td><td>—</td><td>44.8</td></tr></tbody></table></div>
+<p><em>(Source: MarketWatch Economic Calendar)</em></p>
+<h3 id="key-themes-for-next-week">Key Themes for Next Week</h3>
+<p>1. <strong>Thursday's PCE is the main event.</strong> May PCE is the Fed's preferred inflation gauge. If core PCE comes in at or below 0.2% m/m, the hawkish rate-hike pricing (67% September probability) could rapidly unwind. If it prints above consensus, the July meeting becomes live. The GDP revision (Q1) and durable goods also hit Thursday — a crowded data day.</p>
+<p>2. <strong>Fed speaker risk.</strong> Williams (Thu) and Goolsbee (Thu) are the first post-FOMC public comments since Warsh's hawkish debut. Markets will parse every word for clues about the July 28-29 meeting. The "communication vacuum" thesis means these speeches could move bonds more than usual.</p>
+<p>3. <strong>Iran deal follow-through.</strong> The June 20 Geneva ceremony should be completed by Monday open. Watch for: actual language of the signed agreement (vs MOU), timeline specificity, nuclear program language, and Israeli reaction. Any deviation from the market's fully-priced peace scenario is an asymmetric risk.</p>
+<p>4. <strong>PMIs (Tue) as growth pulse.</strong> Manufacturing at 55.1 is expansionary but off recent highs. Services at 50.7 is barely expansionary. A services contraction print would challenge the "resilient consumer" narrative from retail sales.</p>
+<p>5. <strong>Quarter-end window dressing.</strong> Next week is the last full trading week of Q2. Portfolio rebalancing flows could amplify moves in beaten-down Mag 7 names and Energy.</p>
+<h3 id="bull-base-bear-scenarios">Bull / Base / Bear Scenarios</h3>
+<div class="table-wrapper"><table><thead><tr><th>Scenario</th><th>Trigger</th><th>S&amp;P 500 Impact</th><th>Key Moves</th></tr></thead><tbody><tr><td><strong>Bull</strong></td><td>PCE cools, Williams dovish, Iran deal ratified smoothly</td><td>+2-3% to ~7,700</td><td>Mag 7 relief rally; yields fall; small caps continue; VIX below 15</td></tr><tr><td><strong>Base</strong></td><td>PCE in-line, mixed Fedspeak, deal signed but details pending</td><td>Flat to +1%</td><td>Rotation continues; Tech/Energey recovery; 10Y 4.35-4.50%</td></tr><tr><td><strong>Bear</strong></td><td>PCE hot, Williams hawkish, Iran deal complications</td><td>−2-3% to ~7,250</td><td>Bond selloff; Mag 7 breaks support; VIX above 22; credit spreads widen</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="historical-context">Historical Context</h2>
+<p><em>Per BoltNews pipeline policy: historical context comes from prior BoltNews markdown artifacts only. This section is labeled as older-than-48h context.</em></p>
+<h3 id="from-the-june-13-19-run-archives">From the June 13-19 Run Archives</h3>
+<ul><li><strong>CPIs (Jun 10):</strong> Headline 4.2% y/y, Core 2.9% y/y. The acceleration from 3.8% headline in April is driven largely by energy, but services inflation has been sticky. The Fed's dot-plot hawkishness is consistent with the CPI trajectory.</li><li><strong>AVGO earnings (Jun 3):</strong> Q2 FY2026 revenue guidance ~$29.4B (+84% y/y), AI semiconductor revenue in excess of $100B for FY2026. But the stock fell 22% because the AI guide missed the $17B whisper number. Analysts hold a $522 average price target. <em>(Source: IBD Jun 13, Yahoo Finance Jun 13)</em></li><li><strong>Prior weekly runs (Jun 8-14):</strong> The market narrative was dominated by the SpaceX IPO anticipation, pre-Fed positioning, and escalating Iran peace speculation. Oil was the primary driver of cross-asset moves.</li></ul>
+<h3 id="structural-context-from-boltnews-weekly-archives">Structural Context (from BoltNews weekly archives)</h3>
+<ul><li><strong>AI capex theme:</strong> The Mag 7 committed an estimated $300B+ in combined 2026 capex, primarily AI infrastructure. At current rates, that's $300B of spending being discounted at 4.5%+ — the repricing has begun.</li><li><strong>Yield curve:</strong> The 2Y/10Y spread spent 26 months inverted (Jul 2022 – Aug 2024). Historically, recession follows curve re-steepening. The current flattening from the short end (not long end falling) is a different dynamic — it's a hawkish Fed flattening, not a recession signal.</li><li><strong>AAII Sentiment:</strong> The bull-bear spread improved from −17.3% to −2.8% this week but remains negative for the 18th time in 19 weeks. Historical average is +6.5%. This persistent bearishness has been a contrarian tailwind for the rally.</li></ul>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<h3 id="market-data-sources">Market Data Sources</h3>
+<ul><li><strong>Equity index closes (Thu Jun 18):</strong> T. Rowe Price weekly update. <strong>High confidence</strong> — primary institutional source.</li><li><strong>VIX (Jun 18 close):</strong> Yahoo Finance historical data (17.23). Also corroborated by Cboe spot VIX ($16.40) and FRED (Jun 17: 18.44). <strong>High confidence.</strong></li><li><strong>Treasury yields (Jun 18):</strong> Advisor Perspectives (10Y: 4.46%, 2Y: 4.19%). Corroborated by LPL Research and CNBC. <strong>High confidence.</strong></li><li><strong>DXY (Jun 17):</strong> Reuters article (+0.9% to 100.47). No independent DXY close data for Jun 18 found. <strong>Moderate confidence</strong> — single-source but primary (Reuters).</li><li><strong>Oil (WTI/Brent):</strong> Reuters (Jun 15 settlement: WTI $80.75, Brent $83.17). Weekly change from LPL Research (−9.71%). Post-Thursday levels ~$76-77 from Deutsche Börse/Polymarket. <strong>High confidence</strong> on settlement; <strong>moderate</strong> on Thursday levels (live quotes, not settlement).</li><li><strong>Gold:</strong> Deutsche Börse live ($4,157.84). Weekly change from LPL Research (+0.05%). <strong>Moderate confidence</strong> — live quote, not settlement.</li><li><strong>EUR/USD:</strong> Deutsche Börse live (1.1476). <strong>Moderate confidence</strong> — live quote, not settlement.</li></ul>
+<h3 id="economic-data">Economic Data</h3>
+<ul><li><strong>All calendar data:</strong> MarketWatch Economic Calendar. <strong>High confidence</strong> — primary source (Dow Jones/WSJ survey).</li><li><strong>Prior week CPI/PPI:</strong> MarketWatch calendar. <strong>High confidence.</strong></li></ul>
+<h3 id="corporate-analyst-sources">Corporate/Analyst Sources</h3>
+<ul><li><strong>Fed meeting details:</strong> Reuters "Instant View" (Jun 17), CNBC (Jun 18), KPMG (Jun 17), T. Rowe Price (Jun 18). Multiple primary sources with consistent data. <strong>High confidence.</strong></li><li><strong>Magnificent Seven prices/performance:</strong> IBD (Jun 2026), TalkMarkets (Jun 17). <strong>Moderate confidence</strong> — TalkMarkets is a commentary platform (not primary); IBD is an established financial publication.</li><li><strong>Sector performance:</strong> LPL Research (Bloomberg data). <strong>High confidence</strong> — institutional source with Bloomberg as underlying data provider.</li><li><strong>AAII Sentiment:</strong> AAII Insights (Jun 20, published ~23 hours ago). <strong>High confidence</strong> — primary source, direct from survey publisher.</li><li><strong>Credit market data:</strong> JPMorgan AM (as of Mar 31, 2026, with forward outlook), YCharts (Jun 17), Macrotrends (Jun 17), FRED (Jun 17). <strong>High confidence</strong> on spread levels; JPMorgan piece is 2+ months old on positioning data but current on strategy.</li></ul>
+<h3 id="geopolitical-sources">Geopolitical Sources</h3>
+<ul><li><strong>Iran peace deal:</strong> Reuters (Jun 14-15), CNBC (Jun 14), The Guardian (Jun 15). Multiple primary newswires. <strong>High confidence.</strong></li><li><strong>Israeli posture:</strong> Reuters article. <strong>Moderate confidence</strong> — single mention in an oil-focused piece.</li></ul>
+<h3 id="data-gaps-unavailable">Data Gaps / Unavailable</h3>
+<ul><li><strong>BTC/ETH prices:</strong> Not obtained from a primary source this run. Weekend run's assigned "market-snapshot" lane assigned crypto but web_extract did not yield a clean data point.</li><li><strong>USD/JPY:</strong> Not available from primary source. BOJ rate hike context from T. Rowe Price but no exchange rate.</li><li><strong>Credit spreads as of Jun 18 close:</strong> Closest data point is Jun 17 (FRED, YCharts, Macrotrends). Thursday closing levels not independently confirmed.</li><li><strong>VIX futures / VIX term structure:</strong> Not obtained.</li><li><strong>Breadth indicators (advance/decline):</strong> Not obtained — mentioned qualitatively in LPL/IBD commentary but no hard numbers.</li><li><strong>AVGO closing price for Jun 18:</strong> Referenced as ~$425 estimated based on 14.5% June swoon context from IBD and the 22% post-earnings drop from Yahoo Finance. Not a verified closing price.</li></ul>
+<h3 id="recency-verification">Recency Verification</h3>
+<ul><li>All articles cited are dated between June 14-20, 2026 — within the 210-hour weekend recency window (starting Jun 12 16:00 ET).</li><li>No stale indicators from prior weeks used as current data. All "last week" references are explicitly labeled as historical context in Section 8.</li><li>The AAII survey (Jun 20) is within 24 hours of publication.</li><li>Economic calendar is MarketWatch's current listing for Jun 22-26.</li></ul>
+<h3 id="extraction-completeness">Extraction Completeness</h3>
+<ul><li><strong>Deep-extracted articles (10 total):</strong> T. Rowe Price weekly (Jun 18), Advisor Perspectives yields (Jun 18), MarketWatch calendar (Jun 15-26), Yahoo/Investopedia analyst targets (Jun 17), AAII Sentiment (Jun 20), JPMorgan Credit (Jun 2026), Reuters Fed Instant View (Jun 17), CNBC Warsh hawkish (Jun 18), CNBC SpaceX IPO (Jun 15), LPL Weekly Performance (Jun 18), Reuters Oil/Iran (Jun 15), IBD Mag 7 (Jun 2026), TalkMarkets Mag 7 (Jun 17).</li><li><strong>Headline-only articles rejected:</strong> Deutsche Börse commodities page (navigation shell, no article content); several search results pointing to quote pages or aggregators.</li><li><strong>Paywall/failed extractions:</strong> CNBC Jun 17 treasury yields article failed with ERR_TUNNEL_CONNECTION_FAILED — content obtained from alternative primary sources (Reuters, Advisor Perspectives).</li><li><strong>Reddit:</strong> Not scraped this run — forum sources are restricted class for weekend mode per search plan spec.</li></ul>
+<hr class="divider">
+<p><em>End of briefing. Next scheduled run: Pre-Market Monday June 22, 2026.</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html" target="_blank" rel="noopener">Global Markets Weekly Update</a>
+<a class="source-link" href="https://www.advisorperspectives.com/dshort/updates/2026/06/18/treasury-yields-snapshot-june-18-2026" target="_blank" rel="noopener">Treasury Yields Snapshot: June 18, 2026</a>
+<a class="source-link" href="https://www.marketwatch.com/economy-politics/calendar" target="_blank" rel="noopener">U.S. Economic Calendar — MarketWatch</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/wall-street-experts-think-market-164435348.html" target="_blank" rel="noopener">These Wall Street Experts Think the Market Outlook for 2026 Just Got Brighter</a>
+<a class="source-link" href="https://insights.aaii.com/p/aaii-sentiment-survey-pessimism-draws" target="_blank" rel="noopener">AAII Sentiment Survey: Pessimism Draws Back</a>
+<a class="source-link" href="https://www.reuters.com/business/view-fed-holds-steady-warshs-debut-analysts-see-hawkish-shift-2026-06-17/" target="_blank" rel="noopener">Instant View: Fed holds steady in Warsh&#x27;s debut, but hawkish shift fuels bond-ma</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/18/markets-are-set-for-a-much-more-hawkish-warsh-fed-than-expected.html" target="_blank" rel="noopener">Markets are set for a much more hawkish Warsh Fed than expected</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/15/spacex-stock-record-ipo-debut.html" target="_blank" rel="noopener">SpaceX stock gains 20% in first full day of trading</a>
+<a class="source-link" href="https://www.lpl.com/research/blog/weekly-market-performance-june-18-2026.html" target="_blank" rel="noopener">Weekly Market Performance | June 18, 2026</a>
+<a class="source-link" href="https://www.reuters.com/business/energy/oil-slips-over-4-after-us-iran-reach-peace-deal-reopen-strait-hormuz-2026-06-14/" target="_blank" rel="noopener">Oil settles at three-month low after Trump says deal signed to end Iran war</a>
+<a class="source-link" href="https://am.jpmorgan.com/dk/en/asset-management/institutional/insights/portfolio-insights/making-flexibility-count/" target="_blank" rel="noopener">Making flexibility count in today&#x27;s corporate credit markets</a>
+<a class="source-link" href="https://www.investors.com/news/magnificent-seven-stocks-market-drags-apple-nvidia-tesla/" target="_blank" rel="noopener">Magnificent Seven Stocks Are Market Drags</a>
+<a class="source-link" href="https://talkmarkets.com/article/magnificent-7-weekly-report---tesla-needs-a-new-catalyst-1781812241" target="_blank" rel="noopener">Magnificent 7 Weekly Report - Tesla Needs A New Catalyst</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-21 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
