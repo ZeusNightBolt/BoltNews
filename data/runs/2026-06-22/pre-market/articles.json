@@ -1,0 +1,334 @@
+{
+  "schema_version": "2.0",
+  "mode": "pre-market",
+  "date": "2026-06-22",
+  "generated": "2026-06-22T06:30:00-04:00",
+  "stats": {
+    "total_found": 22,
+    "total_extracted": 16,
+    "total_accepted": 16,
+    "by_lane": {
+      "market-snapshot": 5,
+      "overnight-or-session-headlines": 4,
+      "macro-policy-rates-fx": 1,
+      "equities-earnings-single-stocks": 4,
+      "commodities-credit-vol": 2
+    }
+  },
+  "articles": [
+    {
+      "id": "art-001",
+      "title": "Stock market today: S&P 500, Nasdaq, Dow futures slide with US-Iran peace and inflation in focus",
+      "url": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-june-22-225817825.html",
+      "source": "Yahoo Finance",
+      "source_class": "newswire",
+      "published_at": "2026-06-22T02:29:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "stock futures",
+        "US-Iran",
+        "inflation",
+        "PCE",
+        "Federal Reserve"
+      ],
+      "assigned_section": "Futures and Current Market Snapshot",
+      "summary": "US stock futures fell Monday: S&P 500 futures -0.4%, Nasdaq 100 futures -0.6%, Dow futures -0.3%. WTI crude jumped nearly 3% to near $78/barrel. Brent above $81. Trump warned Iran of potential military action as VP Vance opened talks in Switzerland. Core PCE inflation data due Thursday.",
+      "extracted_text": "Futures linked to the S&P 500 (ES=F) slipped 0.4%, while contracts tied to the Nasdaq 100 (NQ=F) lost 0.6%. Dow futures (YM=F) declined 0.3%. West Texas Intermediate (CL=F) crude jumped nearly 3% to trade near $78 a barrel, while Brent (BZ=F) crude climbed above $81. President Donald Trump warned Iran of potential additional military action unless Tehran moved to rein in allied groups operating in Lebanon. Attention now turns to Thursday's release of the Personal Consumption Expenditures price index, the Fed's preferred inflation gauge. Economists expect core PCE to show modest acceleration from April levels."
+    },
+    {
+      "id": "art-002",
+      "title": "Oil prices fall and stock markets rise as US-Iran peace talks progress \u2013 business live",
+      "url": "https://www.theguardian.com/business/live/2026/jun/22/oil-prices-fall-stock-markets-rise-us-iran-peace-talks-trump-burnham-starmer-pound-ftse-hormuz-business-live",
+      "source": "The Guardian",
+      "source_class": "newswire",
+      "published_at": "2026-06-22T03:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "oil prices",
+        "US-Iran",
+        "Asian markets",
+        "Nikkei"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "Brent crude fell more than 2% to $78.90/barrel \u2014 below the $80 mark. Asian stocks rallied: Nikkei +1.8%, Kospi +0.6%, MSCI Asia-Pacific ex-Japan +0.8%, Chinese blue chips +1.6%. US-Iran talks in Switzerland ended on positive note with 'good progress' reported. Iranian foreign ministry spokesperson said talks went well. 60-day roadmap with final deal to be sealed within 60 days.",
+      "extracted_text": "Brent crude fell more than 2% to $78.90/barrel. Japan's Nikkei: +1.8%, South Korea's Kospi: +0.6%, MSCI Asia-Pacific ex-Japan index: +0.8%, Chinese blue chips: +1.6%. Iranian foreign ministry spokesperson told Press TV that 'good progress had been made.' Mediators Qatar and Pakistan said both sides agreed to a roadmap with a final deal to be sealed within 60 days. Despite positive tone, US President Trump continued to post threats on social media. Ipek Ozkardeskaya, senior analyst at Swissquote: 'The week starts on a surprisingly positive note despite the uncertainty surrounding the US/Iran peace talks, which took several twists over the weekend.'"
+    },
+    {
+      "id": "art-003",
+      "title": "Crude oil prices climb 2% as Donald Trump issues new threat amid US-Iran peace talks; Brent reaches $82 per barrel",
+      "url": "https://www.livemint.com/market/commodities/crude-oil-prices-climb-2-as-donald-trump-issues-new-threat-amid-us-iran-peace-talks-brent-reaches-82-per-barrel-11782091147823.html",
+      "source": "LiveMint",
+      "source_class": "newswire",
+      "published_at": "2026-06-22T04:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "oil prices",
+        "US-Iran",
+        "Trump",
+        "Strait of Hormuz"
+      ],
+      "assigned_section": "FX and Commodities",
+      "summary": "Brent crude surged 2.2% at the open to $82.30/barrel. WTI climbed above $78/barrel. Trump warned of possible military action against Iran: 'they would not make it back to Iran' if they close Strait of Hormuz. Talks began Sunday at B\u00fcrgenstock resort, Switzerland, 60-day negotiation period. Iran suspended talks following Trump's warning but discussions continued.",
+      "extracted_text": "Brent crude surged as much as 2.2% at the open, hitting $82.30 per barrel. WTI climbed above $78 per barrel. Trump was quoted as saying by Fox News that he had warned Iranian leaders that any attempt to close the Strait of Hormuz would carry severe consequences, stating that 'they would not make it back to Iran.' Venue: B\u00fcrgenstock resort, Switzerland. Talks began Sunday and extended into early Monday, marking start of 60-day negotiation period. Iranian media reported Tehran suspended talks following Trump's warning, but sources said discussions continued. Ponmudi R, CEO of Enrich Money: 'The renewed uncertainty has pushed crude oil prices modestly higher.'"
+    },
+    {
+      "id": "art-004",
+      "title": "US Dollar Index Hits A New High Since May 2025: What's next?",
+      "url": "https://www.vantagemarkets.com/market-analysis/dollar-index-dxy-usdx-hawkish-fed-rate-hike-june-22-2026/",
+      "source": "Vantage Markets",
+      "source_class": "analysis",
+      "published_at": "2026-06-22T01:39:00+00:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "DXY",
+        "Federal Reserve",
+        "rate hike",
+        "US-Iran"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "DXY touched 100.58 on June 22 \u2014 highest since May 2025, +1.5% from week's open. Fed dot plot (June 17): 9 of 18 project at least one rate hike in 2026, median year-end fed funds 3.8% (up from 3.4%). New Fed Chair Kevin Warsh declined to submit a dot, stripped forward guidance. US CPI May: +4.2% YoY, core 2.9%. Technical: DXY RSI 70.07 (near overbought), supports at 99.00/99.50, resistance 101.00/101.50.",
+      "extracted_text": "The US Dollar Index (USDX) touched 100.58 on June 22, 2026 \u2014 its highest level since May 2025. The index has gained roughly 1.5% from the week's open. 9 of 18 FOMC participants now project at least one rate hike in 2026. New Fed Chair Kevin Warsh declined to submit a dot and stripped forward guidance from the statement. US CPI (May): +4.2% YoY, core CPI 2.9% YoY. CME FedWatch: December 2026 hike odds fell to ~50% after peace deal (down from ~70% prior week). DXY RSI (14, close): Fast line 70.07 (near overbought). Key pairs: EURUSD support 1.1400/1.1480 resistance 1.1660/1.1900. USDJPY support 158.00/158.50 resistance 160.50/161.00. XAUUSD support 4,150/4,200 resistance 4,350/4,450."
+    },
+    {
+      "id": "art-007",
+      "title": "World Oil Price per Barrel Today, Monday June 22, 2026",
+      "url": "https://pintu.co.id/en/news/281157-world-oil-price-per-barrel-june-22-2026",
+      "source": "Pintu News",
+      "source_class": "commodities",
+      "published_at": "2026-06-22T06:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "oil prices",
+        "Brent",
+        "WTI",
+        "OPEC+"
+      ],
+      "assigned_section": "FX and Commodities",
+      "summary": "Brent crude: $80.22/barrel. WTI: $77.51/barrel. Weakening trend amid OPEC+ production easing signals, global economic slowdown concerns, stronger USD, and higher-than-expected US crude inventories. Analysts expect oil to remain in moderate range near term.",
+      "extracted_text": "Brent Crude Oil at $80.22 per barrel, WTI at $77.51 per barrel. Key downward pressures: OPEC+ production easing signals, slowing economies in US and Europe, stronger USD making dollar-denominated oil more expensive, higher-than-expected US crude inventory data. Short-term outlook: oil prices to remain in relatively moderate range. Key factors: international trade negotiations, next OPEC+ production decision, energy demand data from China, US, and India."
+    },
+    {
+      "id": "art-008",
+      "title": "Marvell Technology (MRVL) Stock: S&P 500 Inclusion on June 22",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/dear-marvell-technology-stock-fans-194231397.html",
+      "source": "Yahoo Finance",
+      "source_class": "newswire",
+      "published_at": "2026-06-22T06:00:00-04:00",
+      "fetched_at": "2026-06-22T06:10:00-04:00",
+      "tickers": [
+        "MRVL"
+      ],
+      "topics": [
+        "S&P 500",
+        "index inclusion",
+        "semiconductor",
+        "AI",
+        "Nvidia"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "MRVL joins S&P 500 effective June 22. Replaces POOL and CPB. Flex (FLEX) also joins. MRVL has more than tripled YTD (+274% 12-month), market cap ~$233B. Nvidia invested $2B in Marvell. Jensen Huang at COMPUTEX 2026: 'Marvell is the next trillion-dollar company.' Data center revenue +46% last year, +50% expected this year. CEO targets $16.5B annual revenue. Latest quarter revenue $2.4B beat estimates. 36 analysts: 27 Strong Buy, 3 Moderate Buy, 6 Hold, avg price target $231.54 (already exceeded).",
+      "extracted_text": "Marvell Technology joins the S&P 500 Index on June 22. Pool Corp (POOL) and The Campbell's Company (CPB) removed; Flex (FLEX) also joins. Year-to-date: MRVL has more than tripled; market cap ~$233 billion. 12-month return: +274%. Jensen Huang at COMPUTEX 2026: 'Marvell is the next trillion-dollar company.' Nvidia invested $2 billion in Marvell in March. Data center revenue growth: +46% last year, +50% expected this year, +55% next year. CEO targets $16.5 billion annually. Latest quarter: revenue $2.4 billion beating estimates, guidance raised. Ratings: 27 Strong Buy, 3 Moderate Buy, 6 Hold, avg target $231.54."
+    },
+    {
+      "id": "art-009",
+      "title": "Space Stocks Dip After SpaceX IPO",
+      "url": "https://payloadspace.com/space-stocks-dip-on-spacex-ipo/",
+      "source": "Payload Space",
+      "source_class": "analysis",
+      "published_at": "2026-06-22T06:00:00-04:00",
+      "fetched_at": "2026-06-22T06:10:00-04:00",
+      "tickers": [
+        "SPCX",
+        "RKLB",
+        "ASTS",
+        "SATS",
+        "PL",
+        "LUNR",
+        "SPCE"
+      ],
+      "topics": [
+        "SpaceX",
+        "IPO",
+        "space stocks",
+        "ETF"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "SpaceX ($SPCX) debuted Friday at $161.11, +19% above $135 IPO price. Other space stocks sold off: ASTS -15.5%, RKLB -10.8%, SATS -11%, PL -8.8%, SPCE -31.8%. Micah Walter-Range (Caelus Partners): rotation by space-focused investors into SpaceX. Upcoming: RKLB Nasdaq-100 entry today (June 22), potential ETF inclusion, insider lockup expiry after Q2.",
+      "extracted_text": "SpaceX ($SPCX) began trading on NASDAQ on Friday, closing at $161.11 \u2014 19% above IPO target of $135. Space stock dips: Planet Labs -8.8%, Rocket Lab -10.8%, EchoStar -11%, Intuitive Machines -13.1%, AST SpaceMobile -15.5%, Virgin Galactic -31.8%. Micah Walter-Range, Caelus Partners: 'Space-focused investors wanted to capture gains while switching investment to SpaceX.' Upcoming: NASDAQ-100 entry for RKLB expected early July, ETF inclusion, insider lockup expiry after Q2 earnings (20% of stake)."
+    },
+    {
+      "id": "art-010",
+      "title": "S&P 500 Rally Faces Its First Real Test From the Fed",
+      "url": "https://www.investing.com/analysis/sp-500-rally-faces-its-first-real-test-from-the-fed-200682267",
+      "source": "Investing.com",
+      "source_class": "analysis",
+      "published_at": "2026-06-19T18:00:00-04:00",
+      "fetched_at": "2026-06-22T06:10:00-04:00",
+      "tickers": [
+        "MRVL",
+        "SMCI"
+      ],
+      "topics": [
+        "S&P 500",
+        "Federal Reserve",
+        "index inclusion"
+      ],
+      "assigned_section": "Sector and Factor Setup",
+      "summary": "S&P 500 faces first real test from hawkish Fed. MRVL's S&P 500 inclusion on June 22 was an 'event-driven chip trade' that has been heavily front-run. SMCI also joining S&P 500 June 22. Index rebalancing creates mechanical buying but history shows inclusion bump often reverses.",
+      "extracted_text": "Marvell Punched Its S&P 500 Ticket for June 22. Marvell was the event-driven chip trade, and the event is a calendar lock. The stock ripped 57% in a month. Question of whether hedge funds have already front-run the inclusion pop."
+    },
+    {
+      "id": "art-011",
+      "title": "China Shanghai Composite Stock Market Index",
+      "url": "https://tradingeconomics.com/china/stock-market",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-06-22T03:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "China",
+        "Shanghai",
+        "Asian markets"
+      ],
+      "assigned_section": "Global Session Recap",
+      "summary": "Shanghai Composite rose to 4,131 points on June 22 (+0.99%). Over the past month, index declined 0.52% but remains 22.16% higher than a year ago.",
+      "extracted_text": "China's main stock market index, the SHANGHAI, rose to 4131 points on June 22, 2026, gaining 0.99% from the previous session. Over the past month, the index has declined 0.52%, though it remains 22.16% higher than a year ago."
+    },
+    {
+      "id": "art-012",
+      "title": "Hang Seng Index plunges at noon on Monday, once touching one-year low",
+      "url": "http://www.thestandard.com.hk/finance/article/335230/Hang-Seng-Index-plunges-at-noon-on-Monday-once-touching-one-year-low",
+      "source": "The Standard (HK)",
+      "source_class": "newswire",
+      "published_at": "2026-06-22T01:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "Hong Kong",
+        "Hang Seng",
+        "China"
+      ],
+      "assigned_section": "Global Session Recap",
+      "summary": "Hang Seng Index dipped nearly 500 points to 23,444 (one-year low), closed 233 points lower (-1%) at noon. Mixed HK and mainland stocks amid US-Iran talks progress.",
+      "extracted_text": "Hang Seng Index dipped by nearly 500 points at one point to 23,444, the lowest in one year. It closed 233 points, or 1 percent, at noon. Mixed HK and mainland stocks amid US-Iran talks progress. Hang Seng opened down 113 points or 0.5% at 23,811 before losses accelerated to 389 points or 1.63%."
+    },
+    {
+      "id": "art-013",
+      "title": "S&P 500 (^GSPC) Historical Data \u2014 June 18 close",
+      "url": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+      "source": "Yahoo Finance",
+      "source_class": "market_data",
+      "published_at": "2026-06-18T16:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "S&P 500",
+        "market close"
+      ],
+      "assigned_section": "Futures and Current Market Snapshot",
+      "summary": "S&P 500 closed at 7,500.58 on June 18 (Friday, last trading day before Juneteenth holiday). High: 7,511.07, Low: 7,468.32, Open: 7,487.36.",
+      "extracted_text": "June 18, 2026 close: 7,500.58. Open: 7,487.36, High: 7,511.07, Low: 7,468.32."
+    },
+    {
+      "id": "art-014",
+      "title": "Stock market news for June 18, 2026 - CNBC",
+      "url": "https://www.cnbc.com/2026/06/17/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-06-18T16:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "S&P 500",
+        "Nasdaq",
+        "Dow",
+        "market close"
+      ],
+      "assigned_section": "Futures and Current Market Snapshot",
+      "summary": "S&P 500 +1.08% to 7,500.58. Nasdaq Composite +1.91% to 26,517.93. Dow +0.14% to 51,564.70. For the week: Nasdaq +2.4%, Dow and S&P 500 +1%. US markets closed Thursday June 19 for Juneteenth.",
+      "extracted_text": "The S&P 500 rose 1.08% to end the day at 7,500.58, while the Nasdaq Composite gained 1.91% to settle at 26,517.93. The Dow Jones Industrial Average added 72.15 points, or 0.14%, to 51,564.70. For the week, Nasdaq gained 2.4%, while the Dow industrials and S&P 500 rose nearly 1%."
+    },
+    {
+      "id": "art-015",
+      "title": "VIX Volatility Products \u2014 June 18, 2026 close",
+      "url": "https://www.cboe.com/tradable-products/vix/",
+      "source": "Cboe",
+      "source_class": "market_data",
+      "published_at": "2026-06-18T16:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "VIX",
+        "volatility"
+      ],
+      "assigned_section": "Futures and Current Market Snapshot",
+      "summary": "VIX closed at 16.40 on June 18, down 11.06% (-2.04) from prior close of 18.73. Market snapshot shows latest VIX at 17.51 (+4.35%), indicating pre-market volatility increase.",
+      "extracted_text": "June 18, 2026: $16.40 VIX Spot Price, -11.06% (-2.04)."
+    },
+    {
+      "id": "art-016",
+      "title": "Gold Spot (XAUUSD) Commodity Price \u2014 June 22, 2026",
+      "url": "https://tradingeconomics.com/commodity/gold",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-06-22T04:00:00-04:00",
+      "fetched_at": "2026-06-22T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "gold",
+        "XAUUSD",
+        "commodities"
+      ],
+      "assigned_section": "FX and Commodities",
+      "summary": "Gold rose to $4,191.36/t.oz on June 22 (+0.95% from previous day). Over past month gold fell 8.27%, still +24.43% YoY. Gold spot (XAUUSD): $4,201.82. All-time high was $5,602.23 on Jan 28, 2026.",
+      "extracted_text": "Gold rose to 4191.36 USD/t.oz on June 22, 2026, up 0.95% from the previous day. Over the past month, Gold's price has fallen 8.27%, but it is still 24.43% higher than a year ago. Gold reached its all-time high of 5,602.225 USD on Jan 28, 2026."
+    },
+    {
+      "id": "art-017",
+      "title": "Earnings Calendar and Analysis for This Week (June 22-26)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/earnings-calendar-analysis-week-june-162434561.html",
+      "source": "Yahoo Finance",
+      "source_class": "newswire",
+      "published_at": "2026-06-21T18:00:00-04:00",
+      "fetched_at": "2026-06-22T06:10:00-04:00",
+      "tickers": [
+        "MU",
+        "CCL",
+        "FDX",
+        "FDS",
+        "KBH"
+      ],
+      "topics": [
+        "earnings",
+        "earnings calendar"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "Light earnings calendar Monday. Key reports this week: Micron Technology (MU), Carnival (CCL), FedEx (FDX), FactSet (FDS), KB Home (KBH), Blackberry (BB). No noteworthy reports scheduled for Monday June 22.",
+      "extracted_text": "There are no noteworthy earnings reports scheduled for release on Monday, June 22. Anticipated releases this week: Micron Technology (MU), Carnival (CCL), FedEx (FDX), Lotus Technology. Commercial Metals (CMC), FactSet (FDS), KB Home (KBH), Blackberry (BB)."
+    },
+    {
+      "id": "art-018",
+      "title": "10-2 Year Treasury Yield Spread",
+      "url": "https://ycharts.com/indicators/10_2_year_treasury_yield_spread",
+      "source": "YCharts",
+      "source_class": "market_data",
+      "published_at": "2026-06-22T06:00:00-04:00",
+      "fetched_at": "2026-06-22T06:10:00-04:00",
+      "tickers": [],
+      "topics": [
+        "Treasury yields",
+        "yield curve",
+        "10Y-2Y spread"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "10Y-2Y Treasury spread at +0.27 (positive, no longer inverted). 10-year yield: 4.49%. 2-year yield: 4.18%. The curve has uninverted post the hawkish Fed repricing.",
+      "extracted_text": "10-2 Year Treasury Yield Spread is at 0.27%, compared to 0.29% previous market day and 0.44% last year. 10-year yield: 4.49% (June 19). 2-year yield: 4.18% (June 18)."
+    }
+  ]
+}
