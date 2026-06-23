@@ -1,0 +1,329 @@
+[
+  {
+    "id": "cnbc-tech-selloff-global-20260622",
+    "title": "Nasdaq futures sharply lower as tech sell off bleeds into global markets; South Korea's Kospi falls 10%",
+    "url": "https://www.cnbc.com/2026/06/22/stock-market-today-live-updates.html",
+    "source": "CNBC",
+    "source_class": "newswire",
+    "published_at": "2026-06-22T22:00:00-04:00",
+    "fetched_at": "2026-06-23T06:05:00-04:00",
+    "assigned_sections": [
+      "Futures and Current Market Snapshot",
+      "Overnight Top Developments",
+      "Global Session Recap"
+    ],
+    "tickers": [
+      "SPX",
+      "NDX",
+      "DJI",
+      "AMZN",
+      "META",
+      "GOOGL",
+      "SPCX"
+    ],
+    "topics": [
+      "tech sell-off",
+      "global markets",
+      "futures",
+      "Asia markets"
+    ],
+    "extracted_text": "S&P 500 futures: -0.53%. Nasdaq 100 futures: -0.99%. Dow futures: -55 points (-0.11%). Monday regular session: Dow +0.29% (+148.01 pts), S&P 500 -0.37%, Nasdaq -1.32%. Sector laggards: Communication Services -3.83%, Consumer Discretionary -2.33%. Amazon -5%, Alphabet -5% (AI brain drain concerns after two high-profile AI researchers departed for rivals), Meta -2%, SpaceX -16% (third straight negative session). Winning sectors: Real Estate +1.38%, Energy +1.24%, Health Care +0.87%. Asia-Pacific: Kospi plunge >6% (later trimmed), Kosdaq -6.27%, Nikkei snapped 8-session win streak -1.5%, CSI 300 -1%, Hang Seng -0.16%. Chip stocks led carnage: SK Hynix and Samsung each fell >4-5%. SK Hynix had briefly overtaken Samsung as South Korea's most valuable listed company on Monday. Oil: US-Iran Swiss talks progress toward final deal within 60 days, US Treasury authorized Iranian oil sales through Aug 21 2026. Early Tuesday: Brent +0.36% to $78.18, WTI +0.45% to $74.19. Earnings this week: Tue AM Korn Ferry (KFY), Carnival (CCL); Tue PM FedEx (FDX), KB Home (KBH), Cerebras (CBRS); Wed AM Paychex (PAYX); Wed PM Micron (MU); Thu AM McCormick (MKC), Commercial Metals (CMC), Darden (DRI), Winnebago (WGO); Thu PM BlackBerry (BB). Quote from Liz Ann Sonders (Schwab): 'Anything AI- and tech-related is still an area of focus for retail traders. They're just not as active in individual stocks as they have been in the past. Not a disinterest in the broader technology or AI space, it's just the vehicles. I think it's a little bit more of a focus on ETFs more broadly, as opposed to those individual stock trades.' Today's economic data: S&P Global PMI (manufacturing and services, June preliminary) expected.",
+    "summary": "Nasdaq futures sharply lower as tech sell off bleeds into global markets; South Korea's Kospi falls 10%",
+    "recency_valid": true,
+    "age_hours": 8.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "id": "reuters-asia-oil-fed-20260623",
+    "title": "Asia shares, oil slip as markets reprice Fed expectations",
+    "url": "https://www.reuters.com/world/asia-pacific/global-markets-global-markets-2026-06-23/",
+    "source": "Reuters",
+    "source_class": "newswire",
+    "published_at": "2026-06-23T03:00:00-04:00",
+    "fetched_at": "2026-06-23T06:06:00-04:00",
+    "assigned_sections": [
+      "Global Session Recap",
+      "Macro, Rates, and Policy Setup",
+      "FX and Commodities"
+    ],
+    "tickers": [
+      "SPX",
+      "NDX",
+      "GOOGL",
+      "SPCX"
+    ],
+    "topics": [
+      "Fed repricing",
+      "Asia markets",
+      "commodities",
+      "FX"
+    ],
+    "extracted_text": "MSCI Asia-Pacific ex-Japan: -2.9%. S&P 500 e-mini futures: -0.9%. Japan Nikkei 225: -3.0%. South Korea Kospi: -8.1%. Euro Stoxx 50 futures: -0.96%. German DAX futures: -1.0%. FTSE futures: -0.95%. Commodities: Brent crude -1.22% to $76.95/bbl (settled >3% lower earlier). Gold -1.75% to $4,118.55/oz. Bitcoin -1.56% to $63,368.73. Ether -1.17% to $1,712.74. Currencies: USD/JPY flat at \u00a5161.665 (near 40-year low). GBP/USD -0.1% at $1.3234. US Dollar Index +0.07% at 101.08 (near highest since May 2025). 10-year US Treasury yield: -0.61 bp to 4.501%. Fed repricing: CME FedWatch shows probability of at least two 25bp hikes before year-end rose to 54% (from 15.2% one week ago) under new Fed Chair Kevin Warsh. Japan Finance Minister Satsuki Katayama held online meeting with US Treasury Secretary Scott Bessent to discuss global financial markets and sharp currency swings. Sterling weakened after British PM Keir Starmer announced resignation, paving way for Andy Burnham. US waived sanctions on Iran, Strait of Hormuz open. Quote from Chris Weston (Pepperstone Group): 'These are far from dull markets. The former generals of the market appear to have lost momentum, and investors are rotating into other areas of the market that are more defensive, less AI-focused and offer more predictable cash flows.'",
+    "summary": "Asia shares, oil slip as markets reprice Fed expectations",
+    "recency_valid": true,
+    "age_hours": 3.0,
+    "session_window_status": "inside_session_window",
+    "category": "Rates",
+    "rejected_reason": null
+  },
+  {
+    "id": "marketwatch-vix-futures-20260623",
+    "title": "VIX spikes to 19.80 as futures point sharply lower",
+    "url": "https://www.marketwatch.com/investing/index/vix",
+    "source": "MarketWatch",
+    "source_class": "newswire",
+    "published_at": "2026-06-23T04:51:00-05:00",
+    "fetched_at": "2026-06-23T06:08:00-04:00",
+    "assigned_sections": [
+      "Futures and Current Market Snapshot",
+      "Today's Risk Map"
+    ],
+    "tickers": [
+      "SPX",
+      "NDX",
+      "DJI",
+      "SMCI",
+      "COHR",
+      "ON",
+      "MRNA",
+      "PLTR"
+    ],
+    "topics": [
+      "VIX",
+      "futures",
+      "volatility",
+      "pre-market movers"
+    ],
+    "extracted_text": "VIX: 19.80 (+2.52, +14.58%). Previous close: 17.28. Day range: 19.67-20.54. 52-week range: 13.38-35.30. DJIA Futures: 51,873 (-246, -0.47%). S&P Futures: 7,445.00 (-96.25, -1.28%). NASDAQ Futures: 29,887.50 (-766.00, -2.50%). Gold: 4,135.60 (-67.10, -1.60%). Silver: 62.490 (-3.093, -4.72%). Crude Oil: 73.56 (-0.30, -0.41%). Key US Cash Indices (Monday close): Dow 51,712.71 (+148.01, +0.29%), NASDAQ 26,166.60 (-351.33, -1.32%), S&P 500 7,472.79 (-27.79, -0.37%), Russell 2000 3,004.40 (+24.64, +0.83%). Pre-market movers \u2014 Gainers: SMCI +15.7, COHR +9.2, ON +8.2, GLW +7.6. Losers: MRNA -7.2, PLTR -7.0, VRSN -6.4, CMG -6.0. Global indices: NIKKEI 225 -3.55%, Hang Seng -1.82%, Shanghai Comp -1.37%, STOXX 600 -0.88%, DAX -1.22%. Polymarket: S&P 500 end-of-June target $7,100 probability at 43%. VIX YTD: -32.44%, 1-year: -13.27%.",
+    "summary": "VIX spikes to 19.80 as futures point sharply lower",
+    "recency_valid": true,
+    "age_hours": 0.15,
+    "session_window_status": "inside_session_window",
+    "category": "Derivatives",
+    "rejected_reason": null
+  },
+  {
+    "id": "gurufocus-nvda-chip-prices-20260623",
+    "title": "Nvidia (NVDA) Faces Declining AI Chip Prices Amid Stock Underperformance",
+    "url": "https://www.gurufocus.com/news/8927174/nvidia-nvda-faces-declining-ai-chip-prices-amid-stock-underperformance",
+    "source": "GuruFocus",
+    "source_class": "analysis",
+    "published_at": "2026-06-23T04:00:00-04:00",
+    "fetched_at": "2026-06-23T06:09:00-04:00",
+    "assigned_sections": [
+      "Equities and Single-Stock Watchlist",
+      "Sector and Factor Setup"
+    ],
+    "tickers": [
+      "NVDA"
+    ],
+    "topics": [
+      "AI chips",
+      "semiconductor",
+      "B200",
+      "insider selling"
+    ],
+    "extracted_text": "NVDA stock price: $208.65 (down 0.97% on the day). Year-to-date gain: ~12%, significantly underperforming VanEck Semiconductor ETF's ~85% rise. AI chip (B200) leasing price declined from peak of $6.11/hour in late May to $4.22 by June 21 \u2014 a 31% drop. Kalshi prediction markets: only 3% chance of reaching $236, 35% chance of hitting $216 by June 26. Insider selling: $224.6 million sold in past 3 months, zero insider purchases. P/E (TTM): 31.95x vs 5-year median of 60.15x. GF Value: $347.31 (labeled 'Possible Value Trap'). Market cap: $5.05 trillion. GF Score: 96/100 (Financial Strength 9/10, Profitability 10/10, Growth 10/10, Momentum 10/10, Valuation 4/10).",
+    "summary": "Nvidia (NVDA) Faces Declining AI Chip Prices Amid Stock Underperformance",
+    "recency_valid": true,
+    "age_hours": 2.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "id": "cnbc-spacex-premarket-20260623",
+    "title": "SpaceX drops more than 3% following $400 billion selloff",
+    "url": "https://www.cnbc.com/2026/06/23/spacex-stock-tech-sell-off.html",
+    "source": "CNBC",
+    "source_class": "newswire",
+    "published_at": "2026-06-23T04:30:00-04:00",
+    "fetched_at": "2026-06-23T06:10:00-04:00",
+    "assigned_sections": [
+      "Equities and Single-Stock Watchlist",
+      "Overnight Top Developments"
+    ],
+    "tickers": [
+      "SPCX"
+    ],
+    "topics": [
+      "IPO",
+      "bond offering",
+      "sell-off",
+      "tech"
+    ],
+    "extracted_text": "SpaceX (SPCX) shares down more than 3% in premarket trading Tuesday. Follows 16% plunge on Monday. Market cap at Monday close: $2 trillion. Monday's selloff erased roughly $400 billion in value. Pre-market move: -3.43% as of 4:30 a.m. ET. Monday drop: -16%. Prior sessions: -3.6% Thu, -5% Fri. IPO date: June 12, 2026 (offer price $135, opened at $150). Post-IPO peak briefly surpassed Amazon and Microsoft market caps; now fallen back below both. Average post-IPO investor nearly all gains wiped out by end of last week. After Hours: $154.60 (-30.40, -16.43%). Live: $148.30 (-6.30, -4.08%). Company announced senior unsecured notes offering Monday; disclosed $100.8B cash as of June 19. Signed major computing power agreement with open-source AI startup Reflection for access to Colossus supercomputing infrastructure. FY2025 net loss: $4.9 billion, Q1 2026 net loss: $4.28 billion.",
+    "summary": "SpaceX drops more than 3% following $400 billion selloff",
+    "recency_valid": true,
+    "age_hours": 1.5,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "id": "fool-smci-upgrade-20260622",
+    "title": "Why Super Micro Computer Stock Is Skyrocketing Today",
+    "url": "https://www.fool.com/investing/2026/06/22/why-super-micro-computer-stock-is-skyrocketing-tod/",
+    "source": "Motley Fool",
+    "source_class": "analysis",
+    "published_at": "2026-06-22T18:00:00-04:00",
+    "fetched_at": "2026-06-23T06:11:00-04:00",
+    "assigned_sections": [
+      "Equities and Single-Stock Watchlist",
+      "Sector and Factor Setup"
+    ],
+    "tickers": [
+      "SMCI"
+    ],
+    "topics": [
+      "analyst upgrade",
+      "AI servers",
+      "GF Securities",
+      "price target"
+    ],
+    "extracted_text": "GF Securities upgraded SMCI from Hold to Buy with 1-year price target of $48 (implies ~35% upside from $35.38). Stock up +15.38% to $35.38. Market cap: $23B. Day range: $32.27-$36.79. 52-week range: $19.48-$62.36. Key catalyst: GF Securities sees attractive entry point after $7 billion share-sale announcement caused pullback. Firm expects SMCI to benefit from SpaceX (SPCX) ramping AI spending. Super Micro recently unveiled liquid-cooled rack Blueprint using Nvidia Vera Rubin NVL4: scales to 1,152 Rubin GPUs and 576 Vera CPUs. Deployments set for H2 2026. Risks: $7B equity financing plan, illegal export scandal (alleged banned AI hardware exports to China). Gross margin: 8.39%. $39B in AI server orders.",
+    "summary": "Why Super Micro Computer Stock Is Skyrocketing Today",
+    "recency_valid": true,
+    "age_hours": 12.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "id": "cnbc-spacex-selloff-20260622",
+    "title": "SpaceX stock falls 16%, continuing selloff after blockbuster IPO",
+    "url": "https://www.cnbc.com/2026/06/22/spacex-stock-ipo-rally-selloff.html",
+    "source": "CNBC",
+    "source_class": "newswire",
+    "published_at": "2026-06-22T18:00:00-04:00",
+    "fetched_at": "2026-06-23T06:12:00-04:00",
+    "assigned_sections": [
+      "Equities and Single-Stock Watchlist"
+    ],
+    "tickers": [
+      "SPCX"
+    ],
+    "topics": [
+      "IPO",
+      "sell-off",
+      "Elon Musk",
+      "bond offering"
+    ],
+    "extracted_text": "SpaceX fell 16% Monday, marking third straight losing session after IPO on June 12 at $135 offer ($150 open). Monday close: $154.60. After-hours: $149.78 (-3.12%). Loss over 3 days: ~24%. Cash position: $100.8B as of June 19. FY2025 loss: $4.9B, Q1 2026 loss: $4.28B. Musk became world's first trillionaire from IPO. Average post-IPO buyer almost underwater by end of last week.",
+    "summary": "SpaceX stock falls 16%, continuing selloff after blockbuster IPO",
+    "recency_valid": true,
+    "age_hours": 12.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "id": "reuters-sterling-starmer-20260622",
+    "title": "Britain's pound, gilt prices hold lower after Starmer steps down",
+    "url": "https://www.reuters.com/world/uk/britains-pound-gilt-prices-hold-lower-after-starmer-steps-down-2026-06-22/",
+    "source": "Reuters",
+    "source_class": "newswire",
+    "published_at": "2026-06-22T17:00:00-04:00",
+    "fetched_at": "2026-06-23T06:14:00-04:00",
+    "assigned_sections": [
+      "FX and Commodities",
+      "Global Session Recap"
+    ],
+    "tickers": [],
+    "topics": [
+      "GBP",
+      "UK politics",
+      "Starmer resignation",
+      "sterling"
+    ],
+    "extracted_text": "UK PM Keir Starmer resigned Monday after less than two years in office. Pound held broadly stable as markets had priced in the resignation over the weekend. New leader expected by September when parliament returns; frontrunner is Andy Burnham. GBP/USD -0.1% at $1.3234. Gilt yields edged higher initially then recovered. Sterling and gilts later recovered as path to power cleared for Burnham.",
+    "summary": "Britain's pound, gilt prices hold lower after Starmer steps down",
+    "recency_valid": true,
+    "age_hours": 13.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "id": "ycharts-10y-treasury-20260623",
+    "title": "10 Year Treasury Rate \u2014 YCharts",
+    "url": "https://ycharts.com/indicators/10_year_treasury_rate",
+    "source": "YCharts",
+    "source_class": "market_data",
+    "published_at": "2026-06-23T04:00:00-04:00",
+    "fetched_at": "2026-06-23T06:15:00-04:00",
+    "assigned_sections": [
+      "Macro, Rates, and Policy Setup"
+    ],
+    "tickers": [],
+    "topics": [
+      "Treasury yields",
+      "10Y",
+      "rates"
+    ],
+    "extracted_text": "10-year Treasury yield: 4.51% as of June 22 close. Recent: June 18: 4.46%, June 17: 4.49%, June 16: 4.46%. Long-term average: 4.25%. 30-year bond yield: 4.94% on June 23, down 0.01 pp from previous session.",
+    "summary": "10 Year Treasury Rate \u2014 YCharts",
+    "recency_valid": true,
+    "age_hours": 2.0,
+    "session_window_status": "inside_session_window",
+    "category": "Rates",
+    "rejected_reason": null
+  },
+  {
+    "id": "saxo-mu-earnings-preview-20260623",
+    "title": "Micron Q3 earnings: what the options market is pricing ahead of 24 June",
+    "url": "https://www.home.saxo/content/articles/options/micron-q3-earnings-what-the-options-market-is-pricing-ahead-of-24-june-23062026",
+    "source": "Saxo Bank",
+    "source_class": "analysis",
+    "published_at": "2026-06-23T03:00:00-04:00",
+    "fetched_at": "2026-06-23T06:17:00-04:00",
+    "assigned_sections": [
+      "Equities and Single-Stock Watchlist",
+      "Today's Risk Map"
+    ],
+    "tickers": [
+      "MU"
+    ],
+    "topics": [
+      "earnings",
+      "options",
+      "implied move",
+      "semiconductor"
+    ],
+    "extracted_text": "Micron Technology (MU) reports Q3 fiscal 2026 on Wednesday June 24. Stock price: $1,172.30. Options market pricing \u00b1$132.22 move, or \u00b111.03%. 52-week range: $103.38 to $1,204.50. MU up 756% over past year. The 'new trillion dollar chip stock' \u2014 explosive large-cap story on Wall Street. Market cap has surged on HBM (high-bandwidth memory) demand for AI accelerators.",
+    "summary": "Micron Q3 earnings: what the options market is pricing ahead of 24 June",
+    "recency_valid": true,
+    "age_hours": 3.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "id": "coindesk-mstr-btc-20260622",
+    "title": "Strategy added $35 million in bitcoin, $300 million in cash reserves last week",
+    "url": "https://www.coindesk.com/markets/2026/06/22/strategy-added-usd35-million-in-bitcoin-usd300-million-in-cash-reserves-last-week",
+    "source": "CoinDesk",
+    "source_class": "analysis",
+    "published_at": "2026-06-22T16:00:00-04:00",
+    "fetched_at": "2026-06-23T06:16:00-04:00",
+    "assigned_sections": [
+      "Equities and Single-Stock Watchlist"
+    ],
+    "tickers": [
+      "MSTR"
+    ],
+    "topics": [
+      "Bitcoin",
+      "BTC",
+      "cash reserves",
+      "dilution"
+    ],
+    "extracted_text": "Strategy (MSTR) added $35M in Bitcoin and $300M in cash reserves last week. Total BTC holdings: \u20bf847,363 (BTC value $52.9B vs total cost basis $64.10B \u2014 underwater). Avg cost per BTC: $75,646. Cash reserve boost meant to reassure investors about liquidity. $300M raised via MSTR equity dilution to backstop Bitcoin buying. Bitcoin trading at $63,368 (-1.56% on day).",
+    "summary": "MSTR added $35M BTC + $300M cash. \u20bf847,363 holdings worth $52.9B vs $64.1B cost basis (underwater). Dilution concerns.",
+    "recency_valid": true,
+    "rejected_reason": "stale_text_pattern",
+    "age_hours": 14.0
+  }
+]
