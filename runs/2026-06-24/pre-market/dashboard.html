@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-24</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-24 &middot; 7 articles &middot; 4 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-3" href="#1-global-semiconductor-rout-kospi-triggers-circuit-breaker-partial-recovery-underway">1. Global Semiconductor Rout — KOSPI Triggers Circuit Breaker, Partial Recovery Underway</a><a class="toc-link toc-level-3" href="#2-micron-mu-reports-q3-earnings-today-after-close-make-or-break-event">2. Micron (MU) Reports Q3 Earnings TODAY After Close — Make-or-Break Event</a><a class="toc-link toc-level-3" href="#3-google-ai-talent-hemorrhage-continues">3. Google AI Talent Hemorrhage Continues</a><a class="toc-link toc-level-3" href="#4-oracle-cuts-21-000-jobs-13-of-workforce">4. Oracle Cuts 21,000 Jobs (13% of Workforce)</a><a class="toc-link toc-level-3" href="#5-oil-slides-on-iran-peace-progress">5. Oil Slides on Iran Peace Progress</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-3" href="#treasury-yields-multi-year-highs">Treasury Yields — Multi-Year Highs</a><a class="toc-link toc-level-3" href="#fomc-june-meeting-june-16-17-hawkish-hold">FOMC June Meeting (June 16-17) — Hawkish Hold</a><a class="toc-link toc-level-3" href="#economic-data">Economic Data</a><a class="toc-link toc-level-3" href="#upcoming-catalysts-this-week">Upcoming Catalysts This Week</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-3" href="#currency-markets">Currency Markets</a><a class="toc-link toc-level-3" href="#commodities">Commodities</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-3" href="#tuesday-s-biggest-losers-semiconductor-adjacent">Tuesday&#x27;s Biggest Losers (Semiconductor/Adjacent)</a><a class="toc-link toc-level-3" href="#monday-s-losers-june-22-preceding-the-rout">Monday&#x27;s Losers (June 22) — Preceding the Rout</a><a class="toc-link toc-level-3" href="#tuesday-s-notable-gainers-rotation-beneficiaries">Tuesday&#x27;s Notable Gainers (Rotation Beneficiaries)</a><a class="toc-link toc-level-3" href="#key-watchlist-tickers-status">Key Watchlist Tickers — Status</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-3" href="#factor-performance-june-23">Factor Performance (June 23)</a><a class="toc-link toc-level-3" href="#credit-markets">Credit Markets</a><a class="toc-link toc-level-3" href="#breadth-sentiment">Breadth &amp; Sentiment</a><a class="toc-link toc-level-3" href="#concentration-risk">Concentration Risk</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-2" href="#cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</a><a class="toc-link toc-level-2" href="#contrarian-flags">Contrarian Flags</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-wednesday-june-24-2026">BoltNews Pre-Market Briefing — Wednesday, June 24, 2026</h1>
+<p><strong>Mode:</strong> Pre-Market | <strong>Recency Window:</strong> June 23 4PM ET → June 24 6AM ET (14 hours)  </p>
+<p><strong>Generated:</strong> 06:15 ET | <strong>Sources:</strong> 15 deep-extracted articles across 8 source classes</p>
+<hr class="divider">
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Contract</th><th>Level</th><th>Change</th><th>% Change</th></tr></thead><tbody><tr><td>S&amp;P 500 Futures (ES)</td><td>7,518.50</td><td>+22.75</td><td>+0.30%</td></tr><tr><td>Nasdaq-100 Futures (NQ)</td><td>30,446.75</td><td>+206.75</td><td>+0.67%</td></tr><tr><td>Dow Futures (YM)</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Prior Session Close (June 23):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th><th>%</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,365.46</td><td>-107.33</td><td>-1.44%</td></tr><tr><td>Nasdaq Composite</td><td>25,587.04</td><td>-579.56</td><td>-2.21%</td></tr><tr><td>Dow Jones</td><td>51,666.84</td><td>-45.87</td><td>-0.09%</td></tr><tr><td>Russell 2000</td><td>2,975.48</td><td>-28.92</td><td>-0.96%</td></tr><tr><td><strong>VIX</strong></td><td><strong>19.49</strong></td><td>+2.21</td><td>+12.79%</td></tr><tr><td>SPY</td><td>733.58</td><td>-10.81</td><td>-1.45%</td></tr><tr><td>QQQ</td><td>713.65</td><td>-24.30</td><td>-3.29%</td></tr><tr><td>XLK (Tech)</td><td>184.19</td><td>-7.96</td><td>-4.14%</td></tr><tr><td>XLE (Energy)</td><td>54.46</td><td>+0.40</td><td>+0.74%</td></tr></tbody></table></div>
+<p><strong>Key signal:</strong> ES +0.30%, NQ +0.67% pointing to a modest bounce after Tuesday's semiconductor-led rout. The rotation pattern is clear: XLK -4.14% vs XLE +0.74%. About half of all US shares rose on Tuesday — this was sector rotation, not broad panic.</p>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<h3 id="1-global-semiconductor-rout-kospi-triggers-circuit-breaker-partial-recovery-underway">1. Global Semiconductor Rout — KOSPI Triggers Circuit Breaker, Partial Recovery Underway</h3>
+<p>South Korea's KOSPI index plunged <strong>9.99%</strong> on Tuesday (June 23), closing at <strong>8,203.84</strong> and triggering a 20-minute circuit breaker after an 8% intraday drop. SK Hynix fell <strong>12.47%</strong> to 2,555,000 KRW, Samsung collapsed <strong>12.31%</strong> to 310,000 KRW. The two semiconductor giants represent roughly half of the KOSPI's total market capitalization.</p>
+<p><strong>Overnight recovery (June 24 Asia session):</strong> KOSPI rebounded <strong>+3.3%</strong> to 8,471.02, Samsung surged <strong>+9.8%</strong>, SK Hynix rose <strong>+1%</strong>. But the recovery was uneven — Nikkei fell another <strong>-0.9%</strong> to 69,174.97 (after -3.6% Tuesday), Taiwan's tech-heavy Taiex dropped <strong>-2.2%</strong>, while Hang Seng (+0.5%) and Shanghai (+0.1%) were modestly positive.</p>
+<blockquote><strong>James Reilly, Capital Economics:</strong> "These big moves are part of a growing trend of rising volatility in tech stocks generally. This volatility is, in our view, evidence of excessive froth and calls into question the sustainability of this rally."</blockquote>
+<h3 id="2-micron-mu-reports-q3-earnings-today-after-close-make-or-break-event">2. Micron (MU) Reports Q3 Earnings TODAY After Close — Make-or-Break Event</h3>
+<p>Consensus estimates: <strong>~$35B revenue</strong> (nearly 4x YoY), adjusted EPS <strong>$20.81</strong> (10x increase). Bernstein raised PT to $1,300 (Outperform), BofA reiterated Buy at $1,500. But Barchart put/call ratio for June 26 expiry sits at <strong>0.99x</strong> (neutral/bearish), with the lower contract price at $1,060 implying a potential &gt;11% post-earnings decline. Consensus mean PT of $940 suggests &gt;25% overvaluation. RSI near 70 (overbought). Historical July average: -2%.</p>
+<p>MU closed Tuesday at $1,051.77 (-13.18%). Stock is still +269% YTD.</p>
+<h3 id="3-google-ai-talent-hemorrhage-continues">3. Google AI Talent Hemorrhage Continues</h3>
+<p>Noam Shazeer (Gemini co-lead) → OpenAI. Nobel laureate John Jumper (AlphaFold co-creator) → Anthropic. Both announcements within days of each other. Alphabet -5% Monday, worst single-day decline since May 2025. Nadella's WSJ interview calling AI "commoditized" added fuel. Alphabet raised $141B in debt/equity for AI infrastructure — if AI models become interchangeable, that capex may not build a moat. GOOGL closed $346.13 (-1.02% after-hours June 23).</p>
+<h3 id="4-oracle-cuts-21-000-jobs-13-of-workforce">4. Oracle Cuts 21,000 Jobs (13% of Workforce)</h3>
+<p>Disclosed in annual regulatory filing Monday. Capex surged 162% to $55.7B; FCF at negative $23.7B. Restructuring costs: $1.8B (vs $374M prior year). Stock -5.66% Tuesday to $165.16. YTD down &gt;10%. Part of broader wave: Meta -8,000, Microsoft buyouts, AI responsible for &gt;50,000 US layoffs in 2025.</p>
+<h3 id="5-oil-slides-on-iran-peace-progress">5. Oil Slides on Iran Peace Progress</h3>
+<p>Brent -1.2% to $75.91, WTI -1.3% to $72.26. Strait of Hormuz crossings increasing. US-Iran talks on permanent end to war made progress. ING strategists: "Price movements suggest the market expects a fairly rapid recovery in Persian Gulf oil supplies." Oil now near pre-war levels (~$70 in late February).</p>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<div class="table-wrapper"><table><thead><tr><th>Market</th><th>Index</th><th>Change</th><th>Context</th></tr></thead><tbody><tr><td>South Korea</td><td>KOSPI 8,471.02</td><td><strong>+3.3%</strong></td><td>Recovering from Tuesday's -10% crash</td></tr><tr><td>Japan</td><td>Nikkei 225 69,174.97</td><td><strong>-0.9%</strong></td><td>Continued weakness after -3.6% Tuesday</td></tr><tr><td>Taiwan</td><td>Taiex</td><td><strong>-2.2%</strong></td><td>Heavily tech-influenced, still under pressure</td></tr><tr><td>Hong Kong</td><td>Hang Seng 23,441.48</td><td><strong>+0.5%</strong></td><td>Resilient, less tech-heavy</td></tr><tr><td>China</td><td>Shanghai Comp 4,110.81</td><td><strong>+0.1%</strong></td><td>Flat</td></tr><tr><td>Australia</td><td>ASX 200 8,808.40</td><td><strong>+0.2%</strong></td><td>Modest positive</td></tr></tbody></table></div>
+<p><strong>Key dynamic:</strong> Korea's sharp recovery (+3.3%) was led by Samsung (+9.8%) and SK Hynix (+1%), suggesting Tuesday's crash was overdone and driven by forced selling/positioning rather than fundamental deterioration. But continued weakness in Japan (-0.9%) and Taiwan (-2.2%) signals the unwind is incomplete. The KOSPI remains up ~95% YTD despite the crash — this was an AI-froth purge, not a systemic event.</p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<h3 id="treasury-yields-multi-year-highs">Treasury Yields — Multi-Year Highs</h3>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield</th><th>Daily Change</th><th>Signal</th></tr></thead><tbody><tr><td>2-Year</td><td><strong>4.24%</strong></td><td>+5bp</td><td>Highest since Feb 2025</td></tr><tr><td>10-Year</td><td><strong>4.51%</strong></td><td>+5bp</td><td>Benchmark climbing</td></tr><tr><td>20-Year</td><td><strong>4.97%</strong></td><td>+6bp</td><td>—</td></tr><tr><td>30-Year</td><td><strong>4.95%</strong></td><td>+5bp</td><td>—</td></tr><tr><td><strong>10Y-2Y Spread</strong></td><td><strong>+0.27pp</strong></td><td>0.00</td><td>Normal curve, low recession risk</td></tr><tr><td><strong>10Y-3M Spread</strong></td><td><strong>+0.66pp</strong></td><td>+3bp</td><td>No recession signal</td></tr></tbody></table></div>
+<p>Yields climbed across the curve as markets digested the Fed's hawkish June projections. The 2Y at 4.24% is the highest since early 2025.</p>
+<h3 id="fomc-june-meeting-june-16-17-hawkish-hold">FOMC June Meeting (June 16-17) — Hawkish Hold</h3>
+<ul><li><strong>Rate:</strong> Held at 3.50-3.75% (12-0 unanimous)</li><li><strong>Warsh's first meeting as Chair</strong></li><li><strong>Dot plot:</strong> Median end-2026 rate rose to <strong>3.8%</strong> (from 3.4% in March) → signals <strong>at least one more hike</strong></li><li><strong>Inflation forecasts:</strong> PCE raised to 3.6% (from 2.7%), Core PCE to 3.3% (from 2.7%)</li><li><strong>GDP:</strong> 2.2% projected for 2026</li><li><strong>Forward guidance eliminated</strong> — pure data-dependent, meeting-by-meeting stance</li><li><strong>Five task forces</strong> launched to overhaul Fed practices (communications, balance sheet, data, productivity/AI, inflation frameworks)</li><li><strong>Next FOMC:</strong> July 28-29</li></ul>
+<h3 id="economic-data">Economic Data</h3>
+<ul><li><strong>US Manufacturing PMI (June):</strong> 55.7 (beat 54.6) — strongest in months</li><li><strong>German Composite PMI:</strong> 48.0 (contracting)</li><li><strong>UK Services PMI:</strong> 48.7 (contracting)</li></ul>
+<p><strong>The paradox:</strong> Strong US data fuels rate hike fears → higher yields → tech sell-off. Weak European data gives ECB/Bank of England room to ease. "In a world where investors fear tighter policy above all, economic strength has become something the stock market flinches at" (Rio Times).</p>
+<h3 id="upcoming-catalysts-this-week">Upcoming Catalysts This Week</h3>
+<div class="table-wrapper"><table><thead><tr><th>Date</th><th>Event</th><th>Significance</th></tr></thead><tbody><tr><td><strong>Wed June 24</strong></td><td>Micron (MU) Q3 earnings (after close)</td><td>AI memory trade validation</td></tr><tr><td><strong>Wed June 24</strong></td><td>MBA Mortgage Applications</td><td>Housing market pulse</td></tr><tr><td><strong>Thu June 25</strong></td><td><strong>PCE Inflation (May)</strong> — Fed's preferred gauge</td><td>Critical test of falling oil impact</td></tr><tr><td><strong>Thu June 25</strong></td><td>US New Home Sales</td><td>Housing after construction drop</td></tr><tr><td><strong>Thu June 26</strong></td><td>Q1 GDP (final), Durable Goods Orders</td><td>Growth check</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<h3 id="currency-markets">Currency Markets</h3>
+<div class="table-wrapper"><table><thead><tr><th>Pair</th><th>Rate</th><th>Change</th></tr></thead><tbody><tr><td><strong>DXY</strong></td><td>101.38</td><td>+0.36% (fresh yearly high)</td></tr><tr><td>USD/JPY</td><td>161.69</td><td>+0.14</td></tr><tr><td>EUR/USD</td><td>1.1354</td><td>-0.0028</td></tr></tbody></table></div>
+<p>DXY broke to a fresh yearly high, rebounding from uptrend support. Driven by hawkish Fed dot plot widening rate differentials. DXY up 2.16% over the past month, 3.60% over 12 months. A strong dollar is a headwind for emerging markets, commodities, and multinational earnings.</p>
+<h3 id="commodities">Commodities</h3>
+<div class="table-wrapper"><table><thead><tr><th>Commodity</th><th>Price</th><th>Change</th></tr></thead><tbody><tr><td>WTI Crude</td><td>$72.26</td><td>-1.3%</td></tr><tr><td>Brent Crude</td><td>$75.91</td><td>-1.2%</td></tr><tr><td>Gold</td><td>$4,107/oz</td><td>-0.56%</td></tr><tr><td>Copper</td><td>$6.15/lb</td><td>+0.11%</td></tr><tr><td>Bitcoin</td><td>$62,651</td><td>-0.03%</td></tr></tbody></table></div>
+<p><strong>Oil narrative:</strong> Prices sliding toward pre-Iran-war levels (~$70 WTI in late February). Iran peace talks progressing, Strait of Hormuz crossings increasing. Every dollar of oil decline reinforces disinflation and supports the rate-cut thesis — but the Fed dot plot is already pricing in hikes, not cuts. Falling oil is good for consumers but hasn't yet shifted the Fed's hawkish posture.</p>
+<p><strong>Gold</strong> at $4,107 — down slightly despite the equity selloff, suggesting the haven bid is flowing primarily to USD and Treasuries, not gold. <strong>Bitcoin</strong> at $62,651 — flat, unable to rally despite tech carnage (MSTR under pressure).</p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<h3 id="tuesday-s-biggest-losers-semiconductor-adjacent">Tuesday's Biggest Losers (Semiconductor/Adjacent)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>Close</th><th>% Change</th><th>Notes</th></tr></thead><tbody><tr><td><strong>MU</strong></td><td>Micron Technology</td><td>$1,051.77</td><td><strong>-13.18%</strong></td><td>Reports Q3 today after close; consensus $35B rev, $20.81 EPS</td></tr><tr><td><strong>ON</strong></td><td>ON Semiconductor</td><td>$117.06</td><td><strong>-11.01%</strong></td><td>Broad chip rout</td></tr><tr><td><strong>ENPH</strong></td><td>Enphase Energy</td><td>$47.22</td><td><strong>-9.90%</strong></td><td>Solar/energy tech hit</td></tr><tr><td><strong>LRCX</strong></td><td>Lam Research</td><td>$371.33</td><td><strong>-9.33%</strong></td><td>Semi equipment</td></tr><tr><td><strong>MCHP</strong></td><td>Microchip Technology</td><td>$93.26</td><td><strong>-9.20%</strong></td><td>Watchlist ticker</td></tr><tr><td><strong>MRVL</strong></td><td>Marvell Technology</td><td>—</td><td><strong>-9%</strong></td><td>Watchlist ticker, CNN source</td></tr><tr><td><strong>NVDA</strong></td><td>Nvidia</td><td>$200.04</td><td><strong>-4.13%</strong></td><td>Broad market weight, held up better than memory peers</td></tr><tr><td><strong>ORCL</strong></td><td>Oracle</td><td>$165.16</td><td><strong>-5.66%</strong></td><td>21K job cuts, -27% this month</td></tr><tr><td><strong>SMCI</strong></td><td>Super Micro Computer</td><td>—</td><td><strong>-6.03%</strong></td><td>Watchlist ticker, caught in semi rout</td></tr><tr><td><strong>GOOGL</strong></td><td>Alphabet</td><td>$346.13</td><td><strong>-1.02%</strong> (AH)</td><td>-5% Monday on AI talent exits</td></tr></tbody></table></div>
+<h3 id="monday-s-losers-june-22-preceding-the-rout">Monday's Losers (June 22) — Preceding the Rout</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>% Change</th></tr></thead><tbody><tr><td>GOOGL</td><td>-6%</td></tr><tr><td>AMZN</td><td>-5%</td></tr><tr><td>META</td><td>-3%</td></tr><tr><td>MSFT</td><td>-3%</td></tr></tbody></table></div>
+<h3 id="tuesday-s-notable-gainers-rotation-beneficiaries">Tuesday's Notable Gainers (Rotation Beneficiaries)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Name</th><th>Close</th><th>% Change</th></tr></thead><tbody><tr><td>AXON</td><td>Axon Enterprise</td><td>$433.04</td><td>+5.61%</td></tr><tr><td>CDW</td><td>CDW Corp.</td><td>$130.06</td><td>+5.25%</td></tr><tr><td>GEHC</td><td>GE HealthCare</td><td>$63.72</td><td>+5.08%</td></tr><tr><td>IBM</td><td>IBM</td><td>$264.94</td><td>+5.04%</td></tr><tr><td>CHTR</td><td>Charter Communications</td><td>$131.75</td><td>+4.95%</td></tr></tbody></table></div>
+<h3 id="key-watchlist-tickers-status">Key Watchlist Tickers — Status</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Status</th></tr></thead><tbody><tr><td><strong>MU</strong></td><td>Reports Q3 after close TODAY. Down 13% Tuesday on sector rout. BofA Buy $1,500 PT, Bernstein Outperform $1,300 PT. P/C ratio 0.99x.</td></tr><tr><td><strong>ORCL</strong></td><td>-5.66% Tuesday, -27% monthly, -10% YTD. 21K jobs cut. Capex $55.7B. FCF -$23.7B.</td></tr><tr><td><strong>SMCI</strong></td><td>-6.03% Tuesday, caught in semi selloff. AI server demand still structural.</td></tr><tr><td><strong>MSTR</strong></td><td>Bitcoin at $62,651. Crypto-adjacent struggling.</td></tr><tr><td><strong>CHTR</strong></td><td>+4.95% Tuesday — rotation winner, defensive/value bid.</td></tr><tr><td><strong>MRVL</strong></td><td>-9% Tuesday — networking/chip exposure.</td></tr><tr><td><strong>COIN/HOOD</strong></td><td>Crypto/retail trading — Bitcoin flat, volume may be thin.</td></tr><tr><td><strong>MCHP</strong></td><td>-9.20% Tuesday — broad semi weakness.</td></tr><tr><td><strong>ON</strong></td><td>-11.01% Tuesday — auto/industrial chip exposure.</td></tr><tr><td><strong>VRT</strong></td><td>Data center infrastructure — structurally supported but caught in selloff.</td></tr><tr><td><strong>SPCX</strong> (SpaceX)</td><td>$164.64, +~1% Tuesday. IPO'd at $135 (June 12), peak ~$192 after +20% day. Down 16% Monday on post-IPO jitters, stabilized Tuesday. Signed $6.3B AI computing deal with Reflection.</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<h3 id="factor-performance-june-23">Factor Performance (June 23)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Factor</th><th>Signal</th></tr></thead><tbody><tr><td><strong>Growth/Momentum</strong></td><td>Crushed — XLK -4.14%, QQQ -3.29%</td></tr><tr><td><strong>Value/Defensive</strong></td><td>Outperformed — IBM +5%, CHTR +5%, GEHC +5%</td></tr><tr><td><strong>Energy</strong></td><td>XLE +0.74% — rotation winner, benefiting from oil stabilization</td></tr><tr><td><strong>Small Caps</strong></td><td>IWM -0.96% — underperformed but less than tech</td></tr><tr><td><strong>Low Vol</strong></td><td>Likely positive — defensive rotation evident</td></tr></tbody></table></div>
+<h3 id="credit-markets">Credit Markets</h3>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Level</th><th>Signal</th></tr></thead><tbody><tr><td><strong>US HY OAS</strong></td><td><strong>2.65%</strong></td><td>vs 2.66% prior day, vs 5.18% long-term avg</td></tr><tr><td><strong>IG Spreads</strong></td><td>—</td><td>Not under pressure</td></tr></tbody></table></div>
+<p><strong>Critical observation:</strong> High-yield credit spreads are essentially unchanged at 2.65% — near historic tights. There is <strong>zero credit stress</strong> despite the equity volatility. This is an equity positioning/pricing event, not a systemic credit event. The rotation from crowded tech to value/defensive names is orderly in credit terms.</p>
+<h3 id="breadth-sentiment">Breadth &amp; Sentiment</h3>
+<div class="table-wrapper"><table><thead><tr><th>Indicator</th><th>Level</th><th>Signal</th></tr></thead><tbody><tr><td><strong>CNN Fear &amp; Greed</strong></td><td><strong>27 (Fear)</strong></td><td>Approaching Extreme Fear (&lt;25)</td></tr><tr><td><strong>VIX</strong></td><td>19.49</td><td>Elevated from 17.28, but not panic (&gt;30)</td></tr><tr><td><strong>% Stocks Rising</strong></td><td>~50%</td><td>Rotation, not crash — half the market rose Tuesday</td></tr><tr><td><strong>NYSE Advance/Decline</strong></td><td>—</td><td>Likely mixed given Dow -0.09%</td></tr></tbody></table></div>
+<h3 id="concentration-risk">Concentration Risk</h3>
+<p>The KOSPI crash exposed the fundamental vulnerability of AI-concentrated markets. Samsung + SK Hynix = ~50% of KOSPI market cap. When foreign capital rotates out of semiconductors, the entire index collapses. The same dynamic applies to the Nasdaq/S&amp;P 500, albeit with less extreme concentration.</p>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<div class="table-wrapper"><table><thead><tr><th>Risk</th><th>Probability</th><th>Impact</th><th>Notes</th></tr></thead><tbody><tr><td><strong>MU earnings disappointment</strong></td><td>Medium</td><td>High</td><td>Consensus ~$35B rev, $20.81 EPS. Miss or weak guidance would validate semi selloff and could trigger another leg down.</td></tr><tr><td><strong>Further Asia/Europe tech contagion</strong></td><td>Medium</td><td>High</td><td>Taiwan -2.2% today, Nikkei -0.9%. If European semis (ASML, ASMI) open weak, US pre-market bounce could fade.</td></tr><tr><td><strong>PCE inflation surprise (Thu)</strong></td><td>Medium</td><td>High</td><td>Fed's preferred gauge. Hot print = more rate hike pricing = further tech pressure. Cool print = relief rally possible.</td></tr><tr><td><strong>Oil supply disruption reversal</strong></td><td>Low</td><td>Positive</td><td>Iran peace progress is disinflationary — good for consumers, good for Fed's inflation fight.</td></tr><tr><td><strong>Credit spread widening</strong></td><td>Low</td><td>High</td><td>Currently at 2.65% — historically tight. If spreads start widening, the rotation becomes something more dangerous.</td></tr><tr><td><strong>Forced de-leveraging in crowded AI positions</strong></td><td>Medium</td><td>High</td><td>KOSPI circuit breaker suggests forced selling. If hedge funds/HFs were levered long semis, unwinds could accelerate.</td></tr><tr><td><strong>DXY breakout acceleration</strong></td><td>Medium</td><td>Medium</td><td>Fresh yearly high at 101.38. Sustained dollar strength hurts EM, commodities, multinationals.</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Supporting Data</th></tr></thead><tbody><tr><td><strong>US Equities (broad)</strong></td><td>Cautious/Neutral</td><td>Rotation from growth to value. SPX -1.44% but Dow flat. ~50% of stocks rose.</td><td>SPX 7,365, VIX 19.49, Fear &amp; Greed 27</td></tr><tr><td><strong>Tech/Semis</strong></td><td>Bearish near-term</td><td>2-day rout. MU earnings tonight is binary event. AI froth being repriced.</td><td>QQQ -3.29%, XLK -4.14%, KOSPI -10%, MU -13.2%</td></tr><tr><td><strong>Value/Defensive</strong></td><td>Bullish</td><td>Clear rotation winner. IBM, CHTR, GEHC all +5%. Energy +0.74%.</td><td>XLE +0.74%, defensive names outperforming</td></tr><tr><td><strong>Treasuries</strong></td><td>Bearish (yields up)</td><td>2Y at 4.24% — highest since Feb 2025. Dot plot signals at least one more hike.</td><td>10Y 4.51%, Fed median dot 3.8% for end-2026</td></tr><tr><td><strong>Credit</strong></td><td>Bullish (tight spreads)</td><td>HY OAS 2.65% vs 5.18% LT avg. No stress.</td><td>HY OAS unchanged despite equity vol</td></tr><tr><td><strong>USD</strong></td><td>Bullish</td><td>DXY at fresh yearly high, hawkish Fed, rate differentials widening.</td><td>DXY 101.38, +2.16% monthly, +3.60% YoY</td></tr><tr><td><strong>Oil</strong></td><td>Bearish/Negative</td><td>Iran peace progress, Strait of Hormuz reopening. Near pre-war levels.</td><td>WTI $72.26, Brent $75.91</td></tr><tr><td><strong>Gold</strong></td><td>Neutral</td><td>Haven bid flowing to USD, not gold. Declining on stronger dollar.</td><td>Gold $4,107 (-0.56%)</td></tr><tr><td><strong>EM/FX</strong></td><td>Bearish</td><td>Strong dollar + rising US yields = EM outflows. Brazil cutting into headwinds.</td><td>USD/BRL 5.17, DXY breakout</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="contrarian-flags">Contrarian Flags</h2>
+<p>1. <strong>Credit markets don't believe the equity selloff.</strong> HY OAS at 2.65% is near historic tights. If credit is right, this is a buying opportunity in tech. If equities are right, credit is mispriced and due for a correction.</p>
+<p>2. <strong>The "strong economy is bad for stocks" narrative is historically unusual.</strong> US Manufacturing PMI at 55.7 is genuinely strong. Normally stocks cheer growth. The inversion — where good data is bad — suggests the market is pricing in a policy error, not a recession.</p>
+<p>3. <strong>Samsung +9.8% overnight suggests Tuesday's -12.3% was forced/mechanical selling, not a fundamental re-rating.</strong> Retail Korean investors bought the dip heavily. The recovery pattern looks like a positioning flush, not a conviction selloff.</p>
+<p>4. <strong>Oil's decline is unambiguously disinflationary.</strong> If PCE on Thursday comes in cool, the rate-hike narrative could reverse sharply. The market may be fighting the last war (pricing in hikes) while the data turns.</p>
+<p>5. <strong>MU consensus of Strong Buy with mean PT $940 implies stock is 25%+ overvalued.</strong> Yet Bernstein ($1,300) and BofA ($1,500) are dramatically above consensus. The wide dispersion means tonight's earnings will resolve a genuine debate, not a consensus view.</p>
+<p>6. <strong>Alphabet's AI talent exits + Nadella's "commoditized AI" thesis are a powerful structural headwind.</strong> If AI models are interchangeable, the $700B combined capex across Big Tech may not generate moats. Oracle's 21K job cuts at $55.7B capex with -$23.7B FCF is a cautionary tale.</p>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<div class="table-wrapper"><table><thead><tr><th>Confidence</th><th>Data Points</th></tr></thead><tbody><tr><td><strong>High</strong></td><td>SPX, Nasdaq, Dow, Russell, VIX closes (Yahoo Finance API via market_snapshot.py)</td></tr><tr><td><strong>High</strong></td><td>Treasury yields (PrimeRates, sourced from FRED)</td></tr><tr><td><strong>High</strong></td><td>KOSPI, Nikkei, Hang Seng, FX rates (Associated Press newswire June 24)</td></tr><tr><td><strong>High</strong></td><td>MU consensus estimates, analyst PTs (Barchart, Tech Times)</td></tr><tr><td><strong>High</strong></td><td>Oracle layoff numbers (CNBC, sourced from SEC filing)</td></tr><tr><td><strong>High</strong></td><td>FOMC meeting details (American Deposit Management, sourced from Fed releases)</td></tr><tr><td><strong>Moderate</strong></td><td>Pre-market futures (CNN pre-market page — may be delayed)</td></tr><tr><td><strong>Moderate</strong></td><td>VIX overnight level (MarketWatch shows 19.28 at 2:38 AM vs 19.49 CBOE close)</td></tr><tr><td><strong>Moderate</strong></td><td>HY OAS 2.65% (YCharts — secondary aggregator)</td></tr><tr><td><strong>Speculative</strong></td><td>"About half of US shares rose" (Rio Times — anecdotal, not from exchange data)</td></tr><tr><td><strong>Speculative</strong></td><td>Forced de-leveraging narrative (SimianX AI analysis — not sourced to flow data)</td></tr></tbody></table></div>
+<p><strong>Articles extracted in full:</strong> 15 articles across CNN, CNBC, 24/7 Wall St, Rio Times, PrimeRates, American Deposit Management, Associated Press, Tech Times, Barchart, SimianX, Fortune India, Forex.com, CBOE, YCharts/FRED.</p>
+<p><strong>Paywalled sources not accessed:</strong> Barron's NVDA article (paywall), WSJ/Bloomberg articles (paywall). No invented content behind paywalls.</p>
+<p><strong>Temporal compliance:</strong> All articles published within the June 23 4PM ET to June 24 6AM ET overnight window. One article (Tech Times MU preview, June 8) included with explicit labeling as pre-existing analysis for earnings context. PrimeRates yield data labeled "as of June 22" — one session behind but used as the most recent closing data available.</p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnn.com/2026/06/23/business/stock-market-kospi-dow-nasdaq-ai" target="_blank" rel="noopener">Wall Street is getting trampled by an AI sell-off. South Korean market plunges 1</a>
+<a class="source-link" href="https://www.riotimesonline.com/global-economy-briefing-june-24-2026/" target="_blank" rel="noopener">Global Economy Briefing — June 24, 2026</a>
+<a class="source-link" href="https://primerates.com/primerate/treasury-yield-curve/" target="_blank" rel="noopener">Treasury Yield Curve Today: June 24, 2026 — Rates &amp; Spread Monitor</a>
+<a class="source-link" href="https://www.wsls.com/business/2026/06/24/asian-stocks-are-mixed-after-big-tech-sell-off/" target="_blank" rel="noopener">Asian stocks are mixed after Big Tech sell-off</a>
+<a class="source-link" href="https://www.simianx.ai/stories/kospi-crash-2026-koreas-ai-chip-reckoning-explained" target="_blank" rel="noopener">KOSPI Crash 2026: Korea&#x27;s AI Chip Reckoning Explained</a>
+<a class="source-link" href="https://www.forex.com/ie/news-and-analysis/us-dollar-short-term-outlook-usd-breakout-targets-next-major-resistance-6-23-2026/" target="_blank" rel="noopener">US Dollar Short-term Outlook: USD Breakout Targets Next Major Resistance</a>
+<a class="source-link" href="https://www.cboe.com/tradable-products/vix/" target="_blank" rel="noopener">CBOE Volatility Index: VIX</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-24 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
