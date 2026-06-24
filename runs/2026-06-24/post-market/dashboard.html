@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-24</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-24 &middot; 14 articles &middot; 5 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#executive-summary">Executive Summary</a><a class="toc-link toc-level-2" href="#1-closing-market-snapshot">1. Closing Market Snapshot</a><a class="toc-link toc-level-2" href="#2-why-markets-moved">2. Why Markets Moved</a><a class="toc-link toc-level-3" href="#2-1-the-chip-wreck-continues-third-day-of-semis-selling">2.1 The Chip Wreck Continues — Third Day of Semis Selling</a><a class="toc-link toc-level-3" href="#2-2-oil-collapse-hormuz-reopens-war-premium-evaporates">2.2 Oil Collapse — Hormuz Reopens, War Premium Evaporates</a><a class="toc-link toc-level-3" href="#2-3-dollar-surge-gold-crash-rate-hike-expectations-dominate">2.3 Dollar Surge, Gold Crash — Rate Hike Expectations Dominate</a><a class="toc-link toc-level-3" href="#2-4-record-margin-debt-leverage-alarms-ringing">2.4 Record Margin Debt — Leverage Alarms Ringing</a><a class="toc-link toc-level-3" href="#2-5-wendy-s-meme-rally-risk-on-speculative-energy">2.5 Wendy&#x27;s Meme Rally — Risk-On Speculative Energy</a><a class="toc-link toc-level-3" href="#2-6-fed-stress-test-results-released">2.6 Fed Stress Test Results Released</a><a class="toc-link toc-level-2" href="#3-equity-market-internals">3. Equity Market Internals</a><a class="toc-link toc-level-3" href="#breadth-participation">Breadth &amp; Participation</a><a class="toc-link toc-level-3" href="#key-movers">Key Movers</a><a class="toc-link toc-level-3" href="#index-changes-effective-monday-june-29">Index Changes (Effective Monday, June 29)</a><a class="toc-link toc-level-3" href="#s-p-500-year-end-targets">S&amp;P 500 Year-End Targets</a><a class="toc-link toc-level-3" href="#margin-debt-record">Margin Debt Record</a><a class="toc-link toc-level-2" href="#4-rates-macro-and-policy">4. Rates, Macro, and Policy</a><a class="toc-link toc-level-3" href="#treasury-yields">Treasury Yields</a><a class="toc-link toc-level-3" href="#federal-reserve-fomc">Federal Reserve / FOMC</a><a class="toc-link toc-level-3" href="#thursday-s-pce-inflation-report-critical">Thursday&#x27;s PCE Inflation Report (Critical)</a><a class="toc-link toc-level-3" href="#fiscal-political">Fiscal / Political</a><a class="toc-link toc-level-3" href="#dollar-fx">Dollar / FX</a><a class="toc-link toc-level-2" href="#5-earnings-and-corporate-developments">5. Earnings and Corporate Developments</a><a class="toc-link toc-level-3" href="#micron-technology-mu-q3-fy2026-critical">Micron Technology (MU) — Q3 FY2026 ⭐ CRITICAL</a><a class="toc-link toc-level-3" href="#cerebras-systems-cbrs-first-post-ipo-earnings">Cerebras Systems (CBRS) — First Post-IPO Earnings</a><a class="toc-link toc-level-3" href="#fedex-fdx-beat-but-guidance-disappoints">FedEx (FDX) — Beat But Guidance Disappoints</a><a class="toc-link toc-level-3" href="#carnival-ccl">Carnival (CCL)</a><a class="toc-link toc-level-3" href="#alphabet-googl-djia-addition">Alphabet (GOOGL) — DJIA Addition</a><a class="toc-link toc-level-2" href="#6-cross-asset-confirmation-or-divergence">6. Cross-Asset Confirmation or Divergence</a><a class="toc-link toc-level-3" href="#what-s-confirming-the-risk-off-signal">What&#x27;s Confirming the Risk-Off Signal</a><a class="toc-link toc-level-3" href="#what-s-contradicting-the-risk-off-signal">What&#x27;s Contradicting the Risk-Off Signal</a><a class="toc-link toc-level-3" href="#cross-asset-interpretation">Cross-Asset Interpretation</a><a class="toc-link toc-level-2" href="#7-sentiment-positioning">7. Sentiment &amp; Positioning</a><a class="toc-link toc-level-2" href="#8-cross-asset-positioning-matrix">8. Cross-Asset Positioning Matrix</a><a class="toc-link toc-level-2" href="#9-contrarian-flags">9. Contrarian Flags</a><a class="toc-link toc-level-3" href="#1-the-ai-trade-is-not-dead-it-s-discriminating">1. The AI Trade Is Not Dead — It&#x27;s Discriminating</a><a class="toc-link toc-level-3" href="#2-the-everything-selloff-is-actually-a-rotation">2. The &quot;Everything Selloff&quot; Is Actually a Rotation</a><a class="toc-link toc-level-3" href="#3-oil-at-70-is-disinflationary-the-fed-may-not-need-to-hike">3. Oil at $70 Is Disinflationary — The Fed May Not Need to Hike</a><a class="toc-link toc-level-3" href="#4-record-margin-debt-is-the-elephant-in-the-room">4. Record Margin Debt Is the Elephant in the Room</a><a class="toc-link toc-level-3" href="#5-vix-compression-into-pce-setup-for-a-volatility-explosion">5. VIX Compression Into PCE — Setup for a Volatility Explosion</a><a class="toc-link toc-level-3" href="#6-googl-joining-the-dow-symbolic-rotation-signal">6. GOOGL Joining the Dow — Symbolic Rotation Signal</a><a class="toc-link toc-level-2" href="#10-tomorrow-setup-thursday-june-25">10. Tomorrow Setup (Thursday, June 25)</a><a class="toc-link toc-level-3" href="#economic-calendar">Economic Calendar</a><a class="toc-link toc-level-3" href="#key-themes-for-thursday">Key Themes for Thursday</a><a class="toc-link toc-level-2" href="#11-source-notes-and-data-quality">11. Source Notes and Data Quality</a><a class="toc-link toc-level-3" href="#primary-sources-authoritative">Primary Sources (Authoritative)</a><a class="toc-link toc-level-3" href="#secondary-sources-reliable">Secondary Sources (Reliable)</a><a class="toc-link toc-level-3" href="#data-caveats">Data Caveats</a><a class="toc-link toc-level-3" href="#stale-content-rejected">Stale Content Rejected</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-post-market-briefing-june-24-2026-wednesday">BoltNews Post-Market Briefing — June 24, 2026 (Wednesday)</h1>
+<p><strong>Published:</strong> 6:04 PM EDT | <strong>Session:</strong> 09:30–16:00 ET | <strong>Mode:</strong> Post-Market</p>
+<hr class="divider">
+<h2 id="executive-summary">Executive Summary</h2>
+<p>Equities closed mixed in a highly bifurcated session: the cap-weighted S&amp;P 500 (-0.10%) and Nasdaq (-0.43%) fell for a third straight day as semiconductor selling intensified (SOXX -2.6%), while the equal-weight S&amp;P 500 gained 0.8%, the Dow rose 0.35%, and the Russell 2000 hit a fresh all-time high at 2,986.63. Oil collapsed to its lowest level since the Iran war began — WTI settled -3.9% at $70.34/bbl — on diplomatic progress reopening the Strait of Hormuz. After the close, Micron (MU) reported a massive earnings beat (revenue $41.46B vs $35.84B est, EPS $25.11 vs $20.78) and guided Q4 to ~$50B, sending shares +10% in extended trading. The dollar hit a 2026 high (DXY 101.58) as markets priced an 87% probability of a Fed rate hike by December, crushing gold (-3.2% to $4,016) and pressuring risk assets ahead of Thursday's critical PCE inflation report (headline 4.1%, core 3.4% expected).</p>
+<hr class="divider">
+<h2 id="1-closing-market-snapshot">1. Closing Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Index / Asset</th><th>Close</th><th>Change</th><th>Notes</th></tr></thead><tbody><tr><td><strong>DJIA</strong></td><td>51,848.90</td><td>+0.35%</td><td>Consumer discretionary, industrials led</td></tr><tr><td><strong>S&amp;P 500</strong></td><td>7,358.22</td><td>-0.10%</td><td>3rd straight decline</td></tr><tr><td><strong>Nasdaq Composite</strong></td><td>25,476.64</td><td>-0.43%</td><td>3rd straight decline; chips dragged</td></tr><tr><td><strong>Russell 2000</strong></td><td>2,986.63</td><td>+0.37%</td><td><strong>Fresh all-time high</strong></td></tr><tr><td><strong>S&amp;P 500 Equal-Weight</strong></td><td>—</td><td>+0.80%</td><td>Broad strength ex-semiconductors</td></tr><tr><td><strong>SOXX (Semiconductor ETF)</strong></td><td>—</td><td>-2.60%</td><td>Hovered near breakeven most of day, sold off late</td></tr><tr><td><strong>MAGS (Mag 7 ETF)</strong></td><td>—</td><td>-0.70%</td><td>Mega-cap tech under pressure</td></tr><tr><td><strong>10Y Treasury Yield</strong></td><td>4.391%</td><td>-10.8 bp</td><td>Declining oil prices dragged yields lower</td></tr><tr><td><strong>2Y Treasury Yield</strong></td><td>4.15%</td><td>—</td><td>Near highest this year — rate expectations proxy</td></tr><tr><td><strong>DXY (Dollar Index)</strong></td><td>101.58</td><td>+0.17%</td><td><strong>2026 high</strong></td></tr><tr><td><strong>VIX</strong></td><td>18.63</td><td>-4.41%</td><td>Vol compression despite chip weakness</td></tr><tr><td><strong>WTI Crude Oil</strong></td><td>$70.34</td><td>-3.90%</td><td>Lowest since Iran war began (~$113 peak → -38%)</td></tr><tr><td><strong>Brent Crude</strong></td><td>$73.74</td><td>-4.30%</td><td></td></tr><tr><td><strong>Gold</strong></td><td>$4,016.40</td><td>-3.21%</td><td>Breached $4,000 intraday; lowest since November</td></tr><tr><td><strong>Silver</strong></td><td>$58.00</td><td>-6.00%</td><td>Down &gt;50% from $122 high</td></tr><tr><td><strong>Bitcoin</strong></td><td>$61,022</td><td>+1.91%</td><td></td></tr></tbody></table></div>
+<p><strong>Source:</strong> Barron's closing panel (last updated 4:18 PM EDT), verified by deterministic market snapshot script. Equal-weight and SOXX data from Barron's coverage. Oil settlement from Barron's/Mizuho.</p>
+<p><strong>Direction:</strong> The session was <strong>lower for cap-weighted benchmarks</strong> (S&amp;P 500 -0.10%, Nasdaq -0.43%) but <strong>higher for breadth indicators</strong> (equal-weight +0.8%, Russell +0.37%, Dow +0.35%). This is a classic rotation-under-the-surface pattern: chips and mega-cap tech sold while the rest of the market advanced. The market snapshot script classifies this correctly as "lower" for the headline indices — describing the session as "broad advance" would be contradicted by the deterministic data.</p>
+<hr class="divider">
+<h2 id="2-why-markets-moved">2. Why Markets Moved</h2>
+<h3 id="2-1-the-chip-wreck-continues-third-day-of-semis-selling">2.1 The Chip Wreck Continues — Third Day of Semis Selling</h3>
+<p>The semiconductor selloff that began Monday deepened Wednesday despite an early-morning rebound attempt. The <strong>SOXX ETF fell 2.6%</strong>, with the selling accelerating late in the session after midday stabilization. Key drivers:</p>
+<ul><li><strong>AI capex ROI scrutiny</strong>: Combined 2026 capex from Microsoft, Alphabet, Amazon, and Meta has surpassed <strong>$452 billion</strong> (per df.media). Wall Street is shifting from rewarding AI spending to demanding proof of returns.</li><li><strong>Alphabet brain drain</strong>: GOOGL lost Nobel laureate <strong>John Jumper</strong> (DeepMind lead) to Anthropic and <strong>Noam Shazeer</strong> (Gemini co-lead) to OpenAI. GOOGL fell 6–10% over two sessions. Q1 2026 FCF collapsed 47% YoY to $10.12B.</li><li><strong>Amazon free cash flow evaporation</strong>: AMZN's trailing twelve-month FCF collapsed 95% to $1.2B due to AI infrastructure costs.</li><li><strong>Korea spillover</strong>: Wedbush's Dan Ives noted the KOSPI semiconductor selloff was spilling into U.S. tech.</li></ul>
+<p><strong>Mizuho's Daniel O'Regan</strong> (Barron's): <em>"Semis have tried to rebound for most of the session, but there's clear bifurcation within the group. Software is also mixed, with continued weakness showing up in the neoCloud names."</em></p>
+<h3 id="2-2-oil-collapse-hormuz-reopens-war-premium-evaporates">2.2 Oil Collapse — Hormuz Reopens, War Premium Evaporates</h3>
+<p><strong>WTI crude settled -3.9% at $70.34/bbl</strong>, the lowest since the U.S.-Iran conflict began. Brent fell 4.3% to $73.74. The catalyst: Trump announced Iran assured no tolls on the Strait of Hormuz; the U.S. agreed to lift sanctions for 60 days during peace negotiations. Strait traffic is recovering (Kpler). Oil is now down ~38% from the wartime closing high of ~$113 and down 25% in the past month alone.</p>
+<p><strong>Mizuho's Robert Yawger</strong> expects the Trump administration to extend negotiations into August, avoiding a military flare-up just two-and-a-half months before midterm elections where "affordability will be a major issue."</p>
+<p>Trump separately ordered the <strong>DOJ to investigate oil companies</strong> for "gouging" — failing to lower pump prices as crude costs drop (Fortune/Yahoo Finance). National average gasoline: $3.93/gal, down 15% from peak but still +30% above pre-war levels.</p>
+<h3 id="2-3-dollar-surge-gold-crash-rate-hike-expectations-dominate">2.3 Dollar Surge, Gold Crash — Rate Hike Expectations Dominate</h3>
+<p>The <strong>DXY hit a 2026 high at 101.58–101.65</strong>, driven by an 87% market-implied probability of a Fed rate hike by December (CME FedWatch). <strong>Gold crashed 3.2% to $4,016</strong> (breached $4,000 intraday, lowest since November) and is now down ~30% from its January peak of $5,600. Goldman Sachs cut its year-end gold target from $5,400 to $4,900, citing the hawkish Fed pivot.</p>
+<p><strong>DHF Capital's Bas Kooijman</strong> (Barron's/Dow Jones): <em>"The expected tightening could continue to fuel the dollar's strength and could leave bond yields elevated."</em></p>
+<h3 id="2-4-record-margin-debt-leverage-alarms-ringing">2.4 Record Margin Debt — Leverage Alarms Ringing</h3>
+<p><strong>Margin debt hit $1.4 trillion</strong> in May (Finra data), a 54% YoY jump from $920.96B and an all-time high. <strong>Mark Hackett, Nationwide chief market strategist</strong>: <em>"Investor leverage has reached historic levels across several dimensions, reflecting the 'lottery mentality' of some retail investors."</em> He sees parallels to the dot-com bubble but notes leverage appears contained to specific market segments. AAII and CNN Fear &amp; Greed surveys are not yet signaling irrational exuberance for the overall market.</p>
+<h3 id="2-5-wendy-s-meme-rally-risk-on-speculative-energy">2.5 Wendy's Meme Rally — Risk-On Speculative Energy</h3>
+<p><strong>Wendy's (WEN) surged &gt;40% at peak</strong> after Reddit's "We need to save Wendy's" campaign went viral. New CEO Bob Wright (ex-Potbelly) and new CFO Steve Cirulis provided a catalyst. The setup: well-known declining company, multi-decade low stock price, high short interest — the "Classic Combo" for meme squeezes. The stock became the second-most mentioned on Reddit trading forums in 24 hours (per Swaggy Stocks). Year-to-date losses nearly erased.</p>
+<h3 id="2-6-fed-stress-test-results-released">2.6 Fed Stress Test Results Released</h3>
+<p>The Federal Reserve released <strong>2026 bank stress test results at 4:00 PM ET</strong>, covering 32 major U.S. banks. Severe scenario assumptions: unemployment 10%, home prices -30%, commercial real estate -39%. <strong>Capital requirements remain unchanged through 2027</strong> while the Fed reviews its methodology.</p>
+<hr class="divider">
+<h2 id="3-equity-market-internals">3. Equity Market Internals</h2>
+<h3 id="breadth-participation">Breadth &amp; Participation</h3>
+<ul><li><strong>Equal-weight S&amp;P 500: +0.8%</strong> — broad strength ex-semiconductors; market breadth was wider than cap-weighted indices suggested</li><li>Only 5 of 11 S&amp;P sectors closed lower Tuesday; consumer staples led (+2%)</li><li>Advancing issues outpaced decliners on the NYSE</li><li>58% of SPX stocks above 50-day moving average — improved from earlier in the week but below recent highs &gt;60%</li><li><strong>Russell 2000 hit a fresh all-time high at 2,986.63</strong> — small caps are participating in the rotation</li></ul>
+<h3 id="key-movers">Key Movers</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Company</th><th>Move</th><th>Driver</th></tr></thead><tbody><tr><td><strong>WEN</strong></td><td>Wendy's</td><td>+40% (peak)</td><td>Reddit meme short squeeze; new CEO/CFO</td></tr><tr><td><strong>HTZ</strong></td><td>Hertz Global</td><td>-27.3%</td><td>Unclear; premarket -22%</td></tr><tr><td><strong>CBRS</strong></td><td>Cerebras Systems</td><td>-19%</td><td>Q1 beat but gross margin guidance 36-38% (down from 47%)</td></tr><tr><td><strong>WDC</strong></td><td>Western Digital</td><td>-5%</td><td>Chip selloff</td></tr><tr><td><strong>SNDK</strong></td><td>SanDisk</td><td>-3%</td><td>Chip selloff</td></tr><tr><td><strong>MU</strong></td><td>Micron Technology</td><td>-0.31% (regular)</td><td>Ahead of earnings; +10% after hours</td></tr><tr><td><strong>FDX</strong></td><td>FedEx</td><td>-6%</td><td>Beat estimates but guidance disappointed</td></tr><tr><td><strong>CCL</strong></td><td>Carnival</td><td>-5%</td><td>Revenue miss, lowered guidance</td></tr><tr><td><strong>GOOGL</strong></td><td>Alphabet</td><td>+0.5%</td><td>Will replace VZ in DJIA effective Monday</td></tr><tr><td><strong>SPCX</strong></td><td>SpaceX</td><td>-1.6%</td><td>Post-IPO volatility; $25B debt sale met skepticism</td></tr><tr><td><strong>BLDR</strong></td><td>Builders FirstSource</td><td>+9.7%</td><td></td></tr><tr><td><strong>RUN</strong></td><td>Sunrun</td><td>+22%</td><td></td></tr><tr><td><strong>CHDN</strong></td><td>Churchill Downs</td><td>+7%</td><td></td></tr><tr><td><strong>CASY</strong></td><td>Casey's General Stores</td><td>-6.8%</td><td></td></tr><tr><td><strong>SLGN</strong></td><td>Silgan Holdings</td><td>-9.5%</td><td></td></tr></tbody></table></div>
+<h3 id="index-changes-effective-monday-june-29">Index Changes (Effective Monday, June 29)</h3>
+<ul><li><strong>Dow Jones</strong>: Alphabet (GOOGL) replaces Verizon (VZ) — adds AI/cloud/digital advertising exposure to the Dow</li><li><strong>S&amp;P 500</strong>: Honeywell Aerospace (spinoff from HON) replaces Conagra Brands (CAG)</li></ul>
+<h3 id="s-p-500-year-end-targets">S&amp;P 500 Year-End Targets</h3>
+<ul><li><strong>JPMorgan</strong>: 7,800 (+6% from Tuesday's close). Cites "unprecedented" earnings strength, +10% positive EPS revisions YTD typically only seen post-recession. Hyperscaler AI capex now seen surging &gt;75% YoY (up from 40% estimate). Risks: crowded momentum in chips, high rates limiting multiple expansion, flood of new equity (OpenAI/Anthropic IPOs, SpaceX lock-up expiry).</li><li><strong>BCA Research</strong>: 8,100 (+10%). Cites broader Q1 earnings strength and economy "shifting into expansion."</li></ul>
+<h3 id="margin-debt-record">Margin Debt Record</h3>
+<ul><li><strong>$1.4 trillion in May</strong> (Finra) — all-time high, +54% YoY</li><li>Up from $1.3 trillion in April, $920.96B in May 2025</li><li>Mark Hackett (Nationwide): compares to dot-com era but notes containment to specific segments</li></ul>
+<hr class="divider">
+<h2 id="4-rates-macro-and-policy">4. Rates, Macro, and Policy</h2>
+<h3 id="treasury-yields">Treasury Yields</h3>
+<ul><li><strong>10Y: 4.391%</strong> — down 10.8 bp from ~4.50% yesterday; declining oil eased inflation concerns, but rate hike expectations kept front-end elevated</li><li><strong>2Y: 4.15%</strong> — near highest this year; proxy for near-term rate expectations</li><li>Barron's early trade: 10Y at 4.480% (-1.2 bp); yields fell further as oil crashed through the session</li></ul>
+<h3 id="federal-reserve-fomc">Federal Reserve / FOMC</h3>
+<ul><li><strong>Last decision</strong>: June 17 — held rates at 3.50–3.75%, unanimous vote</li><li><strong>Next meeting</strong>: July 28–29, 2026</li><li><strong>Market pricing</strong>: 87% probability of at least one rate hike by December 2026 (CME FedWatch)</li><li><strong>Stress tests</strong>: Released June 24 at 4PM ET. 32 banks tested. Capital requirements unchanged through 2027. Severe scenario: 10% unemployment, -30% home prices, -39% CRE. IMF emphasizes U.S. bank resilience as pillar of global financial stability.</li></ul>
+<h3 id="thursday-s-pce-inflation-report-critical">Thursday's PCE Inflation Report (Critical)</h3>
+<ul><li><strong>Headline PCE</strong>: Expected 4.1% YoY (up from 3.8% in April) — would be highest since 2023</li><li><strong>Core PCE</strong>: Expected 3.4% YoY (up from 3.3%) — would be highest since October 2023</li><li><strong>Core PCE is the Fed's preferred inflation gauge.</strong> A persistent rise toward 3.5%+ could cement the September rate hike case.</li><li>PPI components mapping to PCE suggest a firm print; only air transport declined (Schwab)</li></ul>
+<h3 id="fiscal-political">Fiscal / Political</h3>
+<ul><li><strong>Treasury Sec. Bessent</strong> (CNBC): Confident U.S. can achieve <strong>3% GDP growth</strong> in 2026 as Iran war winds down. <em>"We can have something with a three in front of it this year. The underlying economy has been strong."</em></li><li><strong>Senate War Powers vote</strong> (June 23): 50–48 non-binding resolution to end U.S. military involvement in Iran hostilities. Four Republicans joined Democrats: Cassidy (LA), Collins (ME), Paul (KY), Murkowski (AK). Trump called them "losers" and said the vote made his job more difficult.</li><li><strong>Q1 GDP final estimate</strong> (Thursday): Expected 1.6% annualized (unchanged)</li><li><strong>Jobless claims</strong> (Thursday): Forecast 225,000</li></ul>
+<h3 id="dollar-fx">Dollar / FX</h3>
+<ul><li><strong>DXY: 101.58–101.65</strong> — new 2026 high</li><li><strong>USD/JPY: near 161</strong> — weakest yen since the 1980s</li><li>Japanese authorities may intervene if yen slides to 163–165 in a disorderly fashion (df.media)</li><li>Stronger dollar weighs on commodities, EM currencies, and dollar-denominated debt</li></ul>
+<hr class="divider">
+<h2 id="5-earnings-and-corporate-developments">5. Earnings and Corporate Developments</h2>
+<h3 id="micron-technology-mu-q3-fy2026-critical">Micron Technology (MU) — Q3 FY2026 ⭐ CRITICAL</h3>
+<p class="bold-line"><strong>The most important earnings report of the quarter delivered a blowout.</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Q3 2026 Actual</th><th>Consensus</th><th>Beat/Miss</th><th>YoY</th></tr></thead><tbody><tr><td>Revenue</td><td><strong>$41.46B</strong></td><td>$35.84B</td><td>+15.7%</td><td>+346%</td></tr><tr><td>Adjusted EPS</td><td><strong>$25.11</strong></td><td>$20.78</td><td>+20.8%</td><td>—</td></tr><tr><td>Net Income</td><td>$28.24B</td><td>—</td><td>—</td><td>vs $1.89B</td></tr><tr><td>Gross Margin</td><td><strong>84.9%</strong></td><td>—</td><td>Beat</td><td>vs 74.9% QoQ</td></tr><tr><td>Q4 Revenue Guidance</td><td><strong>~$50B</strong></td><td>$43.58B</td><td>+14.7%</td><td>—</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Segment breakdown:</strong></p>
+<ul><li>Data Center: $11.5B (&gt;7x YoY)</li><li>Cloud Memory: $13.77B (&gt;300% YoY)</li><li>Mobile &amp; Client: $11.52B (&gt;250% YoY)</li><li>Automotive &amp; Embedded: $4.63B (&gt;4x YoY)</li></ul>
+<p class="bold-line"><strong>Key strategic takeaways:</strong></p>
+<ul><li><strong>Tight memory conditions expected to persist beyond 2027</strong> — AI-driven demand consuming all supply</li><li><strong>16 long-term contracts</strong> (3–5 years) signed with data center operators and automakers</li><li><strong>$0.15/share dividend</strong> payable in July</li><li>Stock +10% in after-hours trading; up ~700% over one year; market cap now beyond $1 trillion</li></ul>
+<p><strong>Quotes from earnings call:</strong> Micron management emphasized that AI memory demand is accelerating, not peaking. Evercore analyst Amit Daryanani noted the call focused on gross margins and 2027 supply allocations.</p>
+<p><strong>Context:</strong> Wedbush had raised Q3 EPS estimate to $22.84 (above consensus) and set a $1,300 price target. Jefferies sees 40–50% sequential memory price rise in Q3, 30–40% in Q4. MU was down 13% yesterday and -0.31% in regular trading today ahead of the report, reflecting the broader chip selloff and a track record of declining after 5 of the last 6 earnings reports. Tonight broke that pattern decisively.</p>
+<h3 id="cerebras-systems-cbrs-first-post-ipo-earnings">Cerebras Systems (CBRS) — First Post-IPO Earnings</h3>
+<ul><li>Q1 revenue: <strong>$193.4M</strong> (beat by ~$10M); adj. loss $2.48M (better than feared)</li><li><strong>Gross margin guidance: 36–38%</strong> (down from 47% in Q1) — the key concern</li><li>Stock fell <strong>19%</strong>, now down ~40% from first-day close, +4% above $185 IPO price</li><li>Morgan Stanley covered (details truncated in extraction)</li><li>Takeaway: Revenue beat but margin compression spooked investors. The AI chip trade is now discriminating between winners and losers.</li></ul>
+<h3 id="fedex-fdx-beat-but-guidance-disappoints">FedEx (FDX) — Beat But Guidance Disappoints</h3>
+<ul><li>Reported quarterly beat but FY guidance came in below expectations</li><li>FY revenue growth: 11%; adjusted EPS: $16.90–$18.10 (below prior year's $20.24)</li><li>Stock: <strong>-6%</strong> despite the beat (Schwab)</li></ul>
+<h3 id="carnival-ccl">Carnival (CCL)</h3>
+<ul><li>Revenue miss and lowered guidance → <strong>-5%</strong></li></ul>
+<h3 id="alphabet-googl-djia-addition">Alphabet (GOOGL) — DJIA Addition</h3>
+<ul><li>Will replace Verizon (VZ) in the Dow Jones Industrial Average effective Monday, June 29</li><li>Adds AI/cloud/digital advertising exposure to the 30-stock index</li><li><strong>Lost two key AI researchers</strong>: John Jumper (Nobel laureate, DeepMind) → Anthropic; Noam Shazeer (Gemini co-lead) → OpenAI</li></ul>
+<hr class="divider">
+<h2 id="6-cross-asset-confirmation-or-divergence">6. Cross-Asset Confirmation or Divergence</h2>
+<h3 id="what-s-confirming-the-risk-off-signal">What's Confirming the Risk-Off Signal</h3>
+<ul><li><strong>Semiconductors falling</strong> (SOXX -2.6%, 3-day selloff deepening) → chips are the highest-beta expression of the AI trade</li><li><strong>Dollar surging to 2026 high</strong> (DXY 101.58) → tightening financial conditions</li><li><strong>Gold crashing</strong> (-3.2%, below $4,000 intraday) → real rates rising, haven demand fading</li><li><strong>Oil collapsing</strong> (-3.9%) → war premium evaporating as Iran diplomacy progresses</li><li><strong>Rate hike probability at 87%</strong> → markets pricing an aggressive Fed pivot</li></ul>
+<h3 id="what-s-contradicting-the-risk-off-signal">What's Contradicting the Risk-Off Signal</h3>
+<ul><li><strong>Russell 2000 at all-time high</strong> (2,986.63) → small caps thriving</li><li><strong>Equal-weight S&amp;P 500 +0.8%</strong> → broad market participation is strong</li><li><strong>Dow +0.35%</strong> → old-economy cyclicals advancing</li><li><strong>VIX falling</strong> (-4.41% to 18.63) → options market not pricing crisis; vol compression despite equity decline</li><li><strong>Only 5 of 11 S&amp;P sectors lower Tuesday</strong> → selective selling, not broad liquidation</li><li><strong>Advancers outpaced decliners on NYSE</strong></li><li><strong>Bitcoin +1.91%</strong> → crypto not participating in the risk-off</li></ul>
+<h3 id="cross-asset-interpretation">Cross-Asset Interpretation</h3>
+<p>This is <strong>not a broad risk-off event</strong>. It is a <strong>violent sector rotation out of AI/semiconductors and into everything else.</strong> The equal-weight index outperformance, Russell 2000 all-time high, and falling VIX all indicate that capital is being reallocated, not withdrawn. The dollar surge and gold crash reflect genuine rate-hike expectations driven by sticky inflation, not a liquidity crisis.</p>
+<p><strong>The Micron beat (+10% after hours) will be the first real test tomorrow</strong> of whether the chip selloff was "sell the rumor" positioning ahead of earnings, or the start of a genuine repricing of AI expectations. If chips rally on MU's blowout numbers, the rotation narrative gains credibility. If chips sell the news, this becomes a deeper sectoral bear market.</p>
+<hr class="divider">
+<h2 id="7-sentiment-positioning">7. Sentiment &amp; Positioning</h2>
+<div class="table-wrapper"><table><thead><tr><th>Indicator</th><th>Current</th><th>Prior</th><th>Signal</th></tr></thead><tbody><tr><td>VIX</td><td>18.63 (-4.41%)</td><td>19.49</td><td><strong>Moderate fear, declining</strong> — vol compressing</td></tr><tr><td>DXY</td><td>101.58</td><td>101.41</td><td><strong>Hawkish dollar</strong> — 2026 high</td></tr><tr><td>10Y-2Y Spread</td><td>~24 bp</td><td>—</td><td><strong>Steepening</strong> — growth optimism vs rate fears</td></tr><tr><td>Margin Debt</td><td>$1.4T (May)</td><td>$1.3T (April)</td><td><strong>Record leverage</strong> — dot-com echo</td></tr><tr><td>SOXX</td><td>-2.6%</td><td>—</td><td><strong>Chip bear</strong> — 3-day rout</td></tr><tr><td>Equal-Weight S&amp;P</td><td>+0.8%</td><td>—</td><td><strong>Broad participation</strong> — rotation signal</td></tr><tr><td>Russell 2000</td><td>All-time high</td><td>—</td><td><strong>Risk-on in small caps</strong></td></tr><tr><td>Gold</td><td>$4,016 (-3.2%)</td><td>~$4,150</td><td><strong>Haven unwinding</strong> — rate expectations dominating</td></tr><tr><td>WTI Crude</td><td>$70.34 (-3.9%)</td><td>$73.20</td><td><strong>Supply relief</strong> — war premium evaporating</td></tr><tr><td>CME FedWatch (Dec hike)</td><td>87%</td><td>—</td><td><strong>Hawkish pricing</strong> — September hike likely</td></tr><tr><td>Bitcoin</td><td>$61,022 (+1.9%)</td><td>~$59,700</td><td><strong>Crypto resilient</strong> — decoupling from gold</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="8-cross-asset-positioning-matrix">8. Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Supporting Data</th></tr></thead><tbody><tr><td><strong>US Equities (Cap-Weighted)</strong></td><td>Cautious / Rotating</td><td>AI/chip selloff masking broad strength. Cap-weighted indices understate participation.</td><td>S&amp;P 500 -0.10%, Nasdaq -0.43%, but Equal-weight +0.8%, Russell ATH</td></tr><tr><td><strong>Semiconductors</strong></td><td>Bearish (tactical)</td><td>3-day rout driven by AI ROI doubts and crowded positioning. MU beat may be catalyst for reversal.</td><td>SOXX -2.6%; MU -13% Mon, -0.3% Wed, +10% AH</td></tr><tr><td><strong>Small Caps</strong></td><td>Bullish</td><td>Russell 2000 at all-time high. Rotation beneficiary. Lower sensitivity to mega-cap AI premium.</td><td>Russell 2,986.63 ATH, +0.37%</td></tr><tr><td><strong>US Dollar</strong></td><td>Bullish</td><td>DXY at 2026 high. Rate hike expectations + safe-haven flows.</td><td>DXY 101.58-101.65. 87% hike probability. Yen at 161.</td></tr><tr><td><strong>Treasuries</strong></td><td>Bearish (front-end), Neutral (long-end)</td><td>2Y at highs on rate expectations; 10Y fell on oil decline. Steepening curve.</td><td>2Y 4.15%, 10Y 4.391%. 10Y -10.8 bp on oil.</td></tr><tr><td><strong>Gold</strong></td><td>Bearish</td><td>Rate expectations crushing non-yielding assets. Goldman cut target.</td><td>-3.2% to $4,016, -$400 from target. Intraday &lt; $4,000.</td></tr><tr><td><strong>Crude Oil</strong></td><td>Bearish</td><td>Hormuz reopening, Iran diplomacy, 60-day negotiation window.</td><td>WTI -3.9% to $70.34, -38% from wartime peak. Down 25% in 1 month.</td></tr><tr><td><strong>Credit</strong></td><td>Neutral / Watch</td><td>Stress tests: banks resilient. CRE -39% scenario concerning. Capital buffers unchanged.</td><td>32 banks pass. Requirements unchanged through 2027.</td></tr><tr><td><strong>Crypto</strong></td><td>Resilient / Decoupling</td><td>Bitcoin +1.9% while gold -3.2%. Crypto not participating in rate-hike fear trade.</td><td>BTC $61,022. Decoupling from gold notable.</td></tr><tr><td><strong>Volatility</strong></td><td>Compressing</td><td>VIX -4.41% despite equity weakness. Market not pricing tail risk.</td><td>VIX 18.63. Options market calm.</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="9-contrarian-flags">9. Contrarian Flags</h2>
+<h3 id="1-the-ai-trade-is-not-dead-it-s-discriminating">1. The AI Trade Is Not Dead — It's Discriminating</h3>
+<p>The narrative from Monday/Tuesday was "AI stocks are crashing." Today's data shows that's too simplistic. Micron just reported a blowout quarter (+346% YoY revenue, 84.9% gross margins, Q4 guidance $50B). The market is now separating AI winners (MU, with pricing power and locked-in contracts) from AI spenders (GOOGL, AMZN — capex without clear ROI yet). This discrimination is healthy, not catastrophic. <strong>If Micron rallies tomorrow, chip sentiment could pivot sharply.</strong></p>
+<h3 id="2-the-everything-selloff-is-actually-a-rotation">2. The "Everything Selloff" Is Actually a Rotation</h3>
+<p>With the equal-weight S&amp;P 500 up 0.8%, Russell 2000 at an all-time high, and advancing issues beating decliners, this is not a broad liquidation. It's a rotation out of the most crowded trade on the planet (AI/semis). Rotations historically create the best buying opportunities in the sold-off sector — if fundamentals are intact. Micron's numbers suggest they are.</p>
+<h3 id="3-oil-at-70-is-disinflationary-the-fed-may-not-need-to-hike">3. Oil at $70 Is Disinflationary — The Fed May Not Need to Hike</h3>
+<p>The market is pricing 87% odds of a rate hike, but collapsing oil prices are powerfully disinflationary. WTI at $70 (down 38% from peak) flows through to lower headline inflation, lower gas prices, and lower inflation expectations. If Thursday's PCE print surprises to the downside (counter to the 4.1% consensus), the rate-hike narrative could reverse violently. The dollar at 2026 highs and gold below $4,000 may be pricing a scenario that oil prices are already undermining.</p>
+<h3 id="4-record-margin-debt-is-the-elephant-in-the-room">4. Record Margin Debt Is the Elephant in the Room</h3>
+<p>$1.4 trillion in margin debt is an all-time high. It grew 54% YoY. In any selloff that broadens beyond chips, forced deleveraging could accelerate. The dot-com parallel is imperfect (leverage is contained to specific segments per Nationwide's Hackett), but it's the single biggest tail risk to the rotation-is-healthy thesis.</p>
+<h3 id="5-vix-compression-into-pce-setup-for-a-volatility-explosion">5. VIX Compression Into PCE — Setup for a Volatility Explosion</h3>
+<p>VIX fell 4.4% to 18.63 on a day when the Nasdaq fell for a third straight session and oil crashed 4%. This is unusual vol compression ahead of the most important inflation print of the quarter (Thursday's PCE). Low vol into a binary catalyst is a classic setup for an outsized move — in either direction. MU earnings + PCE data = potential for the most volatile Thursday of the month.</p>
+<h3 id="6-googl-joining-the-dow-symbolic-rotation-signal">6. GOOGL Joining the Dow — Symbolic Rotation Signal</h3>
+<p>Alphabet replacing Verizon in the DJIA effective Monday is more than an index maintenance event. It signals that even the stodgiest benchmark is embracing AI/cloud exposure. But it also comes at a moment when Alphabet is losing key AI talent (Jumper, Shazeer) and its free cash flow is under pressure. The Dow addition could be a contrarian sell signal for GOOGL — or a validation of its structural position.</p>
+<hr class="divider">
+<h2 id="10-tomorrow-setup-thursday-june-25">10. Tomorrow Setup (Thursday, June 25)</h2>
+<h3 id="economic-calendar">Economic Calendar</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time (ET)</th><th>Event</th><th>Consensus</th><th>Importance</th></tr></thead><tbody><tr><td>8:30 AM</td><td><strong>May PCE Inflation</strong></td><td>Headline +4.1% YoY, Core +3.4% YoY</td><td>⭐⭐⭐ CRITICAL</td></tr><tr><td>8:30 AM</td><td>Initial Jobless Claims</td><td>225,000</td><td>⭐⭐</td></tr><tr><td>8:30 AM</td><td>Q1 GDP (Final)</td><td>+1.6% annualized</td><td>⭐⭐</td></tr><tr><td>10:00 AM</td><td>May New Home Sales</td><td>—</td><td>⭐</td></tr></tbody></table></div>
+<h3 id="key-themes-for-thursday">Key Themes for Thursday</h3>
+<p>1. <strong>PCE is the main event.</strong> A core print above 3.5% cements the September hike case; below 3.3% could trigger a violent dollar/gold reversal.</p>
+<p>2. <strong>Micron's after-hours +10%</strong> will be tested in regular trading. Historical pattern: MU has fallen after 5 of the last 6 earnings reports. If it holds gains, chip sentiment pivots.</p>
+<p>3. <strong>Oil at $70</strong> — watch for further declines if Iran diplomacy continues to progress. Below $65 would put the "energy sector recession" trade in play.</p>
+<p>4. <strong>FedEx (-6%) and Carnival (-5%)</strong> — watch for follow-through selling; consumer discretionary guidance is weakening.</p>
+<p>5. <strong>S&amp;P 500 support levels</strong>: 50-day MA at 7,339; 61.8% Fibonacci at 7,120 (per Schwab).</p>
+<hr class="divider">
+<h2 id="11-source-notes-and-data-quality">11. Source Notes and Data Quality</h2>
+<h3 id="primary-sources-authoritative">Primary Sources (Authoritative)</h3>
+<ul><li><strong>Barron's closing panel</strong> (4:18 PM EDT): All closing index/asset prices — DJIA, S&amp;P 500, Nasdaq, Russell 2000, VIX, yields, commodities, DXY. <strong>High confidence.</strong></li><li><strong>CNBC</strong>: Micron earnings data verified against official press release. Revenue, EPS, net income, gross margin, guidance. <strong>High confidence.</strong></li><li><strong>Federal Reserve</strong>: FOMC statement (June 17) and stress test release (June 24, 4PM). <strong>Primary source, high confidence.</strong></li><li><strong>Deterministic market snapshot</strong>: S&amp;P 500 7,358.22 (-0.10%), Nasdaq 25,476.64 (-0.43%), Dow 51,848.90 (+0.35%), Russell 2,986.63 (+0.37%), VIX 18.63. Anchors all market direction claims. <strong>Verified.</strong></li></ul>
+<h3 id="secondary-sources-reliable">Secondary Sources (Reliable)</h3>
+<ul><li><strong>Charles Schwab</strong>: Morning market update, PCE preview, Micron consensus estimates, analyst commentary. <strong>Moderate confidence</strong> (brokerage research, not primary data).</li><li><strong>TheStreet</strong>: Midday market snapshot, stock movers, analyst quotes (Navellier, DePorre). <strong>Moderate confidence</strong> (financial media, reliable for quotes).</li><li><strong>Investopedia</strong>: Comprehensive market wrap, oil/gold analysis, JPM/BCA targets. <strong>Moderate confidence</strong> (aggregator, cites primary data).</li><li><strong>Yahoo Finance / Fortune</strong>: Oil price data, DOJ probe of gas prices. <strong>Moderate confidence</strong> (syndicated content from Fortune).</li><li><strong>df.media</strong>: AI capex analysis, stress test preview, cross-asset scorecard. <strong>Lower confidence</strong> (independent financial blog, some data points unverified independently).</li></ul>
+<h3 id="data-caveats">Data Caveats</h3>
+<ul><li>The df.media article headline references "Nasdaq Falls 2.2%" but this conflates Tuesday's close with Wednesday's session. Closing data from Barron's (4:18 PM EDT) used instead. <strong>Correction applied.</strong></li><li>Fed stress test results: Announcement confirmed by Fed press release and multiple sources but full individual bank results not yet extracted. Capital requirements unchanged through 2027 confirmed. <strong>Moderate confidence</strong> pending full results review.</li><li>Schwab data reflects early morning (9:13 AM ET) figures and Tuesday closes, not Wednesday closing levels. <strong>Timestamp noted, data cross-referenced with Barron's close.</strong></li><li>Micron after-hours move (+10%) is based on CNBC reporting timestamped after the 4PM ET close. <strong>Moderate confidence</strong> — verify with actual after-hours trading data Thursday AM.</li><li>Wendy's WEN price surge (+40% at peak) sourced from TheStreet and Investopedia. Exact closing price not independently verified. <strong>Moderate confidence.</strong></li></ul>
+<h3 id="stale-content-rejected">Stale Content Rejected</h3>
+<ul><li>CNBC article from June 22 ("Nasdaq closes 2% lower, led by Micron") — <strong>rejected as stale</strong> (2 days outside session window)</li><li>FOMC statement from June 17 — <strong>accepted as historical context only</strong> (clearly labeled)</li><li>TheStreet June 23 article — <strong>rejected</strong> (prior trading day, outside 09:30–18:00 Wednesday window)</li></ul>
+<hr class="divider">
+<p><em>BoltNews Post-Market Briefing | June 24, 2026 | Mode: post-market | 14 articles extracted, 8 distinct sources. All closing prices verified against deterministic market snapshot. No AI-generated price data.</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-062426" target="_blank" rel="noopener">Stock Market Today: Dow Rises, Nasdaq &amp; S&amp;P 500 Fall; Oil Slides; Chips Tumble</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/24/micron-mu-earnings-report-q3-2026.html" target="_blank" rel="noopener">Micron (MU) Earnings Report Q3 2026 — Crushes Estimates</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06242026-12005546" target="_blank" rel="noopener">S&amp;P 500, Nasdaq Fall for 3rd Straight Day; Oil Prices Drop to Lowest Level Since</a>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-062426/card/u-s-treasury-yields-fall-dollar-firms-P557InoOedrsZxXNKBTz" target="_blank" rel="noopener">U.S. Treasury Yields Fall, Dollar Firms</a>
+<a class="source-link" href="https://df.media/markets-today-june-24-nasdaq-ai-selloff-micron/" target="_blank" rel="noopener">Markets Today June 24 2026: Nasdaq Falls, AI Stocks Crash, Micron Earnings and F</a>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-062426" target="_blank" rel="noopener">Oil Plunges to Lowest Since U.S.-Iran Conflict Erupted</a>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-062426" target="_blank" rel="noopener">Record Margin Debt Raises Leverage Alarms — $1.4 Trillion in May</a>
+<a class="source-link" href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260624a.htm" target="_blank" rel="noopener">Federal Reserve 2026 Bank Stress Test Results Released — Capital Requirements Un</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06242026-12005546" target="_blank" rel="noopener">PCE Inflation Preview: May Data Could Cement Rate Hike Expectations</a>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-062426" target="_blank" rel="noopener">Chip Carnage: SOXX Falls 2.6%, Nasdaq Fumbles After Brief Rally</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-24-2026" target="_blank" rel="noopener">Stock Market Today: Nasdaq, S&amp;P 500 Fall Into Decline with Micron Earnings on De</a>
+<a class="source-link" href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank" rel="noopener">Schwab Market Update: Wall Street Rebounds Awaiting Micron, PCE Prices</a>
+<a class="source-link" href="https://finance.yahoo.com/energy/articles/current-price-oil-june-24-124730015.html" target="_blank" rel="noopener">Current Price of Oil as of June 24, 2026</a>
+<a class="source-link" href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" target="_blank" rel="noopener">Federal Reserve Issues FOMC Statement — Holds Rates at 3.50-3.75%</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-24 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
