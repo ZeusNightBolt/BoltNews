@@ -1,0 +1,175 @@
+{
+  "schema_version": "3.0",
+  "mode": "pre-market",
+  "target_date": "2026-06-25",
+  "generated": "2026-06-25T06:10:00-04:00",
+  "recency_window": {
+    "start": "2026-06-24T16:00:00-04:00",
+    "end": "2026-06-25T06:00:00-04:00",
+    "hours": 14.0,
+    "timezone": "America/New_York"
+  },
+  "articles": [
+    {
+      "id": "art-001",
+      "title": "Markets today: U.S. stocks end mixed, tech giants weigh again",
+      "url": "https://www.bnnbloomberg.ca/markets/2026/06/24/us-stocks-edge-higher-as-falling-oil-prices-help-take-pressure-off-the-market/",
+      "source": "BNN Bloomberg / Associated Press",
+      "source_class": "newswire",
+      "published_at": "2026-06-24T16:36:00-04:00",
+      "fetched_at": "2026-06-25T06:05:00-04:00",
+      "tickers": ["MSFT", "ORCL", "GOOGL", "KBH", "DHI", "XOM", "CVX"],
+      "topics": ["market close", "technology selloff", "oil prices", "treasury yields", "gold", "Federal Reserve"],
+      "assigned_sections": [
+        "Futures and Current Market Snapshot",
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities",
+        "Equities and Single-Stock Watchlist"
+      ],
+      "summary": "June 24 close: S&P 500 -0.1% to 7,358.22; Dow +0.35% to 51,848.90; Nasdaq -0.43% to 25,476.64. 2/3 of S&P 500 stocks gained but tech mega-caps dragged. Microsoft -2.3%, Oracle -4.6%, Alphabet -0.2%. KB Home +16.7%, DR Horton +6.7% on housing legislation. Exxon -2.0%, Chevron -2.6% on oil slide. Brent crude -3.8% to $73.87, WTI -3.9% to $70.34. Gold -3.4% to $4,008.80, briefly below $4,000. 10Y Treasury 4.40% (from 4.50%). PCE data due Thursday. Markets pricing at least one Fed hike by December.",
+      "extracted_text": "Wall Street closed mixed as technology stocks continued to drag the market lower. S&P 500: -7.24 pts (-0.1%) to 7,358.22. Dow Jones: +182.06 pts (+0.4%) to 51,848.90. Nasdaq: -110.40 pts (-0.4%) to 25,476.64. Nearly 2 out of 3 S&P 500 stocks gained. Microsoft -2.3% (heaviest weight on S&P 500). Oracle -4.6%. Alphabet -0.2% (set to replace Verizon in Dow on Monday, becoming 5th Magnificent 7 member in index). KB Home +16.7%, DR Horton +6.7% on industry-friendly legislation. Exxon Mobil -2.0%, Chevron -2.6% on sliding oil. Brent crude -3.8% to US$73.87/barrel. WTI -3.9% to US$70.34/barrel. Gold futures -3.4% to US$4,008.80/oz, briefly traded below US$4,000. 10-Year Treasury: 4.40% (down from 4.50%). 2-Year: 4.15%. Fed signaled may raise benchmark rate by year-end. PCE price index for May due Thursday, expected +4.1% (highest in three years). Jason Vaillancourt (Columbia Threadneedle): 'The next phase of the AI investment cycle is beginning to collide with market discipline.' Rick Gardner (RGA Investments): 'Thursday's PCE is set to take on greater importance for markets, especially since Federal Reserve Chair Kevin Warsh was emphatic in last week's meeting about the central bank's desire to achieve price stability.'"
+    },
+    {
+      "id": "art-002",
+      "title": "Stock Market Today (June 24, 2026): Nasdaq, S&P 500 fall before Micron's after hours earnings",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-24-2026",
+      "source": "TheStreet",
+      "source_class": "newswire",
+      "published_at": "2026-06-24T16:30:00-04:00",
+      "fetched_at": "2026-06-25T06:05:00-04:00",
+      "tickers": ["MU", "WEN", "RUN", "BLDR", "CHDN", "HTZ", "CBRS", "CASY", "SLGN", "SPCX", "DRI"],
+      "topics": ["market close", "Micron earnings", "Iran peace deal", "oil prices", "earnings"],
+      "assigned_sections": [
+        "Overnight Top Developments",
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "summary": "S&P 500 -0.10% to 7,358.22, Nasdaq -0.43% to 25,476.44, Dow +0.35% to 51,848.90, Russell 2000 +0.37% to 2,986.63. Micron (MU) premarket rebounded +4.1% after 13% Tuesday drop; closed -1.58%, then reported blowout Q3 after hours. Consensus: EPS $20.83, revenue $35.75B. Wendy's +23.7% (meme rally, new CFO). Hertz -27.3%. KB Home +16.7% on housing legislation. SpaceX (SPCX) -1.61% to $153.60. Iran peace deal interim agreement signed; Senate voted 50-48 to end military involvement. Trump ordered DOJ to investigate oil companies for gas price gouging.",
+      "extracted_text": "S&P 500: -0.10% to 7,358.22. Nasdaq: -0.43% to 25,476.44. Dow: +0.35% to 51,848.90. Russell 2000: +0.37% to 2,986.63. Micron (MU): premarket +4.1%; intraday -1.58%; blew out Q3 after hours. Analysts expected EPS $20.83/share, revenue $35.75B. Wendy's (WEN): +23.7% (meme-style rally, new CFO Steven Cirulis). Sunrun (RUN): +22%. Builders FirstSource (BLDR): +9.7%. KB Home (KBH): +16.7%. Hertz (HTZ): -27.3% (-22% premarket). Cerebras Systems (CBRS): -16.1%. SpaceX (SPCX): -1.61% to $153.60; Elon Musk net worth $957B. Iran peace: Interim deal signed; Trump: Iran will not charge tolls/insurance for Strait of Hormuz ships. Senate war powers vote 50-48 to end military involvement. Trump on Truth Social: 'Four Republican Losers voted with the Dumocrats.' 10Y Treasury collapsed to 4.398%. Treasury Secretary called gas price probe 'consumer protection'."
+    },
+    {
+      "id": "art-003",
+      "title": "Chip stocks surge premarket on Micron's record quarter",
+      "url": "https://ca.finance.yahoo.com/news/chip-stocks-surge-hours-micron-215410968.html",
+      "source": "Yahoo Finance / Investing.com",
+      "source_class": "newswire",
+      "published_at": "2026-06-24T17:54:00-04:00",
+      "fetched_at": "2026-06-25T06:06:00-04:00",
+      "tickers": ["MU", "SNDK", "WDC", "QCOM", "AMD", "INTC", "NVDA"],
+      "topics": ["Micron earnings", "semiconductors", "premarket", "AI memory"],
+      "assigned_sections": [
+        "Overnight Top Developments",
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "summary": "Micron (MU) Q3 FY2026: Revenue $41.46B vs $35.69B consensus (+16.2% beat), EPS $25.11 vs $20.49 estimate (+22.6% beat). Revenue nearly quadrupled YoY. Premarket MU +17.2% to ~$1,228.09. SNDK +12.6%, WDC +11.7%, QCOM +12.1%, AMD +3.8%, INTC +5.7%, NVDA +1.3%. SOXX ETF +5.3%. Prior selloff: Tuesday chip stocks plunged from record highs on AI spending concerns (SNDK -12.4%, WDC -8.4%, MU -13.2%). Wednesday regular session MU -0.44%. 52-week ranges: MU $103.38-$1,213.56 (up ~700% YoY), SNDK up ~3,952% from 52-week low.",
+      "extracted_text": "Micron Technology Inc reported strongest quarterly results in its history after Wednesday's close. Fiscal Q3 2026 revenue: $41.46B vs $35.69B consensus (16.2% beat). EPS: $25.11 vs $20.49 estimate (22.6% beat). Revenue near-quadrupling year-over-year driven by AI-fueled memory supply crunch. Premarket MU: ~$1,228.09 (+17.2% from regular close $1,047.20). SNDK: +12.6%. WDC: +11.7%. QCOM: +12.1%. AMD: +3.8%. INTC: +5.7%. NVDA: +1.3%. SOXX ETF: +5.3% (~$633.50). Prior selloff Tuesday: SNDK -12.4%, WDC -8.4%, MU -13.2%. Wednesday regular session MU -0.44%. MU 52-week range $103.38-$1,213.56, surged ~700% over prior year. SNDK up ~3,952% from 52-week low $40.10."
+    },
+    {
+      "id": "art-004",
+      "title": "Micron (MU) earnings report Q3 2026",
+      "url": "https://www.cnbc.com/2026/06/24/micron-mu-earnings-report-q3-2026.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-06-24T17:00:00-04:00",
+      "fetched_at": "2026-06-25T06:06:00-04:00",
+      "tickers": ["MU", "NVDA", "GOOGL"],
+      "topics": ["Micron earnings", "semiconductors", "AI memory", "guidance"],
+      "assigned_sections": [
+        "Overnight Top Developments",
+        "Equities and Single-Stock Watchlist"
+      ],
+      "summary": "Micron Q3 FY2026: Revenue $41.46B (vs $35.84B LSEG est), Adjusted EPS $25.11 (vs $20.78 est). Net income $28.24B. Gross margin 84.9% (vs 74.9% prior Q, 39% YoY). Next quarter guidance: ~$50B revenue (vs $43.58B expected). Data center revenue 7x+ to $11.5B. Cloud memory >300% to $13.77B. Signed 16 long-term agreements spanning 3-5 years, ~$22B financial commitments, expected to cover ~50% of future revenue. CEO Sanjay Mehrotra: 'Supply shortages in memory and storage will take considerable time to improve.'",
+      "extracted_text": "Micron Q3 FY2026: Revenue $41.46B (vs $35.84B LSEG consensus). Adjusted EPS $25.11 (vs $20.78 estimate). Net income $28.24B ($24.46/share) vs $1.89B ($1.68/share) YoY. Gross margin 84.9% (up from 74.9% prior quarter, 39% YoY). Next quarter revenue guidance ~$50B (analysts expected $43.58B). Data center business revenue surged 7x+ to $11.5B (from $1.53B). Cloud memory up >300% to $13.77B. Mobile & client up 250% to $11.52B. Automotive & embedded more than quadrupled to $4.63B. 16 long-term agreements with data center operators and automakers, 3-5 year binding volume commitments, covering ~50%+ future revenue. ~$22B financial commitments. Dividend $0.15/share payable July. CEO Sanjay Mehrotra: 'Our customers are recognizing that supply shortages in memory and storage will take considerable time to improve, even as we expect industry supply to improve gradually in 2028.' CFO Mark Murphy: 'We get visibility on our demand, it's committed volume that we can be confident about making our investments.'"
+    },
+    {
+      "id": "art-005",
+      "title": "Oil touches prewar levels on rising Middle East supply",
+      "url": "https://www.reuters.com/business/energy/oil-prices-fall-tankers-exit-strait-hormuz-2026-06-25/",
+      "source": "Reuters",
+      "source_class": "newswire",
+      "published_at": "2026-06-25T01:00:00-04:00",
+      "fetched_at": "2026-06-25T06:07:00-04:00",
+      "tickers": [],
+      "topics": ["oil prices", "Middle East", "Strait of Hormuz", "OPEC", "Iran"],
+      "assigned_sections": [
+        "FX and Commodities",
+        "Global Session Recap",
+        "Today's Risk Map"
+      ],
+      "summary": "Brent crude $72.46/bbl (-1.74%), WTI $69.19/bbl (-1.63%). Both lowest since Feb 27 — day before Iran war began. 20M+ barrels exited Strait of Hormuz in 24h, flows near prewar levels. Full normalization weeks away due to mine clearance. U.S. Energy Sec. Chris Wright: 'Iran would not be able to close it again.' Goldman Sachs: no large Iranian production increase expected even with sanctions relief. Iraq may consider OPEC exit if quota not increased. China remains main buyer of Iranian crude.",
+      "extracted_text": "Brent crude (August delivery): $72.46/bbl, down $1.28 (-1.74%). WTI: $69.19/bbl, down $1.15 (-1.63%). Both lowest since February 27, 2026 — day before Iran war began (Feb 28). At least 20 million barrels exited Strait of Hormuz in last 24 hours, flows close to prewar levels (per U.S. Energy Sec. Chris Wright). Full normalization still weeks away due to mine clearance. Most traffic is outbound; inbound needs return of shipping confidence, safety guarantees, lower insurance. Oman opened temporary routes Wednesday coordinated with IMO. Goldman Sachs: no large pickup in Iranian production even if sanctions relief extends beyond Aug 21 expiry. China remains main buyer; EU/UK sanctions on Iranian oil stay. Iraq may 'consider all options' if OPEC quota not significantly raised — one of five founding members. Giovanni Staunovo (UBS): 'Most of the increase in flows from the Gulf is outbound — ships exiting the Strait.' Chris Wright: 'Iran would not be able to close it again' even if peace deal doesn't hold."
+    },
+    {
+      "id": "art-006",
+      "title": "European Shares Edge Higher Led By Tech Stocks",
+      "url": "https://www.rttnews.com/list/european-commentary.aspx",
+      "source": "RTTNews",
+      "source_class": "newswire",
+      "published_at": "2026-06-25T05:19:00-04:00",
+      "fetched_at": "2026-06-25T06:08:00-04:00",
+      "tickers": [],
+      "topics": ["European markets", "tech stocks", "oil prices", "Micron", "Qualcomm"],
+      "assigned_sections": [
+        "Global Session Recap",
+        "Sector and Factor Setup"
+      ],
+      "summary": "European stocks higher Thursday: tech stocks gained on Micron/Qualcomm strong forecasts; oil at pre-Middle East war levels on easing geopolitical tensions. DAX +0.35%, STOXX 600 +0.42%, CAC 40 +0.15%, FTSE 100 +0.08%. Wednesday: DAX fell 1.1% (Rheinmetall -16% on defense selloff), CAC modestly higher, FTSE flat. Light economic calendar in Europe today.",
+      "extracted_text": "European stocks traded higher on Thursday as oil prices dropped to levels last seen before the war in the Middle East on easing geopolitical tensions and technology stocks gained following strong forecasts from U.S. chipmakers Micron and Qualcomm. DAX: 24,826.37 (+0.35%). STOXX Europe 600: 637.83 (+0.42%). CAC 40: 8,398.03 (+0.15%). FTSE 100: 10,470.42 (+0.08%). FTSE MIB: 51,878.93 (+0.46%). Wednesday June 24: DAX fell 1.1% as Rheinmetall tanked 16% on defense selloff amid Iran peace deal. European stocks closed mixed in cautious session. Defense stocks slumped across continent. Light economic calendar Thursday."
+    },
+    {
+      "id": "art-007",
+      "title": "Pre-market Futures and Global Markets Snapshot",
+      "url": "https://www.cnn.com/markets/premarkets",
+      "source": "CNN Business",
+      "source_class": "market_data",
+      "published_at": "2026-06-25T04:01:00-04:00",
+      "fetched_at": "2026-06-25T06:08:00-04:00",
+      "tickers": [],
+      "topics": ["futures", "premarket", "global indices", "Fear & Greed"],
+      "assigned_sections": [
+        "Futures and Current Market Snapshot",
+        "Global Session Recap"
+      ],
+      "summary": "Pre-market futures (as of early morning June 25): Dow Futures 52,336.00 (+0.11%), S&P 500 Futures 7,485.50 (+0.77%), Nasdaq Futures 30,164.00 (+2.20%). Fear & Greed Index: 26 (Fear). Asia: Nikkei 225 +4.61% to 72,366, KOSPI +5.42% to 8,930, Hang Seng +1.60% to 23,038, Shanghai +0.23%. Europe: DAX +0.35%, STOXX 600 +0.42%. VIX closed at 16.40 (-11.06%). Economic Calendar June 25: 8:30 AM ET — May PCE prices, Q1 GDP final, jobless claims, durable goods orders. Darden Restaurants (DRI) reports before open. Alan Greenspan died at 100.",
+      "extracted_text": "Fear & Greed Index: 26 — Fear is driving the US market. Pre-market Futures: Dow 52,336.00 (+57.00, +0.11%), S&P 500 7,485.50 (+57.25, +0.77%), Nasdaq 30,164.00 (+649.75, +2.20%). Asia-Pacific: Nikkei 225 72,366.34 (+4.61%), KOSPI 8,930.30 (+5.42%), Hang Seng 23,038.32 (+1.60%), Shanghai Composite 4,120.28 (+0.23%), S&P/ASX 200 8,748.70 (+0.68%), Bombay Sensex 77,509.24 (+0.67%), Taiwan SE 46,255.26 (+0.46%). Europe (as of June 24 close): DAX 24,826.37 (+0.35%), STOXX 600 637.83 (+0.42%), CAC 40 8,398.03 (+0.15%), FTSE 100 10,470.42 (+0.08%). VIX: 16.40 (-11.06%). Americas: S&P 500 7,358.22 (-0.10%), Dow 51,848.90 (+0.35%), Nasdaq 25,476.64 (-0.43%). Economic Calendar June 25, 2026: 8:30 AM ET — PCE Prices (May), GDP (Q1 final), Jobless Claims, Durable Goods Orders. 10:00 AM ET — New Home Sales, Consumer Sentiment (final). Notable: Darden Restaurants (DRI) Q4 earnings before open. Alan Greenspan, former Fed chair, dies at 100."
+    },
+    {
+      "id": "art-008",
+      "title": "European Shares Seen Mixed As Investors Await Key US Data",
+      "url": "https://www.rttnews.com/list/european-commentary.aspx",
+      "source": "RTTNews",
+      "source_class": "newswire",
+      "published_at": "2026-06-25T01:43:00-04:00",
+      "fetched_at": "2026-06-25T06:08:00-04:00",
+      "tickers": [],
+      "topics": ["European markets", "Fed rate hikes", "Micron", "Qualcomm", "PCE"],
+      "assigned_sections": [
+        "Global Session Recap",
+        "Macro, Rates, and Policy Setup"
+      ],
+      "summary": "European stocks expected to open mixed Thursday. Investors weighing Micron/Qualcomm strong guidance against possible Fed rate hikes this year. Micron posted record earnings and better-than-expected guidance. Key US data today: May PCE prices, Q1 GDP final estimate, jobless claims, durable goods orders.",
+      "extracted_text": "European stocks are seen opening mixed on Thursday as investors weigh strong guidance from Micron and Qualcomm against expectations of possible Federal Reserve interest-rate hikes this year. Micron Technology posted record quarterly earnings and issued better-than-expected guidance. Markets pricing at least one Fed hike by December. Key US economic data due Thursday: May PCE price index (Fed's preferred inflation gauge), Q1 GDP final estimate, weekly jobless claims, May durable goods orders."
+    }
+  ],
+  "stats": {
+    "total_articles": 8,
+    "by_source_class": {
+      "newswire": 7,
+      "market_data": 1
+    },
+    "by_section": {
+      "Futures and Current Market Snapshot": 2,
+      "Overnight Top Developments": 4,
+      "Global Session Recap": 5,
+      "Macro, Rates, and Policy Setup": 3,
+      "FX and Commodities": 2,
+      "Equities and Single-Stock Watchlist": 5,
+      "Sector and Factor Setup": 3,
+      "Today's Risk Map": 1
+    },
+    "tickers_covered": ["MSFT", "ORCL", "GOOGL", "KBH", "DHI", "XOM", "CVX", "MU", "WEN", "RUN", "BLDR", "CHDN", "HTZ", "CBRS", "CASY", "SLGN", "SPCX", "SNDK", "WDC", "QCOM", "AMD", "INTC", "NVDA", "DRI"],
+    "recency_compliance": "all articles published within 2026-06-24T16:00 to 2026-06-25T06:00 window",
+    "recency_filtered_out": 0
+  }
+}
