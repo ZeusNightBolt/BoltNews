@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-25</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-25 &middot; 8 articles &middot; 4 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-3" href="#micron-mu-historic-quarter-resets-the-ai-narrative">Micron (MU) — Historic Quarter Resets the AI Narrative</a><a class="toc-link toc-level-3" href="#oil-collapses-to-pre-war-levels">Oil Collapses to Pre-War Levels</a><a class="toc-link toc-level-3" href="#iran-peace-deal-progress">Iran Peace Deal Progress</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-3" href="#asia-pacific-tech-frenzy">Asia-Pacific — Tech Frenzy</a><a class="toc-link toc-level-3" href="#europe-cautious-but-positive">Europe — Cautious but Positive</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-3" href="#rates-snapshot">Rates Snapshot</a><a class="toc-link toc-level-3" href="#today-s-data-docket-all-times-et">Today&#x27;s Data Docket (All Times ET)</a><a class="toc-link toc-level-3" href="#fed-context">Fed Context</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-3" href="#currency-markets">Currency Markets</a><a class="toc-link toc-level-3" href="#commodities">Commodities</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-3" href="#wednesday-s-close-breadth-vs-mega-caps">Wednesday&#x27;s Close — Breadth vs Mega-Caps</a><a class="toc-link toc-level-3" href="#premarket-movers-on-micron-guidance">Premarket Movers (on Micron + guidance)</a><a class="toc-link toc-level-3" href="#wednesday-s-notable-movers">Wednesday&#x27;s Notable Movers</a><a class="toc-link toc-level-3" href="#today-s-earnings">Today&#x27;s Earnings</a><a class="toc-link toc-level-3" href="#alphabet-googl-dow-inclusion">Alphabet (GOOGL) Dow Inclusion</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-3" href="#sector-performance-wednesday-close">Sector Performance (Wednesday Close)</a><a class="toc-link toc-level-3" href="#factor-dynamics">Factor Dynamics</a><a class="toc-link toc-level-3" href="#technical-levels-s-p-500">Technical Levels (S&amp;P 500)</a><a class="toc-link toc-level-2" href="#cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-3" href="#upside-risks">Upside Risks</a><a class="toc-link toc-level-3" href="#downside-risks">Downside Risks</a><a class="toc-link toc-level-3" href="#key-levels-to-watch">Key Levels to Watch</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-thursday-june-25-2026">BoltNews Pre-Market Briefing — Thursday, June 25, 2026</h1>
+<p><strong>Mode:</strong> Pre-Market | <strong>Window:</strong> June 24 16:00 → June 25 06:00 ET | <strong>Generated:</strong> 06:10 ET</p>
+<hr class="divider">
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Wed Close</th><th>Close Chg</th><th>Pre-Mkt Futures</th><th>Futures Chg</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,358.22</td><td>–0.10%</td><td>7,485.50</td><td>+0.77%</td></tr><tr><td>Nasdaq Comp</td><td>25,476.64</td><td>–0.43%</td><td>30,164.00</td><td>up 2.20%</td></tr><tr><td>Dow Jones</td><td>51,848.90</td><td>+0.35%</td><td>52,336.00</td><td>+0.11%</td></tr><tr><td>Russell 2000</td><td>2,986.63</td><td>+0.37%</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p><strong>Direction:</strong> Futures point to a sharply higher open, driven entirely by chip stocks after Micron's record quarter. Nasdaq-100 futures are up 2.20% — the strongest pre-market signal in weeks. Dow futures lagging at +0.11%, reflecting the tech-heavy nature of the rally.</p>
+<p><strong>Fear &amp; Greed Index:</strong> 26 (Fear) — sentiment remains deeply negative despite the pre-market surge. This is a sentiment-extremes setup: Fear combined with NQ futures up 2.2% = potential for a violent short-squeeze or a fade.</p>
+<p><strong>VIX:</strong> Closed at 18.0, down 3.4% from prior 18.63. Still elevated relative to the 16.41 trough seen mid-June but compressing as the semiconductor overhang clears.</p>
+<p><em>Sources: CNN pre-market page, market_snapshot.py (Yahoo Finance API)</em></p>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<h3 id="micron-mu-historic-quarter-resets-the-ai-narrative">Micron (MU) — Historic Quarter Resets the AI Narrative</h3>
+<ul><li><strong>Revenue:</strong> $41.46B vs $35.69B consensus — <strong>+16.2% beat</strong></li><li><strong>EPS:</strong> $25.11 vs $20.49 estimate — <strong>+22.6% beat</strong></li><li><strong>Gross margin:</strong> 84.9% (vs 74.9% prior quarter, 39% year-ago)</li><li><strong>Next quarter guidance:</strong> ~$50B (analysts expected $43.58B)</li><li><strong>Data center revenue:</strong> 7x+ to $11.5B; cloud memory &gt;300% to $13.77B</li><li><strong>Strategic agreements:</strong> 16 long-term deals, 3-5 year binding volume commitments, ~$22B financial commitments, covering ~50%+ of future revenue</li><li><strong>Premarket reaction:</strong> MU +17.2% to ~$1,228; SNDK +12.6%; WDC +11.7%; QCOM +12.1%; AMD +3.8%; INTC +5.7%; NVDA +1.3%; SOXX ETF +5.3%</li></ul>
+<p><strong>Context:</strong> This comes after a brutal two-day semiconductor selloff. On Tuesday, MU fell 13.2%, SNDK -12.4%, WDC -8.4%. Wednesday's regular session saw MU close -0.44% as traders de-risked into the print. The magnitude of the beat — and particularly the $50B guidance vs $43.58B expected — represents a decisive vindication of the AI memory thesis. CEO Sanjay Mehrotra: "Supply shortages in memory and storage will take considerable time to improve, even as we expect industry supply to improve gradually in 2028."</p>
+<h3 id="oil-collapses-to-pre-war-levels">Oil Collapses to Pre-War Levels</h3>
+<ul><li><strong>Brent:</strong> $72.46/bbl (–1.74%), <strong>WTI:</strong> $69.19/bbl (–1.63%)</li><li>Both at lowest since <strong>February 27, 2026</strong> — the day before the Iran war began</li><li><strong>From the April 30 high of $126/bbl, oil is down 42%</strong></li><li>20M+ barrels exited Strait of Hormuz in last 24 hours; flows near prewar levels per U.S. Energy Secretary Chris Wright</li><li>Wright: "Iran would not be able to close it again" even if peace deal collapses</li><li>Iraq may consider OPEC exit if quota not raised — follows UAE's surprise exit earlier this year</li></ul>
+<p>This is a macro disinflationary impulse of significant magnitude. The $56/bbl decline from the April peak represents roughly $400B+ in annualized consumer energy savings.</p>
+<h3 id="iran-peace-deal-progress">Iran Peace Deal Progress</h3>
+<ul><li>Interim deal signed; 60-day negotiation period for harder issues (nuclear program)</li><li>Senate voted 50-48 (bipartisan) to end U.S. military involvement — not legally binding</li><li>Goldman Sachs: no large Iranian production increase expected even with sanctions relief past Aug 21</li></ul>
+<p><em>Sources: CNBC, Yahoo Finance, Reuters, BNN Bloomberg/AP</em></p>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<h3 id="asia-pacific-tech-frenzy">Asia-Pacific — Tech Frenzy</h3>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>Nikkei 225</td><td>72,366</td><td><strong>+4.61%</strong></td></tr><tr><td>KOSPI</td><td>8,930</td><td><strong>+5.42%</strong></td></tr><tr><td>Hang Seng</td><td>23,038</td><td><strong>+1.60%</strong></td></tr><tr><td>Shanghai Comp</td><td>4,120</td><td>+0.23%</td></tr><tr><td>S&amp;P/ASX 200</td><td>8,749</td><td>+0.68%</td></tr></tbody></table></div>
+<p>South Korean markets staged the strongest rally (+5.42%), reversing Tuesday's 10% circuit-breaker plunge. SK Hynix and Samsung — both critical memory suppliers — surged on the Micron read-across. Japan's Nikkei (+4.61%) powered by Tokyo Electron and other chip equipment names. The Asian session is a direct play on the Micron print — memory pricing strength validates the entire AI hardware supply chain.</p>
+<h3 id="europe-cautious-but-positive">Europe — Cautious but Positive</h3>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>DAX</td><td>24,826</td><td>+0.35%</td></tr><tr><td>STOXX 600</td><td>638</td><td>+0.42%</td></tr><tr><td>CAC 40</td><td>8,398</td><td>+0.15%</td></tr><tr><td>FTSE 100</td><td>10,470</td><td>+0.08%</td></tr></tbody></table></div>
+<p>European markets edged higher, led by tech. The advance was tempered by pre-PCE caution — the May inflation print at 8:30 AM ET is the day's dominant risk event. Wednesday's session saw DAX -1.1% (Rheinmetall -16% on defense selloff as Iran peace reduces military spending premium). That reversal has partially unwound.</p>
+<p><em>Sources: CNN world markets, RTTNews European commentary</em></p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<h3 id="rates-snapshot">Rates Snapshot</h3>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield</th><th>Change from Tue</th></tr></thead><tbody><tr><td>2-Year</td><td>4.15%</td><td>–1 bp</td></tr><tr><td>10-Year</td><td>4.40%</td><td>–10 bp</td></tr><tr><td>Fed Funds</td><td>3.50–3.75%</td><td>Unchanged (June 17)</td></tr></tbody></table></div>
+<p>The 10Y yield compressed 10 bp on Wednesday, driven by the oil-price collapse (disinflationary) and geopolitical de-escalation (safe-haven unwinding). Markets are pricing at least one Fed hike by December (CME Group data), but falling energy costs could soften the PCE trajectory and reduce the urgency.</p>
+<h3 id="today-s-data-docket-all-times-et">Today's Data Docket (All Times ET)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time</th><th>Event</th><th>Consensus</th></tr></thead><tbody><tr><td>8:30 AM</td><td><strong>May PCE Headline (MoM)</strong></td><td>+0.5%</td></tr><tr><td>8:30 AM</td><td><strong>May PCE Headline (YoY)</strong></td><td><strong>+4.1%</strong> — highest in 3 years</td></tr><tr><td>8:30 AM</td><td>May Core PCE (YoY)</td><td>+3.4%</td></tr><tr><td>8:30 AM</td><td>Q1 GDP (Final)</td><td>+1.6% annualized</td></tr><tr><td>8:30 AM</td><td>Weekly Jobless Claims</td><td>225,000</td></tr><tr><td>8:30 AM</td><td>May Durable Goods Orders</td><td>—</td></tr><tr><td>10:00 AM</td><td>May New Home Sales</td><td>—</td></tr><tr><td>10:00 AM</td><td>Michigan Consumer Sentiment (Final)</td><td>—</td></tr></tbody></table></div>
+<p><strong>PCE is the main event.</strong> At +4.1% expected headline, this would be the highest print in three years. Fed Chair Kevin Warsh was "emphatic" at last week's meeting about price stability — a hot print would harden rate-hike expectations. However, the oil collapse since April is not yet reflected in May data; the PCE print is backward-looking while energy markets are screaming disinflation forward-looking. This tension creates a two-way risk: hot PCE print vs collapsing energy.</p>
+<h3 id="fed-context">Fed Context</h3>
+<ul><li>June 17 FOMC: rates held at 3.50-3.75% (first meeting under Chair Kevin Warsh)</li><li>Statement nodded to possible future hikes</li><li>Core PCE last reported at 3.29%; CPI at 4.20%, PPI at 6.50%</li><li>JPMorgan raised year-end S&amp;P 500 target to 7,800 from 7,600</li></ul>
+<p><em>Sources: BNN Bloomberg/AP, Schwab Market Update, Federal Reserve H.15 release</em></p>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<h3 id="currency-markets">Currency Markets</h3>
+<div class="table-wrapper"><table><thead><tr><th>Pair</th><th>Level</th><th>Daily Change</th></tr></thead><tbody><tr><td>DXY</td><td>101.50</td><td>–0.10%</td></tr><tr><td>EUR/USD</td><td>1.1557</td><td>—</td></tr><tr><td>USD/JPY</td><td>160.11</td><td>—</td></tr></tbody></table></div>
+<p>The dollar softened slightly overnight. DXY at 101.50 (from 101.63 on June 24) — the greenback has been a reluctant beneficiary of geopolitical risk. As Iran tensions ease, the safe-haven bid unwinds. USD/JPY at 160 area — a level that historically triggers Japanese verbal intervention. The yen remains under pressure from BOJ-Fed policy divergence.</p>
+<h3 id="commodities">Commodities</h3>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Level</th><th>Change</th><th>Context</th></tr></thead><tbody><tr><td>WTI Crude</td><td>$69.19</td><td>–1.63%</td><td>Lowest since Feb 27 (pre-war)</td></tr><tr><td>Brent Crude</td><td>$72.46</td><td>–1.74%</td><td>Down 42% from April $126 high</td></tr><tr><td>Gold</td><td>$4,008.80</td><td>–3.4%</td><td>Tested below $4,000 for first time since Nov</td></tr><tr><td>Bitcoin</td><td>$62,790</td><td>+0.68%</td><td></td></tr></tbody></table></div>
+<p><strong>Gold breaking $4,000</strong> is a significant sentiment signal. Gold traded above $5,000 earlier this year on war-premium and inflation-hedge demand. The break below $4,000 — settling at levels not seen since November — suggests the market is pricing out both geopolitical tail risk and extreme inflation scenarios. The oil/gold correlation trade is working in both directions.</p>
+<p><em>Sources: Reuters, BNN Bloomberg/AP, Trading Economics, Schwab</em></p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<h3 id="wednesday-s-close-breadth-vs-mega-caps">Wednesday's Close — Breadth vs Mega-Caps</h3>
+<ul><li><strong>2 out of 3 S&amp;P 500 stocks gained</strong> — strong breadth masked by mega-cap drag</li><li>Market-cap weighted indices down; equal-weight likely positive</li><li>Sectors: Consumer Staples +2% leader; Energy worst performer on oil slide</li><li>58% of S&amp;P 500 stocks above 50-day moving average (improvement from ~50%)</li></ul>
+<p><strong>Rotation narrative is alive.</strong> While the AI/semiconductor complex sold off for two days (before Micron rescued it), the rest of the market was quietly advancing. Homebuilders surged on legislation (KB Home +16.7%, D.R. Horton +6.7%). Consumer staples led as defensive positioning met falling yields.</p>
+<h3 id="premarket-movers-on-micron-guidance">Premarket Movers (on Micron + guidance)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Premarket Chg</th><th>Catalyst</th></tr></thead><tbody><tr><td>MU</td><td>+17.2%</td><td>Record Q3: $41.46B rev, $25.11 EPS, $50B guidance</td></tr><tr><td>SNDK</td><td>+12.6%</td><td>Memory peer sympathy</td></tr><tr><td>QCOM</td><td>+12.1%</td><td>Strong guidance read-across</td></tr><tr><td>WDC</td><td>+11.7%</td><td>Storage peer sympathy</td></tr><tr><td>INTC</td><td>+5.7%</td><td>Broad semi rally</td></tr><tr><td>SOXX</td><td>+5.3%</td><td>Sector ETF surge</td></tr><tr><td>NVDA</td><td>+1.3%</td><td>Modest lift — already at extreme valuation</td></tr></tbody></table></div>
+<h3 id="wednesday-s-notable-movers">Wednesday's Notable Movers</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Catalyst</th></tr></thead><tbody><tr><td>WEN</td><td>+23.7%</td><td>Meme rally, new CFO, #2 on Reddit</td></tr><tr><td>KBH</td><td>+16.7%</td><td>Housing legislation</td></tr><tr><td>RUN</td><td>+22.0%</td><td>Solar sympathy</td></tr><tr><td>HTZ</td><td>–27.3%</td><td>Earnings/travel concerns</td></tr><tr><td>MSFT</td><td>–2.3%</td><td>AI capex ROI fears (pre-Micron)</td></tr><tr><td>ORCL</td><td>–4.6%</td><td>Cloud spending skepticism</td></tr><tr><td>XOM</td><td>–2.0%</td><td>Oil price decline</td></tr></tbody></table></div>
+<h3 id="today-s-earnings">Today's Earnings</h3>
+<ul><li><strong>Darden Restaurants (DRI):</strong> Q4 FY2026 before open. Consensus EPS $3.63 (+21.8% YoY), revenue $3.73B. Conference call 8:30 AM ET</li></ul>
+<h3 id="alphabet-googl-dow-inclusion">Alphabet (GOOGL) Dow Inclusion</h3>
+<p>Alphabet replaces Verizon in the DJIA effective Monday June 29 — becoming the 5th Magnificent 7 member in the Dow (joining AAPL, AMZN, MSFT, NVDA). Minimal index-fund impact (most 401(k) money tracks S&amp;P 500, not Dow) but symbolic of tech's dominance.</p>
+<p><em>Sources: TheStreet, BNN Bloomberg/AP, CNBC, Yahoo Finance</em></p>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<h3 id="sector-performance-wednesday-close">Sector Performance (Wednesday Close)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Performance</th><th>Driver</th></tr></thead><tbody><tr><td>Consumer Staples</td><td>+2% leader</td><td>Defensive rotation, lower yields</td></tr><tr><td>Homebuilders</td><td>Surge</td><td>KBH +16.7%, DRI +6.7% on legislation</td></tr><tr><td>Technology</td><td>–0.62% (XLK)</td><td>Mega-cap drag pre-Micron</td></tr><tr><td>Energy</td><td>–1.63% (XLE)</td><td>Oil collapse</td></tr><tr><td>Financials</td><td>Mixed</td><td>Rate expectations in flux</td></tr></tbody></table></div>
+<h3 id="factor-dynamics">Factor Dynamics</h3>
+<ul><li><strong>Momentum:</strong> Under pressure for two days (AI names) — Micron results may revive</li><li><strong>Value:</strong> Benefiting from rotation; energy's decline complicates the value trade</li><li><strong>Small Caps:</strong> Russell 2000 +0.37% on Wednesday — outperforming Nasdaq again; rotation into domestic/small-cap names continues</li><li><strong>Quality:</strong> Defensive positioning evident in consumer staples leadership</li><li><strong>Volatility:</strong> VIX compressing from 19.5 Tuesday peak to 18.0 — options market pricing lower near-term tail risk</li></ul>
+<h3 id="technical-levels-s-p-500">Technical Levels (S&amp;P 500)</h3>
+<ul><li><strong>Support:</strong> 50-day MA at 7,339; 61.8% Fibonacci retracement at 7,120</li><li><strong>Resistance:</strong> Wednesday high 7,428; all-time high area ~7,650</li><li>S&amp;P futures at 7,485.50 are above Wednesday's high — gap-up open would clear near-term resistance</li></ul>
+<p><em>Sources: Schwab Market Update, CNN, market_snapshot.py</em></p>
+<hr class="divider">
+<h2 id="cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Key Data Point</th></tr></thead><tbody><tr><td><strong>US Equities</strong></td><td>↗ Bullish (short-term)</td><td>Micron blowout validates AI spend; breadth improving; PCE is the wildcard</td><td>S&amp;P futures +0.77%, NQ futures up 2.20%</td></tr><tr><td><strong>Semis / AI</strong></td><td>↗↗ Strong Bullish</td><td>Memory supply crunch confirmed through 2028; $50B guidance resets expectations</td><td>MU +17.2%, SOXX +5.3% premarket</td></tr><tr><td><strong>Treasuries</strong></td><td>→ Neutral</td><td>10Y at 4.40% — oil disinflation vs sticky PCE; today's print decides direction</td><td>10Y down 10bp from Tuesday</td></tr><tr><td><strong>USD (DXY)</strong></td><td>↘ Slight Bearish</td><td>Safe-haven unwind as Iran de-escalates; rate differential still supportive</td><td>DXY 101.50, –0.10%</td></tr><tr><td><strong>Crude Oil</strong></td><td>↘↘ Bearish</td><td>Supply normalization + OPEC fracture risk (Iraq); $69 WTI is below pre-war</td><td>WTI –42% from April peak</td></tr><tr><td><strong>Gold</strong></td><td>↘ Bearish</td><td>Risk appetite returning; $4K break is psychologically significant</td><td>Gold –3.4%, tested below $4,000</td></tr><tr><td><strong>Credit</strong></td><td>→ Neutral</td><td>Lower yields supportive but rate-hike overhang caps tightening</td><td>No primary data overnight</td></tr><tr><td><strong>Volatility</strong></td><td>↘ Favor Lower</td><td>VIX compressing on clarity (Micron, Iran de-escalation); PCE could spike it</td><td>VIX 18.0, –3.4%</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<h3 id="upside-risks">Upside Risks</h3>
+<p>1. <strong>PCE comes in below +4.1%</strong> — bond market rallies, rate-hike odds collapse, broad equity surge</p>
+<p>2. <strong>Micron momentum holds through the open</strong> — short covering in semis could accelerate; MU options gamma could amplify</p>
+<p>3. <strong>Darden Restaurants (DRI) beats</strong> — consumer resilience narrative strengthens; retail/consumer discretionary catch a bid</p>
+<h3 id="downside-risks">Downside Risks</h3>
+<p>1. <strong>PCE prints at or above +4.1%</strong> — rate-hike expectations harden, yield curve bear-flattens, tech valuations compress</p>
+<p>2. <strong>Micron gap-up fades</strong> — "sell the news" after +17% premarket move; the stock already surged 700% YoY</p>
+<p>3. <strong>OPEC fragmentation accelerates</strong> — Iraq exit talk after UAE departure could trigger a disorderly output increase and further oil collapse (good for consumers, destabilizing for energy credit/EM)</p>
+<p>4. <strong>Iran nuclear negotiations stall</strong> — 60-day clock is ticking; any breakdown reverses the risk-off unwind</p>
+<h3 id="key-levels-to-watch">Key Levels to Watch</h3>
+<ul><li>S&amp;P 500: 7,339 (50-day MA support), 7,428 (Wed high resistance), 7,650 (ATH)</li><li>10Y Yield: 4.50% (Tuesday resistance), 4.30% (next support)</li><li>WTI: $70 (psychological), $65 (next major support — late Feb pre-war level)</li><li>VIX: 20 (psychologically important), 16.41 (recent trough)</li></ul>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<div class="table-wrapper"><table><thead><tr><th>Source</th><th>Article Count</th><th>Quality</th></tr></thead><tbody><tr><td>BNN Bloomberg / AP</td><td>1</td><td><strong>High</strong> — primary newswire, specific index/sector data</td></tr><tr><td>TheStreet</td><td>1</td><td><strong>High</strong> — detailed market recap with individual ticker moves</td></tr><tr><td>Yahoo Finance / Investing.com</td><td>1</td><td><strong>High</strong> — specific premarket prices and earnings data</td></tr><tr><td>CNBC</td><td>1</td><td><strong>High</strong> — detailed Micron segment breakdown and guidance</td></tr><tr><td>Reuters</td><td>1</td><td><strong>High</strong> — primary newswire, official quotes from U.S. Energy Secretary</td></tr><tr><td>RTTNews</td><td>2</td><td><strong>Moderate</strong> — European session commentary, limited data points</td></tr><tr><td>CNN Business</td><td>1</td><td><strong>Moderate</strong> — futures and market snapshot, Fear &amp; Greed index</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Data quality notes:</strong></p>
+<ul><li>All index close data cross-referenced between BNN Bloomberg and TheStreet — consistent to within 0.01</li><li>VIX close reported as 16.40 by CNN vs 18.0 by market_snapshot.py; snapshot.py used as authoritative per pipeline contract. CNN value may have been stale.</li><li>Micron earnings data cross-referenced between CNBC (LSEG consensus) and Yahoo Finance (consensus source unspecified) — minor differences in consensus estimates ($35.84B vs $35.69B revenue; $20.78 vs $20.49 EPS) which is normal for different consensus providers. Used CNBC LSEG as primary.</li><li>FX data sourced from Trading Economics (DXY 101.50) and NowPrice (EUR/USD 1.1557, USD/JPY 160.11) — secondary market data sources. Not cross-referenced with primary central bank fixings.</li><li>Treasury yields from BNN Bloomberg/AP citing market data. 10Y at 4.40% confirmed across multiple sources.</li><li>Pre-market futures from CNN (as of ~4:01 AM ET). These are indicative and will move before the 9:30 AM open.</li><li>Crypto: Bitcoin $62,790 from Schwab Market Update (Wednesday open level) — may have moved overnight.</li><li><strong>No paywalled content was fabricated.</strong> All data comes from freely accessible articles extracted via web_extract.</li></ul>
+<hr class="divider">
+<p><em>This briefing was generated by the BoltNews pipeline. All claims are sourced to specific articles extracted within the 2026-06-24T16:00 to 2026-06-25T06:00 ET recency window. No historical context was web-searched — all data comes from new articles published in the window.</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.bnnbloomberg.ca/markets/2026/06/24/us-stocks-edge-higher-as-falling-oil-prices-help-take-pressure-off-the-market/" target="_blank" rel="noopener">Markets today: U.S. stocks end mixed, tech giants weigh again</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-24-2026" target="_blank" rel="noopener">Stock Market Today (June 24, 2026): Nasdaq, S&amp;P 500 fall before Micron&#x27;s after h</a>
+<a class="source-link" href="https://ca.finance.yahoo.com/news/chip-stocks-surge-hours-micron-215410968.html" target="_blank" rel="noopener">Chip stocks surge premarket on Micron&#x27;s record quarter</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/24/micron-mu-earnings-report-q3-2026.html" target="_blank" rel="noopener">Micron (MU) earnings report Q3 2026</a>
+<a class="source-link" href="https://www.reuters.com/business/energy/oil-prices-fall-tankers-exit-strait-hormuz-2026-06-25/" target="_blank" rel="noopener">Oil touches prewar levels on rising Middle East supply</a>
+<a class="source-link" href="https://www.rttnews.com/list/european-commentary.aspx" target="_blank" rel="noopener">European Shares Edge Higher Led By Tech Stocks</a>
+<a class="source-link" href="https://www.cnn.com/markets/premarkets" target="_blank" rel="noopener">Pre-market Futures and Global Markets Snapshot</a>
+<a class="source-link" href="https://www.rttnews.com/list/european-commentary.aspx" target="_blank" rel="noopener">European Shares Seen Mixed As Investors Await Key US Data</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-25 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
