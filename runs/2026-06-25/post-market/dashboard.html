@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-25</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-25 &middot; 15 articles &middot; 4 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#executive-summary">Executive Summary</a><a class="toc-link toc-level-2" href="#1-closing-market-snapshot">1. Closing Market Snapshot</a><a class="toc-link toc-level-2" href="#2-why-markets-moved">2. Why Markets Moved</a><a class="toc-link toc-level-3" href="#the-bifurcation-narrative">The Bifurcation Narrative</a><a class="toc-link toc-level-3" href="#macro-pce-in-line-no-new-fire-no-new-water">Macro: PCE In Line — No New Fire, No New Water</a><a class="toc-link toc-level-3" href="#geopolitics-fragile-strait-of-hormuz-peace">Geopolitics: Fragile Strait of Hormuz Peace</a><a class="toc-link toc-level-2" href="#3-equity-market-internals">3. Equity Market Internals</a><a class="toc-link toc-level-3" href="#top-movers">Top Movers</a><a class="toc-link toc-level-3" href="#bottom-movers">Bottom Movers</a><a class="toc-link toc-level-3" href="#sector-breadth">Sector &amp; Breadth</a><a class="toc-link toc-level-3" href="#m-a">M&amp;A</a><a class="toc-link toc-level-2" href="#4-rates-macro-and-policy">4. Rates, Macro, and Policy</a><a class="toc-link toc-level-3" href="#fed-fomc-june-17-decision-recent-context">Fed / FOMC (June 17 Decision — Recent Context)</a><a class="toc-link toc-level-3" href="#inflation-dashboard">Inflation Dashboard</a><a class="toc-link toc-level-3" href="#labor-market">Labor Market</a><a class="toc-link toc-level-3" href="#growth">Growth</a><a class="toc-link toc-level-3" href="#yield-curve">Yield Curve</a><a class="toc-link toc-level-2" href="#5-earnings-and-corporate-developments">5. Earnings and Corporate Developments</a><a class="toc-link toc-level-3" href="#micron-technology-mu-q3-fy2026-the-session-s-anchor">Micron Technology (MU) — Q3 FY2026 — The Session&#x27;s Anchor</a><a class="toc-link toc-level-3" href="#apple-aapl-consumer-hardware-price-hikes">Apple (AAPL) — Consumer Hardware Price Hikes</a><a class="toc-link toc-level-3" href="#microsoft-msft-xbox-price-hikes-third-in-13-months">Microsoft (MSFT) — Xbox Price Hikes (Third in 13 Months)</a><a class="toc-link toc-level-3" href="#merck-kgaa-bio-techne-tech-11-3b-acquisition">Merck KGaA / Bio-Techne (TECH) — $11.3B Acquisition</a><a class="toc-link toc-level-3" href="#other-notable-earnings">Other Notable Earnings</a><a class="toc-link toc-level-2" href="#6-cross-asset-confirmation-or-divergence">6. Cross-Asset Confirmation or Divergence</a><a class="toc-link toc-level-3" href="#equities-rates">Equities ← → Rates</a><a class="toc-link toc-level-3" href="#equities-credit">Equities ← → Credit</a><a class="toc-link toc-level-3" href="#equities-volatility">Equities ← → Volatility</a><a class="toc-link toc-level-3" href="#equities-fx">Equities ← → FX</a><a class="toc-link toc-level-3" href="#equities-commodities">Equities ← → Commodities</a><a class="toc-link toc-level-2" href="#7-sentiment-positioning">7. Sentiment &amp; Positioning</a><a class="toc-link toc-level-2" href="#8-cross-asset-positioning-matrix">8. Cross-Asset Positioning Matrix</a><a class="toc-link toc-level-2" href="#9-contrarian-flags">9. Contrarian Flags</a><a class="toc-link toc-level-2" href="#10-tomorrow-setup-friday-june-26">10. Tomorrow Setup (Friday, June 26)</a><a class="toc-link toc-level-3" href="#data-calendar">Data Calendar</a><a class="toc-link toc-level-3" href="#earnings-to-watch">Earnings to Watch</a><a class="toc-link toc-level-3" href="#key-themes-to-monitor">Key Themes to Monitor</a><a class="toc-link toc-level-2" href="#11-source-notes-and-data-quality">11. Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-post-market-briefing-thursday-june-25-2026">BoltNews Post-Market Briefing — Thursday, June 25, 2026</h1>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>A sharply bifurcated session: Apple (-6.13%) and Microsoft (-3.23%) dragged the Nasdaq and S&amp;P 500 after consumer-hardware price hikes exposed the AI memory-cost squeeze reaching end consumers, while Micron's blowout Q3 (+15.78%, $41.46B revenue vs $35.84B consensus) anchored the AI infrastructure bull case and small caps led. The S&amp;P 500 closed at 7,357.49 (-0.01%), essentially unchanged, as strength in industrials (CAT +5.81%), healthcare (UNH +2.65%), and financials (GS +1.15%) offset Mag7 weakness. May PCE inflation printed in line at 4.1% YoY — not hot enough to accelerate rate-hike pricing, not cool enough to ease hawkish Fed concerns — while jobless claims fell to 215K (vs 225K expected), underscoring labor market resilience. Gold broke below $4,000/oz for the first time since November 2025, driven by rising real rates and the unwinding geopolitical risk premium, while WTI crude settled at $71.47 (+1.61%) after a midday spike on renewed Iran Strait of Hormuz tensions.</p>
+<hr class="divider">
+<h2 id="1-closing-market-snapshot">1. Closing Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th><th>% Change</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,357.49</td><td>-0.50</td><td>-0.01%</td></tr><tr><td>Nasdaq</td><td>25,358.60</td><td>-118.04</td><td>-0.46%</td></tr><tr><td>Dow Jones</td><td>51,920.62</td><td>+71.22</td><td>+0.14%</td></tr><tr><td>Russell 2000</td><td>3,007.86</td><td>+21.23</td><td>+0.71%</td></tr><tr><td>NYSE Composite</td><td>23,610.73</td><td>+117.23</td><td>+0.50%</td></tr><tr><td>VIX</td><td>18.89</td><td>+0.26</td><td>+1.40%</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Key Rates &amp; FX (4:00 PM EDT):</strong></p>
+<ul><li>10Y Treasury: 4.394% (lowest since mid-May)</li><li>30Y Treasury: 4.85% (+1 bp)</li><li>DXY: 101.41 (-0.19%)</li><li>EUR/USD: 1.1375 (+0.16%)</li><li>USD/JPY: 161.79 (+0.01%)</li><li>WTI Crude: $71.47/bbl (+1.61%)</li><li>Gold (XAU): ~$4,002/oz (-0.16%), intraday low below $4,000</li></ul>
+<p><strong>Session:</strong> Mixed. S&amp;P 500 effectively flat but with significant internal rotation. Nasdaq negative on Mag7 weight. Dow and Russell 2000 positive on broad-based strength in cyclicals, industrials, healthcare, and financials. Breadth was constructive outside the mega-cap tech complex.</p>
+<hr class="divider">
+<h2 id="2-why-markets-moved">2. Why Markets Moved</h2>
+<h3 id="the-bifurcation-narrative">The Bifurcation Narrative</h3>
+<p>Today's tape told two competing stories:</p>
+<p><strong>Bull Case — AI Capex Cycle Intact:</strong> Micron Technology (MU) delivered Q3 FY2026 results that crushed expectations: $41.46B revenue vs $35.84B consensus, adjusted EPS of $25.11 vs $20.78, and gross margins of 84.9%. Q4 guidance of ~$50B was &gt;14% above the $43.58B consensus. CEO Sanjay Mehrotra: <em>"Our customers are recognizing that supply shortages in memory and storage will take considerable time to improve."</em> The stock rallied 15.78%, dragging SanDisk (+18.25%) and Qualcomm (+10.0%) with it. The Russell 2000 (+0.71%) and Dow (+0.14%) were the primary beneficiaries of this "everything but Mag7" rotation. <em>Source: TheStreet, CNBC</em></p>
+<p><strong>Bear Case — Memory Costs Hit Consumers:</strong> Apple (-6.13%) announced sweeping price increases: MacBook Neo $599→$699, M3 Ultra Mac Studio $3,999→$5,299, iPad $349→$449. Tim Cook told the WSJ the company is <em>"increasingly unable to shield customers from rising component costs."</em> Microsoft (-3.23%) followed with Xbox price hikes (512GB +$100, 1TB +$150) — its third increase in 13 months, citing memory costs that have <em>"increased by more than 2.5 times and we expect another doubling by the fall of 2027."</em> The Mag7 ETF (MAGS) fell 0.12%. <em>Source: TheStreet, Reuters, CNET</em></p>
+<p><strong>Capital.com analyst Daniela Hathorn:</strong> <em>"U.S. equities have recovered some ground as Micron's earnings have provided fresh reassurance that the AI investment cycle remains firmly intact."</em></p>
+<h3 id="macro-pce-in-line-no-new-fire-no-new-water">Macro: PCE In Line — No New Fire, No New Water</h3>
+<p>The May PCE report landed exactly on expectations:</p>
+<ul><li><strong>Headline PCE:</strong> 4.1% YoY (consensus 4.1%, prior 4.4%)</li><li><strong>Core PCE:</strong> 3.4% YoY (consensus 3.4%, prior 3.3%)</li><li><strong>Monthly headline:</strong> +0.4% (estimate 0.5%) — modestly softer than feared</li><li><strong>Monthly core:</strong> +0.3% (in line)</li></ul>
+<p>Chicago Fed President Austan Goolsbee (CNBC): Core inflation is <em>"too high"</em> and <em>"trending the wrong way,"</em> but he did not explicitly call for a rate hike. The dot plot shows 9 of 18 FOMC participants now project at least one rate hike in 2026. CME FedWatch: July hike odds fell to ~30% from 34.2% post-PCE.</p>
+<p>Durable goods orders fell 4.5% MoM to $332.1B — a larger-than-expected decline that snapped two months of gains. However, jobless claims dropped to 215K (vs 225K consensus, down 12K from 227K prior), reinforcing the "low firing, low hiring" labor market narrative.</p>
+<h3 id="geopolitics-fragile-strait-of-hormuz-peace">Geopolitics: Fragile Strait of Hormuz Peace</h3>
+<p>Oil spiked +2% midday after reports of an Iranian IRGC attack on a Singaporean vessel in the Strait of Hormuz, before settling at $71.47 (+1.61%). The US-Iran 60-day peace roadmap (signed June 17) remains in place, but the incident underscored the fragility of the ceasefire. GOP Senators Cassidy and Paul flipped their votes on the Iran War Powers Resolution after a contentious White House meeting. <em>Source: TheStreet, Investing.com</em></p>
+<hr class="divider">
+<h2 id="3-equity-market-internals">3. Equity Market Internals</h2>
+<h3 id="top-movers">Top Movers</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Driver</th></tr></thead><tbody><tr><td>AYI</td><td>+21.4%</td><td>Strong earnings</td></tr><tr><td>BB</td><td>+20.62%</td><td>Earnings beat</td></tr><tr><td>TECH</td><td>+19.47%</td><td>Merck KGaA acquisition at $73/sh ($11.3B, 24% premium)</td></tr><tr><td>SNDK</td><td>+18.25%</td><td>Sympathy with MU memory rally</td></tr><tr><td>MU</td><td>+15.78%</td><td>Blowout Q3: $41.46B rev, $25.11 EPS, Q4 guide ~$50B</td></tr><tr><td>QCOM</td><td>+10.0%</td><td>Sympathy; AI/memory tailwind</td></tr><tr><td>CAT</td><td>+5.81%</td><td>Led Dow industrials</td></tr><tr><td>UNH</td><td>+2.65%</td><td>Healthcare strength</td></tr><tr><td>GS</td><td>+1.15%</td><td>Financials supported</td></tr></tbody></table></div>
+<h3 id="bottom-movers">Bottom Movers</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Driver</th></tr></thead><tbody><tr><td>TCOM</td><td>-13.48%</td><td>Revenue slowdown, risk of significant fine</td></tr><tr><td>PSNY</td><td>-11.65%</td><td>Withdrawing from US market</td></tr><tr><td>DELL</td><td>-6.7%</td><td>Tech hardware pressure</td></tr><tr><td>AAPL</td><td>-6.13%</td><td>Mac/iPad price hikes on memory cost pass-through</td></tr><tr><td>HTZ</td><td>-6.1%</td><td>Consumer cyclical weakness</td></tr><tr><td>ALB</td><td>-4.4%</td><td>Lithium/commodities</td></tr><tr><td>DLTR</td><td>-3.6%</td><td>Consumer discretionary pressure</td></tr><tr><td>WEN</td><td>-3.4%</td><td>Gave back prior day's ~25% r/WSB meme rally</td></tr><tr><td>MSFT</td><td>-3.23%</td><td>Xbox price hikes — third in 13 months</td></tr></tbody></table></div>
+<h3 id="sector-breadth">Sector &amp; Breadth</h3>
+<ul><li><strong>Leading:</strong> Industrials, Healthcare, Financials, Small Caps</li><li><strong>Lagging:</strong> Tech hardware (consumer-facing), Consumer Discretionary</li><li><strong>Breadth:</strong> Constructive outside Mag7. NYSE Composite +0.50%, Russell 2000 breadth was &gt;2:1 advancing over declining issues early in the session. <em>Source: TheStreet market internals</em></li></ul>
+<h3 id="m-a">M&amp;A</h3>
+<ul><li><strong>GOOGL</strong> will replace <strong>VZ</strong> in the Dow Jones Industrial Average on June 29 — "broaden the Dow's exposure to fast-growing areas of the U.S. economy." GOOGL -1.4%, VZ -0.63%. <em>Source: TheStreet</em></li></ul>
+<hr class="divider">
+<h2 id="4-rates-macro-and-policy">4. Rates, Macro, and Policy</h2>
+<h3 id="fed-fomc-june-17-decision-recent-context">Fed / FOMC (June 17 Decision — Recent Context)</h3>
+<ul><li><strong>Rate held at 3.50%–3.75%</strong> (unanimous, 12-0)</li><li><strong>Chair Kevin Warsh</strong> presided over first meeting; signaled desire to limit or discontinue the dot plot</li><li><strong>Dot plot hawkish shift:</strong> 9 of 18 see ≥1 hike in 2026 (up from near-zero in March); median dot rose to 3.8% (from 3.4%)</li><li><strong>Easing bias removed:</strong> Statement dropped language that next move would be to cut</li><li>Warsh: <em>"I don't believe in forward guidance."</em> Announced new communications task force to review Fed strategy</li><li>Gregory Daco (EY-Parthenon): <em>"This might be the last time we see the dot plot, which makes it harder for markets to decipher what the Fed is going to do."</em></li></ul>
+<h3 id="inflation-dashboard">Inflation Dashboard</h3>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Latest</th><th>Prior</th><th>Consensus</th></tr></thead><tbody><tr><td>Headline PCE YoY (May)</td><td>4.1%</td><td>4.4%</td><td>4.1%</td></tr><tr><td>Core PCE YoY (May)</td><td>3.4%</td><td>3.3%</td><td>3.4%</td></tr><tr><td>Headline PCE MoM</td><td>+0.4%</td><td>—</td><td>+0.5%</td></tr><tr><td>Core PCE MoM</td><td>+0.3%</td><td>—</td><td>+0.3%</td></tr><tr><td>Headline CPI YoY (May)</td><td>4.2%</td><td>—</td><td>—</td></tr></tbody></table></div>
+<h3 id="labor-market">Labor Market</h3>
+<ul><li><strong>Initial claims (week ending Jun 20):</strong> 215K (down 12K; consensus 225K) — lowest in 4 weeks</li><li><strong>Continuing claims:</strong> 1,821K (up 21K) — highest in 3 months</li><li><strong>4-week moving average:</strong> 224.25K</li><li><strong>Federal employee claims:</strong> 431 (down 61)</li><li><strong>Theme:</strong> Low firing, but continuing claims edging higher suggests workers taking longer to find new employment</li></ul>
+<h3 id="growth">Growth</h3>
+<ul><li><strong>Q1 GDP (third estimate):</strong> +2.1% annualized (revised up from 1.6%)</li><li><strong>Consumer spending (May):</strong> +0.7% MoM (April: +0.4%, forecast: +0.6%)</li><li><strong>Durable goods (May):</strong> -4.5% MoM to $332.1B — larger than expected decline</li></ul>
+<h3 id="yield-curve">Yield Curve</h3>
+<ul><li>10Y-2Y spread: The 10Y at 4.394% represents the lowest since mid-May. The pre-market run noted the curve remained inverted. No fresh inversion/de-inversion signal today.</li><li>30Y: 4.85% (+1 bp) — stable</li></ul>
+<hr class="divider">
+<h2 id="5-earnings-and-corporate-developments">5. Earnings and Corporate Developments</h2>
+<h3 id="micron-technology-mu-q3-fy2026-the-session-s-anchor">Micron Technology (MU) — Q3 FY2026 — The Session's Anchor</h3>
+<p class="bold-line"><strong>Results vs Consensus (LSEG):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Reported</th><th>Consensus</th><th>Beat/Miss</th></tr></thead><tbody><tr><td>Revenue</td><td>$41.46B</td><td>$35.84B</td><td>+15.7%</td></tr><tr><td>Adj EPS</td><td>$25.11</td><td>$20.78</td><td>+20.8%</td></tr><tr><td>Gross Margin</td><td>84.9%</td><td>—</td><td>Prior Q: 74.9%</td></tr><tr><td>Net Income</td><td>$28.24B</td><td>—</td><td>Prior year: $1.89B</td></tr></tbody></table></div>
+<p><strong>Q4 FY2026 Guidance:</strong> Revenue ~$50B vs $43.58B consensus (+14.7% above)</p>
+<p class="bold-line"><strong>Segment Growth (YoY):</strong></p>
+<ul><li>Data Center: &gt;7x to $11.5B (excludes $5B+ in data center SSD revenue)</li><li>Cloud Memory: &gt;300% to $13.77B</li><li>Mobile &amp; Client: +250% to $11.52B</li><li>Automotive &amp; Embedded: &gt;4x to $4.63B</li></ul>
+<p><strong>Strategic:</strong> 16 long-term customer agreements with $22B in commitments. CEO Mehrotra: supply shortages <em>"will take considerable time to improve, even as we expect industry supply to improve gradually in 2028."</em> Market cap &gt;$1T. Stock +700% over past year.</p>
+<h3 id="apple-aapl-consumer-hardware-price-hikes">Apple (AAPL) — Consumer Hardware Price Hikes</h3>
+<ul><li>MacBook Neo: $599→$699 (+16.7%)</li><li>M3 Ultra Mac Studio: $3,999→$5,299 (+32.5%)</li><li>iPad: $349→$449 (+28.7%)</li><li>Apple TV: $129→$199 (+54.3%)</li><li>HomePod: $299→$349 (+16.7%)</li><li>HomePod mini: $99→$129 (+30.3%)</li></ul>
+<p>Tim Cook (WSJ): <em>"We have reached a point where we need to begin raising prices on a number of products."</em> The company is <em>"increasingly unable to shield customers from rising component costs"</em> driven by AI datacenter memory demand. <em>Source: TheStreet, CNET</em></p>
+<h3 id="microsoft-msft-xbox-price-hikes-third-in-13-months">Microsoft (MSFT) — Xbox Price Hikes (Third in 13 Months)</h3>
+<ul><li>512GB: +$100</li><li>1TB: +$150</li><li>2TB: Discontinued</li><li>Effective August 1, 2026</li></ul>
+<p>Xbox statement: <em>"Console storage and memory prices have increased by more than 2.5 times and we expect another doubling by the fall of 2027."</em> Layoffs planned for July plus significant budget cuts. Previous hikes: May 2025 ($500→$600 Series X), October 2025. Sony raised PS5 prices April 2026. <em>Source: Reuters</em></p>
+<h3 id="merck-kgaa-bio-techne-tech-11-3b-acquisition">Merck KGaA / Bio-Techne (TECH) — $11.3B Acquisition</h3>
+<ul><li>German pharma giant Merck KGaA to acquire Bio-Techne at $73/share cash</li><li>24% premium; enterprise value ~$11.3B</li><li>Bio-Techne: proteomics, spatial biology, cell therapy — FY2025 sales &gt;$1.2B</li><li>Merck CEO Kai Beckmann: <em>"Important milestone towards delivering on our mid- to long-term strategic agenda."</em></li></ul>
+<h3 id="other-notable-earnings">Other Notable Earnings</h3>
+<ul><li><strong>Acuity Inc (AYI):</strong> +21.4% on strong earnings</li><li><strong>BlackBerry (BB):</strong> +20.62% on earnings beat</li><li><strong>Trip.com (TCOM):</strong> -13.48% — revenue slowdown + risk of significant fine</li></ul>
+<hr class="divider">
+<h2 id="6-cross-asset-confirmation-or-divergence">6. Cross-Asset Confirmation or Divergence</h2>
+<h3 id="equities-rates">Equities ← → Rates</h3>
+<p><strong>Partial divergence.</strong> Equities are mixed/flat while the 10Y yield fell to 4.394% (lowest since mid-May). Normally, falling yields would support equities broadly, but today's equity weakness is concentrated in consumer-tech names facing cost pressures — a micro story overriding the macro rate tailwind.</p>
+<h3 id="equities-credit">Equities ← → Credit</h3>
+<p><strong>Credit confirming equity narrative.</strong> HY OAS at 2.71% (Jun 23) is up modestly from 2.65% but down from 3.12% a year ago. IG OAS at 0.74%. Credit markets are not flashing stress — consistent with a "rotation not retreat" equity tape. <em>Source: FRED/ICE BofA, Macrotrends</em></p>
+<h3 id="equities-volatility">Equities ← → Volatility</h3>
+<p><strong>Modest confirmation.</strong> VIX at 18.89 (+1.40%) reflects above-average uncertainty but nowhere near March stress levels (31.05 close on Mar 27). The VIX futures curve likely remains in contango. The intraday range of 17.43-19.95 suggests chop, not panic. <em>Source: Yahoo Finance VIX history</em></p>
+<h3 id="equities-fx">Equities ← → FX</h3>
+<p><strong>Dollar retreat supports risk assets.</strong> DXY fell 0.19% to 101.41, its largest daily drop in two weeks, snapping a three-session winning streak. A weaker dollar is broadly supportive for multinational earnings and emerging markets. USD/JPY at 161.79 remains near multi-decade extremes — a break above 161.96 would be the weakest yen since 1986. <em>Source: Reuters</em></p>
+<h3 id="equities-commodities">Equities ← → Commodities</h3>
+<p><strong>Gold breakdown is the standout cross-asset signal.</strong> Gold broke below $4,000/oz for the first time since November 2025 — a 29% drawdown from the January record near $5,600. This is driven by rising real rates and the hawkish Fed dot plot, not just geopolitical risk unwinding. Goldman Sachs cut its year-end 2026 forecast from $5,400 to $4,900; Deutsche Bank sees $3,800 in a 3-4 hike scenario. <em>Source: Vantage Markets, USA Today</em></p>
+<p>WTI crude at $71.47 is down ~26% from the $97 peak on June 3, reflecting the Strait of Hormuz reopening. However, the midday Iranian IRGC attack on a Singaporean vessel shows the ceasefire is fragile and the geopolitical put remains live.</p>
+<hr class="divider">
+<h2 id="7-sentiment-positioning">7. Sentiment &amp; Positioning</h2>
+<div class="table-wrapper"><table><thead><tr><th>Indicator</th><th>Current</th><th>Prior</th><th>Signal</th></tr></thead><tbody><tr><td>VIX</td><td>18.89</td><td>18.63</td><td>Elevated, not panicked</td></tr><tr><td>VIX 52-wk percentile</td><td>~60th</td><td>—</td><td>Above median</td></tr><tr><td>HY OAS</td><td>2.71%</td><td>2.65%</td><td>Contained</td></tr><tr><td>IG OAS</td><td>0.74%</td><td>—</td><td>Tight</td></tr><tr><td>DXY</td><td>101.41</td><td>101.60</td><td>Dollar softening</td></tr><tr><td>10Y Yield</td><td>4.394%</td><td>—</td><td>Lowest since mid-May</td></tr><tr><td>CME Jul hike prob</td><td>~30%</td><td>34.2%</td><td>Eased post-PCE</td></tr><tr><td>CME Sep hike prob</td><td>62.1%</td><td>65.7%</td><td>Eased post-PCE</td></tr><tr><td>Jobless claims</td><td>215K</td><td>227K</td><td>Labor tight</td></tr><tr><td>Gold vs Jan peak</td><td>-29%</td><td>—</td><td>Risk premium unwinding</td></tr><tr><td>WTI vs Jun 3 peak</td><td>-26%</td><td>—</td><td>Geopolitical risk fading</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="8-cross-asset-positioning-matrix">8. Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Supporting Data</th></tr></thead><tbody><tr><td><strong>US Equities (large cap)</strong></td><td>Neutral / Rotating</td><td>Mag7 cost pressure vs AI capex tailwind. S&amp;P flat masks violent rotation.</td><td>S&amp;P -0.01%, Nasdaq -0.46%, Dow +0.14%</td></tr><tr><td><strong>US Equities (small cap)</strong></td><td>Bullish</td><td>Russell 2000 +0.71% leading. Financials, industrials, healthcare bid.</td><td>RUT +0.71%, NYSE +0.50%</td></tr><tr><td><strong>Rates (UST)</strong></td><td>Moderately bullish</td><td>10Y at 4.394% — lowest since mid-May. PCE not accelerating. Dovish shift in hike pricing.</td><td>10Y 4.394%, CME Jul hike ↓ to ~30%</td></tr><tr><td><strong>USD</strong></td><td>Bearish near-term</td><td>Dollar retreating from 13-month high. PCE in-line softened hike bets.</td><td>DXY 101.41 (-0.19%)</td></tr><tr><td><strong>Credit</strong></td><td>Stable / constructive</td><td>HY OAS 2.71% — well-contained. IG 0.74%. No stress signal.</td><td>FRED/ICE BofA spreads</td></tr><tr><td><strong>Gold</strong></td><td>Bearish</td><td>Below $4,000. Real rates + hawkish Fed + geopolitical premium unwinding. GS cut target to $4,900.</td><td>-29% from Jan peak</td></tr><tr><td><strong>Crude Oil</strong></td><td>Neutral / bearish bias</td><td>Strait of Hormuz resuming but fragile. WTI -26% from Jun 3 peak.</td><td>WTI $71.47</td></tr><tr><td><strong>Volatility</strong></td><td>Neutral-elevated</td><td>VIX 18.89 — above calm range but well below panic. Contango likely.</td><td>VIX +1.40%</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="9-contrarian-flags">9. Contrarian Flags</h2>
+<p>1. <strong>The AI cost pass-through is real and spreading.</strong> AAPL and MSFT are now passing memory costs directly to consumers. If this accelerates across the consumer electronics complex, it creates stagflationary pressure in durable goods that the Fed cannot ignore. The market is treating this as a Mag7-specific problem today — it may not stay contained.</p>
+<p>2. <strong>Gold's $4,000 break is not just a rate story.</strong> While the hawkish Fed and rising real yields are the proximate cause, the 29% drawdown from the January peak also reflects a structural unwind of the geopolitical risk premium. If the US-Iran ceasefire holds, gold could overshoot to the downside (DB's $3,800 scenario). Conversely, any Strait of Hormuz escalation would reverse this trade violently.</p>
+<p>3. <strong>Russell 2000 leadership may be temporary.</strong> The small-cap rally on MU earnings is a classic "rising tide lifts all boats" on AI enthusiasm. But if consumer hardware price hikes begin to dent spending, small-cap consumer cyclicals (HTZ -6.1%, DLTR -3.6%) are the first to get hit.</p>
+<p>4. <strong>The Fed may be done with the dot plot.</strong> Chair Warsh's explicit hostility to forward guidance and the dot plot introduces a new regime of monetary policy uncertainty. If the dot plot is discontinued, markets lose a key signaling mechanism — potentially increasing rate volatility and repricing risk.</p>
+<p>5. <strong>Jobless claims are masking labor market softening.</strong> The 215K headline is strong, but continuing claims hit a 3-month high (1,821K). The "low firing, low hiring" dynamic means the employed are secure, but the unemployed are struggling to re-enter the workforce — a divergence that could widen.</p>
+<hr class="divider">
+<h2 id="10-tomorrow-setup-friday-june-26">10. Tomorrow Setup (Friday, June 26)</h2>
+<h3 id="data-calendar">Data Calendar</h3>
+<ul><li><strong>Revised Q1 GDP (third estimate)</strong> — already revised to 2.1%. Watch for any further revision.</li><li><strong>May advance trade in goods</strong> — potential read on consumer goods demand post-tariff adjustments</li><li><strong>No Fed speakers currently scheduled</strong> — quiet period after June 17 FOMC</li></ul>
+<h3 id="earnings-to-watch">Earnings to Watch</h3>
+<ul><li>No major Friday earnings currently on calendar (most Thursday after-close names will trade on Friday's reaction)</li></ul>
+<h3 id="key-themes-to-monitor">Key Themes to Monitor</h3>
+<ul><li><strong>AAPL/MSFT follow-through:</strong> Will the consumer hardware price-hike trade continue to weigh on Mag7?</li><li><strong>MU follow-through:</strong> Does the +15.78% hold, or is there profit-taking after a $1T+ market cap milestone?</li><li><strong>Iran/Strait of Hormuz:</strong> Any further incidents overnight? Crude opened $71.47 — watch weekend risk premium building.</li><li><strong>Month-end / quarter-end rebalancing:</strong> Friday June 26 is 2 trading days from quarter-end (June 30, Tuesday). Pension rebalancing flows could add volatility.</li></ul>
+<hr class="divider">
+<h2 id="11-source-notes-and-data-quality">11. Source Notes and Data Quality</h2>
+<div class="table-wrapper"><table><thead><tr><th>Claim</th><th>Source</th><th>Quality</th></tr></thead><tbody><tr><td>S&amp;P 500, Nasdaq, Dow, Russell closes</td><td>market_snapshot.py (Yahoo Finance API)</td><td><strong>Primary — market_data</strong></td></tr><tr><td>VIX close, range</td><td>Yahoo Finance History</td><td><strong>Primary — market_data</strong></td></tr><tr><td>AAPL -6.13%, price hike details</td><td>TheStreet (citing WSJ, CNET)</td><td><strong>Secondary — newswire with primary attribution</strong></td></tr><tr><td>MSFT Xbox price hikes</td><td>Reuters</td><td><strong>Primary — newswire</strong></td></tr><tr><td>MU Q3 results, guidance</td><td>CNBC, Seeking Alpha</td><td><strong>Secondary — newswire</strong></td></tr><tr><td>May PCE 4.1% YoY, Core 3.4%</td><td>Reuters</td><td><strong>Primary — newswire with gov data</strong></td></tr><tr><td>Jobless claims 215K</td><td>Trading Economics (citing USDOL)</td><td><strong>Primary — official data via secondary</strong></td></tr><tr><td>DXY 101.41, EUR, GBP, JPY</td><td>Reuters</td><td><strong>Primary — newswire</strong></td></tr><tr><td>WTI $71.47</td><td>Investing.com historical</td><td><strong>Primary — market_data</strong></td></tr><tr><td>HY OAS 2.71%</td><td>FRED / ICE BofA</td><td><strong>Primary — official</strong></td></tr><tr><td>Fed dot plot, Warsh comments</td><td>Yahoo Finance</td><td><strong>Secondary — newswire</strong></td></tr><tr><td>Merck KGaA / Bio-Techne deal</td><td>Contract Pharma, Bloomberg Law</td><td><strong>Primary — newswire</strong></td></tr><tr><td>Gold $4,000 break, technicals</td><td>Vantage Markets</td><td><strong>Secondary — analysis</strong> <em>Note: Analyst piece, not primary price feed</em></td></tr><tr><td>Iran War Powers, GOP Senate votes</td><td>TheStreet</td><td><strong>Secondary — newswire</strong></td></tr></tbody></table></div>
+<p><strong>Articles extracted:</strong> 15 | <strong>Deep-extracted:</strong> 12 | <strong>Headline-only:</strong> 0 | <strong>Rejected (stale/paywalled):</strong> 0</p>
+<p><strong>Bias note:</strong> Vantage Markets analysis of gold is a broker research piece — treat technical levels as indicative, not authoritative. All market closes verified against market_snapshot.py deterministic output.</p>
+<hr class="divider">
+<p><em>Generated: Thursday, June 25, 2026, 18:30 EDT | Mode: post-market | Session window: 09:30–18:00 ET</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-25-2026" target="_blank" rel="noopener">Stock Market Today (June 25, 2026): Mag7 falls after Apple, Microsoft announce p</a>
+<a class="source-link" href="https://www.reuters.com/world/asia-pacific/dollar-rides-high-fed-rate-hike-bets-2026-06-25/" target="_blank" rel="noopener">Dollar retreats as US inflation data eases rate hike expectations</a>
+<a class="source-link" href="https://www.reuters.com/business/xbox-raise-console-prices-worldwide-august-2026-06-25/" target="_blank" rel="noopener">Xbox to raise console prices worldwide from August</a>
+<a class="source-link" href="https://finance.yahoo.com/economy/policy/article/fed-dot-plot-almost-half-of-fomc-members-project-at-least-one-interest-rate-hike-this-year-183645064.html" target="_blank" rel="noopener">Fed &#x27;dot plot&#x27;: Almost half of FOMC members project at least one interest rate h</a>
+<a class="source-link" href="https://www.investing.com/commodities/crude-oil-historical-data" target="_blank" rel="noopener">Crude Oil WTI Futures Historical Prices</a>
+<a class="source-link" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&amp;type=daily_treasury_yield_curve" target="_blank" rel="noopener">Daily Treasury Yield Curve Rates - June 25, 2026</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-25-2026" target="_blank" rel="noopener">Market Internals: Breadth, Sector Moves, Apple/Microsoft Price Hikes (full conte</a>
+<a class="source-link" href="https://finance.yahoo.com/quote/%5EVIX/history/" target="_blank" rel="noopener">CBOE Volatility Index (^VIX) Historical Data</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-25-2026" target="_blank" rel="noopener">Geopolitics: Iran War Powers Resolution, Strait of Hormuz</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/30-year-bond-yield" target="_blank" rel="noopener">United States 30 Year Bond Yield</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/24/micron-mu-earnings-report-q3-2026.html" target="_blank" rel="noopener">Micron (MU) earnings report Q3 2026</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/jobless-claims" target="_blank" rel="noopener">United States Initial Jobless Claims</a>
+<a class="source-link" href="https://www.vantagemarkets.com/market-analysis/xauusd-gold-price-analysis-june-25-2026/" target="_blank" rel="noopener">XAUUSD: Gold&#x27;s $4,000 Break Is a Rate Story, Not a War Story</a>
+<a class="source-link" href="https://www.contractpharma.com/breaking-news/merck-kgaa-to-acquire-bio-techne-for-11-3b/" target="_blank" rel="noopener">Merck KGaA to Acquire Bio-Techne for $11.3B</a>
+<a class="source-link" href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2" target="_blank" rel="noopener">ICE BofA US High Yield Index Option-Adjusted Spread</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-25 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
