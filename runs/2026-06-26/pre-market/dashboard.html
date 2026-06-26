@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-26</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-26 &middot; 11 articles &middot; 3 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-3" href="#1-global-tech-rout-intensifies-asia-triggers-circuit-breakers">1. Global Tech Rout Intensifies — Asia Triggers Circuit Breakers</a><a class="toc-link toc-level-3" href="#2-apple-price-hikes-trigger-worst-single-day-drop-since-april-2025">2. Apple Price Hikes Trigger Worst Single-Day Drop Since April 2025</a><a class="toc-link toc-level-3" href="#3-microsoft-joins-the-price-hike-parade">3. Microsoft Joins the Price-Hike Parade</a><a class="toc-link toc-level-3" href="#4-mag-7-suffers-worst-month-ever-2-99-trillion-erased">4. Mag 7 Suffers Worst Month Ever — $2.99 Trillion Erased</a><a class="toc-link toc-level-3" href="#5-openai-ipo-delay-softbank-takes-the-brunt">5. OpenAI IPO Delay — SoftBank Takes the Brunt</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-3" href="#asia-pacific-june-26-session">Asia-Pacific (June 26 session)</a><a class="toc-link toc-level-3" href="#european-markets-early-trading-june-26">European Markets (early trading June 26)</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-3" href="#pce-inflation-may-2026-released-june-25">PCE Inflation — May 2026 (Released June 25)</a><a class="toc-link toc-level-3" href="#federal-reserve">Federal Reserve</a><a class="toc-link toc-level-3" href="#treasury-yields-cnbc-pre-market-june-26">Treasury Yields (CNBC Pre-Market, June 26)</a><a class="toc-link toc-level-3" href="#economic-data-calendar-week-ahead">Economic Data Calendar — Week Ahead</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-3" href="#currencies-6am-et">Currencies (6AM ET)</a><a class="toc-link toc-level-3" href="#commodities">Commodities</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-3" href="#thursday-s-close-sector-performance-s-p-500-gics">Thursday&#x27;s Close: Sector Performance (S&amp;P 500 GICS)</a><a class="toc-link toc-level-3" href="#key-single-stock-moves-thursday-overnight">Key Single-Stock Moves (Thursday + Overnight)</a><a class="toc-link toc-level-3" href="#earnings-calendar-today-june-26">Earnings Calendar — Today (June 26)</a><a class="toc-link toc-level-3" href="#pre-market-movers">Pre-Market Movers</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-3" href="#the-rotation-trade-quantifying-the-shift">The Rotation Trade — Quantifying the Shift</a><a class="toc-link toc-level-3" href="#ai-capex-vs-consumer-end-user-economics">AI Capex vs. Consumer End-User Economics</a><a class="toc-link toc-level-3" href="#factor-performance-implied-from-week-s-moves">Factor Performance (Implied from Week&#x27;s Moves)</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-3" href="#risk-on-catalysts">Risk-On Catalysts</a><a class="toc-link toc-level-3" href="#risk-off-catalysts">Risk-Off Catalysts</a><a class="toc-link toc-level-3" href="#key-levels-to-watch">Key Levels to Watch</a><a class="toc-link toc-level-2" href="#cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</a><a class="toc-link toc-level-2" href="#sentiment-positioning">Sentiment &amp; Positioning</a><a class="toc-link toc-level-2" href="#contrarian-flags">Contrarian Flags</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-friday-june-26-2026">BoltNews Pre-Market Briefing — Friday, June 26, 2026</h1>
+<p><strong>Mode:</strong> Pre-Market | <strong>Window:</strong> Jun 25 4PM → Jun 26 6AM ET | <strong>Previous Trading Day:</strong> Jun 25, 2026</p>
+<hr class="divider">
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Prev Close</th><th>Futures (6AM ET)</th><th>Change</th><th>Implied Open vs FV</th></tr></thead><tbody><tr><td><strong>Dow</strong></td><td>51,920.62</td><td>52,329</td><td>+25 (+0.05%)</td><td>+138.38</td></tr><tr><td><strong>S&amp;P 500</strong></td><td>7,357.49</td><td>7,393</td><td>-26 (-0.35%)</td><td>-13.74</td></tr><tr><td><strong>Nasdaq 100</strong></td><td>29,440.32</td><td>29,420</td><td>-305 (-1.03%)</td><td>-229.07</td></tr><tr><td><strong>Russell 2000</strong></td><td>3,007.86</td><td>3,030</td><td>-0.8 (-0.03%)</td><td>-6.96</td></tr></tbody></table></div>
+<p><strong>VIX:</strong> 19.70 (+4.29% from prior close) | <strong>VXN:</strong> 30.91 (+2.42%)</p>
+<p><strong>Futures signal:</strong> S&amp;P and Nasdaq futures modestly lower but off the worst levels seen overnight. Dow flat to slightly positive. The implied open vs fair value shows Nasdaq opening roughly 229 points below fair value — a notable gap down. The rotation out of tech and into cyclicals/defensives that defined Thursday's session appears set to continue at the open.</p>
+<p><em>Source: CNBC Pre-Markets (3:05 AM ET), Markets Insider (5:51 AM ET)</em></p>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<h3 id="1-global-tech-rout-intensifies-asia-triggers-circuit-breakers">1. Global Tech Rout Intensifies — Asia Triggers Circuit Breakers</h3>
+<p>A cascading selloff swept from US to Asia to Europe overnight. The <strong>Kospi fell 5.81%</strong> (circuit breaker triggered intraday at -8%), <strong>Nikkei 225 dropped 4.15%</strong> to 69,360.88, Hang Seng -1.76%, Shanghai Composite -2.26%, CSI 300 -3.00%. Only Australia's ASX 200 managed a gain (+0.18%).</p>
+<p><strong>Key single stocks:</strong> SoftBank Group plunged <strong>12.53%</strong> — worst since August 2024 — after reports OpenAI may delay its IPO to 2027 (struggling to secure demand at a $1T valuation). Samsung -9%, SK Hynix -8%+, SK Square -9.43%, Advantest -9.64%, TSMC -2.09%, Alibaba -6%+, Baidu -4.26%, Tencent -2%.</p>
+<p><em>Source: CNBC live updates, CNBC global tech selloff article (June 26)</em></p>
+<h3 id="2-apple-price-hikes-trigger-worst-single-day-drop-since-april-2025">2. Apple Price Hikes Trigger Worst Single-Day Drop Since April 2025</h3>
+<p>Apple (AAPL) fell <strong>6.12%</strong> on Thursday after announcing price increases across MacBooks and iPads. Specific hikes: MacBook Air 512GB $1,099→$1,299 (+$200, 18%), MacBook Pro 1TB $1,699→$1,999 (+$300, 18%), iPad Air 128GB $599→$749 (+$150, 25%), iPad Pro $999→$1,199 (+$200, 20%). CEO Tim Cook called the memory cost surge a "hundred-year flood." AAPL after-hours: $274.88 (-0.10%).</p>
+<p><em>Source: CNBC (June 25, 8:42 PM ET)</em></p>
+<h3 id="3-microsoft-joins-the-price-hike-parade">3. Microsoft Joins the Price-Hike Parade</h3>
+<p>Microsoft (MSFT) fell <strong>3.5%</strong> after raising Xbox console prices due to surging component costs. Combined with Apple, the message is clear: semiconductor price inflation is now directly threatening end-user margins across consumer tech.</p>
+<p><em>Source: CNBC live updates (June 25)</em></p>
+<h3 id="4-mag-7-suffers-worst-month-ever-2-99-trillion-erased">4. Mag 7 Suffers Worst Month Ever — $2.99 Trillion Erased</h3>
+<p>The Magnificent Seven collectively shed <strong>$2.99 trillion in market cap in June</strong>, putting the group on track for its largest monthly decline on record. All seven stocks fell Thursday, yet the S&amp;P 500 eked out a flat close — the first time the index hasn't fallen alongside an across-the-board Mag 7 decline since January 14, 2025. The Roundhill MAGS ETF closed at $61.07 (-2.57%). Adding Broadcom and Oracle, the "Mag 7+" group has lost <strong>$2.7 trillion</strong> in June.</p>
+<blockquote>Steve Sosnick, Interactive Brokers: "AAPL proved to be a bit of a downer because it sharpened the distinction between the chip companies whose earnings and margins have been benefitting from high demand… and the fact that their customers can't bear those costs indefinitely."</blockquote>
+<blockquote>Tom Essaye, Sevens Report Research: "I don't think any of this is a major indictment of AI, but if everything costs way more, then the ROI needs to be bigger — or big enough — to absorb these insane cost increases."</blockquote>
+<p><em>Source: Barron's Live Coverage (June 25, 8:01 PM ET)</em></p>
+<h3 id="5-openai-ipo-delay-softbank-takes-the-brunt">5. OpenAI IPO Delay — SoftBank Takes the Brunt</h3>
+<p>OpenAI is reportedly leaning toward delaying its IPO from late 2026 to 2027, struggling to secure sufficient demand at its targeted <strong>$1 trillion valuation</strong>. The news hit SoftBank hardest (-12.53%) as the primary Japanese backer. Arm Holdings fell 3.2% in sympathy, though Qualcomm's new AI data center chip deal with Meta was seen as positive for Arm royalties — offset by growing competitive pressure.</p>
+<p><em>Source: Bloomberg, Forbes, CNBC (June 26)</em></p>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<h3 id="asia-pacific-june-26-session">Asia-Pacific (June 26 session)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th></tr></thead><tbody><tr><td>Nikkei 225</td><td>69,360.88</td><td><strong>-4.15%</strong></td></tr><tr><td>Kospi</td><td>8,411.21</td><td><strong>-5.81%</strong> (circuit breaker hit at -8%)</td></tr><tr><td>Kosdaq</td><td>851.37</td><td>-4.10%</td></tr><tr><td>Hang Seng</td><td>22,671.86</td><td>-1.76%</td></tr><tr><td>CSI 300</td><td>4,869.64</td><td>-3.00%</td></tr><tr><td>Shanghai Comp</td><td>4,027.27</td><td>-2.26%</td></tr><tr><td>ASX 200</td><td>8,764.20</td><td>+0.18%</td></tr></tbody></table></div>
+<p><strong>Narrative:</strong> A full-blown tech panic swept Asia. The Kospi triggered emergency circuit breakers after falling &gt;8% intraday. South Korean semiconductor names were devastated — Samsung -9%, SK Hynix -8%+. Japan's SoftBank led the rout, plunging 13% at its worst. Chinese tech (Alibaba -6%+, Baidu -4.26%, Tencent -2%) joined the selloff. The only bright spot: Australia, buoyed by commodity exposure amid the rotation.</p>
+<p><em>Source: CNBC (multiple articles, June 26)</em></p>
+<h3 id="european-markets-early-trading-june-26">European Markets (early trading June 26)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>Euro Stoxx 50</td><td>6,259</td><td>-0.67%</td></tr><tr><td>DAX</td><td>24,723</td><td>-1.09%</td></tr><tr><td>FTSE 100</td><td>10,504</td><td>-0.25%</td></tr><tr><td>CAC 40</td><td>8,410</td><td>-0.25%</td></tr><tr><td>FTSE MIB</td><td>51,281</td><td>-0.97%</td></tr></tbody></table></div>
+<p><strong>Tech subsector:</strong> Stoxx 600 Tech index led losses at -1.2%. ASML -1.79%, Infineon -2.38%, ASM International -3.67%, STMicroelectronics -2.95%. European banks and insurers outperformed as the rotation theme took hold.</p>
+<p><em>Source: Markets Insider, CNBC (June 26)</em></p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<h3 id="pce-inflation-may-2026-released-june-25">PCE Inflation — May 2026 (Released June 25)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Value</th><th>Prior</th><th>Consensus</th></tr></thead><tbody><tr><td><strong>Headline PCE YoY</strong></td><td><strong>4.1%</strong></td><td>3.8%</td><td>4.1%</td></tr><tr><td><strong>Headline PCE MoM</strong></td><td>0.4%</td><td>0.4%</td><td>0.5%</td></tr><tr><td><strong>Core PCE YoY</strong></td><td><strong>3.4%</strong></td><td>3.3%</td><td>3.4%</td></tr><tr><td><strong>Core PCE MoM</strong></td><td>0.3%</td><td>0.3%</td><td>0.3%</td></tr></tbody></table></div>
+<p><strong>Key drivers:</strong> Energy goods +6.5% (Iran-driven), Services +0.5% (transportation +0.8%, financial services &amp; insurance +1.2%), Housing +0.3%. Consumer spending +0.7% MoM, real spending +0.3%. Personal income +0.7%. Saving rate at 3.0% (near 4-year low).</p>
+<p><strong>Reaction:</strong> Initially stocks rose and bond yields fell on the in-line print, but the hawkish implications quickly overwhelmed — a September rate hike now has ~80% probability per CME FedWatch.</p>
+<p><em>Source: Reuters, CNBC, BEA (June 25)</em></p>
+<h3 id="federal-reserve">Federal Reserve</h3>
+<div class="table-wrapper"><table><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr><td>Current rate</td><td>3.50%–3.75% (held June 17, unanimous)</td></tr><tr><td>Fed Chair</td><td>Kevin Warsh (new)</td></tr><tr><td>Next FOMC</td><td>July 28–29, 2026</td></tr><tr><td>Median dot end-2026</td><td><strong>3.8%</strong> (up from 3.4% in March)</td></tr><tr><td>Implied hikes</td><td>At least one more this year</td></tr><tr><td>Sept hike probability</td><td>~80% (CME FedWatch)</td></tr></tbody></table></div>
+<p><strong>Key quote from new Fed Chair:</strong> FOMC statement now unequivocally says it will "deliver price stability" after missing the 2% target for five consecutive years. A previously indicated rate cut was removed from forward guidance. At the April meeting, multiple officials dissented because the statement leaned dovish — that language was eliminated.</p>
+<blockquote>Scott Anderson, BMO Capital Markets: "PCE price inflation remains too high and will keep the Fed on hold and mulling a potential rate hike at upcoming meetings."</blockquote>
+<blockquote>Gregory Daco, EY-Parthenon: "Core inflation is likely to remain uncomfortably firm above the Fed's 2% target."</blockquote>
+<p><em>Source: Federal Reserve (June 17 statement), Reuters, CNBC, PrimeRates</em></p>
+<h3 id="treasury-yields-cnbc-pre-market-june-26">Treasury Yields (CNBC Pre-Market, June 26)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield</th><th>Change</th></tr></thead><tbody><tr><td>3-Month</td><td>3.785%</td><td>+0.014</td></tr><tr><td>2-Year</td><td>4.098%</td><td>-0.023</td></tr><tr><td>5-Year</td><td>4.144%</td><td>-0.019</td></tr><tr><td>10-Year</td><td><strong>4.38%</strong></td><td>-0.012</td></tr><tr><td>30-Year</td><td>4.858%</td><td>-0.001</td></tr></tbody></table></div>
+<p><strong>Yield curve:</strong> 2s-10s spread at +0.30 pp — normal, upward-sloping, no recession signal. Yields fell broadly on Thursday's PCE release and tech flight-to-safety, but the curve shape remains positive, consistent with ongoing economic expansion.</p>
+<p><em>Source: CNBC Pre-Markets, PrimeRates (June 26)</em></p>
+<h3 id="economic-data-calendar-week-ahead">Economic Data Calendar — Week Ahead</h3>
+<div class="table-wrapper"><table><thead><tr><th>Date</th><th>Release</th><th>Importance</th></tr></thead><tbody><tr><td>July 2</td><td>June Jobs Report</td><td>Critical (Fed input)</td></tr><tr><td>July 14</td><td>June CPI</td><td>Critical (inflation)</td></tr><tr><td>July 28-29</td><td>July FOMC Meeting</td><td>Critical (rate decision)</td></tr><tr><td>July 30</td><td>June PCE</td><td>High</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<h3 id="currencies-6am-et">Currencies (6AM ET)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Pair</th><th>Rate</th><th>Change</th></tr></thead><tbody><tr><td>EUR/USD</td><td>1.1406</td><td>+0.30%</td></tr><tr><td>USD/JPY</td><td>161.60</td><td>-0.12%</td></tr><tr><td>GBP/USD</td><td>1.3220</td><td>+0.17%</td></tr><tr><td>DXY</td><td>101.21 (prev close)</td><td>-0.22% Thu</td></tr></tbody></table></div>
+<p>Dollar slightly weaker after PCE release and risk-off flows. EUR/USD pushing above 1.14. Yen modestly stronger as haven bid competes with rate differential.</p>
+<h3 id="commodities">Commodities</h3>
+<div class="table-wrapper"><table><thead><tr><th>Commodity</th><th>Price</th><th>Change</th></tr></thead><tbody><tr><td><strong>WTI Crude (Aug)</strong></td><td>$69.00</td><td><strong>-4.06%</strong></td></tr><tr><td><strong>Brent Crude (Aug)</strong></td><td>$72.48</td><td><strong>-3.15%</strong></td></tr><tr><td><strong>Gold (Aug)</strong></td><td>$4,044.80</td><td>-0.07%</td></tr><tr><td><strong>Silver (Sep)</strong></td><td>$57.99</td><td>-0.64%</td></tr><tr><td><strong>Natural Gas</strong></td><td>$3.356</td><td>+0.39%</td></tr></tbody></table></div>
+<p><strong>Oil:</strong> WTI dropped to $69 despite an Iranian attack on a Singapore-flagged cargo ship near the Strait of Hormuz. The selloff reflects growing skepticism about the durability of geopolitical supply disruption — tanker traffic through Hormuz is returning to pre-war levels. Iraq is reportedly demanding a higher OPEC output quota and may leave the cartel if not met.</p>
+<blockquote>Scott Nations, Nations Indexes: "There is so much still that is to be questioned about the actual agreement. I think we're being too optimistic, because nothing really has been resolved, and Iran knows that they have the world economy where they want it if they want to shut down the strait."</blockquote>
+<p><strong>Gold:</strong> $4,044.80, near flat on the day but heading for a fourth straight weekly decline. The stronger dollar and expectations of further Fed hikes are capping upside.</p>
+<p><em>Source: Markets Insider, CNBC Pre-Markets (June 26)</em></p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<h3 id="thursday-s-close-sector-performance-s-p-500-gics">Thursday's Close: Sector Performance (S&amp;P 500 GICS)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Change</th><th>Narrative</th></tr></thead><tbody><tr><td><strong>Industrials</strong></td><td><strong>+2.19%</strong></td><td>Rotation winner — cyclical value bid</td></tr><tr><td><strong>Healthcare</strong></td><td>+1.49%</td><td>Defensive rotation</td></tr><tr><td><strong>Materials</strong></td><td>+1.39%</td><td>Commodity/cyclical bid</td></tr><tr><td><strong>Energy</strong></td><td>+0.98%</td><td>Hormuz-driven, faded overnight</td></tr><tr><td><strong>Technology</strong></td><td>-0.09%</td><td>Flat but misleading — Mag 7 crushed, offset by semis</td></tr><tr><td><strong>Financials</strong></td><td>-0.48%</td><td>Rate sensitivity muted</td></tr><tr><td><strong>Consumer Staples</strong></td><td>-1.08%</td><td>Defensive weakness?</td></tr><tr><td><strong>Comm. Services</strong></td><td>-1.02%</td><td>Meta/Alphabet drag</td></tr><tr><td><strong>Consumer Disc.</strong></td><td><strong>-1.78%</strong></td><td>Amazon/Tesla/Apple drag</td></tr></tbody></table></div>
+<p><strong>Week-to-Date:</strong> S&amp;P 500 -1.91%, Nasdaq <strong>-4.37%</strong>, Dow +0.69%, Russell 2000 +0.94%. The rotation is real and persistent — four straight daily losses for Nasdaq (longest streak since February).</p>
+<h3 id="key-single-stock-moves-thursday-overnight">Key Single-Stock Moves (Thursday + Overnight)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Catalyst</th></tr></thead><tbody><tr><td><strong>AAPL</strong></td><td>-6.12%</td><td>MacBook/iPad price hikes (18-33%) — "hundred-year flood" per Cook</td></tr><tr><td><strong>MSFT</strong></td><td>-3.50%</td><td>Xbox price hike due to component costs</td></tr><tr><td><strong>MAGS ETF</strong></td><td>-2.57%</td><td>All 7 Mag 7 fell — $2.99T June wipeout</td></tr><tr><td><strong>MU</strong></td><td>+beat</td><td>Record EPS $25.11 vs $20.78 est, revenue $41.46B (Q3 FY2026). Gross margin 84.9%. But gains faded intraday.</td></tr><tr><td><strong>SoftBank</strong></td><td>-12.53%</td><td>OpenAI IPO delay to 2027, $1T valuation uncertain</td></tr><tr><td><strong>Samsung</strong></td><td>-9%</td><td>Asia tech rout, memory price inflation fears</td></tr><tr><td><strong>SK Hynix</strong></td><td>-8%+</td><td>Same as above; planned $29B Nasdaq listing</td></tr><tr><td><strong>Alibaba</strong></td><td>-6%+</td><td>China tech joins global selloff</td></tr></tbody></table></div>
+<h3 id="earnings-calendar-today-june-26">Earnings Calendar — Today (June 26)</h3>
+<p>Light earnings day. No major pre-market earnings identified. Digrin calendar shows 0 before open, 6 time-TBD. Apogee (APOG) listed by Investing.com. The major action this week was Micron (June 24) and the PCE release (June 25).</p>
+<h3 id="pre-market-movers">Pre-Market Movers</h3>
+<p>PreMarketPrice.com data not yet populated as of 6AM ET (Redis indexes warming up). Will update as data flows.</p>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<h3 id="the-rotation-trade-quantifying-the-shift">The Rotation Trade — Quantifying the Shift</h3>
+<p>The June rotation from growth/AI into value/cyclicals is now a dominant theme:</p>
+<ul><li><strong>Nasdaq -4.37% WTD</strong> vs <strong>Russell 2000 +0.94% WTD</strong> — a 531bp spread</li><li><strong>Dow +0.69% WTD</strong> vs <strong>Nasdaq -4.37%</strong> — a 506bp spread</li><li><strong>Industrials +2.19%</strong> led Thursday, Consumer Discretionary -1.78% lagged</li><li>The S&amp;P 500 is flat for the week despite a 4.37% Nasdaq decline — the broad market is absorbing tech weakness through rotation, not contagion</li></ul>
+<h3 id="ai-capex-vs-consumer-end-user-economics">AI Capex vs. Consumer End-User Economics</h3>
+<p>This week crystallized a tension that's been building since Q1 earnings:</p>
+<ul><li><strong>AI infrastructure spending is still accelerating</strong> (Oracle results confirm, Micron's 84.9% gross margin confirms)</li><li><strong>But end-user price absorption has limits</strong> — Apple and Microsoft are now passing costs through, confirming that component inflation is hitting the consumer</li><li>The question: Will a consumer pushback on higher device prices slow AI adoption at the edge?</li></ul>
+<h3 id="factor-performance-implied-from-week-s-moves">Factor Performance (Implied from Week's Moves)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Factor</th><th>Direction</th><th>Evidence</th></tr></thead><tbody><tr><td><strong>Value</strong></td><td>Outperforming</td><td>Industrials, healthcare, materials leading</td></tr><tr><td><strong>Growth</strong></td><td>Underperforming</td><td>Mag 7, semis bleeding</td></tr><tr><td><strong>Small Cap</strong></td><td>Outperforming</td><td>Russell +0.94% WTD</td></tr><tr><td><strong>Momentum</strong></td><td>Breaking down</td><td>Nasdaq 4-day losing streak</td></tr><tr><td><strong>Low Vol</strong></td><td>Mixed</td><td>Staples -1.08% but healthcare +1.49%</td></tr><tr><td><strong>Quality</strong></td><td>Mixed</td><td>Balance sheet strength not yet rewarded</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<h3 id="risk-on-catalysts">Risk-On Catalysts</h3>
+<ul><li><strong>PCE in line</strong> — no upside surprise on inflation, removing the worst-case scenario</li><li><strong>Rotation broadening</strong> — market internals improving: S&amp;P flat despite all 7 Mag 7 down (first time since Jan 2025)</li><li><strong>Oil declining</strong> — WTI at $69, down from post-Hormuz highs, easing energy cost pressure</li><li><strong>Treasury yields lower</strong> — 10Y at 4.38%, providing valuation support</li></ul>
+<h3 id="risk-off-catalysts">Risk-Off Catalysts</h3>
+<ul><li><strong>Asia circuit breakers</strong> — Kospi -8% intraday, psychological shock from emergency halts</li><li><strong>Nasdaq 4th straight loss</strong> — longest losing streak since February; momentum broken</li><li><strong>OpenAI IPO delay</strong> — raises questions about AI valuation ceiling; SoftBank -13%</li><li><strong>Fed hike still on table</strong> — 80% September probability, and Core PCE at 3.4% argues for it</li><li><strong>Options expiration</strong> — Weekly expiration could amplify moves, though monthly OPEX already passed (June 18 due to Juneteenth holiday)</li><li><strong>Iran/Hormuz tail risk</strong> — attack on cargo ship shows tensions remain despite peace deal</li></ul>
+<h3 id="key-levels-to-watch">Key Levels to Watch</h3>
+<div class="table-wrapper"><table><thead><tr><th>Instrument</th><th>Support</th><th>Resistance</th><th>Notes</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,300</td><td>7,420</td><td>Thursday's range 7,326–7,425</td></tr><tr><td>Nasdaq 100</td><td>29,200</td><td>29,700</td><td>Futures already testing low end</td></tr><tr><td>10Y Yield</td><td>4.30%</td><td>4.50%</td><td>PCE-driven drop, watching if holds</td></tr><tr><td>VIX</td><td>18</td><td>22</td><td>19.7 currently — elevated but not panic</td></tr><tr><td>WTI</td><td>$68</td><td>$72</td><td>Hormuz risk premium evaporating</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="cross-asset-positioning-matrix">Cross-Asset Positioning Matrix</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset Class</th><th>Direction</th><th>Thesis</th><th>Supporting Data</th></tr></thead><tbody><tr><td><strong>US Large Cap</strong></td><td>Neutral/Negative</td><td>Rotation from tech-heavy S&amp;P; breadth improving but Mag 7 weight drags</td><td>S&amp;P -0.01% Thu, WTD -1.91%</td></tr><tr><td><strong>US Tech/Growth</strong></td><td><strong>Negative</strong></td><td>AI cost inflation hitting end-user; OpenAI IPO doubts; momentum broken</td><td>Nasdaq -4.37% WTD, 4-day losing streak</td></tr><tr><td><strong>US Value/Cyclicals</strong></td><td><strong>Positive</strong></td><td>Rotation beneficiary; industrials +2.19%; Dow +0.69% WTD</td><td>Russell +0.94% WTD</td></tr><tr><td><strong>Treasuries</strong></td><td>Neutral/Positive</td><td>PCE in line, flight-to-safety bid, 10Y at 4.38%</td><td>2s-10s +30bp, normal curve</td></tr><tr><td><strong>Credit</strong></td><td>Neutral</td><td>IG spreads tight, no stress signals</td><td>Limited data this session</td></tr><tr><td><strong>USD (DXY)</strong></td><td>Neutral</td><td>Mixed: weaker after PCE, but haven bid from equity rout</td><td>DXY 101.21 (-0.22% Thu)</td></tr><tr><td><strong>EUR</strong></td><td>Positive</td><td>EUR/USD 1.14+, ECB still hawkish</td><td>EUR/USD +0.30% overnight</td></tr><tr><td><strong>JPY</strong></td><td>Mixed</td><td>Haven bid vs rate differential; 161.60</td><td>USD/JPY -0.12%</td></tr><tr><td><strong>Oil (WTI)</strong></td><td><strong>Negative</strong></td><td>Hormuz risk premium fading; OPEC cracks (Iraq quota dispute); peace deal skepticism growing</td><td>WTI -4.06% to $69</td></tr><tr><td><strong>Gold</strong></td><td>Neutral</td><td>4th weekly decline; rate hike expectations cap upside</td><td>Gold $4,045 (-0.07%)</td></tr><tr><td><strong>Asia Equities</strong></td><td><strong>Negative</strong></td><td>Circuit breakers, tech concentration, AI cost fears</td><td>Nikkei -4.15%, Kospi -5.81%</td></tr><tr><td><strong>European Equities</strong></td><td>Negative</td><td>Contagion from Asia, tech sector -1.2%</td><td>DAX -1.09%, Stoxx 600 -0.4%</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="sentiment-positioning">Sentiment &amp; Positioning</h2>
+<div class="table-wrapper"><table><thead><tr><th>Indicator</th><th>Value</th><th>Signal</th></tr></thead><tbody><tr><td>VIX</td><td>19.70 (+4.29%)</td><td>Elevated but not panicked</td></tr><tr><td>VXN (Nasdaq Vol)</td><td>30.91 (+2.42%)</td><td>Tech vol premium widening</td></tr><tr><td>OIL VIX (OVX)</td><td>46.96 (-1.37%)</td><td>Oil vol declining as crude sells off</td></tr><tr><td>Put/Call (implied)</td><td>Not extracted</td><td>—</td></tr><tr><td>AAII Sentiment</td><td>Not extracted</td><td>—</td></tr><tr><td>Mag 7 breadth</td><td>0/7 positive Thu</td><td>Full group decline</td></tr><tr><td>S&amp;P breadth</td><td>Flat despite Mag 7 carnage</td><td>Rotation, not contagion</td></tr><tr><td>52-week highs/lows</td><td>25 new highs, 4 new lows (S&amp;P)</td><td>Breadth constructive</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="contrarian-flags">Contrarian Flags</h2>
+<p>1. <strong>The rotation is healthy, not panicked.</strong> Despite a 4.37% Nasdaq weekly decline, the S&amp;P 500 is flat, the Dow is up, small caps are up. This is sector rotation, not a broad deleveraging. The market is absorbing tech weakness — the question is whether it can continue doing so.</p>
+<p>2. <strong>Oil selling off despite Hormuz attack.</strong> An Iranian attack on a cargo ship near the Strait of Hormuz would normally spike crude $5+. Instead, WTI fell 4%. The market is pricing the peace deal as durable, and OPEC's internal cracks (Iraq quota dispute) add supply-side pressure. If the market is wrong about this, oil could snap back violently.</p>
+<p>3. <strong>Mag 7 wipeout isn't an AI thesis-breaker.</strong> $2.99T erased in June, but the underlying AI infrastructure buildout continues (Oracle capex, Micron margins, Qualcomm-Meta deal). The selloff is about end-user price absorption and valuation, not AI demand destruction. This could reverse quickly if earnings season validates the spend.</p>
+<p>4. <strong>Treasury yields falling despite 4.1% PCE.</strong> The bond market's reaction to the PCE report was yields DOWN — suggesting either flight-to-safety or a belief that inflation will moderate as oil declines. If the bond market is right, the Fed may not need to hike in September despite the 80% CME probability.</p>
+<p>5. <strong>Apple's price hikes could be bullish for the stock.</strong> Historically, Apple's pricing power has expanded margins when component costs rise — the company passes through costs more than it absorbs them. If demand holds, higher ASPs are accretive. The 6% drop may overstate the earnings impact.</p>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<p class="bold-line"><strong>High confidence data points:</strong></p>
+<ul><li>Futures prices: CNBC Pre-Markets, Markets Insider — both primary market data sources, confirmed by two independent feeds</li><li>PCE inflation data: BEA (primary), confirmed by Reuters, CNBC — all consistent</li><li>Asia index closes: CNBC, Markets Insider — consistent across sources</li><li>AAPL price hike details: CNBC (primary reporting), confirmed by Reuters, CBS, CNET</li><li>Fed policy: Federal Reserve official statement (June 17, 2026)</li><li>Treasury yields: CNBC Pre-Markets, PrimeRates — consistent</li></ul>
+<p class="bold-line"><strong>Moderate confidence data points:</strong></p>
+<ul><li>Mag 7 $2.99T June loss: Barron's — secondary source but consistent with observable price action</li><li>SoftBank -12.53%: Bloomberg, CNBC — paywalled but headline confirmed across multiple secondary sources</li><li>CME FedWatch 80%: Reuters — financial data platform, not independently verified but widely cited</li><li>Counterpoint Research memory price data: cited by CNBC — research firm, not independently verified</li></ul>
+<p class="bold-line"><strong>Gaps (not available this session):</strong></p>
+<ul><li>AAII Sentiment Survey — typically released Thursdays, not extracted</li><li>Pre-market individual stock movers — PreMarketPrice.com Redis indexes still warming up at 6AM ET</li><li>Credit spreads — no extraction available this session</li><li>Full earnings calendar for today — light day, Digrin shows 0 before-open reports</li></ul>
+<p><strong>Recency:</strong> All articles published within the 14-hour window (June 25 4PM – June 26 6AM ET). No stale content detected. Treasury yields data from PrimeRates references June 24 session but is the most recent available ahead of today's open.</p>
+<p><strong>Extraction depth:</strong> 11 articles with substantive extracted text from 6 primary/secondary sources. Zero headline-only records.</p>
+<hr class="divider">
+<p><em>Generated: June 26, 2026 06:30 AM ET | BoltNews Pre-Market Pipeline</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://markets.businessinsider.com/premarket" target="_blank" rel="noopener">Premarket Trading June 26 — US Stock Markets Futures</a>
+<a class="source-link" href="https://www.cnbc.com/markets/pre-markets/" target="_blank" rel="noopener">Premarket Stock Trading Data: Dow, S&amp;P, NASDAQ Futures — CNBC</a>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-062526" target="_blank" rel="noopener">Stock Market News From June 25, 2026: Dow Rises as Mag 7 Bleeds</a>
+<a class="source-link" href="https://www.reuters.com/markets/us/us-pce-inflation-measure-tops-40-may-consumer-spending-strong-2026-06-25/" target="_blank" rel="noopener">May US PCE Inflation Tops 4%, Leaves Fed Hike on the Table</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/25/apple-macbook-ipad-price-hike-memory.html" target="_blank" rel="noopener">Apple Stock Sinks 6% After Price Hikes on MacBook and iPad</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/26/global-tech-stocks-ai-infrastructure-costs-selloff-softbank-apple.html" target="_blank" rel="noopener">Tumbling AI Stocks Signal Another Day of Turmoil for Tech Companies</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/25/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock Market Today: Live Updates — Global Tech Sell-Off Deepens</a>
+<a class="source-link" href="https://primerates.com/primerate/treasury-yield-curve/" target="_blank" rel="noopener">Treasury Yield Curve Today: June 26, 2026 — Rates &amp; Spread Monitor</a>
+<a class="source-link" href="https://www.bloomberg.com/news/articles/2026-06-26/softbank-s-shares-tumble-after-report-of-openai-s-ipo-delay" target="_blank" rel="noopener">SoftBank Shares Tumble After Report of OpenAI&#x27;s IPO Delay</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/26/global-tech-stocks-ai-infrastructure-costs-selloff-softbank-apple.html" target="_blank" rel="noopener">SoftBank plunges 13%, SK Hynix slides 10% as Asia tech rout tracks US declines</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/25/pce-inflation-report-may-2026-.html" target="_blank" rel="noopener">PCE Inflation Report May 2026: Core at 3.4%, Highest Since October 2023</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-26 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
