@@ -294,8 +294,28 @@ def re_fullmatch_date(value: str) -> bool:
     return len(parts) == 3 and all(part.isdigit() for part in parts) and len(value) == 10
 
 
+def synthesized_markers_for_mode(mode: str) -> tuple[str, ...]:
+    """Mode-specific markers proving dashboard.html is a real briefing."""
+    if mode == "pre-market":
+        return ("Futures and Current Market Snapshot", "Overnight Top Developments")
+    if mode == "post-market":
+        return ("Closing Market Snapshot", "Cross-Asset Confirmation or Divergence")
+    return ("Weekly Market Scoreboard", "The Week's Core Narrative")
+
+
 def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
     """Push run artifacts to GitHub main branch + deploy dashboard to gh-pages."""
+
+    # Fail closed if deploy.py is called directly. run_pipeline.py validates
+    # before deploy, but operators/cron agents may invoke this file on its own.
+    validator = PROJECT_ROOT / "scripts" / "validate_run.py"
+    validation = run(
+        ["python3.12", str(validator), "--run-dir", str(run_dir), "--mode", mode, "--date", run_date],
+        timeout=90,
+    )
+    if validation.returncode != 0:
+        print(f"ERROR: validate_run.py failed; refusing deploy:\n{validation.stderr[-1000:]}", file=sys.stderr)
+        return False
 
     repo_url = get_repo_url()
     if not repo_url:
@@ -324,11 +344,12 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
             return False
 
     html_text = dashboard_src.read_text(errors="replace")
-    synthesized_markers = ("Executive Summary", "Cross-Asset", "Weekly Market Scoreboard", "The Week's Core Narrative")
-    if not any(marker in html_text for marker in synthesized_markers):
+    synthesized_markers = synthesized_markers_for_mode(mode)
+    missing_markers = [marker for marker in synthesized_markers if marker not in html_text]
+    if missing_markers:
         print(
-            "ERROR: dashboard.html does not contain synthesized briefing markers "
-            "(Executive/Cross-Asset/Weekend). Refusing to deploy link-only dashboard.",
+            "ERROR: dashboard.html does not contain required synthesized briefing markers "
+            f"for mode={mode}: {missing_markers}. Refusing to deploy link-only dashboard.",
             file=sys.stderr,
         )
         return False
@@ -391,10 +412,12 @@ def deploy_run(run_dir: Path, mode: str, run_date: str) -> bool:
             files_copied += 1
             print(f"  [main] Copied: {fname}")
 
-    # Update latest symlink
+    # Update latest symlink. Because the link lives inside runs/, the target
+    # must be relative to deploy_dir/runs, not repo root. A repo-root-relative
+    # target (runs/YYYY-MM-DD/mode) resolves as runs/runs/YYYY-MM-DD/mode.
     latest_dir = deploy_dir / "runs" / "latest"
     run(["rm", "-rf", str(latest_dir)])
-    run(["ln", "-s", str(repo_run_dir.relative_to(deploy_dir)), str(latest_dir)])
+    run(["ln", "-s", str(repo_run_dir.relative_to(deploy_dir / "runs")), str(latest_dir)])
 
     # Commit and push
     print("[deploy] Pushing to main...")

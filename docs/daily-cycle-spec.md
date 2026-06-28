@@ -24,7 +24,7 @@ into a **Temporal Reasoning Brief** at `runs/{prev_date}/daily/` that shows HOW 
 | **Content** | After-hours earnings, overnight macro, Asian/European session, pre-market futures, economic calendar preview |
 | **Key question** | "What happened overnight and what's the setup for today?" |
 | **Articles** | ~20-30, emphasis on breaking news and earnings releases |
-| **Output** | `runs/{today}/pre-market/summary.md`, `articles.json`, `dashboard.html` |
+| **Output** | `runs/{today}/pre-market/briefing.md` (authoritative), `senior_pm_recap.md` (Telegram lead), `summary.md` (link/article digest), `articles.json`, `dashboard.html` |
 
 ### 6:00 PM — Post-Market
 | Aspect | Coverage |
@@ -33,7 +33,7 @@ into a **Temporal Reasoning Brief** at `runs/{prev_date}/daily/` that shows HOW 
 | **Content** | Market close data, sector performance, earnings reports, economic data releases, Fed speeches, geopolitical developments, analyst actions |
 | **Key question** | "What moved markets today and what's the positioning for tomorrow?" |
 | **Articles** | ~10-20, emphasis on market-moving events and closing analysis |
-| **Output** | `runs/{today}/post-market/summary.md`, `articles.json`, `dashboard.html` |
+| **Output** | `runs/{today}/post-market/briefing.md` (authoritative), `senior_pm_recap.md` (Telegram lead), `summary.md` (link/article digest), `articles.json`, `dashboard.html` |
 
 ## Temporal Reasoning Consolidation (CRITICAL)
 
@@ -89,11 +89,15 @@ Every article MUST carry a `fetched_at` or `published_at` timestamp. The PM and 
 runs/
 └── YYYY-MM-DD/
     ├── pre-market/           ← 6 AM run output
-    │   ├── summary.md
+    │   ├── briefing.md       ← authoritative synthesized research note
+    │   ├── senior_pm_recap.md← compact Telegram lead-in
+    │   ├── summary.md        ← article/link digest
     │   ├── articles.json
     │   └── dashboard.html
     ├── post-market/          ← 6 PM run output
-    │   ├── summary.md
+    │   ├── briefing.md       ← authoritative synthesized research note
+    │   ├── senior_pm_recap.md← compact Telegram lead-in
+    │   ├── summary.md        ← article/link digest
     │   ├── articles.json
     │   └── dashboard.html
     └── daily/                ← Temporal reasoning consolidation

@@ -114,14 +114,14 @@ Source priority: `daily/temporal_brief.md` → each run's `briefing.md` → `sum
 
 Required section order:
 
-1. `## Weekly Executive Summary`
-2. `## Cross-Run Data Evolution`
-   - Old value, new value, change, source, timestamp; confirmed/evolved/stale/contradicted flags.
-3. `## Asset-Class Weekly Review`
-   - Equities, Rates, Credit, FX, Commodities, Volatility, Crypto if relevant.
-4. `## Theme Tracker`
-   - Persistent, new, faded, contradicted themes.
-5. `## Calendar and Risk Preview`
-6. `## Data Quality Appendix`
+1. `## Weekly Market Scoreboard`
+2. `## Dominant Cross-Asset Narrative`
+3. `## Asset Class Deep Dive`
+4. `## Positioning, Sentiment, and Flows`
+5. `## Earnings, Guidance, and Corporate Actions`
+6. `## Macro and Policy Outlook`
+7. `## Next Week Calendar and Watchlist`
+8. `## Contrarian Flags and Underpriced Risks`
+9. `## Source Notes and Data Quality`
 
-Weekly rollup failure: concatenating daily notes without comparing data-point evolution.
+Weekly rollup failure: concatenating daily notes without comparing data-point evolution or emitting debug/audit-only headings instead of the canonical PM template.

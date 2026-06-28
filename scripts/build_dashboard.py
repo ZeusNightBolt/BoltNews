@@ -558,10 +558,24 @@ def build_dashboard(summary_md: str, articles: list[dict], mode: str, run_date: 
     )
 
 
+def synthesized_markers_for_mode(mode: str) -> tuple[str, ...]:
+    """Mode-specific markers that prove the dashboard is a real briefing.
+
+    The pre-market template intentionally does not require literal
+    "Executive Summary" or "Cross-Asset" headings, so a global marker list
+    creates false negatives for valid pre-market notes.
+    """
+    if mode == "pre-market":
+        return ("Futures and Current Market Snapshot", "Overnight Top Developments")
+    if mode == "post-market":
+        return ("Closing Market Snapshot", "Cross-Asset Confirmation or Divergence")
+    return ("Weekly Market Scoreboard", "The Week's Core Narrative")
+
+
 def main():
     parser = argparse.ArgumentParser(description="BoltNews Dashboard Builder")
     parser.add_argument("--input", type=Path, required=True, help="articles.json or enriched JSON")
-    parser.add_argument("--summary", type=Path, required=True, help="summary.md (PRIMARY content source)")
+    parser.add_argument("--summary", type=Path, required=True, help="briefing.md is authoritative; summary.md is fallback/link digest")
     parser.add_argument("--output", type=Path, required=True, help="dashboard.html output")
     parser.add_argument("--mode", choices=["pre-market", "post-market", "weekend"], required=True)
     parser.add_argument("--date", type=str, required=True)
@@ -577,8 +591,9 @@ def main():
         sys.exit(1)
 
     summary_md = content_path.read_text()
-    synthesized_markers = ("Executive Summary", "Cross-Asset", "Weekly Market Scoreboard", "The Week's Core Narrative")
-    if not any(marker in summary_md for marker in synthesized_markers):
+    synthesized_markers = synthesized_markers_for_mode(args.mode)
+    missing_markers = [marker for marker in synthesized_markers if marker not in summary_md]
+    if missing_markers:
         print(
             "ERROR: dashboard content is not a synthesized briefing "
             "(missing synthesized briefing markers). Refusing link-only dashboard.",

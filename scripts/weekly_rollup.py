@@ -180,7 +180,12 @@ def article_category(article: dict) -> str:
 
 
 def build_weekly_summary(week_dates: list[str], asof: date | None = None) -> str:
-    """Build the weekly rollup markdown from real briefing artifacts."""
+    """Build the weekly rollup markdown from real briefing artifacts.
+
+    Keep the output headings aligned with docs/briefing-template-spec.md and the
+    weekly cron prompt. Earlier versions emitted audit/debug headings, which made
+    successful script runs produce non-compliant weekly artifacts.
+    """
     asof = asof or date.today()
     week_start = date.fromisoformat(week_dates[0])
     week_end = date.fromisoformat(week_dates[-1])
@@ -188,124 +193,131 @@ def build_weekly_summary(week_dates: list[str], asof: date | None = None) -> str
 
     days_with_context = sorted({c["date"] for c in contexts})
     source_counter = Counter(c["filename"] for c in contexts)
+    all_text = " ".join(
+        [c["text"] for c in contexts]
+        + [article_title(a) + " " + article_description(a) for a in all_articles]
+    ).lower()
+
+    def keyword_count(words: list[str]) -> int:
+        return sum(len(re.findall(r"\b" + re.escape(word) + r"\b", all_text)) for word in words)
+
+    by_category: dict[str, list[dict]] = defaultdict(list)
+    seen_urls: set[str] = set()
+    for article in all_articles:
+        url = str(article.get("url") or "").strip()
+        key = url or article_title(article)
+        if key in seen_urls:
+            continue
+        seen_urls.add(key)
+        by_category[article_category(article)].append(article)
+
+    sorted_cats = sorted(by_category.items(), key=lambda x: len(x[1]), reverse=True)
+    missing = [s for s in run_stats if not s["markdown"]]
+    best_contexts = sorted(contexts, key=lambda c: (c["quality"] != "temporal", -c["chars"]))[:6]
 
     lines = [
         "# BoltNews — Weekly Rollup",
         f"**{week_start.isoformat()} → {week_end.isoformat()}**",
         f"*Generated: {asof.isoformat()}*",
         "",
-        "---",
+        "## Weekly Market Scoreboard",
         "",
-        "## 📊 Coverage Audit",
-        "",
-        f"**Days covered by markdown context:** {len(days_with_context)} / {len(week_dates)} ({', '.join(days_with_context)})",
-        f"**Run markdown contexts loaded:** {len(contexts)}",
-        f"**Total article metadata records:** {len(all_articles)}",
-        "**Markdown source mix:** " + (", ".join(f"{k}: {v}" for k, v in sorted(source_counter.items())) or "none"),
+        f"- **Coverage:** {len(days_with_context)} / {len(week_dates)} dates with markdown context ({', '.join(days_with_context) or 'none'}).",
+        f"- **Inputs:** {len(contexts)} markdown contexts and {len(all_articles)} article metadata records.",
+        "- **Source mix:** " + (", ".join(f"{k}: {v}" for k, v in sorted(source_counter.items())) or "none"),
         "",
         "| Date | Run | Markdown source | Quality | Chars | Article source | Articles |",
         "|---|---|---:|---|---:|---:|---:|",
     ]
     for stat in run_stats:
-        mode_label = "🌅 AM" if stat["mode"] == "pre-market" else "🌆 PM"
+        mode_label = {"pre-market": "AM", "post-market": "PM", "weekend": "Weekend"}.get(stat["mode"], stat["mode"])
         lines.append(
             f"| {stat['date']} | {mode_label} | {stat['markdown'] or 'MISSING'} | "
             f"{stat['markdown_quality']} | {stat['markdown_chars']} | "
             f"{stat['articles_source'] or 'MISSING'} | {stat['article_count']} |"
         )
 
-    missing = [s for s in run_stats if not s["markdown"]]
-    if missing:
-        lines += ["", "### ⚠️ Missing run markdown", ""]
-        for s in missing:
-            lines.append(f"- {s['date']} {s['mode']}: no briefing.md, summary.md, or articles.md found")
-
-    lines += ["", "## 🗓️ Daily Briefing Context", ""]
-    by_date: dict[str, list[dict]] = defaultdict(list)
-    for ctx in contexts:
-        by_date[ctx["date"]].append(ctx)
-    for d in week_dates:
-        lines.append(f"### {d}")
-        day_contexts = by_date.get(d, [])
-        if not day_contexts:
-            lines.append("*No markdown context found for this date.*")
-            lines.append("")
-            continue
-        # Show temporal first, then AM, then PM, then weekend.
-        order = {"daily": 0, "pre-market": 1, "post-market": 2, "weekend": 3}
-        for ctx in sorted(day_contexts, key=lambda c: order.get(c["mode"], 99)):
-            label = {
-                "daily": "Temporal reasoning",
-                "pre-market": "Pre-market",
-                "post-market": "Post-market",
-                "weekend": "Weekend",
-            }.get(ctx["mode"], ctx["mode"])
+    lines += ["", "## Dominant Cross-Asset Narrative", ""]
+    if best_contexts:
+        for ctx in best_contexts:
             rel = ctx["path"].relative_to(PROJECT_ROOT)
-            lines.append(f"#### {label} — `{rel}` ({ctx['quality']}, {ctx['chars']} chars)")
+            lines.append(f"### {ctx['date']} {ctx['mode']} — `{rel}`")
+            lines.append(excerpt_markdown(ctx["text"], 900))
             lines.append("")
-            lines.append(excerpt_markdown(ctx["text"], 1100))
-            lines.append("")
+    else:
+        lines.append("Data unavailable — no weekly briefing context found.")
 
-    if all_articles:
-        lines += ["## 🔥 Top Stories by Category", ""]
-        by_category: dict[str, list[dict]] = defaultdict(list)
-        seen_urls: set[str] = set()
-        for article in all_articles:
-            url = str(article.get("url") or "").strip()
-            key = url or article_title(article)
-            if key in seen_urls:
-                continue
-            seen_urls.add(key)
-            by_category[article_category(article)].append(article)
-        sorted_cats = sorted(by_category.items(), key=lambda x: len(x[1]), reverse=True)
+    lines += ["## Asset Class Deep Dive", ""]
+    if sorted_cats:
         for cat, cat_articles in sorted_cats[:7]:
             lines.append(f"### {cat} ({len(cat_articles)} articles)")
-            lines.append("")
             cat_articles.sort(key=lambda a: len(article_description(a)), reverse=True)
-            for article in cat_articles[:8]:
+            for article in cat_articles[:5]:
                 ticker = f"`{article.get('ticker')}` " if article.get("ticker") else ""
                 title = article_title(article)
                 url = str(article.get("url") or "").strip()
                 desc = article_description(article)
-                if url:
-                    lines.append(f"- {ticker}[{title}]({url})")
-                else:
-                    lines.append(f"- {ticker}{title}")
+                lines.append(f"- {ticker}[{title}]({url})" if url else f"- {ticker}{title}")
                 if desc:
-                    lines.append(f"  - {shorten(desc, width=240, placeholder=' …')}")
+                    lines.append(f"  - {shorten(desc, width=220, placeholder=' …')}")
             lines.append("")
-
-    lines += ["## 🧵 Key Themes This Week", ""]
-    all_text = " ".join(
-        [c["text"] for c in contexts]
-        + [article_title(a) + " " + article_description(a) for a in all_articles]
-    ).lower()
-    theme_keywords = [
-        "rate", "cut", "hike", "inflation", "fed", "fomc",
-        "earnings", "revenue", "guidance", "upgrade", "downgrade",
-        "merger", "acquisition", "deal", "takeover",
-        "volatility", "sell-off", "rally", "correction",
-        "oil", "energy", "commodity", "supply",
-        "tariff", "trade", "china", "geopolitical",
-        "bank", "credit", "default", "spread",
-        "ai", "chip", "semiconductor", "tech",
-    ]
-    theme_counts = {
-        kw: len(re.findall(r"\b" + re.escape(kw) + r"\b", all_text))
-        for kw in theme_keywords
-    }
-    theme_counts = {k: v for k, v in theme_counts.items() if v >= 3}
-    if theme_counts:
-        for kw, count in sorted(theme_counts.items(), key=lambda x: x[1], reverse=True)[:15]:
-            lines.append(f"- **{kw.title()}**: mentioned {count} times")
     else:
-        lines.append("*No dominant themes detected.*")
+        lines.append("Data unavailable — no article metadata found.")
 
-    lines += [
-        "",
-        "---",
-        "*Generated by BoltNews Weekly Rollup. Source priority: daily/temporal_brief.md → run briefing.md → run summary.md → articles.md; article metadata: articles_enriched.json → articles.json.*",
-    ]
+    lines += ["## Positioning, Sentiment, and Flows", ""]
+    theme_groups = {
+        "rates/policy": ["rate", "cut", "hike", "fed", "fomc", "yield"],
+        "inflation/macro": ["inflation", "cpi", "ppi", "payroll", "gdp"],
+        "earnings/corporates": ["earnings", "revenue", "guidance", "upgrade", "downgrade"],
+        "volatility/risk": ["volatility", "vix", "sell-off", "rally", "correction"],
+        "commodities": ["oil", "energy", "commodity", "gold", "copper"],
+        "credit/banks": ["bank", "credit", "default", "spread"],
+        "AI/semis/tech": ["ai", "chip", "semiconductor", "tech"],
+    }
+    counts = {name: keyword_count(words) for name, words in theme_groups.items()}
+    for name, count in sorted(counts.items(), key=lambda x: x[1], reverse=True):
+        if count:
+            lines.append(f"- **{name}:** {count} mentions across loaded weekly context.")
+    if not any(counts.values()):
+        lines.append("Data unavailable — no dominant positioning/sentiment keywords detected.")
+
+    lines += ["", "## Earnings, Guidance, and Corporate Actions", ""]
+    corp_articles = [a for a in all_articles if re.search(r"earnings|revenue|guidance|upgrade|downgrade|merger|acquisition|buyback", article_title(a) + " " + article_description(a), re.I)]
+    for article in corp_articles[:10]:
+        url = str(article.get("url") or "").strip()
+        title = article_title(article)
+        lines.append(f"- [{title}]({url})" if url else f"- {title}")
+    if not corp_articles:
+        lines.append("Data unavailable — no tagged earnings/corporate-action article metadata found.")
+
+    lines += ["", "## Macro and Policy Outlook", ""]
+    macro_hits = [name for name in ("rates/policy", "inflation/macro", "commodities", "credit/banks") if counts.get(name)]
+    lines.append("- Macro theme intensity: " + (", ".join(f"{name}={counts[name]}" for name in macro_hits) if macro_hits else "Data unavailable — no macro keyword concentration detected."))
+
+    lines += ["", "## Next Week Calendar and Watchlist", ""]
+    lines.append("- Use the next pre-market run to refresh event timing and consensus figures; this deterministic rollup does not fabricate forward calendar items absent from source briefings.")
+    for ctx in best_contexts[:3]:
+        if "calendar" in ctx["text"].lower() or "watch" in ctx["text"].lower():
+            lines.append(f"- Watchlist context from {ctx['date']} {ctx['mode']}: `{ctx['path'].relative_to(PROJECT_ROOT)}`")
+
+    lines += ["", "## Contrarian Flags and Underpriced Risks", ""]
+    risk_terms = {"contrarian": keyword_count(["contrarian"]), "risk": keyword_count(["risk"]), "divergence": keyword_count(["divergence"]), "volatility": keyword_count(["volatility", "vix"])}
+    for name, count in sorted(risk_terms.items(), key=lambda x: x[1], reverse=True):
+        if count:
+            lines.append(f"- **{name}:** {count} mentions; review source excerpts above for context before acting.")
+    if not any(risk_terms.values()):
+        lines.append("Data unavailable — no explicit contrarian/risk markers detected.")
+
+    lines += ["", "## Source Notes and Data Quality", ""]
+    if missing:
+        lines.append("### Missing run markdown")
+        for s in missing:
+            lines.append(f"- {s['date']} {s['mode']}: no briefing.md, summary.md, or articles.md found")
+    else:
+        lines.append("- All expected run slots had markdown context for the selected week window.")
+    lines.append("- Source priority: daily/temporal_brief.md → run briefing.md → run summary.md → articles.md; article metadata: articles_enriched.json → articles.json.")
+    lines.append("- This script aggregates and excerpts verified artifacts; final PM synthesis should preserve source/timestamp caveats from the underlying briefings.")
+
     return "\n".join(lines)
 
 

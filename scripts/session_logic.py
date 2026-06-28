@@ -98,7 +98,7 @@ def session_window(target_date: str | date, mode: str) -> dict[str, object]:
 
     pre-market: previous trading day's 4:00 PM close through 6:00 AM ET.
     post-market: same trading day's 9:30 AM open through 6:00 PM ET.
-    weekend: Friday/previous trading day's 4:00 PM through Sunday 10:00 AM ET.
+    weekend: 72 hours ending Sunday 10:00 AM ET (or target date 10:00 AM).
     """
     d = date.fromisoformat(target_date) if isinstance(target_date, str) else target_date
     if mode == "pre-market":
@@ -113,13 +113,12 @@ def session_window(target_date: str | date, mode: str) -> dict[str, object]:
         end = datetime.combine(d, time(18, 0), tzinfo=NY)
         label = "regular trading day + immediate after-hours"
     elif mode == "weekend":
-        prev = d
-        while prev.weekday() != 4 or not is_trading_day(prev):
-            prev = previous_trading_day(prev)
-        start = datetime.combine(prev, time(16, 0), tzinfo=NY)
-        # Weekend job may run Sunday morning; keep end deterministic from target date.
+        # Weekend research is intentionally broader than a single Friday-close
+        # tape window. The cron/docs contract is 72h so long-form Friday/Saturday
+        # context is accepted without confusing agents with a 42h plan.
         end = datetime.combine(d, time(10, 0), tzinfo=NY)
-        label = "weekend / week-ahead window"
+        start = end - timedelta(hours=72)
+        label = "weekend / week-ahead 72h window"
     else:
         raise ValueError(f"unknown mode: {mode}")
     hours = round((end - start).total_seconds() / 3600, 2)
