@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Weekend Briefing | 2026-06-28</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Weekend Briefing</span></h1>
+    <div class="subtitle">2026-06-28 &middot; 6 articles &middot; 3 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#weekly-market-scoreboard">Weekly Market Scoreboard</a><a class="toc-link toc-level-2" href="#the-week-s-core-narrative">The Week&#x27;s Core Narrative</a><a class="toc-link toc-level-2" href="#macro-and-policy-review">Macro and Policy Review</a><a class="toc-link toc-level-2" href="#equity-and-sector-review">Equity and Sector Review</a><a class="toc-link toc-level-2" href="#commodities-fx-credit-and-volatility">Commodities, FX, Credit, and Volatility</a><a class="toc-link toc-level-2" href="#geopolitics-and-event-risk">Geopolitics and Event Risk</a><a class="toc-link toc-level-2" href="#next-week-playbook">Next Week Playbook</a><a class="toc-link toc-level-2" href="#historical-context">Historical Context</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-weekend-briefing-sunday-june-28-2026">BoltNews Weekend Briefing — Sunday, June 28, 2026</h1>
+<p><strong>Coverage window:</strong> Friday June 26, 2026 4:00 PM ET through Sunday June 28, 2026 10:00 AM ET.  </p>
+<p><strong>Mode:</strong> Weekend.  </p>
+<p><strong>Primary artifact:</strong> <code>runs/2026-06-28/weekend/briefing.md</code>.  </p>
+<p><strong>Data standard:</strong> Fresh articles only for current-news sections; older context is labeled and sourced to prior BoltNews markdown only.</p>
+<h2 id="weekly-market-scoreboard">Weekly Market Scoreboard</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Friday / latest level</th><th>Weekly / latest move</th><th>Source and as-of</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,354.02</td><td>-146.56 / -2.0% week; -3.47 Friday</td><td>AP/Barchart, Fri Jun 26 3:25 PM CDT / 4:25 PM ET</td></tr><tr><td>Nasdaq Composite</td><td>25,297.62</td><td>-1,220.31 / -4.6% week; -60.99 Friday</td><td>AP/Barchart, Fri Jun 26 3:25 PM CDT / 4:25 PM ET</td></tr><tr><td>Dow Jones Industrial Average</td><td>51,876.11</td><td>+311.41 / +0.6% week; -44.51 Friday</td><td>AP/Barchart, Fri Jun 26 3:25 PM CDT / 4:25 PM ET</td></tr><tr><td>Russell 2000</td><td>3,010.08</td><td>+30.32 / +1.0% week; +2.23 Friday</td><td>AP/Barchart, Fri Jun 26 3:25 PM CDT / 4:25 PM ET</td></tr><tr><td>VIX</td><td>18.38–18.41</td><td>Cboe page -0.48; Yahoo/MarketWatch snippets showed 18.41 close</td><td>Cboe market data fetched Jun 28; MarketWatch search snippet as of Jun 26 3:15 PM CDT</td></tr><tr><td>VIX futures</td><td>Jul 22 VX 19.35; Aug 19 VX 19.95; Sep 16 VX 20.51</td><td>Upward-sloping curve after spot VIX decline</td><td>Cboe market data fetched Jun 28</td></tr><tr><td>2Y Treasury</td><td>4.07%–4.096%</td><td>Reuters: -2.48 bps Friday; Advisor Perspectives: 4.07% close</td><td>Reuters Jun 26; Advisor Perspectives Jun 26</td></tr><tr><td>10Y Treasury</td><td>4.38%</td><td>Reuters: -1.16 bps Friday; Advisor Perspectives: 4.38% close</td><td>Reuters Jun 26; Advisor Perspectives Jun 26</td></tr><tr><td>2s10s</td><td>+28 to +31 bps</td><td>Positive / uninverted</td><td>Reuters and Advisor Perspectives Jun 26</td></tr><tr><td>DXY</td><td>101.35</td><td>-0.16% Friday; second weekly gain</td><td>Reuters Jun 26</td></tr><tr><td>USD/JPY</td><td>161.76</td><td>Near 40-year lows for yen; above 160 intervention-watch level</td><td>Reuters Jun 26</td></tr><tr><td>Brent crude</td><td>$71.99–$72.00/bbl</td><td>-4.34% Friday</td><td>CNBC Jun 28 citing Friday settlement; Reuters Jun 26</td></tr><tr><td>WTI crude</td><td>$69.23/bbl</td><td>-3.74% Friday; first sub-$70 close since Feb. 27 per CNBC</td><td>CNBC Jun 28</td></tr><tr><td>Gold spot</td><td>$4,068.72–$4,083.50/oz</td><td>Reuters: +1.06% Friday; TipRanks: +1.56% latest; Reuters gold article: -2.1% week</td><td>Reuters Jun 26; TipRanks Jun 28</td></tr><tr><td>Bitcoin</td><td>$59,923.97</td><td>+0.28% latest</td><td>TipRanks Jun 28</td></tr></tbody></table></div>
+<p><strong>Scoreboard read-through:</strong> The tape was not a broad liquidation. AP/Barchart reported the S&amp;P 500 down 2.0% and Nasdaq down 4.6% for the week, while the Dow gained 0.6% and Russell 2000 gained 1.0%. The cross-asset confirmation was concentrated in tech de-risking, lower oil, lower Treasury yields, a still-firm dollar, and VIX spot below 19 with futures in contango.</p>
+<h2 id="the-week-s-core-narrative">The Week's Core Narrative</h2>
+<p><strong>1) AI leadership broke, but breadth did not.</strong> AP/Barchart reported the Nasdaq lost 4.6% for the week while the Russell 2000 rose 1.0%; CNBC reported the Nasdaq posted a fifth losing session on Friday and the S&amp;P 500 fell nearly 2% for the week. Reuters reported the PHLX Semiconductor Index fell 5.3% Friday and 7.7%–7.9% for the week. The market message is rotation out of crowded AI/chip exposure rather than indiscriminate risk-off.</p>
+<p><strong>2) The AI cost story moved from capex to inflation pass-through.</strong> Reuters and CNBC both tied Friday's chip weakness to rising AI infrastructure and memory costs. CNBC reported Micron fell more than 6% by Friday's close, AMD fell 2%, Intel fell more than 3%, and the S&amp;P 500 information technology sector fell 1%. Reuters reported Apple rose 3.1% Friday after a Thursday selloff tied to iPad and MacBook price hikes caused by soaring memory and storage chip costs.</p>
+<p><strong>3) Rates are now a two-sided risk: softer oil lowered yields Friday, but the Fed-hike distribution remains live.</strong> Reuters reported May PCE inflation at 4.1% year over year and a CME FedWatch September hike probability of 59% in its gold article; separate Reuters/LSEG reporting said traders priced one 25 bp Fed hike this year and a near-27% chance of another by year-end. Reuters polling found more than three-quarters of economists expect the Fed to hold the 3.50%–3.75% range through 2026, creating a divergence between economist medians and market-implied hike risk.</p>
+<p><strong>4) Positioning deteriorated before prices broke broadly.</strong> Reuters/LSEG Lipper reported U.S. equity funds saw $3.53B of outflows in the week to June 24 after $37.63B of inflows the prior week. Technology funds saw nearly $20B of outflows, reversing the prior week's $21.46B inflows. Bond funds still attracted $7.33B, though that was an eight-week low, while money-market funds saw $25.74B of outflows.</p>
+<p><strong>5) Geopolitics stopped being a linear oil-long trade.</strong> CNBC reported fresh U.S.-Iran escalation and missile/drone attacks involving Kuwait and Bahrain, but the same article cited Friday settlements with Brent down 4.34% to $71.99 and WTI down 3.74% to $69.23 as more tankers exited Hormuz. The market is treating supply normalization as the dominant near-term oil input, while weekend headline risk remains material.</p>
+<h2 id="macro-and-policy-review">Macro and Policy Review</h2>
+<p><strong>Fed and inflation.</strong> Reuters' June 26 poll article reported the federal funds target range at 3.50%–3.75%, with more than three-quarters of surveyed economists expecting no change through the rest of 2026. Reuters also reported inflation above 4%, roughly double the Fed's 2% target, and that 9 of 19 policymakers excluding Chair Kevin Warsh's abstention expected at least one hike by end-2026. The distribution is no longer cut-versus-hold; it is hold-versus-hike.</p>
+<p><strong>Market-implied policy.</strong> Reuters' gold article reported CME FedWatch priced a 59% September hike probability, down from 64% earlier, after the May PCE Price Index rose 4.1% year over year in line with Reuters-polled estimates. Reuters' equity close article reported traders priced one 25 bp hike and a near-27% chance of another by year-end. The immediate macro risk is that Thursday's June payrolls release is treated as "bad news is good news" only if it is soft enough to reduce hike odds without raising recession fear.</p>
+<p><strong>Rates curve.</strong> Advisor Perspectives/dshort reported the 10Y Treasury yield finished June 26 at 4.38% and the 2Y at 4.07%, implying a positive 10Y-2Y spread of about +31 bps. Reuters' global markets piece reported the 10Y fell 1.16 bps to 4.38% and the 2Y fell 2.48 bps to 4.096% on Friday as oil fell. The curve is uninverted, but not because recession risk disappeared; it reflects a mix of oil relief at the long end and a Fed path still anchored by inflation.</p>
+<p><strong>BIS systemic-risk warning.</strong> CNBC reported the Bank for International Settlements' Annual Economic Report flagged high public debt, inflation pressures, financial fragilities, and uncertainty around the AI boom. BIS General Manager Pablo Hernandez de Cos said, "Policy actions must reinforce each other to avoid a pull and push on the global economy," and "Policymakers must act now. Delay will only make the necessary adjustments more costly." Acting monetary/economic head Frank Smets warned the new fiscal-financial stability nexus may mean "more frequent and sharper drops in sovereign bond values."</p>
+<p><strong>Next-week macro calendar.</strong> FRED's release calendar for Jun. 28-Jul. 4 showed 34 releases Monday, 37 Tuesday, 48 Wednesday, 42 Thursday, 16 Friday, and 2 Saturday, with all times in U.S. Central Time. The New York Fed June calendar showed Monday Jun. 29 Dallas Fed Manufacturing Survey at 10:30 ET and Tuesday Jun. 30 Consumer Confidence, JOLTS, and Dallas Fed Texas Retail Outlook Survey. Reuters and CNBC both identified the Thursday June payrolls report as the main macro event because Friday is the Independence Day market holiday.</p>
+<h2 id="equity-and-sector-review">Equity and Sector Review</h2>
+<p><strong>Index and breadth split.</strong> AP/Barchart reported the S&amp;P 500 closed at 7,354.02, Nasdaq at 25,297.62, Dow at 51,876.11, and Russell 2000 at 3,010.08. Weekly: S&amp;P 500 -2.0%, Nasdaq -4.6%, Dow +0.6%, Russell +1.0%. Reuters' equity-close piece reported S&amp;P 500 advancers outnumbered decliners 1.8-to-1 on Friday even though the cap-weighted index declined, confirming that index weakness was concentrated in AI/chip leadership rather than in equal-weight breadth.</p>
+<p><strong>Semiconductors and AI infrastructure.</strong> Reuters reported the PHLX Semiconductor Index dropped 5.3% Friday and 7.9% for the week, its worst weekly performance since early April. CNBC reported Micron fell more than 6%, AMD fell 2%, Intel fell more than 3%, and S&amp;P 500 information technology fell 1% Friday. CNBC's global tech article added cross-border damage: SoftBank -5% in one account and more than 12% in CNBC live updates; SK Hynix -8% to -9%+, Samsung -5% to -8%, Advantest nearly -10% to more than -10%, and Tokyo Electron -3%.</p>
+<p><strong>Defensive rotation.</strong> CNBC reported healthcare gained more than 7% for the week, its best weekly advance since June 2022, with Eli Lilly up 7%, Johnson &amp; Johnson almost 4%, and AbbVie more than 4% on Friday. Investopedia reported weekly sector winners of healthcare above 7%, real estate about 3.5%, utilities about 3.5%, and consumer staples 1.6%, while communications fell 5.5% and technology was among the largest losers.</p>
+<p><strong>Single-stock and deal risk.</strong> Reuters reported Moderna rose nearly 13% after a pipeline investor event and ON Semiconductor fell almost 24% after agreeing to acquire Synaptics in an all-stock transaction valued at about $7B. Reuters also reported SpaceX edged up 0.15% Friday and that passive index funds were expected to buy billions of dollars of shares ahead of Russell index inclusion; Investopedia separately reported SpaceX traded around $156-$157 versus a $135 public offering price and roughly $225 post-IPO peak.</p>
+<p><strong>Positioning implication.</strong> Reuters/LSEG Lipper's nearly $20B technology fund outflow is the cleanest positioning signal in the run. The contrarian question is whether the outflows are capitulation after a crowded trade, or the first forced unwind of AI-beta financing assumptions. The breadth data argues against a market-wide unwind; the size of tech outflows argues against treating it as noise.</p>
+<h2 id="commodities-fx-credit-and-volatility">Commodities, FX, Credit, and Volatility</h2>
+<p><strong>Oil.</strong> CNBC reported Brent August settled Friday down 4.34% at $71.99/bbl and WTI August down 3.74% at $69.23/bbl, the latter described as the first close below $70 since Feb. 27. Reuters' global markets piece similarly reported Brent around $72 and linked the fall to more tankers leaving the Strait of Hormuz and Saudi Aramco resuming loading at Ras Tanura after an almost four-month halt, according to LSEG shipping data.</p>
+<p><strong>Gold and precious metals.</strong> Reuters reported spot gold rose 1.3% to $4,077.64/oz by 1:35 p.m. EDT Friday and U.S. August gold futures settled 1.2% higher at $4,096.30/oz, but spot gold remained down 2.1% for the week. Reuters said CME FedWatch September hike odds fell to 59% from 64% earlier, helping the bounce, while higher rates still reduce the appeal of non-yielding bullion. Reuters also reported silver +2.2% to $59.12/oz, platinum +2.0% to $1,632.80/oz, and palladium +2.5% to $1,213.87/oz.</p>
+<p><strong>FX.</strong> Reuters reported the dollar index fell 0.16% to 101.35 Friday but was headed for a second weekly gain. USD/JPY stood at 161.76, near its weakest level in 40 years and beyond the 160-per-dollar level widely watched for Japanese intervention risk. Reuters' dollar feature reported speculators held around $30B of net long dollar positions and BofA estimated $341B had flowed into U.S. equities so far this year versus $134B at the same point last year.</p>
+<p><strong>Credit and fund flows.</strong> Fresh public-credit-spread data was not directly extractable in the lane within the time budget. Reuters/LSEG Lipper did report U.S. bond funds attracted $7.33B in the week to June 24, including $2.95B into short-to-intermediate investment-grade funds, $2.03B into general domestic taxable fixed-income funds, and $633M into municipal debt funds. The inflow slowed to an eight-week low, so credit demand remained positive but less aggressive.</p>
+<p><strong>Volatility.</strong> Cboe's extracted VIX data showed spot VIX around 18.38 with July 22 VIX futures at 19.35, August at 19.95, September at 20.51, October at 21.10, and November at 21.27. The upward-sloping curve implies the market is not paying crisis prices for near-term hedges despite a 4.6% weekly Nasdaq loss. This is a contrarian complacency flag if weekend geopolitical escalation carries into Monday.</p>
+<h2 id="geopolitics-and-event-risk">Geopolitics and Event Risk</h2>
+<p><strong>Strait of Hormuz / Iran.</strong> CNBC reported U.S. Central Command said U.S. fighter jets struck 10 Iranian military targets in and near the Strait of Hormuz early Sunday. The stated trigger was a drone strike on the Panamanian-flagged M/T Kiku, which CNBC reported was carrying more than two million barrels of crude while transiting the strait. CNBC also reported Kuwait and Bahrain described hostile missile/drone attacks overnight, and Bahrain called the attacks a dangerous escalation and repeated aggression.</p>
+<p><strong>Transmission channel.</strong> The immediate channel is oil, shipping insurance, and inflation expectations. The market ended Friday with oil down, not up, because more tankers were leaving Hormuz and near-term supply fears eased. If Sunday escalation changes shipping flow data or insurance costs before Monday open, the first-order trades are WTI/Brent upside, airline/transport downside, higher breakevens, and renewed Fed-hike pricing.</p>
+<p><strong>Tariffs and tech geopolitics.</strong> Reuters reported President Trump threatened a 100% tariff on goods from any country that imposes a digital services tax on American companies. Reuters said France currently applies a 3% digital services levy and French lawmakers have proposed raising it to 6%; Trump said the new tariff would supersede trade deals "whether implemented, signed or not." This is directly relevant to U.S. mega-cap tech because the tax target is digital revenue from large U.S. platforms.</p>
+<p><strong>Weekend gap risk.</strong> The market is priced as if lower oil and rotation can coexist with contained geopolitical headlines. That is a narrow path: CNBC's Sunday Iran report is inconsistent with a zero-risk weekend, while Cboe VIX spot below 19 implies limited immediate hedge demand.</p>
+<h2 id="next-week-playbook">Next Week Playbook</h2>
+<p><strong>Monday, June 29.</strong> Watch Dallas Fed Manufacturing Survey at 10:30 ET per the New York Fed calendar. Equity focus: whether small caps and defensive sectors can continue absorbing AI/semiconductor outflows. Key levels: S&amp;P 500 7,354 Friday close; Nasdaq 25,297.62; Russell 3,010.08.</p>
+<p><strong>Tuesday, June 30.</strong> New York Fed calendar lists Consumer Confidence and JOLTS at 10:00 ET and Dallas Fed Texas Retail Outlook Survey at 10:30 ET. A stronger labor-demand signal could lift hike odds; a weak signal could pressure cyclicals but relieve long-duration tech.</p>
+<p><strong>Wednesday, July 1.</strong> FRED shows 48 scheduled releases on July 1. Monitor ISM/PMI-style activity data if released and euro-zone inflation follow-through from Reuters Take Five's Sintra/ECB setup. FX focus: USD/JPY around 161.76 and Japanese intervention rhetoric.</p>
+<p><strong>Thursday, July 2.</strong> Reuters and CNBC identify U.S. June payrolls as the central catalyst because markets are closed Friday for Independence Day. Reuters/KITCO anchors: May payrolls +172,000; June consensus in Reuters article +110,000, while Kitco/Reuters cited Jefferies at +135,000. A payroll upside surprise is not automatically bullish if it pushes September hike probability above the 59% Reuters/FedWatch level.</p>
+<p><strong>Friday, July 3.</strong> U.S. market holiday for Independence Day observance per Reuters/CNBC. Liquidity risk concentrates ahead of the closure: CNBC said lower holiday-week volume, quarter-end rebalancing, and profit-taking after first-half gains could amplify swings.</p>
+<p><strong>Bull/base/bear scenarios.</strong> Bull case: oil stays below $72 Brent, payrolls are soft enough to cap hike odds, and Russell/healthcare/financials keep breadth positive while semis stabilize. Base case: Nasdaq remains volatile but breadth prevents index-level drawdown; VIX futures stay in contango; dollar remains firm. Bear case: Hormuz headlines reverse oil lower, payrolls revive hike fears, and tech outflows become forced selling rather than rotation.</p>
+<h2 id="historical-context">Historical Context</h2>
+<p>Historical context is from prior BoltNews markdown artifacts, not fresh web search.</p>
+<p>The June 26 BoltNews weekly rollup recorded the same core bifurcation: S&amp;P 500 7,354.02 (-1.95% week), Nasdaq 25,297.62 (-4.60%), Dow 51,876.11 (+0.60%), Russell 2000 3,010.08 (+1.02%), VIX 18.41, 2Y 4.07%, 10Y 4.38%, DXY 101.35, WTI about $69.20, Brent $72.47, gold $4,063.70, and Bitcoin about $60,016. It described the week as "the AI trade bifurcated" and noted breadth improved while cap-weighted indices fell.</p>
+<p>The prior BoltNews rollup also recorded a June theme of AI memory cost pass-through: Apple and Microsoft price hikes, Micron's strong AI-memory fundamentals, and oil collapse to pre-war levels. Today's fresh extraction confirms the same narrative persisted into the weekend, but adds two developments: Reuters/LSEG Lipper's nearly $20B technology-fund outflow and CNBC's Sunday U.S.-Iran/Hormuz escalation.</p>
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<p><strong>Primary / official sources used.</strong> FRED release calendar; New York Fed economic calendar; Cboe VIX futures market-data page.</p>
+<p><strong>Newswire / secondary sources used.</strong> Reuters, CNBC, AP/Barchart, TipRanks, Investopedia, Advisor Perspectives/dshort. Reuters was preferred where available; CNBC and AP/Barchart were used for Friday close/sector/event details when their extraction provided more explicit levels or timestamps.</p>
+<p><strong>Timestamps and freshness.</strong> The generated weekend window was Jun. 26 4:00 PM ET to Jun. 28 10:00 AM ET. Articles with exact timestamps inside the window: TipRanks Jun. 28 04:26 ET; AP/Barchart Fri Jun. 26 3:25 PM CDT / 4:25 PM ET. Some Reuters/CNBC extracted pages exposed date but not exact publication time; those records are retained with <code>source_published_date</code> and <code>fetched_at</code> rather than fabricated source times. Current-news claims from those sources are limited to articles dated Jun. 26-Jun. 28 and fetched during the run.</p>
+<p><strong>Lane status.</strong> Market-snapshot: ok. Overnight/session narrative: ok. Macro-policy-rates-FX: ok with official calendars and Reuters/CNBC policy sources. Equities/earnings/single-stocks: ok for sector and single-stock moves; no fresh full earnings calendar extraction beyond CNBC/MarketWatch search results. Commodities-credit-vol: partial because fresh public credit-spread levels were not extracted; Reuters fund-flow bond data was used instead. Dedupe-validation-synthesis: ok after dropping stale or no-substance search hits.</p>
+<p><strong>Sources/process failures or downgrades.</strong> Yahoo Finance chart API returned HTTP 429 for deterministic market-data pulls, so scoreboard prices were sourced from AP/Barchart, Reuters, CNBC, TipRanks, Advisor Perspectives, and Cboe. Several search results were rejected as stale or outside the weekend window, including Reuters articles from Jun. 17-25 except where used only as labeled background in extracted source summaries; no stale web search was used for the Historical Context section. Bloomberg, WSJ, and some Reuters pages did not expose full text directly through extraction; where extraction returned substantive summaries rather than raw full article text, source quality is labeled as secondary/extracted summary rather than primary raw feed.</p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.tipranks.com/news/the-week-that-was-the-week-ahead-macro-and-markets-june-28" target="_blank" rel="noopener">The Week That Was, The Week Ahead: Macro and Markets, June 28</a>
+<a class="source-link" href="https://www.barchart.com/story/news/3006092/how-major-us-stock-indexes-fared-friday-6-26-2026" target="_blank" rel="noopener">How major US stock indexes fared Friday 6/26/2026</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/28/debt-ai-boom-and-economic-fragilities-raise-global-risks-bis-says.html" target="_blank" rel="noopener">Debt, AI boom and economic fragilities raise global risks, BIS says</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/28/trump-threatens-iran-with-annihilation-kuwait-bahrain-report-attacks.html" target="_blank" rel="noopener">Trump again threatens Iran with annihilation as Kuwait and Bahrain report attack</a>
+<a class="source-link" href="https://fred.stlouisfed.org/releases/calendar" target="_blank" rel="noopener">Economic Release Calendar</a>
+<a class="source-link" href="https://www.cboe.com/tradable-products/vix/vix-futures/" target="_blank" rel="noopener">VIX Futures</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-28 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
