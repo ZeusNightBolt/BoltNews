@@ -323,6 +323,28 @@ else:
         print(f"[7/8] Temporal reasoning: skipped (mode={args.mode})")
 
 # ═══════════════════════
+# Stage 8: Senior PM Telegram Recap
+# ═══════════════════════
+# Cron delivery is the agent's final Telegram message. Still generate a compact,
+# deterministic recap artifact here so every cron run has a validated PM-style
+# summary to quote after deploy instead of relying on ad-hoc memory.
+recap_path = run_dir / "senior_pm_recap.md"
+print("[8/8] Generating compact Senior PM recap for Telegram delivery...")
+result = safe_run(
+    [
+        "python3.12", str(SCRIPTS_DIR / "senior_pm_recap.py"),
+        "--briefing", str(run_dir / "briefing.md"),
+        "--mode", args.mode,
+        "--output", str(recap_path),
+        "--max-chars", "1200",
+    ],
+    timeout=30, label="senior_pm_recap",
+)
+if result.returncode != 0:
+    print("FATAL: Senior PM recap generation failed. Refusing final success/Telegram-ready output.", file=sys.stderr)
+    sys.exit(1)
+
+# ═══════════════════════
 # Complete
 # ═══════════════════════
 print()
@@ -330,6 +352,7 @@ print("=== Pipeline Complete ===")
 print(f"Summary:  {summary_path}")
 print(f"Dashboard: {dashboard_path}")
 print(f"Articles: {articles_path}")
+print(f"Senior PM Recap: {recap_path}")
 print(f"GH Pages: {PAGES_URL if 'PAGES_URL' in dir() else 'https://zeusnightbolt.github.io/BoltNews/'}")
 if args.mode == "pre-market":
     yesterday = date.fromisoformat(run_date) - timedelta(days=1)

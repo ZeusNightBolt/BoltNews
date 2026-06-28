@@ -8,7 +8,8 @@ BoltNews briefings are research notes, not headline digests. The authoritative a
 - Every market claim with a price, yield, spread, percentage, index level, EPS, revenue, guidance item, timestamp, or policy probability must cite a source and as-of time/date.
 - Current-news sections use fresh articles inside the run's recency window. Historical context must come from prior BoltNews markdown artifacts and be labeled as context.
 - If a required section lacks verified data, keep the heading and write `Data unavailable — <reason>` rather than fabricating.
-- Failure modes: headline-only output, missing current-market snapshot, stale article backfill, unsupported numeric claims, missing timestamps, or section order drift.
+- Failure modes: headline-only output, missing current-market snapshot, stale article backfill, unsupported numeric claims, missing timestamps, section order drift, or Telegram delivery without a compact `## Senior PM Recap` sourced from the validated `briefing.md`.
+- After validation/deploy, generate `senior_pm_recap.md` with `scripts/senior_pm_recap.py` and include it in the Telegram notification before links/log details. The recap must be compact, portfolio-manager style, and must not introduce claims absent from `briefing.md`.
 
 ## Pre-market template
 
