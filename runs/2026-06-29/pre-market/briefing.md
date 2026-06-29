@@ -1,320 +1,279 @@
 # BoltNews Pre-Market Briefing — Monday, June 29, 2026
 
----
-
 ## Futures and Current Market Snapshot
 
-**S&P 500 futures (ES=F): +0.73%** | **Nasdaq 100 futures (NQ=F): +1.10%** | **Dow futures (YM=F): +0.41%**
+**As of ~8:45 AM ET, June 29, 2026**
 
-- **S&P 500** prior close: 7,354.02 (-0.05% Friday)
-- **Nasdaq Composite** prior close: 25,297.62 (-0.24% Friday)
-- **Dow Jones** prior close: 51,876.11 (-0.09% Friday)
-- **Russell 2000** prior close: 3,010.08 (+0.07% Friday)
-- **VIX**: 18.41 (prior session close 18.89 on June 25; was 16.41 before last week's selloff)
-- **10Y Treasury yield**: 4.38% (vs 4.40% prior session)
-- **DXY**: 101.28 (-0.15% from prior session)
-- **WTI crude**: ~$70/bbl (+1.2%) | **Brent**: ~$72.50/bbl (+0.7%)
-- **Gold**: $4,043/oz (-1.08%) | **Silver**: $58.59/oz
+| Contract | Level | Change | % Chg |
+|----------|-------|--------|-------|
+| E-Mini S&P 500 (ES) | 7,461.25 | +59.50 | +0.80% |
+| E-Mini Nasdaq 100 (NQ) | 29,700.00 | +331.75 | +1.13% |
+| E-Mini Dow (YM) | 52,420 | +211 | +0.40% |
 
-**Deterministic snapshot source**: `market_snapshot.py` for index closes; article extraction for futures/commodities/FX.
+*Source: MarketWatch DX00 page, Yahoo Finance live blog*
+
+**Friday (June 26) Closing Levels** — *Source: market_snapshot.json (Yahoo Finance API)*
+
+| Index | Close | Change |
+|-------|-------|--------|
+| S&P 500 | 7,354.02 | -0.05% |
+| Nasdaq Composite | 25,297.62 | -0.24% |
+| Dow Jones Industrial | 51,876.11 | -0.09% |
+| Russell 2000 | 3,010.08 | +0.07% |
+| VIX | 18.32 | -0.49% (from 18.41) |
+
+**Weekly Performance (June 22-26):** S&P 500 -2%; Nasdaq -4.5% (fifth straight daily decline); Dow +0.6% (healthcare rotation). NVDA and GOOGL both -8%+ for the week. S&P 500 health care sector +7%, biggest weekly gain since June 2022. Oracle -19%, worst week since 2001. *(Sources: CNBC, Yahoo Finance, WSJ)*
+
+**Key Levels in Pre-Market Futures (Cross-Asset Snapshot):**
+- DXY: 101.02 (-0.11%) — *MarketWatch, Jun 29 7:19 AM*
+- 10Y Yield: ~4.37%-4.38% — *Trading Economics, Bloomberg*
+- 2Y Yield: ~4.07% — *YCharts, MarketWatch T-Note prices*
+- 30Y Yield: ~5.00% — *Bloomberg*
+- WTI Crude (Aug): $69.88 (+1.21%) — *CNBC, Jun 29 8:44 AM*
+- Brent Crude: $72.45 (+0.6%) — *CNBC, Jun 29 8:44 AM*
+- Gold: $4,045-4,049/oz (-1.15%) — *MarketWatch, Trading Economics*
+- Bitcoin: ~$59,964 — *CoinStats, Jun 29*
 
 ---
 
 ## Overnight Top Developments
 
-### 1. US-Iran Ceasefire After Weekend Escalation
+### 1. US-Iran Ceasefire: Stand-Down After Weekend of Tit-for-Tat Strikes *(Dominant Catalyst)*
 
-The dominant overnight narrative. The US struck **10 Iranian military targets** near the Strait of Hormuz on Saturday in retaliation for an Iranian drone strike on the Panamanian-flagged tanker **M/T Kiku** (carrying >2M barrels of crude). Iran's neighbors Kuwait and Bahrain also reported incoming missiles. By Sunday, both sides agreed to a stand-down:
+The U.S. and Iran agreed Sunday to halt attacks and resume negotiations Tuesday in Qatar after a weekend of escalated hostilities that threatened to derail the June 17 MOU ceasefire framework. Futures are pricing relief: Nasdaq 100 up 1.2%, S&P 500 up 0.8%.
 
-> "Technical talks are slated to continue on all areas of the MOU. Both sides will stand down for now and vessels can move freely." — US official to CNBC
+**Chronology:**
+- **Thursday:** Iranian projectile hit Singapore-flagged cargo vessel in Strait of Hormuz. Iran declared vessels not using "designated routes" would not be guaranteed safe passage.
+- **Friday:** U.S. CENTCOM struck 10 Iranian military targets (drone sites, radar installations, missile infrastructure).
+- **Saturday:** Panama-flagged tanker M/T Kiku struck by Iranian drone (2M+ barrels aboard). U.S. retaliated. Iran launched missiles/drones at U.S. bases in Kuwait and Bahrain. Trump warned: "Iran will no longer exist" if forced to "militarily complete the job."
+- **Sunday:** Bahrain residential building damaged; Kuwait intercepted 2 ballistic missiles. No casualties. U.S. official to Axios: "Both sides will stand down for now and vessels can move freely."
 
-President Trump posted on Truth Social warning the US may "militarily complete the job" if Iran violates the ceasefire again. Vice President JD Vance is in Switzerland for high-level talks.
+**What changed:** Talks resume Tuesday in Qatar, shifted from Switzerland. Focus now on Strait of Hormuz maritime security rather than Iran's nuclear program. Israel continued Lebanon attacks over the weekend — Iran insists any ceasefire must include Lebanon.
 
-**Market impact**: Futures were negative overnight but flipped positive on the ceasefire. Oil snapped a three-week losing streak — Brent +0.7% to $72.50, WTI +1.2% to $70. The geopolitical risk premium that had collapsed (Brent -10% last week alone) is partially rebuilt. ING strategists Warren Patterson & Ewa Manthey flagged complacency: "This complacency is odd and clearly leaves significant upside risk if the supply recovery proves slow or if we see significant re-escalation."
+*Sources: TIME (Miranda Jeyaretnam, Jun 29), CNBC (Jun 29), Yahoo Finance (Jun 29), NPR (Jun 29)*
 
-### 2. Tech Rout Carries Over From Last Week
+### 2. Futures Rebound After Friday's Fifth Straight Decline
 
-Friday's carnage was historic for tech: **Nasdaq -5.0% for the week** (worst since April 2025), **S&P 500 -2.0%**. Mag7 names: NVDA -8%+, GOOG -8%+, AAPL/AMZN/META -4%+ each. A space stock crashed 17%. The Dow (+0.62%) and Russell 2000 (+0.07% Friday) were relative havens.
+S&P 500 futures +0.8%, Nasdaq 100 +1.13%, Dow +0.4%. Pre-market strength concentrated in tech and telecom. Friday's close marked the S&P 500's fifth straight daily decline — its longest losing streak since April 2025. The Nasdaq lost 4.5% last week, driven by persistent tech selling. *(Sources: Yahoo Finance, MarketWatch)*
 
-Schwab's Nathan Peterson flagged a structural concern: **margin debt hit a record $1.42 trillion in May**, +50% YoY — "a rate not seen since 2007 and considered by some to indicate speculative excess." The trigger was a **10% overnight KOSPI crash** (SK Hynix, Samsung dominated) which forced de-leveraging that spilled into US tech.
+### 3. Comcast to Spin Off NBCUniversal/Sky — Stock +20% Pre-Market
 
-### 3. Week Ahead: NFP Thursday (Pulled Forward for Holiday)
+Comcast (CMCSA) surged 20% pre-market after announcing it will spin off its media portfolio (NBCUniversal and Sky) into a separate entity. Co-CEO Mike Cavanagh will lead NBCUniversal; former CFO Michael Angelakis will run the remaining telecom company. Completion expected in ~1 year. *(Source: CNBC, Jun 29)*
 
-Holiday-shortened week with markets **closed Friday, July 3** for Independence Day. The June jobs report lands **Thursday, July 2 at 8:30 AM ET**. Consensus: **~170K new jobs** (slowdown from May). Core PCE inflation hit **3.4% YoY** in May (highest since October 2023). Fed funds futures now price a rate hike as soon as September. Fed Chair Warsh's hawkish stance is being absorbed.
+### 4. Rocket Lab to Acquire Iridium Communications
 
-**Earnings**: Nike (NKE) reports Tuesday after close — consensus EPS $0.13, revenue $10.85B (-2.2% YoY). Also: STZ Tuesday, GIS Wednesday.
+Rocket Lab (RKLB) jumped 10%+ and Iridium (IRDM) surged 20%+ after Rocket Lab announced the acquisition of Iridium, combining launch capabilities with satellite communications infrastructure. *(Source: CNBC, Jun 29)*
+
+### 5. Charter/SpaceX Consumer Phone Talks — CHTR +20%
+
+Charter Communications (CHTR) soared nearly 20% on a Bloomberg report that the company and SpaceX held exclusive talks on a consumer phone product. Charter could run SpaceX consumer mobile traffic through its ground internet infrastructure. SpaceX (SPCX) separately rose 2% on Nasdaq 100 inclusion announcement (effective July 7). *(Source: CNBC, Jun 29)*
+
+### 6. Alphabet Joins Dow Jones — First Day of Trading
+
+Alphabet (GOOGL) +1% pre-market on its first day in the Dow Jones Industrial Average, replacing Verizon (VZ, -0.5%). VZ disclosed $700M-$800M projected Q2 losses from classifying businesses contributed to a BT Group JV as "held for sale." *(Source: CNBC, Jun 29)*
 
 ---
 
 ## Global Session Recap
 
-### Asia-Pacific
+**Asia (Monday session):**
+- Japan: Nikkei futures roughly flat (-0.01% per Benzinga ETW data); Japanese Retail Sales (May) released.
+- Hong Kong: +0.30% (Benzinga EWH data)
+- China NBS PMIs due Tuesday — key read on manufacturing momentum.
+- Saxo reported S&P futures were up 0.5-0.7% in early Asia trade on US-Iran de-escalation but gave back some gains.
 
-- **China**: CSI300 +0.1%, Shanghai Composite +0.2%. Consumer and healthcare led. Hong Kong's Hang Seng at 22,828 (June 29 open), down from 22,952 Friday close. Prior session laggards: Tencent -2.0%, SMIC -6.8%, Meituan -3.0%.
-- **China NBS Manufacturing PMI** due Tuesday — consensus 50.1 (from 50.0 in May). Below 50 would signal contraction and undermine the recovery narrative.
-- **Japan**: USD/JPY near 162. BOJ rate at ~1.0% vs Fed's 3.50-3.75%. Intervention risk flagged by Japanese authorities.
-- **Australia**: RBA Gov Bullock and Asst Gov Kent speaking. RBA meeting minutes Tuesday. ASX 200 down ~0.85% last week; H1 2026 gain just ~0.50%.
+**Europe (Monday morning):**
+- Germany DAX futures: +2.33% (Benzinga snapshot, 1:52 AM ET) — strongest signal of risk-on after de-escalation.
+- Europe VGK: +0.44%
+- Spanish CPI Prelim (Jun) released. German CPI prelim and French CPI prelim due Tuesday.
+- ECB President Lagarde speaking Monday; multiple ECB speakers throughout the week (Vujcic, Cipollone, Schnabel, Elderson, Lane).
 
-### Europe
+**Cross-read:** European indices sharply higher on US-Iran stand-down, suggesting the geopolitical risk premium was larger in European markets than US futures are currently discounting. DAX +2.33% vs S&P futures +0.8% indicates potential catch-up trade.
 
-- **Euro Area flash inflation** due Wednesday. ECB raised 25bps but cut 2026 growth forecast to 0.8%. EUR/USD at 1.1390 under pressure.
-- **UK**: Political uncertainty after leadership change. BOE held at 3.75% (two MPC dissenters voted for hike). GBP/USD at 1.3205.
+*Sources: Benzinga, Newsquawk, Saxo HK, Kiplinger*
 
 ---
 
 ## Macro, Rates, and Policy Setup
 
-### Interest Rates
+### Treasury Yields
+- **2Y:** ~4.07% (YCharts: 4.07% vs 4.09% prior day)
+- **10Y:** ~4.37-4.38% (Trading Economics: eased to 4.37% on June 26, -0.02pp from prior session; Bloomberg: 4.38%)
+- **30Y:** ~5.00% (Bloomberg)
+- **2Y-10Y spread:** Positive (~30bp) — curve not inverted
 
-| Instrument | Rate | Change | Context |
-|---|---|---|---|
-| Fed Funds | 3.50-3.75% | Held June | First hike priced for September |
-| 10Y UST | 4.38% | -2bp from prior | Above 4.25% long-term avg |
-| 2Y-10Y spread | Shrinking | — | Inversion risk flagged by CNBC |
-| BOJ | ~1.0% | Hiked June | Gap vs Fed remains ~250bp |
-| BOE | 3.75% | Held June | 2 MPC members dissented hawkish |
-| ECB | +25bps | Hiked | Growth cut to 0.8% |
+Treasury futures (MarketWatch): 10Y T-Note $110.234 (-0.031), 2Y T-Note $103.148 (-0.023) — slight price decline, implying marginal yield uptick pre-market.
 
-### Inflation
+### Federal Reserve
+- **Current rate:** 3.50%-3.75% (held June 17 FOMC, unanimous)
+- **Fed Chair Warsh:** Hawkish debut. Vowed a "new chapter" in Fed oversight. Bond futures pricing >85% probability of rate hike this year.
+- **Polymarket:** 78% probability of 0 rate cuts in 2026; 13% chance of 1 cut (25 bps); 3% chance of 2 cuts.
+- **Warsh speaking Wednesday July 1** — his second scheduled appearance as Chair. Markets will watch for any shift in tone after the weekend's geopolitical volatility.
 
-- **Core PCE** (May): 3.4% YoY — highest since October 2023. Fed raised its 2026 core inflation projection from 2.7% to 3.3%. The 2% target not expected until 2028 at earliest.
-- **Market pricing**: Shifted from debating rate cuts to pricing a hike as soon as September.
-- **Bond market**: 2-10 year spread shrinking. An inversion would raise recession fears.
+### This Week's Economic Calendar *(Holiday-Shortened — Friday Closed)*
 
-### Economic Calendar This Week
+| Day | Release/Event | Time (ET) | Consensus (where available) |
+|-----|--------------|-----------|---------------------------|
+| **Mon 6/29** | Dallas Fed Manufacturing Index | 9:30 AM | — |
+| **Tue 6/30** | JOLTS Job Openings (May) | 10:00 AM | — |
+| | Nike (NKE) Earnings | After Close | — |
+| **Wed 7/1** | ADP Employment Change (Jun) | 8:15 AM | — |
+| | ISM Manufacturing PMI (Jun) | 10:00 AM | — |
+| | Fed Chair Warsh speaks | TBD | — |
+| | ECB Lagarde, BoE Bailey, BoC Macklem | — | — |
+| **Thu 7/2** | **June Jobs Report (NFP)** | 8:30 AM | — |
+| | Initial Jobless Claims | 8:30 AM | — |
+| **Fri 7/3** | **US Markets CLOSED** (Independence Day) | — | — |
 
-| Day | Event | Consensus |
-|---|---|---|
-| Tue June 30 | Consumer Confidence, JOLTS, Chicago PMI, China NBS PMI | CB Confidence est ~101; China PMI 50.1 |
-| Wed July 1 | ADP Employment, ISM Mfg PMI, EA Flash CPI | ADP est ~160K; ISM ~48.5 |
-| **Thu July 2** | **June NFP**, Unemployment, Avg Hourly Earnings | NFP ~170K; UE ~4.0% |
-| Fri July 3 | **MARKETS CLOSED** | Independence Day observed |
+**May NFP context:** +172K vs +85K consensus, unemployment 4.3% (unchanged), prior revised to +179K. *(Source: BLS, Jun 5)*
 
-### Credit Markets
-
-- **ICE BofA US HY OAS**: 2.78% (June 25), widening from 2.66% (June 19). +12bp over the week. Modest stress coinciding with equity tech selloff. Remains well below distress levels but the direction bears watching as the risk-off rotation develops.
+*Sources: Newsquawk, Kiplinger, BLS*
 
 ---
 
 ## FX and Commodities
 
-### Currency Markets
+### FX
+| Pair | Level | Change |
+|------|-------|--------|
+| DXY | 101.02 | -0.11% |
+| EUR/USD | 1.1442 | +0.16% |
+| USD/JPY | 0.6217 | -0.08% |
+| GBP/USD | 1.3229 | +0.23% |
+| AUD/USD | 0.6889 | +0.07% |
+| USD/CAD | 0.7069 | -0.03% |
 
-| Pair | Level | Direction | Driver |
-|---|---|---|---|
-| DXY | 101.28 | -0.15% | Near 52-week high (101.8); monthly +2.1% |
-| EUR/USD | 1.1390 | Bearish | ECB growth downgrade to 0.8%; USD demand |
-| GBP/USD | 1.3205 | Bearish | UK political uncertainty, cooling labor market |
-| USD/JPY | ~161.75 | Intervention risk | Near 162; Japanese authorities on alert |
-| USD/CNY | — | — | China NBS PMI Tuesday is key |
-
-**DXY at 101.28**: The dollar has broken out of a multi-month range, supported by hawkish Fed repricing and geopolitical safe-haven demand. Monthly gain of 2.1%. The 52-week high of 101.8 is within striking distance.
-
-**USD/JPY intervention risk**: Japanese authorities have repeatedly stated readiness to act against excessive moves. Proximity to 162 increases the probability of official warnings or intervention.
+DXY remains near the top of its 52-week range (101.57), but YTD performance is -3.09%. The dollar softened modestly overnight as risk appetite returned on Iran ceasefire.
 
 ### Commodities
+- **WTI Crude (Aug):** $69.88/bbl, +1.21%. Settled below $70 on Friday for first time since Feb. 27 — the day before the Iran war began. Over the past month, WTI has fallen ~24%. The modest bounce today on ceasefire news suggests the geopolitical risk premium had already been largely priced out. ING strategists Warren Patterson and Ewa Manthey: "complacency is odd and clearly leaves significant upside risk if the supply recovery proves slow."
+- **Brent Crude:** $72.45/bbl, +0.6%. Month-over-month -24.18% per Trading Economics.
+- **Gold:** $4,045-4,049/oz, -1.15%. Safe-haven premium fading. Trading Economics: -9.80% month-over-month but +22.47% YoY. Gold ETF VIX at 27.18, down from 29.58 prior day.
+- **Silver:** $57.66/oz, -2.64%.
+- **Natural Gas:** $3.198, -1.02%.
 
-| Commodity | Price | Daily Δ | Weekly Δ | Context |
-|---|---|---|---|---|
-| WTI Crude | ~$70.00 | +1.2% | -5.55% | First settlement below $70 Friday since Feb 27 |
-| Brent Crude | ~$72.50 | +0.7% | -10%+ | Three consecutive weekly declines |
-| Gold (XAU) | $4,043 | -1.08% | -3.4% | 2026 high $5,400 (Jan 28); low $4,002 (June 24) |
-| Silver (XAG) | $58.59 | — | — | Rebounding after ceasefire shock eased |
+### Crypto
+- **Bitcoin:** $59,964, below $60K. Strategy (MSTR) acquired 520 BTC for ~$35M last week. MSTR controls 847,363 BTC (~$50.8B) but faces ~$13B unrealized losses (avg cost ~$75,646/BTC). MSTR stock at ~$82 — enterprise value to net asset value (mNAV) below 1.0 for first time. Saylor hinted at imminent purchase on X.
 
-**Oil**: The US-Iran dynamic remains the dominant price driver. Friday's $69.52 WTI settlement ended the streak of prices above $70 that had persisted since the war's start on Feb 27. Monday's rebound is a direct response to weekend strikes. ING warns the market is underpricing disruption risk — a slow supply recovery or re-escalation could drive sharp upside.
-
-**Gold**: Down 5.79% YTD. The strong dollar and rising real yields are headwinds. Gold has fallen from $5,400 in January to $4,043 — a 25% drawdown from highs, driven by the hawkish Fed pivot under Chair Warsh.
+*Sources: MarketWatch, CNBC, Trading Economics, CoinStats, CoinDesk, GuruFocus*
 
 ---
 
 ## Equities and Single-Stock Watchlist
 
-### Pre-Market Movers
+### Major Pre-Market Movers
 
-- **MU** (in watchlist): $1,139.39 pre-market (+0.62%). Post-blowout Q3 earnings (June 24): revenue $41.46B (+346% YoY, $6B above consensus), EPS $25.11 ($4 above), Q4 guidance ~$50B. 16 multi-year SCA contracts covering ~$100B in aggregate revenue obligations. Phillip Securities raised PT to $1,870 from $530. Pre-market range $1,138-$1,140 — constructive consolidation above the post-earnings gap.
+| Ticker | Move | Catalyst | Source |
+|--------|------|----------|--------|
+| **CMCSA** | +20% | NBCUniversal/Sky spin-off | CNBC |
+| **CHTR** | +20% | SpaceX consumer phone deal talks (Bloomberg report) | CNBC |
+| **IRDM** | +20%+ | Rocket Lab acquisition target | CNBC |
+| **RKLB** | +10%+ | Acquiring Iridium | CNBC |
+| **ORCL** | +3% | Rebounding from -19% week (worst since 2001) | CNBC |
+| **WULF** | +3% | Citi initiates Buy (data center power play) | CNBC |
+| **SPCX** | +2% | Nasdaq 100 inclusion (July 7) | CNBC |
+| **NVDA** | +1.05% | Pre-market $194.56 vs $192.53 close | Public.com |
+| **GOOGL** | +1% | First day on Dow Jones (replaces VZ) | CNBC |
+| **MLM** | -3% | $13.5B cash acquisition of Lhoist North America | CNBC |
+| **VZ** | -0.5% | $700M-$800M Q2 JV classification loss | CNBC |
+
+### Earnings Today (After Close)
+- **AVAV (AeroVironment):** EPS est $1.48, revenue est $559.90M — *Benzinga*
+- **CNXC (Concentrix):** EPS est $2.57, revenue est $2.47B — *Benzinga*
 
 ### Earnings This Week
+- **Nike (NKE):** Tuesday after close — *Newsquawk*
+- No other major mega-cap reports scheduled.
 
-| Day | Ticker | Company | EPS Est | Revenue Est | Notes |
-|---|---|---|---|---|---|
-| Tue (after) | **NKE** | Nike | $0.13 | $10.85B (-2.2% YoY) | -35% YTD; $40.75; 52wk low territory |
-| Tue (after) | **STZ** | Constellation Brands | $3.23 | — | Consumer staples read |
-| Wed (before) | **GIS** | General Mills | $0.80 | — | Consumer staples read |
-| Wed (before) | FDS | FactSet | $4.45 | — | — |
+### Analyst Actions (Monday June 29)
+- **AMR** (Alpha Metallurgical): Jefferies Hold, PT $165
+- **LFTO** (Liftoff Mobile): Needham Buy, PT $42
+- **LQDA** (Liquidia): BofA Securities Neutral, PT $79
+- **SEI** (Solaris Energy Infrastructure): Needham Buy, PT $97
 
-### Nike (NKE) — Tuesday After Close: The Week's Highest-Stakes Report
+*Source: Benzinga, Daily Trade Alert*
 
-**Price**: $40.75 (near 2014 levels, -35% YTD). Only Dow component reporting this week.
-
-**Analyst sentiment has soured dramatically**:
-- Deutsche Bank: cut target to $43 from $51 (Hold)
-- Oppenheimer: cut target to $60 from $120 (warns 2026 = restructuring year)
-- Stifel, BNP Paribas, BTIG, Citi: all lowered targets
-- Needham's Tom Nikic: "We remain cautious on NKE shares, as we believe that the pace of the turnaround remains frustratingly slow."
-
-**Key metrics to watch**:
-- Greater China revenue trajectory (management warned of sharp declines)
-- Inventory levels — excess lifestyle inventory remains a drag
-- Wholesale channel restoration progress
-- FY27 guidance tone — management may signal a slow start
-
-**Technical setup**: RSI at 30.09 (near oversold). MACD still bearish. Critical $40 support — breakdown opens path to $35. Resistance cluster at $43-44 must be reclaimed before any recovery attempt. **Low expectations cut both ways**: even a small beat on margins or an improving China tone could spark a relief rally.
-
-### Analyst Moves (Monday June 29)
-
-**Upgrades (impacting watchlist)**:
-- **PRIM** (Primoris) — JPMorgan: **Neutral → Overweight** ✓ In watchlist
-- RBLX (Roblox) — Arete: Neutral → Buy
-- MBGYY (Mercedes-Benz) — Jefferies: Hold → Buy
-
-**Downgrades (tech-heavy — sector headwind)**:
-- ADBE (Adobe) — Phillip Securities: Buy → Neutral
-- CRWD (CrowdStrike) — Arete: Buy → Neutral
-- CRM (Salesforce) — Phillip Securities: Buy → Neutral
-- PGR (Progressive) — Wells Fargo: Equal Weight → Underweight
-- SYNA (Synaptics) — Barclays Overweight→Equal Weight; Deutsche Buy→Hold
-- TECH (Bio-Techne) — Citi: Buy → Neutral
-
-**Pattern**: Monday's downgrades are clustered in software/tech names — ADBE, CRWD, CRM — reinforcing the rotation narrative.
-
-### Micron (MU) — Post-Earnings Context
-
-MU's Q3 FY2026 was a blowout: $41.46B revenue (+346% YoY), $25.11 EPS, Q4 guidance ~$50B. The stock recovered from a $940 intraday low on June 24 to $1,200+ post-earnings. Pre-market $1,139 Monday — a 0.62% uptick. **Key risk**: July 1 Section 232 semiconductor review deadline — possible tariff changes on imported memory chips could shift competitive dynamics vs SK Hynix and Samsung.
+### Watchlist Tickers (from search plan — notable context)
+- **NVDA:** -8% last week. Pre-market +1.05% at $194.56. Friday close $192.53.
+- **MSTR:** $82, mNAV below 1.0. BTC holdings underwater by ~$13B. Saylor signaling more buys.
+- **AVGO:** Friday close context — had been under pressure last week with broader semi sell-off.
+- **SMCI/FSLR/ON/WDC:** Semiconductor and energy names — sector underperformed last week.
+- **COIN:** Crypto sentiment soft with BTC below $60K.
 
 ---
 
 ## Sector and Factor Setup
 
-### The Great Rotation — Tech → Value / Small Caps
+### Last Week's Factor Performance (June 22-26)
+- **Healthcare:** +7% — best week since June 2022. Defensive rotation amid tech selloff.
+- **Technology (XLK):** -1.87% Friday alone (per market_snapshot.json). Nasdaq -4.5% for the week.
+- **Energy (XLE):** -0.46% Friday. Oil down ~24% month-over-month.
+- **Small Caps (IWM/Russell):** Russell 2000 +0.07% Friday, modest outperformance vs large-cap tech.
 
-Last week crystallized a trend that has been building since late 2025:
+### Pre-Market Factor Signals
+- **Growth/Tech bounce:** Nasdaq futures +1.13% leading — relief rally in beaten-down tech.
+- **Telecom bid:** Comcast spin-off, Charter/SpaceX deal, Iridium/Rocket Lab M&A — sector rotation into telecom infrastructure.
+- **Value/Defensive:** Healthcare likely to give back some of last week's 7% surge if risk-on holds.
+- **Russell 2000:** Modest pre-market strength, continued small-cap resilience.
 
-| Index | Last Week | YTD |
-|---|---|---|
-| Nasdaq Composite | **-5.0%** | +17% (est.) |
-| S&P 500 | **-2.0%** | +9.2% (est.) |
-| Dow Jones | **+0.62%** | +5.2% |
-| Russell 2000 | **+0.07%** | **+21%** |
-
-The Russell 2000's +21% YTD is the longest small-cap outperformance streak since 1996. Value is outperforming growth within the small-cap universe itself. This is not a short squeeze — it's a structural rotation supported by:
-1. AI capex ROI skepticism (Mag7 spending enormous sums with unclear payback timelines)
-2. Fed rate hike expectations making high-multiple growth less attractive
-3. Quarter-end rebalancing from pensions and sovereign wealth funds
-4. Deleveraging after record margin debt
-
-### Sector Positioning
-
-- **Financials & Industrials**: Wells Fargo CIO Darrell Cronk's preferred sectors for value. Supported by rate expectations and broadening economic activity.
-- **Semiconductors (Memory)**: Still seen as the biggest AI beneficiary but "run up too far, too fast" per multiple strategists. MU's blowout quarter validates demand.
-- **Software**: Selective vulnerability. ADBE/CRM/CRWD downgrades signal caution on AI-disrupted software models.
-- **Hyperscalers**: Some reducing exposure until sustained extraordinary earnings growth is proven.
-- **Small Caps to avoid**: With Russell 2000 reconstitution (Friday), reconstitution effects could cause short-term dislocations.
-
-### Quarter-End Dynamics
-
-Portfolio managers rebalancing today and tomorrow. The tech selloff last week was partly attributed to pension/sovereign wealth funds squaring books. Expect continued volatility as June 30 marks the end of Q2 and H1 2026. Thin liquidity around the July 4 holiday amplifies every move.
+### Breadth Indicators
+- Friday's decline was narrow — Dow managed +0.6% for the week while Nasdaq fell 4.5%. This divergence was driven by mega-cap tech weakness and rotation into healthcare and value.
+- The pre-market futures bounce is broad-based: S&P 500 up 0.8%, Nasdaq 100 up 1.13%, Dow up 0.4%, all participating.
 
 ---
 
 ## Today's Risk Map
 
-### Risk-On Catalysts
-1. **US-Iran ceasefire holds** — Oil stabilizes, geopolitical premium fades, risk appetite returns
-2. **AI sentiment stabilizes** — MU's earnings showed demand is real; bargain hunting in beaten-down tech
-3. **Quarter-end window dressing** — managers buying recent winners for portfolio snapshots
+### Scheduled Catalysts
+| Time (ET) | Event | Impact |
+|-----------|-------|--------|
+| 9:30 AM | Dallas Fed Manufacturing Index (Jun) | Moderate — regional Fed read |
+| 10:30 AM | ECB Lagarde speech | Moderate — EUR/USD, DXY |
+| After Close | AVAV, CNXC earnings | Single-stock |
 
-### Risk-Off Catalysts
-1. **US-Iran ceasefire collapses** — Oil spikes above $80, Strait of Hormuz disruptions widen
-2. **NFP Thursday surprises hot** (>250K) — Rate hike expectations accelerate, tech multiple compression intensifies
-3. **Further tech deleveraging** — Margin debt at record; a 5% Nasdaq week could trigger another forced unwind
-4. **China PMI <50** (Tuesday) — Signals contraction, undermines global growth narrative
-5. **USD/JPY intervention** — A surprise BOJ action could trigger cross-asset volatility
-6. **Credit spreads widening** — HY OAS at 2.78%; accelerated widening would signal systemic stress
+### Unscheduled Risks
+- **US-Iran talks (Tuesday Qatar):** Any breakdown in the stand-down could reverse today's relief rally rapidly. The ceasefire is fragile — Iran insists Lebanon ceasefire must be part of any deal, while Israel continues strikes.
+- **Strait of Hormuz:** While vessels can "move freely" per the U.S. official, Iran's Persian Gulf Seaways Management Organization has not withdrawn its "designated routes" mandate. Traffic fell sharply after the flare-up.
+- **Holiday liquidity:** With Friday closed for Independence Day, position-squaring and lower volumes may amplify moves Tuesday-Thursday, especially around the jobs report.
 
-### Convexity Asymmetries
+### Key Levels
+- **S&P 500 futures:** 7,461. Gap fill from Friday's close (7,354). Resistance at ~7,500 (last week's breakdown level).
+- **Nasdaq 100 futures:** 29,700. Resistance at 30,000 (psychological).
+- **VIX:** 18.32 — trending lower from 18.89 Thursday and 18.41 Friday. Below 18 would signal full risk-on confirmation.
+- **WTI:** $70 psychological level. ING notes market is "technically oversold" but momentum remains to the downside.
 
-- **Oil upside convexity**: Brent at $72.50. A ceasefire collapse could send it to $85+ (upside ~17%). Downside from ceasefire holding is limited to ~$68 (the pre-war floor). ING explicitly says the market is underpricing disruption risk.
-- **Nike downside convexity**: At $40.75 with $40 support. A miss could trigger a cascade of target cuts and a move to $35 (-14%). A beat with clean China/guidance could trigger a short-covering rally to $44-45 (+8-10%).
-- **Tech downside convexity**: Margin debt unwind risk. The Nasdaq's -5% week may not be a full washout. Schwab's Peterson: "It's too early to say whether a sufficient washout has occurred."
-
-### Sentiment & Positioning
-
-| Indicator | Level | Signal |
-|---|---|---|
-| VIX | 18.41 | Elevated from 16.41 pre-selloff; not yet at stress levels (>25) |
-| Margin Debt | $1.42T record | +50% YoY; 2007-like speculative excess (Schwab) |
-| BofA Strategist (Ciana) | — | "Correction risks moving higher" — advising protection |
-| Wells Fargo CIO (Cronk) | — | "Be a little patient... volatility buying opportunities" |
-| Schwab (Peterson) | — | "Moderately bearish" on tech near-term |
-| JPMorgan S&P 500 Target | 7,800 | +5% from current; raised from 7,200 (bull case) |
-| Fed Funds Futures | Hike Sep | Shifted from cuts to hike pricing |
-| AAII Sentiment | Not available | — |
-| HY OAS | 2.78% | Widening but contained; watch for acceleration |
-
----
-
-## Cross-Asset Positioning Matrix
-
-| Asset Class | Direction | Thesis | Key Data Points |
-|---|---|---|---|
-| **US Equities (broad)** | Neutral-Bullish | JPM 7,800 target; earnings strong; rotation broadening | S&P 500 7,354; NFP Thu; Q2 earnings 3 weeks away (+22% expected) |
-| **US Tech** | Cautious (near-term) | Margin debt unwind risk; analyst downgrades; Mag7 ROI questions | Nasdaq -5% last week; ADBE/CRM/CRWD downgraded |
-| **US Small Cap** | Bullish | Longest outperformance streak since 1996; value rotation | Russell 2000 +21% YTD; IWM at $296 |
-| **US Large Value** | Bullish | Financials/Industrials preferred; rate expectations supportive | Dow +0.62% last week during tech rout |
-| **Treasuries** | Bearish (yields higher) | Hawkish Fed; inflation at 3.4%; hike priced for Sep | 10Y 4.38%; 2-10Y spread shrinking |
-| **USD** | Bullish | Rate differential; safe-haven flows; breakout from range | DXY 101.28; monthly +2.1%; near 52-wk high 101.8 |
-| **Oil** | Bullish (convexity) | Geopolitical risk premium underpriced; Strait of Hormuz risk | WTI $70; Brent $72.50; ING flags complacency |
-| **Gold** | Bearish | Strong USD + rising real yields = headwinds | $4,043; -25% from Jan high; -5.79% YTD |
-| **Credit** | Cautious | Spreads widening but contained; watch for acceleration | HY OAS 2.78% (+12bp week) |
-| **EM / China** | Neutral-Negative | Strong USD headwind; China PMI Tuesday critical | CSI300 +0.1%; DXY at highs |
-
----
-
-## Contrarian Flags
-
-1. **Oil complacency is priced for perfection**: The market priced a swift Strait of Hormuz reopening last week (Brent -10%). Monday's strikes proved that assumption fragile. A single tanker attack with >2M barrels at stake is not a resolved situation. The ceasefire is verbal, not institutionalized.
-
-2. **The Mag7 selloff may not be a buying opportunity — yet**: Margin debt unwind dynamics are not a one-day event. Schwab's +50% YoY margin growth parallels 2007. The KOSPI-driven deleveraging forces haven't been fully absorbed. The Nasdaq's -5% week is the first real crack in AI sentiment — historically, the second wave is larger.
-
-3. **JPMorgan's 7,800 S&P target assumes a "Blue Sky" scenario**: The same bank raised its target while BofA told clients to buy protection. The gap between sell-side optimism and risk-management reality is wide.
-
-4. **Credit widening is stealth stress**: HY OAS moved +12bp in a week with minimal headlines. If this pace continues, it would hit 3.00%+ in 2-3 weeks — a level that starts to constrain leveraged equity strategies.
-
-5. **Nike expectations are so low they're convex**: The stock is at 2014 levels with near-universal bearishness. A single positive data point (cleaner inventories, stable China) could trigger a 10%+ short squeeze. The risk/reward around $40 is asymmetric.
+### Bull / Base / Bear Scenarios
+- **Bull (+):** Iran ceasefire holds through Tuesday talks, jobs data Thursday comes in-line (no hawkish surprise), tech continues oversold bounce → S&P recovers toward 7,500.
+- **Base:** Relief rally fades through the session, S&P futures settle +0.3-0.5%, market waits for jobs data and Fed Warsh Wednesday. Low conviction ahead of holiday.
+- **Bear (-):** Iran talks collapse, oil spikes above $75, VIX jumps above 22 → reversal of pre-market gains.
 
 ---
 
 ## Source Notes and Data Quality
 
-**High confidence (primary/market data sources)**:
-- Index closes and futures: `market_snapshot.py` (deterministic), Yahoo Finance live data
-- Treasury yields: YCharts, FRED H.15 release
-- Credit spreads: ICE BofA via FRED (BAMLH0A0HYM2) — June 25 observation
-- VIX: CBOE via Yahoo Finance / FRED
-- DXY: Trading Economics, Trendonify
-- Oil prices: CNBC, HDFC Sky (real-time quotes)
-- FX rates: MQL5/FreshForex analysis
-- Gold/Silver: Trading Economics, GoldSilverPrice
-- Earnings data: Kiplinger via Yahoo Finance, Refinitiv estimates
-- Analyst ratings: Daily Trade Alert / The Fly
-- Micron earnings: Vantage Markets analysis of Q3 FY2026 report
+### Market Data
+- **Friday close levels:** Yahoo Finance chart API via `market_snapshot.json` — secondary source but deterministic. S&P 500 7,354.02, Nasdaq 25,297.62, Dow 51,876.11, VIX 18.32.
+- **Futures levels:** MarketWatch DX00 page, Yahoo Finance live blog. Timestamps: 7:19-8:44 AM ET.
+- **Treasury yields:** Bloomberg (secondary), Trading Economics (secondary), YCharts (secondary). No primary Treasury.gov data available for today yet. FRED data only through June 22 (DGS2) and June 26 (T10Y2Y).
+- **VIX:** CBOE primary source — 18.33 as of Monday morning, vs 18.41 Friday close. Confirmed by Investing.com historical and FRED.
 
-**Moderate confidence (newswire/analysis)**:
-- US-Iran geopolitical developments: CNBC, Yahoo Finance, HDFC Sky (cross-verified across 3 sources)
-- Margin debt data: Schwab's Nathan Peterson quoted in Goodreturns
-- Fed policy pricing: Gotrade, IG AU analysis
-- Small-cap rotation data: Stoxcraft, EBC, various analyses
-- China market data: Free Malaysia Today, Yahoo Finance HSI history
+### Macro/Policy
+- **Fed rate:** Primary — FOMC statement June 17. Rate 3.50-3.75%.
+- **Warsh speech Wednesday:** Confirmed by Kiplinger and Newsquawk calendars. Exact time TBD.
+- **Jobs report Thursday (not Friday):** Confirmed by multiple sources (Yahoo Finance, Kiplinger, Newsquawk). Holiday shifted from standard Friday release.
+- **May NFP:** Primary BLS data — +172K, unemployment 4.3%. June consensus estimate NOT available in extracted articles — data unavailable.
 
-**Speculative/estimated**:
-- AAII Sentiment: Not available in current data set
-- Exact Russell 2000 reconstitution effects: Inferred from BofA/CNBC commentary
-- Section 232 semiconductor review outcome: Pending (July 1 deadline)
+### Companies
+- **Comcast spin-off:** CNBC primary — confirmed. Details: Cavanagh to NBCU, Angelakis to telecom.
+- **Rocket Lab / Iridium merger:** CNBC primary — confirmed. No deal value specified in article.
+- **Charter / SpaceX talks:** Bloomberg report cited by CNBC — second-hand, not directly verified.
+- **Alphabet joining Dow:** Confirmed by CNBC — first trading day today.
+- **NVDA pre-market price:** Public.com — secondary market data source, $194.56.
 
-**Articles extracted for deep content**: 10 of 22 articles with full-text extraction. Remaining 12 articles used headline + summary with source verification. No articles rejected for staleness — all within the 62-hour recency window (June 26 4PM ET – June 29 6AM ET).
+### Stale/Conflicting Data
+- **Newsquawk calendar** lists Friday as "US Thanksgiving" — clearly erroneous. Corrected to Independence Day observed per all other sources. The rest of the calendar matches Kiplinger independently.
+- **Gold prices:** Trading Economics ($4,045.55) and USA Today ($4,045.82) and MarketWatch ($4,049.20) differ slightly — range is $4,045-4,051. Differences likely reflect sampling time.
 
-**No historical context was web-searched** — all context drawn from current extractions and prior BoltNews markdown artifacts per pipeline policy.
-
----
-
-*Generated: Monday, June 29, 2026 06:30 AM EDT | Mode: Pre-Market | 22 articles, 10 deep-extracted*
+### Conflicting/Unavailable
+- **June NFP consensus:** Not available in extracted articles. May print was +172K vs +85K consensus.
+- **JOLTS May consensus:** Not available. Prior month context not in today's sources.
