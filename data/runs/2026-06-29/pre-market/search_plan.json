@@ -220,56 +220,56 @@
         "Sector and Factor Setup"
       ],
       "assigned_tickers": [
-        "MASI",
-        "CASY",
-        "JBL",
-        "SATS",
-        "APGE",
-        "AKAM",
-        "KMB",
-        "CTSH",
-        "CVNA",
-        "GH",
-        "PRIM",
-        "CWAN",
-        "BLD",
-        "MKSI",
-        "EXPE",
-        "VRSK",
+        "HPQ",
+        "NTAP",
+        "CRM",
+        "ZS",
+        "SNOW",
+        "HPE",
+        "MDB",
+        "OKTA",
+        "MRVL",
+        "PANW",
+        "DELL",
+        "CIEN",
+        "CRWD",
+        "ADSK",
+        "SNPS",
+        "AZO",
+        "COST",
+        "AVGO",
+        "ONDS",
+        "OKLO",
+        "IONQ",
+        "ASTS",
+        "IT",
+        "RDW",
+        "RGTI",
+        "SMCI",
+        "SOFI",
+        "PINS",
+        "LITE",
+        "AAOI",
+        "MSTR",
+        "WDAY",
+        "HUBS",
+        "BE",
+        "COIN",
+        "CRWV",
+        "ON",
+        "WDC",
+        "FSLR",
+        "TEAM",
+        "CRCL",
+        "ALAB",
+        "RDDT",
         "SNDK",
-        "LUV",
-        "AEP",
-        "STRL",
-        "PAYX",
-        "RVMD",
-        "PPL",
-        "ROKU",
-        "APO",
-        "HUM",
+        "XPO",
+        "RKLB",
+        "GDDY",
+        "NOW",
         "UNP",
-        "TLN",
-        "KDP",
-        "DHI",
-        "PHM",
-        "MCK",
-        "SBUX",
-        "AXON",
-        "DASH",
-        "BSX",
-        "VMC",
-        "EA",
-        "CBOE",
-        "HAL",
-        "ADP",
-        "PSA",
-        "SLB",
-        "EOG",
-        "KVUE",
-        "CRS",
-        "ALL",
-        "TGT",
-        "CAH",
-        "MU"
+        "QCOM"
       ],
       "assigned_topics": [
         "earnings",
@@ -348,59 +348,59 @@
   ],
   "handoff_prompt_template": "You are a BoltNews article discovery subagent.\nMode: {mode}\nTarget date: {target_date}\nWeekday: {weekday}\nRecency window: {window_start_iso} to {window_end_iso} ({timezone})\nLane: {lane}\nAssigned section(s): {sections}\nAssigned search items: {items}\nQuery templates: {query_templates}\nTimeouts: search={search_timeout_seconds}s, extraction={extract_timeout_seconds}s, lane={lane_timeout_seconds}s\n\nRules:\n1. Accept only articles published inside the Wall Street session window, not merely the calendar day.\n2. Every accepted article requires title/headline, url, source, published_at, fetched_at, tickers/topics, assigned_section, summary/lead paragraph, and extracted_text/body excerpt.\n3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot. For post-market, reject articles before the 9:30 AM ET cash open.\n4. Reject stale, evergreen, quote-page, and headline-only records.\n5. Do not web-search historical context; use prior BoltNews markdown artifacts only.\n6. Prefer Reuters/Bloomberg/WSJ/CNBC/MarketWatch/Yahoo/official releases/central banks/exchanges/regulators.\n7. Return JSON only using the lane output schema.\n",
   "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 62.0 hours (window starts 2026-06-26T16:00:00-04:00). All search queries include 'June 29, 2026' to enforce recency. DO NOT include articles outside that trading-session window, including prior-day rally articles in a post-market recap. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
-  "generated": "2026-06-29T06:12:37.842734",
-  "total_tickers": 149,
+  "generated": "2026-06-29T09:05:49.378570",
+  "total_tickers": 148,
   "prioritized_tickers": [
-    "MASI",
-    "CASY",
-    "JBL",
-    "SATS",
-    "APGE",
-    "AKAM",
-    "KMB",
-    "CTSH",
-    "CVNA",
-    "GH",
-    "PRIM",
-    "CWAN",
-    "BLD",
-    "MKSI",
-    "EXPE",
-    "VRSK",
+    "HPQ",
+    "NTAP",
+    "CRM",
+    "ZS",
+    "SNOW",
+    "HPE",
+    "MDB",
+    "OKTA",
+    "MRVL",
+    "PANW",
+    "DELL",
+    "CIEN",
+    "CRWD",
+    "ADSK",
+    "SNPS",
+    "AZO",
+    "COST",
+    "AVGO",
+    "ONDS",
+    "OKLO",
+    "IONQ",
+    "ASTS",
+    "IT",
+    "RDW",
+    "RGTI",
+    "SMCI",
+    "SOFI",
+    "PINS",
+    "LITE",
+    "AAOI",
+    "MSTR",
+    "WDAY",
+    "HUBS",
+    "BE",
+    "COIN",
+    "CRWV",
+    "ON",
+    "WDC",
+    "FSLR",
+    "TEAM",
+    "CRCL",
+    "ALAB",
+    "RDDT",
     "SNDK",
-    "LUV",
-    "AEP",
-    "STRL",
-    "PAYX",
-    "RVMD",
-    "PPL",
-    "ROKU",
-    "APO",
-    "HUM",
+    "XPO",
+    "RKLB",
+    "GDDY",
+    "NOW",
     "UNP",
-    "TLN",
-    "KDP",
-    "DHI",
-    "PHM",
-    "MCK",
-    "SBUX",
-    "AXON",
-    "DASH",
-    "BSX",
-    "VMC",
-    "EA",
-    "CBOE",
-    "HAL",
-    "ADP",
-    "PSA",
-    "SLB",
-    "EOG",
-    "KVUE",
-    "CRS",
-    "ALL",
-    "TGT",
-    "CAH",
-    "MU"
+    "QCOM"
   ],
   "topics": [
     "Monday premarket futures",
@@ -424,7 +424,7 @@
   ],
   "search_queries": [
     {
-      "id": "ticker-masi",
+      "id": "ticker-hpq",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -432,13 +432,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "MASI",
-      "name": "MASIMO CORP",
+      "ticker": "HPQ",
+      "name": "HP INC",
       "queries": [
-        "MASI stock news today June 29, 2026",
-        "MASI Medical Devices news June 29, 2026",
-        "MASI earnings guidance analyst rating June 29, 2026",
-        "MASI shares premarket after hours June 29, 2026"
+        "HPQ stock news today June 29, 2026",
+        "HPQ Computer Hardware news June 29, 2026",
+        "HPQ earnings guidance analyst rating June 29, 2026",
+        "HPQ shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -446,7 +446,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-casy",
+      "id": "ticker-ntap",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -454,13 +454,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "CASY",
-      "name": "CASEY'S GENERAL",
+      "ticker": "NTAP",
+      "name": "NETAPP INC",
       "queries": [
-        "CASY stock news today June 29, 2026",
-        "CASY Specialty Retail news June 29, 2026",
-        "CASY earnings guidance analyst rating June 29, 2026",
-        "CASY shares premarket after hours June 29, 2026"
+        "NTAP stock news today June 29, 2026",
+        "NTAP Software - Infrastructure news June 29, 2026",
+        "NTAP earnings guidance analyst rating June 29, 2026",
+        "NTAP shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -468,7 +468,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-jbl",
+      "id": "ticker-crm",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -476,13 +476,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "JBL",
-      "name": "JABIL INC",
+      "ticker": "CRM",
+      "name": "SALESFORCE INC",
       "queries": [
-        "JBL stock news today June 29, 2026",
-        "JBL Electronic Components news June 29, 2026",
-        "JBL earnings guidance analyst rating June 29, 2026",
-        "JBL shares premarket after hours June 29, 2026"
+        "CRM stock news today June 29, 2026",
+        "CRM Software - Application news June 29, 2026",
+        "CRM earnings guidance analyst rating June 29, 2026",
+        "CRM shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -490,7 +490,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-sats",
+      "id": "ticker-zs",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -498,13 +498,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "SATS",
-      "name": "ECHOSTAR CORP-A",
+      "ticker": "ZS",
+      "name": "ZSCALER INC",
       "queries": [
-        "SATS stock news today June 29, 2026",
-        "SATS Telecom Services news June 29, 2026",
-        "SATS earnings guidance analyst rating June 29, 2026",
-        "SATS shares premarket after hours June 29, 2026"
+        "ZS stock news today June 29, 2026",
+        "ZS Software - Infrastructure news June 29, 2026",
+        "ZS earnings guidance analyst rating June 29, 2026",
+        "ZS shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -512,7 +512,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-apge",
+      "id": "ticker-snow",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -520,13 +520,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "APGE",
-      "name": "APOGEE THERAPEUT",
+      "ticker": "SNOW",
+      "name": "SNOWFLAKE INC",
       "queries": [
-        "APGE stock news today June 29, 2026",
-        "APGE Biotechnology news June 29, 2026",
-        "APGE earnings guidance analyst rating June 29, 2026",
-        "APGE shares premarket after hours June 29, 2026"
+        "SNOW stock news today June 29, 2026",
+        "SNOW Software - Application news June 29, 2026",
+        "SNOW earnings guidance analyst rating June 29, 2026",
+        "SNOW shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -534,7 +534,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-akam",
+      "id": "ticker-hpe",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -542,13 +542,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "AKAM",
-      "name": "AKAMAI TECHNOLOG",
+      "ticker": "HPE",
+      "name": "HEWLETT PACKA",
       "queries": [
-        "AKAM stock news today June 29, 2026",
-        "AKAM Software - Infrastructure news June 29, 2026",
-        "AKAM earnings guidance analyst rating June 29, 2026",
-        "AKAM shares premarket after hours June 29, 2026"
+        "HPE stock news today June 29, 2026",
+        "HPE Communication Equipment news June 29, 2026",
+        "HPE earnings guidance analyst rating June 29, 2026",
+        "HPE shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -556,7 +556,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-kmb",
+      "id": "ticker-mdb",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -564,13 +564,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "KMB",
-      "name": "KIMBERLY-CLARK",
+      "ticker": "MDB",
+      "name": "MONGODB INC",
       "queries": [
-        "KMB stock news today June 29, 2026",
-        "KMB Household & Personal Products news June 29, 2026",
-        "KMB earnings guidance analyst rating June 29, 2026",
-        "KMB shares premarket after hours June 29, 2026"
+        "MDB stock news today June 29, 2026",
+        "MDB Software - Infrastructure news June 29, 2026",
+        "MDB earnings guidance analyst rating June 29, 2026",
+        "MDB shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -578,7 +578,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-ctsh",
+      "id": "ticker-okta",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -586,13 +586,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "CTSH",
-      "name": "COGNIZANT TECH-A",
+      "ticker": "OKTA",
+      "name": "OKTA INC",
       "queries": [
-        "CTSH stock news today June 29, 2026",
-        "CTSH Information Technology Services news June 29, 2026",
-        "CTSH earnings guidance analyst rating June 29, 2026",
-        "CTSH shares premarket after hours June 29, 2026"
+        "OKTA stock news today June 29, 2026",
+        "OKTA Software - Infrastructure news June 29, 2026",
+        "OKTA earnings guidance analyst rating June 29, 2026",
+        "OKTA shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -600,7 +600,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-cvna",
+      "id": "ticker-mrvl",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -608,13 +608,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "CVNA",
-      "name": "CARVANA CO",
+      "ticker": "MRVL",
+      "name": "MARVELL TECHNOLO",
       "queries": [
-        "CVNA stock news today June 29, 2026",
-        "CVNA Auto & Truck Dealerships news June 29, 2026",
-        "CVNA earnings guidance analyst rating June 29, 2026",
-        "CVNA shares premarket after hours June 29, 2026"
+        "MRVL stock news today June 29, 2026",
+        "MRVL Semiconductors news June 29, 2026",
+        "MRVL earnings guidance analyst rating June 29, 2026",
+        "MRVL shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -622,7 +622,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-gh",
+      "id": "ticker-panw",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -630,13 +630,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "GH",
-      "name": "GUARDANT HEALTH",
+      "ticker": "PANW",
+      "name": "PALO ALTO NETWOR",
       "queries": [
-        "GH stock news today June 29, 2026",
-        "GH Diagnostics & Research news June 29, 2026",
-        "GH earnings guidance analyst rating June 29, 2026",
-        "GH shares premarket after hours June 29, 2026"
+        "PANW stock news today June 29, 2026",
+        "PANW Software - Infrastructure news June 29, 2026",
+        "PANW earnings guidance analyst rating June 29, 2026",
+        "PANW shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -644,7 +644,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-prim",
+      "id": "ticker-dell",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -652,13 +652,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "PRIM",
-      "name": "PRIMORIS SERVICE",
+      "ticker": "DELL",
+      "name": "DELL TECHN-C",
       "queries": [
-        "PRIM stock news today June 29, 2026",
-        "PRIM Engineering & Construction news June 29, 2026",
-        "PRIM earnings guidance analyst rating June 29, 2026",
-        "PRIM shares premarket after hours June 29, 2026"
+        "DELL stock news today June 29, 2026",
+        "DELL Computer Hardware news June 29, 2026",
+        "DELL earnings guidance analyst rating June 29, 2026",
+        "DELL shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -666,7 +666,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-cwan",
+      "id": "ticker-cien",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -674,13 +674,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "CWAN",
-      "name": "CLEARWATER AN-A",
+      "ticker": "CIEN",
+      "name": "CIENA CORP",
       "queries": [
-        "CWAN stock news today June 29, 2026",
-        "CWAN Software - Application news June 29, 2026",
-        "CWAN earnings guidance analyst rating June 29, 2026",
-        "CWAN shares premarket after hours June 29, 2026"
+        "CIEN stock news today June 29, 2026",
+        "CIEN Communication Equipment news June 29, 2026",
+        "CIEN earnings guidance analyst rating June 29, 2026",
+        "CIEN shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -688,7 +688,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-bld",
+      "id": "ticker-crwd",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -696,13 +696,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "BLD",
-      "name": "TOPBUILD COR",
+      "ticker": "CRWD",
+      "name": "CROWDSTRIKE HO-A",
       "queries": [
-        "BLD stock news today June 29, 2026",
-        "BLD Engineering & Construction news June 29, 2026",
-        "BLD earnings guidance analyst rating June 29, 2026",
-        "BLD shares premarket after hours June 29, 2026"
+        "CRWD stock news today June 29, 2026",
+        "CRWD Software - Infrastructure news June 29, 2026",
+        "CRWD earnings guidance analyst rating June 29, 2026",
+        "CRWD shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -710,7 +710,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-mksi",
+      "id": "ticker-adsk",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -718,13 +718,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "MKSI",
-      "name": "MKS INC",
+      "ticker": "ADSK",
+      "name": "AUTODESK INC",
       "queries": [
-        "MKSI stock news today June 29, 2026",
-        "MKSI Scientific & Technical Instruments news June 29, 2026",
-        "MKSI earnings guidance analyst rating June 29, 2026",
-        "MKSI shares premarket after hours June 29, 2026"
+        "ADSK stock news today June 29, 2026",
+        "ADSK Software - Application news June 29, 2026",
+        "ADSK earnings guidance analyst rating June 29, 2026",
+        "ADSK shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -732,7 +732,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-expe",
+      "id": "ticker-snps",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -740,13 +740,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "EXPE",
-      "name": "EXPEDIA GROUP IN",
+      "ticker": "SNPS",
+      "name": "SYNOPSYS INC",
       "queries": [
-        "EXPE stock news today June 29, 2026",
-        "EXPE Travel Services news June 29, 2026",
-        "EXPE earnings guidance analyst rating June 29, 2026",
-        "EXPE shares premarket after hours June 29, 2026"
+        "SNPS stock news today June 29, 2026",
+        "SNPS Software - Infrastructure news June 29, 2026",
+        "SNPS earnings guidance analyst rating June 29, 2026",
+        "SNPS shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -754,7 +754,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-vrsk",
+      "id": "ticker-azo",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -762,13 +762,607 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "VRSK",
-      "name": "VERISK ANALYTI",
+      "ticker": "AZO",
+      "name": "AUTOZONE INC",
       "queries": [
-        "VRSK stock news today June 29, 2026",
-        "VRSK Consulting Services news June 29, 2026",
-        "VRSK earnings guidance analyst rating June 29, 2026",
-        "VRSK shares premarket after hours June 29, 2026"
+        "AZO stock news today June 29, 2026",
+        "AZO Auto Parts news June 29, 2026",
+        "AZO earnings guidance analyst rating June 29, 2026",
+        "AZO shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cost",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "COST",
+      "name": "COSTCO WHOLESALE",
+      "queries": [
+        "COST stock news today June 29, 2026",
+        "COST Discount Stores news June 29, 2026",
+        "COST earnings guidance analyst rating June 29, 2026",
+        "COST shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-avgo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "AVGO",
+      "name": "BROADCOM INC",
+      "queries": [
+        "AVGO stock news today June 29, 2026",
+        "AVGO Semiconductors news June 29, 2026",
+        "AVGO earnings guidance analyst rating June 29, 2026",
+        "AVGO shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-onds",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "ONDS",
+      "name": "ONDAS HOLDINGS I",
+      "queries": [
+        "ONDS stock news today June 29, 2026",
+        "ONDS Communication Equipment news June 29, 2026",
+        "ONDS earnings guidance analyst rating June 29, 2026",
+        "ONDS shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-oklo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "OKLO",
+      "name": "OKLO INC",
+      "queries": [
+        "OKLO stock news today June 29, 2026",
+        "OKLO Utilities - Independent Power Producers news June 29, 2026",
+        "OKLO earnings guidance analyst rating June 29, 2026",
+        "OKLO shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-ionq",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "IONQ",
+      "name": "IONQ INC",
+      "queries": [
+        "IONQ stock news today June 29, 2026",
+        "IONQ Computer Hardware news June 29, 2026",
+        "IONQ earnings guidance analyst rating June 29, 2026",
+        "IONQ shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-asts",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "ASTS",
+      "name": "AST SPACEMOBILE",
+      "queries": [
+        "ASTS stock news today June 29, 2026",
+        "ASTS Communication Equipment news June 29, 2026",
+        "ASTS earnings guidance analyst rating June 29, 2026",
+        "ASTS shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-it",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "IT",
+      "name": "GARTNER INC",
+      "queries": [
+        "IT stock news today June 29, 2026",
+        "IT Information Technology Services news June 29, 2026",
+        "IT earnings guidance analyst rating June 29, 2026",
+        "IT shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rdw",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "RDW",
+      "name": "REDWIRE CORP",
+      "queries": [
+        "RDW stock news today June 29, 2026",
+        "RDW Aerospace & Defense news June 29, 2026",
+        "RDW earnings guidance analyst rating June 29, 2026",
+        "RDW shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rgti",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "RGTI",
+      "name": "RIGETTI COMPUTIN",
+      "queries": [
+        "RGTI stock news today June 29, 2026",
+        "RGTI Computer Hardware news June 29, 2026",
+        "RGTI earnings guidance analyst rating June 29, 2026",
+        "RGTI shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-smci",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "SMCI",
+      "name": "SUPER MICRO COMP",
+      "queries": [
+        "SMCI stock news today June 29, 2026",
+        "SMCI Computer Hardware news June 29, 2026",
+        "SMCI earnings guidance analyst rating June 29, 2026",
+        "SMCI shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sofi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "SOFI",
+      "name": "SOFI TECHNOLOGIE",
+      "queries": [
+        "SOFI stock news today June 29, 2026",
+        "SOFI Credit Services news June 29, 2026",
+        "SOFI earnings guidance analyst rating June 29, 2026",
+        "SOFI shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-pins",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "PINS",
+      "name": "PINTEREST INC -A",
+      "queries": [
+        "PINS stock news today June 29, 2026",
+        "PINS Internet Content & Information news June 29, 2026",
+        "PINS earnings guidance analyst rating June 29, 2026",
+        "PINS shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-lite",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "LITE",
+      "name": "LUMENTUM HOL",
+      "queries": [
+        "LITE stock news today June 29, 2026",
+        "LITE Communication Equipment news June 29, 2026",
+        "LITE earnings guidance analyst rating June 29, 2026",
+        "LITE shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-aaoi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "AAOI",
+      "name": "APPLIED OPTOELEC",
+      "queries": [
+        "AAOI stock news today June 29, 2026",
+        "AAOI Communication Equipment news June 29, 2026",
+        "AAOI earnings guidance analyst rating June 29, 2026",
+        "AAOI shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mstr",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "MSTR",
+      "name": "STRATEGY INC",
+      "queries": [
+        "MSTR stock news today June 29, 2026",
+        "MSTR Software - Application news June 29, 2026",
+        "MSTR earnings guidance analyst rating June 29, 2026",
+        "MSTR shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-wday",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "WDAY",
+      "name": "WORKDAY INC-A",
+      "queries": [
+        "WDAY stock news today June 29, 2026",
+        "WDAY Software - Application news June 29, 2026",
+        "WDAY earnings guidance analyst rating June 29, 2026",
+        "WDAY shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-hubs",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "HUBS",
+      "name": "HUBSPOT INC",
+      "queries": [
+        "HUBS stock news today June 29, 2026",
+        "HUBS Software - Application news June 29, 2026",
+        "HUBS earnings guidance analyst rating June 29, 2026",
+        "HUBS shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-be",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "BE",
+      "name": "BLOOM ENERGY C-A",
+      "queries": [
+        "BE stock news today June 29, 2026",
+        "BE Electrical Equipment & Parts news June 29, 2026",
+        "BE earnings guidance analyst rating June 29, 2026",
+        "BE shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-coin",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "COIN",
+      "name": "COINBASE GLOBA-A",
+      "queries": [
+        "COIN stock news today June 29, 2026",
+        "COIN Financial Data & Stock Exchanges news June 29, 2026",
+        "COIN earnings guidance analyst rating June 29, 2026",
+        "COIN shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crwv",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CRWV",
+      "name": "COREWEAVE I-CL A",
+      "queries": [
+        "CRWV stock news today June 29, 2026",
+        "CRWV Software - Infrastructure news June 29, 2026",
+        "CRWV earnings guidance analyst rating June 29, 2026",
+        "CRWV shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-on",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "ON",
+      "name": "ON SEMICONDUCTOR",
+      "queries": [
+        "ON stock news today June 29, 2026",
+        "ON Semiconductors news June 29, 2026",
+        "ON earnings guidance analyst rating June 29, 2026",
+        "ON shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-wdc",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "WDC",
+      "name": "WESTERN DIGITAL",
+      "queries": [
+        "WDC stock news today June 29, 2026",
+        "WDC Computer Hardware news June 29, 2026",
+        "WDC earnings guidance analyst rating June 29, 2026",
+        "WDC shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-fslr",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "FSLR",
+      "name": "FIRST SOLAR INC",
+      "queries": [
+        "FSLR stock news today June 29, 2026",
+        "FSLR Solar news June 29, 2026",
+        "FSLR earnings guidance analyst rating June 29, 2026",
+        "FSLR shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-team",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "TEAM",
+      "name": "ATLASSIAN CORP-A",
+      "queries": [
+        "TEAM stock news today June 29, 2026",
+        "TEAM Software - Application news June 29, 2026",
+        "TEAM earnings guidance analyst rating June 29, 2026",
+        "TEAM shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crcl",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CRCL",
+      "name": "CIRCLE INTERNET",
+      "queries": [
+        "CRCL stock news today June 29, 2026",
+        "CRCL Capital Markets news June 29, 2026",
+        "CRCL earnings guidance analyst rating June 29, 2026",
+        "CRCL shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-alab",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "ALAB",
+      "name": "ASTERA LABS INC",
+      "queries": [
+        "ALAB stock news today June 29, 2026",
+        "ALAB Semiconductors news June 29, 2026",
+        "ALAB earnings guidance analyst rating June 29, 2026",
+        "ALAB shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rddt",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "RDDT",
+      "name": "REDDIT INC-A",
+      "queries": [
+        "RDDT stock news today June 29, 2026",
+        "RDDT Internet Content & Information news June 29, 2026",
+        "RDDT earnings guidance analyst rating June 29, 2026",
+        "RDDT shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -798,7 +1392,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-luv",
+      "id": "ticker-xpo",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -806,13 +1400,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "LUV",
-      "name": "SOUTHWEST AIR",
+      "ticker": "XPO",
+      "name": "XPO INC",
       "queries": [
-        "LUV stock news today June 29, 2026",
-        "LUV Airlines news June 29, 2026",
-        "LUV earnings guidance analyst rating June 29, 2026",
-        "LUV shares premarket after hours June 29, 2026"
+        "XPO stock news today June 29, 2026",
+        "XPO Trucking news June 29, 2026",
+        "XPO earnings guidance analyst rating June 29, 2026",
+        "XPO shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -820,7 +1414,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-aep",
+      "id": "ticker-rklb",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -828,13 +1422,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "AEP",
-      "name": "AMERICAN ELECTRI",
+      "ticker": "RKLB",
+      "name": "ROCKET LAB CORP",
       "queries": [
-        "AEP stock news today June 29, 2026",
-        "AEP Utilities - Regulated Electric news June 29, 2026",
-        "AEP earnings guidance analyst rating June 29, 2026",
-        "AEP shares premarket after hours June 29, 2026"
+        "RKLB stock news today June 29, 2026",
+        "RKLB Aerospace & Defense news June 29, 2026",
+        "RKLB earnings guidance analyst rating June 29, 2026",
+        "RKLB shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -842,7 +1436,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-strl",
+      "id": "ticker-gddy",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -850,13 +1444,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "STRL",
-      "name": "STERLING INFRAST",
+      "ticker": "GDDY",
+      "name": "GODADDY INC-A",
       "queries": [
-        "STRL stock news today June 29, 2026",
-        "STRL Engineering & Construction news June 29, 2026",
-        "STRL earnings guidance analyst rating June 29, 2026",
-        "STRL shares premarket after hours June 29, 2026"
+        "GDDY stock news today June 29, 2026",
+        "GDDY Software - Infrastructure news June 29, 2026",
+        "GDDY earnings guidance analyst rating June 29, 2026",
+        "GDDY shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -864,7 +1458,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-payx",
+      "id": "ticker-now",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -872,123 +1466,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "PAYX",
-      "name": "PAYCHEX INC",
+      "ticker": "NOW",
+      "name": "SERVICENOW INC",
       "queries": [
-        "PAYX stock news today June 29, 2026",
-        "PAYX Software - Application news June 29, 2026",
-        "PAYX earnings guidance analyst rating June 29, 2026",
-        "PAYX shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-rvmd",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "RVMD",
-      "name": "REVOLUTION MEDIC",
-      "queries": [
-        "RVMD stock news today June 29, 2026",
-        "RVMD Biotechnology news June 29, 2026",
-        "RVMD earnings guidance analyst rating June 29, 2026",
-        "RVMD shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-ppl",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "PPL",
-      "name": "PPL CORP",
-      "queries": [
-        "PPL stock news today June 29, 2026",
-        "PPL Utilities - Regulated Electric news June 29, 2026",
-        "PPL earnings guidance analyst rating June 29, 2026",
-        "PPL shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-roku",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "ROKU",
-      "name": "ROKU INC",
-      "queries": [
-        "ROKU stock news today June 29, 2026",
-        "ROKU Entertainment news June 29, 2026",
-        "ROKU earnings guidance analyst rating June 29, 2026",
-        "ROKU shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-apo",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "APO",
-      "name": "APOLLO GLOBAL MA",
-      "queries": [
-        "APO stock news today June 29, 2026",
-        "APO Asset Management news June 29, 2026",
-        "APO earnings guidance analyst rating June 29, 2026",
-        "APO shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-hum",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "HUM",
-      "name": "HUMANA INC",
-      "queries": [
-        "HUM stock news today June 29, 2026",
-        "HUM Healthcare Plans news June 29, 2026",
-        "HUM earnings guidance analyst rating June 29, 2026",
-        "HUM shares premarket after hours June 29, 2026"
+        "NOW stock news today June 29, 2026",
+        "NOW Software - Application news June 29, 2026",
+        "NOW earnings guidance analyst rating June 29, 2026",
+        "NOW shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,
@@ -1018,7 +1502,7 @@
       "freshness_required": true
     },
     {
-      "id": "ticker-tln",
+      "id": "ticker-qcom",
       "type": "ticker",
       "lane": "equities-earnings-single-stocks",
       "priority": 1,
@@ -1026,497 +1510,13 @@
         "Equities and Single-Stock Watchlist",
         "Sector and Factor Setup"
       ],
-      "ticker": "TLN",
-      "name": "TALEN ENERGY COR",
+      "ticker": "QCOM",
+      "name": "QUALCOMM INC",
       "queries": [
-        "TLN stock news today June 29, 2026",
-        "TLN Utilities - Independent Power Producers news June 29, 2026",
-        "TLN earnings guidance analyst rating June 29, 2026",
-        "TLN shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-kdp",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "KDP",
-      "name": "KEURIG DR PEPPER",
-      "queries": [
-        "KDP stock news today June 29, 2026",
-        "KDP Beverages - Non-Alcoholic news June 29, 2026",
-        "KDP earnings guidance analyst rating June 29, 2026",
-        "KDP shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-dhi",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "DHI",
-      "name": "DR HORTON INC",
-      "queries": [
-        "DHI stock news today June 29, 2026",
-        "DHI Residential Construction news June 29, 2026",
-        "DHI earnings guidance analyst rating June 29, 2026",
-        "DHI shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-phm",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "PHM",
-      "name": "PULTEGROUP INC",
-      "queries": [
-        "PHM stock news today June 29, 2026",
-        "PHM Residential Construction news June 29, 2026",
-        "PHM earnings guidance analyst rating June 29, 2026",
-        "PHM shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-mck",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "MCK",
-      "name": "MCKESSON CORP",
-      "queries": [
-        "MCK stock news today June 29, 2026",
-        "MCK Medical Distribution news June 29, 2026",
-        "MCK earnings guidance analyst rating June 29, 2026",
-        "MCK shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-sbux",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "SBUX",
-      "name": "STARBUCKS CORP",
-      "queries": [
-        "SBUX stock news today June 29, 2026",
-        "SBUX Restaurants news June 29, 2026",
-        "SBUX earnings guidance analyst rating June 29, 2026",
-        "SBUX shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-axon",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "AXON",
-      "name": "AXON ENTERPRISE",
-      "queries": [
-        "AXON stock news today June 29, 2026",
-        "AXON Aerospace & Defense news June 29, 2026",
-        "AXON earnings guidance analyst rating June 29, 2026",
-        "AXON shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-dash",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "DASH",
-      "name": "DOORDASH INC-A",
-      "queries": [
-        "DASH stock news today June 29, 2026",
-        "DASH Internet Retail news June 29, 2026",
-        "DASH earnings guidance analyst rating June 29, 2026",
-        "DASH shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-bsx",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "BSX",
-      "name": "BOSTON SCIENTIFC",
-      "queries": [
-        "BSX stock news today June 29, 2026",
-        "BSX Medical Devices news June 29, 2026",
-        "BSX earnings guidance analyst rating June 29, 2026",
-        "BSX shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-vmc",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "VMC",
-      "name": "VULCAN MATERIALS",
-      "queries": [
-        "VMC stock news today June 29, 2026",
-        "VMC Building Materials news June 29, 2026",
-        "VMC earnings guidance analyst rating June 29, 2026",
-        "VMC shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-ea",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "EA",
-      "name": "ELECTRONIC ARTS",
-      "queries": [
-        "EA stock news today June 29, 2026",
-        "EA Electronic Gaming & Multimedia news June 29, 2026",
-        "EA earnings guidance analyst rating June 29, 2026",
-        "EA shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-cboe",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "CBOE",
-      "name": "CBOE GLOBAL MARK",
-      "queries": [
-        "CBOE stock news today June 29, 2026",
-        "CBOE Financial Data & Stock Exchanges news June 29, 2026",
-        "CBOE earnings guidance analyst rating June 29, 2026",
-        "CBOE shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-hal",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "HAL",
-      "name": "HALLIBURTON CO",
-      "queries": [
-        "HAL stock news today June 29, 2026",
-        "HAL Oil & Gas Equipment & Services news June 29, 2026",
-        "HAL earnings guidance analyst rating June 29, 2026",
-        "HAL shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-adp",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "ADP",
-      "name": "AUTOMATIC DATA",
-      "queries": [
-        "ADP stock news today June 29, 2026",
-        "ADP Software - Application news June 29, 2026",
-        "ADP earnings guidance analyst rating June 29, 2026",
-        "ADP shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-psa",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "PSA",
-      "name": "PUBLIC STORAGE",
-      "queries": [
-        "PSA stock news today June 29, 2026",
-        "PSA REIT - Industrial news June 29, 2026",
-        "PSA earnings guidance analyst rating June 29, 2026",
-        "PSA shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-slb",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "SLB",
-      "name": "SLB LTD",
-      "queries": [
-        "SLB stock news today June 29, 2026",
-        "SLB Oil & Gas Equipment & Services news June 29, 2026",
-        "SLB earnings guidance analyst rating June 29, 2026",
-        "SLB shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-eog",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "EOG",
-      "name": "EOG RESOURCES",
-      "queries": [
-        "EOG stock news today June 29, 2026",
-        "EOG Oil & Gas E&P news June 29, 2026",
-        "EOG earnings guidance analyst rating June 29, 2026",
-        "EOG shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-kvue",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "KVUE",
-      "name": "KENVUE INC",
-      "queries": [
-        "KVUE stock news today June 29, 2026",
-        "KVUE Household & Personal Products news June 29, 2026",
-        "KVUE earnings guidance analyst rating June 29, 2026",
-        "KVUE shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-crs",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "CRS",
-      "name": "CARPENTER TECH",
-      "queries": [
-        "CRS stock news today June 29, 2026",
-        "CRS Metal Fabrication news June 29, 2026",
-        "CRS earnings guidance analyst rating June 29, 2026",
-        "CRS shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-all",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "ALL",
-      "name": "ALLSTATE CORP",
-      "queries": [
-        "ALL stock news today June 29, 2026",
-        "ALL Insurance - Property & Casualty news June 29, 2026",
-        "ALL earnings guidance analyst rating June 29, 2026",
-        "ALL shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-tgt",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "TGT",
-      "name": "TARGET CORP",
-      "queries": [
-        "TGT stock news today June 29, 2026",
-        "TGT Discount Stores news June 29, 2026",
-        "TGT earnings guidance analyst rating June 29, 2026",
-        "TGT shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-cah",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "CAH",
-      "name": "CARDINAL HEALTH",
-      "queries": [
-        "CAH stock news today June 29, 2026",
-        "CAH Medical Distribution news June 29, 2026",
-        "CAH earnings guidance analyst rating June 29, 2026",
-        "CAH shares premarket after hours June 29, 2026"
-      ],
-      "max_results": 3,
-      "timeout_seconds": 45,
-      "requires_extraction": true,
-      "freshness_required": true
-    },
-    {
-      "id": "ticker-mu",
-      "type": "ticker",
-      "lane": "equities-earnings-single-stocks",
-      "priority": 1,
-      "expected_sections": [
-        "Equities and Single-Stock Watchlist",
-        "Sector and Factor Setup"
-      ],
-      "ticker": "MU",
-      "name": "MICRON TECH",
-      "queries": [
-        "MU stock news today June 29, 2026",
-        "MU Semiconductors news June 29, 2026",
-        "MU earnings guidance analyst rating June 29, 2026",
-        "MU shares premarket after hours June 29, 2026"
+        "QCOM stock news today June 29, 2026",
+        "QCOM Semiconductors news June 29, 2026",
+        "QCOM earnings guidance analyst rating June 29, 2026",
+        "QCOM shares premarket after hours June 29, 2026"
       ],
       "max_results": 3,
       "timeout_seconds": 45,

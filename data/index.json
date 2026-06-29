@@ -6,6 +6,7 @@
     "files": [
       "runs/2026-06-29/pre-market/briefing.md",
       "runs/2026-06-29/pre-market/summary.md",
+      "runs/2026-06-29/pre-market/senior_pm_recap.md",
       "runs/2026-06-29/pre-market/articles.json",
       "runs/2026-06-29/pre-market/articles_enriched.json",
       "runs/2026-06-29/pre-market/search_plan.json",
@@ -173,6 +174,7 @@
     "runs/2026-06-29/pre-market/dashboard.html",
     "runs/2026-06-29/pre-market/market_snapshot.json",
     "runs/2026-06-29/pre-market/search_plan.json",
+    "runs/2026-06-29/pre-market/senior_pm_recap.md",
     "runs/2026-06-29/pre-market/summary.md"
   ]
 }
