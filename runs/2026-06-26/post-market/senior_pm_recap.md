@@ -1,0 +1,5 @@
+## Senior PM Recap
+**Post Market:** compact portfolio-manager recap.
+- **Tape:** Session verdict: Mixed — all three major large-cap indexes closed fractionally lower, while the Russell 2000 managed a slight gain (+0.07%). The S&P 500 finished essentially flat (-0.05%), extending Thursday's tape where the index held unchanged despite a 6% plunge in Apple. After-hours: equity futures are ticking higher (S&P 500 contract up 0.44%), signaling a modest bounce attempt.
+- **Driver:** Source: marketsnapshot.py (deterministic — polygon.io + FRED), Advisor Perspectives, TheStreet, Schwab
+- **Cross-asset read:** Cross-asset read: The tape is deeply bifurcated. Tech is in a correction (Nasdaq down 4 straight days), but the broader market is rotating — not fleeing. Credit spreads remain tight, the dollar is soft, and the VIX declined even as tech sold off. The only clear risk-off signal comes from oil, where demand fears are mounting. Gold's modest bid (+0.4%) is consistent with geopolitical tail risks (Strait of Hormuz) and a weakening dollar, not a macro panic.

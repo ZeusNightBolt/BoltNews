@@ -1,0 +1,403 @@
+{
+  "full_date": "2026-06-03",
+  "consolidated_at": "2026-06-04T12:35:46.033725",
+  "am_articles": [
+    {
+      "title": "Markets News, June 3, 2026: Indexes Fall, Ending Run of Records; S&P 500 Snaps 9-Session Winning Streak; Bond Yields, Oil Prices Gain",
+      "description": "S&P 500 -0.74% (7,553.68), Dow -1.2% (>-600 pts), Nasdaq -0.9%. IT and Consumer Discretionary -1.5% each. Energy +1.9% on oil surge. IBM, CRM, MSFT, NVDA fell 3-7%. LITE -9% worst performer. 10Y yield >4.49%. WTI +2.3% near $96/bbl. DXY 99.52. Bitcoin ~$65,600.",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822",
+      "source": "Investopedia",
+      "ticker": null,
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "S&P 500, Dow Jones, Nasdaq Index Push to Fresh Highs, While Russell 2000 Lags",
+      "description": "Nasdaq, S&P 500, and Dow hit record closes June 1-2 while Russell 2000 declined. Tech/AI leadership concentrated. Consumer Discretionary under pressure (AMZN, COST below 200-day MA). Oil surged +5.91% to $92.52 on Iran tensions. Growing divergence beneath surface.",
+      "url": "https://www.fxleaders.com/news/2026/06/01/sp-500-dow-jones-nasdaq-index-push-to-fresh-highs-while-russell-2000-lags/",
+      "source": "FX Leaders",
+      "ticker": null,
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Global Economy Briefing \u2014 June 2, 2026: Records, Oil Spike, Manufacturing PMI at 4-Year High",
+      "description": "S&P 500 7,599.96, Nasdaq 27,086.81, Dow 51,078.88 all records. VIX 16.05 (+4.77%). WTI +5.93% $92.54, Brent $97.79. 10Y 4.51% (+6bps). ISM Mfg PMI 54.0 (4yr high). Atlanta Fed GDPNow Q2 cut to 3.0%. Brazil Mfg PMI crashed to 49.1. Fed hike odds ~60% by Dec.",
+      "url": "https://www.riotimesonline.com/global-economy-briefing-june-2-2026/",
+      "source": "RIO Times",
+      "ticker": null,
+      "category": "Macro",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Federal Reserve Holds Rates at 3.75% \u2014 Deepest Dissent Since 1992 (8-4 Vote). Next FOMC June 17",
+      "description": "Fed funds rate 3.50-3.75% held for 3rd straight meeting. April vote 8-4 with 4 dissents (most since Oct 1992). CPI 3.8% YoY, unemployment 4.3%. FOMC minutes: majority sees potential rate HIKES if inflation persists above 2%. Next decision June 17, consensus: no change.",
+      "url": "https://tradingeconomics.com/united-states/interest-rate",
+      "source": "Trading Economics / Federal Reserve",
+      "ticker": null,
+      "category": "Rates",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Treasury Yields June 4: 4W Bill 3.69%, 2Y 4.06%, 10Y 4.48%, 30Y 4.98% \u2014 Curve Steady",
+      "description": "US 4-week bill 3.69% (+1bp). 2Y 4.06% (-2.2bp). 10Y 4.48% (-2.1bp). 30Y 4.98% (-1.1bp). 2s10s spread ~42bp. Short-end down 56bp YoY. Market pricing no rate changes through 2026 per Trading Economics models.",
+      "url": "https://tradingeconomics.com/united-states/4-week-bill-yield",
+      "source": "Trading Economics",
+      "ticker": null,
+      "category": "Rates",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Broadcom (AVGO) Q2 FY2026 Earnings: Revenue $22.2B (+48% YoY), EPS $2.44 Beat, AI Revenue $10.8B (+143% YoY), Q3 Guide $29.4B",
+      "description": "AVGO delivered record quarter. AI semiconductor revenue $10.8B (+143% YoY). Q3 guidance ~$29.4B revenue, AI >$16B (>200% YoY). Adj EBITDA margin 69%. FCF $10.3B. Stock at $479.23 (-0.5% pre-earnings), +40% YTD. Google $80B AI buildout deal, Meta partnership.",
+      "url": "https://tickeron.com/earnings/AVGO/",
+      "source": "Tickeron / Broadcom IR",
+      "ticker": "AVGO",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:10:00Z"
+    },
+    {
+      "title": "CrowdStrike (CRWD) Q1 FY2027: Revenue $1.39B (+26% YoY), EPS $1.10 Beat, But Stock -10.3% After-Hours on 'Mythos AI' Narrative",
+      "description": "CRWD beat on revenue ($1.39B vs $1.36B) and EPS ($1.10 vs $1.07). ARR $5.51B (+24% YoY). Raised FY2027 net new ARR guide +$50M. FCF record $468.5M (34% margin). CEO Kurtz: 'Mythos AI inflection point' \u2014 only cyber firm selected by both Anthropic and OpenAI. Stock -2.78% regular, -10.3% after-hours to $670.80. High expectations already priced in.",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-6-3-crowdstrike-holdings-inc-stock/",
+      "source": "MarketBeat / CrowdStrike IR",
+      "ticker": "CRWD",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:15:00Z"
+    },
+    {
+      "title": "Oil Prices Surge as Iran Suspends US Talks, Strait of Hormuz Supply Fears Return \u2014 Brent $94.98, WTI $92.16",
+      "description": "Brent +4.2% to $94.98, WTI +5.5% to $92.16. Iran's Tasnim reported Tehran halted talks after renewed Lebanon clashes. Strait of Hormuz (20% of global oil/LNG) remains disrupted. Goldman: crude may stay $90 even if strait reopens. OECD: Iran conflict 'dominant force' on global economy. WTI currently $95.31 (-0.74% today June 4).",
+      "url": "https://economictimes.indiatimes.com/news/international/us/why-are-oil-prices-up-today-and-will-brent-and-us-wti-crude-futures-continue-to-drop-or-rise-again-oil-prices-surge-as-iran-talks-stall-and-supply-concerns-return/articleshow/131450108.cms",
+      "source": "Economic Times",
+      "ticker": null,
+      "category": "Macro",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "NVIDIA (NVDA) $214.75 (-3.62% June 3) \u2014 New PC Chip, DGX Station, Cosmos 3, Robotaxi Platform Announced",
+      "description": "NVDA -3.62% to $214.75 (high $222.82, low $214.51). June 1: +6.26% on PC chip launch. New products: DGX Station for Windows (1T parameter, 748GB memory), RTX Spark (1 petaflop AI superchip), Cosmos 3 world model, Alpamayo 2 Super VLA model for robotaxis, Isaac GR00T humanoid robot. TSMC adopting NVIDIA AI for fabs. $1.5B Healthy Taiwan AI initiative. 52-wk high $236.54 (May 14), low $138.83.",
+      "url": "https://www.stocktitan.net/news/NVDA/",
+      "source": "StockTitan / NVIDIA",
+      "ticker": "NVDA",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:10:00Z"
+    },
+    {
+      "title": "Space Stocks Fall: ASTS -5%, RKLB -3% After Blue Origin Hotfire Explosion \u2014 Analyst Pushes Coverage to 2028",
+      "description": "Blue Origin New Glenn 'anomaly' during hotfire test at Cape Canaveral. Analyst Tim Farrar: only 3-5 F9 launches realistic in 2026, continuous AST service not before 2028. Deutsche Bank downgraded ASTS to Hold. ASTS retail sentiment 'extremely bullish' despite +381% 1yr return. RKLB -3%, LUNR -3%, RDW -4%. ASTS CEO maintains 'on target' for 45 satellites.",
+      "url": "https://stocktwits.com/news-articles/markets/equity/asts-rklb-lunr-rdw-rkto-slide-blue-origin-blowup/cZ0gZ4fReuy",
+      "source": "Stocktwits",
+      "ticker": "ASTS",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:10:00Z"
+    },
+    {
+      "title": "SpaceX IPO at $135/Share, 555.6M Shares, Raising ~$75B \u2014 Largest IPO Ever, $1.75T Valuation",
+      "description": "SpaceX IPO filing: $135/share, 555.6M shares \u2192 ~$75B raise, $1.75T implied valuation. Would place among S&P 500's top members by market cap. Could launch as soon as next week. Part of expected wave of mega-listings including Anthropic, OpenAI. SpaceX identified ASTS as direct competitor in direct-to-device communications. TAM estimated at $28.5T.",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822",
+      "source": "Investopedia",
+      "ticker": null,
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Palo Alto Networks (PANW) Q3 FY2026: EPS $0.85 Beat, Revenue $3.0B, Stock -5.7% on Lofty Expectations",
+      "description": "PANW beat fiscal Q3: adj EPS $0.85 on $3.0B revenue. Dan Ives (Wedbush) called it 'Wembanyama-Like Quarter.' Stock fell 5.7% despite beat \u2014 high expectations after record highs. Cyber sector momentum remains with AI tailwinds.",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822",
+      "source": "Investopedia",
+      "ticker": "PANW",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Trump Proposes 10-12.5% Tariffs on 60 Countries Over Forced-Labor; Cuts Industrial Equipment Tariffs to 15%",
+      "description": "New proposal: 10-12.5% tariffs on 60 countries (Canada, Mexico, EU, China) over forced-labor safeguards. 76-page exemption list. Separately cut tariffs on combines, bulldozers, forklifts to 15% (10% if mostly US metal). Hearing July 7. Context: Supreme Court struck down most emergency-declaration tariffs in 2025.",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822",
+      "source": "Investopedia",
+      "ticker": null,
+      "category": "Macro",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "US Gas Prices $4.56/Gallon, Up >40% Since February \u2014 Consumer Behavior Shifting",
+      "description": "National avg $4.56/gal, >40% since late Feb when Iran closed Strait of Hormuz. Consumers making smaller, more frequent fill-ups. Walmart CFO: gallons per fill-up fell below 10 for first time since 2022. Costco/Sam's Club/BJ's seeing surge in visits. OECD: conflict 'dominant force' shaping global economy.",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822",
+      "source": "Investopedia",
+      "ticker": null,
+      "category": "Macro",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "MicroStrategy (MSTR) Sells 32 BTC for First Time Since 2022 \u2014 Stock Drops 4.72%",
+      "description": "MSTR sold 32 BTC (first sale since Dec 2022 tax-loss harvesting). June 1 8-K filing revealed sale. Stock dropped $7.52 (-4.72%) to $151.57. Bitcoin slid toward $71,400 (-2.77%). MSTR holds ~843,706 BTC at avg cost ~$65,000. Total holdings valued at ~$55B at current BTC prices.",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/microstrategy-sells-bitcoin-first-time-120915096.html",
+      "source": "Yahoo Finance",
+      "ticker": "MSTR",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:15:00Z"
+    },
+    {
+      "title": "USD/JPY at 159.92 (-0.09% June 4), EUR/USD Testing 1.1610 Resistance \u2014 DXY 99.52",
+      "description": "USD/JPY 159.918 (-0.09% today), -11.4% YoY (JPY weakening). EUR/USD testing 1.1610 resistance. DXY 99.52 (+0.3% June 3). USD supported by Fed hawkishness, Mideast geopolitical risk premium. Range-bound outlook for June per MTFX. JPY weakness persists despite potential BoJ normalization.",
+      "url": "https://tradingeconomics.com/japan/currency",
+      "source": "Trading Economics",
+      "ticker": null,
+      "category": "FX",
+      "fetched_at": "2026-06-04T06:20:00Z"
+    },
+    {
+      "title": "Photonics Stocks Give Back Gains: Lumentum (LITE) -9% Worst S&P Performer, Still +150% YTD",
+      "description": "LITE -9% on June 3, worst S&P 500/ Nasdaq performer. Coherent (COHR) -2.5%. Both up >125-150% YTD. Profit-taking after massive runs in photonics/AI infrastructure names. LITE short float 11.77%, high vol name. Sector rotation out of extended tech.",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822",
+      "source": "Investopedia",
+      "ticker": "LITE",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "ISM Manufacturing PMI (May) Hits 4-Year High at 54.0, New Orders 56.8 \u2014 But GDPNow Q2 Cut to 3.0%",
+      "description": "ISM Manufacturing 54.0 (consensus 53.3), New Orders 56.8 (from 54.1). Prices Paid 82.1 (eased from 85.3). S&P Global Mfg PMI 55.1. But Atlanta Fed GDPNow Q2 cut from 3.8% to 3.0%. Eurozone Mfg PMI 51.6 (beat), Germany 50.1 (just expanded), UK 53.9 (beat). Brazil Mfg PMI collapsed to 49.1 from 52.6 \u2014 real economy stress from 14.50% Selic.",
+      "url": "https://www.riotimesonline.com/global-economy-briefing-june-2-2026/",
+      "source": "RIO Times",
+      "ticker": null,
+      "category": "Macro",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Dell (DELL) & HPE Surge on AI Server Demand, Marvell (MRVL) +33% Monday, +5% Wednesday",
+      "description": "DELL extended multi-day AI-surge (+10.7% June 1). HPE +19% Monday, -2% Wednesday. MRVL +33% Monday after AI chip news, +5% further Wednesday. AI infrastructure spending accelerating. NVDA's PC chip launch lifted entire AI ecosystem. DELL short float 3.3%, MRVL 3.7%.",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06032026-11989822",
+      "source": "Investopedia / Multiple",
+      "ticker": "DELL",
+      "category": "Equities",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "Gold -1% to $4,475/oz as Rising Yields & Stronger Dollar Weigh; WTI $95.31 (-0.74% Today)",
+      "description": "Gold -1% to $4,475/oz on June 3 amid rising yields and stronger dollar. WTI crude $95.31 on June 4 (-0.74% from prior session, -6.81% past month, +50.4% YoY). Bitcoin ~$65,600. Crypto/commodity risk-off tone in face of rate uncertainty.",
+      "url": "https://tradingeconomics.com/commodity/crude-oil",
+      "source": "Trading Economics / Investopedia",
+      "ticker": null,
+      "category": "Macro",
+      "fetched_at": "2026-06-04T06:20:00Z"
+    },
+    {
+      "title": "Credit Markets: IG Yields Near 5%, HY Cautious \u2014 Schwab 'Up-in-Quality' Theme Maintained",
+      "description": "IG corporate bond yields near 5% \u2014 highest carry in over a decade. Credit spreads remain tight. Schwab maintains 'up-in-quality' theme: IG attractive, HY cautious on rich valuations. IG yield curve positively sloped rewarding duration. Corporate credit quality improving. Bank loan market also watched.",
+      "url": "https://www.schwab.com/learn/story/corporate-bond-outlook",
+      "source": "Charles Schwab",
+      "ticker": null,
+      "category": "Credit",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    },
+    {
+      "title": "What to Watch: ADP Payrolls, ISM Services Today June 4; NFP Friday June 6 \u2014 Marquee Event",
+      "description": "Key data this week: Wed June 4 - ADP private payrolls & ISM Services PMI, Friday June 6 - Non-Farm Payrolls & unemployment (marquee event for Warsh Fed). US-Iran talks status critical; formal collapse could push oil through $95 and 10Y above 4.60%. Fed hike odds ~60% by December.",
+      "url": "https://www.riotimesonline.com/global-economy-briefing-june-2-2026/",
+      "source": "RIO Times",
+      "ticker": null,
+      "category": "Macro",
+      "fetched_at": "2026-06-04T06:05:00Z"
+    }
+  ],
+  "pm_articles": [
+    {
+      "ticker": null,
+      "title": "Stock market today: Live updates \u2014 June 2-3, 2026 (CNBC)",
+      "url": "https://www.cnbc.com/2026/06/02/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "category": "Market Wrap",
+      "key_points": [
+        "Dow fell 424 pts (-0.8%) Tuesday; extended losses Wednesday",
+        "WTI +2% to ~$96/bbl; Brent ~$98/bbl on Iran escalation",
+        "ADP payrolls +122K vs 110K expected",
+        "ISM Services 53.6 vs 53.9 consensus",
+        "10Y yield approached 4.5%, 30Y near 5%",
+        "CME FedWatch: hike priced by year-end 2026",
+        "NVDA -3%, DELL -4%, ORCL -6%, MSFT -3%",
+        "HPE +19.5% on blowout earnings",
+        "SpaceX IPO fixed at $135/sh, $1.75T valuation",
+        "RGTI -10%, QBTS -7%, IONQ -4% (quantum selloff)",
+        "Partners Group caps redemptions"
+      ],
+      "age_hours": 8
+    },
+    {
+      "ticker": null,
+      "title": "Dow, S&P 500, Nasdaq retreat from records as hopes fade for quick US-Iran deal (Yahoo Finance)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-june-3-dow-sp-500-nasdaq-fall-oil-rises-224803128.html",
+      "source": "Yahoo Finance",
+      "category": "Market Wrap",
+      "key_points": [
+        "Dow -1.21% (600+ pts), S&P 500 -0.74%, Nasdaq -0.89%",
+        "WTI above $96/bbl, Brent near $98/bbl \u2014 third straight day of gains",
+        "US-Iran ceasefire talks stalled; Israel Lebanon campaign new obstacle",
+        "SPR withdrawn 8M barrels, now 357.1M \u2014 lowest since early 1980s",
+        "AVGO earnings: EPS $2.44 beat, revenue $22.187B, guidance $29.4B",
+        "MRVL +12% premarket, up 242% YTD (Nvidia CEO called it 'next trillion-dollar company')",
+        "META +3% on AI agent monetization (charging businesses)",
+        "ADP 122K jobs in May, exceeding expectations",
+        "WMT: CEO says $4.26/gal gas main stress point for lower-income consumers"
+      ],
+      "age_hours": 4
+    },
+    {
+      "ticker": null,
+      "title": "Stock Market Today (June 3, 2026): Earnings liveblog \u2014 Broadcom, CrowdStrike, Veeva (TheStreet)",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-03-2026",
+      "source": "TheStreet",
+      "category": "Market Wrap / After-Hours Earnings",
+      "key_points": [
+        "Russell 2000 -1.25% (worst performer)",
+        "WTI +2.51% to $96.11; Brent +1.98% to $97.90",
+        "Iran missiles hit Kuwait/Bahrain; US struck Qeshm Island",
+        "AVGO AH: -6.44%. Revenue $22.187B (miss $22.27B); EPS $2.44 (beat $2.40); Guide $29.4B; AI semi $16B guide (+200% YoY)",
+        "CRWD AH: -7%. Revenue $1.385B (beat $1.363B); EPS $1.10 (beat $1.07); 4-for-1 stock split",
+        "VEEV AH: -1%. Revenue $882.9M +16% YoY (beat $853.6M); raised guidance",
+        "New Trump tariffs: 10-12.5% on 60 economies over forced labor",
+        "Fed Chair Warsh memo: follow 'best of the Fed's traditions'",
+        "Tesla China May sales +40% YoY to 85,982 vehicles"
+      ],
+      "age_hours": 3
+    },
+    {
+      "ticker": "AVGO",
+      "title": "Broadcom Q2 FY2026 Earnings Report (MarketBeat)",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-6-3-broadcom-inc-stock/",
+      "source": "MarketBeat",
+      "category": "Earnings",
+      "key_points": [
+        "Close: $479.23 (-0.49%); AH: $421.86 (-11.97%)",
+        "Revenue $22.2B +48% YoY (record); beat consensus $22.13B",
+        "AI semi revenue $10.8B +143% YoY",
+        "Op margin 67.3% (record) +200 bps YoY",
+        "FCF $10.3B (46% of rev, record)",
+        "Q3 guide: Revenue $29.4B +84% YoY; AI semi $16B +200% YoY",
+        "FY2026 AI rev outlook $56B +180% YoY; FY2027 target >$100B",
+        "Google, Anthropic, OpenAI, Meta + 2 other hyperscalers as core customers",
+        "AI SPV with Apollo: $35B first tranche for >20 GW compute capacity"
+      ],
+      "age_hours": 2
+    },
+    {
+      "ticker": "CRWD",
+      "title": "CrowdStrike Q1 FY2027: Beat-and-Raise + 4-for-1 Stock Split (Benzinga/8-K)",
+      "url": "https://www.benzinga.com/markets/earnings/26/06/52987804/crowdstrike-delivers-beat-and-raise-q1-announces-4-for-1-stock-split",
+      "source": "Benzinga / SEC 8-K",
+      "category": "Earnings",
+      "key_points": [
+        "AH price: $681.20 (-8.68%)",
+        "Revenue $1.39B +26% YoY (beat $1.36B); Adj EPS $1.10 (beat $1.07)",
+        "ARR $5.51B +24% YoY; Net new ARR $255.8M (Q1 record)",
+        "FCF $468.5M (record); FCF margin 34%",
+        "Turned GAAP profitable: $27.8M net income",
+        "Raised FY27 guidance: Rev $5.92-$5.96B; EPS $4.88-$4.96",
+        "4-for-1 stock split: record date June 25, trading July 2",
+        "CEO: 'Mythos moment \u2014 AI and cybersecurity collided'"
+      ],
+      "age_hours": 2
+    },
+    {
+      "ticker": null,
+      "title": "Crude Oil Nears $100 as Iran Launches Attack \u2014 Expert Analysis (Economic Times)",
+      "url": "https://economictimes.indiatimes.com/markets/commodities/news/oil-price-today-june-3-crude-oil-nears-100-again-as-iran-launches-attack-in-fresh-escalation-what-are-experts-saying/articleshow/131474089.cms",
+      "source": "Economic Times",
+      "category": "Commodities / Geopolitics",
+      "key_points": [
+        "Brent $97.05 +1.09%; WTI $94.77 +1.08%",
+        "Iran launched ballistic missiles at Kuwait and Bahrain",
+        "Saudi Aramco CEO: Hormuz disruption could delay stability until 2027; 100M barrels/week at risk",
+        "Morgan Stanley: 'race against time' if Strait remains shut through June",
+        "Trump gives contradictory signals on negotiations",
+        "Even with ceasefire, shipping through Hormuz could take months to normalize"
+      ],
+      "age_hours": 10
+    },
+    {
+      "ticker": null,
+      "title": "Partners Group Caps Withdrawals \u2014 Fresh Concern Over Private Markets (Reuters)",
+      "url": "https://www.reuters.com/world/partners-group-caps-withdrawals-86-billion-fund-shares-plunge-2026-06-03/",
+      "source": "Reuters",
+      "category": "Credit / Private Markets",
+      "key_points": [
+        "Partners Group capped redemptions on $8.6B Global Value SICAV",
+        "Redemption requests hit 9.8% of NAV; cap at 5%",
+        "PGHN fell 16% to 6-year low",
+        "BX -4%, KKR -4%, ARES -4.8%, OWL -4.4%",
+        "Cliffwater: Q2 redemptions 17% on $31.3B fund (up from 14% Q1)",
+        "CEO Layton: 'redemption pressure spreading from private credit to other asset classes'",
+        "Analyst: 'Evergreen funds were sold as liquid PE \u2014 gates expose the contradiction'"
+      ],
+      "age_hours": 6
+    },
+    {
+      "ticker": "PANW",
+      "title": "Palo Alto Networks Raises Annual Forecasts on Strong AI Cybersecurity Demand (Reuters)",
+      "url": "https://www.reuters.com/business/palo-alto-raises-annual-forecasts-strong-ai-cybersecurity-demand-shares-surge-2026-06-02/",
+      "source": "Reuters",
+      "category": "Earnings / Technology",
+      "key_points": [
+        "Q3 revenue $3B +31% YoY (beat $2.94B consensus)",
+        "Raised FY26 guidance: Revenue $11.415-11.425B; EPS $3.77-$3.79",
+        "Shares surged 7.4% AH but reversed to -3% during Wednesday session",
+        "AI-driven threats accelerating enterprise cybersecurity spending",
+        "Post-CyberArk acquisition ($25B), building integrated platform"
+      ],
+      "age_hours": 22
+    },
+    {
+      "ticker": null,
+      "title": "Federal Reserve H.15 Selected Interest Rates \u2014 June 3, 2026",
+      "url": "https://www.federalreserve.gov/releases/h15/",
+      "source": "Federal Reserve Board (primary)",
+      "category": "Rates / Fed",
+      "key_points": [
+        "Fed funds effective: 3.62%",
+        "Bank prime loan: 6.75%",
+        "Discount window: 3.75%",
+        "1Y Treasury: 3.82%; 2Y: 4.05%; 5Y: 4.17%; 10Y: 4.46%; 30Y: 4.97%",
+        "10Y TIPS: 2.07% \u2192 implied breakeven ~2.39%",
+        "Yield curve inverted (2s10s): +41 bps (steepening from inversion earlier this year)",
+        "IG corporate spread: 74 bps; HY spread: 271 bps"
+      ],
+      "age_hours": 5
+    },
+    {
+      "ticker": null,
+      "title": "US Stock Market Today: US stocks edge lower as investors consolidate after records (Economic Times)",
+      "url": "https://m.economictimes.com/markets/us-stocks/news/dow-jones-stock-market-live-updates-nasdaq-sp-500-us-iran-israel-war-hormuz-deal-brent-crude-oil-earnings-forecast-nvidia-macys-gamestop-stock-price-news-3rd-june-2026/liveblog/131484187.cms",
+      "source": "Economic Times",
+      "category": "Market Wrap / Macro",
+      "key_points": [
+        "Kuwait airport hit: 1 killed, 63 injured; airport temporarily shut",
+        "NY Fed President Williams: policy 'in the right place', no immediate need to hike or cut",
+        "ISM Services 54.5 (beat); Prices Paid highest since Aug 2022",
+        "New tariffs: 10-12.5% on 60 economies over forced labor",
+        "Gold fell to 1-week low; palladium -3% to $1,329/oz",
+        "Traders now focused on inflation/CPI over jobs data",
+        "Copper tariff 50% remains on certain products"
+      ],
+      "age_hours": 6
+    },
+    {
+      "ticker": null,
+      "title": "Stock Market News for Jun 3, 2026 (Zacks)",
+      "url": "https://www.zacks.com/stock/news/2931368/stock-market-news-for-jun-3-2026",
+      "source": "Zacks",
+      "category": "Market Wrap",
+      "key_points": [
+        "Tuesday close: DJI +0.5% to 51,307; SPX +0.1% to 7,609; Nasdaq flat at 27,093",
+        "HPE +19.5% on earnings beat ($0.79 vs $0.54 consensus)",
+        "MRVL +32.5% after Jensen Huang called it 'next trillion-dollar company'",
+        "GOOGL -3.9% on $80B stock sale announcement for AI buildout",
+        "VIX -1.74% to 15.77",
+        "NYSE advancers beat decliners 1.52:1; Nasdaq decliners led 1.1:1",
+        "Total volume: 20.51B shares (above 20-session avg 19.93B)"
+      ],
+      "age_hours": 12
+    }
+  ],
+  "total_articles": 33,
+  "dedup_removed": 0
+}

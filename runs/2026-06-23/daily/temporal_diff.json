@@ -1,0 +1,218 @@
+{
+  "pm_date": "2026-06-23",
+  "am_date": "2026-06-24",
+  "consolidated_at": "2026-06-24T06:11:02.629294",
+  "pm_articles": 47,
+  "am_articles": 33,
+  "pm_data_points": 22,
+  "am_data_points": 12,
+  "diff": {
+    "evolved": 3,
+    "confirmed": 2,
+    "pm_only": 12,
+    "am_only": 5,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "pm_value": "19.52",
+        "am_value": "19.49",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "VIX 19.52 ",
+        "am_raw": "VIX 19.49",
+        "pct_change": -0.2,
+        "direction": "flat"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "10y",
+        "pm_value": "4.50%",
+        "am_value": "4.51%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "10Y 4.50%",
+        "am_raw": "10Y 4.51%",
+        "pct_change": 0.2,
+        "direction": "flat"
+      }
+    ],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "pm_value": "$73.79",
+        "am_value": "$72.26",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "WTI $73.79 ",
+        "am_raw": "WTI $72.26",
+        "pct_change": -2.1,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "1.8%",
+        "am_value": "13%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "down 1.8%",
+        "am_raw": "Down 13% ",
+        "pct_change": 622.2,
+        "direction": "up"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "pm_value": "1.8%",
+        "am_value": "-1.44%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "S&P 500 down 1.8%",
+        "am_raw": "SPX -1.44% ",
+        "pct_change": -180.0,
+        "direction": "down"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "guidance",
+        "pm_value": "$16B",
+        "pm_source": "briefing.md",
+        "pm_raw": "guidance $16B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "revenue",
+        "pm_value": "$10.8B",
+        "pm_source": "briefing.md",
+        "pm_raw": "revenue $10.8B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "2%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Nasdaq plunged more than 2%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "3.5%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Nasdaq down 3.5%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "10.1%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Nasdaq up 10.1%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "CBRS",
+        "metric": "revenue",
+        "pm_value": "$183.26M",
+        "pm_source": "briefing.md",
+        "pm_raw": "revenue $183.26M ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "guidance",
+        "pm_value": "$16B",
+        "pm_source": "briefing.md",
+        "pm_raw": "guidance $16B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "pm_value": "$10.8B",
+        "pm_source": "briefing.md",
+        "pm_raw": "revenue $10.8B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "pm_value": "$183.26M",
+        "pm_source": "briefing.md",
+        "pm_raw": "revenue $183.26M ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "russell2000",
+        "pm_value": "0.1%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Russell 2000 down 0.1%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "russell2000",
+        "pm_value": "19.9%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Russell 2000 up 19.9%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "ai_revenue",
+        "pm_value": "$10.8B",
+        "pm_source": "briefing.md",
+        "pm_raw": "AI revenue $10.8B ",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "MU",
+        "metric": "dollar_amount",
+        "am_value": "$1,051.77",
+        "am_source": "briefing.md",
+        "am_raw": "closed Tuesday at $1,051.77"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "am_value": "$75.91",
+        "am_source": "briefing.md",
+        "am_raw": "Brent $75.91 "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "am_value": "$346.13",
+        "am_source": "briefing.md",
+        "am_raw": "closed $346.13 (-1.02%"
+      },
+      {
+        "ticker": "MU",
+        "metric": "price",
+        "am_value": "$1,051.77",
+        "am_source": "briefing.md",
+        "am_raw": "closed Tuesday at $1,051.77 (-13.18%)"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "percent_move",
+        "am_value": "-1.02%",
+        "am_source": "briefing.md",
+        "am_raw": "-1.02% after-hours"
+      }
+    ],
+    "contradicted": []
+  }
+}

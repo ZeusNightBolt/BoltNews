@@ -1,0 +1,106 @@
+{
+  "pm_date": "2026-06-18",
+  "am_date": "2026-06-19",
+  "consolidated_at": "2026-06-19T06:13:40.907430",
+  "pm_articles": 39,
+  "am_articles": 37,
+  "pm_data_points": 5,
+  "am_data_points": 9,
+  "diff": {
+    "evolved": 2,
+    "confirmed": 1,
+    "pm_only": 1,
+    "am_only": 5,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "+1.9%",
+        "am_value": "+1.9%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "Nasdaq +1.9%",
+        "am_raw": "Nasdaq +1.9% ",
+        "pct_change": 0.0,
+        "direction": "flat"
+      }
+    ],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "10y",
+        "pm_value": "4.40%",
+        "am_value": "4.46%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "10-year 4.40% ",
+        "am_raw": "10Y 4.46%",
+        "pct_change": 1.4,
+        "direction": "up"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "pm_value": "16.40",
+        "am_value": "16.88",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "VIX 16.40",
+        "am_raw": "VIX 16.88 (+2.93%)",
+        "pct_change": 2.9,
+        "direction": "up"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "20%",
+        "pm_source": "briefing.md",
+        "pm_raw": "down 20%",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "KR",
+        "metric": "dow",
+        "am_value": "23.0%",
+        "am_source": "briefing.md",
+        "am_raw": "down from 23.0%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "am_value": "$78",
+        "am_source": "briefing.md",
+        "am_raw": "WTI $78"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "2y",
+        "am_value": "4.20%",
+        "am_source": "briefing.md",
+        "am_raw": "2Y 4.20%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "am_value": "$80.53",
+        "am_source": "briefing.md",
+        "am_raw": "Brent $80.53 "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "russell2000",
+        "am_value": "+2.12%",
+        "am_source": "briefing.md",
+        "am_raw": "Russell 2000 +2.12%"
+      }
+    ],
+    "contradicted": []
+  }
+}

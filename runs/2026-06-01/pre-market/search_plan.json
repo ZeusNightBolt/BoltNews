@@ -1,0 +1,636 @@
+{
+  "mode": "pre-market",
+  "is_weekend": false,
+  "target_date": "2026-06-01",
+  "date_suffix": "June 01, 2026",
+  "recency_hours": 24,
+  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 24 hours (since ~2026-06-01). All search queries include 'June 01, 2026' to enforce recency. DO NOT include articles from earlier dates. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
+  "generated": "2026-06-01T06:04:10.629570",
+  "total_tickers": 148,
+  "prioritized_tickers": [
+    "HPQ",
+    "NTAP",
+    "CRM",
+    "ZS",
+    "SNOW",
+    "HPE",
+    "MDB",
+    "OKTA",
+    "MRVL",
+    "PANW",
+    "DELL",
+    "CIEN",
+    "CRWD",
+    "ADSK",
+    "SNPS",
+    "AZO",
+    "COST",
+    "AVGO",
+    "ONDS",
+    "OKLO",
+    "IONQ",
+    "ASTS",
+    "IT",
+    "RDW",
+    "RGTI",
+    "SMCI",
+    "SOFI",
+    "PINS",
+    "LITE",
+    "AAOI",
+    "MSTR",
+    "WDAY",
+    "HUBS",
+    "BE",
+    "COIN",
+    "CRWV",
+    "ON",
+    "WDC",
+    "FSLR",
+    "TEAM",
+    "CRCL",
+    "ALAB",
+    "RDDT",
+    "SNDK",
+    "XPO",
+    "RKLB",
+    "GDDY",
+    "NOW",
+    "UNP",
+    "QCOM"
+  ],
+  "topics": [
+    "S&P 500",
+    "NASDAQ",
+    "Dow Jones",
+    "Russell 2000",
+    "Federal Reserve",
+    "FOMC",
+    "interest rates",
+    "Treasury yields",
+    "US dollar",
+    "DXY",
+    "forex",
+    "currency markets",
+    "credit markets",
+    "corporate bonds",
+    "investment grade"
+  ],
+  "search_queries": [
+    {
+      "type": "ticker",
+      "ticker": "HPQ",
+      "name": "HP INC",
+      "queries": [
+        "HPQ stock news today June 01, 2026",
+        "HPQ Computer Hardware news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "NTAP",
+      "name": "NETAPP INC",
+      "queries": [
+        "NTAP stock news today June 01, 2026",
+        "NTAP Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CRM",
+      "name": "SALESFORCE INC",
+      "queries": [
+        "CRM stock news today June 01, 2026",
+        "CRM Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ZS",
+      "name": "ZSCALER INC",
+      "queries": [
+        "ZS stock news today June 01, 2026",
+        "ZS Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "SNOW",
+      "name": "SNOWFLAKE INC",
+      "queries": [
+        "SNOW stock news today June 01, 2026",
+        "SNOW Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "HPE",
+      "name": "HEWLETT PACKA",
+      "queries": [
+        "HPE stock news today June 01, 2026",
+        "HPE Communication Equipment news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MDB",
+      "name": "MONGODB INC",
+      "queries": [
+        "MDB stock news today June 01, 2026",
+        "MDB Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "OKTA",
+      "name": "OKTA INC",
+      "queries": [
+        "OKTA stock news today June 01, 2026",
+        "OKTA Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MRVL",
+      "name": "MARVELL TECHNOLO",
+      "queries": [
+        "MRVL stock news today June 01, 2026",
+        "MRVL Semiconductors news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "PANW",
+      "name": "PALO ALTO NETWOR",
+      "queries": [
+        "PANW stock news today June 01, 2026",
+        "PANW Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "DELL",
+      "name": "DELL TECHN-C",
+      "queries": [
+        "DELL stock news today June 01, 2026",
+        "DELL Computer Hardware news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CIEN",
+      "name": "CIENA CORP",
+      "queries": [
+        "CIEN stock news today June 01, 2026",
+        "CIEN Communication Equipment news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CRWD",
+      "name": "CROWDSTRIKE HO-A",
+      "queries": [
+        "CRWD stock news today June 01, 2026",
+        "CRWD Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ADSK",
+      "name": "AUTODESK INC",
+      "queries": [
+        "ADSK stock news today June 01, 2026",
+        "ADSK Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "SNPS",
+      "name": "SYNOPSYS INC",
+      "queries": [
+        "SNPS stock news today June 01, 2026",
+        "SNPS Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AZO",
+      "name": "AUTOZONE INC",
+      "queries": [
+        "AZO stock news today June 01, 2026",
+        "AZO Auto Parts news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "COST",
+      "name": "COSTCO WHOLESALE",
+      "queries": [
+        "COST stock news today June 01, 2026",
+        "COST Discount Stores news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AVGO",
+      "name": "BROADCOM INC",
+      "queries": [
+        "AVGO stock news today June 01, 2026",
+        "AVGO Semiconductors news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ONDS",
+      "name": "ONDAS HOLDINGS I",
+      "queries": [
+        "ONDS stock news today June 01, 2026",
+        "ONDS Communication Equipment news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "OKLO",
+      "name": "OKLO INC",
+      "queries": [
+        "OKLO stock news today June 01, 2026",
+        "OKLO Utilities - Independent Power Producers news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "IONQ",
+      "name": "IONQ INC",
+      "queries": [
+        "IONQ stock news today June 01, 2026",
+        "IONQ Computer Hardware news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ASTS",
+      "name": "AST SPACEMOBILE",
+      "queries": [
+        "ASTS stock news today June 01, 2026",
+        "ASTS Communication Equipment news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "IT",
+      "name": "GARTNER INC",
+      "queries": [
+        "IT stock news today June 01, 2026",
+        "IT Information Technology Services news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "RDW",
+      "name": "REDWIRE CORP",
+      "queries": [
+        "RDW stock news today June 01, 2026",
+        "RDW Aerospace & Defense news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "RGTI",
+      "name": "RIGETTI COMPUTIN",
+      "queries": [
+        "RGTI stock news today June 01, 2026",
+        "RGTI Computer Hardware news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "SMCI",
+      "name": "SUPER MICRO COMP",
+      "queries": [
+        "SMCI stock news today June 01, 2026",
+        "SMCI Computer Hardware news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "SOFI",
+      "name": "SOFI TECHNOLOGIE",
+      "queries": [
+        "SOFI stock news today June 01, 2026",
+        "SOFI Credit Services news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "PINS",
+      "name": "PINTEREST INC -A",
+      "queries": [
+        "PINS stock news today June 01, 2026",
+        "PINS Internet Content & Information news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "LITE",
+      "name": "LUMENTUM HOL",
+      "queries": [
+        "LITE stock news today June 01, 2026",
+        "LITE Communication Equipment news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "AAOI",
+      "name": "APPLIED OPTOELEC",
+      "queries": [
+        "AAOI stock news today June 01, 2026",
+        "AAOI Communication Equipment news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "MSTR",
+      "name": "STRATEGY INC",
+      "queries": [
+        "MSTR stock news today June 01, 2026",
+        "MSTR Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "WDAY",
+      "name": "WORKDAY INC-A",
+      "queries": [
+        "WDAY stock news today June 01, 2026",
+        "WDAY Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "HUBS",
+      "name": "HUBSPOT INC",
+      "queries": [
+        "HUBS stock news today June 01, 2026",
+        "HUBS Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "BE",
+      "name": "BLOOM ENERGY C-A",
+      "queries": [
+        "BE stock news today June 01, 2026",
+        "BE Electrical Equipment & Parts news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "COIN",
+      "name": "COINBASE GLOBA-A",
+      "queries": [
+        "COIN stock news today June 01, 2026",
+        "COIN Financial Data & Stock Exchanges news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CRWV",
+      "name": "COREWEAVE I-CL A",
+      "queries": [
+        "CRWV stock news today June 01, 2026",
+        "CRWV Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ON",
+      "name": "ON SEMICONDUCTOR",
+      "queries": [
+        "ON stock news today June 01, 2026",
+        "ON Semiconductors news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "WDC",
+      "name": "WESTERN DIGITAL",
+      "queries": [
+        "WDC stock news today June 01, 2026",
+        "WDC Computer Hardware news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "FSLR",
+      "name": "FIRST SOLAR INC",
+      "queries": [
+        "FSLR stock news today June 01, 2026",
+        "FSLR Solar news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "TEAM",
+      "name": "ATLASSIAN CORP-A",
+      "queries": [
+        "TEAM stock news today June 01, 2026",
+        "TEAM Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "CRCL",
+      "name": "CIRCLE INTERNET",
+      "queries": [
+        "CRCL stock news today June 01, 2026",
+        "CRCL Capital Markets news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "ALAB",
+      "name": "ASTERA LABS INC",
+      "queries": [
+        "ALAB stock news today June 01, 2026",
+        "ALAB Semiconductors news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "RDDT",
+      "name": "REDDIT INC-A",
+      "queries": [
+        "RDDT stock news today June 01, 2026",
+        "RDDT Internet Content & Information news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "SNDK",
+      "name": "SANDISK CORP",
+      "queries": [
+        "SNDK stock news today June 01, 2026",
+        "SNDK Computer Hardware news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "XPO",
+      "name": "XPO INC",
+      "queries": [
+        "XPO stock news today June 01, 2026",
+        "XPO Trucking news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "RKLB",
+      "name": "ROCKET LAB CORP",
+      "queries": [
+        "RKLB stock news today June 01, 2026",
+        "RKLB Aerospace & Defense news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "GDDY",
+      "name": "GODADDY INC-A",
+      "queries": [
+        "GDDY stock news today June 01, 2026",
+        "GDDY Software - Infrastructure news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "NOW",
+      "name": "SERVICENOW INC",
+      "queries": [
+        "NOW stock news today June 01, 2026",
+        "NOW Software - Application news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "UNP",
+      "name": "UNION PAC CORP",
+      "queries": [
+        "UNP stock news today June 01, 2026",
+        "UNP Railroads news June 01, 2026"
+      ]
+    },
+    {
+      "type": "ticker",
+      "ticker": "QCOM",
+      "name": "QUALCOMM INC",
+      "queries": [
+        "QCOM stock news today June 01, 2026",
+        "QCOM Semiconductors news June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "S&P 500",
+      "queries": [
+        "S&P 500 June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "NASDAQ",
+      "queries": [
+        "NASDAQ June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Dow Jones",
+      "queries": [
+        "Dow Jones June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Russell 2000",
+      "queries": [
+        "Russell 2000 June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Federal Reserve",
+      "queries": [
+        "Federal Reserve June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "FOMC",
+      "queries": [
+        "FOMC June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "interest rates",
+      "queries": [
+        "interest rates June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "Treasury yields",
+      "queries": [
+        "Treasury yields June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "US dollar",
+      "queries": [
+        "US dollar June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "DXY",
+      "queries": [
+        "DXY June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "forex",
+      "queries": [
+        "forex June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "currency markets",
+      "queries": [
+        "currency markets June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "credit markets",
+      "queries": [
+        "credit markets June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "corporate bonds",
+      "queries": [
+        "corporate bonds June 01, 2026"
+      ]
+    },
+    {
+      "type": "topic",
+      "topic": "investment grade",
+      "queries": [
+        "investment grade June 01, 2026"
+      ]
+    }
+  ]
+}

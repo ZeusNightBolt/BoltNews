@@ -1,0 +1,53 @@
+{
+  "pm_date": "2026-06-05",
+  "am_date": "2026-06-08",
+  "consolidated_at": "2026-06-08T06:08:35.183422",
+  "pm_articles": 15,
+  "am_articles": 15,
+  "pm_data_points": 2,
+  "am_data_points": 2,
+  "diff": {
+    "evolved": 1,
+    "confirmed": 0,
+    "pm_only": 1,
+    "am_only": 1,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "13%",
+        "am_value": "9.32%",
+        "pm_source": "Multiple (Yahoo Finance, CNBC, Trefis)",
+        "am_source": "Trading Economics",
+        "pm_raw": "Down 13% ",
+        "am_raw": "Down 9.32% ",
+        "pct_change": -28.3,
+        "direction": "down"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "4.2%",
+        "pm_source": "Reuters",
+        "pm_raw": "Nasdaq Plunges 4.2% ",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "am_value": "$2",
+        "am_source": "Yahoo Finance",
+        "am_raw": "Closes $2"
+      }
+    ],
+    "contradicted": []
+  }
+}

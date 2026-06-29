@@ -1,0 +1,387 @@
+{
+  "pm_date": "2026-06-03",
+  "am_date": "2026-06-04",
+  "consolidated_at": "2026-06-04T12:49:40.217436",
+  "pm_articles": 11,
+  "am_articles": 22,
+  "pm_data_points": 36,
+  "am_data_points": 34,
+  "diff": {
+    "evolved": 6,
+    "confirmed": 10,
+    "pm_only": 14,
+    "am_only": 8,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [
+      {
+        "ticker": "MACRO",
+        "metric": "2y",
+        "pm_value": "4.05%",
+        "am_value": "4.06%",
+        "pm_source": "Federal Reserve Board (primary)",
+        "am_source": "Trading Economics",
+        "pm_raw": "2Y: 4.05%",
+        "am_raw": "2Y 4.06%",
+        "pct_change": 0.2,
+        "direction": "flat"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "fcf",
+        "pm_value": "$10.3B",
+        "am_value": "$10.3B",
+        "pm_source": "MarketBeat",
+        "am_source": "Tickeron / Broadcom IR",
+        "pm_raw": "FCF $10.3B (46% of rev",
+        "am_raw": "FCF $10.3B",
+        "pct_change": 0.0,
+        "direction": "flat"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "pm_value": "$97.05",
+        "am_value": "$97.79.",
+        "pm_source": "Economic Times",
+        "am_source": "RIO Times",
+        "pm_raw": "Brent $97.05 +1.09%",
+        "am_raw": "Brent $97.79. ",
+        "pct_change": 0.8,
+        "direction": "up"
+      },
+      {
+        "ticker": "CRWD",
+        "metric": "eps",
+        "pm_value": "$1.10",
+        "am_value": "$1.10",
+        "pm_source": "Benzinga / SEC 8-K",
+        "am_source": "MarketBeat / CrowdStrike IR",
+        "pm_raw": "Adj EPS $1.10 (beat $1.07)",
+        "am_raw": "EPS $1.10 ",
+        "pct_change": 0.0,
+        "direction": "flat"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "pm_value": "-0.74%",
+        "am_value": "-0.74%",
+        "pm_source": "Yahoo Finance",
+        "am_source": "Investopedia",
+        "pm_raw": "S&P 500 -0.74%",
+        "am_raw": "S&P 500 -0.74% ",
+        "pct_change": 0.0,
+        "direction": "flat"
+      },
+      {
+        "ticker": "PANW",
+        "metric": "revenue",
+        "pm_value": "$3B",
+        "am_value": "$3.0B",
+        "pm_source": "Reuters",
+        "am_source": "Investopedia",
+        "pm_raw": "revenue $3B +31% YoY (beat $2.94B",
+        "am_raw": "Revenue $3.0B",
+        "pct_change": 0.0,
+        "direction": "flat"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "revenue",
+        "pm_value": "$22.2B",
+        "am_value": "$22.2B",
+        "pm_source": "MarketBeat",
+        "am_source": "Tickeron / Broadcom IR",
+        "pm_raw": "Revenue $22.2B +48% YoY ",
+        "am_raw": "Revenue $22.2B ",
+        "pct_change": 0.0,
+        "direction": "flat"
+      },
+      {
+        "ticker": "CRWD",
+        "metric": "revenue",
+        "pm_value": "$1.39B",
+        "am_value": "$1.39B",
+        "pm_source": "Benzinga / SEC 8-K",
+        "am_source": "MarketBeat / CrowdStrike IR",
+        "pm_raw": "Revenue $1.39B +26% YoY (beat $1.36B)",
+        "am_raw": "Revenue $1.39B ",
+        "pct_change": 0.0,
+        "direction": "flat"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "-1.21%",
+        "am_value": "-1.2%",
+        "pm_source": "Yahoo Finance",
+        "am_source": "Investopedia",
+        "pm_raw": "Dow -1.21% ",
+        "am_raw": "Dow -1.2% ",
+        "pct_change": 0.8,
+        "direction": "up"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "30y",
+        "pm_value": "4.97%",
+        "am_value": "4.98%",
+        "pm_source": "Federal Reserve Board (primary)",
+        "am_source": "Trading Economics",
+        "pm_raw": "30Y: 4.97% ",
+        "am_raw": "30Y 4.98% ",
+        "pct_change": 0.2,
+        "direction": "flat"
+      }
+    ],
+    "evolved": [
+      {
+        "ticker": "AVGO",
+        "metric": "guidance",
+        "pm_value": "$56B",
+        "am_value": "$29.4B",
+        "pm_source": "MarketBeat",
+        "am_source": "Tickeron / Broadcom IR",
+        "pm_raw": "outlook $56B",
+        "am_raw": "Guide $29.4B",
+        "pct_change": -47.5,
+        "direction": "down"
+      },
+      {
+        "ticker": "PANW",
+        "metric": "eps",
+        "pm_value": "$3.77",
+        "am_value": "$0.85",
+        "pm_source": "Reuters",
+        "am_source": "Investopedia",
+        "pm_raw": "EPS $3.77",
+        "am_raw": "EPS $0.85 ",
+        "pct_change": -77.5,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "10y",
+        "pm_value": "4.46%",
+        "am_value": "4.51%",
+        "pm_source": "Federal Reserve Board (primary)",
+        "am_source": "RIO Times",
+        "pm_raw": "10Y: 4.46%",
+        "am_raw": "10Y 4.51% (+6bp",
+        "pct_change": 1.1,
+        "direction": "up"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "pm_value": "$94.77",
+        "am_value": "$92.16",
+        "pm_source": "Economic Times",
+        "am_source": "Economic Times",
+        "pm_raw": "WTI $94.77 +1.08%",
+        "am_raw": "WTI $92.16 ",
+        "pct_change": -2.8,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "-0.89%",
+        "am_value": "-0.9%",
+        "pm_source": "Yahoo Finance",
+        "am_source": "Investopedia",
+        "pm_raw": "Nasdaq -0.89% ",
+        "am_raw": "Nasdaq -0.9%",
+        "pct_change": -1.1,
+        "direction": "down"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "ai_revenue",
+        "pm_value": "$16B",
+        "am_value": "$10.8B",
+        "pm_source": "MarketBeat",
+        "am_source": "Tickeron / Broadcom IR",
+        "pm_raw": "AI semi $16B +200%",
+        "am_raw": "AI Revenue $10.8B ",
+        "pct_change": -32.5,
+        "direction": "down"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "eps",
+        "pm_value": "$2.44",
+        "pm_source": "Yahoo Finance",
+        "pm_raw": "EPS $2.44 ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "eps",
+        "pm_value": "$2.44",
+        "pm_source": "TheStreet",
+        "pm_raw": "EPS $2.44 (beat $2.40)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "eps",
+        "pm_value": "$1.10",
+        "pm_source": "TheStreet",
+        "pm_raw": "EPS $1.10 (beat $1.07)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "CRWD",
+        "metric": "fcf",
+        "pm_value": "$468.5M",
+        "pm_source": "Benzinga / SEC 8-K",
+        "pm_raw": "FCF $468.5M (record)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "pm_value": "$22.187B",
+        "pm_source": "Yahoo Finance",
+        "pm_raw": "revenue $22.187B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "pm_value": "$22.187B",
+        "pm_source": "TheStreet",
+        "pm_raw": "Revenue $22.187B (miss $22.27B)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "pm_value": "$1.385B",
+        "pm_source": "TheStreet",
+        "pm_raw": "Revenue $1.385B (beat $1.363B)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "pm_value": "$882.9M",
+        "pm_source": "TheStreet",
+        "pm_raw": "Revenue $882.9M +16% YoY (beat $853.6M)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "PANW",
+        "metric": "percent_move",
+        "pm_value": "7.4%",
+        "pm_source": "Reuters",
+        "pm_raw": "7.4% AH",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "ai_revenue",
+        "pm_value": "$16B",
+        "pm_source": "TheStreet",
+        "pm_raw": "AI semi $16B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "russell2000",
+        "pm_value": "-1.25%",
+        "pm_source": "TheStreet",
+        "pm_raw": "Russell 2000 -1.25%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "after_hours_price",
+        "pm_value": "$421.86",
+        "pm_source": "MarketBeat",
+        "pm_raw": "AH: $421.86 (-11.97%)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "guidance",
+        "pm_value": "$29.4B",
+        "pm_source": "Yahoo Finance",
+        "pm_raw": "guidance $29.4B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "guidance",
+        "pm_value": "$29.4B",
+        "pm_source": "TheStreet",
+        "pm_raw": "Guide $29.4B",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "AVGO",
+        "metric": "eps",
+        "am_value": "$2.44",
+        "am_source": "Tickeron / Broadcom IR",
+        "am_raw": "EPS $2.44 "
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "dollar_amount",
+        "am_value": "$479.23",
+        "am_source": "Tickeron / Broadcom IR",
+        "am_raw": "Stock at $479.23"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "price",
+        "am_value": "$479.23",
+        "am_source": "Tickeron / Broadcom IR",
+        "am_raw": "Stock at $479.23 (-0.5%"
+      },
+      {
+        "ticker": "CRWD",
+        "metric": "percent_move",
+        "am_value": "-10.3%",
+        "am_source": "MarketBeat / CrowdStrike IR",
+        "am_raw": "-10.3% After-Hours"
+      },
+      {
+        "ticker": "CRWD",
+        "metric": "percent_move",
+        "am_value": "-10.3%",
+        "am_source": "MarketBeat / CrowdStrike IR",
+        "am_raw": "-10.3% after-hours"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "am_value": "16.05",
+        "am_source": "RIO Times",
+        "am_raw": "VIX 16.05 (+4.77%)"
+      },
+      {
+        "ticker": "MSTR",
+        "metric": "dollar_amount",
+        "am_value": "$7.52",
+        "am_source": "Yahoo Finance",
+        "am_raw": "Stock dropped $7.52"
+      },
+      {
+        "ticker": "MSTR",
+        "metric": "price",
+        "am_value": "$7.52",
+        "am_source": "Yahoo Finance",
+        "am_raw": "Stock dropped $7.52 (-4.72%)"
+      }
+    ],
+    "contradicted": []
+  }
+}

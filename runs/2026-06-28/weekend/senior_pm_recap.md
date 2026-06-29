@@ -1,0 +1,4 @@
+## Senior PM Recap
+**Weekend:** compact portfolio-manager recap.
+- **Tape:** Scoreboard read-through: The tape was not a broad liquidation. AP/Barchart reported the S&P 500 down 2.0% and Nasdaq down 4.6% for the week, while the Dow gained 0.6% and Russell 2000 gained 1.0%. The cross-asset confirmation was concentrated in tech de-risking, lower oil, lower Treasury yields, a still-firm dollar, and VIX spot below 19 with futures in contango.
+- **Driver:** 1) AI leadership broke, but breadth did not. AP/Barchart reported the Nasdaq lost 4.6% for the week while the Russell 2000 rose 1.0%; CNBC reported the Nasdaq posted a fifth losing session on Friday and the S&P 500 fell nearly 2% for the week. Reuters reported the PHLX Semiconductor Index fell 5.3% Friday and 7.7%–7.9% for the week. The market message is rotation out of crowded AI/chip exposure rather than indiscriminate risk-off.

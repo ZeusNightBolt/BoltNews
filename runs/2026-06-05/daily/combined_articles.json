@@ -1,0 +1,521 @@
+{
+  "full_date": "2026-06-05",
+  "consolidated_at": "2026-06-08T06:08:39.720963",
+  "am_articles": [
+    {
+      "id": "iran-israel-escalation-cnbc",
+      "title": "Stock Futures Mixed as Iran Attack on Israel Shakes Fragile Ceasefire",
+      "url": "https://www.cnbc.com/2026/06/07/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "category": "geopolitical",
+      "date": "2026-06-08",
+      "summary": "Iran fired missiles at Israel on June 7, shattering the April ceasefire. Israel retaliated with airstrikes. S&P 500 sank 2.64% to 7,383.74 on Friday, Nasdaq dropped 4.18% \u2014 worst week since April 2025. South Korea Kospi crashed 8.4%, Nikkei -3.85%. Oil surged: Brent $96.05 (+3.18%), WTI $93.67 (+3.46%). Nearly $2 trillion erased from US markets Friday after strong jobs report (172K vs 80K expected) fueled rate-hike fears. Trump says US close to final Iran deal, warned Israel against retaliation.",
+      "tickers": [],
+      "keywords": [
+        "Iran",
+        "Israel",
+        "missile",
+        "ceasefire",
+        "oil",
+        "SPX",
+        "Kospi",
+        "Nikkei"
+      ],
+      "sentiment": "bearish",
+      "impact": "high"
+    },
+    {
+      "id": "oil-surge-iran-news18",
+      "title": "Crude Oil Prices Surge 4% After Iran Missile Strikes on Israel; Asian Markets Tumble Up To 8%",
+      "url": "https://www.news18.com/business/economy/crude-oil-prices-surge-4-after-iran-missile-strikes-on-israel-asian-markets-tumble-up-to-8-ws-l-10135551.html",
+      "source": "News18",
+      "category": "commodities",
+      "date": "2026-06-08",
+      "summary": "Brent above $96, WTI above $93. Dollar index held around 100. Kospi fell 8% to 7,442 (recovered to 7,568). Nikkei slumped 3% (~3,000 pts). US nearly $2T erased Friday. Magnificent Seven all closed red. Broadcom -7%. Trump claims US 'on verge of final agreement with Iran,' plans to call Netanyahu urging restraint. First direct Iranian attack on Israel since April ceasefire.",
+      "tickers": [
+        "AVGO"
+      ],
+      "keywords": [
+        "oil",
+        "Brent",
+        "WTI",
+        "Iran",
+        "Israel",
+        "dollar index",
+        "Kospi",
+        "Nikkei",
+        "Trump"
+      ],
+      "sentiment": "bearish",
+      "impact": "high"
+    },
+    {
+      "id": "brent-crude-tradingeconomics",
+      "title": "Brent Crude at $97.39 \u2014 Up 4.62%, +45% YoY; Strait of Hormuz Near-Closure",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+      "source": "Trading Economics",
+      "category": "commodities",
+      "date": "2026-06-08",
+      "summary": "Brent at $97.39 (+4.62% daily, +45.27% YoY). OPEC+ approved +188K bpd July production increase despite supply risks. China crude imports at 10-year low. Strait of Hormuz remains near-closed. 12-month forecast: $108.15. Note: monthly change still -6.55% \u2014 oil had been falling before this escalation.",
+      "tickers": [],
+      "keywords": [
+        "Brent",
+        "crude",
+        "OPEC+",
+        "Strait of Hormuz",
+        "China",
+        "supply"
+      ],
+      "sentiment": "bullish",
+      "impact": "high"
+    },
+    {
+      "id": "fed-tracker-forbes",
+      "title": "Fed Meeting Tracker: Next FOMC June 16-17; Polymarket 99% 'No Change'",
+      "url": "https://www.forbes.com/sites/investor-hub/article/fed-meeting-tracker-interest-rate-strategy/",
+      "source": "Forbes",
+      "category": "monetary_policy",
+      "date": "2026-06-02",
+      "summary": "Current rate: 3.50-3.75%. Next FOMC June 16-17 (SEP included). March SEP: PCE 2.7% for 2026, GDP 2.4%, unemployment 4.4%. CPI jumped 2.4%\u21923.3% in March. Rate HIKE sentiment rising \u2014 'for first time in years, prevailing sentiment is a rate hike much more likely than cut.' Polymarket: 99% no change at June meeting, 1% for 25bp cut. Powell: Iran war, tariffs pushing energy costs higher \u2192 feeds inflation.",
+      "tickers": [],
+      "keywords": [
+        "Fed",
+        "FOMC",
+        "rates",
+        "Powell",
+        "inflation",
+        "dot plot",
+        "SEP"
+      ],
+      "sentiment": "hawkish",
+      "impact": "high"
+    },
+    {
+      "id": "spacex-ipo-reuters",
+      "title": "SpaceX Targets Record $75B IPO at $135/Share \u2014 $1.75T Valuation, June 12 Debut",
+      "url": "https://www.reuters.com/business/media-telecom/spacex-plans-raise-75-billion-ipo-135-per-share-source-says-2026-06-03/",
+      "source": "Reuters",
+      "category": "equities",
+      "date": "2026-06-03",
+      "summary": "Fixed price $135/share (no range). 555.6M shares, all primary. $75B raise \u2014 largest IPO ever (3x Alibaba). Ticker SPCX on Nasdaq, June 12. Musk retains 82% voting control. 2025 rev $18.67B, net loss $4.94B. Only Starlink profitable. P/S at 93.7x. 30% retail allocation. Roadshow started June 5. Morningstar fair value $780B \u2014 48% below IPO price. xAI merger valued at $1.25T combined in Feb. Anthropic and OpenAI IPOs also expected.",
+      "tickers": [
+        "RKLB"
+      ],
+      "keywords": [
+        "SpaceX",
+        "IPO",
+        "SPCX",
+        "Musk",
+        "Starlink",
+        "xAI",
+        "valuation"
+      ],
+      "sentiment": "neutral",
+      "impact": "high"
+    },
+    {
+      "id": "mstr-saylor-btc-coindesk",
+      "title": "Strategy: Saylor Revives Bitcoin-Buy Speculation; Executives Plan $15M Stock Sales",
+      "url": "https://www.coindesk.com/business/2026/06/06/michael-saylor-revives-bitcoin-buy-speculation-as-scrutiny-over-strategy-grows",
+      "source": "CoinDesk",
+      "category": "crypto",
+      "date": "2026-06-07",
+      "summary": "Saylor posted signature BTC acquisition chart Sunday, hinting at new purchase. CEO Phong Le: 'Our corporate strategy is to increase net Bitcoin.' But: Strategy sold 32 BTC for $2.5M in late May (first net disposal since 2022). Two execs plan $15M share sales (CEO $11.1M, CFO $3.9M). Bitcoin below $60K \u2014 lowest since Oct 2024. June 8 shareholder vote on dividend timing. Scrutiny growing over finances and dividend obligations.",
+      "tickers": [
+        "MSTR"
+      ],
+      "keywords": [
+        "MSTR",
+        "Bitcoin",
+        "Saylor",
+        "BTC",
+        "Strategy",
+        "crypto"
+      ],
+      "sentiment": "bearish",
+      "impact": "medium"
+    },
+    {
+      "id": "mstr-sale-analysis-247wallst",
+      "title": "Buy, Sell or Hold MSTR After Strategy's First Bitcoin Sale in Years?",
+      "url": "https://247wallst.com/investing/2026/06/04/buy-sell-or-hold-mstr-after-strategys-first-bitcoin-sale-in-years/",
+      "source": "24/7 Wall St.",
+      "category": "crypto",
+      "date": "2026-06-04",
+      "summary": "MSTR at $126, down 72% from July 2025 highs, -31% in last month. Q4 2025: $17.44B unrealized loss. Polymarket: 63% MSCI delisting probability by end 2026. Holding 843K BTC at $75,699 avg cost; current BTC ~$64K. Sale was tiny (0.0038% of holdings) but broke psychological contract. Verdict: HOLD. Next 1-2 weeks critical \u2014 BTC purchase announcement would restore confidence; another sale would signal structural shift.",
+      "tickers": [
+        "MSTR"
+      ],
+      "keywords": [
+        "MSTR",
+        "Bitcoin",
+        "Saylor",
+        "MSCI",
+        "delisting",
+        "unrealized loss"
+      ],
+      "sentiment": "bearish",
+      "impact": "medium"
+    },
+    {
+      "id": "semis-selloff-mrvl-avgo",
+      "title": "Semiconductor Selloff: Broadcom -12%, Marvell -17%; Broadcom Preferred at 64x vs 90x",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/better-buy-semiconductor-sell-off-022200092.html",
+      "source": "Yahoo Finance / Motley Fool",
+      "category": "equities",
+      "date": "2026-06-07",
+      "summary": "MRVL Q1 FY2027: rev $2.4B (+28% YoY), guided +35% current quarter, ~40% FY growth. Huang called it 'next trillion-dollar company.' AVGO Q2 FY2026: rev $22.2B (+48%), AI semi $10.8B (+143%), FY AI guidance >$100B. Both hit hard on AI spending concern + macro. AVGO at 64x earnings, MRVL at 90x. Analysis favors AVGO: faster growth, cheaper, stronger FCF ($10.3B/quarter). Customer concentration risk for both.",
+      "tickers": [
+        "AVGO",
+        "MRVL"
+      ],
+      "keywords": [
+        "semiconductor",
+        "AI",
+        "Broadcom",
+        "Marvell",
+        "valuation",
+        "selloff"
+      ],
+      "sentiment": "neutral",
+      "impact": "medium"
+    },
+    {
+      "id": "smci-gorilla-ai-deal",
+      "title": "Super Micro Closes $2B AI Infrastructure Deal with Gorilla Technology in India",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-extends-ai-factory-031639427.html",
+      "source": "Yahoo Finance",
+      "category": "equities",
+      "date": "2026-06-02",
+      "summary": "SMCI closed $2B AI infrastructure deal with Gorilla Technology (GRRR) for India. Covers 20,736 B300 cards, 5,120 B200 cards, networking equipment. SMCI up 34.5% YTD, ~20% last month, but -9.7% past week amid semis selloff. Helios AI factory platform launch. Analyst price targets $15-50.",
+      "tickers": [
+        "SMCI",
+        "GRRR"
+      ],
+      "keywords": [
+        "SMCI",
+        "AI",
+        "India",
+        "data center",
+        "GPU",
+        "Super Micro"
+      ],
+      "sentiment": "bullish",
+      "impact": "medium"
+    },
+    {
+      "id": "rivian-r2-launch",
+      "title": "Rivian R2 SUV Order Phase Begins June 9 \u2014 8-Day Rally Ahead of Mass-Market Push",
+      "url": "https://stocktwits.com/news-articles/markets/equity/rivn-stock-surges-as-r2-nears-delivery-kickoff/cZ0WRzjRevO",
+      "source": "Stocktwits / Yahoo Finance",
+      "category": "equities",
+      "date": "2026-06-07",
+      "summary": "RIVN surged for 8 straight days ahead of R2 SUV order phase starting June 9. R2 is Rivian's mass-market competitor to Tesla Model Y. 2026 delivery guidance 62K-67K vehicles (up from 42K in 2025). Stock trading ~$16-18 range. Key catalyst: order book strength and pricing revealed at June 9 kickoff.",
+      "tickers": [
+        "RIVN"
+      ],
+      "keywords": [
+        "Rivian",
+        "R2",
+        "EV",
+        "SUV",
+        "Tesla",
+        "delivery"
+      ],
+      "sentiment": "bullish",
+      "impact": "medium"
+    },
+    {
+      "id": "credit-outlook-pinebridge",
+      "title": "IG Credit: AI Capex Boom Driving Record $2.25T Supply in 2026 \u2014 Spreads at 25-Year Tights",
+      "url": "https://www.pinebridge.com/en/insights/2026-investment-grade-credit-outlook",
+      "source": "PineBridge Investments",
+      "category": "credit",
+      "date": "2026-02-26",
+      "summary": "IG spreads at levels last seen mid-1990s. AI capex driving unprecedented supply: $600B in 2026, $4T cumulative through 2030. Meta, Oracle, Google, Amazon raised >$100B combined in Q4 2025 alone. 2026 supply forecast $2.25T (+35% YoY). For first time since 2022, supply may outpace demand. Banks look compelling; technology warrants caution. Alpha from what you DON'T own. Selective, defensive positioning recommended.",
+      "tickers": [],
+      "keywords": [
+        "IG credit",
+        "spreads",
+        "AI capex",
+        "supply",
+        "bonds",
+        "investment grade"
+      ],
+      "sentiment": "cautious",
+      "impact": "medium"
+    },
+    {
+      "id": "gold-weakness-tradingeconomics",
+      "title": "Gold Falls to $4,294 \u2014 Down 9.32% Monthly Despite Iran-Israel Escalation",
+      "url": "https://tradingeconomics.com/commodity/gold",
+      "source": "Trading Economics",
+      "category": "commodities",
+      "date": "2026-06-08",
+      "summary": "Gold at $4,294.21, down 0.85% daily, down 9.32% monthly, still +29.12% YoY. Record high was $5,181+ in January 2026. Safe-haven bid has faded despite renewed Iran-Israel conflict. Rising rate expectations and stronger dollar pressuring gold. Contrarian signal: geopolitical crisis NOT driving gold higher. J.P. Morgan forecast $5,000/oz by Q4 2026, $6,000 possible longer term.",
+      "tickers": [],
+      "keywords": [
+        "gold",
+        "safe haven",
+        "precious metals",
+        "XAU",
+        "contrarian"
+      ],
+      "sentiment": "bearish",
+      "impact": "medium"
+    },
+    {
+      "id": "defense-stocks-ibd",
+      "title": "Defense Stocks Hit Pause as Trump Pentagon Remakes Military Industrial Complex",
+      "url": "https://www.investors.com/news/defense-stocks-trump-pentagon-military-industrial-complex/",
+      "source": "Investor's Business Daily",
+      "category": "equities",
+      "date": "2026-06-05",
+      "summary": "Defense stocks (RTX, LMT, NOC, GD) seeing mixed signals. Trump Pentagon remaking procurement priorities toward advanced warfare, missile defense, space-based systems. NATO allies increasing defense budgets. KeyBanc initiated coverage favoring 'new space' over legacy primes: RKLB, ASTS highlighted. Iran conflict should benefit defense but Trump's restructuring introduces uncertainty.",
+      "tickers": [
+        "RTX",
+        "LMT",
+        "NOC",
+        "RKLB",
+        "ASTS"
+      ],
+      "keywords": [
+        "defense",
+        "Pentagon",
+        "aerospace",
+        "missile defense",
+        "NATO"
+      ],
+      "sentiment": "neutral",
+      "impact": "medium"
+    },
+    {
+      "id": "dxy-dollar-strength",
+      "title": "DXY Rises to 100.14 \u2014 Up 2.23% Monthly on Strong US Data, Rate Differential",
+      "url": "https://tradingeconomics.com/united-states/currency",
+      "source": "Trading Economics",
+      "category": "fx",
+      "date": "2026-06-08",
+      "summary": "DXY at 100.14, +0.07% daily, +2.23% monthly, +1.22% YoY. Dollar supported by robust US labor market and rate differential. 2Y yield rose ~10bps to 4.16%. Strong dollar headwind for multinational earnings and EM flows. Rate hike narrative strengthening dollar further vs EUR, JPY.",
+      "tickers": [],
+      "keywords": [
+        "DXY",
+        "dollar",
+        "forex",
+        "currency",
+        "yields",
+        "rate differential"
+      ],
+      "sentiment": "bullish",
+      "impact": "medium"
+    }
+  ],
+  "pm_articles": [
+    {
+      "id": 2,
+      "title": "Nasdaq Plunges 4.2% \u2014 Worst Day Since April 2025; Chip Rout Erases $1.3T as Jobs Data Fuels Rate Hike Fears",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/nasdaq-sp-futures-slip-semiconductors-drag-payrolls-focus-2026-06-05/",
+      "date": "2026-06-05",
+      "category": "Equities",
+      "tickers": [
+        "NVDA",
+        "AVGO",
+        "AMD",
+        "INTC",
+        "MU",
+        "MRVL",
+        "COIN",
+        "MSTR",
+        "LULU"
+      ],
+      "summary": "Wall Street's 9-week winning streak ended violently. Dow -695pts (-1.35%) to 50,867. S&P 500 -2.64% to 7,384. Nasdaq -4.18% to 25,709 \u2014 worst day since April 2025. SOX semiconductor index had biggest 1-day drop since March 2020. $1.3T+ in market value erased. Tech sector -5.8%, worst of 11 S&P sectors. Only consumer staples gained. Breadth: NYSE 3.14-to-1 decliners; Nasdaq 3,737 falling vs 1,074 rising. Volume 22.89B shares. 'The dam just broke today,' said Carson Group's Ryan Detrick. CME FedWatch: 42.7% probability of rate HIKE by December. Wells Fargo: 'I don't think it's the end of the semi bull market.'",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 3,
+      "title": "Treasury Yields Surge: 10Y Hits 4.54%, 2Y Spikes 11bp to 4.16% (Highest Since Feb 2025); 30Y Back Above 5%",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/05/treasury-yields-ease-as-traders-await-key-labor-market-data-.html",
+      "date": "2026-06-05",
+      "category": "Rates",
+      "tickers": [],
+      "summary": "10Y yield surged to 4.544% (+6bp, highest since May 21). 2Y yield jumped 11bp to 4.162% (highest since Feb 25 2025). 30Y yield at 5.007% (+3bp). Odds of a Fed rate hike by end-2026 rose to 70% per CME FedWatch. FwdBonds' Christopher Rupkey: 'There is no argument for Fed rate cuts with the labor market this strong.' Rate-cut expectations crushed; inflation vigilance back at center stage. Bond selloff was the primary driver of equity weakness as rising discount rates compressed tech valuations. Full yield curve: 1M 3.681%, 3M 3.716%, 6M 3.795%, 1Y 3.855%, 2Y 4.147%, 10Y 4.532%, 30Y 4.999%.",
+      "sentiment": "hawkish",
+      "confidence": "high"
+    },
+    {
+      "id": 4,
+      "title": "Post-Jobs Report Analysis: From 'When to Cut' to 'Will They Hike?' \u2014 Hike Odds Surge to 43%",
+      "source": "Investopedia",
+      "url": "https://www.investopedia.com/stock-market-outlook-post-may-jobs-report-11992054",
+      "date": "2026-06-05",
+      "category": "Macro",
+      "tickers": [],
+      "summary": "The narrative has completely flipped. Odds of at least one rate hike by December jumped to 43% (from 26% a month ago). Probability of two or more hikes doubled overnight to ~25%. Lazard's Ronald Temple: 'Any hopes of a Fed rate cut have effectively been eliminated.' Inflation estimated above 4% (3-year high) driven by Iran war oil spike. Labor supply constrained by immigration curbs and aging workforce. 'Labor supply is turning into a supply-side constraint to growth' \u2014 Bill Adams, Fifth Third. Vanguard sees May as 'seasonal surge'; Oxford Economics expects job gains to moderate over summer. Northlight's Zaccarelli: 'We could be in the sweet spot' if oil recedes.",
+      "sentiment": "hawkish",
+      "confidence": "high"
+    },
+    {
+      "id": 5,
+      "title": "Nasdaq Bloodbath: Chip Stocks Lead Worst Week in Over a Year; VIX Spikes 40% to 21.51",
+      "source": "Wall Street Journal",
+      "url": "https://www.wsj.com/tech/ai/selloff-in-chip-stocks-prompts-nasdaq-bloodbath-36fd8c52",
+      "date": "2026-06-05",
+      "category": "Equities",
+      "tickers": [
+        "NVDA",
+        "AVGO",
+        "AMD",
+        "INTC",
+        "MU"
+      ],
+      "summary": "WSJ wrap confirms Nasdaq -4.2% for the day, worst week in over a year. 'Today's carnage in tech stocks shows just how fragile this year's rally has become.' NVDA -6.2%, AVGO -7.9% post-earnings guidance disappointment. VIX closed at 21.51 (+39.68%). Gold -3.35% to $4,354. Bitcoin $61,725. Crude Oil $90.25 (-3%). Dollar index 96.60 (+0.56%). Russell 2000 -3.47% to 2,833.50. KBW Bank Index -0.89%. S&P GSCI -2.22%. All three major indices suffered sharp weekly losses, snapping multi-week winning streaks.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 6,
+      "title": "Broadcom (AVGO) Falls Another 7.9% Friday \u2014 Down 13% Since Earnings; Goldman Says Buy the Dip",
+      "source": "Multiple (Yahoo Finance, CNBC, Trefis)",
+      "url": "https://finance.yahoo.com/quote/AVGO/",
+      "date": "2026-06-05",
+      "category": "Equities",
+      "tickers": [
+        "AVGO",
+        "NVDA",
+        "MRVL",
+        "AMD"
+      ],
+      "summary": "AVGO continued its post-earnings slide, down 7.9% Friday to ~$419, bringing total decline to 13% since reporting Q2 results on June 3. Q2 EPS beat ($2.44 vs $2.40), revenue missed narrowly ($22.19B vs $22.27B). AI revenue doubled YoY to $10.8B; FY2026 AI guidance reiterated at 'in excess of $100B' but no raise disappointed. Hock Tan announced shift to 'chips only' strategy. Goldman Sachs urged buying the dip citing intact AI revenue trajectory. JPMorgan PT $580, Jefferies $550, BNP $640. The SOX semiconductor index had its worst day since March 2020.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 7,
+      "title": "Bitcoin Cracks $60K \u2014 Lowest Since Oct 2024; -18% Weekly Loss; 51.7% Below ATH of $126,272",
+      "source": "CNBC / Forbes",
+      "url": "https://www.cnbc.com/2026/06/05/bitcoin-dismal-week-price-below-all-time-high-crypto-investors.html",
+      "date": "2026-06-05",
+      "category": "Crypto",
+      "tickers": [
+        "MSTR",
+        "COIN"
+      ],
+      "summary": "Bitcoin plunged to intraday low of $59,099.25 \u2014 first time below $60K since October 2024. -16% to -18% on the week. Now -31.2% YTD, 51.7% below the $126,272 ATH from Oct 2025. ETF net assets plunged from $107.8B (May 14) to $80.4B. Thursday saw first net inflow (+$3M) after 13-day record outflow streak. Drivers: MSTR bitcoin sale shattered 'never sell' narrative; strong jobs data pushed yields higher; rotation into AI/memory chip stocks; Clarity Act crypto bill stalling; broken correlation with equities. Strive CEO Matt Cole: 'This is the fifth time bitcoin has been at its 200-week MA \u2014 the previous four were perfect buy-the-dip opportunities.' Zcash vulnerability discovered via AI security review.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 8,
+      "title": "Crypto Mutiny on Strategy (MSTR): Puts >2x Calls, $250M in Bearish Premium; Stock -11.3% Friday, -27% on Week",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/05/crypto-mutiny-on-strategy-shorts-target-mstr-in-bitcoin-bloodbath.html",
+      "date": "2026-06-05",
+      "category": "Crypto",
+      "tickers": [
+        "MSTR",
+        "STRC"
+      ],
+      "summary": "Options traders piled into bearish bets on MSTR. Puts >2x calls; puts bought >3x calls. Volume ~3x 30-day average. $335M total premium traded, $250M tied to puts. MSTR closed at $114.72 (-11.32%), worst week since Nov 2022 at -27%. STRC fell to $92.07 (-3.51%), lowest since Nov 2024. YieldMax Short MSTR ETF (WNTR) up 30% since May 11. 'There's a higher Michael Saylor risk factor being priced in,' said Quantify Funds CEO. BTC below MSTR's $75,699 average cost basis. Polymarket: 63% probability of MSCI delisting by year-end. Rising rate-hike odds (>40%) hurt credit-like instruments including STRC.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 9,
+      "title": "Coinbase (COIN) Falls 7.1% to $158.70; Baird Flags 15-20% Volume Decline, Downgrades",
+      "source": "Multiple (Yahoo Finance, StockAnalysis)",
+      "url": "https://stockanalysis.com/stocks/coin/history/",
+      "date": "2026-06-05",
+      "category": "Equities",
+      "tickers": [
+        "COIN"
+      ],
+      "summary": "COIN closed at $158.70, down 7.1% from $164.19 previous close. -21% on the week (worst since Feb 2023). Baird flagged sequential trading-volume declines of 15-20%, 5-6% revenue miss risk, and stretched valuation at 35x 2027 EPS. Stock -34% YTD. Broader crypto weakness (BTC -18% weekly) and rising rate expectations pressuring all crypto-exposed equities.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 10,
+      "title": "Lululemon (LULU) Cuts FY Outlook, Stock -8.6%; Americas Revenue -3%, Margins Compressed 410bp by Tariffs",
+      "source": "TheStreet / Lululemon IR",
+      "url": "https://www.thestreet.com/latest-news/lulu-lululemon-earnings-call-updates-q1-2026",
+      "date": "2026-06-05",
+      "category": "Equities",
+      "tickers": [
+        "LULU"
+      ],
+      "summary": "LULU reported Q1 FY2026 after close June 4: EPS $1.69 beat by $0.01, revenue $2.5B (+4% YoY) beat $2.433B consensus. But FY revenue guidance cut to $11.0-11.15B from $11.35-11.50B. Americas comparable sales -5%. Gross margin 54.2%, -410bp YoY driven by tariffs (-280bp), markdowns (-40bp), and fixed costs (-140bp). Stock -8.6% Friday, now -41% YTD. Negative media/social commentary cited for weakness. Founder Chip Wilson proxy battle settled but 18-month non-disparagement clause a future risk. Incoming CEO Heidi O'Neill (ex-Nike) takes over September 2026. 'Not all product launches have met expectations' \u2014 CFO Meghan Frank.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 11,
+      "title": "Gold Breaks Below 200-Day MA, Spot at $4,327 (-3%); Analysts Call It a Buyable Dip",
+      "source": "Kitco",
+      "url": "https://www.kitco.com/news/article/2026-06-05/gold-breaks-below-key-technical-support-analysts-see-buying-opportunity",
+      "date": "2026-06-05",
+      "category": "Commodities",
+      "tickers": [],
+      "summary": "Spot gold fell ~3% to $4,327/oz, breaking below 200-day moving average after testing it for two weeks. Silver -7% to $68.28. Near-term downside targets: $4,099 (March low, Saxo Bank) and $4,000 (FOREX.com). Driven by surging rate-hike expectations and strong USD. Analysts see a buyable dip: abrdn's Robert Minter points to sustained central bank buying and no government prioritizing debt reduction. 'I would not rush to perceive the current weakness as the beginning of a bear market,' said B2PRIME. Next week's CPI/PPI could intensify selling if energy costs appear embedded. ECB expected to hike 25bp Thursday; BoC to hold Wednesday.",
+      "sentiment": "bearish-near-term",
+      "confidence": "high"
+    },
+    {
+      "id": 12,
+      "title": "Investment Grade Credit Spreads at 70bp (vs 132bp Historical): 'Almost No Margin for Error'",
+      "source": "Yahoo Finance / 24/7 Wall St.",
+      "url": "https://finance.yahoo.com/markets/options/articles/corporate-bond-spreads-tightening-fast-143348082.html",
+      "date": "2026-06-03",
+      "category": "Credit",
+      "tickers": [
+        "LQD",
+        "SLQD"
+      ],
+      "summary": "IG corporate bond spreads compressed to ~70bp against 132bp historical average. LQD (iShares IG Corp Bond ETF) at $109.36 (+6.5% 1Y) with ~8yr duration. Warning signals: sustained 30Y above 5.25% (closed at 4.99% but touched 5.18% in May) OR IG spreads breaking above 100bp. Goldman Sachs sees mid-cycle backdrop for IG credit, but 'the asymmetry is poor.' SLQD offers lower duration alternative (~1/3 of LQD's rate sensitivity). Core PCE at 129.63 \u2014 highest in 12 months. 10Y real yield at 2.07%. 'In plain English, almost no margin for error.'",
+      "sentiment": "cautious",
+      "confidence": "high"
+    },
+    {
+      "id": 13,
+      "title": "SpaceX IPO 2x Oversubscribed: $150B Demand vs $75B Raise; Pricing June 11, Nasdaq Debut June 12",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/finance/spacex-ipo-running-two-times-oversubscribed-sources-say-2026-06-05/",
+      "date": "2026-06-05",
+      "category": "IPO",
+      "tickers": [
+        "SPCX"
+      ],
+      "summary": "SpaceX IPO has drawn ~$150B in demand against the $75B raise, per sources. 2x oversubscription considered modest for typical hot IPOs but impressive for the largest IPO ever. Pricing expected June 11, Nasdaq debut June 12 under ticker SPCX. S&P Global declined to change eligibility rules for swift S&P 500 inclusion. SpaceX also signed compute deal with Google for AI services. Roadshow emphasizes space-launch, internet (Starlink), and AI businesses as gateways to trillions in new markets.",
+      "sentiment": "bullish",
+      "confidence": "high"
+    },
+    {
+      "id": 14,
+      "title": "DXY Surges to 100.07 (+0.66%) on Hawkish Jobs Print; FX Markets Reprice Fed Path",
+      "source": "Trading Economics / Forex.com",
+      "url": "https://tradingeconomics.com/united-states/currency",
+      "date": "2026-06-05",
+      "category": "Rates",
+      "tickers": [],
+      "summary": "DXY rose to 100.07 (+0.66% on session, +2.08% over past month). Strong dollar reflected hawkish repricing of Fed expectations post-jobs data. Rate differentials widening in USD's favor as other central banks (ECB, BoC) face different macro backdrops. ECB expected to hike 25bp on Thursday but USD strength persists on growth divergence. War-risk premium also supporting dollar demand.",
+      "sentiment": "bullish-USD",
+      "confidence": "high"
+    },
+    {
+      "id": 15,
+      "title": "Oil Retreats 3% to $90.25 on Stronger Dollar; Iran War / Strait of Hormuz Risk Premium Intact",
+      "source": "WSJ / Yahoo Finance",
+      "url": "https://www.wsj.com/tech/ai/selloff-in-chip-stocks-prompts-nasdaq-bloodbath-36fd8c52",
+      "date": "2026-06-05",
+      "category": "Commodities",
+      "tickers": [],
+      "summary": "WTI crude fell ~3% to $90.25/barrel as stronger USD pressured commodities. But Iran war risk premium remains intact: Iran reaffirmed support for Hezbollah, demanded Israel withdraw from southern Lebanon. Trump-brokered truces reduced but haven't ended airstrikes. Strait of Hormuz blockade continues to constrain supply. Oil still up substantially YTD, contributing to inflation estimated above 4%. Analysts watching for potential demand destruction at these elevated levels.",
+      "sentiment": "neutral",
+      "confidence": "high"
+    }
+  ],
+  "total_articles": 28,
+  "dedup_removed": 2
+}

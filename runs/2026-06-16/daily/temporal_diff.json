@@ -1,0 +1,80 @@
+{
+  "pm_date": "2026-06-16",
+  "am_date": "2026-06-17",
+  "consolidated_at": "2026-06-17T06:15:54.553115",
+  "pm_articles": 24,
+  "am_articles": 36,
+  "pm_data_points": 0,
+  "am_data_points": 8,
+  "diff": {
+    "evolved": 0,
+    "confirmed": 0,
+    "pm_only": 0,
+    "am_only": 8,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [],
+    "pm_only": [],
+    "am_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "am_value": "37%",
+        "am_source": "briefing.md",
+        "am_raw": "down about 37% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "am_value": "-0.57%",
+        "am_source": "briefing.md",
+        "am_raw": "SPX -0.57%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "am_value": "16.39",
+        "am_source": "briefing.md",
+        "am_raw": "VIX 16.39"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "am_value": "$201.80",
+        "am_source": "briefing.md",
+        "am_raw": "closed $201.80 (+4.8%)"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "am_value": "$76.02",
+        "am_source": "briefing.md",
+        "am_raw": "WTI $76.02"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "percent_move",
+        "am_value": "-1.44%",
+        "am_source": "briefing.md",
+        "am_raw": "-1.44% pre-market"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "10y",
+        "am_value": "4.44%",
+        "am_source": "briefing.md",
+        "am_raw": "10Y 4.44%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "am_value": "3%",
+        "am_source": "briefing.md",
+        "am_raw": "Nasdaq jumped over 3% "
+      }
+    ],
+    "contradicted": []
+  }
+}

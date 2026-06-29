@@ -1,0 +1,105 @@
+{
+  "pm_date": "2026-06-12",
+  "am_date": "2026-06-14",
+  "consolidated_at": "2026-06-14T06:12:05.099459",
+  "pm_articles": 26,
+  "am_articles": 28,
+  "pm_data_points": 10,
+  "am_data_points": 2,
+  "diff": {
+    "evolved": 2,
+    "confirmed": 0,
+    "pm_only": 7,
+    "am_only": 0,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "42%",
+        "am_value": "2.68%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "down 42% ",
+        "am_raw": "down 2.68% ",
+        "pct_change": -93.6,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "pm_value": "+0.34%",
+        "am_value": "21%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "S&P 500 +0.34% ",
+        "am_raw": "S&P 500 rallied 21% ",
+        "pct_change": 6076.5,
+        "direction": "up"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "percent_move",
+        "pm_value": "-8.5%",
+        "pm_source": "briefing.md",
+        "pm_raw": "-8.5% pre-market",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "pm_value": "$85",
+        "pm_source": "briefing.md",
+        "pm_raw": "Brent $85",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "brent",
+        "pm_value": "$86.77",
+        "pm_source": "Barron's",
+        "pm_raw": "Brent $86.77 ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "pm_value": "$7",
+        "pm_source": "AOL Finance",
+        "pm_raw": "shares Financials unaudited Plans $7",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "+2.54%",
+        "pm_source": "briefing.md",
+        "pm_raw": "Nasdaq jump +2.54%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "+2.54%",
+        "pm_source": "CNBC",
+        "pm_raw": "Nasdaq +2.54% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "pm_value": "$84.24",
+        "pm_source": "Barron's",
+        "pm_raw": "WTI $84.24",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [],
+    "contradicted": []
+  }
+}

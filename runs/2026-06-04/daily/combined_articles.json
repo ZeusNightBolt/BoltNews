@@ -1,0 +1,337 @@
+{
+  "full_date": "2026-06-04",
+  "consolidated_at": "2026-06-05T06:10:34.088846",
+  "am_articles": [
+    {
+      "id": 2,
+      "title": "Broadcom Q2 Earnings: Beat on EPS, Miss on Revenue, AI Guidance Unchanged \u2014 Stock Plunges 15%",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/03/broadcom-avgo-earnings-report-q2-2026.html",
+      "date": "2026-06-03",
+      "category": "Equities",
+      "tickers": [
+        "AVGO",
+        "MRVL",
+        "AMD",
+        "NVDA",
+        "INTC",
+        "ARM"
+      ],
+      "summary": "AVGO Q2 adjusted EPS $2.44 beat by $0.04; revenue $22.19B missed $22.27B consensus. Net income $9.31B (+88% YoY). AI revenue $10.8B (doubled YoY), expected to triple to $16B in Q3. FY2026 AI guidance reiterated at 'in excess of $100B' \u2014 no raise, disappointing investors. Software revenue $7.18B missed $7.32B consensus. Q3 revenue guidance $29.4B beat estimates. Hock Tan announced shift to 'chips only' strategy. Stock plunged ~15% but analysts broadly raised PTs (JPM $580, Jefferies $550, BNP $640). Still +20% YTD.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 3,
+      "title": "Strategy (MSTR) Breaks 'Never Sell' Posture: Sold 32 BTC for $2.5M, Stock Craters",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/investing/2026/06/04/buy-sell-or-hold-mstr-after-strategys-first-bitcoin-sale-in-years/",
+      "date": "2026-06-04",
+      "category": "Crypto",
+      "tickers": [
+        "MSTR",
+        "COIN",
+        "ASST"
+      ],
+      "summary": "Strategy (MSTR) sold 32 BTC for $2.5M to fund STRK preferred dividends \u2014 its first Bitcoin sale since 2022. Sale represents 0.004% of 843,706 BTC holdings but shattered the 'never sell' narrative. Stock down 31% in one month, 67% YoY, trading at ~$126. BTC at $62,350, well below Strategy's $75,699 average cost basis. Q4 2025 net loss: $17.44B unrealized on digital assets. Polymarket: 63% probability of MSCI delisting by year-end. HOLD rating at $126; watch for BTC purchase announcement June 2-8 window.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 4,
+      "title": "Strategy's Bitcoin Dive Will Cost $26M/Year as STRC Preferred Dividend Set to Ratchet to 11.75%",
+      "source": "Investor's Business Daily",
+      "url": "https://www.investors.com/news/mstr-stock-strategy-shoots-own-foot-bitcoin-dive-will-cost-it-26-mil-a-year/",
+      "date": "2026-06-04",
+      "category": "Crypto",
+      "tickers": [
+        "MSTR"
+      ],
+      "summary": "Strategy's STRC preferred (currently 11.5% dividend) likely to ratchet to 11.75% as monthly VWAP fell to ~96.90 vs. 99 trigger. Would add $26M/year in interest on $10.5B outstanding. STRC trading at 94, well below $100 par \u2014 freezing new issuance and bitcoin buying power. Total annual interest/dividend burden: $1.712B (3.1% of BTC holdings). At 11.75%, STRC-financed BTC purchases unprofitable even at 10% annual BTC appreciation. MSTR down 20.5% week-to-date; BTC tumbled to ~$62,350 (lowest since Nov 2024). Next payment: ~$235M due end of June.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 5,
+      "title": "May Jobs Report Preview: Consensus +80K Payrolls, Risks Skewed to Downside",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/06/04/the-may-jobs-report-will-be-released-friday-heres-what-to-expect.html",
+      "date": "2026-06-04",
+      "category": "Macro",
+      "tickers": [],
+      "summary": "May nonfarm payrolls consensus: +80K (vs. April's +115K). Unemployment expected at 4.3-4.4%. Downside risks substantial: Goldman +60K, Vanguard +20K, EY-Parthenon +50K. Challenger report: 97,006 planned job cuts (+16% MoM), AI-related layoffs 38,242 (highest on record). Initial jobless claims at highest since February. 'Low-hire, low-fire' stagnation narrative. Fed: zero probability of rate move at June 16-17 FOMC. Rate hike odds increasing for early 2027 if inflation stays elevated. 'More hawkish, two-sided policy statement' expected.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    },
+    {
+      "id": 7,
+      "title": "Snowflake Surges 36% on AI Frenzy, Easing 'SaaSpocalypse' Fears",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/05/28/snowflake-snow-software-stock-rally.html",
+      "date": "2026-05-28",
+      "category": "Equities",
+      "tickers": [
+        "SNOW",
+        "NOW",
+        "ORCL",
+        "PLTR",
+        "CRM",
+        "TEAM",
+        "PANW"
+      ],
+      "summary": "Snowflake shares surged 36% (best day ever) on $6B Amazon AI compute deal and earnings beat. Q2 product revenue guidance $1.415-1.420B (above $1.37B consensus). CFO: AI tools driving 'step function change' in AI revenue. Added 616 net new customers (+38% YoY); 779 customers >$1M spend. Acquired AI startup Natoma. Rally lifted SaaS peers: NOW +6%, ORCL +6%, PLTR +8%, TEAM +3%. Exception: CRM dipped on lackluster guidance. Eased fears that AI would replace traditional SaaS. SNOW up ~9% YTD after surge.",
+      "sentiment": "bullish",
+      "confidence": "moderate"
+    },
+    {
+      "id": 8,
+      "title": "Broadcom Analyst Roundup: Jefferies Raises PT to $550, Sees Buying Opportunity",
+      "source": "TheStreet",
+      "url": "https://www.thestreet.com/investing/stocks/5-star-analyst-revamps-broadcom-stock-price-target-after-earnings",
+      "date": "2026-06-04",
+      "category": "Equities",
+      "tickers": [
+        "AVGO"
+      ],
+      "summary": "5-star Jefferies analyst Blayne Curtis (70% success rate, 41% avg return) raised AVGO PT to $550 (from $500), reiterates Buy. Argues AI growth story intact, margin headwinds temporary. Broad analyst PT raises: BNP $640, JPM $580, KeyBanc $575, Bernstein $550, Goldman $525. AVGO posted 4th consecutive double beat; revenue $68.3B TTM (+25% YoY), gross margin 77%. Stock: +38.47% YTD, +86.58% 1Y, +490% 3Y. Shift to custom AI chips pressures near-term margins but hyperscaler demand (Meta, OpenAI) ramping for 2027.",
+      "sentiment": "bullish",
+      "confidence": "high"
+    },
+    {
+      "id": 9,
+      "title": "Investment Grade Bonds Q2 2026: 5.00-5.50% All-In Yields, 80 bps Spreads Near 25-Year Lows",
+      "source": "InvestmentGrade.com",
+      "url": "https://investmentgrade.com/investment-grade-bond-market-outlook/",
+      "date": "2026-06-05",
+      "category": "Credit",
+      "tickers": [],
+      "summary": "IG bond market at inflection point: all-in yields 5.00-5.50% (highest carry in decade+) but OAS at ~80 bps (near multi-decade tights). IG issuance forecast: $2.46T in 2026 (+11.8% YoY), net $945B (+30.2%). AI/data center IG debt: $300B+, hyperscalers averaging $140B annual issuance. Quality ladder compressed: BBB OAS ~100 bps vs AAA ~40 bps \u2014 only 60 bps across rating spectrum, tightest since late 1990s. Recommendation: clip coupon, don't bet on further spread compression. Favor defensives (healthcare, utilities) over cyclicals at current spreads.",
+      "sentiment": "neutral",
+      "confidence": "high"
+    },
+    {
+      "id": 10,
+      "title": "US Credit Markets Defy War Risks as Cash Drives Rally; IG Spreads at 78 bps",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/us-credit-markets-defy-war-risks-cash-drives-rally-2026-05-12/",
+      "date": "2026-05-12",
+      "category": "Credit",
+      "tickers": [],
+      "summary": "IG spreads tightened to 78 bps (near historic 73 bps low), HY at 275 bps. $1T+ corporate issuance through April (+28.2% YoY). M2 money supply up 6% YoY. Drivers: abundant liquidity from expansionary fiscal policy, Fed supporting $3T bank reserves, insurers now ~50% of demand in some segments (from 20% a decade ago). Corporate balance sheets in 'excellent health.' Risk: lower-quality HY and private credit vulnerable if growth slows. Market 'quickly gets over bad news' because of ample cash.",
+      "sentiment": "bullish",
+      "confidence": "moderate"
+    },
+    {
+      "id": 11,
+      "title": "Dollar Climbs for Fifth Straight Day as Treasury Yields Surge on Inflation Fears",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/asia-pacific/dollar-poised-largest-weekly-rise-two-months-fed-hike-bets-increase-2026-05-15/",
+      "date": "2026-05-15",
+      "category": "FX/Rates",
+      "tickers": [],
+      "summary": "DXY rose to 99.30 (fifth consecutive daily gain) as 10Y yield hit 4.595% (highest in a year). WTI crude surged to $105/bbl on Iran Strait of Hormuz blockage fears. Market priced 49.5% probability of a December rate hike (from 14.3% a week prior). EUR/USD dropped to $1.1623, USD/JPY rose to 158.74 (nearing 160 intervention level). Bond market repricing long-term inflation expectations as quick energy resolution looks unlikely.",
+      "sentiment": "bearish",
+      "confidence": "moderate"
+    },
+    {
+      "id": 12,
+      "title": "Bitcoin Stocks Take a Beating as BTC Sells Off Below $67K; MSTR, COIN, ASST All Down",
+      "source": "Bitcoin Magazine",
+      "url": "https://bitcoinmagazine.com/news/bitcoin-stocks-take-a-beating",
+      "date": "2026-06-02",
+      "category": "Crypto",
+      "tickers": [
+        "MSTR",
+        "COIN",
+        "ASST"
+      ],
+      "summary": "BTC fell into mid-$67Ks, down 46% from October peak of $126K. MSTR -9.15%, COIN -4.23%, ASST -6.23%. Four catalysts: (1) Strategy sold 32 BTC, (2) Record ETF outflows \u2014 $3.45B over 11 consecutive sessions, (3) Mt. Gox moved 10,422 BTC (~$739M), (4) Iran suspended nuclear negotiations. Strive (ASST) bought 2,500 BTC at $74,092 avg but still fell 6.23%. Structural treasury model risk: when BTC drops, equities drop harder. MSTR dangerously near 52-week floor of $104.16.",
+      "sentiment": "bearish",
+      "confidence": "high"
+    }
+  ],
+  "pm_articles": [
+    {
+      "ticker": "AVGO",
+      "title": "Broadcom Set to Shed $300 Billion in Value as AI Results Fail to Impress",
+      "url": "https://www.reuters.com/business/broadcom-tumbles-revenue-miss-clouds-ai-boom-bets-2026-06-04/",
+      "description": "Broadcom -14% after Q2 revenue $22.19B missed $22.27B estimate. AI chip forecast reiterated at $100B for FY2027 \u2014 unchanged from March, disappointing investors. Stock had rallied 38% YTD into earnings. P/E 29.9x vs. S&P 500 27.94x. CEO Hock Tan announced shift to 'chips only' strategy for AI, moving away from full integrated systems.",
+      "source": "Reuters",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 5,
+      "category": "Equities"
+    },
+    {
+      "ticker": "AVGO",
+      "title": "Broadcom (AVGO) Q2 2026 Earnings: Revenue Miss, AI Forecast Unchanged",
+      "url": "https://www.cnbc.com/2026/06/03/broadcom-avgo-earnings-report-q2-2026.html",
+      "description": "Revenue $22.19B vs $22.27B est (LSEG). Adj EPS $2.44 vs $2.40 est \u2014 slight beat. Infrastructure software $7.18B vs $7.32B est. AI revenue $10.8B, more than doubled YoY. Q3 guidance $29.4B, beating $28.53B est. Full-year AI chip sales unchanged at 'in excess of $100B'. Stock plunged ~15%.",
+      "source": "CNBC",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 24,
+      "category": "Equities"
+    },
+    {
+      "ticker": "CRWD",
+      "title": "CrowdStrike Sinks 9% as Earnings Beat Falls Short of Lofty Expectations",
+      "url": "https://247wallst.com/investing/2026/06/04/crowdstrike-sinks-9-as-earnings-beat-falls-short-of-lofty-expectations-weighing-on-palo-alto-networks/",
+      "description": "CRWD -8-10% after Q1 earnings beat but guidance in-line. Announced 4-for-1 stock split effective next month. Revenue ~$1.44B guidance vs $1.3B est. CEO Kurtz: 'CrowdStrike is AI security infrastructure.' Stock had rallied 60%+ YTD into earnings, setting high bar.",
+      "source": "247WallSt",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 8,
+      "category": "Equities"
+    },
+    {
+      "ticker": "MARKET",
+      "title": "Schwab Market Update: Broadcom Plunge Takes Chip Out of Long Rally",
+      "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+      "description": "Vix 16.38, +2%. S&P 500 tech up 17% in past month but Magnificent Seven fraying. Oil -3.3% to $92.83 after Israel-Lebanon ceasefire. Bitcoin $63,985, -2.4% \u2014 13 straight days of ETF outflows, >$3B. Crypto Fear & Greed in extreme fear. Bitcoin support near $60K. Weekly jobless claims 225K, 3-month high. Private credit fears: Blackstone capped BCRED withdrawals.",
+      "source": "Charles Schwab",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 12,
+      "category": "Equities"
+    },
+    {
+      "ticker": "UNH",
+      "title": "UnitedHealth Stock Climbs After Major BofA Upgrade to Buy, PT $450",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-stock-climbs-major-bofa-192139049.html",
+      "description": "UNH +5% after Bank of America upgrade from Neutral to Buy. PT raised to $450 from $420. Analyst Kevin Fischbeck: improving medical cost trends, lower utilization. Data points 'make it harder to believe Q1 strength was only temporary.' Q2 earnings expected next month.",
+      "source": "Yahoo Finance / GuruFocus",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 3,
+      "category": "Equities"
+    },
+    {
+      "ticker": "BX",
+      "title": "Blackstone Private Credit Fund Caps Withdrawals as Redemption Requests Jump to 10%",
+      "url": "https://www.reuters.com/business/blackstone-caps-withdrawals-flagship-private-credit-fund-2026-06-04/",
+      "description": "Blackstone's $79B BCRED capped withdrawals at 5% after Q2 redemption requests hit 10% of shares (up from 7.9% in Q1). Fund shrank from $82B. Class I shares 9.3% annualized return since inception, 50% premium to leveraged loans. BX shares rose 8% \u2014 '10% is better than feared' per Evercore. Industry-wide retreat from private credit by wealthy individuals.",
+      "source": "Reuters",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 5,
+      "category": "Credit"
+    },
+    {
+      "ticker": "SPCX",
+      "title": "SpaceX Targets $135 IPO Price at $1.77 Trillion Valuation",
+      "url": "https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html",
+      "description": "SpaceX sets fixed $135/share IPO price (unusual vs. range). 555.6M shares + 83.3M greenshoe. $75B raise (+$11.2B greenshoe). $1.77 trillion valuation \u2014 7th largest U.S. company. Musk retains >82% voting control. Nasdaq: SPCX. Goldman Sachs lead underwriter. Expected debut June 12. Largest IPO ever, 3x Alibaba record. Tesla holds $2.56B in SpaceX shares.",
+      "source": "CNBC",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 24,
+      "category": "Equities"
+    },
+    {
+      "ticker": "GOOGL",
+      "title": "Alphabet to Raise $80 Billion from Stock Sales to Fund AI Build-out",
+      "url": "https://www.cnbc.com/2026/06/01/alphabet-to-raise-80-billion-from-stock-sales-to-fund-ai-buildout.html",
+      "description": "Alphabet plans $80B equity raise: $10B Berkshire private placement, $30B underwritten offerings, $40B ATM program. Capex guidance $180-190B in 2026. Hyperscalers (MSFT, AMZN, META, GOOGL) on track for $700B+ combined capex. BCA Research: 'Equity funding suggests AI capex cycle entering mature, capital-intensive phase.'",
+      "source": "CNBC",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 72,
+      "category": "Equities"
+    },
+    {
+      "ticker": "CIEN",
+      "title": "Ciena Reports Q2 2026: Revenue +40% YoY to $1.57B, Adj EPS $1.64 (+290%)",
+      "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Second-Quarter-2026-Financial-Results/default.aspx",
+      "description": "Ciena Q2 revenue $1.57B (+40% YoY), adj EPS $1.64 (+290% YoY from $0.42). Adj gross margin 44.9% vs 41.0%. Operating margin 19.5% vs 8.2%. Raised FY guidance: revenue $6.3B \u00b1$100M, op margin ~19%. CEO: 'Structural, multi-year opportunities from AI-driven demand.' Stock fell 8% despite beat-and-raise \u2014 similar to Broadcom dynamic.",
+      "source": "Ciena IR",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 6,
+      "category": "Equities"
+    },
+    {
+      "ticker": "LULU",
+      "title": "Lululemon Q1 FY2026: EPS $1.69, Revenue $2.47B (+4%), Operating Margin Collapses to 11.2%",
+      "url": "https://corporate.lululemon.com/media/press-releases/2026/06-04-2026-210523775",
+      "description": "LULU Q1 EPS $1.69 vs $2.60 (-35%), revenue $2.47B (+4%). Operating margin 11.2% vs 18.5% (-730bps). Americas -3% constant dollar. International +16%. FY guidance cut: revenue $11.0-11.15B (flat YoY). EPS $10.95-11.15. Stock down 40% YTD. Interim co-CEOs cite 'headwinds' and 'additional actions to reposition.'",
+      "source": "Lululemon IR",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 2,
+      "category": "Equities"
+    },
+    {
+      "ticker": "QNT",
+      "title": "Quantinuum Opens at $68/Share on Nasdaq, +13.3% Above $60 IPO Price",
+      "url": "https://www.cnbc.com/2026/06/04/quantinuum-qnt-stock-first-trade-ipo.html",
+      "description": "Quantinuum (QNT) opened at $68/share on Nasdaq (+13.3% vs $60 IPO). Raised $1.68B. Market cap ~$17.6B at first trade. Full-stack quantum computing company merged from Honeywell Quantum + Cambridge Quantum. Priced above $53-55 range. Commerce Dept providing up to $100M.",
+      "source": "CNBC",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 5,
+      "category": "Equities"
+    },
+    {
+      "ticker": "DELL",
+      "title": "Dell Skyrockets 32% After Blowout AI Server Earnings \u2014 Best Day Ever",
+      "url": "https://www.cnbc.com/2026/05/29/dell-stock-earnings-ai-servers.html",
+      "description": "DELL +32.76% after earnings (May 29). AI server revenue +757% YoY to $16.1B. Adj EPS $4.86 vs $2.94 est. Revenue +88% YoY. Stock +234% YTD. CEO Michael Dell net worth $233B, surpassing Zuckerberg and Huang. Morgan Stanley: 'one of the most impressive quarters we've seen.' Dell awarded $9.7B Pentagon software contract.",
+      "source": "CNBC",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 144,
+      "category": "Equities"
+    },
+    {
+      "ticker": "COMMODITY",
+      "title": "Oil Retreats 2.8% on Israel-Lebanon Ceasefire; Gold +0.9% Above $4,500",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727",
+      "description": "WTI crude -2.8% to $93.30/bbl; Brent -2.5% to $95.35. Israel-Lebanon ceasefire renewal + Trump reportedly ruling out all-out war with Iran unless US troops killed. Gold +0.9% to ~$4,508/oz. DXY -0.1% to 99.42. 10Y yield ~4.48%. Still: ~15M barrels/day supply lost; 170 ships locked in Persian Gulf. WSJ: up to 6 months to return to 80% pre-crisis supply.",
+      "source": "Investopedia / Schwab",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 4,
+      "category": "Macro"
+    },
+    {
+      "ticker": "BTC",
+      "title": "Bitcoin ~$63,500: 13 Straight Days of ETF Outflows, Fear & Greed in Extreme Fear",
+      "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+      "description": "Bitcoin -3.2% to $63,478.80 at 5:25 PM EDT. Worst week since February. 13 straight days of net outflows from spot ETFs (>$3B). Down ~30% YTD. Crypto Fear & Greed Index in extreme fear. Support expected near $60,000 (efficient miner cost + 200-week MA). MSTR, COIN down 1%+. AI stock euphoria may have drawn capital away from crypto.",
+      "source": "CNBC / Schwab",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 4,
+      "category": "Derivatives"
+    },
+    {
+      "ticker": "MSTR",
+      "title": "Strategy (MSTR) Drops 31% in a Month After First Bitcoin Sale in Years",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/buy-sell-hold-mstr-strategy-115514401.html",
+      "description": "MSTR -31% in a month after Strategy broke no-sell rule, offloading 32 Bitcoin for $2.5M to cover preferred dividends. Stock trading near $120-138 range. COIN hovering near $179.50. MSTR forward P/E -3.15. Market cap $45.7B.",
+      "source": "Yahoo Finance",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 10,
+      "category": "Derivatives"
+    },
+    {
+      "ticker": "MARKET",
+      "title": "CNBC Market Close: Rotation Away from Tech \u2014 'Early Innings of a Rotation'",
+      "url": "https://www.cnbc.com/2026/06/03/stock-market-today-live-updates.html",
+      "description": "Dow +874.86 (+1.73%) to 51,561.93 record. S&P +0.41% to 7,584.31. Nasdaq -0.09%. Broadcom worst day since Jan 2025. CrowdStrike worst day since July 2024. Russell 2000 +1.4% outperformed. Dennis Follmer (CIO Montis Financial): 'This rally is getting tired after an incredible more than two-month surge... early innings of a rotation.' Initial claims 225K vs 215K est (3-month high).",
+      "source": "CNBC",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 3,
+      "category": "Equities"
+    },
+    {
+      "ticker": "AAPL",
+      "title": "Apple WWDC Next Week: New AI Features, Enhanced Siri; BofA PT $380",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727",
+      "description": "Apple +14% YTD ahead of WWDC (Monday June 8). BofA raised PT to $380 (from $330). New AI features expected: enhanced Siri, possible standalone chatbot. Thesis: device/platform owner could become more valuable than AI model provider if Siri becomes dominant interface.",
+      "source": "Investopedia",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 4,
+      "category": "Equities"
+    },
+    {
+      "ticker": "MACRO",
+      "title": "Beige Book: Widespread Fuel-Driven Inflation Complaints; Fed Concerns on Iran War Impact",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06042026-11990727",
+      "description": "Fed Beige Book: widespread complaints about fuel-driven inflation. Higher transportation costs passing through to other products. Fed officials increasingly concerned about Iran war's impact on prices; may need to raise rates again. Productivity revised down to +0.3% from +0.8%. Unit labor costs +1.8%. Friday jobs report: consensus +80-85K payrolls.",
+      "source": "Investopedia",
+      "fetched_at": "2026-06-04T22:00:00",
+      "age_hours": 4,
+      "category": "Macro"
+    }
+  ],
+  "total_articles": 28,
+  "dedup_removed": 4
+}

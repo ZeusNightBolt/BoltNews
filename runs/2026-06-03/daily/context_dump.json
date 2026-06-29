@@ -1,0 +1,20 @@
+{
+  "full_date": "2026-06-03",
+  "consolidated_at": "2026-06-04T12:35:46.033293",
+  "am_run": {
+    "articles_unique": 22,
+    "tickers_searched": 50,
+    "topics_searched": 15,
+    "articles_found": 22
+  },
+  "pm_run": {
+    "articles_unique": 11,
+    "tickers_searched": 0,
+    "topics_searched": 0,
+    "articles_found": 11
+  },
+  "dedup": {
+    "total_unique": 33,
+    "jaccard_threshold": 0.35
+  }
+}

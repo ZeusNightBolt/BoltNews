@@ -1,0 +1,279 @@
+{
+  "pm_date": "2026-06-04",
+  "am_date": "2026-06-05",
+  "consolidated_at": "2026-06-05T06:10:04.164598",
+  "pm_articles": 20,
+  "am_articles": 12,
+  "pm_data_points": 30,
+  "am_data_points": 2,
+  "diff": {
+    "evolved": 0,
+    "confirmed": 0,
+    "pm_only": 30,
+    "am_only": 2,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "+0.3%",
+        "pm_source": "Investopedia",
+        "pm_raw": "down to +0.3% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "LULU",
+        "metric": "eps",
+        "pm_value": "$1.69",
+        "pm_source": "Lululemon IR",
+        "pm_raw": "EPS $1.69",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "LULU",
+        "metric": "eps",
+        "pm_value": "$1.69",
+        "pm_source": "Lululemon IR",
+        "pm_raw": "EPS $1.69 vs $2.60",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "LULU",
+        "metric": "eps",
+        "pm_value": "$10.95",
+        "pm_source": "Lululemon IR",
+        "pm_raw": "EPS $10.95",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "LULU",
+        "metric": "revenue",
+        "pm_value": "$2.47B",
+        "pm_source": "Lululemon IR",
+        "pm_raw": "Revenue $2.47B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "LULU",
+        "metric": "revenue",
+        "pm_value": "$2.47B",
+        "pm_source": "Lululemon IR",
+        "pm_raw": "revenue $2.47B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "LULU",
+        "metric": "revenue",
+        "pm_value": "$11.0",
+        "pm_source": "Lululemon IR",
+        "pm_raw": "revenue $11.0",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "BTC",
+        "metric": "dow",
+        "pm_value": "1%",
+        "pm_source": "CNBC / Schwab",
+        "pm_raw": "down 1%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "LULU",
+        "metric": "dow",
+        "pm_value": "40%",
+        "pm_source": "Lululemon IR",
+        "pm_raw": "down 40% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "DELL",
+        "metric": "eps",
+        "pm_value": "$4.86",
+        "pm_source": "CNBC",
+        "pm_raw": "Adj EPS $4.86 vs $2.94",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "russell2000",
+        "pm_value": "+1.4%",
+        "pm_source": "Investopedia",
+        "pm_raw": "Russell 2000 +1.4%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "russell2000",
+        "pm_value": "+1.4%",
+        "pm_source": "CNBC",
+        "pm_raw": "Russell 2000 +1.4%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "nasdaq",
+        "pm_value": "-0.09%",
+        "pm_source": "Investopedia",
+        "pm_raw": "Nasdaq -0.09% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "nasdaq",
+        "pm_value": "-0.09%",
+        "pm_source": "CNBC",
+        "pm_raw": "Nasdaq -0.09%",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "sp500",
+        "pm_value": "+0.41%",
+        "pm_source": "Investopedia",
+        "pm_raw": "S&P 500 +0.41% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "sp500",
+        "pm_value": "17%",
+        "pm_source": "Charles Schwab",
+        "pm_raw": "S&P 500 tech up 17% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "dow",
+        "pm_value": "+1.73%",
+        "pm_source": "Investopedia",
+        "pm_raw": "Dow surged +1.73% ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "ai_revenue",
+        "pm_value": "$10.8B",
+        "pm_source": "CNBC",
+        "pm_raw": "AI revenue $10.8B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "CIEN",
+        "metric": "eps",
+        "pm_value": "$1.64",
+        "pm_source": "Ciena IR",
+        "pm_raw": "Adj EPS $1.64 ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "CIEN",
+        "metric": "eps",
+        "pm_value": "$1.64",
+        "pm_source": "Ciena IR",
+        "pm_raw": "adj EPS $1.64 ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "CIEN",
+        "metric": "revenue",
+        "pm_value": "$1.57B",
+        "pm_source": "Ciena IR",
+        "pm_raw": "revenue $1.57B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "CIEN",
+        "metric": "revenue",
+        "pm_value": "$6.3B",
+        "pm_source": "Ciena IR",
+        "pm_raw": "revenue $6.3B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "eps",
+        "pm_value": "$2.44",
+        "pm_source": "CNBC",
+        "pm_raw": "Adj EPS $2.44 vs $2.40",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MARKET",
+        "metric": "vix",
+        "pm_value": "16.38",
+        "pm_source": "Charles Schwab",
+        "pm_raw": "Vix 16.38",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "revenue",
+        "pm_value": "$22.19B",
+        "pm_source": "Reuters",
+        "pm_raw": "revenue $22.19B ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "revenue",
+        "pm_value": "$22.19B",
+        "pm_source": "CNBC",
+        "pm_raw": "Revenue $22.19B vs $22.27B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "revenue",
+        "pm_value": "$10.8B",
+        "pm_source": "CNBC",
+        "pm_raw": "revenue $10.8B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "GOOGL",
+        "metric": "guidance",
+        "pm_value": "$180",
+        "pm_source": "CNBC",
+        "pm_raw": "guidance $180",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "AVGO",
+        "metric": "guidance",
+        "pm_value": "$29.4B",
+        "pm_source": "CNBC",
+        "pm_raw": "guidance $29.4B",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MSTR",
+        "metric": "price",
+        "pm_value": "$120",
+        "pm_source": "Yahoo Finance",
+        "pm_raw": "Stock trading near $120",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "dollar_amount",
+        "am_value": "$67",
+        "am_source": "Bitcoin Magazine",
+        "am_raw": "Stocks Take a Beating as BTC Sells Off Below $67"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "am_value": "$67",
+        "am_source": "Bitcoin Magazine",
+        "am_raw": "Stocks Take a Beating as BTC Sells Off Below $67"
+      }
+    ],
+    "contradicted": []
+  }
+}

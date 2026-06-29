@@ -1,0 +1,169 @@
+{
+  "pm_date": "2026-06-25",
+  "am_date": "2026-06-26",
+  "consolidated_at": "2026-06-26T06:15:12.484222",
+  "pm_articles": 47,
+  "am_articles": 39,
+  "pm_data_points": 12,
+  "am_data_points": 16,
+  "diff": {
+    "evolved": 4,
+    "confirmed": 0,
+    "pm_only": 4,
+    "am_only": 9,
+    "contradicted": 0
+  },
+  "details": {
+    "confirmed": [],
+    "evolved": [
+      {
+        "ticker": "MACRO",
+        "metric": "dow",
+        "pm_value": "3.12%",
+        "am_value": "+0.69%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "down from 3.12% ",
+        "am_raw": "Dow +0.69% ",
+        "pct_change": -77.9,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "wti",
+        "pm_value": "$71.47",
+        "am_value": "$5",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "Crude: $71.47",
+        "am_raw": "crude $5",
+        "pct_change": -93.0,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "nasdaq",
+        "pm_value": "-0.46%",
+        "am_value": "-4.37%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "Nasdaq -0.46%",
+        "am_raw": "Nasdaq -4.37% ",
+        "pct_change": -850.0,
+        "direction": "down"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "russell2000",
+        "pm_value": "+0.71%",
+        "am_value": "+0.94%",
+        "pm_source": "briefing.md",
+        "am_source": "briefing.md",
+        "pm_raw": "Russell 2000 +0.71%",
+        "am_raw": "Russell 2000 +0.94%",
+        "pct_change": 32.4,
+        "direction": "up"
+      }
+    ],
+    "pm_only": [
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "pm_value": "52",
+        "pm_source": "briefing.md",
+        "pm_raw": "VIX 52",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "vix",
+        "pm_value": "18.89",
+        "pm_source": "briefing.md",
+        "pm_raw": "VIX 18.89 ",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "30y",
+        "pm_value": "4.85%",
+        "pm_source": "briefing.md",
+        "pm_raw": "30Y: 4.85% (+1 bp)",
+        "staleness_risk": "high"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "10y",
+        "pm_value": "4.394%",
+        "pm_source": "briefing.md",
+        "pm_raw": "10Y 4.394%",
+        "staleness_risk": "high"
+      }
+    ],
+    "am_only": [
+      {
+        "ticker": "GICS",
+        "metric": "russell2000",
+        "am_value": "+0.94%",
+        "am_source": "briefing.md",
+        "am_raw": "Russell 2000 +0.94%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "eps",
+        "am_value": "$25.11",
+        "am_source": "briefing.md",
+        "am_raw": "EPS $25.11 vs $20.78"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "sp500",
+        "am_value": "4.37%",
+        "am_source": "briefing.md",
+        "am_raw": "S&P 500 is flat for the week despite a 4.37% "
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "dollar_amount",
+        "am_value": "$61.07",
+        "am_source": "briefing.md",
+        "am_raw": "closed at $61.07"
+      },
+      {
+        "ticker": "GICS",
+        "metric": "dow",
+        "am_value": "+0.69%",
+        "am_source": "briefing.md",
+        "am_raw": "Dow +0.69%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "after_hours_price",
+        "am_value": "$274.88",
+        "am_source": "briefing.md",
+        "am_raw": "after-hours: $274.88 (-0.10%)"
+      },
+      {
+        "ticker": "GICS",
+        "metric": "sp500",
+        "am_value": "-1.91%",
+        "am_source": "briefing.md",
+        "am_raw": "S&P 500 -1.91%"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "price",
+        "am_value": "$61.07",
+        "am_source": "briefing.md",
+        "am_raw": "closed at $61.07 (-2.57%)"
+      },
+      {
+        "ticker": "MACRO",
+        "metric": "revenue",
+        "am_value": "$41.46B",
+        "am_source": "briefing.md",
+        "am_raw": "revenue $41.46B "
+      }
+    ],
+    "contradicted": []
+  }
+}
