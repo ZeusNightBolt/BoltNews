@@ -8,7 +8,8 @@ BoltNews briefings are research notes, not headline digests. The authoritative a
 - Every market claim with a price, yield, spread, percentage, index level, EPS, revenue, guidance item, timestamp, or policy probability must cite a source and as-of time/date.
 - Current-news sections use fresh articles inside the run's recency window. Historical context must come from prior BoltNews markdown artifacts and be labeled as context.
 - If a required section lacks verified data, keep the heading and write `Data unavailable — <reason>` rather than fabricating.
-- Failure modes: headline-only output, missing current-market snapshot, stale article backfill, unsupported numeric claims, missing timestamps, or section order drift.
+- Failure modes: headline-only output, missing current-market snapshot, stale article backfill, unsupported numeric claims, missing timestamps, section order drift, or Telegram delivery without a compact `## Senior PM Recap` sourced from the validated `briefing.md`.
+- After validation/deploy, generate `senior_pm_recap.md` with `scripts/senior_pm_recap.py` and include it in the Telegram notification before links/log details. The recap must be compact, portfolio-manager style, and must not introduce claims absent from `briefing.md`.
 
 ## Pre-market template
 
@@ -113,14 +114,14 @@ Source priority: `daily/temporal_brief.md` → each run's `briefing.md` → `sum
 
 Required section order:
 
-1. `## Weekly Executive Summary`
-2. `## Cross-Run Data Evolution`
-   - Old value, new value, change, source, timestamp; confirmed/evolved/stale/contradicted flags.
-3. `## Asset-Class Weekly Review`
-   - Equities, Rates, Credit, FX, Commodities, Volatility, Crypto if relevant.
-4. `## Theme Tracker`
-   - Persistent, new, faded, contradicted themes.
-5. `## Calendar and Risk Preview`
-6. `## Data Quality Appendix`
+1. `## Weekly Market Scoreboard`
+2. `## Dominant Cross-Asset Narrative`
+3. `## Asset Class Deep Dive`
+4. `## Positioning, Sentiment, and Flows`
+5. `## Earnings, Guidance, and Corporate Actions`
+6. `## Macro and Policy Outlook`
+7. `## Next Week Calendar and Watchlist`
+8. `## Contrarian Flags and Underpriced Risks`
+9. `## Source Notes and Data Quality`
 
-Weekly rollup failure: concatenating daily notes without comparing data-point evolution.
+Weekly rollup failure: concatenating daily notes without comparing data-point evolution or emitting debug/audit-only headings instead of the canonical PM template.
