@@ -1,0 +1,2155 @@
+{
+  "schema_version": "2.0",
+  "mode": "pre-market",
+  "weekday": "Monday",
+  "weekday_index": 0,
+  "is_weekend": false,
+  "target_date": "2026-06-29",
+  "date_suffix": "June 29, 2026",
+  "recency_hours": 62.0,
+  "recency": {
+    "mode": "pre-market",
+    "label": "overnight session",
+    "window_start_iso": "2026-06-26T16:00:00-04:00",
+    "window_end_iso": "2026-06-29T06:00:00-04:00",
+    "hours": 62.0,
+    "timezone": "America/New_York",
+    "require_article_timestamp": true,
+    "reject_if_timestamp_missing": true,
+    "reject_if_outside_window": true,
+    "calendar": "NYSE-like US equity calendar with weekends and major Wall Street holidays",
+    "target_is_trading_day": true,
+    "previous_trading_day": "2026-06-26"
+  },
+  "source_policy": {
+    "preferred_sources": [
+      "Reuters",
+      "Bloomberg",
+      "WSJ",
+      "CNBC",
+      "MarketWatch",
+      "Yahoo Finance",
+      "official releases",
+      "central banks",
+      "exchanges",
+      "regulators"
+    ],
+    "allowed_source_classes": [
+      "newswire",
+      "market_data",
+      "official",
+      "central_bank",
+      "company_release",
+      "rates",
+      "fx",
+      "commodities",
+      "credit",
+      "analysis"
+    ],
+    "restricted_source_classes": [
+      "forum",
+      "social"
+    ],
+    "paywall_policy": "Extract if accessible; never invent text behind a paywall.",
+    "historical_context_policy": "Use prior BoltNews markdown artifacts only; do not web-search stale context."
+  },
+  "briefing_template": {
+    "required_sections": [
+      "Futures and Current Market Snapshot",
+      "Overnight Top Developments",
+      "Global Session Recap",
+      "Macro, Rates, and Policy Setup",
+      "FX and Commodities",
+      "Equities and Single-Stock Watchlist",
+      "Sector and Factor Setup",
+      "Today's Risk Map",
+      "Source Notes and Data Quality"
+    ],
+    "authoritative_output": "briefing.md",
+    "summary_md_policy": "article digest/link index only; never primary dashboard content"
+  },
+  "topic_keyword_pack": {
+    "pack_id": "monday-pre-market",
+    "weekday": "Monday",
+    "mode": "pre-market",
+    "primary_topics": [
+      "Monday premarket futures",
+      "week ahead stocks",
+      "economic calendar this week",
+      "Fed speakers this week",
+      "Treasury yields Monday",
+      "earnings this week",
+      "analyst upgrades downgrades Monday",
+      "oil prices Monday",
+      "dollar index Monday",
+      "China markets overnight"
+    ],
+    "secondary_topics": [
+      "S&P 500",
+      "NASDAQ",
+      "Dow Jones",
+      "Russell 2000",
+      "Federal Reserve",
+      "FOMC",
+      "interest rates",
+      "Treasury yields"
+    ],
+    "exclusion_terms": [
+      "racism",
+      "sexism",
+      "discrimination",
+      "diversity initiative",
+      "DEI",
+      "climate protest",
+      "social justice",
+      "inequality",
+      "activist investor ESG",
+      "labor strike",
+      "union vote",
+      "woke",
+      "gender pay gap",
+      "human rights",
+      "refugee",
+      "immigration ban",
+      "abortion",
+      "gun control",
+      "police",
+      "BLM",
+      "LGBTQ",
+      "transgender",
+      "carbon neutral",
+      "sustainability report",
+      "ESG score"
+    ],
+    "query_templates": [
+      "{topic} {date_suffix}",
+      "{topic} markets today {date_suffix}",
+      "{topic} Reuters Bloomberg CNBC {date_suffix}",
+      "{topic} stocks bonds yields {date_suffix}"
+    ]
+  },
+  "agent_execution": {
+    "global_timeout_seconds": 1800,
+    "max_parallel_agents": 6,
+    "search_timeout_seconds": 45,
+    "extract_timeout_seconds": 75,
+    "searxng_backoff_seconds": [
+      3,
+      8,
+      20
+    ],
+    "max_retries_per_query": 2,
+    "dedupe_keys": [
+      "canonical_url",
+      "normalized_headline",
+      "source"
+    ]
+  },
+  "lanes": [
+    {
+      "lane": "market-snapshot",
+      "agents": 1,
+      "lane_timeout_seconds": 300,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 60,
+      "max_articles": 12,
+      "assigned_sections": [
+        "Futures and Current Market Snapshot"
+      ],
+      "assigned_topics": [
+        "stock futures",
+        "market close",
+        "Treasury yields",
+        "DXY",
+        "WTI Brent oil",
+        "gold",
+        "VIX"
+      ]
+    },
+    {
+      "lane": "overnight-or-session-headlines",
+      "agents": 1,
+      "lane_timeout_seconds": 420,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "assigned_topics": [
+        "Monday premarket futures",
+        "week ahead stocks",
+        "economic calendar this week",
+        "Fed speakers this week",
+        "Treasury yields Monday",
+        "earnings this week",
+        "analyst upgrades downgrades Monday",
+        "oil prices Monday"
+      ]
+    },
+    {
+      "lane": "macro-policy-rates-fx",
+      "agents": 1,
+      "lane_timeout_seconds": 420,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities"
+      ],
+      "assigned_topics": [
+        "economic calendar this week",
+        "Fed speakers this week",
+        "Treasury yields Monday",
+        "dollar index Monday",
+        "Federal Reserve",
+        "Treasury yields"
+      ]
+    },
+    {
+      "lane": "equities-earnings-single-stocks",
+      "agents": 2,
+      "lane_timeout_seconds": 480,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 35,
+      "assigned_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "assigned_tickers": [
+        "MASI",
+        "CASY",
+        "JBL",
+        "SATS",
+        "APGE",
+        "AKAM",
+        "KMB",
+        "CTSH",
+        "CVNA",
+        "GH",
+        "PRIM",
+        "CWAN",
+        "BLD",
+        "MKSI",
+        "EXPE",
+        "VRSK",
+        "SNDK",
+        "LUV",
+        "AEP",
+        "STRL",
+        "PAYX",
+        "RVMD",
+        "PPL",
+        "ROKU",
+        "APO",
+        "HUM",
+        "UNP",
+        "TLN",
+        "KDP",
+        "DHI",
+        "PHM",
+        "MCK",
+        "SBUX",
+        "AXON",
+        "DASH",
+        "BSX",
+        "VMC",
+        "EA",
+        "CBOE",
+        "HAL",
+        "ADP",
+        "PSA",
+        "SLB",
+        "EOG",
+        "KVUE",
+        "CRS",
+        "ALL",
+        "TGT",
+        "CAH",
+        "MU"
+      ],
+      "assigned_topics": [
+        "earnings",
+        "guidance",
+        "analyst upgrades downgrades",
+        "pre-market movers",
+        "after-hours movers"
+      ]
+    },
+    {
+      "lane": "commodities-credit-vol",
+      "agents": 1,
+      "lane_timeout_seconds": 360,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "FX and Commodities"
+      ],
+      "assigned_topics": [
+        "oil prices Monday"
+      ]
+    },
+    {
+      "lane": "dedupe-validation-synthesis",
+      "agents": 1,
+      "lane_timeout_seconds": 300,
+      "requires_all_discovery_outputs": true,
+      "assigned_sections": [
+        "Source Notes and Data Quality"
+      ],
+      "assigned_topics": []
+    }
+  ],
+  "verification_gates": [
+    {
+      "gate": "schema",
+      "require": [
+        "mode",
+        "date",
+        "date_suffix",
+        "recency_hours",
+        "generated",
+        "articles",
+        "stats"
+      ]
+    },
+    {
+      "gate": "timestamp",
+      "rule": "Each article needs parseable published_at inside the recency window unless explicitly typed market_data."
+    },
+    {
+      "gate": "freshness",
+      "rule": "Reject stale indicators unless clearly historical context from BoltNews archives."
+    },
+    {
+      "gate": "extraction",
+      "rule": "Reject headline-only records; require lead paragraph or extracted_text/body snippet."
+    },
+    {
+      "gate": "relevance",
+      "rule": "Require explicit market impact, signal keywords, or direct macro/asset relevance."
+    },
+    {
+      "gate": "dedupe",
+      "rule": "Dedupe on canonical URL, normalized URL, and normalized headline/source pair."
+    },
+    {
+      "gate": "coverage",
+      "rule": "briefing.md must include required sections for pre-market: Futures and Current Market Snapshot, Overnight Top Developments, Global Session Recap, Macro, Rates, and Policy Setup, FX and Commodities, Equities and Single-Stock Watchlist, Sector and Factor Setup, Today's Risk Map, Source Notes and Data Quality"
+    },
+    {
+      "gate": "dashboard",
+      "rule": "Rendered dashboard TOC anchors must resolve and internal links must not 404."
+    }
+  ],
+  "handoff_prompt_template": "You are a BoltNews article discovery subagent.\nMode: {mode}\nTarget date: {target_date}\nWeekday: {weekday}\nRecency window: {window_start_iso} to {window_end_iso} ({timezone})\nLane: {lane}\nAssigned section(s): {sections}\nAssigned search items: {items}\nQuery templates: {query_templates}\nTimeouts: search={search_timeout_seconds}s, extraction={extract_timeout_seconds}s, lane={lane_timeout_seconds}s\n\nRules:\n1. Accept only articles published inside the Wall Street session window, not merely the calendar day.\n2. Every accepted article requires title/headline, url, source, published_at, fetched_at, tickers/topics, assigned_section, summary/lead paragraph, and extracted_text/body excerpt.\n3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot. For post-market, reject articles before the 9:30 AM ET cash open.\n4. Reject stale, evergreen, quote-page, and headline-only records.\n5. Do not web-search historical context; use prior BoltNews markdown artifacts only.\n6. Prefer Reuters/Bloomberg/WSJ/CNBC/MarketWatch/Yahoo/official releases/central banks/exchanges/regulators.\n7. Return JSON only using the lane output schema.\n",
+  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 62.0 hours (window starts 2026-06-26T16:00:00-04:00). All search queries include 'June 29, 2026' to enforce recency. DO NOT include articles outside that trading-session window, including prior-day rally articles in a post-market recap. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
+  "generated": "2026-06-29T06:12:37.842734",
+  "total_tickers": 149,
+  "prioritized_tickers": [
+    "MASI",
+    "CASY",
+    "JBL",
+    "SATS",
+    "APGE",
+    "AKAM",
+    "KMB",
+    "CTSH",
+    "CVNA",
+    "GH",
+    "PRIM",
+    "CWAN",
+    "BLD",
+    "MKSI",
+    "EXPE",
+    "VRSK",
+    "SNDK",
+    "LUV",
+    "AEP",
+    "STRL",
+    "PAYX",
+    "RVMD",
+    "PPL",
+    "ROKU",
+    "APO",
+    "HUM",
+    "UNP",
+    "TLN",
+    "KDP",
+    "DHI",
+    "PHM",
+    "MCK",
+    "SBUX",
+    "AXON",
+    "DASH",
+    "BSX",
+    "VMC",
+    "EA",
+    "CBOE",
+    "HAL",
+    "ADP",
+    "PSA",
+    "SLB",
+    "EOG",
+    "KVUE",
+    "CRS",
+    "ALL",
+    "TGT",
+    "CAH",
+    "MU"
+  ],
+  "topics": [
+    "Monday premarket futures",
+    "week ahead stocks",
+    "economic calendar this week",
+    "Fed speakers this week",
+    "Treasury yields Monday",
+    "earnings this week",
+    "analyst upgrades downgrades Monday",
+    "oil prices Monday",
+    "dollar index Monday",
+    "China markets overnight",
+    "S&P 500",
+    "NASDAQ",
+    "Dow Jones",
+    "Russell 2000",
+    "Federal Reserve",
+    "FOMC",
+    "interest rates",
+    "Treasury yields"
+  ],
+  "search_queries": [
+    {
+      "id": "ticker-masi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "MASI",
+      "name": "MASIMO CORP",
+      "queries": [
+        "MASI stock news today June 29, 2026",
+        "MASI Medical Devices news June 29, 2026",
+        "MASI earnings guidance analyst rating June 29, 2026",
+        "MASI shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-casy",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CASY",
+      "name": "CASEY'S GENERAL",
+      "queries": [
+        "CASY stock news today June 29, 2026",
+        "CASY Specialty Retail news June 29, 2026",
+        "CASY earnings guidance analyst rating June 29, 2026",
+        "CASY shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-jbl",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "JBL",
+      "name": "JABIL INC",
+      "queries": [
+        "JBL stock news today June 29, 2026",
+        "JBL Electronic Components news June 29, 2026",
+        "JBL earnings guidance analyst rating June 29, 2026",
+        "JBL shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sats",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "SATS",
+      "name": "ECHOSTAR CORP-A",
+      "queries": [
+        "SATS stock news today June 29, 2026",
+        "SATS Telecom Services news June 29, 2026",
+        "SATS earnings guidance analyst rating June 29, 2026",
+        "SATS shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-apge",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "APGE",
+      "name": "APOGEE THERAPEUT",
+      "queries": [
+        "APGE stock news today June 29, 2026",
+        "APGE Biotechnology news June 29, 2026",
+        "APGE earnings guidance analyst rating June 29, 2026",
+        "APGE shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-akam",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "AKAM",
+      "name": "AKAMAI TECHNOLOG",
+      "queries": [
+        "AKAM stock news today June 29, 2026",
+        "AKAM Software - Infrastructure news June 29, 2026",
+        "AKAM earnings guidance analyst rating June 29, 2026",
+        "AKAM shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-kmb",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "KMB",
+      "name": "KIMBERLY-CLARK",
+      "queries": [
+        "KMB stock news today June 29, 2026",
+        "KMB Household & Personal Products news June 29, 2026",
+        "KMB earnings guidance analyst rating June 29, 2026",
+        "KMB shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-ctsh",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CTSH",
+      "name": "COGNIZANT TECH-A",
+      "queries": [
+        "CTSH stock news today June 29, 2026",
+        "CTSH Information Technology Services news June 29, 2026",
+        "CTSH earnings guidance analyst rating June 29, 2026",
+        "CTSH shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cvna",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CVNA",
+      "name": "CARVANA CO",
+      "queries": [
+        "CVNA stock news today June 29, 2026",
+        "CVNA Auto & Truck Dealerships news June 29, 2026",
+        "CVNA earnings guidance analyst rating June 29, 2026",
+        "CVNA shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-gh",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "GH",
+      "name": "GUARDANT HEALTH",
+      "queries": [
+        "GH stock news today June 29, 2026",
+        "GH Diagnostics & Research news June 29, 2026",
+        "GH earnings guidance analyst rating June 29, 2026",
+        "GH shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-prim",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "PRIM",
+      "name": "PRIMORIS SERVICE",
+      "queries": [
+        "PRIM stock news today June 29, 2026",
+        "PRIM Engineering & Construction news June 29, 2026",
+        "PRIM earnings guidance analyst rating June 29, 2026",
+        "PRIM shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cwan",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CWAN",
+      "name": "CLEARWATER AN-A",
+      "queries": [
+        "CWAN stock news today June 29, 2026",
+        "CWAN Software - Application news June 29, 2026",
+        "CWAN earnings guidance analyst rating June 29, 2026",
+        "CWAN shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-bld",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "BLD",
+      "name": "TOPBUILD COR",
+      "queries": [
+        "BLD stock news today June 29, 2026",
+        "BLD Engineering & Construction news June 29, 2026",
+        "BLD earnings guidance analyst rating June 29, 2026",
+        "BLD shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mksi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "MKSI",
+      "name": "MKS INC",
+      "queries": [
+        "MKSI stock news today June 29, 2026",
+        "MKSI Scientific & Technical Instruments news June 29, 2026",
+        "MKSI earnings guidance analyst rating June 29, 2026",
+        "MKSI shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-expe",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "EXPE",
+      "name": "EXPEDIA GROUP IN",
+      "queries": [
+        "EXPE stock news today June 29, 2026",
+        "EXPE Travel Services news June 29, 2026",
+        "EXPE earnings guidance analyst rating June 29, 2026",
+        "EXPE shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-vrsk",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "VRSK",
+      "name": "VERISK ANALYTI",
+      "queries": [
+        "VRSK stock news today June 29, 2026",
+        "VRSK Consulting Services news June 29, 2026",
+        "VRSK earnings guidance analyst rating June 29, 2026",
+        "VRSK shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sndk",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "SNDK",
+      "name": "SANDISK CORP",
+      "queries": [
+        "SNDK stock news today June 29, 2026",
+        "SNDK Computer Hardware news June 29, 2026",
+        "SNDK earnings guidance analyst rating June 29, 2026",
+        "SNDK shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-luv",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "LUV",
+      "name": "SOUTHWEST AIR",
+      "queries": [
+        "LUV stock news today June 29, 2026",
+        "LUV Airlines news June 29, 2026",
+        "LUV earnings guidance analyst rating June 29, 2026",
+        "LUV shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-aep",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "AEP",
+      "name": "AMERICAN ELECTRI",
+      "queries": [
+        "AEP stock news today June 29, 2026",
+        "AEP Utilities - Regulated Electric news June 29, 2026",
+        "AEP earnings guidance analyst rating June 29, 2026",
+        "AEP shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-strl",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "STRL",
+      "name": "STERLING INFRAST",
+      "queries": [
+        "STRL stock news today June 29, 2026",
+        "STRL Engineering & Construction news June 29, 2026",
+        "STRL earnings guidance analyst rating June 29, 2026",
+        "STRL shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-payx",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "PAYX",
+      "name": "PAYCHEX INC",
+      "queries": [
+        "PAYX stock news today June 29, 2026",
+        "PAYX Software - Application news June 29, 2026",
+        "PAYX earnings guidance analyst rating June 29, 2026",
+        "PAYX shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rvmd",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "RVMD",
+      "name": "REVOLUTION MEDIC",
+      "queries": [
+        "RVMD stock news today June 29, 2026",
+        "RVMD Biotechnology news June 29, 2026",
+        "RVMD earnings guidance analyst rating June 29, 2026",
+        "RVMD shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-ppl",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "PPL",
+      "name": "PPL CORP",
+      "queries": [
+        "PPL stock news today June 29, 2026",
+        "PPL Utilities - Regulated Electric news June 29, 2026",
+        "PPL earnings guidance analyst rating June 29, 2026",
+        "PPL shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-roku",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "ROKU",
+      "name": "ROKU INC",
+      "queries": [
+        "ROKU stock news today June 29, 2026",
+        "ROKU Entertainment news June 29, 2026",
+        "ROKU earnings guidance analyst rating June 29, 2026",
+        "ROKU shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-apo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "APO",
+      "name": "APOLLO GLOBAL MA",
+      "queries": [
+        "APO stock news today June 29, 2026",
+        "APO Asset Management news June 29, 2026",
+        "APO earnings guidance analyst rating June 29, 2026",
+        "APO shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-hum",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "HUM",
+      "name": "HUMANA INC",
+      "queries": [
+        "HUM stock news today June 29, 2026",
+        "HUM Healthcare Plans news June 29, 2026",
+        "HUM earnings guidance analyst rating June 29, 2026",
+        "HUM shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-unp",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "UNP",
+      "name": "UNION PAC CORP",
+      "queries": [
+        "UNP stock news today June 29, 2026",
+        "UNP Railroads news June 29, 2026",
+        "UNP earnings guidance analyst rating June 29, 2026",
+        "UNP shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-tln",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "TLN",
+      "name": "TALEN ENERGY COR",
+      "queries": [
+        "TLN stock news today June 29, 2026",
+        "TLN Utilities - Independent Power Producers news June 29, 2026",
+        "TLN earnings guidance analyst rating June 29, 2026",
+        "TLN shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-kdp",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "KDP",
+      "name": "KEURIG DR PEPPER",
+      "queries": [
+        "KDP stock news today June 29, 2026",
+        "KDP Beverages - Non-Alcoholic news June 29, 2026",
+        "KDP earnings guidance analyst rating June 29, 2026",
+        "KDP shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-dhi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "DHI",
+      "name": "DR HORTON INC",
+      "queries": [
+        "DHI stock news today June 29, 2026",
+        "DHI Residential Construction news June 29, 2026",
+        "DHI earnings guidance analyst rating June 29, 2026",
+        "DHI shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-phm",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "PHM",
+      "name": "PULTEGROUP INC",
+      "queries": [
+        "PHM stock news today June 29, 2026",
+        "PHM Residential Construction news June 29, 2026",
+        "PHM earnings guidance analyst rating June 29, 2026",
+        "PHM shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mck",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "MCK",
+      "name": "MCKESSON CORP",
+      "queries": [
+        "MCK stock news today June 29, 2026",
+        "MCK Medical Distribution news June 29, 2026",
+        "MCK earnings guidance analyst rating June 29, 2026",
+        "MCK shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sbux",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "SBUX",
+      "name": "STARBUCKS CORP",
+      "queries": [
+        "SBUX stock news today June 29, 2026",
+        "SBUX Restaurants news June 29, 2026",
+        "SBUX earnings guidance analyst rating June 29, 2026",
+        "SBUX shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-axon",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "AXON",
+      "name": "AXON ENTERPRISE",
+      "queries": [
+        "AXON stock news today June 29, 2026",
+        "AXON Aerospace & Defense news June 29, 2026",
+        "AXON earnings guidance analyst rating June 29, 2026",
+        "AXON shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-dash",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "DASH",
+      "name": "DOORDASH INC-A",
+      "queries": [
+        "DASH stock news today June 29, 2026",
+        "DASH Internet Retail news June 29, 2026",
+        "DASH earnings guidance analyst rating June 29, 2026",
+        "DASH shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-bsx",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "BSX",
+      "name": "BOSTON SCIENTIFC",
+      "queries": [
+        "BSX stock news today June 29, 2026",
+        "BSX Medical Devices news June 29, 2026",
+        "BSX earnings guidance analyst rating June 29, 2026",
+        "BSX shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-vmc",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "VMC",
+      "name": "VULCAN MATERIALS",
+      "queries": [
+        "VMC stock news today June 29, 2026",
+        "VMC Building Materials news June 29, 2026",
+        "VMC earnings guidance analyst rating June 29, 2026",
+        "VMC shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-ea",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "EA",
+      "name": "ELECTRONIC ARTS",
+      "queries": [
+        "EA stock news today June 29, 2026",
+        "EA Electronic Gaming & Multimedia news June 29, 2026",
+        "EA earnings guidance analyst rating June 29, 2026",
+        "EA shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cboe",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CBOE",
+      "name": "CBOE GLOBAL MARK",
+      "queries": [
+        "CBOE stock news today June 29, 2026",
+        "CBOE Financial Data & Stock Exchanges news June 29, 2026",
+        "CBOE earnings guidance analyst rating June 29, 2026",
+        "CBOE shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-hal",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "HAL",
+      "name": "HALLIBURTON CO",
+      "queries": [
+        "HAL stock news today June 29, 2026",
+        "HAL Oil & Gas Equipment & Services news June 29, 2026",
+        "HAL earnings guidance analyst rating June 29, 2026",
+        "HAL shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-adp",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "ADP",
+      "name": "AUTOMATIC DATA",
+      "queries": [
+        "ADP stock news today June 29, 2026",
+        "ADP Software - Application news June 29, 2026",
+        "ADP earnings guidance analyst rating June 29, 2026",
+        "ADP shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-psa",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "PSA",
+      "name": "PUBLIC STORAGE",
+      "queries": [
+        "PSA stock news today June 29, 2026",
+        "PSA REIT - Industrial news June 29, 2026",
+        "PSA earnings guidance analyst rating June 29, 2026",
+        "PSA shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-slb",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "SLB",
+      "name": "SLB LTD",
+      "queries": [
+        "SLB stock news today June 29, 2026",
+        "SLB Oil & Gas Equipment & Services news June 29, 2026",
+        "SLB earnings guidance analyst rating June 29, 2026",
+        "SLB shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-eog",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "EOG",
+      "name": "EOG RESOURCES",
+      "queries": [
+        "EOG stock news today June 29, 2026",
+        "EOG Oil & Gas E&P news June 29, 2026",
+        "EOG earnings guidance analyst rating June 29, 2026",
+        "EOG shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-kvue",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "KVUE",
+      "name": "KENVUE INC",
+      "queries": [
+        "KVUE stock news today June 29, 2026",
+        "KVUE Household & Personal Products news June 29, 2026",
+        "KVUE earnings guidance analyst rating June 29, 2026",
+        "KVUE shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crs",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CRS",
+      "name": "CARPENTER TECH",
+      "queries": [
+        "CRS stock news today June 29, 2026",
+        "CRS Metal Fabrication news June 29, 2026",
+        "CRS earnings guidance analyst rating June 29, 2026",
+        "CRS shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-all",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "ALL",
+      "name": "ALLSTATE CORP",
+      "queries": [
+        "ALL stock news today June 29, 2026",
+        "ALL Insurance - Property & Casualty news June 29, 2026",
+        "ALL earnings guidance analyst rating June 29, 2026",
+        "ALL shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-tgt",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "TGT",
+      "name": "TARGET CORP",
+      "queries": [
+        "TGT stock news today June 29, 2026",
+        "TGT Discount Stores news June 29, 2026",
+        "TGT earnings guidance analyst rating June 29, 2026",
+        "TGT shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cah",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "CAH",
+      "name": "CARDINAL HEALTH",
+      "queries": [
+        "CAH stock news today June 29, 2026",
+        "CAH Medical Distribution news June 29, 2026",
+        "CAH earnings guidance analyst rating June 29, 2026",
+        "CAH shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mu",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "ticker": "MU",
+      "name": "MICRON TECH",
+      "queries": [
+        "MU stock news today June 29, 2026",
+        "MU Semiconductors news June 29, 2026",
+        "MU earnings guidance analyst rating June 29, 2026",
+        "MU shares premarket after hours June 29, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "topic-001",
+      "type": "topic",
+      "topic": "Monday premarket futures",
+      "lane": "market-snapshot",
+      "priority": 1,
+      "expected_sections": [
+        "Futures and Current Market Snapshot"
+      ],
+      "queries": [
+        "Monday premarket futures June 29, 2026",
+        "Monday premarket futures markets today June 29, 2026",
+        "Monday premarket futures Reuters Bloomberg CNBC June 29, 2026",
+        "Monday premarket futures stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-002",
+      "type": "topic",
+      "topic": "week ahead stocks",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "queries": [
+        "week ahead stocks June 29, 2026",
+        "week ahead stocks markets today June 29, 2026",
+        "week ahead stocks Reuters Bloomberg CNBC June 29, 2026",
+        "week ahead stocks stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-003",
+      "type": "topic",
+      "topic": "economic calendar this week",
+      "lane": "macro-policy-rates-fx",
+      "priority": 1,
+      "expected_sections": [
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities"
+      ],
+      "queries": [
+        "economic calendar this week June 29, 2026",
+        "economic calendar this week markets today June 29, 2026",
+        "economic calendar this week Reuters Bloomberg CNBC June 29, 2026",
+        "economic calendar this week stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-004",
+      "type": "topic",
+      "topic": "Fed speakers this week",
+      "lane": "macro-policy-rates-fx",
+      "priority": 1,
+      "expected_sections": [
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities"
+      ],
+      "queries": [
+        "Fed speakers this week June 29, 2026",
+        "Fed speakers this week markets today June 29, 2026",
+        "Fed speakers this week Reuters Bloomberg CNBC June 29, 2026",
+        "Fed speakers this week stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-005",
+      "type": "topic",
+      "topic": "Treasury yields Monday",
+      "lane": "macro-policy-rates-fx",
+      "priority": 1,
+      "expected_sections": [
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities"
+      ],
+      "queries": [
+        "Treasury yields Monday June 29, 2026",
+        "Treasury yields Monday markets today June 29, 2026",
+        "Treasury yields Monday Reuters Bloomberg CNBC June 29, 2026",
+        "Treasury yields Monday stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-006",
+      "type": "topic",
+      "topic": "earnings this week",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "queries": [
+        "earnings this week June 29, 2026",
+        "earnings this week markets today June 29, 2026",
+        "earnings this week Reuters Bloomberg CNBC June 29, 2026",
+        "earnings this week stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-007",
+      "type": "topic",
+      "topic": "analyst upgrades downgrades Monday",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equities and Single-Stock Watchlist",
+        "Sector and Factor Setup"
+      ],
+      "queries": [
+        "analyst upgrades downgrades Monday June 29, 2026",
+        "analyst upgrades downgrades Monday markets today June 29, 2026",
+        "analyst upgrades downgrades Monday Reuters Bloomberg CNBC June 29, 2026",
+        "analyst upgrades downgrades Monday stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-008",
+      "type": "topic",
+      "topic": "oil prices Monday",
+      "lane": "commodities-credit-vol",
+      "priority": 1,
+      "expected_sections": [
+        "FX and Commodities"
+      ],
+      "queries": [
+        "oil prices Monday June 29, 2026",
+        "oil prices Monday markets today June 29, 2026",
+        "oil prices Monday Reuters Bloomberg CNBC June 29, 2026",
+        "oil prices Monday stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-009",
+      "type": "topic",
+      "topic": "dollar index Monday",
+      "lane": "macro-policy-rates-fx",
+      "priority": 1,
+      "expected_sections": [
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities"
+      ],
+      "queries": [
+        "dollar index Monday June 29, 2026",
+        "dollar index Monday markets today June 29, 2026",
+        "dollar index Monday Reuters Bloomberg CNBC June 29, 2026",
+        "dollar index Monday stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-010",
+      "type": "topic",
+      "topic": "China markets overnight",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "queries": [
+        "China markets overnight June 29, 2026",
+        "China markets overnight markets today June 29, 2026",
+        "China markets overnight Reuters Bloomberg CNBC June 29, 2026",
+        "China markets overnight stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-011",
+      "type": "topic",
+      "topic": "S&P 500",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "queries": [
+        "S&P 500 June 29, 2026",
+        "S&P 500 markets today June 29, 2026",
+        "S&P 500 Reuters Bloomberg CNBC June 29, 2026",
+        "S&P 500 stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-012",
+      "type": "topic",
+      "topic": "NASDAQ",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "queries": [
+        "NASDAQ June 29, 2026",
+        "NASDAQ markets today June 29, 2026",
+        "NASDAQ Reuters Bloomberg CNBC June 29, 2026",
+        "NASDAQ stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-013",
+      "type": "topic",
+      "topic": "Dow Jones",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "queries": [
+        "Dow Jones June 29, 2026",
+        "Dow Jones markets today June 29, 2026",
+        "Dow Jones Reuters Bloomberg CNBC June 29, 2026",
+        "Dow Jones stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-014",
+      "type": "topic",
+      "topic": "Russell 2000",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "queries": [
+        "Russell 2000 June 29, 2026",
+        "Russell 2000 markets today June 29, 2026",
+        "Russell 2000 Reuters Bloomberg CNBC June 29, 2026",
+        "Russell 2000 stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-015",
+      "type": "topic",
+      "topic": "Federal Reserve",
+      "lane": "macro-policy-rates-fx",
+      "priority": 2,
+      "expected_sections": [
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities"
+      ],
+      "queries": [
+        "Federal Reserve June 29, 2026",
+        "Federal Reserve markets today June 29, 2026",
+        "Federal Reserve Reuters Bloomberg CNBC June 29, 2026",
+        "Federal Reserve stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-016",
+      "type": "topic",
+      "topic": "FOMC",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "queries": [
+        "FOMC June 29, 2026",
+        "FOMC markets today June 29, 2026",
+        "FOMC Reuters Bloomberg CNBC June 29, 2026",
+        "FOMC stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-017",
+      "type": "topic",
+      "topic": "interest rates",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Overnight Top Developments",
+        "Global Session Recap"
+      ],
+      "queries": [
+        "interest rates June 29, 2026",
+        "interest rates markets today June 29, 2026",
+        "interest rates Reuters Bloomberg CNBC June 29, 2026",
+        "interest rates stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-018",
+      "type": "topic",
+      "topic": "Treasury yields",
+      "lane": "macro-policy-rates-fx",
+      "priority": 2,
+      "expected_sections": [
+        "Macro, Rates, and Policy Setup",
+        "FX and Commodities"
+      ],
+      "queries": [
+        "Treasury yields June 29, 2026",
+        "Treasury yields markets today June 29, 2026",
+        "Treasury yields Reuters Bloomberg CNBC June 29, 2026",
+        "Treasury yields stocks bonds yields June 29, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 62.0,
+        "window_start_iso": "2026-06-26T16:00:00-04:00",
+        "window_end_iso": "2026-06-29T06:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    }
+  ]
+}
