@@ -1,0 +1,352 @@
+[
+  {
+    "title": "Markets News, June 29, 2026: Dow Closes at Record; S&P 500, Nasdaq Rebound After Tech Sell-Off; Comcast Stock Surges on Plan to Split",
+    "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268",
+    "source": "Investopedia",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T16:30:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "CMCSA",
+      "TSLA",
+      "GOOGL",
+      "SPCX",
+      "MSTR",
+      "AMZN",
+      "VZ",
+      "RKLB",
+      "IRDM",
+      "CHTR"
+    ],
+    "topics": [
+      "market close",
+      "tech rebound",
+      "Comcast split",
+      "Fed",
+      "earnings"
+    ],
+    "assigned_section": "Why Markets Moved",
+    "summary": "Markets News, June 29, 2026: Dow Closes at Record; S&P 500, Nasdaq Rebound After Tech Sell-Off; Comcast Stock Surges on Plan to Split",
+    "extracted_text": "Stocks started the holiday-shortened week with broad gains, snapping a five-session losing streak for the S&P 500 and Nasdaq. The Dow closed above 52,000 for the first time. Dow +0.6% to 52,000+ (record). S&P 500 +1.2%. Nasdaq +2.1%. 10Y Treasury ~4.37% little changed. WTI +1.8% to $70.45. Brent +1.6% to $73.15. Bitcoin ~$60,400. Gold -1.6% to $4,030/oz. DXY -0.3% to 101.10. Key movers: TSLA +8.5%, GOOGL +4.5% (first day in Dow), CMCSA +4.5%/+22% premarket (split plan), MSTR +12% ($1.25B bitcoin sale), AMZN +3% (AWS price hike +20%, Prime Day $26.4B), VZ -6.5% (Q2 loss $700-800M). Supreme Court 5-4 blocks Trump firing Fed Governor Lisa Cook. Fed Chair Kevin Warsh launching task forces to redesign Fed policy, no forward guidance.",
+    "lane": "market-snapshot",
+    "freshness_verified": true,
+    "age_hours": 1.5,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Stock Market News for Monday, June 29, 2026: Dow, S&P 500, Nasdaq Rise; Micron, SpaceX, Nvidia, More Movers",
+    "url": "https://www.barrons.com/livecoverage/stock-market-news-today-062926",
+    "source": "Barron's",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T16:34:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "SPX",
+      "NDX",
+      "DJI",
+      "RUT"
+    ],
+    "topics": [
+      "market close",
+      "narrow breadth",
+      "VIX",
+      "oil",
+      "gold"
+    ],
+    "assigned_section": "Closing Market Snapshot",
+    "summary": "Stock Market News for Monday, June 29, 2026: Dow, S&P 500, Nasdaq Rise; Micron, SpaceX, Nvidia, More Movers",
+    "extracted_text": "Dow 52,182.74 (+0.59%) \u2014 first close above 52,000. S&P 500 7,440.43 (+1.18%). Nasdaq 25,820.14 (+2.07%). Russell 2000 3,010.07 (-0.00%). 10Y 4.378% (+0.160 bps). VIX 17.53 (-4.78%). WTI $70.53 (-0.31%). Brent $73.78 (-0.18%). Bitcoin $60,373 (+0.03%). Gold $4,030 (-1.62%). DXY 101.10 (-0.26%). Rare breadth: S&P 500 rose 1.1% with only 209 stocks advancing \u2014 not seen in at least a year. Invesco S&P 500 Equal Weight ETF (RSP) rose 1.2%, meaning rising stocks dramatically outperformed decliners. Roundhill Magnificent Seven ETF (MAGS) rallied 3%. Momentum, Big Tech, and AI-stocks led. Mizuho's Daniel O'Regan: 'This month has been VERY volatile \u2014 some of the swings have been outright historic.'",
+    "lane": "market-snapshot",
+    "freshness_verified": true,
+    "age_hours": 1.4333333333333333,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Wall St indexes climb as US, Iran halt attacks; Comcast surges on spin-off plan",
+    "url": "https://www.reuters.com/business/nasdaq-futures-lead-wall-st-higher-middle-east-tensions-ease-2026-06-29/",
+    "source": "Reuters",
+    "source_class": "newswire",
+    "published_at": "2026-06-29T11:45:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "CMCSA",
+      "GOOGL",
+      "SPCX",
+      "MLM"
+    ],
+    "topics": [
+      "US-Iran ceasefire",
+      "Comcast split",
+      "sector performance",
+      "Fed"
+    ],
+    "assigned_section": "Why Markets Moved",
+    "summary": "Wall St indexes climb as US, Iran halt attacks; Comcast surges on spin-off plan",
+    "extracted_text": "Iranian and U.S. technical teams expected to meet in Doha in the coming days for interim peace deal. US-Iran agreement to halt attacks allowed Strait of Hormuz transit. Comcast rose 6.4% after announcing split into two independent public companies via tax-free spinoff of NBCUniversal and Sky. Communications services sector (.SPLRCL) led S&P 500 gains with 2.9% jump. 5 of 11 major S&P 500 sector indexes positive. IT (.SPLRCT) added 0.9%, poised to snap five-session losing streak. RBC Capital raised 12-month S&P 500 target to 8,150 from 7,900. Goldman's Ben Snider: 'The 21% S&P 500 return over the past 12 months has been driven entirely by earnings.' Traders pricing at least one rate hike by Fed this year. MLM -6.4% on $13.5B Lhoist merger.",
+    "lane": "overnight-or-session-headlines",
+    "freshness_verified": true,
+    "age_hours": 6.25,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Stock market today: Dow closes above 52,000 for first time, S&P 500 and Nasdaq snap losing streaks",
+    "url": "https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-june-29-224230573.html",
+    "source": "Yahoo Finance",
+    "source_class": "market_data",
+    "published_at": "2026-06-29T16:00:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "SPX",
+      "NDX",
+      "DJI"
+    ],
+    "topics": [
+      "market close",
+      "Dow record",
+      "tech rebound"
+    ],
+    "assigned_section": "Closing Market Snapshot",
+    "summary": "Stock market today: Dow closes above 52,000 for first time, S&P 500 and Nasdaq snap losing streaks",
+    "extracted_text": "The tech-heavy Nasdaq Composite rose 2%, while the S&P 500 moved up 1.2%, after both indexes closed out last week with sharp losses. The Dow put on roughly 0.6% to close at a record above 52,000. Markets cheered easing US-Iran tensions after Sunday agreement to pause military strikes.",
+    "lane": "market-snapshot",
+    "freshness_verified": true,
+    "age_hours": 2.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Comcast shares pop after announcing plan to split media and tech businesses",
+    "url": "https://www.investopedia.com/comcast-announces-plan-to-split-media-tech-businesses-the-stock-is-soaring-cmcsa-12008267",
+    "source": "Investopedia",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T12:00:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "CMCSA"
+    ],
+    "topics": [
+      "corporate action",
+      "spin-off",
+      "Comcast"
+    ],
+    "assigned_section": "Earnings and Corporate Developments",
+    "summary": "Comcast shares pop after announcing plan to split media and tech businesses",
+    "extracted_text": "Comcast announced plans to split into two publicly traded companies. One focused on media (NBCUniversal, Sky, Peacock, Universal film/theme parks), the other on broadband and wireless (Xfinity, Comcast Business). Comcast will retain 19.9% stake in NBCU. Leadership: Co-CEO Brian Roberts until split; Mike Cavanagh to lead NBCU; Michael Angelakis (ex-CFO) returns as Comcast CEO. Split expected around this time next year. Stock jumped $4.85 (+21%) to $28.02 premarket; closed +4.5%.",
+    "lane": "equities-earnings-single-stocks",
+    "freshness_verified": true,
+    "age_hours": 6.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Gold slips as US-Iran tensions spark inflation, rate hike fears",
+    "url": "https://www.reuters.com/world/india/gold-slips-fresh-us-iran-strikes-boost-oil-fed-rate-hike-bets-weigh-2026-06-29/",
+    "source": "Reuters",
+    "source_class": "newswire",
+    "published_at": "2026-06-29T14:00:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "GC=F",
+      "CL=F"
+    ],
+    "topics": [
+      "gold",
+      "commodities",
+      "US-Iran",
+      "inflation"
+    ],
+    "assigned_section": "Cross-Asset Confirmation or Divergence",
+    "summary": "Gold slips as US-Iran tensions spark inflation, rate hike fears",
+    "extracted_text": "Spot gold slid 1.7% to $4,020.68 per ounce by 2:00 p.m. ET after falling more than 2% earlier in the session. The US-Iran conflict has boosted oil prices, fueling inflation concerns and Fed rate hike expectations, which weigh on non-yielding gold. Safe-haven demand diminished as risk assets rallied on the ceasefire agreement.",
+    "lane": "commodities-credit-vol",
+    "freshness_verified": true,
+    "age_hours": 4.0,
+    "session_window_status": "inside_session_window",
+    "category": "Rates",
+    "rejected_reason": null
+  },
+  {
+    "title": "How Warsh Has Begun to Change the Fed",
+    "url": "https://www.nytimes.com/2026/06/29/business/kevin-warsh-federal-reserve-reforms.html",
+    "source": "New York Times",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T10:00:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [],
+    "topics": [
+      "Federal Reserve",
+      "Kevin Warsh",
+      "monetary policy",
+      "forward guidance"
+    ],
+    "assigned_section": "Rates, Macro, and Policy",
+    "summary": "How Warsh Has Begun to Change the Fed",
+    "extracted_text": "Fed Chair Kevin Warsh has launched five task forces to redesign how the Fed conducts policy. Key changes: much shorter Fed statements, no forward guidance (keeping markets guessing about rate direction), rethinking household borrowing cost impacts. Warsh vowed to foster 'open, cleareyed discussions of Fed strategies, policies and tools.' The overhaul represents the most significant Fed communications revamp in decades.",
+    "lane": "macro-policy-rates-fx",
+    "freshness_verified": true,
+    "age_hours": 8.0,
+    "session_window_status": "inside_session_window",
+    "category": "Rates",
+    "rejected_reason": null
+  },
+  {
+    "title": "Supreme Court blocks Trump's firing of Fed Governor Lisa Cook",
+    "url": "https://www.cnbc.com/2026/06/28/stock-futures-today-live-updates.html",
+    "source": "CNBC",
+    "source_class": "newswire",
+    "published_at": "2026-06-29T12:00:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [],
+    "topics": [
+      "Federal Reserve",
+      "Supreme Court",
+      "Fed independence"
+    ],
+    "assigned_section": "Rates, Macro, and Policy",
+    "summary": "Supreme Court blocks Trump's firing of Fed Governor Lisa Cook",
+    "extracted_text": "5-4 Supreme Court ruling stopped President Trump's attempt to fire Fed Governor Lisa Cook on due process grounds. Chief Justice Roberts: 'At minimum, Cook was entitled to some explanation of the evidence at issue, some avenue for a response, and a deadline by which a response would be due.' The court did not rule on the broader question of whether Trump can remove Fed officials for cause. Trump's broader effort to reshape the Federal Reserve Board faces a setback.",
+    "lane": "macro-policy-rates-fx",
+    "freshness_verified": true,
+    "age_hours": 6.0,
+    "session_window_status": "inside_session_window",
+    "category": "Rates",
+    "rejected_reason": null
+  },
+  {
+    "title": "Stock Market Today, June 29: Nasdaq Composite Outperforms as Tech Stocks Gain on Easing Geopolitical Tensions",
+    "url": "https://www.fool.com/coverage/stock-market-today/2026/06/29/stock-market-today-june-29-nasdaq-composite-outperforms-as-tech-stocks-gain-on-easing-geopolitical-tensions/",
+    "source": "Motley Fool",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T16:00:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "SPX",
+      "NDX",
+      "DJI"
+    ],
+    "topics": [
+      "tech stocks",
+      "US-Iran",
+      "geopolitical risk"
+    ],
+    "assigned_section": "Why Markets Moved",
+    "summary": "Stock Market Today, June 29: Nasdaq Composite Outperforms as Tech Stocks Gain on Easing Geopolitical Tensions",
+    "extracted_text": "Today, June 29, 2026, investors welcomed relief in risk assets as U.S.-Iran tensions eased with a Sunday agreement to halt military strikes and allow free transit of the Strait of Hormuz. Tech stocks led the rally, with the Nasdaq Composite outperforming the other major indices.",
+    "lane": "overnight-or-session-headlines",
+    "freshness_verified": true,
+    "age_hours": 2.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "U.S. Economic Calendar \u2014 MarketWatch",
+    "url": "https://www.marketwatch.com/economy-politics/calendar",
+    "source": "MarketWatch",
+    "source_class": "market_data",
+    "published_at": "2026-06-29T18:00:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [],
+    "topics": [
+      "economic calendar",
+      "jobs report",
+      "payrolls"
+    ],
+    "assigned_section": "Tomorrow Setup",
+    "summary": "U.S. Economic Calendar \u2014 MarketWatch",
+    "extracted_text": "Tuesday June 30: S&P Case-Shiller home price index (20 cities) for April at 9:00 am. Thursday July 2: U.S. employment report for June at 8:30 am \u2014 consensus 118,000 vs prior 172,000. Friday July 3: Independence Day holiday, U.S. markets closed.",
+    "lane": "macro-policy-rates-fx",
+    "freshness_verified": true,
+    "age_hours": 0.0,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Rocket Lab Acquires Iridium for $8 Billion",
+    "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268",
+    "source": "Investopedia",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T16:30:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "RKLB",
+      "IRDM"
+    ],
+    "topics": [
+      "M&A",
+      "space",
+      "Rocket Lab",
+      "Iridium"
+    ],
+    "assigned_section": "Earnings and Corporate Developments",
+    "summary": "Rocket Lab Acquires Iridium for $8 Billion",
+    "extracted_text": "Rocket Lab to acquire Iridium Communications for $8 billion. Iridium shareholders receive $27 cash plus Rocket Lab shares per share (implies $54 total). Rocket Lab aims to become 'fully vertically integrated space powerhouse.' Financing: $3.6 billion bridge loan from Deutsche Bank and Wells Fargo. Closing expected mid-2027. IRDM +22%, RKLB +13%.",
+    "lane": "equities-earnings-single-stocks",
+    "freshness_verified": true,
+    "age_hours": 1.5,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Strategy (MSTR) Plans to Sell $1.25 Billion in Bitcoin",
+    "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268",
+    "source": "Investopedia",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T16:30:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "MSTR",
+      "STRC"
+    ],
+    "topics": [
+      "bitcoin",
+      "crypto",
+      "corporate treasury"
+    ],
+    "assigned_section": "Earnings and Corporate Developments",
+    "summary": "Strategy (MSTR) Plans to Sell $1.25 Billion in Bitcoin",
+    "extracted_text": "Strategy (MSTR) plans to sell $1.25 billion worth of bitcoin (~21,000 BTC) as part of its 'bitcoin monetization program.' Move comes after MSTR and its 'Stretch' preferred stock (STRC) fell sharply; STRC had detached from its $100 par value. MSTR jumped 12% on the news. Jim Ferraioli, Schwab: 'If you were a value investor, you'd be buying at these prices. But that's not how crypto investors work. They're chasing momentum.'",
+    "lane": "equities-earnings-single-stocks",
+    "freshness_verified": true,
+    "age_hours": 1.5,
+    "session_window_status": "inside_session_window",
+    "category": "Equities",
+    "rejected_reason": null
+  },
+  {
+    "title": "Amazon AWS Cloud Price Hike and Prime Day Results",
+    "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268",
+    "source": "Investopedia",
+    "source_class": "analysis",
+    "published_at": "2026-06-29T16:30:00-04:00",
+    "fetched_at": "2026-06-29T18:00:00-04:00",
+    "tickers": [
+      "AMZN"
+    ],
+    "topics": [
+      "cloud",
+      "AWS",
+      "Prime Day",
+      "e-commerce"
+    ],
+    "assigned_section": "Earnings and Corporate Developments",
+    "summary": "Amazon AWS Cloud Price Hike and Prime Day Results",
+    "extracted_text": "AWS raised prices for AI compute reservations by ~20%, effective July \u2014 the second price hike this year. Prime Day (June 26-29): Adobe estimates $26.4 billion in total U.S. online spending during the event. JPMorgan estimates daily sales rose 6% (third-party) and 7% (first-party) vs. 2025. AMZN stock rose 3% (intraday high +7%).",
+    "lane": "equities-earnings-single-stocks",
+    "freshness_verified": true,
+    "age_hours": 1.5,
+    "session_window_status": "inside_session_window",
+    "category": "Credit",
+    "rejected_reason": null
+  }
+]

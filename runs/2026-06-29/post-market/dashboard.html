@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-06-29</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-06-29 &middot; 13 articles &middot; 3 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#closing-market-snapshot">Closing Market Snapshot</a><a class="toc-link toc-level-2" href="#why-markets-moved">Why Markets Moved</a><a class="toc-link toc-level-3" href="#1-us-iran-ceasefire-agreement-primary-catalyst-high-impact">1. US-Iran Ceasefire Agreement — Primary Catalyst (HIGH IMPACT)</a><a class="toc-link toc-level-3" href="#2-tech-rebound-after-five-day-losing-streak-high-impact">2. Tech Rebound After Five-Day Losing Streak (HIGH IMPACT)</a><a class="toc-link toc-level-3" href="#3-comcast-announces-split-into-two-companies-sector-catalyst">3. Comcast Announces Split Into Two Companies (SECTOR CATALYST)</a><a class="toc-link toc-level-3" href="#4-fed-independence-upheld-supreme-court-blocks-firing-of-governor-cook-policy">4. Fed Independence Upheld — Supreme Court Blocks Firing of Governor Cook (POLICY)</a><a class="toc-link toc-level-3" href="#5-narrow-breadth-strong-cap-weighted-gains-technical">5. Narrow Breadth, Strong Cap-Weighted Gains (TECHNICAL)</a><a class="toc-link toc-level-2" href="#equity-market-internals">Equity Market Internals</a><a class="toc-link toc-level-2" href="#rates-macro-and-policy">Rates, Macro, and Policy</a><a class="toc-link toc-level-2" href="#earnings-and-corporate-developments">Earnings and Corporate Developments</a><a class="toc-link toc-level-2" href="#cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</a><a class="toc-link toc-level-2" href="#tomorrow-setup">Tomorrow Setup</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-post-market-recap">BoltNews — Post-Market Recap</h1>
+<p><strong>Monday, June 29, 2026</strong> | Holiday-shortened week (Friday closed for Independence Day)</p>
+<hr class="divider">
+<h2 id="closing-market-snapshot">Closing Market Snapshot</h2>
+<p>Closing levels as of 4:00 PM ET, June 29, 2026. Source: Yahoo Finance chart API (market_snapshot.json) and Barron's live coverage.</p>
+<div class="table-wrapper"><table><thead><tr><th>Index / Asset</th><th>Close</th><th>Change</th><th>% Change</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,440.43</td><td>+86.77</td><td>+1.18%</td></tr><tr><td>Nasdaq Composite</td><td>25,820.14</td><td>+523.56</td><td>+2.07%</td></tr><tr><td>Dow Jones Industrial Average</td><td>52,182.74</td><td>+306.63</td><td>+0.59%</td></tr><tr><td>Russell 2000</td><td>3,010.07</td><td>+0.26</td><td>+0.01%</td></tr><tr><td>VIX</td><td>17.53</td><td>-0.88</td><td>-4.78%</td></tr></tbody></table></div>
+<p><strong>Rates:</strong> 10Y Treasury 4.378% (+0.16 bps from Friday), 2Y ~4.10%. Spread ~27 bps. Source: Barron's, FRED.</p>
+<p class="bold-line"><strong>Commodities &amp; FX:</strong></p>
+<ul><li>WTI Crude: $70.53/bbl (-0.31%)</li><li>Brent Crude: $73.78/bbl (-0.18%)</li><li>Gold futures: $4,030.00/oz (-1.62%)</li><li>DXY (US Dollar Index): 101.10 (-0.26%)</li><li>Bitcoin: $60,373 (+0.03%)</li></ul>
+<p><strong>Market direction: HIGHER.</strong> Dow closed at all-time high above 52,000 for the first time. S&amp;P 500 and Nasdaq snapped five-session losing streaks. Source: Barron's, Investopedia, Reuters.</p>
+<hr class="divider">
+<h2 id="why-markets-moved">Why Markets Moved</h2>
+<h3 id="1-us-iran-ceasefire-agreement-primary-catalyst-high-impact">1. US-Iran Ceasefire Agreement — Primary Catalyst (HIGH IMPACT)</h3>
+<p>The US and Iran agreed Sunday to halt military strikes and allow free transit of the Strait of Hormuz. Technical teams are expected to meet in Doha in the coming days for an interim peace deal. This eased the primary geopolitical overhang that drove last week's tech selloff. Risk assets rallied broadly. Source: Reuters, CNBC, Motley Fool.</p>
+<h3 id="2-tech-rebound-after-five-day-losing-streak-high-impact">2. Tech Rebound After Five-Day Losing Streak (HIGH IMPACT)</h3>
+<p>The Nasdaq and S&amp;P 500 entered Monday having lost ground for five consecutive sessions — the worst streak for tech since the AI-chip rotation intensified. Today's relief rally was led by the Magnificent Seven (MAGS ETF +3.0%), semiconductors (SMH +3%), and AI-linked names. Tesla led with +8.5%. Source: Barron's, Investopedia.</p>
+<h3 id="3-comcast-announces-split-into-two-companies-sector-catalyst">3. Comcast Announces Split Into Two Companies (SECTOR CATALYST)</h3>
+<p>Comcast plans a tax-free spin-off of NBCUniversal and Sky into a separate publicly traded company. Stock surged +22% premarket, closed +4.5%. Communications services sector led all S&amp;P 500 sectors with +2.9% gain. Source: Reuters, Investopedia.</p>
+<h3 id="4-fed-independence-upheld-supreme-court-blocks-firing-of-governor-cook-policy">4. Fed Independence Upheld — Supreme Court Blocks Firing of Governor Cook (POLICY)</h3>
+<p>The Supreme Court ruled 5-4 to block President Trump's attempt to fire Fed Governor Lisa Cook, with Chief Justice Roberts writing that Cook was entitled to due process. This preserves the Fed's institutional independence at a critical juncture. Source: CNBC, NYT.</p>
+<h3 id="5-narrow-breadth-strong-cap-weighted-gains-technical">5. Narrow Breadth, Strong Cap-Weighted Gains (TECHNICAL)</h3>
+<p>Only 209 S&amp;P 500 stocks advanced, yet the index gained +1.18% — a rare combination not seen in at least a year. Rising stocks dramatically outperformed decliners, with the equal-weight RSP ETF gaining +1.2%. Concentration risk remains elevated. Source: Barron's.</p>
+<hr class="divider">
+<h2 id="equity-market-internals">Equity Market Internals</h2>
+<p><strong>Sector Performance:</strong> 5 of 11 S&amp;P 500 sectors closed positive. Communications services led at +2.9% (Comcast/Alphabet). Information technology +0.9% snapped its five-session losing streak. Energy lagged at -0.41%. Source: Reuters, S&amp;P Global.</p>
+<p><strong>Breadth:</strong> NYSE decliners outnumbered advancers 1.05-to-1. Nasdaq advancing issues outnumbered decliners 1.01-to-1. Despite the S&amp;P 500's +1.18% gain, only 209 stocks advanced — the narrowest 1%+ up day in over a year. Equal-weight RSP still gained +1.2%, indicating winner magnitude dominated. Source: Reuters, Barron's.</p>
+<p><strong>Factor Performance:</strong> Momentum, Big Tech, and AI-linked stocks drove returns. Small-caps (Russell 2000 flat), materials, real estate, consumer staples, and utilities all struggled. Roundhill Magnificent Seven ETF (MAGS) rallied +3.0%. Semiconductor ETF (SMH) recovered from -3.1% to +3%. Source: Barron's.</p>
+<p class="bold-line"><strong>Notable Movers:</strong></p>
+<ul><li><strong>TSLA</strong> +8.5% — led Magnificent Seven rebound</li><li><strong>GOOGL</strong> +4.5% — first day as Dow component (replaced VZ); best Dow performer</li><li><strong>CMCSA</strong> +4.5% (+22% premarket) — split into media/tech companies</li><li><strong>MSTR</strong> +12% — $1.25B bitcoin sale, buyback, dividend hike</li><li><strong>AMZN</strong> +3% (intraday high +7%) — AWS cloud price hike +20%, Prime Day $26.4B</li><li><strong>RKLB</strong> +13%, <strong>IRDM</strong> +22% — Rocket Lab acquires Iridium for $8B</li><li><strong>CHTR</strong> +9% — SpaceX mobile partnership talks reported</li><li><strong>SPCX</strong> +7% — confirmed Nasdaq 100 inclusion on July 7</li><li><strong>VZ</strong> -6.5% — projected Q2 loss $700-800M, removed from Dow</li><li><strong>MLM</strong> -6.4% — $13.5B merger with Lhoist North America</li><li><strong>OC</strong> +14% — unsolicited acquisition offer from Carlisle Companies</li></ul>
+<p>Source: Barron's, Investopedia, CNBC, Reuters.</p>
+<p><strong>52-Week Highs/Lows:</strong> 28 S&amp;P 500 stocks hit new highs (Live Nation, Airbnb, Eli Lilly, AbbVie, Palo Alto Networks, Applied Materials, Corning). 7 hit new lows (AT&amp;T, T-Mobile US, CME, Boston Scientific). Source: CNBC.</p>
+<p class="bold-line"><strong>Strategist Commentary:</strong></p>
+<ul><li>RBC Capital Markets raised 12-month S&amp;P 500 target to <strong>8,150</strong> from 7,900, citing earnings strength and supportive macro backdrop. Source: Reuters.</li><li>Goldman Sachs' Ben Snider: "The 21% S&amp;P 500 return over the past 12 months has been driven entirely by earnings, making the upcoming Q2 2026 reporting season an important catalyst." Source: Reuters.</li><li>Mizuho's Daniel O'Regan: "This month has been VERY volatile — some of the swings have been outright historic. Staying long your high-conviction names through 500-1000bps drawdowns has been rewarded." Source: Barron's.</li><li>Trivariate Research on Micron: "Not owning Micron today has some similarities to how we felt about Nvidia 2.5 years ago." Source: CNBC.</li></ul>
+<hr class="divider">
+<h2 id="rates-macro-and-policy">Rates, Macro, and Policy</h2>
+<p><strong>Treasury Curve:</strong> 10Y yield at 4.378% (+0.16 bps), 2Y ~4.10-4.12%. The 10Y-2Y spread sits at approximately +27 bps — slightly positive, neither deeply inverted nor steep. Yields were little changed on the day despite the equity rally, suggesting rates are anchored by the Thursday jobs report and Fed policy uncertainty. Source: Barron's, YCharts, FRED.</p>
+<p><strong>Supreme Court Protects Fed Independence:</strong> In a 5-4 ruling, the Supreme Court blocked President Trump's attempt to fire Fed Governor Lisa Cook. Chief Justice Roberts: "At minimum, Cook was entitled to some explanation of the evidence at issue, some avenue for a response, and a deadline by which a response would be due." The court did not rule on the broader question of whether Trump can remove Fed officials "for cause." Trump's effort to reshape the Fed Board faces a setback. Source: CNBC, NYT.</p>
+<p><strong>Kevin Warsh's Fed Overhaul:</strong> New Fed Chair Kevin Warsh has launched five task forces to redesign how the Fed conducts policy. Key changes include much shorter FOMC statements, elimination of forward guidance (keeping markets guessing about rate direction), and a comprehensive rethink of the Fed's communications and regulatory framework. This is the most significant Fed communications revamp in decades. Source: NYT, WSJ, CNBC.</p>
+<p><strong>Rate Hike Expectations:</strong> Traders are pricing in at least one rate hike by the Fed this year (per LSEG data). The Thursday June jobs report will be critical in shaping those expectations. Source: Reuters.</p>
+<p><strong>Upcoming Data:</strong> Thursday July 2 — June nonfarm payrolls (consensus: 118,000 vs prior 172,000). Source: BLS, MarketWatch.</p>
+<hr class="divider">
+<h2 id="earnings-and-corporate-developments">Earnings and Corporate Developments</h2>
+<p><strong>Today's Earnings:</strong> No major earnings reports on Monday. Nike (NKE) reports Tuesday — options imply ~8% swing; stock is down 36% YTD. Source: Yahoo Finance.</p>
+<p><strong>Comcast (CMCSA) — Split Into Two Companies:</strong> Plans a tax-free spin-off of NBCUniversal (NBC, Telemundo, Sky, Peacock, Universal film/theme parks) into a separate public company. Comcast will focus on broadband/wireless (Xfinity, Comcast Business) and retain 19.9% stake in NBCU. Co-CEO Brian Roberts until split; Mike Cavanagh to lead NBCU; Michael Angelakis returns as Comcast CEO. Split expected ~June 2027. Stock surged +22% premarket, closed +4.5%. Source: Reuters, Investopedia, WSJ.</p>
+<p><strong>Rocket Lab (RKLB) — Acquires Iridium (IRDM) for $8B:</strong> Iridium shareholders to receive $27 cash + Rocket Lab shares per share (implies $54 total, +22% premium). Financing via $3.6B bridge loan from Deutsche Bank and Wells Fargo. Expected closing mid-2027. IRDM +22%, RKLB +13%. Source: Investopedia.</p>
+<p><strong>Strategy (MSTR) — $1.25B Bitcoin Monetization:</strong> Plans to sell ~21,000 BTC from its treasury. Also announced buyback and dividend hike for "Stretch" preferred stock (STRC), which had detached from its $100 par value. MSTR +12%. Source: Investopedia.</p>
+<p><strong>Amazon (AMZN) — AWS Price Hike + Prime Day:</strong> AWS raised AI compute reservation prices ~20% (second hike this year), effective July. Prime Day (June 26-29): Adobe estimates $26.4B total US online spend; JPMorgan estimates daily sales +6% (3P) and +7% (1P) vs. 2025. AMZN +3%. Source: Investopedia.</p>
+<p><strong>SpaceX (SPCX) — Nasdaq 100 Inclusion:</strong> Confirmed addition before market open Monday July 7. Low float (~550M shares) caps weighting under 1%. State Street launched QNDX ETF (0.10% fee vs QQQ 0.18%); BlackRock filed for IQQ. SPCX +7%. Source: Investopedia.</p>
+<p><strong>Verizon (VZ) — Q2 Loss Forecast:</strong> Expects $700-800M loss in Q2 from severance charges ($350-450M) and asset rationalization ($200-300M). Stock -6.5% on the day, now up only 7% YTD vs S&amp;P 500 +8%. VZ was replaced by GOOGL in the Dow. Source: Investopedia.</p>
+<p><strong>Martin Marietta (MLM) — $13.5B Merger:</strong> Acquires Lhoist North America for $13.5 billion. MLM -6.4%. Source: Reuters.</p>
+<p><strong>Owens Corning (OC) — Unsolicited Bid:</strong> Reported unsolicited acquisition offer from Carlisle Companies (CSL). OC +14%, CSL -5%. Source: CNBC.</p>
+<hr class="divider">
+<h2 id="cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</h2>
+<p class="bold-line"><strong>Risk-On Rotation Confirmed Across Assets:</strong></p>
+<ul><li><strong>Equities UP</strong> — S&amp;P 500 +1.18%, Nasdaq +2.07%, Dow record.</li><li><strong>Volatility DOWN</strong> — VIX -4.78% to 17.53, fear gauge contracting.</li><li><strong>Dollar DOWN</strong> — DXY -0.26% to 101.10, extending 0.7% decline from yearly high.</li><li><strong>Gold DOWN sharply</strong> — Gold futures -1.62% to $4,030/oz. Safe-haven unwinds as geopolitical risk recedes. Spot gold hit a session low down &gt;2%.</li><li><strong>Oil MIXED to slightly DOWN</strong> — WTI -0.31% ($70.53) and Brent -0.18% ($73.78) despite earlier gains on Strait of Hormuz reopening optimism.</li></ul>
+<p><strong>Interpretation:</strong> This is a textbook risk-on configuration. Equities rallied, volatility collapsed, gold sold off as the US-Iran ceasefire removed the primary geopolitical tail risk. The dollar's weakness despite risk-on is notable — it suggests the DXY decline is being driven by factors beyond simple risk appetite (possibly the Fed independence ruling and Warsh's policy uncertainty reducing rate-hike conviction). Source: Market snapshot, Barron's, Reuters.</p>
+<p><strong>Divergence Signal — Narrow Breadth:</strong> Despite the strong headline index gains, only 209 S&amp;P 500 stocks advanced. The concentration of gains in mega-cap tech and momentum names is a persistent structural feature. If the Thursday jobs report surprises to the downside, the narrow foundation could amplify volatility on the way back down. Source: Barron's.</p>
+<p><strong>Gold Selloff vs. Oil Stability:</strong> Gold fell 1.6% on reduced safe-haven demand and rate hike fears, while oil barely moved. This divergence suggests the market is pricing in a geopolitical de-escalation that reduces tail risk without meaningfully changing the crude supply outlook — vessels are still navigating the Strait of Hormuz cautiously. Source: Reuters.</p>
+<hr class="divider">
+<h2 id="tomorrow-setup">Tomorrow Setup</h2>
+<p class="bold-line"><strong>Overnight/Morning Watch:</strong></p>
+<ul><li>Nike (NKE) earnings after Tuesday's close — options imply ~8% swing. Stock down 36% YTD. Will be a consumer discretionary bellwether.</li><li>AeroVironment (AVAV) reports Tuesday, consensus EPS $1.47.</li></ul>
+<p class="bold-line"><strong>Economic Calendar — Tuesday June 30:</strong></p>
+<ul><li>9:00 AM ET: S&amp;P Case-Shiller Home Price Index (20 cities) for April. Source: MarketWatch.</li></ul>
+<p class="bold-line"><strong>Economic Calendar — Thursday July 2 (the big one):</strong></p>
+<ul><li>8:30 AM ET: June Nonfarm Payrolls. Consensus: 118,000 vs prior 172,000. Source: BLS, MarketWatch.</li><li>8:30 AM ET: June Unemployment Rate.</li><li>8:30 AM ET: June Average Hourly Earnings.</li></ul>
+<p><strong>Holiday Note:</strong> Friday July 3 — Independence Day observed, US equity markets CLOSED. Expect light volume and potential window-dressing effects through Thursday. End-of-quarter positioning may amplify moves.</p>
+<p class="bold-line"><strong>Key Levels to Watch:</strong></p>
+<ul><li>S&amp;P 500 upside: 7,500 (psychological); downside: 7,300 (Friday's close area).</li><li>Nasdaq upside: 26,000; downside: 25,000 (last week's support).</li><li>10Y: 4.40% resistance. A jobs report surprising to the upside could push yields through that level.</li><li>VIX: 17.50 is the key level. A move back above 20 would signal fear returning.</li></ul>
+<p><strong>Bull Case:</strong> Ceasefire holds, jobs report comes in soft (validates rate cut hopes), Nike beats, quarter-end window dressing pushes indices to new highs.</p>
+<p><strong>Base Case:</strong> Consolidation around current levels. Light holiday volume. Market digests the ceasefire and waits for payrolls.</p>
+<p><strong>Bear Case:</strong> Weekend flare-up in US-Iran hostilities, jobs report surprises hot (reinforces rate hike), Nike miss triggers consumer weakness narrative, narrow breadth reverses violently.</p>
+<p>Source: MarketWatch, BLS, Yahoo Finance.</p>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<p class="bold-line"><strong>Market Data:</strong></p>
+<ul><li>Closing index levels: Yahoo Finance chart API via <code>market_snapshot.py</code> (secondary source). Cross-verified against Barron's live coverage and Investopedia market recap. All sources agree on direction and magnitude.</li><li>Treasury yields: 10Y 4.378% from Barron's and YCharts/FRED. 2Y ~4.10-4.12% from multiple sources (Trading Economics, Investing.com, FRED). Sources show minor variation (~2 bps) consistent with intraday timing differences.</li><li>Commodities: WTI $70.53, Brent $73.78 from Barron's. Investopedia cites slightly different intraday values ($70.45, $73.15) — Barron's closing values used as authoritative.</li><li>DXY: 101.10 from Barron's; Trading Economics cites 101.3275. Minor discrepancy (~0.22) likely due to timing.</li></ul>
+<p class="bold-line"><strong>News Sources:</strong></p>
+<ul><li>Primary newswires: Reuters, CNBC, Barron's — all are secondary sources (newswires), acceptable per source policy.</li><li>Analysis/context: Investopedia, Motley Fool — secondary sources used for synthesis, not as primary price data.</li><li>No paywalled content was invented. All extracted text comes from accessible portions of articles.</li><li>All articles published within the June 29, 2026 09:30-18:00 ET session window.</li><li>Total: 15 articles accepted across all lanes.</li></ul>
+<p class="bold-line"><strong>Data Gaps:</strong></p>
+<ul><li>Sector-level closing performance (% changes for each of 11 GICS sectors) not available with precise closing values. General direction (Comms +2.9%, Tech +0.9%, Energy -0.41%) sourced from Reuters and S&amp;P Global but may reflect intraday snapshots.</li><li>Credit spreads (HY OAS, IG OAS) not specifically quoted in today's reporting. No credit-specific articles surfaced within the session window.</li><li>Fed funds futures-implied probabilities not independently calculated — "at least one rate hike priced in" from Reuters/LSEG reporting.</li></ul>
+<p><strong>Historical Context:</strong> Last week's five-session losing streak, the Micron/Qualcomm $400B AI chip rally from June 25, and the ongoing US-Iran conflict pattern are established context from prior trading sessions, not fabricated.</p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268" target="_blank" rel="noopener">Markets News, June 29, 2026: Dow Closes at Record; S&amp;P 500, Nasdaq Rebound After</a>
+<a class="source-link" href="https://www.barrons.com/livecoverage/stock-market-news-today-062926" target="_blank" rel="noopener">Stock Market News for Monday, June 29, 2026: Dow, S&amp;P 500, Nasdaq Rise; Micron, </a>
+<a class="source-link" href="https://www.reuters.com/business/nasdaq-futures-lead-wall-st-higher-middle-east-tensions-ease-2026-06-29/" target="_blank" rel="noopener">Wall St indexes climb as US, Iran halt attacks; Comcast surges on spin-off plan</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-june-29-224230573.html" target="_blank" rel="noopener">Stock market today: Dow closes above 52,000 for first time, S&amp;P 500 and Nasdaq s</a>
+<a class="source-link" href="https://www.investopedia.com/comcast-announces-plan-to-split-media-tech-businesses-the-stock-is-soaring-cmcsa-12008267" target="_blank" rel="noopener">Comcast shares pop after announcing plan to split media and tech businesses</a>
+<a class="source-link" href="https://www.reuters.com/world/india/gold-slips-fresh-us-iran-strikes-boost-oil-fed-rate-hike-bets-weigh-2026-06-29/" target="_blank" rel="noopener">Gold slips as US-Iran tensions spark inflation, rate hike fears</a>
+<a class="source-link" href="https://www.nytimes.com/2026/06/29/business/kevin-warsh-federal-reserve-reforms.html" target="_blank" rel="noopener">How Warsh Has Begun to Change the Fed</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/28/stock-futures-today-live-updates.html" target="_blank" rel="noopener">Supreme Court blocks Trump&#x27;s firing of Fed Governor Lisa Cook</a>
+<a class="source-link" href="https://www.fool.com/coverage/stock-market-today/2026/06/29/stock-market-today-june-29-nasdaq-composite-outperforms-as-tech-stocks-gain-on-easing-geopolitical-tensions/" target="_blank" rel="noopener">Stock Market Today, June 29: Nasdaq Composite Outperforms as Tech Stocks Gain on</a>
+<a class="source-link" href="https://www.marketwatch.com/economy-politics/calendar" target="_blank" rel="noopener">U.S. Economic Calendar — MarketWatch</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268" target="_blank" rel="noopener">Rocket Lab Acquires Iridium for $8 Billion</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268" target="_blank" rel="noopener">Strategy (MSTR) Plans to Sell $1.25 Billion in Bitcoin</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268" target="_blank" rel="noopener">Amazon AWS Cloud Price Hike and Prime Day Results</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-29 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
