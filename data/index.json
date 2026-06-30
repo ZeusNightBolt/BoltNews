@@ -2,16 +2,16 @@
   "generated_on": "2026-06-30",
   "latest": {
     "date": "2026-06-30",
-    "mode": "pre-market",
+    "mode": "post-market",
     "files": [
-      "runs/2026-06-30/pre-market/briefing.md",
-      "runs/2026-06-30/pre-market/summary.md",
-      "runs/2026-06-30/pre-market/senior_pm_recap.md",
-      "runs/2026-06-30/pre-market/articles.json",
-      "runs/2026-06-30/pre-market/articles_enriched.json",
-      "runs/2026-06-30/pre-market/search_plan.json",
-      "runs/2026-06-30/pre-market/market_snapshot.json",
-      "runs/2026-06-30/pre-market/dashboard.html"
+      "runs/2026-06-30/post-market/briefing.md",
+      "runs/2026-06-30/post-market/summary.md",
+      "runs/2026-06-30/post-market/senior_pm_recap.md",
+      "runs/2026-06-30/post-market/articles.json",
+      "runs/2026-06-30/post-market/articles_enriched.json",
+      "runs/2026-06-30/post-market/search_plan.json",
+      "runs/2026-06-30/post-market/market_snapshot.json",
+      "runs/2026-06-30/post-market/dashboard.html"
     ]
   },
   "project_files": [
@@ -184,6 +184,14 @@
     "runs/2026-06-29/pre-market/search_plan.json",
     "runs/2026-06-29/pre-market/senior_pm_recap.md",
     "runs/2026-06-29/pre-market/summary.md",
+    "runs/2026-06-30/post-market/articles.json",
+    "runs/2026-06-30/post-market/articles_enriched.json",
+    "runs/2026-06-30/post-market/briefing.md",
+    "runs/2026-06-30/post-market/dashboard.html",
+    "runs/2026-06-30/post-market/market_snapshot.json",
+    "runs/2026-06-30/post-market/search_plan.json",
+    "runs/2026-06-30/post-market/senior_pm_recap.md",
+    "runs/2026-06-30/post-market/summary.md",
     "runs/2026-06-30/pre-market/articles.json",
     "runs/2026-06-30/pre-market/articles_enriched.json",
     "runs/2026-06-30/pre-market/briefing.md",

@@ -1,0 +1,284 @@
+{
+  "schema_version": "2.0",
+  "mode": "post-market",
+  "target_date": "2026-06-30",
+  "generated_at": "2026-06-30T18:05:00-04:00",
+  "recency_window": "2026-06-30T09:30:00-04:00 to 2026-06-30T18:00:00-04:00",
+  "total_accepted": 11,
+  "total_rejected_stale": 3,
+  "total_rejected_no_timestamp": 0,
+  "articles": [
+    {
+      "title": "Stock Market Today (June 30, 2026): Tech recovery continues with Nasdaq, S&P 500 jumping",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026",
+      "source": "TheStreet",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T15:41:00-04:00",
+      "fetched_at": "2026-06-30T18:03:00-04:00",
+      "tickers": [
+        "AVAV",
+        "CNXC",
+        "MSTR",
+        "NSC",
+        "DLR",
+        "NKE",
+        "STZ",
+        "GOOG",
+        "TSLA"
+      ],
+      "topics": [
+        "market close",
+        "tech rally",
+        "semiconductors",
+        "earnings",
+        "geopolitics"
+      ],
+      "assigned_section": "Why Markets Moved",
+      "summary": "Stocks edged higher Tuesday on tech recovery. Nasdaq +1.28% midday, S&P 500 +0.03%. AVAV +20% on earnings beat. CNXC -19% on miss. MSTR -7.2% on BTC sale plan. U.S.-Iran agreed to halt hostilities. Supreme Court protected Fed independence 5-4. Apple supply chain breached.",
+      "lead_paragraph": "Stocks edged higher Tuesday. Markets rallied sharply on Monday, snapping a five-day losing streak as technology shares rebounded.",
+      "extracted_text": "Dow closed at record high Monday; Tuesday +0.14%. Nasdaq +1.28% midday. Russell 2000 flat. QQQ +1.1% to $731.91. SMH +0.82% premarket. Key movers: AVAV +20% (earnings beat), CNXC -19% (earnings miss), MSTR -7.2% (BTC sale). U.S.-Iran ceasefire, Strait of Hormuz reopening. Supreme Court 5-4 ruling protects Fed independence. Apple supply chain breach via Tata Electronics. Nike (NKE) after-hours earnings preview. Elon Musk net worth back above $1T.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Stock market today: Live updates (June 29-30, 2026) - CNBC",
+      "url": "https://www.cnbc.com/2026/06/29/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T14:51:00-04:00",
+      "fetched_at": "2026-06-30T18:03:00-04:00",
+      "tickers": [
+        "AVAV",
+        "CNXC",
+        "LOGI",
+        "HON",
+        "GS",
+        "MS",
+        "MU",
+        "NVDA",
+        "SMH"
+      ],
+      "topics": [
+        "market close",
+        "Q2 performance",
+        "semiconductors",
+        "consumer confidence",
+        "JOLTS",
+        "gold",
+        "oil",
+        "earnings"
+      ],
+      "assigned_section": "Why Markets Moved",
+      "summary": "Key U.S. indexes rose Tuesday led by semiconductors. SMH +3%. Consumer confidence 91.2 vs 94.2 est. JOLTS 7.59M vs 7.3M est. Gold worst quarter since 2013, WTI worst since Q1 2020. AVAV +30% on beat. Iran-US talks in Doha. BoE held at 3.75%. ECB Lagarde defends rate hikes.",
+      "lead_paragraph": "Key U.S. indexes rose on Tuesday, the final day of the first half and second quarter, led by semiconductor stocks. Dow +0.3%, S&P 500 +0.7%, Nasdaq +1.3% at 2:51 PM EDT.",
+      "extracted_text": "Q2 gains: S&P 500 ~14%, Nasdaq ~20% (best since Q2 2020), Dow >12% (best since Q4 2022). Russell 2000 >21% YTD (best since 1991). SMH ~+70% in Q2. Consumer confidence 91.2 (below 94.2 consensus). JOLTS 7.59M (above 7.3M forecast). Gold -13% Q2, worst since Q2 2013. WTI -30% Q2, worst since Q1 2020. Iran-US talks in Doha. ECB Lagarde: no more unconventional tools needed. BoE held 3.75% (7-2). Fed market pricing higher rate odds. Earnings: AVAV beat (EPS $1.84 vs $1.46, revenue $642M vs $559M). CNXC miss (EPS $2.63 vs $2.64).",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Stock Market Today: Nasdaq Advances, on Track to Wrap Quarter With 20% Gain - WSJ",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-30-2026",
+      "source": "WSJ",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T14:54:00-04:00",
+      "fetched_at": "2026-06-30T18:03:00-04:00",
+      "tickers": [],
+      "topics": [
+        "market snapshot",
+        "Q2 rally",
+        "oil",
+        "yen",
+        "gold",
+        "bitcoin"
+      ],
+      "assigned_section": "Closing Market Snapshot",
+      "summary": "Mid-afternoon snapshot: DJIA 52,325 (+0.27%), S&P 500 7,501 (+0.82%), Nasdaq 26,191 (+1.43%), Russell 2000 3,028 (+0.58%). 10Y 4.422%. VIX 16.54 (-6.29%). Gold $4,046. WTI $69.95. DXY 97.53. Bitcoin $58,583. Iran-US talks in Qatar. Yen near 40-year low.",
+      "lead_paragraph": "U.S. stocks are closing out a blockbuster second quarter with fresh momentum. S&P 500 up 14% through Monday, Nasdaq up 20%.",
+      "extracted_text": "S&P 500 +14% Q2, Nasdaq +20% Q2 - biggest quarterly gains since Q2 2020. Despite significant volatility including last week's tech sell-off. Drivers: Iran-U.S. talks in Qatar, yen near 40-year low, oil gave up gains. Gold/silver pressured by stronger dollar and rate expectations. KBW Bank Index -0.49%. U.S. airline stocks soaring (+20% in June on cheaper jet fuel). Warsh wants Fed to talk less.",
+      "lane": "market-snapshot",
+      "freshness_verified": true
+    },
+    {
+      "title": "Nike Q4 2026 Earnings Report Summary - MarketBeat",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-6-30-nike-inc-stock/",
+      "source": "MarketBeat",
+      "source_class": "analysis",
+      "published_at": "2026-06-30T17:45:00-04:00",
+      "fetched_at": "2026-06-30T18:04:00-04:00",
+      "tickers": [
+        "NKE"
+      ],
+      "topics": [
+        "earnings",
+        "revenue",
+        "EPS",
+        "guidance"
+      ],
+      "assigned_section": "Earnings and Corporate Developments",
+      "summary": "Nike Q4 FY2026: EPS $0.72 vs $0.13 consensus (454% beat). Revenue $10.97B vs $10.85B est. Stock closed -0.96% at $41.08, then fell -4.51% after-hours to $39.23. China weakness and slow turnaround overshadow beat. Conference call at 5PM ET.",
+      "lead_paragraph": "Nike reported Q4 FY2026 EPS of $0.72 crushing the $0.13 consensus estimate by 454%. Revenue $10.97B beat $10.85B estimate.",
+      "extracted_text": "NKE Q4 FY2026: EPS $0.72 vs $0.13 est (+454% surprise). Revenue $10.97B vs $10.85B est (+$122M beat). Regular close $41.08 (-0.96%). Extended trading $39.23 (-4.51%). Despite blowout beat, stock sold off on ongoing China weakness, declining sales, and slow turnaround. Conference call 5PM ET. Press release 8-K filed.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "Nike shares pop on earnings and revenue beat - CNBC Video",
+      "url": "https://www.cnbc.com/video/2026/06/30/nike-shares-pop-on-earnings-and-revenue-beat.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T16:00:00-04:00",
+      "fetched_at": "2026-06-30T18:04:00-04:00",
+      "tickers": [
+        "NKE"
+      ],
+      "topics": [
+        "earnings",
+        "after-hours"
+      ],
+      "assigned_section": "Earnings and Corporate Developments",
+      "summary": "CNBC Closing Bell Overtime: Nike shares initially popped on earnings and revenue beat after the close, though the regular session saw -2.53% decline.",
+      "lead_paragraph": "Nike reported earnings that beat expectations, along with revenue outperformance. Shares moved higher following the release.",
+      "extracted_text": "NKE earnings beat on EPS and revenue. Initial after-hours pop. Segment from Closing Bell: Overtime with Brandon Gomez. Regular session decline -2.53% preceding release.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "Constellation Brands Q1 FY2027 Earnings - Digrin Calendar",
+      "url": "https://www.digrin.com/stocks/earnings_calendar/2026-06-30",
+      "source": "Digrin",
+      "source_class": "market_data",
+      "published_at": "2026-06-30T16:00:00-04:00",
+      "fetched_at": "2026-06-30T18:04:00-04:00",
+      "tickers": [
+        "STZ",
+        "PRGS"
+      ],
+      "topics": [
+        "earnings"
+      ],
+      "assigned_section": "Earnings and Corporate Developments",
+      "summary": "After-close earnings: STZ (Constellation Brands) Q1 FY2027 EPS $3.43 vs $3.27 est, revenue $2.4B in-line. PRGS (Progress Software) EPS $1.62 vs $1.52 est, revenue $253.5M vs $247.6M est.",
+      "lead_paragraph": "Earnings calendar June 30: STZ reported EPS $3.43 beating $3.27 estimate. PRGS reported EPS $1.62 beating $1.52 estimate.",
+      "extracted_text": "STZ: EPS $3.43 vs $3.27 est, revenue $2.4B vs $2.4B est. PRGS: EPS $1.62 vs $1.52 est, revenue $253.5M vs $247.6M est. After-market close reports. NKE results pending at time of scrape.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "AeroVironment Q4 2026 earnings beat, AVAV stock soars - Quartz",
+      "url": "https://qz.com/aerovironment-earnings-beat-revenue-doubles-stock-soars-063026",
+      "source": "Quartz",
+      "source_class": "analysis",
+      "published_at": "2026-06-30T10:00:00-04:00",
+      "fetched_at": "2026-06-30T18:04:00-04:00",
+      "tickers": [
+        "AVAV"
+      ],
+      "topics": [
+        "earnings",
+        "drones",
+        "defense"
+      ],
+      "assigned_section": "Earnings and Corporate Developments",
+      "summary": "AeroVironment Q4 FY2026: adjusted EPS $1.84 vs $1.46 est, revenue $641.6M vs $556M est. Backlog grew to $1.2B. Stock +30% on the day.",
+      "lead_paragraph": "The drone maker posted Q4 adjusted EPS of $1.84 versus an estimate of $1.46, with revenue of $641.6 million against an estimate of $556 million. Stock surged 30%.",
+      "extracted_text": "AVAV Q4 FY2026: Adjusted EPS $1.84 vs $1.46 est. Revenue $641.6M vs $556M est. Backlog $1.2B. Net income $63.17M vs $16.66M prior year. Stock +30% on session. Driven by defense spending and drone demand.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "Strategy's 'HODL' Playbook Is Under Pressure - Barron's",
+      "url": "https://www.barrons.com/articles/microstrategy-stock-price-mstr-bitcoin-treasury-510346f0",
+      "source": "Barron's",
+      "source_class": "analysis",
+      "published_at": "2026-06-30T12:00:00-04:00",
+      "fetched_at": "2026-06-30T18:04:00-04:00",
+      "tickers": [
+        "MSTR",
+        "STRC",
+        "BTC"
+      ],
+      "topics": [
+        "bitcoin",
+        "treasury",
+        "dividends",
+        "buyback"
+      ],
+      "assigned_section": "Equity Market Internals",
+      "summary": "Strategy (MSTR) authorized up to $1.25B in Bitcoin sales to fund $2.55B reserve for dividends/interest. Also $1B buyback. STRC dividend +11.5% to 12%. MSTR -6.2%. Marks end of 'HODL' era. BTC holdings 847,363 at avg $75,651.",
+      "lead_paragraph": "Strategy is formally replacing the 'never sell' mantra with a capital-management framework that treats Bitcoin as a flexible treasury asset.",
+      "extracted_text": "MSTR: Up to $1.25B BTC sales authorized. $2.55B USD reserve for dividends/interest. $1B common stock buyback. STRC dividend 11.5% \u2192 12%. BTC holdings: 847,363 at $75,651 avg (BTC now below $60K). mNAV ~1.04. CEO Phong Le: 'evolving from one-way capital issuance to active capital management.' MSTR -6.2%, STRC +2%.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "US Dollar Index (DXY) Historical Data - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/DX-Y.NYB/history/",
+      "source": "Yahoo Finance",
+      "source_class": "market_data",
+      "published_at": "2026-06-30T16:00:00-04:00",
+      "fetched_at": "2026-06-30T18:04:00-04:00",
+      "tickers": [
+        "DXY"
+      ],
+      "topics": [
+        "dollar",
+        "FX"
+      ],
+      "assigned_section": "Closing Market Snapshot",
+      "summary": "DXY closed at 101.12 on June 30, 2026 (open 101.15, high 101.44, low 101.06). Previous close 101.37 on June 29.",
+      "lead_paragraph": "U.S. Dollar Index June 30 close: 101.12 with open 101.15, high 101.44, low 101.06. Down from 101.37 previous close.",
+      "extracted_text": "DXY: Jun 30 close 101.12 (open 101.15, high 101.44, low 101.06). Jun 29 close 101.37. Jun 26 close 101.50. Jun 25 close 101.60.",
+      "lane": "market-snapshot",
+      "freshness_verified": true
+    },
+    {
+      "title": "US 2Y/10Y/30Y Treasury Yields June 30, 2026 - Trading Economics",
+      "url": "https://tradingeconomics.com/united-states/government-bond-yield",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-06-30T16:00:00-04:00",
+      "fetched_at": "2026-06-30T18:04:00-04:00",
+      "tickers": [],
+      "topics": [
+        "treasury yields",
+        "rates"
+      ],
+      "assigned_section": "Rates, Macro, and Policy",
+      "summary": "Treasury yields: 2Y 4.14% (+2 bp), 10Y 4.42% (+4 bp), 30Y 4.89% (+2 bp) on June 30, 2026. Yields ticking higher across the curve.",
+      "lead_paragraph": "U.S. Treasury yields rose on June 30. 2Y at 4.14%, 10Y at 4.42%, 30Y at 4.89%.",
+      "extracted_text": "2Y: 4.14% (+2 bp day). 10Y: 4.42% (+4 bp). 30Y: 4.89% (+2 bp). 10Y range: 4.361-4.408%. Prev close 4.374%. Yields rising on hawkish Fed expectations and quarter-end. Gold pressured by higher yields.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "Apple Supply Chain Breach: iPhone 18 Pro data leaked via Tata Electronics - TheStreet",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026",
+      "source": "TheStreet",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T15:41:00-04:00",
+      "fetched_at": "2026-06-30T18:03:00-04:00",
+      "tickers": [
+        "AAPL"
+      ],
+      "topics": [
+        "supply chain",
+        "cybersecurity",
+        "iPhone"
+      ],
+      "assigned_section": "Tomorrow Setup",
+      "summary": "Sensitive Apple component/supplier lists and iPhone 18 Pro photos posted on dark web after ransomware group breached Tata Electronics. Could strain Apple-Tata relationship. iPhone 18 launch still expected September 2026.",
+      "lead_paragraph": "Sensitive lists of components and suppliers, along with photos of Apple's upcoming iPhone 18 Pro models, were posted on the dark web after a ransomware group stole data from supplier Tata Electronics.",
+      "extracted_text": "Apple supply chain breach via Tata Electronics. Component lists, supplier data, iPhone 18 Pro photos leaked on dark web. Ransomware group responsible. May strain Apple-Tata partnership (key non-China supplier). iPhone 18 Pro/Pro Max launch still expected Sep 2026. Apple also faces memory/storage chip price cost pressures.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    }
+  ],
+  "coverage": {
+    "market_snapshot": true,
+    "top_developments": true,
+    "macro_policy_rates": true,
+    "equities_earnings": true,
+    "commodities_credit_vol": true,
+    "cross_asset": true
+  }
+}
