@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-06-30</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-06-30 &middot; 8 articles &middot; 4 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-tuesday-june-30-2026">BoltNews Pre-Market Briefing — Tuesday, June 30, 2026</h1>
+<p><strong>Run time:</strong> 06:00 ET | <strong>Recency window:</strong> Mon Jun 29 16:00 ET – Tue Jun 30 06:00 ET</p>
+<p><strong>Market status:</strong> Regular trading day; holiday-shortened week (NYSE closed Fri Jul 3 for Independence Day)</p>
+<hr class="divider">
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<p><em>All data as of ~05:50 ET Tue Jun 30, 2026 unless noted. Source: CNBC Pre-Markets, Yahoo Finance chart API.</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Index/Future</th><th>Prior Close</th><th>Futures</th><th>Implied Open</th><th>Change</th></tr></thead><tbody><tr><td><strong>S&amp;P 500</strong></td><td>7,440.43</td><td>7,507.50</td><td>+16.07</td><td>+0.22%</td></tr><tr><td><strong>Nasdaq-100</strong></td><td>29,774.75</td><td>30,091.00</td><td>+101.25</td><td>+0.34%</td></tr><tr><td><strong>Dow Jones</strong></td><td>52,182.74</td><td>52,664.00</td><td>+226.26</td><td>+0.43%</td></tr><tr><td><strong>Russell 2000</strong></td><td>3,010.42</td><td>3,033.60</td><td>–5.82</td><td>–0.19%</td></tr></tbody></table></div>
+<p><strong>Futures are pointing modestly higher</strong> for the S&amp;P 500, Nasdaq, and Dow, building on Monday's broad rally. The Russell 2000 is the lone implied decliner after Monday's near-flat close (+0.01%). Fair-value-adjusted implied opens are positive for large-cap indices, reflecting overnight risk-on continuation.</p>
+<p><strong>Treasury Yields</strong> (CNBC Pre-Markets, ~05:50 ET):</p>
+<div class="table-wrapper"><table><thead><tr><th>Maturity</th><th>Yield</th><th>Change</th></tr></thead><tbody><tr><td>2-Year</td><td>4.106%</td><td>–0.3 bp</td></tr><tr><td>5-Year</td><td>4.137%</td><td>–0.7 bp</td></tr><tr><td>10-Year</td><td>4.371%</td><td>–0.3 bp</td></tr><tr><td>30-Year</td><td>4.857%</td><td>–0.3 bp</td></tr></tbody></table></div>
+<p>Yields are fractionally lower across the curve overnight. The 2Y/10Y spread remains narrow at ~26.5 bp. The 10Y yield is still ~20 bp below its 2026 highs, while short-dated yields continue climbing — an incomplete confirmation signal for dollar strength per StoneX analysis.</p>
+<p><strong>Key Market Levels</strong> (Monday close, Yahoo Finance chart API):</p>
+<ul><li>S&amp;P 500: <strong>7,440.43</strong> (+1.18%) — ~4.6% below JPMorgan's raised year-end target of 7,800</li><li>Nasdaq Composite: <strong>25,820.14</strong> (+2.07%) — tech-led surge</li><li>Dow: <strong>52,182.74</strong> (+0.59%) — first close above 52,000 in history</li><li>Russell 2000: <strong>3,010.42</strong> (+0.01%) — up &gt;20% YTD, leading all major indices</li><li>VIX: <strong>17.59</strong> (–0.34%) — subdued, near the lower end of the recent range</li><li>SPY: $741.00 (+1.65%), QQQ: $724.08 (+2.49%), IWM: $298.97 (–0.29%)</li></ul>
+<p><strong>Commodities Snapshot</strong> (CNBC Pre-Markets):</p>
+<ul><li>WTI Crude: <strong>$70.84</strong> (+0.13%), Brent: <strong>$74.01</strong> (+0.14%) — stabilized after Monday's US-Iran ceasefire pop</li><li>Gold (Aug): <strong>$4,033.50</strong> (–0.13%) — worst month since June 2013, down &gt;$500 in June</li><li>Silver: <strong>$58.61</strong> (+0.75%)</li><li>Natural Gas: <strong>$3.212</strong> (+0.97%)</li><li>Oil VIX: <strong>45.07</strong> (–2.99%)</li></ul>
+<p><strong>FX Snapshot</strong> (CNBC Pre-Markets):</p>
+<ul><li>DXY: ~101.3 (firm)</li><li>EUR/USD: <strong>1.1400</strong> (–0.22%)</li><li>USD/JPY: <strong>162.28</strong> (+0.21%) — briefly hit 161.98 overnight, weakest yen since 1986</li><li>GBP/USD: <strong>1.3240</strong> (–0.16%)</li><li>USD/CAD: <strong>1.424</strong> (+0.20%)</li></ul>
+<p><strong>Crypto</strong> (Yahoo Finance, Mon Jun 29 ~09:00 ET):</p>
+<ul><li>Bitcoin: <strong>~$59,813</strong> (–5.9% WoW, –19.1% MoM, –44.6% YoY from ATH of $126,198 in Oct 2025)</li><li>Ethereum: <strong>~$1,573</strong> (–7.9% WoW, –21.8% MoM)</li></ul>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<p><em>Ranked by market impact for the Tuesday session.</em></p>
+<p class="bold-line"><strong>1. US-Iran ceasefire holds; Strait of Hormuz shipping resumes</strong></p>
+<ul><li>After weekend military exchanges (US struck Iranian missile/drone sites; Iran struck Hormuz shipping), both sides agreed Sunday to pause hostilities and allow free commercial vessel transit.</li><li>President Trump threatened "annihilation" on Truth Social if the ceasefire is violated again.</li><li>Tehran has <strong>ruled out any negotiations at any level</strong> with the US ahead of Tuesday's Doha meeting, per Saxo Bank.</li><li><strong>Market impact:</strong> Oil stabilized (Brent $74.01, WTI $70.84) after Monday's pop. Geopolitical risk premium remains but is receding. Risk-on tone across equities.</li><li><strong>Why it matters today:</strong> Any breakdown in Doha could reverse Monday's gains. Energy sector still -0.62% on Monday despite oil rally — potential catch-up trade.</li></ul>
+<p class="bold-line"><strong>2. Dow closes above 52,000 for first time; broad tech rally</strong></p>
+<ul><li>Dow +306.63 pts (+0.59%) to 52,182.74. S&amp;P 500 +1.18%. Nasdaq +2.07%.</li><li><strong>Alphabet (GOOGL) +4.82%</strong> on first day as Dow component. <strong>Tesla (TSLA) +8.46%</strong> as tech relief rally broadened.</li><li>End-of-quarter window dressing and lighter holiday-week liquidity amplified moves.</li><li><strong>Market impact:</strong> Positive momentum heading into Tuesday, but thin liquidity means outsized swings possible. JPMorgan raised 2026 S&amp;P 500 target to 7,800 (from 7,200).</li></ul>
+<p class="bold-line"><strong>3. After-hours earnings: AVAV surges, CNXC craters</strong></p>
+<ul><li><strong>AeroVironment (AVAV):</strong> Q4 EPS $1.84 vs $1.48 est (+24.32% beat). Stock +23% premarket to ~$171. Revenue guidance raised. First beat after three consecutive quarterly misses. (Source: Public.com, company release)</li><li><strong>Concentrix (CNXC):</strong> Q2 revenue $2.46B (+1.9% YoY), non-GAAP EPS $2.63. Full-year revenue outlook cut to $9.925-10.025B. Stock –25% after-hours. Record Q2 operating cash flow of $258M but margin compression persists. (Source: Concentrix IR/GlobeNewswire)</li></ul>
+<p class="bold-line"><strong>4. Supreme Court blocks Trump from firing Fed Governor Cook (5-4)</strong></p>
+<ul><li>The ruling was narrow: Cook was denied due process (no explanation, no avenue for response, no deadline).</li><li>The Court did not decide whether Trump can remove Fed officials for cause — leaving the broader independence question unresolved.</li><li><strong>Market impact:</strong> Muted. Treasury yields barely moved (+1 bp). The decision reinforces Fed independence for now but leaves the door open for future challenges.</li></ul>
+<p class="bold-line"><strong>5. Analyst downgrades hit software: CRM, ADBE, CRWD cut</strong></p>
+<ul><li>Phillip Securities cut <strong>Salesforce (CRM)</strong> and <strong>Adobe (ADBE)</strong> from Buy to Neutral.</li><li>Arete cut <strong>CrowdStrike (CRWD)</strong> from Buy to Neutral.</li><li>Upgrades: <strong>Roblox (RBLX)</strong> Neutral→Buy (Arete), <strong>Mercedes-Benz (MBGYY)</strong> Hold→Buy (Jefferies), <strong>Primoris (PRIM)</strong> Neutral→Overweight (JPMorgan).</li><li>(Source: Daily Trade Alert / The Fly, Jun 29)</li></ul>
+<p class="bold-line"><strong>6. Asia mixed, Europe positive</strong></p>
+<ul><li><strong>Nikkei 225:</strong> +0.86% to 70,062. <strong>Hang Seng:</strong> –0.63% to 22,881 (profit-taking after Monday's 1.6% rally). <strong>Shanghai:</strong> +0.50%.</li><li><strong>European open (early):</strong> STOXX 50 +0.93%, DAX +1.17%, FTSE 100 +0.78%. CAC 40 –0.55%.</li><li>Japan industrial production missed (+0.5% m/m vs +1.1% exp), unemployment steady at 2.5%.</li></ul>
+<p class="bold-line"><strong>7. M&amp;A and corporate actions</strong></p>
+<ul><li><strong>Rocket Lab (RKLB)</strong> acquiring <strong>Iridium (IRDM)</strong> at $54/share cash+stock. RKLB +10%, IRDM +20%.</li><li><strong>Comcast (CMCSA)</strong> to spin off NBCUniversal/Sky and tech businesses into separate public companies within ~1 year. CMCSA +4.4%.</li><li><strong>Owens Corning (OC)</strong> +15.26% on report Carlisle Companies made unsolicited offer.</li><li><strong>Samsung, SK Hynix</strong> fell 3-5% on plans for up to $1.3T in chipmaking investment over 10 years.</li></ul>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<p><strong>Asia-Pacific:</strong> Mixed session with a risk-on tilt. The Nikkei 225 rose 0.86% to 70,062, extending its rally, with Keyence (+4.1%) and Fujikura (+5.1%) leading. The Hang Seng slipped 0.63% to 22,881, giving back some of Monday's 1.6% gain, though the Hang Seng Tech Index rebounded from oversold levels (Horizon Robotics +15%, Bilibili +8.8% on Monday). The Shanghai Composite added 0.50%. MSCI Asia Pacific remains on track for its best quarterly gain in 17 years (~20%).</p>
+<ul><li><strong>Japan macro:</strong> May industrial production +0.5% m/m (missed +1.1% consensus), first YoY decline in six months (-1.7%). Unemployment steady at 2.5%, jobs-to-applicants ratio slipped to 1.17 — tight but softening.</li><li><strong>China:</strong> Markets await PMI data and a copper tariff decision due today.</li><li><strong>BoJ:</strong> Continues to target overnight call rate around 0.75%; policymakers signal any move toward 1.0% will be gradual per IC Markets.</li></ul>
+<p><strong>Europe (early trade):</strong> Positive open. STOXX 50 +0.93%, DAX +1.17% to 24,914, FTSE 100 +0.78% to 10,565. Telecoms remain under pressure (Deutsche Telekom -5% Monday on SpaceX mobile disruption fears). ASML +2.1% led tech. ECB Forum on Central Banking in Sintra (Jun 29-Jul 1) continues — major central bankers speaking after the hawkish shift in global rate expectations.</p>
+<p><strong>Cross-read to US:</strong> The positive European open and contained Asia session support the higher US futures indication. The US-Iran ceasefire is the dominant global catalyst, lifting risk assets across regions. The ECB Sintra forum may produce headlines on the global rate outlook that could move Treasury yields intraday.</p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<p class="bold-line"><strong>Fed Policy Stance:</strong></p>
+<ul><li>FOMC held rates at <strong>3.50-3.75%</strong> on June 17 (unanimous). Chair Kevin Warsh signaled greater inflation focus.</li><li>Fed funds futures now price a <strong>rate hike as soon as September</strong> — a sharp repricing from March when the dot plot implied two additional cuts in 2026.</li><li>The June SEP showed the median 2026 fed funds forecast shifted higher, implying potential for one rate hike before year-end.</li><li>Next FOMC meeting: <strong>July 28-29, 2026.</strong></li><li>Supreme Court ruling on Fed Governor Cook: 5-4 decision blocks her firing on due-process grounds but leaves the broader independence question unresolved.</li></ul>
+<p class="bold-line"><strong>Treasury Curve:</strong></p>
+<ul><li>2Y: 4.106%, 10Y: 4.371%, 30Y: 4.857%. Curve flattening persists (2s10s at ~26.5 bp).</li><li>Short-dated yields continue climbing on rate-hike expectations; long-end lagging below 2026 highs — incomplete confirmation of dollar strength (StoneX).</li><li>Bond market closed Friday for Independence Day — expect front-loading of position adjustments through Thursday.</li></ul>
+<p class="bold-line"><strong>Today's Economic Calendar (all times ET):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Time</th><th>Release</th><th>Period</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>09:00</td><td>FHFA Home Price Index</td><td>Apr</td><td>—</td><td>—</td></tr><tr><td>09:00</td><td>S&amp;P/Case-Shiller Home Price (YoY)</td><td>Apr</td><td>—</td><td>—</td></tr><tr><td>09:45</td><td>Chicago PMI</td><td>Jun</td><td>—</td><td>—</td></tr><tr><td>10:00</td><td>JOLTS Job Openings</td><td>May</td><td>—</td><td>—</td></tr><tr><td>10:00</td><td>CB Consumer Confidence</td><td>Jun</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Rest of Week — Key Events:</strong></p>
+<ul><li><strong>Wed Jul 1:</strong> ADP Employment (Jun), ISM Manufacturing PMI (Jun) — May was 54.0, strongest in years. Earnings: General Mills (GIS), FactSet (FDS).</li><li><strong>Thu Jul 2:</strong> <strong>June Jobs Report</strong> — Nonfarm Payrolls, Unemployment Rate, Average Hourly Earnings, Initial Claims. The main event of the week. Strong payrolls + firm wages → pressure on long-duration growth stocks. Softer report → bond rally, support for rate-sensitive sectors.</li><li><strong>Fri Jul 3:</strong> NYSE closed for Independence Day.</li></ul>
+<p class="bold-line"><strong>Earnings Today (post-market):</strong></p>
+<ul><li><strong>Nike (NKE)</strong> — Consumer discretionary bellwether. Watch for China demand, tariff impact, inventory discipline, margin pressure.</li><li><strong>Constellation Brands (STZ)</strong> — Consumer staples/beer demand, pricing power.</li></ul>
+<p class="bold-line"><strong>Key Themes:</strong></p>
+<p>1. Jobs data will determine whether the market continues to price a September rate hike.</p>
+<p>2. End-of-quarter window dressing and holiday-thinned liquidity amplify moves in either direction.</p>
+<p>3. BofA technical strategist Paul Ciana warns correction risks are rising heading into Q3.</p>
+<p>4. Seasonal patterns: July is historically the best Q3 month for Dow and S&amp;P 500, but Nasdaq averages -0.8% in July of midterm election years.</p>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<p class="bold-line"><strong>FX: USD firm across the board</strong></p>
+<ul><li>DXY holding near 101.3, supported by higher short-end Treasury yields and hawkish Fed repricing.</li><li><strong>USD/JPY at 162.28</strong> — briefly touched 161.98 overnight, levels not seen since 1986. The yen remains under relentless pressure from the BoJ's gradual approach to normalization (overnight call rate still ~0.75% vs Fed's 3.5-3.75%).</li><li><strong>EUR/USD at 1.1400</strong> — softer, pressured by USD strength and ECB Sintra forum uncertainty. Markets pricing 26 bp of ECB hikes by year-end.</li><li><strong>GBP/USD at 1.3240</strong> — sterling the top G10 performer recently but losing some ground overnight.</li><li><strong>AUD:</strong> Set for biggest monthly fall since December 2024, hit by commodity weakness and risk-sensitive flows.</li><li><strong>Key FX insight (StoneX):</strong> Treasury yields offer a clearer explanation for dollar strength than DXY headlines alone. While short-dated yields climb, 10Y and 30Y still lagging — incomplete confirmation signal.</li></ul>
+<p class="bold-line"><strong>Commodities:</strong></p>
+<ul><li><strong>Oil stabilized</strong> after Monday's Iran-ceasefire pop. WTI $70.84 (+0.13%), Brent $74.01. Morgan Stanley cut Q3 Brent forecast to $75. WTI had settled below $70 on Friday for the first time since the Iran war began (Feb 27).</li><li><strong>Gold $4,033.50</strong> — worst month since June 2013, down &gt;$500 in June. TD Securities sees gold falling to $3,900 before rallying to $5,300 by year-end on inflationary pressure.</li><li><strong>Silver $58.61</strong> (+0.75%) — modest bounce after recent weakness.</li><li><strong>Natural gas $3.212</strong> (+0.97%) — profit-taking on Monday (-3.26%) reversed.</li><li><strong>Copper</strong> — tariff decision due today; futures -0.6% overnight.</li><li><strong>Oil VIX 45.07</strong> (-2.99%) — geopolitical risk premium declining post-ceasefire.</li></ul>
+<p><strong>Cross-asset implication:</strong> Firmer USD + contained commodity prices create a mixed environment for emerging markets and commodity currencies. The risk-on equity tone is partially at odds with the strong-dollar/hawkish-Fed narrative — this divergence bears watching. If the dollar continues to strengthen, it becomes a headwind for multinational earnings and EM flows.</p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<p class="bold-line"><strong>After-Hours Earnings Movers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Catalyst</th></tr></thead><tbody><tr><td><strong>AVAV</strong></td><td>+23%</td><td>Q4 EPS $1.84 vs $1.48 est (+24% beat), raised revenue guidance</td></tr><tr><td><strong>CNXC</strong></td><td>–25%</td><td>Q2 revenue $2.46B (+1.9%), full-year outlook cut; margin compression</td></tr><tr><td><strong>RKLB</strong></td><td>+10%</td><td>Acquiring Iridium at $54/share cash+stock</td></tr><tr><td><strong>IRDM</strong></td><td>+20%</td><td>Being acquired by Rocket Lab</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Pre-Market Movers (early indications):</strong></p>
+<ul><li><strong>AVAV</strong> continuing to surge on Q4 beat (+23% premarket to ~$171)</li><li><strong>CNXC</strong> remaining under heavy pressure after outlook slash</li><li><strong>ORCL</strong> +3% — rebounding after worst week since 2001 (-19% on debt/AI worries)</li><li><strong>RKLB</strong> +10% — Iridium acquisition</li><li><strong>BATS</strong> –2% — cutting 5,500 roles by year-end, targeting £600M savings</li></ul>
+<p class="bold-line"><strong>Analyst Actions (Monday, Jun 29):</strong></p>
+<p><em>Downgrades:</em></p>
+<ul><li><strong>CRM (Salesforce):</strong> Buy→Neutral (Phillip Securities)</li><li><strong>ADBE (Adobe):</strong> Buy→Neutral (Phillip Securities)</li><li><strong>CRWD (CrowdStrike):</strong> Buy→Neutral (Arete)</li><li><strong>PGR (Progressive):</strong> Equal Weight→Underweight (Wells Fargo)</li><li><strong>SYNA (Synaptics):</strong> Overweight→Equal Weight (Barclays), Buy→Hold (Deutsche Bank)</li></ul>
+<p><em>Upgrades:</em></p>
+<ul><li><strong>RBLX (Roblox):</strong> Neutral→Buy (Arete)</li><li><strong>MBGYY (Mercedes-Benz):</strong> Hold→Buy (Jefferies)</li><li><strong>PRIM (Primoris):</strong> Neutral→Overweight (JPMorgan)</li></ul>
+<p><em>Initiations:</em></p>
+<ul><li><strong>WULF (TeraWulf):</strong> Buy (Citi)</li><li><strong>QNT (Quantinuum):</strong> Buy (Jefferies/JPMorgan)</li><li><strong>FUN (Six Flags):</strong> Outperform (Citizens)</li><li><strong>INIO (Innio):</strong> Buy/Overweight (multiple firms)</li><li><strong>LFTO (Liftoff Mobile):</strong> Buy/Overweight (multiple firms)</li></ul>
+<p class="bold-line"><strong>Monday's Notable Movers (for context):</strong></p>
+<ul><li>Gainers: Corning (GLW) +15.67%, KLA +11.97%, WDC +11.16%, AMAT +10.82%, TSLA +8.46%</li><li>Losers: SMCI –8.10% (Taiwan office raid on alleged Nvidia chip smuggling), BLD –12%, TopBuild (acquisition by QXO)</li><li>28 S&amp;P 500 stocks hit 52-week highs including PANW, LLY, JNJ, ABBV, AMAT, GLW</li><li>AT&amp;T, T-Mobile, CME, ICE, BSX, CPRT, ROL all at new 52-week lows</li></ul>
+<p class="bold-line"><strong>Earnings Reports Today (post-close):</strong></p>
+<ul><li><strong>Nike (NKE)</strong> — Consensus estimates TBD. Key focus: China demand recovery, tariff exposure, inventory normalization, DTC margins.</li><li><strong>Constellation Brands (STZ)</strong> — Beer segment remains the profit engine; watch for consumer demand signals and pricing power in the current inflation environment.</li></ul>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<p class="bold-line"><strong>Monday's Sector Performance (S&amp;P 500 sectors, CNBC):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Change</th></tr></thead><tbody><tr><td>Consumer Discretionary</td><td>+2.68%</td></tr><tr><td>Technology</td><td>+1.69%</td></tr><tr><td>Financials</td><td>+0.14%</td></tr><tr><td>Energy</td><td>–0.62%</td></tr><tr><td>Consumer Staples</td><td>–0.44%</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Expected Leadership Tuesday:</strong></p>
+<ul><li><strong>Tech and growth</strong> likely to continue leading given positive futures, AI momentum, and end-of-quarter window dressing. XLK +2.37% Monday.</li><li><strong>Energy</strong> has potential catch-up after underperforming Monday's oil rally (+1.6-2.2% in crude but XLE –0.48%). Watch for rotation if ceasefire holds.</li><li><strong>Financials</strong> modestly positive; benefit from higher rate expectations but limited by flattening curve.</li></ul>
+<p class="bold-line"><strong>Factor/Breadth Context:</strong></p>
+<ul><li>Large-cap outperformance: QQQ +2.49% vs IWM –0.29% on Monday. Growth over value.</li><li>Russell 2000 reconstitution adds noise; small-cap index flat Monday (+0.01%) despite being up &gt;20% YTD. Darrell Cronk (Wells Fargo CIO) recommends avoiding small-caps near-term.</li><li>Breadth: 28 S&amp;P 500 stocks at 52-week highs, but also several at 52-week lows — suggests narrowing participation beneath the index-level strength.</li><li>BofA: Correction risks rising heading into Q3. Seasonal patterns warn Nasdaq averages -0.8% in July of midterm election years.</li></ul>
+<p class="bold-line"><strong>Rotation Watch:</strong></p>
+<ul><li>Key question for Q3: Does the rally broaden beyond mega-cap tech? JPMorgan's "Blue Sky" S&amp;P 7,800 target implies broadening. Financials and industrials are the favored value sectors.</li><li>Hyperscaler exposure being reduced until confidence in sustained earnings growth returns.</li><li>Semiconductors (especially memory) remain the biggest AI beneficiary, but fears of overextended positions have investors waiting for better entries.</li></ul>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<p class="bold-line"><strong>Scheduled Catalysts (all times ET):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Time</th><th>Event</th><th>Risk Level</th><th>Notes</th></tr></thead><tbody><tr><td>09:00</td><td>FHFA / Case-Shiller Home Prices</td><td>Low</td><td>Housing data, secondary to jobs</td></tr><tr><td>09:45</td><td>Chicago PMI (Jun)</td><td>Medium</td><td>First June manufacturing read; ISM Wednesday</td></tr><tr><td>10:00</td><td>JOLTS Job Openings (May)</td><td><strong>High</strong></td><td>Labor demand gauge; key input for Thursday jobs</td></tr><tr><td>10:00</td><td>CB Consumer Confidence (Jun)</td><td>Medium</td><td>Consumer sentiment amid inflation</td></tr><tr><td>After Close</td><td>Nike (NKE) earnings</td><td><strong>High</strong></td><td>Consumer discretionary bellwether</td></tr><tr><td>After Close</td><td>Constellation Brands (STZ) earnings</td><td>Medium</td><td>Consumer staples demand signal</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Unscheduled Risks:</strong></p>
+<p>1. <strong>Iran/Geopolitics:</strong> Tehran has ruled out negotiations. Any breakdown of the ceasefire or Doha talks could spike oil and reverse risk-on positioning.</p>
+<p>2. <strong>ECB Sintra Forum:</strong> Major central banker comments could move global rates and FX. Any hawkish surprises from ECB/Lagarde would strengthen EUR and pressure USD.</p>
+<p>3. <strong>Quarter-end rebalancing:</strong> Thin holiday-week liquidity + end-of-quarter window dressing creates conditions for outsized intraday swings.</p>
+<p>4. <strong>SMCI fallout:</strong> Taiwan office raid related to alleged Nvidia chip smuggling to China could widen into a broader semiconductor sector risk.</p>
+<p>5. <strong>Fed-speak risk:</strong> Any FOMC member comments on the Cook ruling or rate outlook could move yields.</p>
+<p class="bold-line"><strong>Key Technical Levels (Monday close basis):</strong></p>
+<ul><li>S&amp;P 500: Support 7,350 (Monday low), Resistance 7,444 (Monday high / ATH)</li><li>Nasdaq-100: Support 25,290 (Monday low), Resistance 25,834 (Monday high)</li><li>10Y Yield: Support 4.30%, Resistance 4.45%</li><li>VIX: Support 17.00 (recent low), Resistance 19.00</li></ul>
+<p class="bold-line"><strong>Bull Case (35% probability):</strong></p>
+<ul><li>Positive futures follow-through, JOLTS shows cooling labor market (softer rate-hike pressure), Nike beats, quarter-end markup pushes S&amp;P 500 toward 7,500. VIX stays subdued.</li></ul>
+<p class="bold-line"><strong>Base Case (50% probability):</strong></p>
+<ul><li>Modest follow-through from Monday's rally, choppy trading around economic data. JOLTS roughly in line. Nike mixed. S&amp;P 500 consolidates near 7,440-7,470. VIX 17-18 range.</li></ul>
+<p class="bold-line"><strong>Bear Case (15% probability):</strong></p>
+<ul><li>Iran ceasefire breaks down / Doha talks fail. JOLTS surprises hot (reinforcing September hike pricing). Hawkish Sintra comments. Nike misses. Quarter-end sell program from overbought conditions. S&amp;P 500 tests 7,350 support. VIX above 19.</li></ul>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<p class="bold-line"><strong>Market Data (primary/secondary):</strong></p>
+<ul><li>Index levels (S&amp;P 500, Nasdaq, Dow, Russell 2000, VIX, SPY, QQQ, IWM, XLE, XLK): Yahoo Finance chart API via scripts/market_snapshot.py — secondary source. Cross-checked against CNBC Pre-Markets page. <strong>Confirmed consistent.</strong></li><li>Futures, commodities, FX, Treasury yields, global indices: CNBC Pre-Markets page as of ~05:50 ET June 30, 2026. <strong>Secondary source, real-time.</strong></li><li>Crypto: Yahoo Finance as of ~09:00 ET June 29, 2026. <strong>Secondary source, ~21 hours stale at run time.</strong></li></ul>
+<p class="bold-line"><strong>News and Analysis:</strong></p>
+<ul><li>Monday market recap and top movers: CNBC live blog, June 29, 2026. <strong>Primary newswire source.</strong></li><li>Asia session recap and earnings calendar: Saxo Bank "Asia Market Quick Take," June 30, 2026. <strong>Secondary analysis source.</strong></li><li>Week-ahead calendar and economic preview: CNBC (June 26) and Schwab Network (June 28). <strong>Secondary sources, published 2-4 days before run.</strong></li><li>Analyst upgrades/downgrades: Daily Trade Alert / The Fly, June 29, 2026. <strong>Secondary aggregator. Specific calls verified.</strong></li><li>AeroVironment earnings: Public.com earnings page, June 29. <strong>Secondary aggregator; cross-checked with company IR.</strong></li><li>Concentrix earnings: GlobeNewswire/Concentrix IR press release, June 29. <strong>Primary company release.</strong></li><li>Fed policy: Federal Reserve FOMC statement, June 17, 2026. <strong>Primary central bank source.</strong></li><li>Supreme Court ruling: CNBC, June 29, 2026. <strong>Secondary source; verifiable via SCOTUS docket.</strong></li></ul>
+<p class="bold-line"><strong>Data Quality Flags:</strong></p>
+<ul><li>⚠️ Crypto prices are ~21 hours stale at run time (Yahoo Finance Jun 29 09:00 ET). Pre-market crypto not available from a primary source.</li><li>⚠️ The 24/7 Wall St. analyst calls article (promising "Tuesday's Best Analyst Research Calls") had empty upgrade/downgrade/initiation sections. Data was sourced instead from Daily Trade Alert.</li><li>⚠️ Nike and Constellation Brands consensus estimates were not available from primary sources at run time. These will be available during the regular session.</li><li>✅ All index levels, futures, Treasury yields, commodities, and FX rates cross-checked across at least two sources.</li><li>✅ All articles have published_at timestamps within the 14-hour recency window (Jun 29 16:00 – Jun 30 06:00 ET), except the week-ahead planning articles (Jun 26-28) which provide necessary calendar context.</li></ul>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnbc.com/2026/06/28/stock-futures-today-live-updates.html" target="_blank" rel="noopener">Stock market news for June 29, 2026</a>
+<a class="source-link" href="https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take--30-june-2026-30062026" target="_blank" rel="noopener">Asia Market Quick Take – 30 June, 2026</a>
+<a class="source-link" href="https://www.cnbc.com/markets/pre-markets/" target="_blank" rel="noopener">Premarket Stock Trading Data: Dow, S&amp;P, NASDAQ Futures</a>
+<a class="source-link" href="https://public.com/stocks/avav/earnings" target="_blank" rel="noopener">AeroVironment Q4 2026 Earnings: EPS $1.84 beats by 24%; stock +23% premarket</a>
+<a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/concentrix-reports-second-quarter-2026-200100491.html" target="_blank" rel="noopener">Concentrix Reports Second Quarter 2026 Results</a>
+<a class="source-link" href="https://www.cnbc.com/markets/pre-markets/" target="_blank" rel="noopener">US Dollar strengthens; USD/JPY hits 162.28; DXY firm on rate expectations</a>
+<a class="source-link" href="https://www.cnbc.com/markets/pre-markets/" target="_blank" rel="noopener">Commodities: WTI $70.84, Brent $74.01, Gold $4,033; oil stabilizes after Iran ce</a>
+<a class="source-link" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06292026-12008268" target="_blank" rel="noopener">Markets News, June 29, 2026: Dow Closes at Record; S&amp;P 500, Nasdaq Rebound After</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-06-30 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
