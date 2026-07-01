@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-07-01</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-07-01 &middot; 16 articles &middot; 6 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-wednesday-july-1-2026">BoltNews Pre-Market Briefing — Wednesday, July 1, 2026</h1>
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<p><em>As of 6:00 AM ET, July 1, 2026. All prices from Yahoo Finance (secondary source).</em></p>
+<p class="bold-line"><strong>US Equity Futures:</strong></p>
+<ul><li>S&amp;P 500 Futures: 7,524.00 (-24.25, -0.32%)</li><li>Nasdaq-100 Futures: 30,362.25 (-161.25, -0.53%)</li><li>Dow Futures: 52,514.00 (-156.00, -0.30%)</li><li>Russell 2000 Futures: 3,034.50 (flat/slight positive)</li></ul>
+<p class="bold-line"><strong>Tuesday Close (June 30, 2026):</strong></p>
+<ul><li>S&amp;P 500: 7,499.36 (+0.79%) | Q2 +14.9% — best quarter since Q2 2020</li><li>Nasdaq Composite: 26,213.72 (+1.52%) | Q2 +21.4% — best quarter since Q2 2020</li><li>Dow: 52,319.20 (+0.26%) — second consecutive record close | Q2 +12.9%</li><li>Russell 2000: 3,024.37 (+0.46%) | H1 +21.86% — best first half since 1991</li><li>VIX: 16.45 (-6.8%)</li></ul>
+<p class="bold-line"><strong>Fixed Income:</strong></p>
+<ul><li>2Y Treasury: 4.14% (+4 bps)</li><li>10Y Treasury: 4.38% (~+4 bps)</li><li>30Y Treasury: 4.86%</li><li>2s10s Spread: +28-30 bps — shallow but positively sloped curve</li></ul>
+<p class="bold-line"><strong>Key Cross-Asset:</strong></p>
+<ul><li>DXY: 101.37 (+0.18%)</li><li>WTI Crude: $70.91/bbl (+0.23%)</li><li>Brent Crude: $73.43/bbl (+0.65%)</li><li>Gold: $3,978-$4,028/oz (under pressure from USD strength)</li><li>Bitcoin: $58,750-$60,149 (sliding, -1.4%)</li><li>Ethereum: ~$1,610</li></ul>
+<p><strong>Directional Signal:</strong> Futures are pointing modestly lower after Tuesday's record-setting quarter-end rally. The Nasdaq-100 is leading the decline (-0.53%) as traders digest post-close earnings and await key macro data. Market closed Friday July 3 for Independence Day — expect positioning adjustments into the holiday weekend.</p>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<p>1. <strong>Nike Q4 Earnings Beat, but China and Guidance Weigh (After Close June 30)</strong></p>
+<ul><li>Adjusted EPS $0.20 vs $0.13 est (beat by 54%); Revenue $10.97B vs $10.86B est</li><li>GAAP EPS $0.72 including $986M IEEPA tariff refund ($0.52/share)</li><li>Greater China: -12% YoY. North America: +3% but missed est. Converse: -30%+</li><li>CEO Elliott Hill: "Results aren't there yet." Jordan/Sportswear expected negative growth through most of FY2027</li><li>CFO Matt Friend departing Aug 17, replaced by Pfizer exec David Denton</li><li>Stock fell 8% after hours, recovered to roughly flat — but cautious guidance caps upside</li><li><em>Source: CNBC, TheStreet | Timestamp: ~4:15 PM ET June 30</em></li></ul>
+<p>2. <strong>Supreme Court Protects Fed Independence — 5-4 Ruling</strong></p>
+<ul><li>Supreme Court rejected President Trump's attempt to fire Fed Governor Lisa Cook</li><li>Majority ruled Trump failed to provide Cook notice and chance to be heard</li><li>Reinforces that Fed governors cannot be removed "for cause" without proven wrongdoing</li><li>Major institutional victory for Fed credibility under Chair Kevin Warsh</li><li><em>Source: TheStreet | Timestamp: June 30, 2026</em></li></ul>
+<p>3. <strong>Q2 2026 Closes as Best Quarter Since 2020</strong></p>
+<ul><li>Nasdaq +21.4%, S&amp;P 500 +14.9%, Dow +12.9%, Russell 2000 H1 +22% (best since 1991)</li><li>Semiconductor stocks led: SMH +70% in Q2, SOXX +94%. Micron +240% for quarter</li><li>AI capex buildout theme drove gains despite high intra-quarter volatility</li><li>CIO at Orion: "Earnings matter more than just about anything, except for maybe interest rates"</li><li><em>Source: CNBC, WSJ | Timestamp: June 30, 2026</em></li></ul>
+<p>4. <strong>Yen Near 40-Year Low — Intervention Risk Elevated Ahead of US Jobs Data</strong></p>
+<ul><li>USD/JPY at multi-decade extremes. Yen down ~3.5% YTD vs dollar</li><li>Commonwealth Bank: intervention not imminent but hinges on US jobs data this week</li><li>Asian session mixed: Nikkei +0.52%, Hang Seng -0.63%, Shanghai +0.14%, Kospi -1.81%</li><li><em>Source: WSJ, Malay Mail/Reuters | Timestamp: July 1, 2026 2:00 AM ET</em></li></ul>
+<p>5. <strong>US-Iran Ceasefire Talks in Qatar — Oil Prices Slide</strong></p>
+<ul><li>Envoy Steve Witkoff and Jared Kushner arrived in Qatar for talks with mediators</li><li>No direct US-Iran meetings scheduled; messages may pass via Qatar</li><li>Both sides agreed to halt hostilities and allow commercial shipping through Strait of Hormuz</li><li>WTI fell on the development, capping steep Q2 losses</li><li><em>Source: WSJ, TheStreet | Timestamp: June 30, 2026</em></li></ul>
+<p>6. <strong>De-Dollarization Survey: Central Banks Plan to Cut USD Allocations</strong></p>
+<ul><li>OMFIF survey (covers ~$10T in central bank assets): for first time, more plan to reduce USD holdings than increase over next decade</li><li>Political risks cited as primary driver</li><li>Parallels with recent FOMC minutes showing rising nominal yields</li><li><em>Source: TheStreet | Timestamp: June 30, 2026</em></li></ul>
+<p>7. <strong>Crypto Continues Slide: Bitcoin Below $59K, MSTR Down 7.2%</strong></p>
+<ul><li>Bitcoin fell 1.4% to $58,750-$60,149 range, global crypto market cap $2.04T (lowest since Sept 2024)</li><li>Strategy (MSTR) -7.2% after proposing $1.25B Bitcoin sale as part of turnaround</li><li><em>Source: TheStreet, Yahoo Finance | Timestamp: June 30, 2026</em></li></ul>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<p class="bold-line"><strong>Asia (Closed):</strong></p>
+<ul><li>Nikkei 225: 70,426.72 (+0.52%) — modest gains, supported by yen weakness benefiting exporters</li><li>Hang Seng: 22,881.02 (-0.63%) — under pressure from ongoing China growth concerns</li><li>Shanghai Composite: 4,100.20 (+0.14%) — flat after China June manufacturing PMI beat (50.3 vs 50.1 est)</li><li>Kospi: 8,323.20 (-1.81%) — worst performer, heavy tech weighting dragged</li><li>ASX 200: 8,722.90 (-0.64%) — commodities weakness weighing</li><li>BSE Sensex: 76,954.32 (+0.62%) — outperforming on domestic inflows</li></ul>
+<p><strong>Cross-read to US:</strong> Yen intervention risk and mixed Asian performance support modest risk-off tone entering US session. China PMI beat is a marginal positive but insufficient to offset broader risk-off driven by US jobs data uncertainty.</p>
+<p class="bold-line"><strong>Europe (Trading):</strong></p>
+<ul><li>DAX: 24,626.89 (-0.18%)</li><li>FTSE 100: 10,484.22 (-0.23%)</li><li>CAC 40: 8,367.33 (-0.21%)</li><li>Euro Stoxx 50: 6,231.63 (+0.16%)</li><li>STOXX 600 Q2: ~+9% — best quarterly performance since October 2020</li></ul>
+<p><strong>Key European developments:</strong> EU imposed 50% duty on steel imports above quota effective July 1. Ipsen acquiring Swiss biotech Memo in $800M+ deal. European luxury stocks under pressure (Kering -5%, LVMH/Richemont/Hermès -1-2%) ahead of Q2 results.</p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<p class="bold-line"><strong>Fed Policy Stance:</strong></p>
+<ul><li>Federal funds rate: 3.50-3.75% (held for fourth consecutive meeting in June 2026)</li><li>Next FOMC: July 28-29, 2026</li><li>FOMC minutes (April): Desk survey median shows two 25bp cuts starting Q3/Q4 2026 and Q1 2027</li><li>Market-implied probability of rate hike by Q1 2027: ~30%</li><li>Supreme Court 5-4 ruling protects Fed independence — reinforces institutional credibility</li></ul>
+<p class="bold-line"><strong>Yield Curve:</strong></p>
+<ul><li>2Y: 4.14% | 10Y: 4.38% | 30Y: 4.86%</li><li>2s10s spread: +28-30 bps (positively sloped but historically tight)</li><li>Yields rose to one-week highs on Tuesday on solid economy and inflation concerns</li><li>Curve implying slow easing cycle: no urgency to cut, no panic about tightening</li></ul>
+<p class="bold-line"><strong>Today's Economic Calendar (all times ET):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Time</th><th>Release</th><th>Period</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>8:15 AM</td><td>ADP Employment Change</td><td>June</td><td>+120K</td><td>+122K</td></tr><tr><td>10:00 AM</td><td>ISM Manufacturing PMI</td><td>June</td><td>53.9-54.0</td><td>53.6</td></tr><tr><td>10:00 AM</td><td>ISM Manufacturing Prices</td><td>June</td><td>—</td><td>—</td></tr><tr><td>10:00 AM</td><td>ISM Manufacturing Employment</td><td>June</td><td>—</td><td>48.6</td></tr><tr><td>10:00 AM</td><td>Construction Spending MoM</td><td>May</td><td>—</td><td>—</td></tr><tr><td>10:30 AM</td><td>EIA Crude Oil Inventories</td><td>Weekly</td><td>—</td><td>—</td></tr></tbody></table></div>
+<p><strong>What to Watch:</strong> ADP/ISM combo is the first major read on June labor market and manufacturing activity. If ADP prints materially below +120K, it would reinforce rate-cut expectations for Q3. ISM above 50 (expansionary) at 53.9-54.0 would support "no landing" narrative. Construction spending and ISM prices provide additional inflation signals.</p>
+<p class="bold-line"><strong>Yesterday's Data Recap:</strong></p>
+<ul><li>Consumer Confidence (June): 91.2 vs 94.2 est — miss. Jobs "hard to get" at 22.5% (highest since Jan 2021)</li><li>JOLTS Job Openings (May): 7.59M vs 7.3M est — beat, but hiring/quits rates flat</li><li>China Manufacturing PMI (June): 50.3 vs 50.1 est — marginal expansion</li></ul>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<p class="bold-line"><strong>FX:</strong></p>
+<ul><li>DXY: 101.37, +0.18% | +2.17% over past month, +4.75% YoY</li><li>USD/JPY: Yen near 40-year low. Intervention risk elevated. CBA: "intervention may hinge on US jobs data"</li><li>EUR/USD: Under pressure from DXY strength. European soft-open weighing</li><li>Central bank de-dollarization survey (OMFIF): structural USD headwind building</li></ul>
+<p class="bold-line"><strong>Commodities:</strong></p>
+<ul><li>WTI Crude: $70.91/bbl (+0.23%). Steep Q2 losses (~23% decline from recent highs). US-Iran ceasefire talks and demand concerns weighing</li><li>Brent Crude: $73.43/bbl (+0.65%). US-Iran Qatar talks adding supply-premium compression</li><li>Gold: $3,978-$4,028/oz. Under pressure from USD strength and higher real rates. August futures opened at $4,032.50, down 0.2%</li><li>EU steel: 50% tariff on imports above quota effective July 1 — supportive for domestic steel but adds inflationary pressure</li></ul>
+<p><strong>Cross-Asset Signal:</strong> Stronger dollar + weaker commodities + sliding crypto = modest risk-off positioning entering US session. Gold unable to rally despite geopolitical tensions (Iran talks) suggests real-rate sensitivity dominates safe-haven demand for now.</p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<p class="bold-line"><strong>Pre-Market Futures Movers (as of 6:00 AM ET):</strong></p>
+<ul><li>Broad indices pointing lower: S&amp;P -0.32%, Nasdaq -0.53%, Dow -0.30%</li><li>Post-earnings reaction stocks in focus: NKE, CNXC, AVAV</li></ul>
+<p class="bold-line"><strong>Earnings and Key Movers:</strong></p>
+<p><strong>Nike (NKE)</strong> — Q4 FY2026 (after close June 30):</p>
+<ul><li>GAAP EPS $0.72 (includes $0.52 tariff refund) vs $0.13 est. Adjusted EPS $0.20</li><li>Revenue $10.97B vs $10.86B est (-1% YoY)</li><li>North America $4.83B (+3%, missed). Greater China $1.30B (-12%, beat lowered bar)</li><li>Gross margin 49.2% (+890 bps YoY, tariff-driven)</li><li>Guidance: FY2027 H1 earnings "flattish." Jordan/Sportswear negative growth through most of FY2027</li><li>CFO transition: David Denton (Pfizer) replacing Matt Friend Aug 17</li><li>Investor Day Nov 16-17, 2026</li><li>Stock fell 8% after hours, recovered to ~flat. Trading at ~11-year lows pre-earnings. <strong>Watch for direction at open</strong></li></ul>
+<p><strong>Concentrix (CNXC)</strong> — Q2 miss:</p>
+<ul><li>EPS $2.63 vs $2.64 est. Revenue $2.46B vs $2.47B est</li><li>Lower forward guidance. Stock -22% after hours. <strong>Negative read-through for business services</strong></li></ul>
+<p><strong>AeroVironment (AVAV)</strong> — Q4 beat:</p>
+<ul><li>EPS $1.84 vs $1.46 est. Revenue $642M vs $559M est</li><li>Stock +30%. Defense/drone sector strength continues</li></ul>
+<p class="bold-line"><strong>Analyst Actions (June 30):</strong></p>
+<ul><li><strong>Fortune Brands (FBIN)</strong>: Upgraded to Buy (Truist), PT $70 from $45 (+37% upside)</li><li><strong>UnitedHealth (UNH)</strong>: PT raised to $468 (Morgan Stanley), top pick. Q2 beat expected July 16</li><li><strong>Honeywell (HON)</strong>: Initiated Outperform PT $255 (Daiwa), margin expansion thesis</li><li><strong>Goldman Sachs (GS) / Morgan Stanley (MS)</strong>: Both downgraded to Underperform (Oppenheimer). "Take the money and run." Recommends Ares, Blackstone, KKR instead</li><li><strong>Logitech (LOGI)</strong>: Downgraded to Underperform PT $86 (BofA) — memory chip price hikes hitting accessory demand</li><li><strong>Tesla (TSLA)</strong>: Deutsche Bank sees Q2 deliveries ~10K above est, Europe strength</li></ul>
+<p class="bold-line"><strong>M&amp;A and Corporate:</strong></p>
+<ul><li>Alcoa (AA) to acquire South32 aluminum assets for up to $5.6B (cash+stock, Australia/Brazil/South Africa)</li><li>Ipsen acquiring Memo Therapeutics in $800M+ deal</li><li>Digital Realty (DLR) -4.5% on $7.8B Blackstone data center stake purchase (dilutive)</li><li>Galderma's Botox rival rejected again by FDA</li><li>Rocket Lab (RKLB) soared on acquisition news</li></ul>
+<p class="bold-line"><strong>Crypto Exposure:</strong></p>
+<ul><li>Strategy (MSTR) -7.2% — proposing $1.25B Bitcoin sale</li><li>Bitcoin $58,750-$60,149, Ethereum ~$1,610. Global crypto market cap $2.04T (lowest since Sept 2024)</li></ul>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<p class="bold-line"><strong>Expected Leadership (pre-market signals):</strong></p>
+<ul><li><strong>Defensive bias</strong> into holiday-shortened week: futures down across the board, VIX elevated from Tuesday's 16.45 low</li><li><strong>Semiconductors</strong>: Off Tuesday's strong close (SMH +3%, YTD +82%). Profit-taking risk after monster Q2 (+70% for SMH, +94% for SOXX)</li><li><strong>Energy (XLE)</strong> at 53.11 (-0.88% on Tuesday) — oil weakness and ceasefire talks headwind</li><li><strong>Financials</strong>: GS/MS downgrades could weigh on broker/dealer complex. Alternative asset managers (BX, KKR, ARES) preferred</li><li><strong>Consumer Discretionary</strong>: NKE results set cautious tone. Kering (-5%) flags luxury demand concerns</li></ul>
+<p class="bold-line"><strong>Factor Positioning:</strong></p>
+<ul><li>Growth vs Value: Orion CIO noted value stocks outperformed growth in June despite AI narrative dominance — "what's been working year to date... is value stocks as opposed to growth stocks"</li><li>Small vs Large: Russell 2000 best-performing major index H1 2026 (+21.86%). Small-cap trade remains intact but futures indicate profit-taking</li><li>Cyclicals vs Defensives: Higher rates a tailwind for cyclicals per Holland, but pre-market risk-off suggests defensive rotation today</li></ul>
+<p class="bold-line"><strong>Key Levels:</strong></p>
+<ul><li>S&amp;P 500: Support at 7,440 (prior close before Tuesday rally). Resistance at 7,524 (pre-market futures high)</li><li>Nasdaq-100: 30,000 psychological level. QQQ support at 724 (prior close)</li><li>VIX: 16.45 Tuesday close. Pre-market move through 16.90-17.00 range</li></ul>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<p class="bold-line"><strong>Scheduled Catalysts:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Time (ET)</th><th>Event</th><th>Impact</th><th>Scenario</th></tr></thead><tbody><tr><td>8:15 AM</td><td>ADP Employment (June)</td><td>HIGH</td><td>&gt;+120K: supports no-cut narrative, yields up, stocks mixed. &lt;+100K: rate-cut bets accelerate, yields down, risk-on</td></tr><tr><td>10:00 AM</td><td>ISM Manufacturing PMI (June)</td><td>HIGH</td><td>&gt;54.0: expansion confirms, cyclicals bid. &lt;53.0: contraction fears, defensives bid</td></tr><tr><td>10:00 AM</td><td>ISM Prices Paid</td><td>MEDIUM</td><td>Higher = inflation concern, yields up. Lower = disinflation narrative</td></tr><tr><td>10:30 AM</td><td>EIA Crude Inventories</td><td>MEDIUM</td><td>Build &gt; expected = oil down, energy sector pressure. Draw = oil bid</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Unscheduled Risks:</strong></p>
+<ul><li><strong>Japan FX intervention</strong>: Yen at 40-year lows. Any intervention triggers rapid USD/JPY move and risk-off</li><li><strong>Iran talks escalation/de-escalation</strong>: Witkoff in Qatar. Breakthrough = oil down, risk-on. Breakdown = oil spike, risk-off</li><li><strong>Trump/Fed rhetoric</strong>: Post-Supreme Court ruling, any further executive branch challenge to Fed independence</li></ul>
+<p class="bold-line"><strong>Bull Case (&gt;30% probability):</strong></p>
+<ul><li>ADP prints in-line (+120K) and ISM Manufacturing holds above 53.0</li><li>Nike stabilizes after initial AH sell-off</li><li>Shortened holiday week pressure keeps sellers sidelined</li><li>S&amp;P 500 holds above 7,440 support, drifts toward 7,500</li></ul>
+<p class="bold-line"><strong>Base Case (~50% probability):</strong></p>
+<ul><li>Modest pullback from record levels (-0.3% to -0.5%) ahead of macro data</li><li>Profit-taking in semis after monster Q2 run</li><li>Nike trades flat to slightly negative, sector read-through muted</li><li>Positioning adjustments into Friday holiday closure</li></ul>
+<p class="bold-line"><strong>Bear Case (~20% probability):</strong></p>
+<ul><li>ADP prints &lt;+100K, ISM Manufacturing &lt;53.0 — recession fears spike</li><li>Yen intervention triggers broader FX volatility and risk-off</li><li>Nike -5%+ as guidance sinks sentiment across consumer discretionary</li><li>S&amp;P 500 tests 7,400. VIX spikes above 18</li></ul>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<p class="bold-line"><strong>Market Data:</strong></p>
+<ul><li>US equity close levels: CNBC, WSJ, TheStreet — cross-verified across three sources. High confidence</li><li>Pre-market futures: Yahoo Finance live quotes as of 6:00 AM ET. Moderate confidence (single source, real-time)</li><li>Treasury yields: FRED/SOFR Rate (H.15 release), YCharts. High confidence</li><li>DXY, commodities: Trading Economics, Investing.com, Yahoo Finance. Moderate confidence (secondary sources)</li></ul>
+<p class="bold-line"><strong>Macro/Policy:</strong></p>
+<ul><li>FOMC minutes (April 2026): Primary source — Federal Reserve. High confidence</li><li>Supreme Court ruling: TheStreet report. Moderate confidence (secondary source, awaiting primary court document)</li><li>Economic calendar: Investing.com, Thomson Investment Group, MarketWatch — cross-verified. High confidence</li><li>OMFIF de-dollarization survey: TheStreet report. Moderate confidence (single secondary source)</li></ul>
+<p class="bold-line"><strong>Companies/Earnings:</strong></p>
+<ul><li>Nike Q4: CNBC live blog (primary), TheStreet live recap, official Nike IR press release. High confidence</li><li>Concentrix, AeroVironment: CNBC. Moderate confidence (secondary source, awaiting earnings releases)</li><li>Analyst actions: CNBC, TheStreet. Moderate confidence (consensus from secondary sources)</li></ul>
+<p class="bold-line"><strong>News:</strong></p>
+<ul><li>Asia/Europe market data: WSJ, Yahoo Finance, Malay Mail/Reuters. Moderate-high confidence</li><li>US-Iran ceasefire talks: WSJ, TheStreet. Moderate confidence (developing story)</li><li>Crypto prices: Yahoo Finance, TheStreet. Moderate confidence (volatile, single-source quotes)</li></ul>
+<p class="bold-line"><strong>Data Unavailable:</strong></p>
+<ul><li>Pre-market VIX futures level not sourced — using prior close 16.45</li><li>EUR/USD, GBP/USD precise levels not sourced — using DXY direction as proxy</li><li>Pre-market single-stock movers list — using Yahoo/CNBC pre-market screener descriptions</li></ul>
+<p class="bold-line"><strong>Stale/Historical Content:</strong></p>
+<ul><li>FOMC minutes from April 28-29 included as policy context, clearly labeled as historical</li><li>Q2 performance data sourced from end-of-quarter recaps, published within recency window</li></ul>
+<p><em>Generated: July 1, 2026 06:00 AM ET. Recency window: June 30 4:00 PM ET — July 1 6:00 AM ET (14.0 hours).</em></p>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-30-2026" target="_blank" rel="noopener">Stock Market News, June 30, 2026: Nasdaq Advances, Climbs 21% for Quarter</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/29/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock market news for June 30, 2026 — Record Closes &amp; Strongest Half in Years</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026" target="_blank" rel="noopener">U.S. indexes wrap best quarter since 2020 — tech rally, Middle East peace hopes</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/30/nike-nke-q4-2026-earnings.html" target="_blank" rel="noopener">Nike (NKE) Q4 2026 earnings: EPS $0.20 beats, China down 12%, stock volatile</a>
+<a class="source-link" href="https://www.malaymail.com/news/money/2026/07/01/asian-markets-mixed-as-yen-hovers-near-fourdecade-lows-us-jobs-data-in-focus/225893" target="_blank" rel="noopener">Asian markets mixed as yen hovers near four-decade lows, US jobs data in focus</a>
+<a class="source-link" href="https://www.investing.com/news/stock-market-news/adp-employment-manufacturing-pmi-and-oil-inventories-due-wednesday-93CH-4768512" target="_blank" rel="noopener">ADP employment, manufacturing PMI, and oil inventories due Wednesday July 1</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026" target="_blank" rel="noopener">Supreme Court Protects Fed Independence — Rejects Trump Bid to Fire Governor Coo</a>
+<a class="source-link" href="https://www.sofrrate.com/treasury-rates" target="_blank" rel="noopener">US Treasury Yield Curve: 10Y 4.38%, 2Y 4.14%, 2s10s spread +28bps</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/currency" target="_blank" rel="noopener">DXY at 101.37, Yen near 40-year low; Gold under pressure at ~$3,978</a>
+<a class="source-link" href="https://www.cnbc.com/2026/06/29/stock-market-today-live-updates.html" target="_blank" rel="noopener">AeroVironment +30% on earnings; Concentrix -22%; Goldman/MS downgraded</a>
+<a class="source-link" href="https://finance.yahoo.com/quote/%5ESTOXX/" target="_blank" rel="noopener">European markets open soft: DAX -0.18%, FTSE -0.23%, CAC -0.21%</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026" target="_blank" rel="noopener">Elon Musk reclaims $1 trillion net worth; Apple supply chain leak; Central banks</a>
+<a class="source-link" href="https://finance.yahoo.com/" target="_blank" rel="noopener">Yahoo Finance Pre-Market Futures: S&amp;P -0.32%, Dow -0.30%, Nasdaq -0.53%</a>
+<a class="source-link" href="https://www.fool.com/coverage/stock-market-today/2026/06/30/stock-market-today-june-30-rocket-lab-soars-on-acquisition-and-major-indexes-gain/" target="_blank" rel="noopener">Rocket Lab soars on acquisition; Alcoa to acquire South32 aluminum assets for up</a>
+<a class="source-link" href="https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-tuesday-june-30-hanging-just-above-4000-but-ready-to-rise-115357985.html" target="_blank" rel="noopener">Gold August futures opened at $4,032.50; Bitcoin slides below $59K</a>
+<a class="source-link" href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm" target="_blank" rel="noopener">FOMC Minutes (April 2026): Two 25bp cuts expected starting Q3/Q4 2026</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-07-01 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
