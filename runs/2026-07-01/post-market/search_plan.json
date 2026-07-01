@@ -1,0 +1,2136 @@
+{
+  "schema_version": "2.0",
+  "mode": "post-market",
+  "weekday": "Wednesday",
+  "weekday_index": 2,
+  "is_weekend": false,
+  "target_date": "2026-07-01",
+  "date_suffix": "July 01, 2026",
+  "recency_hours": 8.5,
+  "recency": {
+    "mode": "post-market",
+    "label": "regular trading day + immediate after-hours",
+    "window_start_iso": "2026-07-01T09:30:00-04:00",
+    "window_end_iso": "2026-07-01T18:00:00-04:00",
+    "hours": 8.5,
+    "timezone": "America/New_York",
+    "require_article_timestamp": true,
+    "reject_if_timestamp_missing": true,
+    "reject_if_outside_window": true,
+    "calendar": "NYSE-like US equity calendar with weekends and major Wall Street holidays",
+    "target_is_trading_day": true,
+    "previous_trading_day": "2026-06-30"
+  },
+  "source_policy": {
+    "preferred_sources": [
+      "Reuters",
+      "Bloomberg",
+      "WSJ",
+      "CNBC",
+      "MarketWatch",
+      "Yahoo Finance",
+      "official releases",
+      "central banks",
+      "exchanges",
+      "regulators"
+    ],
+    "allowed_source_classes": [
+      "newswire",
+      "market_data",
+      "official",
+      "central_bank",
+      "company_release",
+      "rates",
+      "fx",
+      "commodities",
+      "credit",
+      "analysis"
+    ],
+    "restricted_source_classes": [
+      "forum",
+      "social"
+    ],
+    "paywall_policy": "Extract if accessible; never invent text behind a paywall.",
+    "historical_context_policy": "Use prior BoltNews markdown artifacts only; do not web-search stale context."
+  },
+  "briefing_template": {
+    "required_sections": [
+      "Closing Market Snapshot",
+      "Why Markets Moved",
+      "Equity Market Internals",
+      "Rates, Macro, and Policy",
+      "Earnings and Corporate Developments",
+      "Cross-Asset Confirmation or Divergence",
+      "Tomorrow Setup",
+      "Source Notes and Data Quality"
+    ],
+    "authoritative_output": "briefing.md",
+    "summary_md_policy": "article digest/link index only; never primary dashboard content"
+  },
+  "topic_keyword_pack": {
+    "pack_id": "wednesday-post-market",
+    "weekday": "Wednesday",
+    "mode": "post-market",
+    "primary_topics": [
+      "Wednesday market close",
+      "FOMC minutes market reaction",
+      "crude inventories oil prices",
+      "earnings after hours Wednesday",
+      "Nasdaq reaction Wednesday",
+      "rates FX credit Wednesday",
+      "S&P 500",
+      "NASDAQ",
+      "Dow Jones",
+      "Russell 2000"
+    ],
+    "secondary_topics": [
+      "Federal Reserve",
+      "FOMC",
+      "interest rates",
+      "Treasury yields",
+      "US dollar",
+      "DXY",
+      "forex",
+      "currency markets"
+    ],
+    "exclusion_terms": [
+      "racism",
+      "sexism",
+      "discrimination",
+      "diversity initiative",
+      "DEI",
+      "climate protest",
+      "social justice",
+      "inequality",
+      "activist investor ESG",
+      "labor strike",
+      "union vote",
+      "woke",
+      "gender pay gap",
+      "human rights",
+      "refugee",
+      "immigration ban",
+      "abortion",
+      "gun control",
+      "police",
+      "BLM",
+      "LGBTQ",
+      "transgender",
+      "carbon neutral",
+      "sustainability report",
+      "ESG score"
+    ],
+    "query_templates": [
+      "{topic} {date_suffix}",
+      "{topic} markets today {date_suffix}",
+      "{topic} Reuters Bloomberg CNBC {date_suffix}",
+      "{topic} stocks bonds yields {date_suffix}"
+    ]
+  },
+  "agent_execution": {
+    "global_timeout_seconds": 1800,
+    "max_parallel_agents": 6,
+    "search_timeout_seconds": 45,
+    "extract_timeout_seconds": 75,
+    "searxng_backoff_seconds": [
+      3,
+      8,
+      20
+    ],
+    "max_retries_per_query": 2,
+    "dedupe_keys": [
+      "canonical_url",
+      "normalized_headline",
+      "source"
+    ]
+  },
+  "lanes": [
+    {
+      "lane": "market-snapshot",
+      "agents": 1,
+      "lane_timeout_seconds": 300,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 60,
+      "max_articles": 12,
+      "assigned_sections": [
+        "Closing Market Snapshot"
+      ],
+      "assigned_topics": [
+        "stock futures",
+        "market close",
+        "Treasury yields",
+        "DXY",
+        "WTI Brent oil",
+        "gold",
+        "VIX"
+      ]
+    },
+    {
+      "lane": "overnight-or-session-headlines",
+      "agents": 1,
+      "lane_timeout_seconds": 420,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "Why Markets Moved"
+      ],
+      "assigned_topics": [
+        "Wednesday market close",
+        "FOMC minutes market reaction",
+        "crude inventories oil prices",
+        "earnings after hours Wednesday",
+        "Nasdaq reaction Wednesday",
+        "rates FX credit Wednesday",
+        "S&P 500",
+        "NASDAQ"
+      ]
+    },
+    {
+      "lane": "macro-policy-rates-fx",
+      "agents": 1,
+      "lane_timeout_seconds": 420,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "Rates, Macro, and Policy"
+      ],
+      "assigned_topics": [
+        "rates FX credit Wednesday",
+        "Federal Reserve",
+        "Treasury yields",
+        "US dollar"
+      ]
+    },
+    {
+      "lane": "equities-earnings-single-stocks",
+      "agents": 2,
+      "lane_timeout_seconds": 480,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 35,
+      "assigned_sections": [
+        "Equity Market Internals",
+        "Earnings and Corporate Developments"
+      ],
+      "assigned_tickers": [
+        "HPQ",
+        "NTAP",
+        "CRM",
+        "ZS",
+        "SNOW",
+        "HPE",
+        "MDB",
+        "OKTA",
+        "MRVL",
+        "PANW",
+        "DELL",
+        "CIEN",
+        "CRWD",
+        "ADSK",
+        "SNPS",
+        "AZO",
+        "COST",
+        "AVGO",
+        "ONDS",
+        "OKLO",
+        "IONQ",
+        "ASTS",
+        "IT",
+        "RDW",
+        "RGTI",
+        "SMCI",
+        "SOFI",
+        "PINS",
+        "LITE",
+        "AAOI",
+        "MSTR",
+        "WDAY",
+        "HUBS",
+        "BE",
+        "COIN",
+        "CRWV",
+        "ON",
+        "WDC",
+        "FSLR",
+        "TEAM",
+        "CRCL",
+        "ALAB",
+        "RDDT",
+        "SNDK",
+        "XPO",
+        "RKLB",
+        "GDDY",
+        "NOW",
+        "UNP",
+        "QCOM"
+      ],
+      "assigned_topics": [
+        "earnings",
+        "guidance",
+        "analyst upgrades downgrades",
+        "pre-market movers",
+        "after-hours movers"
+      ]
+    },
+    {
+      "lane": "commodities-credit-vol",
+      "agents": 1,
+      "lane_timeout_seconds": 360,
+      "search_timeout_seconds": 45,
+      "extract_timeout_seconds": 75,
+      "max_articles": 20,
+      "assigned_sections": [
+        "Cross-Asset Confirmation or Divergence"
+      ],
+      "assigned_topics": [
+        "crude inventories oil prices",
+        "rates FX credit Wednesday"
+      ]
+    },
+    {
+      "lane": "dedupe-validation-synthesis",
+      "agents": 1,
+      "lane_timeout_seconds": 300,
+      "requires_all_discovery_outputs": true,
+      "assigned_sections": [
+        "Source Notes and Data Quality"
+      ],
+      "assigned_topics": []
+    }
+  ],
+  "verification_gates": [
+    {
+      "gate": "schema",
+      "require": [
+        "mode",
+        "date",
+        "date_suffix",
+        "recency_hours",
+        "generated",
+        "articles",
+        "stats"
+      ]
+    },
+    {
+      "gate": "timestamp",
+      "rule": "Each article needs parseable published_at inside the recency window unless explicitly typed market_data."
+    },
+    {
+      "gate": "freshness",
+      "rule": "Reject stale indicators unless clearly historical context from BoltNews archives."
+    },
+    {
+      "gate": "extraction",
+      "rule": "Reject headline-only records; require lead paragraph or extracted_text/body snippet."
+    },
+    {
+      "gate": "relevance",
+      "rule": "Require explicit market impact, signal keywords, or direct macro/asset relevance."
+    },
+    {
+      "gate": "dedupe",
+      "rule": "Dedupe on canonical URL, normalized URL, and normalized headline/source pair."
+    },
+    {
+      "gate": "coverage",
+      "rule": "briefing.md must include required sections for post-market: Closing Market Snapshot, Why Markets Moved, Equity Market Internals, Rates, Macro, and Policy, Earnings and Corporate Developments, Cross-Asset Confirmation or Divergence, Tomorrow Setup, Source Notes and Data Quality"
+    },
+    {
+      "gate": "dashboard",
+      "rule": "Rendered dashboard TOC anchors must resolve and internal links must not 404."
+    }
+  ],
+  "handoff_prompt_template": "You are a BoltNews article discovery subagent.\nMode: {mode}\nTarget date: {target_date}\nWeekday: {weekday}\nRecency window: {window_start_iso} to {window_end_iso} ({timezone})\nLane: {lane}\nAssigned section(s): {sections}\nAssigned search items: {items}\nQuery templates: {query_templates}\nTimeouts: search={search_timeout_seconds}s, extraction={extract_timeout_seconds}s, lane={lane_timeout_seconds}s\n\nRules:\n1. Accept only articles published inside the Wall Street session window, not merely the calendar day.\n2. Every accepted article requires title/headline, url, source, published_at, fetched_at, tickers/topics, assigned_section, summary/lead paragraph, and extracted_text/body excerpt.\n3. Reject missing timestamps unless the record is explicitly live market_data for the market snapshot. For post-market, reject articles before the 9:30 AM ET cash open.\n4. Reject stale, evergreen, quote-page, and headline-only records.\n5. Do not web-search historical context; use prior BoltNews markdown artifacts only.\n6. Prefer Reuters/Bloomberg/WSJ/CNBC/MarketWatch/Yahoo/official releases/central banks/exchanges/regulators.\n7. Return JSON only using the lane output schema.\n",
+  "recency_warning": "AGENT INSTRUCTION: Only accept articles published within the past 8.5 hours (window starts 2026-07-01T09:30:00-04:00). All search queries include 'July 01, 2026' to enforce recency. DO NOT include articles outside that trading-session window, including prior-day rally articles in a post-market recap. Historical context is stored in markdown dumps \u2014 this pipeline is for NEW content only.",
+  "generated": "2026-07-01T18:00:38.566482",
+  "total_tickers": 148,
+  "prioritized_tickers": [
+    "HPQ",
+    "NTAP",
+    "CRM",
+    "ZS",
+    "SNOW",
+    "HPE",
+    "MDB",
+    "OKTA",
+    "MRVL",
+    "PANW",
+    "DELL",
+    "CIEN",
+    "CRWD",
+    "ADSK",
+    "SNPS",
+    "AZO",
+    "COST",
+    "AVGO",
+    "ONDS",
+    "OKLO",
+    "IONQ",
+    "ASTS",
+    "IT",
+    "RDW",
+    "RGTI",
+    "SMCI",
+    "SOFI",
+    "PINS",
+    "LITE",
+    "AAOI",
+    "MSTR",
+    "WDAY",
+    "HUBS",
+    "BE",
+    "COIN",
+    "CRWV",
+    "ON",
+    "WDC",
+    "FSLR",
+    "TEAM",
+    "CRCL",
+    "ALAB",
+    "RDDT",
+    "SNDK",
+    "XPO",
+    "RKLB",
+    "GDDY",
+    "NOW",
+    "UNP",
+    "QCOM"
+  ],
+  "topics": [
+    "Wednesday market close",
+    "FOMC minutes market reaction",
+    "crude inventories oil prices",
+    "earnings after hours Wednesday",
+    "Nasdaq reaction Wednesday",
+    "rates FX credit Wednesday",
+    "S&P 500",
+    "NASDAQ",
+    "Dow Jones",
+    "Russell 2000",
+    "Federal Reserve",
+    "FOMC",
+    "interest rates",
+    "Treasury yields",
+    "US dollar",
+    "DXY",
+    "forex",
+    "currency markets"
+  ],
+  "search_queries": [
+    {
+      "id": "ticker-hpq",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "HPQ",
+      "name": "HP INC",
+      "queries": [
+        "HPQ stock news today July 01, 2026",
+        "HPQ Computer Hardware news July 01, 2026",
+        "HPQ earnings guidance analyst rating July 01, 2026",
+        "HPQ shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-ntap",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "NTAP",
+      "name": "NETAPP INC",
+      "queries": [
+        "NTAP stock news today July 01, 2026",
+        "NTAP Software - Infrastructure news July 01, 2026",
+        "NTAP earnings guidance analyst rating July 01, 2026",
+        "NTAP shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crm",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "CRM",
+      "name": "SALESFORCE INC",
+      "queries": [
+        "CRM stock news today July 01, 2026",
+        "CRM Software - Application news July 01, 2026",
+        "CRM earnings guidance analyst rating July 01, 2026",
+        "CRM shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-zs",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ZS",
+      "name": "ZSCALER INC",
+      "queries": [
+        "ZS stock news today July 01, 2026",
+        "ZS Software - Infrastructure news July 01, 2026",
+        "ZS earnings guidance analyst rating July 01, 2026",
+        "ZS shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-snow",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SNOW",
+      "name": "SNOWFLAKE INC",
+      "queries": [
+        "SNOW stock news today July 01, 2026",
+        "SNOW Software - Application news July 01, 2026",
+        "SNOW earnings guidance analyst rating July 01, 2026",
+        "SNOW shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-hpe",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "HPE",
+      "name": "HEWLETT PACKA",
+      "queries": [
+        "HPE stock news today July 01, 2026",
+        "HPE Communication Equipment news July 01, 2026",
+        "HPE earnings guidance analyst rating July 01, 2026",
+        "HPE shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mdb",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "MDB",
+      "name": "MONGODB INC",
+      "queries": [
+        "MDB stock news today July 01, 2026",
+        "MDB Software - Infrastructure news July 01, 2026",
+        "MDB earnings guidance analyst rating July 01, 2026",
+        "MDB shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-okta",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "OKTA",
+      "name": "OKTA INC",
+      "queries": [
+        "OKTA stock news today July 01, 2026",
+        "OKTA Software - Infrastructure news July 01, 2026",
+        "OKTA earnings guidance analyst rating July 01, 2026",
+        "OKTA shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mrvl",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "MRVL",
+      "name": "MARVELL TECHNOLO",
+      "queries": [
+        "MRVL stock news today July 01, 2026",
+        "MRVL Semiconductors news July 01, 2026",
+        "MRVL earnings guidance analyst rating July 01, 2026",
+        "MRVL shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-panw",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "PANW",
+      "name": "PALO ALTO NETWOR",
+      "queries": [
+        "PANW stock news today July 01, 2026",
+        "PANW Software - Infrastructure news July 01, 2026",
+        "PANW earnings guidance analyst rating July 01, 2026",
+        "PANW shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-dell",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "DELL",
+      "name": "DELL TECHN-C",
+      "queries": [
+        "DELL stock news today July 01, 2026",
+        "DELL Computer Hardware news July 01, 2026",
+        "DELL earnings guidance analyst rating July 01, 2026",
+        "DELL shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cien",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "CIEN",
+      "name": "CIENA CORP",
+      "queries": [
+        "CIEN stock news today July 01, 2026",
+        "CIEN Communication Equipment news July 01, 2026",
+        "CIEN earnings guidance analyst rating July 01, 2026",
+        "CIEN shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crwd",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "CRWD",
+      "name": "CROWDSTRIKE HO-A",
+      "queries": [
+        "CRWD stock news today July 01, 2026",
+        "CRWD Software - Infrastructure news July 01, 2026",
+        "CRWD earnings guidance analyst rating July 01, 2026",
+        "CRWD shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-adsk",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ADSK",
+      "name": "AUTODESK INC",
+      "queries": [
+        "ADSK stock news today July 01, 2026",
+        "ADSK Software - Application news July 01, 2026",
+        "ADSK earnings guidance analyst rating July 01, 2026",
+        "ADSK shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-snps",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SNPS",
+      "name": "SYNOPSYS INC",
+      "queries": [
+        "SNPS stock news today July 01, 2026",
+        "SNPS Software - Infrastructure news July 01, 2026",
+        "SNPS earnings guidance analyst rating July 01, 2026",
+        "SNPS shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-azo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "AZO",
+      "name": "AUTOZONE INC",
+      "queries": [
+        "AZO stock news today July 01, 2026",
+        "AZO Auto Parts news July 01, 2026",
+        "AZO earnings guidance analyst rating July 01, 2026",
+        "AZO shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-cost",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "COST",
+      "name": "COSTCO WHOLESALE",
+      "queries": [
+        "COST stock news today July 01, 2026",
+        "COST Discount Stores news July 01, 2026",
+        "COST earnings guidance analyst rating July 01, 2026",
+        "COST shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-avgo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "AVGO",
+      "name": "BROADCOM INC",
+      "queries": [
+        "AVGO stock news today July 01, 2026",
+        "AVGO Semiconductors news July 01, 2026",
+        "AVGO earnings guidance analyst rating July 01, 2026",
+        "AVGO shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-onds",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ONDS",
+      "name": "ONDAS HOLDINGS I",
+      "queries": [
+        "ONDS stock news today July 01, 2026",
+        "ONDS Communication Equipment news July 01, 2026",
+        "ONDS earnings guidance analyst rating July 01, 2026",
+        "ONDS shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-oklo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "OKLO",
+      "name": "OKLO INC",
+      "queries": [
+        "OKLO stock news today July 01, 2026",
+        "OKLO Utilities - Independent Power Producers news July 01, 2026",
+        "OKLO earnings guidance analyst rating July 01, 2026",
+        "OKLO shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-ionq",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "IONQ",
+      "name": "IONQ INC",
+      "queries": [
+        "IONQ stock news today July 01, 2026",
+        "IONQ Computer Hardware news July 01, 2026",
+        "IONQ earnings guidance analyst rating July 01, 2026",
+        "IONQ shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-asts",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ASTS",
+      "name": "AST SPACEMOBILE",
+      "queries": [
+        "ASTS stock news today July 01, 2026",
+        "ASTS Communication Equipment news July 01, 2026",
+        "ASTS earnings guidance analyst rating July 01, 2026",
+        "ASTS shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-it",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "IT",
+      "name": "GARTNER INC",
+      "queries": [
+        "IT stock news today July 01, 2026",
+        "IT Information Technology Services news July 01, 2026",
+        "IT earnings guidance analyst rating July 01, 2026",
+        "IT shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rdw",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RDW",
+      "name": "REDWIRE CORP",
+      "queries": [
+        "RDW stock news today July 01, 2026",
+        "RDW Aerospace & Defense news July 01, 2026",
+        "RDW earnings guidance analyst rating July 01, 2026",
+        "RDW shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rgti",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RGTI",
+      "name": "RIGETTI COMPUTIN",
+      "queries": [
+        "RGTI stock news today July 01, 2026",
+        "RGTI Computer Hardware news July 01, 2026",
+        "RGTI earnings guidance analyst rating July 01, 2026",
+        "RGTI shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-smci",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SMCI",
+      "name": "SUPER MICRO COMP",
+      "queries": [
+        "SMCI stock news today July 01, 2026",
+        "SMCI Computer Hardware news July 01, 2026",
+        "SMCI earnings guidance analyst rating July 01, 2026",
+        "SMCI shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sofi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SOFI",
+      "name": "SOFI TECHNOLOGIE",
+      "queries": [
+        "SOFI stock news today July 01, 2026",
+        "SOFI Credit Services news July 01, 2026",
+        "SOFI earnings guidance analyst rating July 01, 2026",
+        "SOFI shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-pins",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "PINS",
+      "name": "PINTEREST INC -A",
+      "queries": [
+        "PINS stock news today July 01, 2026",
+        "PINS Internet Content & Information news July 01, 2026",
+        "PINS earnings guidance analyst rating July 01, 2026",
+        "PINS shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-lite",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "LITE",
+      "name": "LUMENTUM HOL",
+      "queries": [
+        "LITE stock news today July 01, 2026",
+        "LITE Communication Equipment news July 01, 2026",
+        "LITE earnings guidance analyst rating July 01, 2026",
+        "LITE shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-aaoi",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "AAOI",
+      "name": "APPLIED OPTOELEC",
+      "queries": [
+        "AAOI stock news today July 01, 2026",
+        "AAOI Communication Equipment news July 01, 2026",
+        "AAOI earnings guidance analyst rating July 01, 2026",
+        "AAOI shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-mstr",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "MSTR",
+      "name": "STRATEGY INC",
+      "queries": [
+        "MSTR stock news today July 01, 2026",
+        "MSTR Software - Application news July 01, 2026",
+        "MSTR earnings guidance analyst rating July 01, 2026",
+        "MSTR shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-wday",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "WDAY",
+      "name": "WORKDAY INC-A",
+      "queries": [
+        "WDAY stock news today July 01, 2026",
+        "WDAY Software - Application news July 01, 2026",
+        "WDAY earnings guidance analyst rating July 01, 2026",
+        "WDAY shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-hubs",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "HUBS",
+      "name": "HUBSPOT INC",
+      "queries": [
+        "HUBS stock news today July 01, 2026",
+        "HUBS Software - Application news July 01, 2026",
+        "HUBS earnings guidance analyst rating July 01, 2026",
+        "HUBS shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-be",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "BE",
+      "name": "BLOOM ENERGY C-A",
+      "queries": [
+        "BE stock news today July 01, 2026",
+        "BE Electrical Equipment & Parts news July 01, 2026",
+        "BE earnings guidance analyst rating July 01, 2026",
+        "BE shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-coin",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "COIN",
+      "name": "COINBASE GLOBA-A",
+      "queries": [
+        "COIN stock news today July 01, 2026",
+        "COIN Financial Data & Stock Exchanges news July 01, 2026",
+        "COIN earnings guidance analyst rating July 01, 2026",
+        "COIN shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crwv",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "CRWV",
+      "name": "COREWEAVE I-CL A",
+      "queries": [
+        "CRWV stock news today July 01, 2026",
+        "CRWV Software - Infrastructure news July 01, 2026",
+        "CRWV earnings guidance analyst rating July 01, 2026",
+        "CRWV shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-on",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ON",
+      "name": "ON SEMICONDUCTOR",
+      "queries": [
+        "ON stock news today July 01, 2026",
+        "ON Semiconductors news July 01, 2026",
+        "ON earnings guidance analyst rating July 01, 2026",
+        "ON shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-wdc",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "WDC",
+      "name": "WESTERN DIGITAL",
+      "queries": [
+        "WDC stock news today July 01, 2026",
+        "WDC Computer Hardware news July 01, 2026",
+        "WDC earnings guidance analyst rating July 01, 2026",
+        "WDC shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-fslr",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "FSLR",
+      "name": "FIRST SOLAR INC",
+      "queries": [
+        "FSLR stock news today July 01, 2026",
+        "FSLR Solar news July 01, 2026",
+        "FSLR earnings guidance analyst rating July 01, 2026",
+        "FSLR shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-team",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "TEAM",
+      "name": "ATLASSIAN CORP-A",
+      "queries": [
+        "TEAM stock news today July 01, 2026",
+        "TEAM Software - Application news July 01, 2026",
+        "TEAM earnings guidance analyst rating July 01, 2026",
+        "TEAM shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-crcl",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "CRCL",
+      "name": "CIRCLE INTERNET",
+      "queries": [
+        "CRCL stock news today July 01, 2026",
+        "CRCL Capital Markets news July 01, 2026",
+        "CRCL earnings guidance analyst rating July 01, 2026",
+        "CRCL shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-alab",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "ALAB",
+      "name": "ASTERA LABS INC",
+      "queries": [
+        "ALAB stock news today July 01, 2026",
+        "ALAB Semiconductors news July 01, 2026",
+        "ALAB earnings guidance analyst rating July 01, 2026",
+        "ALAB shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rddt",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RDDT",
+      "name": "REDDIT INC-A",
+      "queries": [
+        "RDDT stock news today July 01, 2026",
+        "RDDT Internet Content & Information news July 01, 2026",
+        "RDDT earnings guidance analyst rating July 01, 2026",
+        "RDDT shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-sndk",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "SNDK",
+      "name": "SANDISK CORP",
+      "queries": [
+        "SNDK stock news today July 01, 2026",
+        "SNDK Computer Hardware news July 01, 2026",
+        "SNDK earnings guidance analyst rating July 01, 2026",
+        "SNDK shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-xpo",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "XPO",
+      "name": "XPO INC",
+      "queries": [
+        "XPO stock news today July 01, 2026",
+        "XPO Trucking news July 01, 2026",
+        "XPO earnings guidance analyst rating July 01, 2026",
+        "XPO shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-rklb",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "RKLB",
+      "name": "ROCKET LAB CORP",
+      "queries": [
+        "RKLB stock news today July 01, 2026",
+        "RKLB Aerospace & Defense news July 01, 2026",
+        "RKLB earnings guidance analyst rating July 01, 2026",
+        "RKLB shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-gddy",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "GDDY",
+      "name": "GODADDY INC-A",
+      "queries": [
+        "GDDY stock news today July 01, 2026",
+        "GDDY Software - Infrastructure news July 01, 2026",
+        "GDDY earnings guidance analyst rating July 01, 2026",
+        "GDDY shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-now",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "NOW",
+      "name": "SERVICENOW INC",
+      "queries": [
+        "NOW stock news today July 01, 2026",
+        "NOW Software - Application news July 01, 2026",
+        "NOW earnings guidance analyst rating July 01, 2026",
+        "NOW shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-unp",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "UNP",
+      "name": "UNION PAC CORP",
+      "queries": [
+        "UNP stock news today July 01, 2026",
+        "UNP Railroads news July 01, 2026",
+        "UNP earnings guidance analyst rating July 01, 2026",
+        "UNP shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "ticker-qcom",
+      "type": "ticker",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Earnings and Corporate Developments",
+        "Equity Market Internals"
+      ],
+      "ticker": "QCOM",
+      "name": "QUALCOMM INC",
+      "queries": [
+        "QCOM stock news today July 01, 2026",
+        "QCOM Semiconductors news July 01, 2026",
+        "QCOM earnings guidance analyst rating July 01, 2026",
+        "QCOM shares premarket after hours July 01, 2026"
+      ],
+      "max_results": 3,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true
+    },
+    {
+      "id": "topic-001",
+      "type": "topic",
+      "topic": "Wednesday market close",
+      "lane": "market-snapshot",
+      "priority": 1,
+      "expected_sections": [
+        "Closing Market Snapshot"
+      ],
+      "queries": [
+        "Wednesday market close July 01, 2026",
+        "Wednesday market close markets today July 01, 2026",
+        "Wednesday market close Reuters Bloomberg CNBC July 01, 2026",
+        "Wednesday market close stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-002",
+      "type": "topic",
+      "topic": "FOMC minutes market reaction",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "FOMC minutes market reaction July 01, 2026",
+        "FOMC minutes market reaction markets today July 01, 2026",
+        "FOMC minutes market reaction Reuters Bloomberg CNBC July 01, 2026",
+        "FOMC minutes market reaction stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-003",
+      "type": "topic",
+      "topic": "crude inventories oil prices",
+      "lane": "commodities-credit-vol",
+      "priority": 1,
+      "expected_sections": [
+        "Cross-Asset Confirmation or Divergence"
+      ],
+      "queries": [
+        "crude inventories oil prices July 01, 2026",
+        "crude inventories oil prices markets today July 01, 2026",
+        "crude inventories oil prices Reuters Bloomberg CNBC July 01, 2026",
+        "crude inventories oil prices stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-004",
+      "type": "topic",
+      "topic": "earnings after hours Wednesday",
+      "lane": "equities-earnings-single-stocks",
+      "priority": 1,
+      "expected_sections": [
+        "Equity Market Internals",
+        "Earnings and Corporate Developments"
+      ],
+      "queries": [
+        "earnings after hours Wednesday July 01, 2026",
+        "earnings after hours Wednesday markets today July 01, 2026",
+        "earnings after hours Wednesday Reuters Bloomberg CNBC July 01, 2026",
+        "earnings after hours Wednesday stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-005",
+      "type": "topic",
+      "topic": "Nasdaq reaction Wednesday",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "Nasdaq reaction Wednesday July 01, 2026",
+        "Nasdaq reaction Wednesday markets today July 01, 2026",
+        "Nasdaq reaction Wednesday Reuters Bloomberg CNBC July 01, 2026",
+        "Nasdaq reaction Wednesday stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-006",
+      "type": "topic",
+      "topic": "rates FX credit Wednesday",
+      "lane": "macro-policy-rates-fx",
+      "priority": 1,
+      "expected_sections": [
+        "Rates, Macro, and Policy"
+      ],
+      "queries": [
+        "rates FX credit Wednesday July 01, 2026",
+        "rates FX credit Wednesday markets today July 01, 2026",
+        "rates FX credit Wednesday Reuters Bloomberg CNBC July 01, 2026",
+        "rates FX credit Wednesday stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-007",
+      "type": "topic",
+      "topic": "S&P 500",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "S&P 500 July 01, 2026",
+        "S&P 500 markets today July 01, 2026",
+        "S&P 500 Reuters Bloomberg CNBC July 01, 2026",
+        "S&P 500 stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-008",
+      "type": "topic",
+      "topic": "NASDAQ",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "NASDAQ July 01, 2026",
+        "NASDAQ markets today July 01, 2026",
+        "NASDAQ Reuters Bloomberg CNBC July 01, 2026",
+        "NASDAQ stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-009",
+      "type": "topic",
+      "topic": "Dow Jones",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "Dow Jones July 01, 2026",
+        "Dow Jones markets today July 01, 2026",
+        "Dow Jones Reuters Bloomberg CNBC July 01, 2026",
+        "Dow Jones stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-010",
+      "type": "topic",
+      "topic": "Russell 2000",
+      "lane": "overnight-or-session-headlines",
+      "priority": 1,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "Russell 2000 July 01, 2026",
+        "Russell 2000 markets today July 01, 2026",
+        "Russell 2000 Reuters Bloomberg CNBC July 01, 2026",
+        "Russell 2000 stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-011",
+      "type": "topic",
+      "topic": "Federal Reserve",
+      "lane": "macro-policy-rates-fx",
+      "priority": 2,
+      "expected_sections": [
+        "Rates, Macro, and Policy"
+      ],
+      "queries": [
+        "Federal Reserve July 01, 2026",
+        "Federal Reserve markets today July 01, 2026",
+        "Federal Reserve Reuters Bloomberg CNBC July 01, 2026",
+        "Federal Reserve stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-012",
+      "type": "topic",
+      "topic": "FOMC",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "FOMC July 01, 2026",
+        "FOMC markets today July 01, 2026",
+        "FOMC Reuters Bloomberg CNBC July 01, 2026",
+        "FOMC stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-013",
+      "type": "topic",
+      "topic": "interest rates",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "interest rates July 01, 2026",
+        "interest rates markets today July 01, 2026",
+        "interest rates Reuters Bloomberg CNBC July 01, 2026",
+        "interest rates stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-014",
+      "type": "topic",
+      "topic": "Treasury yields",
+      "lane": "macro-policy-rates-fx",
+      "priority": 2,
+      "expected_sections": [
+        "Rates, Macro, and Policy"
+      ],
+      "queries": [
+        "Treasury yields July 01, 2026",
+        "Treasury yields markets today July 01, 2026",
+        "Treasury yields Reuters Bloomberg CNBC July 01, 2026",
+        "Treasury yields stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-015",
+      "type": "topic",
+      "topic": "US dollar",
+      "lane": "macro-policy-rates-fx",
+      "priority": 2,
+      "expected_sections": [
+        "Rates, Macro, and Policy"
+      ],
+      "queries": [
+        "US dollar July 01, 2026",
+        "US dollar markets today July 01, 2026",
+        "US dollar Reuters Bloomberg CNBC July 01, 2026",
+        "US dollar stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-016",
+      "type": "topic",
+      "topic": "DXY",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "DXY July 01, 2026",
+        "DXY markets today July 01, 2026",
+        "DXY Reuters Bloomberg CNBC July 01, 2026",
+        "DXY stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-017",
+      "type": "topic",
+      "topic": "forex",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "forex July 01, 2026",
+        "forex markets today July 01, 2026",
+        "forex Reuters Bloomberg CNBC July 01, 2026",
+        "forex stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    },
+    {
+      "id": "topic-018",
+      "type": "topic",
+      "topic": "currency markets",
+      "lane": "overnight-or-session-headlines",
+      "priority": 2,
+      "expected_sections": [
+        "Why Markets Moved"
+      ],
+      "queries": [
+        "currency markets July 01, 2026",
+        "currency markets markets today July 01, 2026",
+        "currency markets Reuters Bloomberg CNBC July 01, 2026",
+        "currency markets stocks bonds yields July 01, 2026"
+      ],
+      "expected_source_classes": [
+        "newswire",
+        "market_data",
+        "official",
+        "analysis"
+      ],
+      "max_results": 5,
+      "timeout_seconds": 45,
+      "requires_extraction": true,
+      "freshness_required": true,
+      "article_acceptance": {
+        "require_published_at": true,
+        "max_age_hours": 8.5,
+        "window_start_iso": "2026-07-01T09:30:00-04:00",
+        "window_end_iso": "2026-07-01T18:00:00-04:00",
+        "require_market_relevance": true,
+        "reject_summary_only": true
+      }
+    }
+  ]
+}

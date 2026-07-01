@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Post-Market | 2026-07-01</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Post-Market</span></h1>
+    <div class="subtitle">2026-07-01 &middot; 16 articles &middot; 4 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#closing-market-snapshot">Closing Market Snapshot</a><a class="toc-link toc-level-2" href="#why-markets-moved">Why Markets Moved</a><a class="toc-link toc-level-3" href="#1-semiconductor-profit-taking-after-record-h1-primary-driver">1. Semiconductor Profit-Taking After Record H1 (Primary Driver)</a><a class="toc-link toc-level-3" href="#2-meta-s-cloud-pivot-offsets-broader-tech-weakness-9">2. Meta&#x27;s Cloud Pivot Offsets Broader Tech Weakness (+9%)</a><a class="toc-link toc-level-3" href="#3-warsh-sticks-to-2-target-no-forward-guidance">3. Warsh Sticks to 2% Target, No Forward Guidance</a><a class="toc-link toc-level-3" href="#4-soft-adp-payrolls-ism-miss-keep-doves-alive">4. Soft ADP Payrolls + ISM Miss Keep Doves Alive</a><a class="toc-link toc-level-3" href="#5-iran-talks-progress-oil-slides-to-4-month-lows">5. Iran Talks Progress — Oil Slides to 4-Month Lows</a><a class="toc-link toc-level-2" href="#equity-market-internals">Equity Market Internals</a><a class="toc-link toc-level-2" href="#rates-macro-and-policy">Rates, Macro, and Policy</a><a class="toc-link toc-level-2" href="#earnings-and-corporate-developments">Earnings and Corporate Developments</a><a class="toc-link toc-level-3" href="#post-close-after-hours-earnings">Post-Close / After-Hours Earnings:</a><a class="toc-link toc-level-3" href="#session-movers-on-earnings-corporate-news">Session Movers on Earnings/Corporate News:</a><a class="toc-link toc-level-3" href="#analyst-actions">Analyst Actions:</a><a class="toc-link toc-level-3" href="#m-a-and-corporate-actions">M&amp;A and Corporate Actions:</a><a class="toc-link toc-level-2" href="#cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</a><a class="toc-link toc-level-2" href="#tomorrow-setup">Tomorrow Setup</a><a class="toc-link toc-level-3" href="#overnight-earnings-events">Overnight Earnings/Events:</a><a class="toc-link toc-level-3" href="#thursday-s-macro-calendar-july-2-2026">Thursday&#x27;s Macro Calendar (July 2, 2026):</a><a class="toc-link toc-level-3" href="#key-levels-to-watch">Key Levels to Watch:</a><a class="toc-link toc-level-3" href="#bull-base-bear">Bull / Base / Bear:</a><a class="toc-link toc-level-3" href="#watchlist">Watchlist:</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-post-market-briefing-july-1-2026">BoltNews Post-Market Briefing — July 1, 2026</h1>
+<h2 id="closing-market-snapshot">Closing Market Snapshot</h2>
+<div class="table-wrapper"><table><thead><tr><th>Asset</th><th>Close</th><th>Change</th><th>% Change</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,483.23</td><td>−16.13</td><td>−0.22%</td></tr><tr><td>Nasdaq Composite</td><td>26,040.03</td><td>−173.69</td><td>−0.66%</td></tr><tr><td>Dow Jones Industrial</td><td>52,305.24</td><td>−13.96</td><td>−0.03%</td></tr><tr><td>Russell 2000</td><td>3,012.59</td><td>−11.78</td><td>−0.39%</td></tr><tr><td>VIX</td><td>16.59</td><td>+0.14</td><td>+0.85%</td></tr><tr><td>SPY</td><td>745.76</td><td>−1.01</td><td>−0.14%</td></tr><tr><td>QQQ</td><td>725.17</td><td>−11.23</td><td>−1.53%</td></tr><tr><td>IWM</td><td>299.32</td><td>−1.13</td><td>−0.38%</td></tr><tr><td>XLK (Technology)</td><td>185.62</td><td>−4.90</td><td>−2.57%</td></tr><tr><td>XLE (Energy)</td><td>52.81</td><td>−0.30</td><td>−0.56%</td></tr></tbody></table></div>
+<p><strong>Market direction: lower.</strong> All four major indices closed in the red, led by the Nasdaq (−0.66%) as semiconductors and technology sold off sharply. The Dow touched an intraday all-time high of 52,742.66 before fading to a marginal loss. Breadth was positive — 65.7% of NYSE issues advanced — but mega-cap tech weight dragged the cap-weighted indices lower. The Russell 2000 also hit an intraday all-time high before reversing.</p>
+<p><em>Source: Yahoo Finance chart API (secondary), cross-checked against CNBC, TheStreet, and 24/7 Wall St closing reports. All prices as of the 4:00 PM ET close on July 1, 2026.</em></p>
+<h2 id="why-markets-moved">Why Markets Moved</h2>
+<h3 id="1-semiconductor-profit-taking-after-record-h1-primary-driver">1. Semiconductor Profit-Taking After Record H1 (Primary Driver)</h3>
+<p>The Philadelphia Semiconductor Index (SOX) fell 3.6%, triggering a broad tech selloff. After chip stocks surged ~80% in H1 2026, investors took profits on the first trading day of Q3. Worst decliners: Micron (MU) −10.6%, Corning (GLW) −13.6%, KLA Corp (KLAC) −11.8%, Teradyne (TER) −11.7%, Applied Materials (AMAT) −10.0%, and Sandisk (SNDK) &gt;−10%. Nvidia (NVDA) fell ~1%, Broadcom (AVGO) −2%. The selloff was broad-based across memory, equipment, and AI-exposed names — reflecting AI capex sustainability concerns and stretched valuations, not a single-stock catalyst.</p>
+<p><em>Source: ROIC.ai, CNBC, 24/7 Wall St. July 1, 2026 session.</em></p>
+<h3 id="2-meta-s-cloud-pivot-offsets-broader-tech-weakness-9">2. Meta's Cloud Pivot Offsets Broader Tech Weakness (+9%)</h3>
+<p>Meta Platforms (META) surged ~9% to $612.91 after Bloomberg and CNBC reported the company is developing a cloud infrastructure business to sell excess AI computing power and models. The "Meta Compute" initiative would position Meta against AWS, Azure, and Google Cloud, reframing its massive AI capex as a potential revenue stream rather than pure cost. This single stock provided the bulk of positive cap-weight support in an otherwise down day.</p>
+<p><em>Source: Bloomberg, CNBC, Reuters. July 1, 2026.</em></p>
+<h3 id="3-warsh-sticks-to-2-target-no-forward-guidance">3. Warsh Sticks to 2% Target, No Forward Guidance</h3>
+<p>Fed Chair Kevin Warsh, speaking at the ECB Forum in Sintra, Portugal, firmly reaffirmed the 2% inflation target, saying the Fed would "disappoint anyone who expects loose monetary policy." He declined to offer forward guidance, reiterated that decisions would be made meeting-by-meeting, and confirmed the dot plot stays for now. However, he acknowledged inflation risks and expectations have eased in recent weeks, which supported gold and tempered rate-hike fears. Markets priced a strong chance of a September rate hike following robust JOLTS data earlier in the week.</p>
+<p><em>Source: Economic Times, Schwab, TheStreet. ECB Forum, July 1, 2026.</em></p>
+<h3 id="4-soft-adp-payrolls-ism-miss-keep-doves-alive">4. Soft ADP Payrolls + ISM Miss Keep Doves Alive</h3>
+<p>ADP private payrolls rose only 98,000 in June vs. 110,000 consensus (down from 122,000 May). ISM Manufacturing PMI fell to 53.3 vs. 53.9 expected (from 54.0 prior) — sixth straight expansion month but decelerating. The dual misses kept rate-cut hopes alive and drove gold &gt;2% higher to $4,071/oz, but equity markets couldn't hold early gains as Warsh's hawkish tone offset the soft data.</p>
+<p><em>Source: ADP, ISM via Morningstar/PR Newswire, Seeking Alpha. July 1, 2026.</em></p>
+<h3 id="5-iran-talks-progress-oil-slides-to-4-month-lows">5. Iran Talks Progress — Oil Slides to 4-Month Lows</h3>
+<p>Brent crude fell 1.89% to $71.57/bbl, WTI fell 1.32% to $68.58/bbl — both four-month lows. US-Iran indirect talks in Doha (mediated by Qatar and Pakistan) showed progress; VP Vance said the U.S. "has all the cards." A cargo ship incident in the Strait of Hormuz initially spiked fears but was resolved, and shipping lanes are improving. EIA reported crude stocks fell 3.8M barrels (smaller draw than expected). The geopolitical risk premium that supported oil through H1 is unwinding.</p>
+<p><em>Source: Economic Times, Trading Pedia, EIA. July 1, 2026.</em></p>
+<h2 id="equity-market-internals">Equity Market Internals</h2>
+<p class="bold-line"><strong>Sector Performance:</strong></p>
+<ul><li>Technology (XLK) was the clear laggard at −2.57%, driven by the semiconductor rout</li><li>Energy (XLE) fell −0.56% alongside oil's decline</li><li>Communication Services and Financials provided the offset, keeping the Dow nearly flat</li><li>65.7% of NYSE issues advanced — a sharp contrast to cap-weighted index losses, confirming the "Great Rotation" from mega-cap tech into broader market names</li></ul>
+<p class="bold-line"><strong>Breadth &amp; Factors:</strong></p>
+<ul><li>Advancers outnumbered decliners despite index losses</li><li>Russell 2000 hit an intraday all-time high (+0.4% at peak) before fading, up ~22% H1 — best first half since 1991</li><li>Mega-cap contribution: META +9%, CRM +4%, NOW +5% on Guggenheim upgrades; NVDA −1%, AVGO −2% weighed</li><li>Value/cyclical rotation: Dow components CAT −5%, WMT −5% (6th straight down day, &gt;20% below May high) were notable weak spots outside tech</li></ul>
+<p class="bold-line"><strong>Notable Movers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Gainers</th><th>Ticker</th><th>Change</th></tr></thead><tbody><tr><td>Meta Platforms</td><td>META</td><td>+8.8%</td></tr><tr><td>Coinbase</td><td>COIN</td><td>+8.9%</td></tr><tr><td>General Mills</td><td>GIS</td><td>+8.5%</td></tr><tr><td>Palantir</td><td>PLTR</td><td>+7.8%</td></tr><tr><td>Elevance Health</td><td>ELV</td><td>+7.6%</td></tr><tr><td>Progress Software</td><td>PRGS</td><td>+18%</td></tr></tbody></table></div>
+<div class="table-wrapper"><table><thead><tr><th>Losers</th><th>Ticker</th><th>Change</th></tr></thead><tbody><tr><td>Corning</td><td>GLW</td><td>−13.6%</td></tr><tr><td>KLA Corp</td><td>KLAC</td><td>−11.8%</td></tr><tr><td>Teradyne</td><td>TER</td><td>−11.7%</td></tr><tr><td>Micron</td><td>MU</td><td>−10.6%</td></tr><tr><td>Applied Materials</td><td>AMAT</td><td>−10.0%</td></tr><tr><td>Shutterstock</td><td>SSTK</td><td>−28%</td></tr><tr><td>CoreWeave</td><td>CRWV</td><td>−12.8%</td></tr><tr><td>Nebius</td><td>NBIS</td><td>−13.6%</td></tr></tbody></table></div>
+<p><em>Source: CNBC, 24/7 Wall St, TheStreet. July 1, 2026 session.</em></p>
+<h2 id="rates-macro-and-policy">Rates, Macro, and Policy</h2>
+<p class="bold-line"><strong>Treasury Yields:</strong></p>
+<ul><li>10-year yield: ~4.47%, up ~4 bps on the day (intraday high 4.50%, eased after Warsh comments)</li><li>2-year yield: ~4.14% (based on prior close context from primerates.com)</li><li>Curve (2s10s): approximately +33 bps, modestly steepening</li></ul>
+<p class="bold-line"><strong>Federal Reserve:</strong></p>
+<ul><li>Fed Chair Warsh (ECB Sintra Forum): stuck firmly to 2% inflation target; no forward guidance; decisions meeting-by-meeting; dot plot stays for near term; plans to incorporate real-time data within 9-12 months; balance sheet changes to be gradual</li><li>Implied probability of a September rate hike remains elevated after strong JOLTS data (7.6M openings, ratio 1.03 openings per unemployed)</li><li>Next FOMC meeting: July 28-29</li></ul>
+<p class="bold-line"><strong>Economic Data (July 1):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Release</th><th>Actual</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>ADP Employment Change (Jun)</td><td>+98K</td><td>+110K</td><td>+122K</td></tr><tr><td>ISM Manufacturing PMI (Jun)</td><td>53.3</td><td>53.9</td><td>54.0</td></tr><tr><td>ISM Prices Paid (Jun)</td><td>52.1</td><td>—</td><td>55.6</td></tr><tr><td>ISM Employment (Jun)</td><td>50.8</td><td>—</td><td>51.1</td></tr><tr><td>Challenger Job Cuts (Jun)</td><td>46K</td><td>—</td><td>98K (May)</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Upcoming:</strong></p>
+<ul><li>June Nonfarm Payrolls: Thursday July 2 (a day early due to July 4 holiday); consensus 110K vs. 172K prior</li><li>Markets closed Friday July 3 for Independence Day (observed)</li></ul>
+<p><em>Sources: ADP, ISM via Morningstar/PR Newswire, Schwab, Federal Reserve H.15, FRED, CME FedWatch. July 1, 2026.</em></p>
+<h2 id="earnings-and-corporate-developments">Earnings and Corporate Developments</h2>
+<h3 id="post-close-after-hours-earnings">Post-Close / After-Hours Earnings:</h3>
+<ul><li><strong>Constellation Brands (STZ):</strong> Q1 FY2027 adj. EPS $3.43 vs. $3.20 est.; revenue $2.43B vs. $2.39B est. (down 3.3% YoY but beat). Stock +5.1% after-hours to $143.59.</li></ul>
+<p>  <em>Source: Tickeron, Public.com, MarketBeat. July 1, 2026.</em></p>
+<h3 id="session-movers-on-earnings-corporate-news">Session Movers on Earnings/Corporate News:</h3>
+<ul><li><strong>General Mills (GIS):</strong> +8.5% on Q4 beat: adj. EPS $0.95 vs. $0.80 est.; announced $3B cost-savings plan through FY2030</li><li><strong>Progress Software (PRGS):</strong> +18% on Q2 beat and strong guidance</li><li><strong>Nike (NKE):</strong> Fell despite Q4 beats (EPS $0.20 adj. vs. $0.13, revenue $10.97B vs. $10.86B). Greater China sales −12% to $1.30B. Management warned of persistent sales weakness. Multiple analysts neutral</li><li><strong>Shutterstock (SSTK):</strong> −28% after Getty Images called off $3.7B merger due to UK CMA demands</li></ul>
+<h3 id="analyst-actions">Analyst Actions:</h3>
+<ul><li><strong>CRM, NOW:</strong> Upgraded to Buy by Guggenheim; AI seen as opportunity, not "death knell." CRM +4%, NOW +5%</li><li><strong>LMT:</strong> Upgraded to Buy by Citi, PT $582 (14% upside)</li><li><strong>SPCX (SpaceX):</strong> Wedbush initiated Outperform, $190 PT. "One of the best AI plays in the market"</li><li><strong>NVDA:</strong> Evercore reiterated Outperform, calling it "best idea" on parallel computing shift</li><li><strong>BIRK:</strong> Raymond James initiated Buy, $52 PT</li></ul>
+<h3 id="m-a-and-corporate-actions">M&amp;A and Corporate Actions:</h3>
+<ul><li><strong>Kroger (KR):</strong> −2.8% on $1.65B Giant Eagle acquisition ($1.25B cash + $400M liabilities)</li><li><strong>Alcoa (AA):</strong> −5% on $4.1B South32 asset acquisition</li><li><strong>GM (GM):</strong> Q2 US sales −4.2% YoY; H1 −6.8%; EV demand weaker than expected</li><li><strong>Walmart (WMT):</strong> −5.3%, sixth straight down day, now &gt;20% below May all-time high</li><li><strong>Bending Spoons (BSP):</strong> +42% in Nasdaq debut (IPO $29, opened $31)</li></ul>
+<p><em>Sources: CNBC, TheStreet, 24/7 Wall St, Schwab. July 1, 2026.</em></p>
+<h2 id="cross-asset-confirmation-or-divergence">Cross-Asset Confirmation or Divergence</h2>
+<p><strong>Equities vs. Rates:</strong> Divergent. Equities fell modestly while yields rose ~4 bps — a classic "good news is bad news" reaction to strong prior-session JOLTS data keeping rate-hike expectations alive. The 10Y at 4.47% remains elevated but below the recent 4.50% ceiling.</p>
+<p><strong>Equities vs. Commodities:</strong> Mixed. Oil fell to four-month lows (WTI $68.58, Brent $71.57) as Iran geopolitical premium unwound — normally supportive for equities, but energy sector weakness (XLE −0.56%) dragged. Gold surged +2% to $4,071 on soft ADP/ISM data, signaling the market still sees a credible dovish path despite Warsh's hawkish rhetoric. Gold's rally while equities fell is a mild risk-off signal.</p>
+<p><strong>Tech vs. Broad Market:</strong> Sharp divergence. The Nasdaq fell 0.66% and QQQ dropped 1.53% while 65.7% of NYSE issues advanced. The "Great Rotation" from mega-cap tech/AI into value, financials, and small caps continued. Russell 2000's intraday all-time high confirms broadening participation.</p>
+<p><strong>Dollar (DXY):</strong> Rose modestly ahead of Friday's jobs report. Yen recovered from 40-year lows.</p>
+<p><strong>Volatility:</strong> VIX at 16.59 (+0.85%) — elevated but not alarming. Opened at 17.11, hit 17.30 early, then faded to 15.97 before settling. The early spike on tech selling was absorbed.</p>
+<p><strong>Bottom line:</strong> This is a rotation, not a rout. Breadth is healthy, small caps hit records, and the selling is concentrated in the most overbought segment (semiconductors). Gold's rally alongside a higher dollar and modestly higher yields suggests the market is hedging Friday's payrolls risk.</p>
+<p><em>Sources: Market snapshot (Yahoo Finance, cross-checked against CNBC/TheStreet/Zacks), GoldSilver.com, Brisk Markets, Trading Pedia. July 1, 2026.</em></p>
+<h2 id="tomorrow-setup">Tomorrow Setup</h2>
+<h3 id="overnight-earnings-events">Overnight Earnings/Events:</h3>
+<ul><li><strong>Constellation Brands (STZ)</strong> earnings call Wednesday — digesting Q1 FY2027 beat</li><li>No other major after-hours earnings expected</li></ul>
+<h3 id="thursday-s-macro-calendar-july-2-2026">Thursday's Macro Calendar (July 2, 2026):</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time (ET)</th><th>Release</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>8:30 AM</td><td>June Nonfarm Payrolls</td><td>+110K</td><td>+172K</td></tr><tr><td>8:30 AM</td><td>June Unemployment Rate</td><td>4.1%</td><td>4.1%</td></tr><tr><td>8:30 AM</td><td>June Avg Hourly Earnings (YoY)</td><td>4.0%</td><td>4.1%</td></tr><tr><td>8:30 AM</td><td>Weekly Jobless Claims</td><td>240K</td><td>235K</td></tr><tr><td>8:30 AM</td><td>May Trade Balance</td><td>−$72B</td><td>−$69B</td></tr><tr><td>10:00 AM</td><td>May Factory Orders</td><td>+0.5%</td><td>+0.4%</td></tr></tbody></table></div>
+<p><em>Note: Payrolls released Thursday due to Friday's Independence Day market closure. Markets are closed Friday July 3.</em></p>
+<h3 id="key-levels-to-watch">Key Levels to Watch:</h3>
+<ul><li><strong>S&amp;P 500:</strong> Support 7,450 (today's low 7,449.63), resistance 7,522 (today's high). The index is consolidating ~15 points below Tuesday's record close.</li><li><strong>Nasdaq:</strong> Support 25,950, resistance 26,238 (today's high). Semi selling needs to stabilize for a bounce.</li><li><strong>10Y Yield:</strong> 4.50% ceiling held today. A hot payrolls print could break through, triggering broader equity pressure.</li><li><strong>VIX:</strong> 17.30 resistance held. Above 17.50 would signal serious stress.</li><li><strong>Oil:</strong> WTI $68.50 support. Below $67 would confirm the Iran peace trade is fully priced.</li></ul>
+<h3 id="bull-base-bear">Bull / Base / Bear:</h3>
+<ul><li><strong>Bull case:</strong> Payrolls inline or soft → rate cut hopes revive → semis bounce → rotation broadens further</li><li><strong>Base case:</strong> Payrolls ~110K, mixed internals → consolidation continues, rotation persists, Q2 earnings anticipation builds</li><li><strong>Bear case:</strong> Payrolls &gt;150K → September hike odds spike → yields break 4.50% → broad equity selloff into the long weekend</li></ul>
+<h3 id="watchlist">Watchlist:</h3>
+<ul><li>Semiconductor stabilization (SOX, NVDA, MU, AVGO levels)</li><li>Meta follow-through on cloud narrative</li><li>US-Iran talks continue in Doha; any Strait of Hormuz escalation</li><li>USMCA trade deal review — potential tariff re-escalation risk</li></ul>
+<p><em>Economic calendar sources: Schwab, Forex Factory. July 1, 2026.</em></p>
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<p class="bold-line"><strong>Market Data:</strong></p>
+<ul><li>Closing index levels: Yahoo Finance chart API (secondary source), cross-checked against CNBC, TheStreet, 24/7 Wall St, and Zacks closing reports. All four sources agree within rounding error.</li><li>Intraday levels (high/low): Yahoo Finance chart API</li><li>Sector ETFs (XLK, XLE): Yahoo Finance chart API</li><li>S&amp;P 500 close verification: CNBC 7,483.23; 24/7 Wall St 7,491.00 (−0.11%). The slight discrepancy reflects different cut times. Our primary source is Yahoo Finance (7,483.23, −0.22%), which matches the CNBC figure used throughout this briefing.</li></ul>
+<p class="bold-line"><strong>Macro/Policy:</strong></p>
+<ul><li>ADP Employment: ADP National Employment Report, July 1, 2026 (primary). Cross-checked against CNBC, Schwab, TheStreet.</li><li>ISM Manufacturing PMI: ISM via PR Newswire/Morningstar, July 1, 2026 (primary). Actual 53.3 confirmed by Seeking Alpha and Forex Factory.</li><li>Fed Chair Warsh remarks: ECB Forum Sintra coverage via Economic Times, Schwab, CNBC (secondary). No official transcript available at briefing time.</li><li>Treasury yields: FRED GS10 (primary) shows 4.47%; Trading Economics shows 4.46%. Briefing uses the ~4.47% midpoint.</li></ul>
+<p class="bold-line"><strong>Corporate/Earnings:</strong></p>
+<ul><li>STZ Q1 FY2027: Company press release via Tickeron, MarketBeat (secondary). Revenue $2.43B, adj. EPS $3.43. After-hours price via Public.com.</li><li>Meta cloud business: Bloomberg original report, confirmed by CNBC and Reuters (newswire sources — secondary but reliable).</li><li>NKE, GIS, SSTK earnings: CNBC and 24/7 Wall St wrap (secondary).</li></ul>
+<p class="bold-line"><strong>Commodities:</strong></p>
+<ul><li>WTI/Brent settlement: Economic Times (Brent $71.57, WTI $68.58). Cross-checked against Trading Pedia Asian session levels and Schwab early levels confirm directional move.</li><li>Gold spot: Brisk Markets ($4,071), GoldSilver (~$4,040 earlier), Trading Economics ($4,031). Some time-of-day variation. Briefing uses $4,071 (+2%) which reflects the full-session rally.</li><li>EIA crude inventories: Economic Times (−3.8M barrels to 408.4M). API pre-EIA: 6.1M barrel draw per Trading Pedia.</li></ul>
+<p class="bold-line"><strong>Data Quality Assessment:</strong></p>
+<ul><li><strong>High confidence:</strong> Index closes, ADP, ISM, major stock moves (META, MU, GLW, etc.), oil settlement, STZ after-hours</li><li><strong>Moderate confidence:</strong> Gold exact settlement (multiple sources vary by $20-40); precise Treasury yield tick (4.46-4.48% range across sources); FX levels (DXY direction known, exact level not independently verified)</li><li><strong>Data unavailable:</strong> 2Y Treasury yield (July 1 close not independently sourced — prior close 4.14% per primerates.com used as approximation); credit spreads; crypto exact settlement prices; full breadth statistics beyond headline NYSE advancer percentage</li></ul>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnbc.com/2026/06/30/stock-market-today-live-updates.html" target="_blank" rel="noopener">Dow closes little changed after touching record; Nasdaq slides to start July</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-july-1-2026-nasdaq-futures-slip-after-strongest-quarter-since-2020" target="_blank" rel="noopener">Stock Market Today (July 1, 2026): Dow, S&amp;P 500 rise to start Q3 2026</a>
+<a class="source-link" href="https://www.zacks.com/stock/news/2946056/stock-market-news-for-july-1-2026" target="_blank" rel="noopener">Stock Market News for July 1, 2026</a>
+<a class="source-link" href="https://economictimes.indiatimes.com/markets/us-stocks/news/dow-jones-stock-market-live-updates-nasdaq-sp-500-us-iran-israel-war-hormuz-deal-brent-crude-oil-earnings-forecast-nike-shutterstock-oklo-stock-price-news-1-july-2026/liveblog/132115120.cms" target="_blank" rel="noopener">S&amp;P 500, Nasdaq edge lower as tech shares slide</a>
+<a class="source-link" href="https://247wallst.com/investing/2026/07/01/stock-market-live-july-1-2026-sp-500-spy-lower-as-investors-wait-on-the-fed-and-fresh-economic-data/" target="_blank" rel="noopener">Stock Market Live July 1, 2026: S&amp;P 500 Lower as Investors Wait on the Fed</a>
+<a class="source-link" href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank" rel="noopener">Stocks Lower Early as Focus Turns to Warsh</a>
+<a class="source-link" href="https://www.roic.ai/news/chip-stocks-slide-as-semiconductor-index-tumbles-07-01-2026" target="_blank" rel="noopener">Chip Stocks Slide as Semiconductor Index Tumbles</a>
+<a class="source-link" href="https://www.bloomberg.com/news/articles/2026-07-01/meta-is-building-a-cloud-business-to-sell-excess-ai-compute" target="_blank" rel="noopener">Meta Is Planning a Cloud Business to Sell AI Computing Power</a>
+<a class="source-link" href="https://www.reuters.com/business/meta-sell-excess-ai-computing-capacity-via-cloud-business-bloomberg-news-reports-2026-07-01/" target="_blank" rel="noopener">Meta building cloud business to sell excess AI capacity</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/01/meta-stock-cloud-ai-compute.html" target="_blank" rel="noopener">Meta stock pops on cloud push to sell excess AI compute power</a>
+<a class="source-link" href="https://seekingalpha.com/news/4608982-ism-manufacturing-pmi-falls-more-than-expected-in-june" target="_blank" rel="noopener">ISM Manufacturing PMI falls more than expected in June</a>
+<a class="source-link" href="https://www.morningstar.com/news/pr-newswire/20260701la94809/manufacturing-pmi-at-533-june-2026-ism-manufacturing-pmi-report" target="_blank" rel="noopener">Manufacturing PMI at 53.3%; June 2026 ISM Manufacturing PMI Report</a>
+<a class="source-link" href="https://tickeron.com/blogs/constellation-brands-stz-delivers-q1-fiscal-2027-earnings-beat-14407/" target="_blank" rel="noopener">Constellation Brands Q1 fiscal 2027 earnings beat</a>
+<a class="source-link" href="https://www.briskmarkets.com/blog/gold-prices-rise-as-weak-us-jobs-data-boosts-fed-cut-expectations/" target="_blank" rel="noopener">Gold Prices Rise as Weak US Jobs Data Boosts Fed Cut Expectations</a>
+<a class="source-link" href="https://goldsilver.com/industry-news/goldsilver-news/adp-missed-gold-shrugged-warsh-is-live-in-sintra-right-now/" target="_blank" rel="noopener">ADP Missed. Gold Shrugged. Warsh Is Live in Sintra Right Now.</a>
+<a class="source-link" href="https://www.forexfactory.com/calendar/252-us-ism-manufacturing-pmi" target="_blank" rel="noopener">US ISM Manufacturing PMI - Forex Factory</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-07-01 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
