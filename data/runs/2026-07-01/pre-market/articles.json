@@ -1,0 +1,390 @@
+{
+  "mode": "pre-market",
+  "date": "2026-07-01",
+  "generated": "2026-07-01T06:00:00-04:00",
+  "recency_window": {
+    "window_start_iso": "2026-06-30T16:00:00-04:00",
+    "window_end_iso": "2026-07-01T06:00:00-04:00",
+    "hours": 14.0,
+    "timezone": "America/New_York"
+  },
+  "articles": [
+    {
+      "title": "Stock Market News, June 30, 2026: Nasdaq Advances, Climbs 21% for Quarter",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-30-2026",
+      "source": "Wall Street Journal",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T21:23:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "SPX",
+        "NDX",
+        "DJI"
+      ],
+      "topics": [
+        "market close",
+        "quarterly performance",
+        "Asia markets"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "Major indexes closed Q2 2026 with best quarterly gains since 2020. S&P 500 +15%, Nasdaq +21%, Dow +13%. Asian markets mixed: Nikkei +0.52%, Hang Seng -0.63%, Shanghai +0.14%. Yen near 40-year low vs USD.",
+      "extracted_text": "S&P 500 rose 15% for Q2, Nasdaq jumped 21% \u2014 biggest quarterly rallies since Q2 2020. Dow gained 13% \u2014 best quarter since Q4 2022. Asian markets mixed with Nikkei 70,426.72 (+0.52%), Hang Seng 22,881.02 (-0.63%), Shanghai 4,100.20 (+0.14%). Yen hovers near 40-year low. Oil fell on US-Iran ceasefire talks. Treasury yields hit one-week high.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Stock market news for June 30, 2026 \u2014 Record Closes & Strongest Half in Years",
+      "url": "https://www.cnbc.com/2026/06/29/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T16:30:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "SPX",
+        "NDX",
+        "DJI",
+        "RUT",
+        "NVDA",
+        "AMD",
+        "INTC",
+        "SMH"
+      ],
+      "topics": [
+        "market close",
+        "quarterly performance",
+        "semiconductor rally",
+        "analyst actions"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "Dow closed at record 52,319.20 (+0.26%), S&P 500 7,499.36 (+0.79%), Nasdaq 26,213.72 (+1.52%). Semiconductor stocks led (SMH +3%, YTD +82%). H1 2026: Russell 2000 +22% best since 1991. Key analyst moves: FBIN upgraded to Buy, GS and MS downgraded to Underperform.",
+      "extracted_text": "Dow closed at record 52,319.20 (+136.46 pts, +0.26%). S&P 500 7,499.36 (+0.79%). Nasdaq 26,213.72 (+1.52%). Driven by semiconductor rally: SMH +3%, NVDA +2.6%, AMD +7.7%, INTC +6%. H1 2026: Dow +8.9%, S&P +9.6%, Nasdaq +12%+, Russell 2000 +22% (best H1 since 1991). Q2: S&P +14.9%, Nasdaq +21.4%, Dow +12.9%. Consumer confidence 91.2 vs 94.2 est. JOLTS 7.59M vs 7.3M forecast. Key analyst: FBIN upgraded to Buy, GS/MS downgraded to Underperform.",
+      "lane": "market-snapshot",
+      "freshness_verified": true
+    },
+    {
+      "title": "U.S. indexes wrap best quarter since 2020 \u2014 tech rally, Middle East peace hopes",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026",
+      "source": "TheStreet",
+      "source_class": "analysis",
+      "published_at": "2026-06-30T20:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "SPX",
+        "NDX",
+        "DJI",
+        "RUT",
+        "VIX",
+        "US10Y",
+        "BTC",
+        "MSTR"
+      ],
+      "topics": [
+        "market close",
+        "geopolitics",
+        "Supreme Court Fed independence",
+        "crypto slide"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "Tech rally and Middle East ceasefire hopes drove gains. Supreme Court protects Fed independence in 5-4 ruling rejecting Trump bid to fire Governor Cook. Bitcoin fell 1.4% to ~$59K. Oil: US-Iran ceasefire talks in Qatar. Nike Q4 earnings after close. Market closed Friday July 3 for Independence Day.",
+      "extracted_text": "Dow +0.26% at 52,319.20 (second record close). S&P 500 +0.79% at 7,499.36. Nasdaq +1.52% at 26,213.72. Russell 2000 +0.46% at 3,024.37 (best YTD at +21.86%). VIX -6.8% to 16.45. 10Y Treasury +3.9 bps to 4.461%. Brent crude +0.67% above $73. Supreme Court 5-4 ruling rejected Trump attempt to fire Fed Governor Lisa Cook \u2014 protects Fed independence. US-Iran ceasefire talks in Qatar (Witkoff, no direct talks). Bitcoin -1.4% to $59,030, Ethereum below $1.6K, MSTR -7.2% proposing $1.25B BTC sale.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Nike (NKE) Q4 2026 earnings: EPS $0.20 beats, China down 12%, stock volatile",
+      "url": "https://www.cnbc.com/2026/06/30/nike-nke-q4-2026-earnings.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T16:45:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "NKE"
+      ],
+      "topics": [
+        "earnings",
+        "retail",
+        "turnaround",
+        "China"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "Nike Q4 FY2026: Adjusted EPS $0.20 vs $0.13 est (beat), Revenue $10.97B vs $10.86B est (beat, -1% YoY). China -12%, North America missed at $4.83B vs $4.88B est. Includes $986M IEEPA tariff refund ($0.52/share). Stock fell 8% AH then recovered. CEO: 'Results aren't there yet.' CFO transition: David Denton replaces Matt Friend Aug 17.",
+      "extracted_text": "Adjusted EPS $0.20 vs $0.13 consensus (beat). GAAP EPS $0.72 including $986M IEEPA tariff refund. Revenue $10.97B vs $10.86B est (-1% YoY from $11.10B). North America $4.83B (+3%, missed $4.88B est). Greater China $1.30B (-12%, beat $1.24B est). Gross margin improved 890 bps to 49.2%. CEO Elliott Hill: 'Results aren't there yet' \u2014 Jordan/Sportswear negative growth expected through most of FY2027. CFO Matt Friend departing Aug 17, replaced by Pfizer exec David Denton. Investor Day Nov 16-17, 2026. Stock initially fell 8% AH, recovered to flat/slightly negative.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "Asian markets mixed as yen hovers near four-decade lows, US jobs data in focus",
+      "url": "https://www.malaymail.com/news/money/2026/07/01/asian-markets-mixed-as-yen-hovers-near-fourdecade-lows-us-jobs-data-in-focus/225893",
+      "source": "Malay Mail (Reuters)",
+      "source_class": "newswire",
+      "published_at": "2026-07-01T02:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "JPY",
+        "USD",
+        "N225",
+        "HSI"
+      ],
+      "topics": [
+        "Asia markets",
+        "yen",
+        "FX intervention",
+        "US jobs data"
+      ],
+      "assigned_section": "Global Session Recap",
+      "summary": "Asian stocks mixed as investors await key US jobs data. Yen hovering near 40-year lows, intervention risk elevated. Nikkei +0.52%, Hang Seng -0.63%, Shanghai +0.14%. US ADP and ISM data due Wednesday.",
+      "extracted_text": "Asian stocks were mixed as investors nervously awaited key US jobs data that could help determine Federal Reserve policy path. Japanese yen hovering near four-decade lows, traders on high alert for potential currency intervention. Nikkei 225 +0.52% at 70,426.72. Hang Seng -0.63% at 22,881.02. Shanghai Composite +0.14% at 4,100.20. Kospi -1.81%. ASX 200 -0.64%. BSE Sensex +0.62%.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "ADP employment, manufacturing PMI, and oil inventories due Wednesday July 1",
+      "url": "https://www.investing.com/news/stock-market-news/adp-employment-manufacturing-pmi-and-oil-inventories-due-wednesday-93CH-4768512",
+      "source": "Investing.com",
+      "source_class": "aggregator",
+      "published_at": "2026-06-30T16:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "USD",
+        "US10Y",
+        "US02Y"
+      ],
+      "topics": [
+        "economic calendar",
+        "ADP",
+        "ISM manufacturing",
+        "jobs data"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "Key economic data Wednesday July 1: ADP Employment Change (8:15 AM ET, est +120K vs prior +122K), ISM Manufacturing PMI (10:00 AM ET, est 53.9-54.0 vs prior 53.6), ISM Manufacturing Prices, Construction Spending, and weekly oil inventories.",
+      "extracted_text": "ADP Employment Change for June expected at +120,000 vs prior +122,000 at 8:15 AM ET. ISM Manufacturing PMI for June expected at 53.9-54.0 vs prior 53.6 at 10:00 AM ET. ISM Manufacturing Prices and Employment also due. Construction Spending at 10:00 AM. EIA weekly crude oil inventories at 10:30 AM. Challenger Job Cuts also scheduled.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "Supreme Court Protects Fed Independence \u2014 Rejects Trump Bid to Fire Governor Cook",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026",
+      "source": "TheStreet",
+      "source_class": "analysis",
+      "published_at": "2026-06-30T20:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "USD",
+        "US10Y",
+        "US02Y"
+      ],
+      "topics": [
+        "Federal Reserve",
+        "Supreme Court",
+        "Fed independence",
+        "monetary policy"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "Supreme Court ruled 5-4 to reject President Trump's attempt to fire Fed Governor Lisa Cook, reinforcing central bank independence. The ruling ensures Fed governors cannot be removed 'for cause' without proof of wrongdoing. Major institutional development for Fed credibility.",
+      "extracted_text": "In a historic 5-4 ruling, the Supreme Court rejected President Trump's attempt to fire Fed Governor Lisa Cook over unproven mortgage fraud allegations. The majority faulted Trump for not giving Cook notice and a chance to be heard. The decision ensures Fed governors cannot be fired by the president 'for cause' without proof of wrongdoing, reinforcing central bank independence. Contrasts with a separate court ruling on executive branch firing powers. Fed has held rates at 3.50-3.75% for four consecutive meetings under Chair Kevin Warsh.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "US Treasury Yield Curve: 10Y 4.38%, 2Y 4.14%, 2s10s spread +28bps",
+      "url": "https://www.sofrrate.com/treasury-rates",
+      "source": "SOFR Rate (FRED data)",
+      "source_class": "market_data",
+      "published_at": "2026-06-30T17:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "US10Y",
+        "US02Y",
+        "US30Y"
+      ],
+      "topics": [
+        "Treasury yields",
+        "yield curve",
+        "fixed income"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "Treasury yields as of June 30 close: 2Y at 4.14% (+4 bps), 10Y at 4.38% (~+4 bps), 30Y at 4.86%. 2s10s spread at +28-30 bps \u2014 curve remains shallow but positively sloped. FOMC minutes from April 28-29 meeting showed market pricing two 25bp cuts starting Q3/Q4 2026.",
+      "extracted_text": "The 10-year Treasury yield is 4.38%, the 2-year is 4.14%, and the 30-year is 4.86%, as of June 30, 2026. The 2s10s spread is +28 basis points. FOMC held rates at 3.50-3.75% at June meeting. FOMC minutes from April 28-29 showed median modal path of two 25bp cuts starting Q3/Q4 2026. Market-implied probability of rate hike by Q1 2027 at ~30%. Fed Chair Kevin Warsh. Next FOMC: July 28-29, 2026.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "DXY at 101.37, Yen near 40-year low; Gold under pressure at ~$3,978",
+      "url": "https://tradingeconomics.com/united-states/currency",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-07-01T05:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "DXY",
+        "JPY",
+        "EUR",
+        "GBP",
+        "XAU",
+        "CL",
+        "BZ"
+      ],
+      "topics": [
+        "FX",
+        "dollar",
+        "yen intervention",
+        "gold",
+        "oil"
+      ],
+      "assigned_section": "FX and Commodities",
+      "summary": "DXY up 0.18% at 101.37. USD/JPY elevated as yen near 40-year low, intervention risk high ahead of US jobs data. Gold $3,978 under pressure from stronger USD and rate expectations. WTI ~$70.91, Brent ~$73.43 as US-Iran ceasefire talks weigh on oil.",
+      "extracted_text": "DXY rose to 101.3696 on July 1, +0.18% from prior session, +2.17% over past month, +4.75% YoY. Yen near 40-year low vs USD, intervention may hinge on US jobs data (Commonwealth Bank). Gold (XAU/USD) at $3,978 under pressure from stronger USD and Fed tightening expectations. WTI futures $70.91 (+0.23%), Brent $73.43 (+0.65%). Oil prices slipped on Tuesday with US-Iran ceasefire talks in Qatar.",
+      "lane": "commodities-credit-vol",
+      "freshness_verified": true
+    },
+    {
+      "title": "AeroVironment +30% on earnings; Concentrix -22%; Goldman/MS downgraded",
+      "url": "https://www.cnbc.com/2026/06/29/stock-market-today-live-updates.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-06-30T16:30:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "AVAV",
+        "CNXC",
+        "GS",
+        "MS",
+        "FBIN",
+        "UNH",
+        "HON",
+        "TSLA",
+        "LOGI",
+        "DLR"
+      ],
+      "topics": [
+        "earnings",
+        "analyst actions",
+        "movers",
+        "pre-market watch"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "Key movers: AVAV +30% (EPS $1.84 vs $1.46 est, rev $642M vs $559M). CNXC -22% (Q2 miss, lower guidance). GS/MS downgraded to Underperform by Oppenheimer. FBIN upgraded to Buy (PT $70). TSLA Q2 deliveries seen ~10K above est (Deutsche Bank). DLR -4.5% on $7.8B Blackstone data center deal.",
+      "extracted_text": "AVAV +30%: EPS $1.84 vs $1.46 est, revenue $642M vs $559M est. CNXC -22% AH: EPS $2.63 vs $2.64 est, revenue $2.46B vs $2.47B, lower forward guidance. GS & MS downgraded to Underperform (Oppenheimer): 'take the money and run' \u2014 recommends Ares, BX, KKR instead. FBIN upgraded to Buy (Truist, PT $70 from $45). UNH PT raised to $468 (Morgan Stanley). HON initiated Outperform PT $255 (Daiwa). TSLA Q2 deliveries ~10K above est per Deutsche Bank, led by Europe strength. LOGI downgraded to Underperform PT $86 (BofA) on memory chip price hikes hitting demand. DLR -4.5% on $7.8B data center purchase from Blackstone. Kering -5% ahead of Q2 results; luxury peers LVMH, Richemont, Hermes all down 1-2%.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "European markets open soft: DAX -0.18%, FTSE -0.23%, CAC -0.21%",
+      "url": "https://finance.yahoo.com/quote/%5ESTOXX/",
+      "source": "Yahoo Finance",
+      "source_class": "market_data",
+      "published_at": "2026-07-01T04:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "DAX",
+        "FTSE",
+        "CAC",
+        "STOXX"
+      ],
+      "topics": [
+        "European markets",
+        "global session"
+      ],
+      "assigned_section": "Global Session Recap",
+      "summary": "European equities opened slightly lower: DAX 24,626.89 (-0.18%), FTSE 100 10,484.22 (-0.23%), CAC 40 8,367.33 (-0.21%), Euro Stoxx 50 6,231.63 (+0.16%). STOXX 600 up ~9% for Q2, best quarterly performance since October 2020.",
+      "extracted_text": "DAX at 24,626.89 (-0.18%), FTSE 100 at 10,484.22 (-0.23%), CAC 40 at 8,367.33 (-0.21%), Euro Stoxx 50 at 6,231.63 (+0.16%). European markets showing soft open following mixed Asian session. STOXX 600 advanced 1.6% in June and is up ~9% for Q2, marking its strongest quarterly performance since October 2020, as oil prices moved back to pre-war levels. EU imposed 50% duty on steel imports above quota effective July 1.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Elon Musk reclaims $1 trillion net worth; Apple supply chain leak; Central banks plan to cut USD allocations",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-30-2026",
+      "source": "TheStreet",
+      "source_class": "analysis",
+      "published_at": "2026-06-30T20:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "TSLA",
+        "AAPL",
+        "SPCX",
+        "USD"
+      ],
+      "topics": [
+        "Elon Musk",
+        "Apple",
+        "central bank reserves",
+        "de-dollarization"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "Elon Musk reclaims $1T net worth on TSLA +8.6%, SpaceX +7.6%. Apple supply chain leak: ransomware group stole from Tata Electronics, posting iPhone 18 Pro component details. OMFIF survey: for first time, more central banks plan to reduce USD holdings than increase (covers $10T in assets).",
+      "extracted_text": "Elon Musk net worth back above $1T after Tesla (+8.6%) and SpaceX (+7.6%) rallies. Holds ~700M TSLA shares and 4.8B SpaceX shares. Apple supply chain leak: ransomware group stole iPhone 18 Pro component lists from Tata Electronics. OMFIF survey of central banks managing $10T: for first time, more plan to reduce USD allocations than increase over next decade, citing political risks. SpaceX (SPCX) added to Nasdaq-100 (expected $4.3B passive inflows) and Russell 1000.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Yahoo Finance Pre-Market Futures: S&P -0.32%, Dow -0.30%, Nasdaq -0.53%",
+      "url": "https://finance.yahoo.com/",
+      "source": "Yahoo Finance",
+      "source_class": "market_data",
+      "published_at": "2026-07-01T06:00:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "ES",
+        "YM",
+        "NQ",
+        "RTY"
+      ],
+      "topics": [
+        "pre-market futures",
+        "market setup"
+      ],
+      "assigned_section": "Futures and Current Market Snapshot",
+      "summary": "US pre-market futures pointing lower: S&P Futures 7,524.00 (-24.25, -0.32%), Dow Futures 52,514.00 (-156.00, -0.30%), Nasdaq Futures 30,362.25 (-161.25, -0.53%), Russell 2000 Futures 3,034.50. Markets open in ~3.5 hours.",
+      "extracted_text": "S&P Futures 7,524.00 (-24.25, -0.32%), Dow Futures 52,514.00 (-156.00, -0.30%), Nasdaq Futures 30,362.25 (-161.25, -0.53%), Russell 2000 Futures 3,034.50. US markets open in 3.5 hours. After best quarter since 2020, futures indicating modest pullback ahead of ADP and ISM data.",
+      "lane": "market-snapshot",
+      "freshness_verified": true
+    },
+    {
+      "title": "Rocket Lab soars on acquisition; Alcoa to acquire South32 aluminum assets for up to $5.6B",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/06/30/stock-market-today-june-30-rocket-lab-soars-on-acquisition-and-major-indexes-gain/",
+      "source": "Motley Fool",
+      "source_class": "analysis",
+      "published_at": "2026-06-30T16:30:00-04:00",
+      "fetched_at": "2026-07-01T06:00:00-04:00",
+      "tickers": [
+        "RKLB",
+        "AA",
+        "S32"
+      ],
+      "topics": [
+        "M&A",
+        "acquisitions",
+        "industrial"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "Rocket Lab soared on acquisition news. Alcoa to acquire South32 aluminum assets for up to $5.6B in cash-and-stock deal covering bauxite, alumina, and aluminum operations in Australia, Brazil, and South Africa. Ipsen to buy Swiss biotech Memo in deal topping $800M.",
+      "extracted_text": "Tech and industrial stocks led advances on June 30. Rocket Lab soared on acquisition. Alcoa to acquire South32 aluminum assets for up to $5.6B in cash-and-stock deal covering operations in Australia, Brazil, and South Africa. Ipsen to buy Swiss biotech Memo in deal exceeding $800M (second acquisition this week after Kartos Therapeutics). Galderma's Botox rival rejected again by FDA. EU limits tariff-free steel imports, imposes 50% duty above quota effective July 1.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    }
+  ],
+  "stats": {
+    "articles_found": 14,
+    "articles_accepted": 14,
+    "articles_rejected_stale": 0,
+    "articles_rejected_no_timestamp": 0,
+    "coverage_sections": [
+      "Futures and Current Market Snapshot",
+      "Overnight Top Developments",
+      "Global Session Recap",
+      "Macro, Rates, and Policy Setup",
+      "FX and Commodities",
+      "Equities and Single-Stock Watchlist",
+      "Sector and Factor Setup",
+      "Today's Risk Map",
+      "Source Notes and Data Quality"
+    ],
+    "source_classes_represented": [
+      "newswire",
+      "market_data",
+      "analysis",
+      "aggregator",
+      "central_bank"
+    ]
+  }
+}
