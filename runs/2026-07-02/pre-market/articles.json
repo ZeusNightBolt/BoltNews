@@ -1,0 +1,438 @@
+{
+  "schema_version": "2.0",
+  "mode": "pre-market",
+  "date": "2026-07-02",
+  "date_suffix": "July 02, 2026",
+  "recency_hours": 14.0,
+  "recency_window": {
+    "start": "2026-07-01T16:00:00-04:00",
+    "end": "2026-07-02T06:00:00-04:00"
+  },
+  "generated": "2026-07-02T06:05:00-04:00",
+  "stats": {
+    "articles_found": 19,
+    "articles_accepted": 19,
+    "articles_rejected_stale": 1,
+    "articles_rejected_no_timestamp": 0,
+    "lanes_covered": [
+      "market-snapshot",
+      "overnight-or-session-headlines",
+      "macro-policy-rates-fx",
+      "equities-earnings-single-stocks",
+      "commodities-credit-vol"
+    ]
+  },
+  "articles": [
+    {
+      "title": "Russia launches massive strike on Ukraine as Poland scrambles jets, Finland restricts airspace",
+      "url": "https://www.cnbc.com/2026/07/02/russia-launches-missile-drone-strikes-ukraine-kyiv.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-02T02:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "geopolitics",
+        "Russia",
+        "Ukraine",
+        "defense"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "Russia conducted a large-scale missile and drone attack across Ukraine, targeting Kyiv with 10 deaths and 34 injured. Poland scrambled fighter jets and raised air defense readiness; Finland imposed a temporary aviation restriction zone.",
+      "extracted_text": "Russia conducted a massive strike using long-range precision air, land, and sea-based weapons and attack drones. Targets included military-industrial facilities, fuel and energy complexes in Kyiv and the Kyiv region, and military airfields. Kyiv Mayor Vitali Klitschko reported 10 deaths and 34 injuries. Poland scrambled fighter jets and raised air defense readiness. Finland imposed a temporary aviation restriction zone in the eastern Gulf.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Google loses legal fight over 4.1 billion-euro EU antitrust fine",
+      "url": "https://www.cnbc.com/2026/07/02/alphabet-google-android-eu-antitrust-fine-4-1-billion-euro-appeal.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-02T03:30:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "GOOGL"
+      ],
+      "topics": [
+        "antitrust",
+        "EU",
+        "regulation",
+        "technology"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "The EU's top court upheld Google's \u20ac4.1 billion ($4.67 billion) fine over alleged anti-competitive practices related to Android mobile dominance and pre-installation deals with smartphone makers.",
+      "extracted_text": "The European Commission's top court has upheld Google's fine of around 4.1 billion euros ($4.67 billion) over alleged anti-competitive practices. In 2018, the European Commission slapped Google with the record-breaking penalty on the grounds that it abused Android's mobile dominance to give unfair advantage to its own apps via pre-installation deals with smartphone makers.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Samsung Electronics, SK Hynix shares tumble over 9% as chip rout spreads from Wall Street",
+      "url": "https://www.cnbc.com/2026/07/02/samsung-sk-hynix-shares-slide-kospi-tech-selloff-nasdaq.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-02T01:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "MU",
+        "SNDK",
+        "NVDA",
+        "AVGO"
+      ],
+      "topics": [
+        "semiconductors",
+        "Asia",
+        "technology",
+        "selloff"
+      ],
+      "assigned_section": "Global Session Recap",
+      "summary": "South Korean chip stocks slid sharply: Samsung -9.06%, SK Hynix -14.57%, Kospi index -7.89%. The rout followed a broad US semiconductor selloff with Micron -10%+ and Sandisk -10%+. SK Hynix announced 100 trillion won investment plan.",
+      "extracted_text": "Kospi index closed down 7.89%. Samsung Electronics declined 9.06% to 286,000 won. SK Hynix fell 14.57% to 2,187,000 won. The rout followed a broad US semiconductor selloff with Micron Technology -10%+ and Sandisk -10%+. SK Hynix CEO announced a 100 trillion won ($64.37 billion) investment in South Korea for AI memory and packaging.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "OpenAI proposes U.S. government own 5% stake to address political blowback",
+      "url": "https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-02T00:15:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "MSFT"
+      ],
+      "topics": [
+        "AI",
+        "regulation",
+        "technology",
+        "OpenAI"
+      ],
+      "assigned_section": "Overnight Top Developments",
+      "summary": "OpenAI proposed giving the US government a 5% ownership stake (~$42.6B based on $852B valuation). Sam Altman argued for Washington holding 5% of each leading US AI developer via a sovereign wealth fund.",
+      "extracted_text": "OpenAI has proposed giving the U.S. government a 5% ownership stake in the company, worth approximately $42.6 billion based on OpenAI's March 2026 post-money valuation of $852 billion. Sam Altman reportedly argued it's the best way to share the upside of AI with the public. Altman suggested Washington hold 5% of each leading U.S. AI developer via a government vehicle.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Fed Chair Kevin Warsh at ECB Forum: No urgency to raise rates; inflation expectations easing",
+      "url": "https://www.cnbc.com/2026/07/01/kevin-warsh-ecb-forum-live-updates.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-01T16:30:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "Federal Reserve",
+        "interest rates",
+        "inflation",
+        "monetary policy"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "Fed Chair Warsh stated inflation expectations have eased over the past month, signaling no urgency to raise rates. However, he reiterated commitment to restoring price stability. Markets pricing >60% chance of a September rate hike.",
+      "extracted_text": "Warsh: 'We're all in the price stability business. We've seen that prices are too high.' Core PCE at 3.4% in May, headline PCE at 4.1%. Warsh declined to signal July rate decision but said 'If there were people who thought this central bank was going to be comfortable with an inflation objective above 2%, they'd be disappointed.' Markets price >60% chance of a Fed rate hike in September. ADP private payrolls June: +98,000 vs 110,000 expected.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "Crude oil falls below $68 as Strait of Hormuz shipments increase, US-Iran talks progress",
+      "url": "https://tradingeconomics.com/commodity/crude-oil",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-07-02T06:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "oil",
+        "crude",
+        "WTI",
+        "Brent",
+        "geopolitics"
+      ],
+      "assigned_section": "FX and Commodities",
+      "summary": "WTI crude fell below $68/barrel, reaching lowest since late February. Oil shipments through Strait of Hormuz exceeded 10 million barrels/day. Iranian exports surged past 40 million barrels after US lifted naval blockade. WTI posted steepest quarterly decline since 2020.",
+      "extracted_text": "WTI crude oil: $67.93 (-0.95%), Brent: $70.92 (-0.90%). Oil fell to lowest since late February as Strait of Hormuz shipments increased. US official said crude flows exceeded 10 million barrels/day. Iranian exports surged past 40 million barrels after US naval blockade lifted. Russian exports hit record levels. WTI posted steepest quarterly decline since 2020.",
+      "lane": "commodities-credit-vol",
+      "freshness_verified": true
+    },
+    {
+      "title": "Gold strengthens above $4,000 as Fed's Warsh signals no urgency to hike",
+      "url": "https://tradingeconomics.com/commodity/gold",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-07-02T06:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "GLD"
+      ],
+      "topics": [
+        "gold",
+        "precious metals",
+        "commodities"
+      ],
+      "assigned_section": "FX and Commodities",
+      "summary": "Gold strengthened above $4,000/oz (+1.1% to $4,076) after falling to an eight-month low earlier this week. Warsh's comments about easing inflation expectations supported gold. Still down 8.1% monthly from January's all-time high of $5,608.",
+      "extracted_text": "Gold: $4,076.15 (+1.11%), +44.25 on the day. Previous: $4,031.36. Warsh stated inflation expectations had eased, suggesting no urgency to raise rates. Markets pricing >60% chance of a September hike. Gold earlier slipped below $4,000 after strong JOLTS data.",
+      "lane": "commodities-credit-vol",
+      "freshness_verified": true
+    },
+    {
+      "title": "US Dollar Index holds steady around 101 ahead of June jobs report",
+      "url": "https://tradingeconomics.com/united-states/currency",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-07-02T06:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "UUP"
+      ],
+      "topics": [
+        "DXY",
+        "FX",
+        "US dollar",
+        "forex"
+      ],
+      "assigned_section": "FX and Commodities",
+      "summary": "DXY at 101.02 (-0.37%), easing from 15-month high of 101.6. Warsh's comments about lower inflation risks and softer ADP data tempered hawkish expectations. EUR/USD 1.142, GBP/USD 1.336, USD/JPY 161.13.",
+      "extracted_text": "DXY: 101.0214 (-0.37%). Dollar eased from 15-month high of 101.6 after Warsh said inflationary risks are lower. ADP indicated 98,000 jobs added in June, slightly under expectations. Cross rates: EUR/USD 1.142, GBP/USD 1.336, USD/JPY 161.13 (-0.88%).",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "Treasury yields: 10Y at 4.50%, markets await NFP; 2Y-10Y spread narrow",
+      "url": "https://tradingeconomics.com/united-states/government-bond-yield",
+      "source": "Trading Economics",
+      "source_class": "market_data",
+      "published_at": "2026-07-02T06:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "Treasury yields",
+        "bonds",
+        "rates",
+        "yield curve"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "10Y Treasury yield at 4.50% (+1bp), 2Y at 4.19%, 30Y at 4.99%. Yields holding steady ahead of June nonfarm payrolls report. Markets pricing >60% chance of September rate hike. Warsh's balance sheet reduction campaign supporting yields.",
+      "extracted_text": "US 10Y: 4.50% (+0.013%), 2Y: 4.19% (+0.002%), 5Y: 4.25% (+0.013%), 30Y: 4.99% (+0.013%). Warsh's push to shrink Fed's Treasury holdings lifted yields. ADP data: 98,000 private jobs, slightly below estimates. Rate traders see one December hike; some expect multiple.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "Premarket Stock Trading Data: Dow, S&P, NASDAQ Futures - CNBC",
+      "url": "https://www.cnbc.com/markets/pre-markets/",
+      "source": "CNBC",
+      "source_class": "market_data",
+      "published_at": "2026-07-02T04:33:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA"
+      ],
+      "topics": [
+        "futures",
+        "premarket",
+        "indices"
+      ],
+      "assigned_section": "Futures and Current Market Snapshot",
+      "summary": "S&P 500 futures implied open +4.77, Dow implied open +133.76, Nasdaq futures implied open -55.38, Russell implied open -7.29. Mixed open expected with tech under pressure after yesterday's Nasdaq -1.54%.",
+      "extracted_text": "Dow Future: 52,694, Implied Open +133.76. S&P 500 Future: 7,539, Implied Open +4.77. Nasdaq Future: 29,958.75, Implied Open -55.38. Russell Future: 3,034.3, Implied Open -7.29. VIX: 16.73 (+0.84%). Asia: Hang Seng +0.76%, Nikkei -2.47%, Shanghai -2.03%. Europe: STOXX50 +0.33%, DAX +0.32%, FTSE +0.53%.",
+      "lane": "market-snapshot",
+      "freshness_verified": true
+    },
+    {
+      "title": "Employment Situation Summary - June 2026 scheduled for release July 2 at 8:30 AM ET",
+      "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
+      "source": "Bureau of Labor Statistics",
+      "source_class": "official",
+      "published_at": "2026-07-01T20:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "jobs",
+        "nonfarm payrolls",
+        "employment",
+        "economic data"
+      ],
+      "assigned_section": "Today's Risk Map",
+      "summary": "June Employment Situation report scheduled for Thursday, July 2, 2026 at 8:30 AM ET. Consensus expectations: nonfarm payrolls +115,000, unemployment rate 4.3%, average hourly earnings +0.3% MoM.",
+      "extracted_text": "The Employment Situation for June is scheduled to be released on Thursday, July 2, 2026, at 8:30 a.m. (EDT). Prior report (May 2026): nonfarm payrolls +125,000, unemployment rate 4.3%. Consensus for June: nonfarm payrolls +115,000.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "Asia-Pacific and European Markets Summary - July 2, 2026",
+      "url": "https://www.cnbc.com/markets/pre-markets/",
+      "source": "CNBC",
+      "source_class": "market_data",
+      "published_at": "2026-07-02T04:33:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "Asia",
+        "Europe",
+        "global markets",
+        "Nikkei",
+        "Hang Seng"
+      ],
+      "assigned_section": "Global Session Recap",
+      "summary": "Asia mixed: Nikkei -2.47% on chip rout, Shanghai -2.03%, Hang Seng +0.76%. Europe positive: STOXX50 +0.33%, FTSE +0.53%, DAX +0.32%, CAC +0.66%. Euro Stoxx banks outperform.",
+      "extracted_text": "Asia-Pacific: Hang Seng 23,055.03 (+0.76%), Nikkei 68,733.15 (-2.47%), ASX 200 8,724.5 (+0.02%), Shanghai 4,028.90 (-2.03%). European Markets: STOXX50 5,392.72 (+0.33%), DAX 25,119.31 (+0.32%), FTSE 10,533.58 (+0.53%), CAC 8,392.08 (+0.66%), AEX 1,069.18 (-0.37%).",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Sector Performance: Financials lead, Technology lags sharply - July 1 close",
+      "url": "https://www.cnbc.com/markets/pre-markets/",
+      "source": "CNBC",
+      "source_class": "market_data",
+      "published_at": "2026-07-01T16:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "XLF",
+        "XLK",
+        "XLY",
+        "XLP",
+        "XLE"
+      ],
+      "topics": [
+        "sectors",
+        "rotation",
+        "financials",
+        "technology"
+      ],
+      "assigned_section": "Sector and Factor Setup",
+      "summary": "July 1 sector close: Financials +2.13% leading with rate-hike expectations. Technology -1.84% worst performer. Consumer Discretionary +0.82%. Energy -0.56%. Consumer Staples -0.33%. Value/cyclical rotation underway.",
+      "extracted_text": "US Sectors July 1 close: Financials 911.85 (+2.13%), Energy 806.45 (-0.56%), Consumer Discretionary 1,922.81 (+0.82%), Technology 6,663.53 (-1.84%), Consumer Staples 919.95 (-0.33%). DJ Transports +0.97%, Utilities -0.92%. Nasdaq 100 -1.54% worst index performer.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "US 10 Year Treasury Yield holds at 4.50% with curve dynamics; NFP in focus",
+      "url": "https://primerates.com/primerate/treasury-yield-curve/",
+      "source": "PrimeRates",
+      "source_class": "rates",
+      "published_at": "2026-07-02T04:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "yield curve",
+        "Treasury",
+        "rates",
+        "spreads"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "Yield curve: 3-month at 3.82%, 2Y at 4.18%, 10Y at 4.50%, 30Y at 4.99%. 10Y-2Y spread at +32bp (positively sloped). 10Y-3M spread at +68bp. Curve flattening slightly as long end steady. Fed funds rate at 3.75%.",
+      "extracted_text": "US Treasury yields July 2: 3-MO 3.816%, 2-YR 4.176%, 5-YR 4.248%, 10-YR 4.495%, 30-YR 4.987%. Curve positively sloped: 10Y-2Y at +32bp. Fed funds rate at 3.75%. Inflation Rate 4.20% (May), Unemployment 4.30% (May).",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "ADP private payrolls June 2026: +98,000, below expectations of 110,000",
+      "url": "https://www.cnbc.com/2026/07/01/kevin-warsh-ecb-forum-live-updates.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-01T16:30:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "ADP",
+        "jobs",
+        "employment",
+        "labor market"
+      ],
+      "assigned_section": "Macro, Rates, and Policy Setup",
+      "summary": "ADP private payrolls for June: +98,000 vs +122,000 prior and 110,000 expected. Below estimates but above 2026 average, maintaining leeway for further Fed tightening if needed.",
+      "extracted_text": "ADP private payrolls (June): +98,000 vs. +122,000 prior and 110,000 expected. Ahead of official nonfarm payrolls (expected +115,000, unemployment rate 4.3%). The data showed low firing rates but slower hiring.",
+      "lane": "macro-policy-rates-fx",
+      "freshness_verified": true
+    },
+    {
+      "title": "Stocks Moving in Premarket Today (July 2, 2026)",
+      "url": "https://premarketprice.com/premarket-movers",
+      "source": "PreMarketPrice",
+      "source_class": "market_data",
+      "published_at": "2026-07-02T05:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "premarket",
+        "movers",
+        "stocks"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "Pre-market mover data not yet populated at time of extraction. Semiconductors expected to extend losses. FMC +8.3%, GIS +4.4%, NOW +4.1% among prior session leaders.",
+      "extracted_text": "Pre-market mover data not yet populated (data platform still warming up). Prior session notable movers: FMC +8.3%, General Mills (GIS) +4.4%, ServiceNow (NOW) +4.1%. Losers: Micron (MU) -10%+, Sandisk (SNDK) -10%+, Nvidia (NVDA) and Broadcom (AVGO) -1% to -2%.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "S&P 500, Dow rise to start Q3; Nasdaq falls on chip weakness - July 1 recap",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-july-1-2026-nasdaq-futures-slip-after-strongest-quarter-since-2020",
+      "source": "TheStreet",
+      "source_class": "analysis",
+      "published_at": "2026-07-01T17:00:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "FMC",
+        "GIS",
+        "NOW",
+        "ESS",
+        "PSA",
+        "UHS"
+      ],
+      "topics": [
+        "market recap",
+        "Q3",
+        "rotation"
+      ],
+      "assigned_section": "Sector and Factor Setup",
+      "summary": "Dow and S&P 500 rose to start Q3 2026 while Nasdaq fell. Notable movers: FMC +8.3%, GIS +4.4%, NOW +4.1%. Losers: ESS -11.6%, PSA -4.1%, UHS -4%. Sector rotation from growth to value/cyclicals evident.",
+      "extracted_text": "FMC surged 8.3% in premarket, General Mills (GIS) rose 4.4%, ServiceNow (NOW) gained 4.1%. Essex Property Trust (ESS) tumbled 11.6%, Public Storage (PSA) fell 4.1%, Universal Health Services (UHS) dropped 4%.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    },
+    {
+      "title": "Europe wants to rebalance trade with Beijing amid record heatwave, but can't quit Chinese air conditioners",
+      "url": "https://www.cnbc.com/2026/07/02/european-union-china-meeting-summer-heatwave-trade-imbalance-tariffs-.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-02T00:30:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [],
+      "topics": [
+        "EU",
+        "China",
+        "trade",
+        "geopolitics"
+      ],
+      "assigned_section": "Global Session Recap",
+      "summary": "EU faces tension between trade policy rebalancing with China and reliance on Chinese imports during record heatwave. Cooling imports highlight supply chain dependency.",
+      "extracted_text": "Amid a record heatwave, EU faces tension between trade policy and reliance on Chinese cooling imports. Europe wants to rebalance trade with Beijing but faces practical constraints.",
+      "lane": "overnight-or-session-headlines",
+      "freshness_verified": true
+    },
+    {
+      "title": "Citi UK CEO: M&A is 'on fire' as large-cap firms simplify",
+      "url": "https://www.cnbc.com/2026/07/02/uk-ma-citi-tiina-lee.html",
+      "source": "CNBC",
+      "source_class": "newswire",
+      "published_at": "2026-07-02T01:30:00-04:00",
+      "fetched_at": "2026-07-02T06:05:00-04:00",
+      "tickers": [
+        "C"
+      ],
+      "topics": [
+        "M&A",
+        "deals",
+        "investment banking",
+        "UK"
+      ],
+      "assigned_section": "Equities and Single-Stock Watchlist",
+      "summary": "Citi UK CEO Tiina Lee says M&A activity is 'on fire' as large-cap firms simplify their structures. Suggests robust deal pipeline heading into H2 2026.",
+      "extracted_text": "Citi U.K. CEO Tiina Lee: M&A is 'on fire' as large-cap firms simplify. Suggests robust dealmaking pipeline continuing into second half of 2026.",
+      "lane": "equities-earnings-single-stocks",
+      "freshness_verified": true
+    }
+  ]
+}

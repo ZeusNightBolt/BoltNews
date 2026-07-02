@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BoltNews — Pre-Market | 2026-07-02</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+    --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100dvh;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Navigation */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    padding: 10px 0 12px 0;
+    background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(13,17,23,0.90) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+  }
+  .nav-links { display: inline-flex; align-items: center; gap: 8px; }
+  .nav-item {
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+  .nav-item.active {
+    color: #fff;
+    background: var(--accent-emphasis);
+  }
+
+  /* Header */
+  .header {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px 22px;
+    margin-bottom: 30px;
+    background:
+      radial-gradient(circle at top left, rgba(88,166,255,0.14), transparent 34%),
+      linear-gradient(180deg, rgba(22,27,34,0.95), rgba(13,17,23,0.95));
+    box-shadow: 0 18px 48px rgba(1,4,9,0.28);
+  }
+  .header h1 { font-size: 1.65rem; font-weight: 750; color: var(--text); letter-spacing: -0.02em; }
+  .header .badge {
+    display: inline-block;
+    background: var(--accent-emphasis);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+  .header .subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 0 0 28px 0;
+    background: linear-gradient(180deg, rgba(22,27,34,0.92), rgba(13,17,23,0.92));
+  }
+  .toc-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .toc-title {
+    border-bottom: none;
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 1.05rem;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .toc-link {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .toc-link:hover {
+    border-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+  .toc-level-3 {
+    color: var(--text-muted);
+    padding-left: 18px;
+    font-size: 0.82rem;
+  }
+
+  h1, h2, h3 { scroll-margin-top: 78px; }
+
+  /* Content typography */
+  h1 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 12px 0; color: var(--text); }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 10px 0; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px 0; color: var(--text); }
+  p { margin: 8px 0 12px 0; color: var(--text); }
+  p.bold-line { margin: 6px 0 6px 0; color: var(--text-muted); }
+
+  /* Links */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Lists */
+  ul { margin: 4px 0 16px 20px; }
+  li { margin: 3px 0; color: var(--text); }
+
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin: 12px 0 20px 0; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:nth-child(even) td { background: var(--bg-secondary); }
+  tr:hover td { background: rgba(88, 166, 255, 0.06); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 12px 0;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Code */
+  code {
+    background: var(--bg-tertiary);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+  code.ticker {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Dividers */
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 36px 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer a { color: var(--accent); }
+
+  /* Source reference section */
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+  .sources-section h2 { border-bottom: none; font-size: 1rem; }
+  .source-link {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .source-link:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 12px 16px; }
+    .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .nav-links { flex-wrap: wrap; }
+    .header { padding: 18px 16px 16px 16px; }
+    .header h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.05rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 5px 8px; }
+  }
+  @supports (-webkit-touch-callout: none) {
+    body { min-height: -webkit-fill-available; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar" aria-label="BoltNews navigation">
+    <a class="brand-mark" href="./index.html">⚡ BoltNews</a>
+    <div class="nav-links">
+      <a class="nav-item active" href="./index.html">Latest</a>
+      <a class="nav-item" href="./archive.html">Archive</a>
+      <a class="nav-item" href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+    </div>
+  </nav>
+  <div class="header">
+    <h1>⚡ BoltNews <span class="badge">Pre-Market</span></h1>
+    <div class="subtitle">2026-07-02 &middot; 19 articles &middot; 6 categories</div>
+  </div>
+
+  <nav class="toc-card" aria-label="Briefing table of contents"><div class="toc-eyebrow">Briefing Navigation</div><h2 class="toc-title">Table of Contents</h2><div class="toc-grid"><a class="toc-link toc-level-2" href="#futures-and-current-market-snapshot">Futures and Current Market Snapshot</a><a class="toc-link toc-level-2" href="#overnight-top-developments">Overnight Top Developments</a><a class="toc-link toc-level-3" href="#1-russia-launches-massive-strike-on-ukraine-poland-finland-respond">1. Russia Launches Massive Strike on Ukraine; Poland, Finland Respond</a><a class="toc-link toc-level-3" href="#2-south-korea-chip-rout-kospi-crashes-7-9-as-samsung-sk-hynix-plunge">2. South Korea Chip Rout: Kospi Crashes 7.9% as Samsung, SK Hynix Plunge</a><a class="toc-link toc-level-3" href="#3-google-loses-eu-antitrust-appeal-4-1b-fine-upheld">3. Google Loses EU Antitrust Appeal — €4.1B Fine Upheld</a><a class="toc-link toc-level-3" href="#4-openai-proposes-5-government-stake-to-ease-political-pressure">4. OpenAI Proposes 5% Government Stake to Ease Political Pressure</a><a class="toc-link toc-level-3" href="#5-oil-below-68-as-iran-talks-progress-wti-posts-steepest-quarterly-drop-since-2020">5. Oil Below $68 as Iran Talks Progress; WTI Posts Steepest Quarterly Drop Since 2020</a><a class="toc-link toc-level-3" href="#6-fed-chair-warsh-no-urgency-to-hike-inflation-expectations-easing">6. Fed Chair Warsh: No Urgency to Hike; Inflation Expectations Easing</a><a class="toc-link toc-level-3" href="#7-gold-rebounds-above-4-000-on-softer-rate-outlook">7. Gold Rebounds Above $4,000 on Softer Rate Outlook</a><a class="toc-link toc-level-2" href="#global-session-recap">Global Session Recap</a><a class="toc-link toc-level-2" href="#macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</a><a class="toc-link toc-level-3" href="#yield-curve-as-of-6-00-am-et-july-2-2026">Yield Curve (as of ~6:00 AM ET, July 2, 2026)</a><a class="toc-link toc-level-3" href="#fed-policy-outlook">Fed Policy Outlook</a><a class="toc-link toc-level-3" href="#today-s-economic-calendar-thursday-july-2-2026">Today&#x27;s Economic Calendar (Thursday, July 2, 2026)</a><a class="toc-link toc-level-3" href="#global-central-banks">Global Central Banks</a><a class="toc-link toc-level-2" href="#fx-and-commodities">FX and Commodities</a><a class="toc-link toc-level-3" href="#currencies">Currencies</a><a class="toc-link toc-level-3" href="#commodities">Commodities</a><a class="toc-link toc-level-2" href="#equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</a><a class="toc-link toc-level-3" href="#pre-market-setup">Pre-Market Setup</a><a class="toc-link toc-level-3" href="#wednesday-s-notable-movers-july-1-close">Wednesday&#x27;s Notable Movers (July 1 Close)</a><a class="toc-link toc-level-3" href="#key-single-stock-watchlist-for-today">Key Single-Stock Watchlist for Today</a><a class="toc-link toc-level-3" href="#earnings-calendar">Earnings Calendar</a><a class="toc-link toc-level-2" href="#sector-and-factor-setup">Sector and Factor Setup</a><a class="toc-link toc-level-3" href="#sector-performance-july-1-close">Sector Performance (July 1 Close)</a><a class="toc-link toc-level-3" href="#factor-rotation-signals">Factor Rotation Signals</a><a class="toc-link toc-level-3" href="#breadth-and-positioning">Breadth and Positioning</a><a class="toc-link toc-level-2" href="#today-s-risk-map">Today&#x27;s Risk Map</a><a class="toc-link toc-level-3" href="#scheduled-catalysts">Scheduled Catalysts</a><a class="toc-link toc-level-3" href="#unscheduled-risks">Unscheduled Risks</a><a class="toc-link toc-level-3" href="#key-levels-to-watch">Key Levels to Watch</a><a class="toc-link toc-level-3" href="#bull-base-bear-scenarios">Bull / Base / Bear Scenarios</a><a class="toc-link toc-level-2" href="#source-notes-and-data-quality">Source Notes and Data Quality</a><a class="toc-link toc-level-3" href="#market-data">Market Data</a><a class="toc-link toc-level-3" href="#macro-policy">Macro/Policy</a><a class="toc-link toc-level-3" href="#companies-and-news">Companies and News</a><a class="toc-link toc-level-3" href="#data-quality-notes">Data Quality Notes</a></div></nav>
+
+  <div class="content">
+    <h1 id="boltnews-pre-market-briefing-thursday-july-2-2026">BoltNews Pre-Market Briefing — Thursday, July 2, 2026</h1>
+<p><strong>Run:</strong> 2026-07-02 pre-market | <strong>Recency window:</strong> July 1 4:00 PM ET → July 2 6:00 AM ET | <strong>Previous close:</strong> July 1, 2026</p>
+<hr class="divider">
+<h2 id="futures-and-current-market-snapshot">Futures and Current Market Snapshot</h2>
+<p><em>As of ~4:33 AM ET, July 2, 2026. Source: CNBC Pre-Markets page.</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Prior Close</th><th>Futures</th><th>Implied Open</th><th>Direction</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>7,483.23 (-0.22%)</td><td>7,539.00</td><td>+4.77</td><td>Flat/slightly higher</td></tr><tr><td>Dow Jones</td><td>52,305.24 (-0.03%)</td><td>52,694.00</td><td>+133.76</td><td>Higher</td></tr><tr><td>Nasdaq 100</td><td>29,809.13 (-1.54%)</td><td>29,958.75</td><td>-55.38</td><td>Lower</td></tr><tr><td>Russell 2000</td><td>3,012.59 (-0.39%)</td><td>3,034.30</td><td>-7.29</td><td>Slightly lower</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Treasury Yields (as of ~4:33 AM ET, CNBC):</strong></p>
+<ul><li>2-Year: 4.176% (+1.2bp)</li><li>5-Year: 4.248% (+1.8bp)</li><li>10-Year: 4.495% (+2.0bp)</li><li>30-Year: 4.987% (+2.1bp)</li></ul>
+<p class="bold-line"><strong>Key Market Levels (prior close July 1, Yahoo Finance via market_snapshot.json):</strong></p>
+<ul><li>S&amp;P 500: 7,483.23 | Nasdaq: 26,040.03 | Dow: 52,305.24 | Russell 2000: 3,012.59</li><li>VIX: 16.69 (+0.60%) | VXN (Nasdaq Vol): 27.69 (+2.14%)</li></ul>
+<p class="bold-line"><strong>Commodities &amp; FX Snapshot (CNBC/Trading Economics, ~5:00 AM ET):</strong></p>
+<ul><li>WTI Crude: $67.96 (-0.9%) | Brent: $70.92 (-0.9%)</li><li>Gold: $4,076-$4,085/oz (+1.1%)</li><li>DXY: 101.02 (-0.37%) | EUR/USD: 1.142 | USD/JPY: 161.13 (-0.88%)</li><li>Silver: $60.42 (-0.15%) | Natural Gas: $3.17 (-1.4%)</li></ul>
+<p><strong>Market Direction (prior close): LOWER.</strong> All major indices closed lower July 1. S&amp;P 500 -0.22%, Nasdaq -0.66%, Dow -0.03%, Russell 2000 -0.39%. Technology led declines (Nasdaq 100 -1.54%, XLK -2.57%).</p>
+<hr class="divider">
+<h2 id="overnight-top-developments">Overnight Top Developments</h2>
+<h3 id="1-russia-launches-massive-strike-on-ukraine-poland-finland-respond">1. Russia Launches Massive Strike on Ukraine; Poland, Finland Respond</h3>
+<ul><li><strong>Event:</strong> Russia conducted a large-scale missile and drone attack across Ukraine overnight, targeting Kyiv and multiple regions.</li><li><strong>Impact:</strong> 10 dead, 34 injured in Kyiv alone. Poland scrambled fighter jets and raised air defense readiness. Finland imposed a temporary aviation restriction zone.</li><li><strong>Context:</strong> Ukrainian President Zelenskyy warned Wednesday evening of an "imminent massive strike." Ukraine recently signed off on a 40-day operation designed to pressure the Kremlin. The attack follows Ukraine's intensification of long-range drone strikes inside Russia.</li><li><strong>Source:</strong> CNBC, July 2, 2026</li></ul>
+<h3 id="2-south-korea-chip-rout-kospi-crashes-7-9-as-samsung-sk-hynix-plunge">2. South Korea Chip Rout: Kospi Crashes 7.9% as Samsung, SK Hynix Plunge</h3>
+<ul><li><strong>Event:</strong> Samsung -9.06%, SK Hynix -14.57%, Kospi index -7.89% — worst single-day drop. The selloff followed a broad U.S. semiconductor rout with Micron (MU) -10%+ and Sandisk (SNDK) -10%+ on July 1.</li><li><strong>Impact:</strong> Samsung and SK Hynix now comprise ~50% of Kospi weight (up from 25% year-end), amplifying index moves. Chinese chip stocks also hit: SMIC -11%, Hua Hong -14%, Knowledge Atlas -17%, Iluvatar CoreX -18%.</li><li><strong>Context:</strong> SK Hynix announced 100 trillion won ($64.37B) investment plan for AI memory/packaging; ADR listing on Nasdaq July 10.</li><li><strong>Source:</strong> CNBC, July 2, 2026</li></ul>
+<h3 id="3-google-loses-eu-antitrust-appeal-4-1b-fine-upheld">3. Google Loses EU Antitrust Appeal — €4.1B Fine Upheld</h3>
+<ul><li><strong>Event:</strong> EU's top court upheld the €4.1 billion ($4.67B) fine against Google (GOOGL) for abusing Android's mobile dominance via pre-installation deals.</li><li><strong>Impact:</strong> Moderate. The fine was levied in 2018 and already provisioned. The ruling reinforces EU regulatory pressure on Big Tech but is not a new financial surprise.</li><li><strong>Source:</strong> CNBC, July 2, 2026</li></ul>
+<h3 id="4-openai-proposes-5-government-stake-to-ease-political-pressure">4. OpenAI Proposes 5% Government Stake to Ease Political Pressure</h3>
+<ul><li><strong>Event:</strong> OpenAI proposed the U.S. government take a 5% ownership stake (~$42.6B at $852B valuation). Sam Altman reportedly wants Washington to hold 5% of each leading U.S. AI developer (Anthropic, Google, Meta, etc.) via a sovereign wealth fund.</li><li><strong>Context:</strong> Washington increasingly concerned about AI cybersecurity and Chinese open-source competition. Anthropic recently had to disable advanced models (Mythos, Fable) to comply with government directives.</li><li><strong>Source:</strong> CNBC/Financial Times, July 2, 2026</li></ul>
+<h3 id="5-oil-below-68-as-iran-talks-progress-wti-posts-steepest-quarterly-drop-since-2020">5. Oil Below $68 as Iran Talks Progress; WTI Posts Steepest Quarterly Drop Since 2020</h3>
+<ul><li><strong>Event:</strong> WTI crude fell to $67.93 (-0.95%), reaching the lowest since late February. Strait of Hormuz shipments exceeded 10 million barrels/day on U.S. military support. Iranian exports surged past 40 million barrels after U.S. naval blockade lifted. Russian exports hit record levels.</li><li><strong>Impact:</strong> Easing energy-driven inflation concerns. The U.S.-Iran indirect talks described as "constructive" with next round scheduled soon. WTI posted steepest quarterly decline since 2020.</li><li><strong>Source:</strong> Trading Economics, July 2, 2026</li></ul>
+<h3 id="6-fed-chair-warsh-no-urgency-to-hike-inflation-expectations-easing">6. Fed Chair Warsh: No Urgency to Hike; Inflation Expectations Easing</h3>
+<ul><li><strong>Event:</strong> Speaking at ECB Forum in Sintra, Fed Chair Warsh said inflation expectations have eased and there is "no urgency to raise interest rates." However, he reiterated commitment to the 2% target and push to reduce the Fed's balance sheet.</li><li><strong>Data:</strong> ADP private payrolls June: +98,000 (vs. 110,000 est., 122,000 prior). Core PCE: 3.4%, Headline PCE: 4.1%.</li><li><strong>Market:</strong> &gt;60% probability of a September rate hike still priced. 2Y yield ~4.18%, 10Y ~4.50%.</li><li><strong>Source:</strong> CNBC, July 1, 2026</li></ul>
+<h3 id="7-gold-rebounds-above-4-000-on-softer-rate-outlook">7. Gold Rebounds Above $4,000 on Softer Rate Outlook</h3>
+<ul><li><strong>Event:</strong> Gold strengthened to $4,076/oz (+1.1%) after dipping below $4,000 earlier this week (eight-month low). Warsh's dovish-leaning comments and falling oil prices supported the safe haven.</li><li><strong>Source:</strong> Trading Economics, July 2, 2026</li></ul>
+<hr class="divider">
+<h2 id="global-session-recap">Global Session Recap</h2>
+<p class="bold-line"><strong>Asia-Pacific:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Close</th><th>Change</th></tr></thead><tbody><tr><td>Nikkei 225</td><td>68,733.15</td><td>-2.47%</td></tr><tr><td>Shanghai Composite</td><td>4,028.90</td><td>-2.03%</td></tr><tr><td>Hang Seng</td><td>23,055.03</td><td>+0.76%</td></tr><tr><td>ASX 200</td><td>8,724.50</td><td>+0.02%</td></tr><tr><td>STI (Singapore)</td><td>5,205.56</td><td>+0.85%</td></tr></tbody></table></div>
+<p>The Asia session was dominated by the semiconductor rout in South Korea (Kospi -7.89%), which dragged Nikkei and Shanghai lower. Hong Kong bucked the trend with mild gains. Chinese chip names were hit hardest (SMIC -11%, Hua Hong -14%). The selloff spread directly from Wednesday's U.S. Nasdaq/tech weakness, with Micron's -10%+ drop serving as the catalyst.</p>
+<p class="bold-line"><strong>Europe (as of ~4:33 AM ET):</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>Level</th><th>Change</th></tr></thead><tbody><tr><td>STOXX 50</td><td>5,392.72</td><td>+0.33%</td></tr><tr><td>DAX</td><td>25,119.31</td><td>+0.32%</td></tr><tr><td>FTSE 100</td><td>10,533.58</td><td>+0.53%</td></tr><tr><td>CAC 40</td><td>8,392.08</td><td>+0.66%</td></tr><tr><td>AEX</td><td>1,069.18</td><td>-0.37%</td></tr></tbody></table></div>
+<p>European markets opened modestly positive, showing resilience despite the Asia tech carnage. Financials and energy-relief beneficiaries leading. The ECB's Lagarde (speaking alongside Warsh at Sintra) noted the ECB's June rate hike was unanimous due to the energy-driven inflation shock — but falling oil prices may temper further tightening urgency.</p>
+<p><strong>Cross-read to U.S.:</strong> The Asia chip selloff signals the U.S. tech weakness from Wednesday (Nasdaq -0.66%, Nasdaq 100 -1.54%) is broadening. European resilience suggests rotation into value/cyclicals may continue. U.S. futures indicate mixed open: Dow higher, Nasdaq lower — consistent with the ongoing growth-to-value rotation.</p>
+<hr class="divider">
+<h2 id="macro-rates-and-policy-setup">Macro, Rates, and Policy Setup</h2>
+<h3 id="yield-curve-as-of-6-00-am-et-july-2-2026">Yield Curve (as of ~6:00 AM ET, July 2, 2026)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Tenor</th><th>Yield</th><th>Day Change</th></tr></thead><tbody><tr><td>3-Month</td><td>3.82%</td><td>+1.9bp</td></tr><tr><td>2-Year</td><td>4.18%</td><td>+1.2bp</td></tr><tr><td>5-Year</td><td>4.25%</td><td>+1.8bp</td></tr><tr><td>10-Year</td><td>4.50%</td><td>+2.0bp</td></tr><tr><td>30-Year</td><td>4.99%</td><td>+2.1bp</td></tr></tbody></table></div>
+<ul><li><strong>10Y-2Y Spread:</strong> +32bp (positively sloped, wider than last week's ~28bp)</li><li><strong>10Y-3M Spread:</strong> +68bp (steep curve)</li><li><strong>Fed Funds Rate:</strong> 3.75% (unchanged since June FOMC)</li></ul>
+<h3 id="fed-policy-outlook">Fed Policy Outlook</h3>
+<ul><li><strong>Chair Warsh (July 1):</strong> "No urgency to raise interest rates." Inflation expectations easing. Core PCE at 3.4%, headline PCE at 4.1%. Still committed to 2% target and balance sheet reduction.</li><li><strong>Market Pricing:</strong> &gt;60% chance of a September rate hike. One hike by December consensus, with a minority pricing multiple hikes.</li><li><strong>Balance Sheet:</strong> Warsh reiterated the Fed's balance sheet is too large. The campaign to reduce Treasury holdings is a structural support for yields.</li><li><strong>Communication Shift:</strong> Bank of America notes Fed officials' public appearances fell 48% vs. historical average — early sign of Warsh's lower-profile communications strategy.</li></ul>
+<h3 id="today-s-economic-calendar-thursday-july-2-2026">Today's Economic Calendar (Thursday, July 2, 2026)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time (ET)</th><th>Release</th><th>Consensus</th><th>Prior</th></tr></thead><tbody><tr><td>8:30 AM</td><td>Nonfarm Payrolls (June)</td><td>+115,000</td><td>+125,000 (May)</td></tr><tr><td>8:30 AM</td><td>Unemployment Rate</td><td>4.3%</td><td>4.3%</td></tr><tr><td>8:30 AM</td><td>Avg Hourly Earnings MoM</td><td>+0.3%</td><td>+0.3%</td></tr><tr><td>8:30 AM</td><td>Initial Jobless Claims (wk Jun 27)</td><td>218,000</td><td>215,000</td></tr><tr><td>8:30 AM</td><td>Labor Force Participation</td><td>62.6%</td><td>62.6%</td></tr><tr><td>All Day</td><td>Motor Vehicle Sales</td><td>16.0M</td><td>16.1M (May)</td></tr></tbody></table></div>
+<ul><li><strong>NFP Context:</strong> ADP private payrolls yesterday missed at +98k (vs 110k est.), setting a dovish tone heading into today's official number. A downside surprise could push rate-hike expectations lower and support equities; an upside surprise would reinforce the Fed's ability to hike.</li><li><strong>Jobless Claims:</strong> Last reading 215k (wk Jun 20), down from 227k. Low claims suggest labor market remains tight despite ADP weakness.</li></ul>
+<h3 id="global-central-banks">Global Central Banks</h3>
+<ul><li><strong>ECB:</strong> Hiked rates in June citing energy-driven inflation. Lagarde noted at Sintra: decision was unanimous. Falling oil prices could ease urgency for further hikes.</li><li><strong>BOE:</strong> Bailey flagged tail risks in leveraged government bond markets, hedge fund leverage in equities/ETFs, and private credit.</li><li><strong>BOC:</strong> Macklem at Sintra panel, no major new signals.</li></ul>
+<hr class="divider">
+<h2 id="fx-and-commodities">FX and Commodities</h2>
+<h3 id="currencies">Currencies</h3>
+<div class="table-wrapper"><table><thead><tr><th>Pair</th><th>Level</th><th>Change</th><th>Note</th></tr></thead><tbody><tr><td>DXY</td><td>101.02</td><td>-0.37%</td><td>Eased from 15-month high of 101.6 after Warsh comments</td></tr><tr><td>EUR/USD</td><td>1.142</td><td>+0.37%</td><td>Euro supported by ECB rate hike, softer dollar</td></tr><tr><td>GBP/USD</td><td>1.336</td><td>+0.65%</td><td>Sterling outperforming; UK M&amp;A boom noted</td></tr><tr><td>USD/JPY</td><td>161.13</td><td>-0.88%</td><td>Yen strengthening as dollar eases; still near multi-decade lows</td></tr></tbody></table></div>
+<p><strong>DXY driver:</strong> The dollar index eased from its 15-month high (101.6) after Warsh said inflation risks are softening and ADP payrolls missed. The combination of softer U.S. data and hawkish ECB/BOE stances is putting a lid on dollar strength. However, Warsh's balance sheet reduction campaign remains structurally dollar-supportive.</p>
+<h3 id="commodities">Commodities</h3>
+<div class="table-wrapper"><table><thead><tr><th>Commodity</th><th>Price</th><th>Day Chg</th><th>Key Driver</th></tr></thead><tbody><tr><td>WTI Crude</td><td>$67.96</td><td>-0.9%</td><td>Iran talks progress, Hormuz shipments surging, Russian records</td></tr><tr><td>Brent Crude</td><td>$70.92</td><td>-0.9%</td><td>Supply glut fears; steepest quarterly decline since 2020</td></tr><tr><td>Gold</td><td>$4,076</td><td>+1.1%</td><td>Warsh dovish tilt, $4,000 support reclaimed</td></tr><tr><td>Silver</td><td>$60.42</td><td>-0.15%</td><td>Range-bound; industrial demand concerns</td></tr><tr><td>Natural Gas</td><td>$3.17</td><td>-1.4%</td><td>Ample supply, mild demand</td></tr><tr><td>Copper</td><td>$6.10/lb</td><td>-0.35%</td><td>China demand concerns weigh</td></tr></tbody></table></div>
+<p><strong>Oil narrative:</strong> The U.S.-Iran de-escalation is the dominant driver. Crude flows through the Strait of Hormuz have returned to pre-conflict levels (&gt;10M bpd) with U.S. military assistance. Iranian exports surged past 40M barrels after the naval blockade was lifted. Russian record exports are compounding the glut. WTI's steepest quarterly decline since 2020 is deflationary — a tailwind for bonds and consumer stocks, headwind for energy equities.</p>
+<p><strong>Gold narrative:</strong> Gold reclaimed $4,000 support, rallying +1.1% as Warsh suggested no urgency to hike. The metal is still down 8.1% monthly from January's all-time high of $5,608, but the near-term catalyst (softer Fed) is supportive. Watch $4,000 as key psychological support; a break below on strong NFP would be bearish.</p>
+<hr class="divider">
+<h2 id="equities-and-single-stock-watchlist">Equities and Single-Stock Watchlist</h2>
+<h3 id="pre-market-setup">Pre-Market Setup</h3>
+<p>Futures point to a mixed open: Dow indicated ~134 points higher, S&amp;P 500 roughly flat (+5 points implied), Nasdaq indicated ~55 points lower. The growth-to-value rotation narrative continues.</p>
+<h3 id="wednesday-s-notable-movers-july-1-close">Wednesday's Notable Movers (July 1 Close)</h3>
+<p class="bold-line"><strong>Gainers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Catalyst</th></tr></thead><tbody><tr><td>FMC</td><td>+8.3%</td><td>Ag-chemical rally, rotation into materials</td></tr><tr><td>GIS (General Mills)</td><td>+4.4%</td><td>Defensive rotation, consumer staples</td></tr><tr><td>NOW (ServiceNow)</td><td>+4.1%</td><td>AI software momentum</td></tr><tr><td>Financials (XLF)</td><td>+2.13%</td><td>Rate-hike expectations, curve steepening</td></tr></tbody></table></div>
+<p class="bold-line"><strong>Losers:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Ticker</th><th>Move</th><th>Catalyst</th></tr></thead><tbody><tr><td>ESS (Essex Property)</td><td>-11.6%</td><td>REIT selloff on rate fears</td></tr><tr><td>MU (Micron)</td><td>-10%+</td><td>Semiconductor profit-taking after 260% YTD gain</td></tr><tr><td>SNDK (Sandisk)</td><td>-10%+</td><td>Chip sector contagion</td></tr><tr><td>PSA (Public Storage)</td><td>-4.1%</td><td>REIT/rate sensitivity</td></tr><tr><td>UHS</td><td>-4%</td><td>Healthcare weakness</td></tr><tr><td>XLK (Tech Sector)</td><td>-2.57%</td><td>Broad tech selloff</td></tr></tbody></table></div>
+<h3 id="key-single-stock-watchlist-for-today">Key Single-Stock Watchlist for Today</h3>
+<ul><li><strong>MU/SNDK/AVGO/NVDA:</strong> All semiconductor names under pressure. The Asia chip rout (Samsung -9%, SK Hynix -14.6%) confirms global contagion. Watch for stabilization or further selling at U.S. open. SK Hynix's 100T won investment plan and Nasdaq ADR listing (July 10) could provide a floor.</li><li><strong>GOOGL:</strong> EU antitrust fine upheld at €4.1B. Already provisioned; limited financial impact. Watch for any appeal plans or EU regulatory trajectory implications.</li><li><strong>MSFT:</strong> Indirectly relevant via OpenAI stake proposal. Government ownership of AI developers could reshape the competitive landscape for cloud/AI revenue streams.</li><li><strong>Financials (XLF):</strong> Leading sector (+2.13% Wednesday). If NFP surprises to upside, banks could extend gains on steeper curve and higher terminal rate expectations.</li><li><strong>M&amp;A beneficiaries:</strong> Citi UK CEO says M&amp;A "on fire." Large-cap simplification deals suggest investment banking revenue tailwind for JPM, GS, MS, C.</li></ul>
+<h3 id="earnings-calendar">Earnings Calendar</h3>
+<p>No major S&amp;P 500 earnings scheduled before the bell today. Next major earnings wave begins mid-July with Q2 bank results.</p>
+<hr class="divider">
+<h2 id="sector-and-factor-setup">Sector and Factor Setup</h2>
+<h3 id="sector-performance-july-1-close">Sector Performance (July 1 Close)</h3>
+<div class="table-wrapper"><table><thead><tr><th>Sector</th><th>Level</th><th>% Chg</th><th>Signal</th></tr></thead><tbody><tr><td>Financials</td><td>911.85</td><td>+2.13%</td><td>BULLISH — rate/curve tailwind</td></tr><tr><td>Consumer Discretionary</td><td>1,922.81</td><td>+0.82%</td><td>Modestly positive</td></tr><tr><td>Dow Transports</td><td>21,959.76</td><td>+0.97%</td><td>Cyclical strength</td></tr><tr><td>Energy</td><td>806.45</td><td>-0.56%</td><td>Oil decline headwind</td></tr><tr><td>Consumer Staples</td><td>919.95</td><td>-0.33%</td><td>Defensive rotation</td></tr><tr><td>Utilities</td><td>1,135.58</td><td>-0.92%</td><td>Rate sensitivity</td></tr><tr><td>Technology</td><td>6,663.53</td><td>-1.84%</td><td>BEARISH — chip rout</td></tr></tbody></table></div>
+<h3 id="factor-rotation-signals">Factor Rotation Signals</h3>
+<ul><li><strong>Value vs Growth:</strong> Clear rotation underway. Financials (+2.13%) and cyclicals outperforming technology (-1.84%). The 10Y-2Y curve steepening to +32bp supports this rotation.</li><li><strong>Large vs Small:</strong> Russell 2000 (-0.39%) underperforming Dow (-0.03%). Small caps not yet benefiting from rotation — rate sensitivity and regional bank exposure may be weighing.</li><li><strong>Defensives:</strong> Mixed signals — staples flat, utilities weak, healthcare underperforming. Not a classic risk-off defensive bid; more of a targeted rotation from extreme growth to cyclical value.</li></ul>
+<h3 id="breadth-and-positioning">Breadth and Positioning</h3>
+<ul><li>NYSE Composite: 23,737.18 (unchanged provisional)</li><li>Nasdaq 100 -1.54% vs S&amp;P 500 -0.22%: Mag-7/cap-weighted tech dragging while broader market held up better</li><li>DJ Transports +0.97%: Dow Theory constructive signal</li></ul>
+<hr class="divider">
+<h2 id="today-s-risk-map">Today's Risk Map</h2>
+<h3 id="scheduled-catalysts">Scheduled Catalysts</h3>
+<div class="table-wrapper"><table><thead><tr><th>Time (ET)</th><th>Event</th><th>Risk Level</th><th>Potential Impact</th></tr></thead><tbody><tr><td>8:30 AM</td><td>June NFP + Jobless Claims</td><td>HIGH</td><td>Primary market driver today. Upside surprise → yields up, tech down, financials up. Downside surprise → yields down, broad relief rally, dollar weaker.</td></tr><tr><td>All Day</td><td>Motor Vehicle Sales</td><td>LOW</td><td>Sector-level data for autos.</td></tr><tr><td>Ongoing</td><td>Warsh ECB Forum follow-up</td><td>MODERATE</td><td>Any additional comments or clarifications from Sintra.</td></tr></tbody></table></div>
+<h3 id="unscheduled-risks">Unscheduled Risks</h3>
+<ul><li><strong>Russia-Ukraine escalation:</strong> Overnight strike was severe (10 dead in Kyiv). Further attacks or NATO response escalation could cause risk-off moves.</li><li><strong>Iran talks breakdown:</strong> If indirect U.S.-Iran negotiations stall, oil could reverse its decline rapidly.</li><li><strong>China tech regulation:</strong> Chinese chip names down 11-18% — any regulatory response from Beijing could add volatility.</li><li><strong>AI regulation:</strong> OpenAI's 5% stake proposal signals the administration is actively engaging on AI governance. News flow on this front could move MSFT, GOOGL, META, AMZN.</li></ul>
+<h3 id="key-levels-to-watch">Key Levels to Watch</h3>
+<ul><li><strong>S&amp;P 500:</strong> Support 7,440 (Wednesday low), Resistance 7,520 (Wednesday high)</li><li><strong>Nasdaq 100:</strong> Support 29,500, Resistance 30,200</li><li><strong>10Y Yield:</strong> Support 4.36% (Monday low), Resistance 4.55% (recent high)</li><li><strong>VIX:</strong> 16.69 — elevated vs. recent lows (14-15 range). Above 18 signals building stress.</li><li><strong>WTI:</strong> $67 support. Break below targets $65. Recovery above $70 needed to change trend.</li></ul>
+<h3 id="bull-base-bear-scenarios">Bull / Base / Bear Scenarios</h3>
+<div class="table-wrapper"><table><thead><tr><th>Scenario</th><th>Trigger</th><th>Expected Market Response</th></tr></thead><tbody><tr><td><strong>Bull</strong></td><td>NFP &lt;100k, wage growth soft; Warsh confirms no urgency</td><td>S&amp;P +1%+, Nasdaq short-covering rally, 10Y to 4.35%, gold +2%, DXY to 100</td></tr><tr><td><strong>Base</strong></td><td>NFP 110-120k, unemployment 4.3%</td><td>Mixed open, Dow +0.3%, Nasdaq flat, 10Y 4.48%, VIX 16.5-17.0</td></tr><tr><td><strong>Bear</strong></td><td>NFP &gt;130k, wage growth hot; hawkish Warsh follow-up</td><td>S&amp;P -1%, Nasdaq -2%, 10Y to 4.60%, DXY to 102, VIX &gt;18, tech/chip double-hit</td></tr></tbody></table></div>
+<hr class="divider">
+<h2 id="source-notes-and-data-quality">Source Notes and Data Quality</h2>
+<h3 id="market-data">Market Data</h3>
+<ul><li>Index prior-close levels: Yahoo Finance chart API via <code>market_snapshot.py</code> (secondary source), verified against CNBC Pre-Markets page. ✓ Consistent.</li><li>Futures/implied opens: CNBC Pre-Markets page, as of 4:33 AM ET July 2, 2026.</li><li>Treasury yields: CNBC Pre-Markets (4:33 AM ET), cross-referenced with Trading Economics (6:00 AM ET). Minor variance (~2-3bp) within expected pre-market spread.</li><li>Commodities: CNBC (futures) and Trading Economics (OTC/CFD prices). Gold shows discrepancy — CNBC $4,085 vs Trading Economics $4,076. Using range. All OTC/CFD, not official settlement.</li><li>FX: CNBC Pre-Markets, cross-referenced with Trading Economics.</li></ul>
+<h3 id="macro-policy">Macro/Policy</h3>
+<ul><li>Fed Chair Warsh comments: CNBC live blog of ECB Forum, July 1, 2026. Direct quotes verified.</li><li>ADP payrolls: CNBC report, July 1. Data from ADP Research Institute.</li><li>NFP consensus: Bloomberg/CNBC economic calendar. BLS.gov confirms release schedule.</li><li>Jobless claims: Trading Economics/DOL historical data.</li></ul>
+<h3 id="companies-and-news">Companies and News</h3>
+<ul><li>Russia-Ukraine strike: CNBC, July 2, 2026. Sourced from Kyiv Mayor Klitschko, Ukrainian Ambassador Stefanishyna, Polish Armed Forces Command.</li><li>Google EU fine: CNBC, July 2, 2026. Breaking news — may be updated.</li><li>Samsung/SK Hynix: CNBC, July 2, 2026. Quotes from eToro analyst, SK Hynix CEO.</li><li>OpenAI stake proposal: CNBC/Financial Times, July 2, 2026. Based on FT reporting; no official confirmation from involved parties.</li><li>Sector performance: CNBC Pre-Markets page.</li></ul>
+<h3 id="data-quality-notes">Data Quality Notes</h3>
+<ul><li><strong>No pre-market mover data available</strong> from PreMarketPrice.com at extraction time (data platform still warming up at 5:00 AM ET). Individual stock pre-market moves listed are from prior session or directional expectations.</li><li><strong>Gold price discrepancy</strong> between sources noted; both are secondary market data providers.</li><li><strong>Oil prices</strong> are OTC/CFD references, not NYMEX settlement.</li><li><strong>Articles with <code>freshness_verified: false</code></strong>: The jobless claims reference article is from June 26 — used only for historical context on prior claims data. Today's release is primary.</li><li><strong>No article timestamps missing</strong> — all 18 articles have <code>published_at</code> within the 14-hour recency window except the explicitly historical jobless claims reference.</li></ul>
+  </div>
+
+  <div class="sources-section">
+<h2>📰 Source Articles</h2>
+<p>
+<a class="source-link" href="https://www.cnbc.com/2026/07/02/russia-launches-missile-drone-strikes-ukraine-kyiv.html" target="_blank" rel="noopener">Russia launches massive strike on Ukraine as Poland scrambles jets, Finland rest</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/02/alphabet-google-android-eu-antitrust-fine-4-1-billion-euro-appeal.html" target="_blank" rel="noopener">Google loses legal fight over 4.1 billion-euro EU antitrust fine</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/02/samsung-sk-hynix-shares-slide-kospi-tech-selloff-nasdaq.html" target="_blank" rel="noopener">Samsung Electronics, SK Hynix shares tumble over 9% as chip rout spreads from Wa</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html" target="_blank" rel="noopener">OpenAI proposes U.S. government own 5% stake to address political blowback</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/01/kevin-warsh-ecb-forum-live-updates.html" target="_blank" rel="noopener">Fed Chair Kevin Warsh at ECB Forum: No urgency to raise rates; inflation expecta</a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/crude-oil" target="_blank" rel="noopener">Crude oil falls below $68 as Strait of Hormuz shipments increase, US-Iran talks </a>
+<a class="source-link" href="https://tradingeconomics.com/commodity/gold" target="_blank" rel="noopener">Gold strengthens above $4,000 as Fed&#x27;s Warsh signals no urgency to hike</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/currency" target="_blank" rel="noopener">US Dollar Index holds steady around 101 ahead of June jobs report</a>
+<a class="source-link" href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank" rel="noopener">Treasury yields: 10Y at 4.50%, markets await NFP; 2Y-10Y spread narrow</a>
+<a class="source-link" href="https://www.cnbc.com/markets/pre-markets/" target="_blank" rel="noopener">Premarket Stock Trading Data: Dow, S&amp;P, NASDAQ Futures - CNBC</a>
+<a class="source-link" href="https://www.bls.gov/news.release/empsit.nr0.htm" target="_blank" rel="noopener">Employment Situation Summary - June 2026 scheduled for release July 2 at 8:30 AM</a>
+<a class="source-link" href="https://www.cnbc.com/markets/pre-markets/" target="_blank" rel="noopener">Asia-Pacific and European Markets Summary - July 2, 2026</a>
+<a class="source-link" href="https://www.cnbc.com/markets/pre-markets/" target="_blank" rel="noopener">Sector Performance: Financials lead, Technology lags sharply - July 1 close</a>
+<a class="source-link" href="https://primerates.com/primerate/treasury-yield-curve/" target="_blank" rel="noopener">US 10 Year Treasury Yield holds at 4.50% with curve dynamics; NFP in focus</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/01/kevin-warsh-ecb-forum-live-updates.html" target="_blank" rel="noopener">ADP private payrolls June 2026: +98,000, below expectations of 110,000</a>
+<a class="source-link" href="https://premarketprice.com/premarket-movers" target="_blank" rel="noopener">Stocks Moving in Premarket Today (July 2, 2026)</a>
+<a class="source-link" href="https://www.thestreet.com/stock-market-today/stock-market-today-july-1-2026-nasdaq-futures-slip-after-strongest-quarter-since-2020" target="_blank" rel="noopener">S&amp;P 500, Dow rise to start Q3; Nasdaq falls on chip weakness - July 1 recap</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/02/european-union-china-meeting-summer-heatwave-trade-imbalance-tariffs-.html" target="_blank" rel="noopener">Europe wants to rebalance trade with Beijing amid record heatwave, but can&#x27;t qui</a>
+<a class="source-link" href="https://www.cnbc.com/2026/07/02/uk-ma-citi-tiina-lee.html" target="_blank" rel="noopener">Citi UK CEO: M&amp;A is &#x27;on fire&#x27; as large-cap firms simplify</a>
+</p>
+</div>
+
+  <div class="footer">
+    BoltNews &copy; 2026 &middot; Generated 2026-07-02 &middot; 
+    <a href="https://github.com/ZeusNightBolt/BoltNews">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
